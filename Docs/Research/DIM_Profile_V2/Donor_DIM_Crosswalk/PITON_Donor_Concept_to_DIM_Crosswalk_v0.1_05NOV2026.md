@@ -1,14 +1,14 @@
 # Current Profile Rewrite checkpoint
 
-Updated 15 November 2026, America/New_York, Profile Rewrite 48. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
+Updated 15 November 2026, America/New_York, Profile Rewrite 49. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
 
 ## Verified checkpoint
 
-SO-2C delivery/status closeout is published at `94fcd53a70e6e9996834502db498674e3c935da1`; [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/43764530654) passed. The subsequent owner Proceed authorized **SO-2D only: 217 management-path, state and hosted-runtime records**. SO-2D source assessment and same-workbook integration are prepared locally; saved-file and visual checks passed. Finish remote publication/readback before claiming delivery. F3 is accepted; AAS O1–O7 remain delivered with bounded-PARTIAL acceptance pending.
+SO-2D research and same-workbook integration are published at `a998923ad3c96ec6b12bd2de71c5a7161afc8611`: **217 management-path, state and hosted-runtime records**. Saved-file/visual checks and remote readback passed. Profile Rewrite 49 Proceed authorized publication-status closeout only; that evidence is now recorded here and in the existing ledger. F3 is accepted; AAS O1–O7 remain delivered with bounded-PARTIAL acceptance pending.
 
 ## Interrupted work
 
-SO-2D changes are based on `94fcd53`: master/mirrors/workbook, G4 ledger, owner report, publisher/checker and this PITON. Complete the packet's missing verification/delivery before new research. No SO-2E research has started. Preserve local changes; reuse verified SO-1/SO-2A/B/C/AAS work rather than rereading histories.
+No unpublished SO-2D research remains. Recovery verified that the clean surviving local commit `eb800e0` and published `a998923` have identical Git trees; all eleven changed file blobs match. No SO-2E research has started. Reuse verified SO-1/SO-2A/B/C/D/AAS evidence rather than rereading histories.
 
 ## Active scope and evidence
 
@@ -24,7 +24,7 @@ Original C239 PDF122–140 and 361–371 text was read; PDF125/127/135/138/365/3
 
 [Master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV/readable mirrors and [same editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **384 information rows**, **411×16 = 6,576 values**, **663 source classifications: 555 colored/108 held**. AAS retains 88 source-bearing comparisons; 296 remaining rows have explicit unassessed/case-held standing. Preserve all other donor/case values.
 
-New SOSA cells J408:J411; qualifications J8,J19,J195,J286,J302,J389,J401. Security-assessment definition DIM Register C366 is revised; classification remains common. Use stable IDs/actual grid positions, not stale `display_row`. Preserve 26 sheets, 21 unaffected parts and M00/M01; no M02. Saved hash/parity and checks belong in SO-2D publication. Native Microsoft Excel clean reopening remains unverified.
+New SOSA cells J408:J411; qualifications J8,J19,J195,J286,J302,J389,J401. Security-assessment definition DIM Register C366 is revised; classification remains common. Use stable IDs/actual grid positions, not stale `display_row`. Preserve 26 sheets, 21 unaffected parts and M00/M01; no M02. Saved hash/parity and checks are recorded in SO-2D publication metadata. Native Microsoft Excel clean reopening remains unverified.
 
 ## Holds and owner decisions
 
@@ -34,13 +34,13 @@ AAS source/API/schema/figure/companion/template/external limits, generic Skill b
 
 ## Verification and publication
 
-Saved checks passed for all outcomes, four additions/seven qualifications, the exact security-definition change, 6,576 values/mirrors/fills, prior classifications and packet evidence, 21 untouched sheets and M00/M01. Changed renders passed visual review. Verify remote readback and applicable workflows; reuse unchanged checks.
+Saved checks passed for all outcomes, four additions/seven qualifications, the exact security-definition change, 6,576 values/mirrors/fills, prior classifications and packet evidence, 21 untouched sheets and M00/M01. Changed renders passed visual review. Remote tree/file readback and [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/43766066338) / [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/43766066361) passed. Reuse unchanged checks; research/workbook files are unchanged by this status closeout.
 
-Five pre-existing broader artifact-register/link errors remain. The broader artifact verifier cannot complete in this partial checkout because `Docs/Design/MPSS` is absent; those errors are not re-evaluated or closed. Do not claim blanket repository success.
+Five pre-existing broader artifact-register/link errors remain unclosed. The broader verifier was attempted during closeout and stopped because `Docs/Plans/Source_Continuity` is absent from this partial checkout; `Docs/Design/MPSS` is also absent. Those broader errors were not re-evaluated. Do not claim blanket repository success.
 
 ## Next action and stop
 
-Finish SO-2D delivery, then **STOP for Proceed**. The next Proceed authorizes **SO-2E only**, with progressive same-master/workbook integration if warranted; stop before SO-2F. AAS acceptance remains pending separately.
+SO-2D delivery and its publication-status closeout are complete. **STOP for Proceed.** The next Proceed authorizes **SO-2E only: 496 retained records**, with progressive same-master/workbook integration if warranted; stop before SO-2F. AAS acceptance remains pending separately.
 
 ## History
 
