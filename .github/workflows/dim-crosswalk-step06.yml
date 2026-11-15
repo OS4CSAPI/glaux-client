@@ -5,6 +5,8 @@ on:
       - research/dim-profile-v2
     paths:
       - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.*"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json"
+      - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Donor_Native_High_Level_Information_Groupings_Comparison.md"
       - "scripts/check_dim_crosswalk_step06.py"
       - "scripts/publish_sosa_d.py"
       - "Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/AAS01_Original_Source_Corpus_Coverage_13NOV2026.json"
@@ -41,7 +43,7 @@ jobs:
           set -euo pipefail
           if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]] || [[ -z "$BEFORE_SHA" ]] || ! git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
             python -B scripts/check_dim_crosswalk_step06.py
-          elif git diff --name-only "$BEFORE_SHA" "$GITHUB_SHA" | grep -E '^(scripts/(check_dim_crosswalk_step06|publish_sosa_d)\.py|Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/(Master_Donor_Concept_to_DIM_Crosswalk\.|AAS01_Original_Source_Corpus_Coverage_13NOV2026\.json)|\.github/workflows/dim-crosswalk-step06\.yml)' > /dev/null; then
+          elif git diff --name-only "$BEFORE_SHA" "$GITHUB_SHA" | grep -E '^(scripts/(check_dim_crosswalk_step06|publish_sosa_d)\.py|Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/(Master_Donor_Concept_to_DIM_Crosswalk\.|AAS01_Original_Source_Corpus_Coverage_13NOV2026\.json|SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026\.json|Donor_Native_High_Level_Information_Groupings_Comparison\.md)|\.github/workflows/dim-crosswalk-step06\.yml)' > /dev/null; then
             python -B scripts/check_dim_crosswalk_step06.py
           else
             python -B scripts/check_dim_crosswalk_step06.py --recovery-only

@@ -4751,9 +4751,116 @@ def verify_recovery() -> None:
     print("LIMIT: recovery structure and links checked; source coverage and factual status require evidence.")
 
 
+def verify_sosa_so1() -> None:
+    """Verify retained-record accountability; this is not an opportunity assessment."""
+    import hashlib
+    from collections import Counter
+
+    ledger_name = "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json"
+    ledger = json.loads((BASE / ledger_name).read_text(encoding="utf-8"))
+    inventory = ledger.get("SO1_existing_findings_opportunity_inventory")
+    if inventory is None:
+        return
+
+    def digest(value):
+        return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+    def resolve(value, pointer):
+        for part in pointer.removeprefix("#/").split("/"):
+            value = value[int(part)] if isinstance(value, list) else value[part]
+        return value
+
+    sources = {entry["file"]: json.loads((BASE / entry["file"]).read_text(encoding="utf-8"))
+               for entry in inventory["source_manifest"]}
+    protected = inventory["preservation"]
+    required(digest({k: ledger[k] for k in protected["original_G4_keys"]}) == protected["original_G4_sha256"],
+             "SO1 original G4 evidence/holds changed")
+    expected = {}
+    array_count = 0
+    for entry in inventory["source_manifest"]:
+        if entry["file"] != ledger_name:
+            data = (BASE / entry["file"]).read_bytes()
+            blob = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+            required(blob == entry["baseline_git_blob"], f"SO1 source changed: {entry['file']}")
+        for array in entry["arrays"]:
+            values = resolve(sources[entry["file"]], array["pointer"])
+            required(len(values) == array["count"], "SO1 source array count")
+            array_count += 1
+            for index, value in enumerate(values):
+                sid = value.get("id", value.get("native_id", value.get("source_id")))
+                required(sid and sid not in expected, f"SO1 duplicate/missing original ID: {sid}")
+                expected[sid] = (entry["file"], array["pointer"] + "/" + str(index), array["contact_tier"])
+    rows = inventory["records"]
+    ids = [row["source_id"] for row in rows]
+    required(len(ids) == len(set(ids)) and set(ids) == set(expected), "SO1 retained-record accountability")
+    indexed_f3 = set()
+    for row in rows:
+        sid = row["source_id"]
+        required(len(row["original_records"]) == 1, "SO1 occurrence count")
+        original = row["original_records"][0]
+        required((original["file"], original["pointer"], row["contact_tier"]) == expected[sid], "SO1 original pointer/tier")
+        raw = resolve(sources[original["file"]], original["pointer"])
+        required(digest(raw) == original["record_sha256"], "SO1 original record hash")
+        # The original-record hash protects all original source grades/standing;
+        # the inventory does not duplicate the original evidence text.
+        for reference in row.get("later_classification_decisions", []):
+            prior = resolve(ledger, reference["pointer"])
+            prior_ids = prior.get("source_ids", []) + prior.get("inherited_source_ids", []) + prior.get("additional_existing_source_ids", [])
+            required(sid in prior_ids and prior.get("decision_id") == reference["decision_id"] and prior.get("row_id") == reference["row_id"], "SO1 later-decision locator")
+            indexed_f3.add(sid)
+    counts = inventory["counts"]
+    required(protected["master_rows_added"] == protected["comparison_or_classification_changes"] == 0, "SO1 exceeded inventory scope")
+    required(array_count == counts["primary_arrays"] == 39 and len(rows) == counts["unique_primary_record_ids"] == 4134, "SO1 inventory size")
+    required(dict(Counter(row["contact_tier"] for row in rows)) == counts["contact_tiers"], "SO1 contact counts")
+    required(dict(Counter(row["inventory_outcome"] for row in rows)) == counts["inventory_outcomes"], "SO1 disposition counts")
+    required(len(indexed_f3) == counts["later_F3_linked_primary_record_ids"] == 832, "SO1 F3 reuse count")
+
+    report = (BASE / "Donor_Native_High_Level_Information_Groupings_Comparison.md").read_text(encoding="utf-8")
+    table = report[report.index("## Source-item coverage ledger (35"):]
+    table = table.split("\n## ", 1)[0]
+    f2 = []
+    for line in table.splitlines():
+        if line.startswith("| SOSA-"):
+            cells = [cell.strip() for cell in line.strip("|").split("|")]
+            f2.append(dict(zip(("source_id", "locator", "decision", "classification", "caveat"), cells)))
+    reuse = inventory["prior_review_reuse"]
+    required(f2 == reuse["F2_decisions"] and digest(f2) == reuse["F2_table_sha256"] and len(f2) == 35, "SO1 F2 original decisions")
+    by_id = {row["source_id"]: row for row in rows}
+    for prior in f2:
+        row = by_id[prior["source_id"]]
+        required(row["prior_F2_decision"] == prior, "SO1 F2 decision credit")
+        outcome = "RESIDUAL_OPPORTUNITY_ASSESSMENT_REQUIRED" if "compressed" in prior["decision"] else "PRIOR_F2_OPPORTUNITY_OUTCOME_REUSED"
+        required(row["inventory_outcome"] == outcome, "SO1 compressed followup / prior outcome")
+    residual = {row["source_id"] for row in rows if row["inventory_outcome"] == "RESIDUAL_OPPORTUNITY_ASSESSMENT_REQUIRED"}
+    packet_ids = []
+    for packet in inventory["proposed_SO2_packets"]:
+        required(len(packet["record_ids"]) == packet["residual_record_count"], "SO1 packet count")
+        required(all(by_id[sid]["proposed_packet"] == packet["packet"] for sid in packet["record_ids"]), "SO1 packet routing")
+        packet_ids.extend(packet["record_ids"])
+    required(len(packet_ids) == len(set(packet_ids)) == 3755 and set(packet_ids) == residual, "SO1 residual partition")
+    supporting = inventory["supporting_context_register"]
+    for context in supporting:
+        values = resolve(sources[context["file"]], context["pointer"])
+        required(digest(values) == context["content_sha256"], "SO1 supporting evidence hash")
+        required(all(target in by_id for target in context.get("aliases_to_primary", {}).values()), "SO1 shorthand alias")
+    required(len(supporting) == counts["supporting_arrays"] == 19 and sum(item["entries"] for item in supporting) == counts["supporting_entries_not_added_as_unique_findings"] == 206, "SO1 supporting register count")
+    for name, sha in protected["manual_workbook_sha256"].items():
+        required(hashlib.sha256((BASE / name).read_bytes()).hexdigest() == sha, "SO1 M00/M01 preservation")
+    # SO1 freezes these values; later authorized integration may advance the master.
+    master = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
+    if master.get("currentEvidenceCheckpoint") == "AAS_O7_SAVED_VERIFIED":
+        for name, sha in protected["master_files_sha256"].items():
+            required(hashlib.sha256((BASE / name).read_bytes()).hexdigest() == sha, "SO1 master/workbook preservation")
+    print("PASS SO1: 4134 retained IDs; 32 F2 outcomes reused / 3 followups; 832 later-decision links; 3755 residual IDs in 10 packets; source grades, original G4 and M00/M01 preserved.")
+    print("LIMIT: record accountability is not semantic completeness, a new-row count or closure of original source holds.")
+
+
 def main() -> None:
     verify_recovery()
     if "--recovery-only" in sys.argv[1:]:
+        return
+    verify_sosa_so1()
+    if "--sosa-so1-only" in sys.argv[1:]:
         return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     with (BASE / (NAME + ".csv")).open(newline="", encoding="utf-8") as f:

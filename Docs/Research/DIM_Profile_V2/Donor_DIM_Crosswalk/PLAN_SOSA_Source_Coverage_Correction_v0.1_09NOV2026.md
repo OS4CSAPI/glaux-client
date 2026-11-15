@@ -1,6 +1,6 @@
 # SOSA existing-findings opportunity addendum
 
-15 November 2026, America/New_York, Profile Rewrite 46. **PROPOSED — execution approval pending.** The owner authorized documenting this addendum after discussing unequal assurance against an ISA-shaped starting point; this authorization does not start the assessment. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns current routing. Preserve the [exact pre-addendum plan](https://github.com/OS4CSAPI/glaux-client/blob/95523accf6d1687dd17dc781a0986ebcd5cb3aad/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md); its text remains verbatim below.
+15 November 2026, America/New_York, Profile Rewrite 46. **APPROVED — SO-1 authorized by the subsequent owner Proceed.** Approval followed publication of the proposal at `f33d4b1c15717b3c399f28a878ac9f309f53d73a`. SO-1 establishes the residual scope and estimate; SO-2 waits for owner review of that result. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns current routing. Preserve the [exact pre-addendum plan](https://github.com/OS4CSAPI/glaux-client/blob/95523accf6d1687dd17dc781a0986ebcd5cb3aad/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md); its text remains verbatim below.
 
 ## Purpose and evidence
 
@@ -43,7 +43,7 @@ Completion means every finding in the frozen scope has an evidenced outcome, wit
 
 ## Preserved earlier plan and checkpoint history
 
-The following pre-addendum text is retained verbatim. Its historical CURRENT/NEXT banners do not govern this proposal; use the current PITON and the addendum above.
+The following pre-addendum text is retained verbatim. Its historical CURRENT/NEXT banners do not govern this addendum; use the current PITON and the addendum above.
 
 # CURRENT — F3-04D complete; SOSA classification exceptions closed, AAS classification next (14 November 2026)
 
