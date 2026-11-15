@@ -4,19 +4,19 @@ Updated 15 November 2026, America/New_York, Profile Rewrite 45. This file owns c
 
 ## Verified checkpoint
 
-Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Pre-O5 published checkpoint: [c4098390dda77216c2f8d0df3feea0cbf991026b](https://github.com/OS4CSAPI/glaux-client/commit/c4098390dda77216c2f8d0df3feea0cbf991026b). F3 is owner-accepted; O1–O4 are delivered. Latest owner Proceed authorizes **O5 only**, stopping before O6. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
+Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Published O5 research checkpoint: [74efe7eb13680dd070909c37bfdca01ef133e59b](https://github.com/OS4CSAPI/glaux-client/commit/74efe7eb13680dd070909c37bfdca01ef133e59b), tree `ac950ffd05adb66599e464b477c1a4bf260940c4`. Later metadata-only publication records observed checks. F3 is owner-accepted; O1–O5 are delivered. Latest owner Proceed authorized **O5 only**, now complete; stop before O6. Asset Administration Shell (AAS) remains active, bounded PARTIAL.
 
-O5 source decisions and saved workbook are complete locally. Publication/readback and applicable workflow checks are PENDING. Do not treat local completion as delivery; the ledger will record observed publication results.
+O5 source decisions, canonical mirrors and the saved workbook are published with zero comparison lag. Remote readback and both applicable workflow jobs passed. O6 has not started.
 
 ## Interrupted work
 
-Pending O5 delivery is on local branch `codex/aas-o5`, based on `c4098390`. Preserve its canonical master, AAS ledger, both CSV/readable mirrors, same workbook, AAS07 report, existing publisher/checker, AAS plan and PITON. Finish delivery before starting O6; do not redo the source review after a chat interruption.
+No pending O5 research or workbook changes. Local `codex/aas-o5` commit `3312f3a` has the same verified research tree as the published checkpoint; it is not additional unpublished research. A subsequent handoff-only change records delivery. Do not repeat the completed O5 source review.
 
 All 53 AAS07 findings were dispositioned, including 11 historically uncited records. New candidates: client-suggested operation timeout (common), exchange-package identity/record association (specialized). Three existing AAS comparisons now distinguish execution/business outcomes and include submodel lookup/history. Existing classifications stay intact. A stale `S06-R020.display_row` was corrected from 101 to its actual saved-grid row 96; neighboring values were preserved.
 
 ## Active scope and evidence
 
-[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O5 delivery controls, then O6-1 only on separate Proceed. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains owner gates. O6 is split by original corpus: AAS08 companions first, AAS09 industrial templates separately.
+[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O6-1 only on separate Proceed, using the original-source and same-workbook controls. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains owner gates. O6 is split by original corpus: AAS08 companions first, AAS09 industrial templates separately.
 
 From `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json`, extract `AAS_O5_native_review.records`, `.targeted_original_contacts`, `.supplemental_checks`, `.qualified_existing_rows`, `.holds_retained` and `.publication`. Original AAS07 records remain unchanged. [Existing AAS07 report](AAS07_Original_Part2_Submodel_ConceptDescription_AASX_14NOV2026.md) explains the result. Master keys `AAS_O5_native_review`, `currentEvidenceCheckpoint`, `workbookSnapshot` and `nextOwnerAction` identify the same snapshot.
 
@@ -36,11 +36,11 @@ All earlier AAS identity/event/qualifier, UTC, representation, external/figure, 
 
 ## Verification and publication
 
-Local saved-cell/fill, mirror, original source-record, planned-change-only and package preservation checks passed. Ten targeted saved-workbook views passed visual review using ArtifactTool import/render without rewriting; publication checks remain pending. Existing checker retains recovery guard and O5 dispatch; no new workflow. Native Excel reopening is separate. The prior broad artifact check found five unrelated register/link errors; report any rerun accurately.
+Local saved-cell/fill, mirror, original source-record, planned-change-only and package preservation checks passed. Ten targeted saved-workbook views passed visual review using ArtifactTool import/render without rewriting. Published tree equality and all 6,000 remote saved values passed. GitHub workflow runs `43727208768` (master) and `43727208726` (same-workbook publication/readback) succeeded. Existing checker retains recovery guard and O5 dispatch; no new workflow. Native Excel reopening is separate. The prior broad artifact check found five unrelated register/link errors; report any rerun accurately.
 
 ## Next action and stop
 
-Finish O5 publication/readback, then **STOP**. Next separate owner Proceed: **O6-1 only**, reviewing 55 AAS08 companion findings for IEC 61360 data specification, measurement units, security and AASX packaging. Stop before O6-2's 37 AAS09 template findings. No donor transition, model adoption, client work or deployment. O6 has not started. Approximately 3–4 substantive steps remain through O7, governed by source complexity.
+O5 delivered; **STOP**. Next separate owner Proceed: **O6-1 only**, reviewing 55 AAS08 companion findings for IEC 61360 data specification, measurement units, security and AASX packaging. Stop before O6-2's 37 AAS09 template findings. No donor transition, model adoption, client work or deployment. O6 has not started. Approximately 3–4 substantive steps remain through O7, governed by source complexity.
 
 ## History
 
