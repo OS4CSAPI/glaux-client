@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "b19007675196e8ba6f399c643597e431b768303b8ecbf90a61ec02a2cf2983f4",
+  "currentWorkbookSha256": "16fe6e3050a4048c9953922a85712b68bb6aeff5ec185011e76ad712c7768043",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -1832,7 +1832,7 @@
       "",
       "",
       "",
-      "[COMMON CANDIDATE] PARTIAL/RELATED: The API defines acceptance, execution state and result retrieval. Promote to a common qualified acknowledgement/outcome candidate: 202 can precede failure, and 200 with executionState Failed is a failed business operation. Hardware effect is not proved by transport success. [Sources: AAS07-N008, AAS07-N010, AAS07-N011, AAS07-N012; F3-05-S06-R020]",
+      "[COMMON CANDIDATE] PARTIAL/RELATED: The API separates receipt, execution state and reported business success. A 202 response can precede failure; HTTP 200 with executionState Failed reports invocation failure. Optional success separately describes the business operation. Neither transport success nor a reported result proves physical effect. Preserve the executionState prose/schema requiredness conflict. [Sources: AAS07-N008, AAS07-N010, AAS07-N011, AAS07-N012, AAS07-N052; O5-S06-R020]",
       "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
       "[COMMON CANDIDATE] PARTIAL: Response reports ongoing or final request disposition and result values. Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No. [ISA21:S06-R020; F3-02]",
       "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -6782,7 +6782,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Discovery associates asset identifier pairs with shell IDs; a registry associates shell IDs with descriptors and service endpoints. Preserve which record and asset each association concerns. Shell endpoints are optional; submodel descriptors can supply endpoints. The AAS record governs descriptor disagreement. These are navigation declarations, not physical connections, live reachability or installed-equipment identity. [Sources: AAS06-N002, AAS06-N003, AAS06-N006, AAS06-N008, AAS06-N009, AAS06-N011, AAS06-N013, AAS06-N018, AAS06-N019, AAS06-N031, AAS06-N033, AAS06-N037; O4-RECORD-LOOKUP]",
+      "[COMMON CANDIDATE] PARTIAL/RELATED: Discovery maps asset identifiers to shell IDs. Shell and submodel registries associate record IDs with descriptors/endpoints. Shell endpoints are optional; SubmodelDescriptor requires id and at least one endpoint, with optional semantic references. The shell record governs disagreement with its descriptor. Registration describes service locations, not physical connectivity, liveness or installed equipment. [Sources: AAS06-N002, AAS06-N003, AAS07-N019, AAS07-N020, AAS07-N021, AAS07-N023; O5-AAS-O4-RECORD-LOOKUP]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -6800,7 +6800,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A repository can return the shell record valid at a requested time, or its latest version when no date is supplied. This history is explicitly separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listing is experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established. [Sources: AAS06-N012, AAS06-N014, AAS06-N023, AAS06-N035; O4-RECORD-HISTORY]",
+      "[COMMON CANDIDATE] PARTIAL/RELATED: A repository can return a shell or submodel record valid at a requested time, or its latest version when no date is supplied. This history is separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listings for shells, submodels and concept descriptions are experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established. [Sources: AAS06-N012, AAS06-N014, AAS07-N025, AAS07-N026, AAS07-N032, AAS07-N039, AAS07-N044; O5-AAS-O4-RECORD-HISTORY]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -6810,6 +6810,60 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Digital-record state at a specified time — NOT ADOPTED"
+    ],
+    [
+      "AAS O5 — invocation timing and exchange-package candidates (not adopted)",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An invocation can carry the duration within which the client suggests execution should finish. The server decides whether to use that suggestion for its effective timeout. Preserve it separately from message-data expiry, execution status and a guaranteed completion deadline. Asynchronous request schemas require clientTimeoutDuration; ordinary requests make it optional. The interface overview says ms while detailed definitions/schema use duration; no unit conversion is assumed. [Sources: AAS07-N007, AAS07-N009, AAS07-N011, AAS07-N053; O5-OPERATION-TIMEOUT]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Client-suggested operation timeout — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050; O5-PACKAGE-ASSOCIATION]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Exchange-package identity and associated digital records — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -6830,7 +6884,8 @@
     350,
     354,
     363,
-    369
+    369,
+    372
   ],
   "rows": [
     {
@@ -24261,7 +24316,7 @@
     {
       "row_id": "S06-R020",
       "label": "Command acknowledgement / reported outcome",
-      "display_row": 101,
+      "display_row": 96,
       "status": "Existing DIM proposal",
       "definition": "ACCEPTED is not COMPLETED, and COMPLETED is not measured physical effect.",
       "source_review_status": "ISA21_SOURCE_FIRST_CORRESPONDENCE_AUDITED",
@@ -24280,7 +24335,7 @@
         "",
         "",
         "",
-        "[COMMON CANDIDATE] PARTIAL/RELATED: The API defines acceptance, execution state and result retrieval. Promote to a common qualified acknowledgement/outcome candidate: 202 can precede failure, and 200 with executionState Failed is a failed business operation. Hardware effect is not proved by transport success. [Sources: AAS07-N008, AAS07-N010, AAS07-N011, AAS07-N012; F3-05-S06-R020]",
+        "[COMMON CANDIDATE] PARTIAL/RELATED: The API separates receipt, execution state and reported business success. A 202 response can precede failure; HTTP 200 with executionState Failed reports invocation failure. Optional success separately describes the business operation. Neither transport success nor a reported result proves physical effect. Preserve the executionState prose/schema requiredness conflict. [Sources: AAS07-N008, AAS07-N010, AAS07-N011, AAS07-N012, AAS07-N052; O5-S06-R020]",
         "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
         "[COMMON CANDIDATE] PARTIAL: Response reports ongoing or final request disposition and result values. Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No. [ISA21:S06-R020; F3-02]",
         "RELATED but not equivalent: C239 §7 Task Health and module request/response/error types can report task/command dispositions, but do not establish one ISA/CSAPI acknowledgement/result lifecycle or independently verify physical action. Some functions remain Future or reference-only. [SOSA-D/G2-2/G2-4B/G2-7S/T]",
@@ -24684,6 +24739,20 @@
           "AAS07-N012"
         ],
         "rationale": "The API defines acceptance, execution state and result retrieval. Promote to a common qualified acknowledgement/outcome candidate: 202 can precede failure, and 200 with executionState Failed is a failed business operation. Hardware effect is not proved by transport success."
+      },
+      "AAS_O5_source_correspondence": {
+        "source_ids": [
+          "AAS07-N008",
+          "AAS07-N010",
+          "AAS07-N011",
+          "AAS07-N012",
+          "AAS07-N052"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "candidate_status": "COMMON_CANDIDATE",
+        "classification_changed": false,
+        "reason": "Extend existing record scope or sharpen execution/business distinction from original Part 2 evidence; no new class or adoption.",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -57071,7 +57140,7 @@
       "label": "Candidate — Digital-record discovery and service-location association",
       "display_row": 371,
       "status": "AAS O4 provisional information-need candidate; NOT ADOPTED",
-      "definition": "Discovery associates asset identifier pairs with shell IDs; a registry associates shell IDs with descriptors and service endpoints. Preserve which record and asset each association concerns. Shell endpoints are optional; submodel descriptors can supply endpoints. The AAS record governs descriptor disagreement. These are navigation declarations, not physical connections, live reachability or installed-equipment identity.",
+      "definition": "Discovery maps asset identifiers to shell IDs. Shell and submodel registries associate record IDs with descriptors/endpoints. Shell endpoints are optional; SubmodelDescriptor requires id and at least one endpoint, with optional semantic references. The shell record governs disagreement with its descriptor. Registration describes service locations, not physical connectivity, liveness or installed equipment.",
       "source_entry_ids": [
         "AAS06-N002",
         "AAS06-N003",
@@ -57110,7 +57179,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Discovery associates asset identifier pairs with shell IDs; a registry associates shell IDs with descriptors and service endpoints. Preserve which record and asset each association concerns. Shell endpoints are optional; submodel descriptors can supply endpoints. The AAS record governs descriptor disagreement. These are navigation declarations, not physical connections, live reachability or installed-equipment identity. [Sources: AAS06-N002, AAS06-N003, AAS06-N006, AAS06-N008, AAS06-N009, AAS06-N011, AAS06-N013, AAS06-N018, AAS06-N019, AAS06-N031, AAS06-N033, AAS06-N037; O4-RECORD-LOOKUP]",
+        "[COMMON CANDIDATE] PARTIAL/RELATED: Discovery maps asset identifiers to shell IDs. Shell and submodel registries associate record IDs with descriptors/endpoints. Shell endpoints are optional; SubmodelDescriptor requires id and at least one endpoint, with optional semantic references. The shell record governs disagreement with its descriptor. Registration describes service locations, not physical connectivity, liveness or installed equipment. [Sources: AAS06-N002, AAS06-N003, AAS07-N019, AAS07-N020, AAS07-N021, AAS07-N023; O5-AAS-O4-RECORD-LOOKUP]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -57284,6 +57353,19 @@
         ],
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false
+      },
+      "AAS_O5_source_correspondence": {
+        "source_ids": [
+          "AAS07-N019",
+          "AAS07-N020",
+          "AAS07-N021",
+          "AAS07-N023"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "candidate_status": "COMMON_CANDIDATE",
+        "classification_changed": false,
+        "reason": "Extend existing record scope or sharpen execution/business distinction from original Part 2 evidence; no new class or adoption.",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -57291,7 +57373,7 @@
       "label": "Candidate — Digital-record state at a specified time",
       "display_row": 372,
       "status": "AAS O4 provisional information-need candidate; NOT ADOPTED",
-      "definition": "A repository can return the shell record valid at a requested time, or its latest version when no date is supplied. This history is explicitly separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listing is experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established.",
+      "definition": "A repository can return a shell or submodel record valid at a requested time, or its latest version when no date is supplied. This history is separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listings for shells, submodels and concept descriptions are experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established.",
       "source_entry_ids": [
         "AAS06-N012",
         "AAS06-N014",
@@ -57314,7 +57396,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A repository can return the shell record valid at a requested time, or its latest version when no date is supplied. This history is explicitly separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listing is experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established. [Sources: AAS06-N012, AAS06-N014, AAS06-N023, AAS06-N035; O4-RECORD-HISTORY]",
+        "[COMMON CANDIDATE] PARTIAL/RELATED: A repository can return a shell or submodel record valid at a requested time, or its latest version when no date is supplied. This history is separate from AdministrativeInformation.version; what change creates a version is unspecified. Recent-change listings for shells, submodels and concept descriptions are experimental. No equipment operating-state history, applied configuration, maintenance event or complete retention history is established. [Sources: AAS06-N012, AAS06-N014, AAS07-N025, AAS07-N026, AAS07-N032, AAS07-N039, AAS07-N044; O5-AAS-O4-RECORD-HISTORY]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -57388,6 +57470,264 @@
             ],
             "source_standing": "OPENAPI_OPERATION_CONTRACT",
             "edition": "IDTA-01002 Part 2 APIs v3.2.0 (Release 26-01, July 2026)"
+          }
+        ],
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      },
+      "AAS_O5_source_correspondence": {
+        "source_ids": [
+          "AAS07-N025",
+          "AAS07-N026",
+          "AAS07-N032",
+          "AAS07-N039",
+          "AAS07-N044"
+        ],
+        "relation": "PARTIAL/RELATED",
+        "candidate_status": "COMMON_CANDIDATE",
+        "classification_changed": false,
+        "reason": "Extend existing record scope or sharpen execution/business distinction from original Part 2 evidence; no new class or adoption.",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "AAS-O5-OPERATION-TIMEOUT",
+      "label": "Candidate — Client-suggested operation timeout",
+      "display_row": 374,
+      "status": "AAS O5 provisional information-need candidate; NOT ADOPTED",
+      "definition": "An invocation can carry the duration within which the client suggests execution should finish. The server decides whether to use that suggestion for its effective timeout. Preserve it separately from message-data expiry, execution status and a guaranteed completion deadline. Asynchronous request schemas require clientTimeoutDuration; ordinary requests make it optional. The interface overview says ms while detailed definitions/schema use duration; no unit conversion is assumed.",
+      "source_entry_ids": [
+        "AAS07-N007",
+        "AAS07-N009",
+        "AAS07-N011",
+        "AAS07-N053"
+      ],
+      "evidence_records": [
+        "AAS07-N007",
+        "AAS07-N009",
+        "AAS07-N011",
+        "AAS07-N053"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "AAS_O5_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An invocation can carry the duration within which the client suggests execution should finish. The server decides whether to use that suggestion for its effective timeout. Preserve it separately from message-data expiry, execution status and a guaranteed completion deadline. Asynchronous request schemas require clientTimeoutDuration; ordinary requests make it optional. The interface overview says ms while detailed definitions/schema use duration; no unit conversion is assumed. [Sources: AAS07-N007, AAS07-N009, AAS07-N011, AAS07-N053; O5-OPERATION-TIMEOUT]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Client-suggested operation timeout — NOT ADOPTED"
+      ],
+      "AAS_O5_source_correspondence": {
+        "donor": "IDTA-01002 Part 2 v3.2.0",
+        "source_ids": [
+          "AAS07-N007",
+          "AAS07-N009",
+          "AAS07-N011",
+          "AAS07-N053"
+        ],
+        "closest_prior_rows": [
+          "ISA-R-EXECUTION",
+          "ISA-T-VALIDITY",
+          "ISA-T-REQUEST-REFERENCE"
+        ],
+        "relation": "RELATED_BUT_DISTINCT",
+        "reason_for_separate_candidate": "Existing execution and request-correlation rows describe progress and identity, while message validity concerns data expiry. None explicitly carries the client-suggested execution time budget. Retain a common optional information need, not a server-enforced deadline or universal Profile requirement.",
+        "native_meaning": "An invocation can carry the duration within which the client suggests execution should finish. The server decides whether to use that suggestion for its effective timeout. Preserve it separately from message-data expiry, execution status and a guaranteed completion deadline. Asynchronous request schemas require clientTimeoutDuration; ordinary requests make it optional. The interface overview says ms while detailed definitions/schema use duration; no unit conversion is assumed.",
+        "candidate_status": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "cell": "G374",
+        "original_source_locators": [
+          {
+            "source_id": "AAS07-N007",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L579-L597",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              579,
+              597
+            ],
+            "source_standing": "OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N009",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L802-L839",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+            "source_lines": [
+              802,
+              839
+            ],
+            "source_standing": "PAYLOAD_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N011",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc#L888-L919",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces-payload.adoc",
+            "source_lines": [
+              888,
+              919
+            ],
+            "source_standing": "ENUMERATION_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N053",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/Part2-API-Schemas/openapi.yaml#L915-L970",
+            "source_file": "Part2-API-Schemas/openapi.yaml",
+            "source_lines": [
+              915,
+              970
+            ],
+            "source_standing": "SCHEMA_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          }
+        ],
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false
+      }
+    },
+    {
+      "row_id": "AAS-O5-PACKAGE-ASSOCIATION",
+      "label": "Candidate — Exchange-package identity and associated digital records",
+      "display_row": 375,
+      "status": "AAS O5 provisional information-need candidate; NOT ADOPTED",
+      "definition": "An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified.",
+      "source_entry_ids": [
+        "AAS07-N013",
+        "AAS07-N014",
+        "AAS07-N015",
+        "AAS07-N016",
+        "AAS07-N049",
+        "AAS07-N050"
+      ],
+      "evidence_records": [
+        "AAS07-N013",
+        "AAS07-N014",
+        "AAS07-N015",
+        "AAS07-N016",
+        "AAS07-N049",
+        "AAS07-N050"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_AAS_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "AAS_O5_TARGETED_PINNED_ORIGINAL_TEXT_READ",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified. [Sources: AAS07-N013, AAS07-N014, AAS07-N015, AAS07-N016, AAS07-N049, AAS07-N050; O5-PACKAGE-ASSOCIATION]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Exchange-package identity and associated digital records — NOT ADOPTED"
+      ],
+      "AAS_O5_source_correspondence": {
+        "donor": "IDTA-01002 Part 2 v3.2.0",
+        "source_ids": [
+          "AAS07-N013",
+          "AAS07-N014",
+          "AAS07-N015",
+          "AAS07-N016",
+          "AAS07-N049",
+          "AAS07-N050"
+        ],
+        "closest_prior_rows": [
+          "AAS-O2-SUPPORTING-CONTENT",
+          "AAS-O2-RECORD-ID",
+          "ISA-C-207"
+        ],
+        "relation": "RELATED_BUT_DISTINCT",
+        "reason_for_separate_candidate": "A supporting file row does not identify a managed exchange package or its declared record associations. The existing history-ZIP row correctly retains only related native packaging evidence. Add an optional specialized package-context candidate without adopting AASX packaging or duplicating the four-case equipment identity.",
+        "native_meaning": "An AASX file-server package has its own packageId, filename/bytes and associated shell IDs. A server may store the package with supplied IDs without parsing or instantiating its contents. Preserve package identity and its declared record association separately from a supporting file locator, record identity and a history-query archive. Association is not verified package membership, successful import, applied configuration or equipment state. Package-ID scope wording remains qualified.",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "cell": "G375",
+        "original_source_locators": [
+          {
+            "source_id": "AAS07-N013",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L684-L719",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              684,
+              719
+            ],
+            "source_standing": "INTERFACE_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N014",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L721-L738",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              721,
+              738
+            ],
+            "source_standing": "OPERATION_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N015",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L739-L765",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              739,
+              765
+            ],
+            "source_standing": "NOTE_AND_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N016",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc#L767-L809",
+            "source_file": "documentation/IDTA-01002-3/modules/ROOT/pages/specification/interfaces.adoc",
+            "source_lines": [
+              767,
+              809
+            ],
+            "source_standing": "NOTE_AND_DEFINITION",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N049",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AasxFileServerServiceSpecification/V3.2_SSP-001.yaml#L57-L87",
+            "source_file": "AasxFileServerServiceSpecification/V3.2_SSP-001.yaml",
+            "source_lines": [
+              57,
+              87
+            ],
+            "source_standing": "OPENAPI_CONTRACT",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
+          },
+          {
+            "source_id": "AAS07-N050",
+            "source_url": "https://github.com/admin-shell-io/aas-specs-api/blob/f136ba1465e4c6b5b25444e0609d4de8f7429044/AasxFileServerServiceSpecification/V3.2_SSP-002.yaml#L20-L63",
+            "source_file": "AasxFileServerServiceSpecification/V3.2_SSP-002.yaml",
+            "source_lines": [
+              20,
+              63
+            ],
+            "source_standing": "OPENAPI_CONTRACT",
+            "edition": "IDTA-01002 Part2 v3.2.0 Release 26-01"
           }
         ],
         "DIM_Profile_adopted": false,
@@ -60283,7 +60623,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 352,
+    "informationRows": 354,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -60325,9 +60665,10 @@
     "AAS03_qualified_cell_changes": 19,
     "AAS_populated_cells": 23,
     "AAS_O2_new_candidate_rows": 8,
-    "AAS_current_source_bearing_comparisons": 79,
+    "AAS_current_source_bearing_comparisons": 81,
     "AAS_O3_new_candidate_rows": 5,
-    "AAS_O4_new_candidate_rows": 2
+    "AAS_O4_new_candidate_rows": 2,
+    "AAS_O5_new_candidate_rows": 2
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -60371,16 +60712,16 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "AAS_O4_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "AAS_O5_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "AAS_O4_SAVED_VERIFIED",
-    "sha256": "b19007675196e8ba6f399c643597e431b768303b8ecbf90a61ec02a2cf2983f4",
+    "checkpoint": "AAS_O5_SAVED_VERIFIED",
+    "sha256": "16fe6e3050a4048c9953922a85712b68bb6aeff5ec185011e76ad712c7768043",
     "information_rows": 337,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 372x16 grid and current O4 owner routing",
-    "textCheckpoint": "AAS_O4_NATIVE_CANDIDATES",
+    "lag": "ZERO: 375x16 grid and current O5 owner routing",
+    "textCheckpoint": "AAS_O5_NATIVE_CANDIDATES",
     "textInformationRows": 337,
     "textPrimaryReviewed": 480,
     "columns": 16,
@@ -60399,7 +60740,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O4_native_review/publication",
+    "validation_file": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O5_native_review/publication",
     "verifiedPublisherCommit": null,
     "verifiedPublisherAction": null,
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -63729,7 +64070,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "Await owner Proceed for AAS O5 only: review 53 AAS07 model, operation and auxiliary API findings against pinned originals, preserving command-result and physical-effect distinctions. Stop before O6; no donor transition or model adoption.",
+  "nextOwnerAction": "Await owner Proceed for O6-1 only: reconcile 55 AAS08 companion findings (IEC 61360 data specification, measurement units, security and AASX package) against their pinned originals. Stop before the 37 AAS09 template findings in O6-2; no donor transition or model adoption.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -88564,5 +88905,21 @@
     "status": "O4_COMPLETE__O5_PENDING_OWNER_PROCEED",
     "source_findings_dispositioned": 38,
     "one_next": "Await owner Proceed for AAS O5 only: review 53 AAS07 model, operation and auxiliary API findings against pinned originals, preserving command-result and physical-effect distinctions. Stop before O6; no donor transition or model adoption."
+  },
+  "AAS_O5_native_review": {
+    "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O5_native_review",
+    "preflight_head": "c4098390dda77216c2f8d0df3feea0cbf991026b",
+    "new_candidate_row_ids": [
+      "AAS-O5-OPERATION-TIMEOUT",
+      "AAS-O5-PACKAGE-ASSOCIATION"
+    ],
+    "qualified_existing_row_ids": [
+      "S06-R020",
+      "AAS-O4-RECORD-LOOKUP",
+      "AAS-O4-RECORD-HISTORY"
+    ],
+    "status": "O5_COMPLETE__O6_PENDING_OWNER_PROCEED",
+    "source_findings_dispositioned": 53,
+    "one_next": "Await owner Proceed for O6-1 only: reconcile 55 AAS08 companion findings (IEC 61360 data specification, measurement units, security and AASX package) against their pinned originals. Stop before the 37 AAS09 template findings in O6-2; no donor transition or model adoption."
   }
 }

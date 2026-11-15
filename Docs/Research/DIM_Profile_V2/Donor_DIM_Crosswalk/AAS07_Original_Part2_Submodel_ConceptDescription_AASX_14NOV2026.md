@@ -1,5 +1,28 @@
 # AAS07 — Original Part 2 Submodel, ConceptDescription, and AASX interfaces
 
+## O5 native-first reconciliation — 15 November 2026
+
+All 53 AAS07 findings, including 11 historically uncited records, were reconciled against selected original passages in 16 files at the retained Part 2 v3.2.0 pin. The cumulative ledger's `AAS_O5_native_review` contains every disposition, original-record hash, source-contact grade and before/after qualification. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns publication status and routing.
+
+| Result | Information preserved | Reason and boundary |
+|---|---|---|
+| New common candidate: client-suggested operation timeout | A requested execution time budget, with server discretion over its effective timeout. | Request identity/progress and data-validity expiry do not carry this meaning. It is not a guaranteed deadline. Preserve optional ordinary versus required asynchronous request duration and the overview-milliseconds/detail-duration discrepancy. |
+| New specialized candidate: exchange-package identity and record association | File-server package ID, filename/bytes and declared associated shell IDs. | A supporting file locator and a history-query ZIP do not express managed package identity/membership. Storage may occur without parsing or instantiation; associations need not be independently verified. No import, applied configuration or equipment-state claim. |
+| Three existing AAS comparisons qualified | Outcome separates receipt, execution state and optional business success; lookup/history include submodels. | Existing classification colors remain unchanged. These meanings refine existing rows instead of adding duplicate invocation-state, submodel-lookup or history fields. |
+
+The result is 354 information rows: two additions and three qualified AAS cells, with all 631 prior classifications/fills unchanged. Other prior rows, donors, cases and protected M00/M01 remain intact. The affected outcome row had stale display-row metadata (101); exact prior display and the saved grid locate it at row 96. The correction and all before/after values are recorded; the unrelated row 101 is preserved.
+
+Source contradictions remain visible: profile name/URI mismatches, async upload wording, result payload class, required executionState in prose versus no schema required-list, operation-result versus operation-results paths, Async/Asnyc semanticId spelling, PATCH create/update wording and package-ID scope. These are held source/binding questions, not reasons to claim physical control or erase useful qualified information. Experimental recent-change lists and undefined record-version triggers also remain.
+
+Model reads and PATCH operations are not sensor sampling or hardware changes. An HTTP 202 response can precede a later failure; HTTP 200 can deliver executionState Failed, while optional success reports the business operation separately. Status and result handling reuse existing execution/correlation candidates. Template-only restrictions, semantic lookup, selected query/signature APIs and representation rules receive explicit existing-row/native-only dispositions without turning each operation into a DIM field.
+
+The original 19-profile structural inventory is retained; selected table/body contact does not audit every operation, figure or external reference. AAS08's later Part 5 contact remains recognized. No case was newly verified and no model/Profile adoption occurred. Next separate owner Proceed is O6-1 companions only, stopping before O6-2 templates.
+
+## Historical AAS07 review
+
+The following original review and counts are preserved as historical evidence. Use the PITON for current totals and routing.
+
+
 14 November 2026 · Branch `research/dim-profile-v2` · Preflight `dde085ecffa47c6dbd833b77ca3983d81036b2e6` · Industrial Digital Twin Association (IDTA) Release 26-01, Part2 APIs 3.2.0, [original pinned source](https://github.com/admin-shell-io/aas-specs-api/tree/f136ba1465e4c6b5b25444e0609d4de8f7429044).
 
 **One owner-authorized source-first AAS07 step.** This is a bounded audit of relevant native meanings, selected original API clauses and the remaining five service families, not a normative all-operation, runtime conformance or Domain Information Model (DIM)/Connected Systems API (CSAPI) Profile approval.

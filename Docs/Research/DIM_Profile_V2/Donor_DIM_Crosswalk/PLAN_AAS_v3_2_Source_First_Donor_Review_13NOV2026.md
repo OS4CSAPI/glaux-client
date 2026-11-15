@@ -33,6 +33,8 @@ The retained 310 overlapping findings comprise 42+33+29+23+38+53+55+37 across AA
 | O6 | Reconcile 55 AAS08 companion and 37 AAS09 template findings. Test distinct information opportunities, semantics/units, security, package behavior and reference-designation aspects; retain mixed editions and example/future limits. | Before O7 |
 | O7 | Reconcile all 310 retained findings, previously uncited records, new candidates and actual remaining corpus. Verify one master and same workbook; explain why each new information need was added or not. | Owner disposition; no donor transition |
 
+O6 delivery is bounded by original corpus: O6-1 reconciles the 55 AAS08 companion findings; O6-2 separately reconciles the 37 AAS09 industrial-template findings. Additional splitting requires actual source complexity, not a prompt quota. Each stops at its named boundary.
+
 ### Interrupted delivery
 
 Consult the PITON for the exact local work, published checkpoint and workbook difference. Finish missing delivery before the next stage. Preserve reviewed data and dispositions while retaining the compact protocol and current routing; do not replay superseded status documents. Saved-file success is not remote publication, corpus completeness or model adoption.
