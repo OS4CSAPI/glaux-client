@@ -76713,8 +76713,34 @@
         "observed": "Text readable, no clipping in inspected ranges; three blue and one amber candidate; merged topic divider and current totals readable.",
         "native_Excel_reopen": "UNVERIFIED"
       },
-      "remote_publication": "PENDING",
-      "local_checks": "PASS: all 6144 saved grid values, four new fills, unchanged prior classifications, two CSV/two readable mirrors, 26 sheets/21 untouched worksheet parts, source-record dispositions and M00/M01; recovery guard passed."
+      "remote_publication": "PASS",
+      "local_checks": "PASS: all 6144 saved grid values, four new fills, unchanged prior classifications, two CSV/two readable mirrors, 26 sheets/21 untouched worksheet parts, source-record dispositions and M00/M01; recovery guard passed.",
+      "research_commit": "c9d28660f7cd65b42c2aa62e8a9dbee4ea784921",
+      "research_tree": "9f703a3e027fde5385ae199c08e98d11f66c1cdb",
+      "local_research_commit": "bad586a744ec451c1e9d3963cd412c5d951f753e",
+      "remote_verification": {
+        "status": "PASS",
+        "method": "Fresh git fetch and full tree equality; actual remote workbook bytes loaded and all 6144 grid values compared to actual remote JSON",
+        "workbook_sha256": "98b0379cf6e407065a84df9b3b7537388f4df40fbfe07619ca0be98daf1f64a3",
+        "grid_values": 6144
+      },
+      "workflow_checks": [
+        {
+          "run_id": 43731010466,
+          "name": "Verify current source-backed DIM donor crosswalk master",
+          "head_sha": "c9d28660f7cd65b42c2aa62e8a9dbee4ea784921",
+          "conclusion": "success",
+          "required_steps": "Verify recovery and affected master evidence: success"
+        },
+        {
+          "run_id": 43731010488,
+          "name": "Publish source-qualified SAME canonical 26-sheet donor Excel checkpoint",
+          "head_sha": "c9d28660f7cd65b42c2aa62e8a9dbee4ea784921",
+          "conclusion": "success",
+          "required_steps": "Compile/publish, coherent formats and actual remote confirmation: success"
+        }
+      ],
+      "handoff_note": "Subsequent metadata-only handoff records observed publication checks. No extra source review, workbook change, closure or O7 execution."
     }
   }
 }
