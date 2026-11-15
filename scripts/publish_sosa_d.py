@@ -7360,10 +7360,149 @@ def verify_aas_o6_2():
     print('LIMIT: AAS bounded PARTIAL; source conflicts and Excel clean reopen hold retained. Next O7 only; stop for owner disposition.')
 
 
+AAS_O7_BASE='8dcaf51fbcf5b29c1d66897a7fbf78aab2621aa4'
+AAS_O7_STAGES=('AAS_O2_native_review','AAS_O3_native_review','AAS_O4_native_review','AAS_O5_native_review','AAS_O6_1_native_review','AAS_O6_2_native_review')
+
+def publish_aas_o7():
+    """Publish reconciliation status in the existing package without changing its data sheets."""
+    m=load(MASTER);a=load(F3_PEER_FILES[-1]);o=a['AAS_O7_reconciliation']
+    need(m['currentEvidenceCheckpoint']=='AAS_O7_RECONCILIATION_PENDING_SAME_XLSX','O7 prepared reconciliation')
+    prior=(D/BOOK).read_bytes();need(prior==f3_baseline(BOOK,AAS_O7_BASE),'exact pre-O7 workbook')
+    banner='# CURRENT — AAS O7 reconciliation complete; owner disposition pending (15 November 2026)\n\nAll 310 retained findings and 53 historically uncited records have dispositions. O2–O6-2 added 24 provisional candidates (19 common, five specialized); no O7 information rows or classifications changed. Current: 361 information rows; 640 source-bearing comparisons (532 colored / 108 held). AAS: 88 comparisons, 76 colored / 12 held; 264 unassessed and nine case-held rows remain explicit. Recommendation: accept completed review as bounded PARTIAL with documented holds. Owner acceptance, model adoption and next donor remain undecided.\n\n'
+    for name in ('Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md'):
+        original=(D/name).read_text();(D/name).write_text(banner+original[original.index('<table>'):],encoding='utf-8')
+    guidance={'A1':'CURRENT 15 NOV 2026 — AAS O7 complete; owner decision pending','B1':'361 information rows in the same 26-sheet master. AAS bounded PARTIAL; owner closeout pending. F3 accepted; M00/M01 frozen. Earlier checkpoints are historical.','A17':'Completed review and recommendation','B17':'O7 accounts for all 310 retained findings, including 53 historically uncited records. O2–O6-2 added 24 provisional candidates (19 common, five specialized). No O7 data/classification changes. Recommend bounded-PARTIAL acceptance.','B19':'361 information rows; 640 source comparisons: 532 colored, 108 held. AAS: 57 common, 14 specialized, two native-only, three unresolved and 12 held. Other 273 AAS rows: 264 unassessed and nine case holds.','B21':'Original evidence/contact grades reused at unchanged pins. Part1 documentation: 14 full-text, six sampled, 28 without recorded substantive review; Part2: one full-text, ten sampled, 21 without. These are source-page files, not coverage percentages.','B22':'Remaining: partial schema/API/figure/companion/template/external-source coverage, conflicting source details and 13 unlocated example packages. Review completion is not full-corpus coverage, adoption, installed equipment or execution proof.','A23':'Owner decision and stop','B23':'STOP for owner disposition: accept completed AAS review as bounded PARTIAL with retained holds, or identify a specific question to reopen. No automatic donor transition, model/Profile adoption or implementation.','A28':'O7 saved-file and preservation checks','B28':'All 6,144 grid values, 361 rows and 640 classifications unchanged. Both CSV mirrors, both data worksheets, 23 untouched worksheet parts and M00/M01 preserved. Current guidance refreshed; native Excel clean reopen remains unverified.'}
+    legend={'A1':'CURRENT LEGEND — O7 complete; classification is not adoption','A23':'Current classification totals','B23':'532 colored / 108 held source comparisons overall. AAS: 57 common, 14 specialized, two native-only, three unresolved and 12 held. Historical counts remain historical.','B24':'361 information rows; 384 × 16 grid. 24 new candidates across O2–O6-2: 19 common, five specialized. No O7 rows or color changes.','A28':'Owner disposition pending','B28':'Recommend accepting completed AAS review as bounded PARTIAL with retained source limits. Acceptance does not adopt DIM/Profile fields, prove runtime behavior or authorize another donor.'}
+    with zipfile.ZipFile(io.BytesIO(prior)) as z:
+        paths=old.sheetpaths(z);replacements={}
+        for name,changes in [('Summary',guidance),('Validation',guidance),('Legend',legend)]:
+            rt=ET.fromstring(z.read(paths[name]));cells={c.get('r'):c for c in rt.iter(q('c'))}
+            for ref,value in changes.items():need(ref in cells,'existing O7 guidance cell '+ref);f3_put(cells[ref],value)
+            for rr in rt.find(q('sheetData')):
+                vals=[v for k,v in changes.items() if re.search(r'\d+$',k).group()==rr.get('r')]
+                if vals:rr.set('ht',str(min(409.5,max(float(rr.get('ht',15)),max(len(textwrap.wrap(v,95))*12+18 for v in vals)))));rr.set('customHeight','1')
+            replacements[paths[name]]=ET.tostring(rt,encoding='utf-8',xml_declaration=True)
+        buf=io.BytesIO()
+        with zipfile.ZipFile(buf,'w') as dst:
+            for info in z.infolist():dst.writestr(info,replacements.get(info.filename,z.read(info.filename)))
+    saved=buf.getvalue();(D/BOOK).write_bytes(saved);sha=digest(saved)
+    m['currentEvidenceCheckpoint']='AAS_O7_SAVED_VERIFIED';m['currentWorkbookSha256']=sha;m['workbookSnapshot'].update(checkpoint=m['currentEvidenceCheckpoint'],sha256=sha,currently_matches_readable_view=True,lag='ZERO: 384x16 grid unchanged; O7 owner-decision guidance current',textCheckpoint='AAS_O7_RECONCILIATION_COMPLETE',validation_file=F3_PEER_FILES[-1]+'#/AAS_O7_reconciliation/publication')
+    o['status']=m['AAS_O7_reconciliation']['status']='O7_COMPLETE__OWNER_DISPOSITION_PENDING'
+    o['publication'].update(workbook_sha256=sha,previous_workbook_sha256=digest(prior),affected_original_sheets=['Summary','Validation','Legend'],guidance_changes={'Summary':guidance,'Validation':guidance,'Legend':legend},unchanged_sheet_parts=23,grid_values=6144,information_rows=361,source_classifications=640,M00_M01_preserved=True,M02_created=False,actual_Microsoft_Excel_clean_reopen='UNVERIFIED',visual_review='PENDING',remote_publication='PENDING')
+    a['master_state_current'].update(checkpoint=m['currentEvidenceCheckpoint'],comparison_lag=0,workbook_metadata_lag='ZERO: O7 reconciliation complete; owner decision pending')
+    save(MASTER,m);save(F3_PEER_FILES[-1],a);verify_aas_o7()
+
+
+def verify_aas_o7():
+    """Validate accountable reconciliation and unchanged data, without replaying source research."""
+    import copy
+    from collections import Counter,defaultdict
+    from html.parser import HTMLParser
+    m=load(MASTER);a=load(F3_PEER_FILES[-1]);base=json.loads(f3_baseline(MASTER,AAS_O7_BASE));ab=json.loads(f3_baseline(F3_PEER_FILES[-1],AAS_O7_BASE));o=a['AAS_O7_reconciliation'];acc=o['accountability'];cr=o['candidate_reconciliation']
+    need(m['currentEvidenceCheckpoint']=='AAS_O7_SAVED_VERIFIED','O7 checkpoint')
+    snap=m['workbookSnapshot']; current=o['publication'].get('snapshot_metadata_correction',{}).get('current',{})
+    need(all(snap.get(k)==v for k,v in current.items()) and current,'current snapshot correction recorded and consistent')
+    need(snap['information_rows']==snap['textInformationRows']==len(m['rows'])==m['counts']['informationRows'],'current snapshot information-row counts')
+    need(snap['text_grid_rows']==snap['saved_xlsx_grid_rows']==len(m['review_grid']),'current snapshot grid dimensions')
+    need(snap['source_compared_rows']==cr['AAS_source_bearing_comparisons'] and snap['explicit_unassessed_rows']==cr['all_other_rows'],'current AAS comparison counts')
+    need(snap['primary_reviewed']==snap['textPrimaryReviewed']==m['ISAEvidence']['currentPrimaryReviews'],'ISA source-review count retains its meaning')
+    allowed={'currentEvidenceCheckpoint','currentWorkbookSha256','workbookSnapshot','nextOwnerAction'}
+    for k,v in base.items():
+        if k not in allowed:need(m[k]==v,'unchanged master evidence '+k)
+    restored=copy.deepcopy(a);restored.pop('AAS_O7_reconciliation')
+    for k in ('status','one_next','master_state_current'):restored[k]=ab[k]
+    need(restored==ab,'all original findings, holds, coverage grades and owner decisions preserved')
+    native={x['source_id']:x for i in range(2,10) for x in a['AAS%02d'%i]['original_items']};byid=defaultdict(list);rowids={r['row_id'] for r in m['rows']}
+    for k in AAS_O7_STAGES:
+        for i,r in enumerate(a[k]['records']):
+            need(r['source_id'] in native,'known native finding')
+            need(r['original_record_sha256']==digest(json.dumps(native[r['source_id']],sort_keys=True,ensure_ascii=False).encode()),'retained original record hash '+r['source_id'])
+            need(set(r['row_ids'])<=rowids and r['rationale'] and r['relation'] and not r['DIM_Profile_adopted'],'complete bounded disposition')
+            byid[r['source_id']].append('#/'+k+'/records/'+str(i))
+    need(len(native)==len(byid)==310 and set(native)==set(byid),'all 310 original findings accounted for')
+    need(sum(map(len,byid.values()))==316 and sum(len(v)>1 for v in byid.values())==6,'six explicitly revisited findings, no source inflation')
+    need(acc['unique_findings_dispositioned']==310 and acc['recorded_dispositions']==316 and not acc['missing_ids'] and not acc['extra_ids'],'reported accountability')
+    for idx,k in enumerate(AAS_O7_STAGES):
+        st=acc['stage_index'][idx];need(st['stage']==k and st['source_ids']==[r['source_id'] for r in a[k]['records']] and st['record_count']==len(a[k]['records']),'stage routing index')
+    h53={r['source_id'] for r in a['AAS_O1_source_opportunities']['finding_records'] if r['historical_53']}
+    need(len(h53)==53 and set(acc['historical_53'])==h53 and all(acc['historical_53'][i]==byid[i][-1] for i in h53),'all 53 historical citation gaps dispositioned')
+    need({r['source_id'] for r in acc['workflow_followups_reconciled']}=={'AAS03-N029','AAS04-N003','AAS04-N004'},'three O5 routing followups reconciled')
+    allptr={v for vs in byid.values() for v in vs}
+    for f in acc['workflow_followups_reconciled']:need(f['prior_disposition'] in allptr and set(f['evidence_pointers'])<=allptr and f['rationale'],'followup evidence retained')
+    candidates=[r for r in m['rows'] if r['row_id'] in {i for k in AAS_O7_STAGES for i in a[k]['new_candidate_row_ids']}]
+    need(len(candidates)==24 and [r['row_id'] for r in candidates]==[r['row_id'] for r in cr['candidates']],'24 current candidates')
+    for r,c in zip(candidates,cr['candidates']):
+        key=c['master_pointer'].split('/')[-1];src=r[key]
+        need(c['classification']==src['candidate_status'] and c['reason_for_separate_candidate']==src['reason_for_separate_candidate'] and c['source_ids']==src['source_ids'] and not c['DIM_Profile_adopted'],'candidate rationale/classification preserved')
+    need(Counter(c['classification'] for c in cr['candidates'])=={'COMMON_CANDIDATE':19,'SPECIALIZED_CANDIDATE':5},'19 common and five specialized additions')
+    need(len(m['rows'])==361 and len(m['review_grid'])==384 and all(len(r)==16 for r in m['review_grid']),'361 rows / 384x16 grid')
+    counts=Counter(r['display'][6].split(']')[0][1:].replace(' ','_') for r in m['rows'] if r['display'][6].startswith('['))
+    need(counts==cr['current_AAS_classifications']=={'COMMON_CANDIDATE':57,'SPECIALIZED_CANDIDATE':14,'NATIVE_ONLY_EVIDENCE':2,'UNRESOLVED_CANDIDATE':3,'HELD':12},'88 explicit AAS comparisons')
+    need(sum(r['display'][6].startswith('Not assessed here') for r in m['rows'])==264 and sum(r['display'][6].startswith('CASE REVIEW HOLD') for r in m['rows'])==9,'273 explicit noncomparison states')
+    need(all(r['display'][i].strip() for r in m['rows'] for i in (6,7,8,9)),'no blank completed-donor cells')
+    corpus=o['corpus_reconciliation']
+    for part,docs in a['AAS10']['current_document_coverage'].items():
+        current=corpus['current_document_coverage'][part];need(len(current)==len(docs),'complete source-page inventory '+part)
+        for d,c in zip(docs,current):
+            contacts=[{'stage':k,'contact_index':i,'grade':v['grade']} for k in AAS_O7_STAGES for i,v in enumerate(a[k]['targeted_original_contacts']) if v.get('path')==d['path']]
+            grade='SELECTED_TEXT_OR_STRUCTURAL_SAMPLE' if contacts and d['grade']=='NO_SUBSTANTIVE_REVIEW_RECORDED' else d['grade']
+            need(c['source_id']==d['source_id'] and c['path']==d['path'] and c['additional_contacts']==contacts and c['current_grade']==grade,'source grade is not inflated')
+        need(dict(Counter(c['current_grade'] for c in current))==corpus['document_grade_counts'][part],'current document totals')
+    for stage,key in [('AAS08','companion_file_grades'),('AAS09','template_file_grades')]:need(dict(Counter(f['access_grade'] for f in a[stage]['source_file_coverage']))==corpus[key],'actual remaining file grades')
+    hr=o['hold_reconciliation'];need(len(hr['historical_records'])==76 and [h['hold_id'] for h in hr['historical_records']]==[h['hold_id'] for h in a['AAS10']['historical_hold_reconciliation']],'all historical holds accounted for')
+    need(hr['stage_hold_pointers']==['#/'+k+'/holds_retained' for k in AAS_O7_STAGES] and hr['stage_hold_group_statements']==34,'later source limits retained')
+    need(o['owner_recommendation']['owner_decision']==m['AAS_O7_reconciliation']['owner_decision']=='PENDING' and not o['owner_recommendation']['model_Profile_adopted'],'owner gate and no adoption')
+    for name in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
+        need((D/name).read_bytes()==f3_baseline(name,AAS_O7_BASE) and source_csv(name)==m['review_grid'],'unchanged CSV '+name)
+    md=(D/'Master_Donor_Concept_to_DIM_Crosswalk.md').read_text();need(md==(D/'ISA_Correction_Review_07NOV2026.md').read_text(),'both readable mirrors')
+    oldmd=f3_baseline('Master_Donor_Concept_to_DIM_Crosswalk.md',AAS_O7_BASE).decode();need(md[md.index('<table>'):]==oldmd[oldmd.index('<table>'):],'unchanged entire readable table')
+    saved=(D/BOOK).read_bytes();prior=f3_baseline(BOOK,AAS_O7_BASE);need(digest(saved)==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==o['publication']['workbook_sha256'],'saved workbook SHA-256')
+    with zipfile.ZipFile(io.BytesIO(saved)) as z,zipfile.ZipFile(io.BytesIO(prior)) as bz:
+        paths=old.sheetpaths(z);need(paths==old.sheetpaths(bz) and len(paths)==26 and z.namelist()==bz.namelist() and z.testzip() is None,'same valid 26-sheet package')
+        affected={paths[n] for n in ('Summary','Validation','Legend')}
+        for name in z.namelist():
+            if name not in affected:need(z.read(name)==bz.read(name),'unchanged data/style/package part '+name)
+            if name.endswith(('.xml','.rels')):ET.fromstring(z.read(name))
+        for name,changes in o['publication']['guidance_changes'].items():
+            actual=old.readcells(saved,name);before=old.readcells(prior,name)
+            need(actual==dict(before,**changes),'only planned guidance values changed '+name)
+        cells=old.readcells(saved,'Master Crosswalk')
+        for i,row in enumerate(m['review_grid'],1):
+            for j,v in enumerate(row,1):need(cells.get(addr(i,j),'')==v,'saved value '+addr(i,j))
+        styles=ET.fromstring(z.read('xl/styles.xml')); fills=list(styles.find(q('fills'))); xfs=list(styles.find(q('cellXfs')))
+        nodes={c.get('r'):c for c in ET.fromstring(z.read(paths['Master Crosswalk'])).iter(q('c'))}
+        palette={'FFD9EAF8','FFF9E6B8','FFE5E7EB','FFE9DEFA'}; colored=aas_colored=0
+        for row in m['rows']:
+            n=m['review_grid'].index(row['display'])+1
+            for col in 'GHIJ':
+                cell=nodes.get(col+str(n)); style=int(cell.get('s','0')) if cell is not None else 0
+                fg=fills[int(xfs[style].get('fillId','0'))].find('.//'+q('fgColor'))
+                marked=fg is not None and fg.get('rgb') in palette
+                colored+=marked; aas_colored+=marked and col=='G'
+        need(colored==snap['color_cell_count']==532 and aas_colored==snap['AAS_candidate_colors']==76,'current snapshot counts actual saved classification fills')
+        need(colored+snap['mixed_source_cells_uncolored']==o['publication']['source_classifications']==640 and aas_colored+snap['AAS_uncolored_source_holds']==cr['AAS_source_bearing_comparisons']==88,'current held/colored comparison totals')
+        # Cumulative preservation, independently of intervening stage declarations.
+        with zipfile.ZipFile(io.BytesIO(f3_baseline(BOOK,'1329bafed27858a967781b1f702eb48895dc443a'))) as fz:
+            fp=old.sheetpaths(fz);fr=ET.fromstring(fz.read(fp['Master Crosswalk']));nr=ET.fromstring(z.read(paths['Master Crosswalk']));nc={c.get('r'):c.get('s','0') for c in nr.iter(q('c'))}
+            need(all(nc.get(c.get('r'))==c.get('s','0') for c in fr.iter(q('c'))),'all accepted F3 cell classifications/styles retained cumulatively')
+    for name in ('M00_Master_Donor_Concept_to_DIM_Crosswalk_Pre_Classification_13NOV2026.xlsx','M01_Master_Donor_Concept_to_DIM_Crosswalk_Post_Source_Classification_13NOV2026.xlsx'):
+        rel='Manual_Workbook_Versions/'+name;need((D/rel).read_bytes()==f3_baseline(rel,AAS_O7_BASE),'immutable '+name)
+    need(not list((D/'Manual_Workbook_Versions').glob('M02*')),'no automatic M02')
+    need(a['one_next']==o['one_next']==m['nextOwnerAction']==m['AAS_O7_reconciliation']['one_next'],'single owner-decision boundary')
+    print('PASS O7: 310 findings / 316 recorded dispositions; all 53 historical citation gaps accounted for; 24 candidates (19 common, five specialized).')
+    print('PASS: unchanged 361 rows, all 6144 saved values, classifications, CSV/readable tables, both data sheets, 23 untouched sheets and M00/M01; original source grades/holds retained.')
+    print('LIMIT: bounded PARTIAL; owner disposition pending. No adoption, runtime proof or automatic donor transition.')
+
+
+
 if __name__=="__main__":
     checkpoint=load(MASTER).get("currentEvidenceCheckpoint","")
     approval=load("AAS01_Original_Source_Corpus_Coverage_13NOV2026.json").get("AAS02",{}).get("owner_layout_decision",{}).get("status")
-    if checkpoint=="AAS_O6_2_SOURCE_DECISIONS_PENDING_SAME_XLSX":
+    if checkpoint=="AAS_O7_RECONCILIATION_PENDING_SAME_XLSX":
+        publish_aas_o7()
+    elif checkpoint=="AAS_O7_SAVED_VERIFIED":
+        verify_aas_o7()
+    elif checkpoint=="AAS_O6_2_SOURCE_DECISIONS_PENDING_SAME_XLSX":
         publish_aas_o6_2()
     elif checkpoint=="AAS_O6_2_SAVED_VERIFIED":
         verify_aas_o6_2()

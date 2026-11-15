@@ -1,6 +1,6 @@
-# CURRENT — F3 accepted; AAS O6-2 industrial-template review complete (15 November 2026)
+# CURRENT — AAS O7 reconciliation complete; owner disposition pending (15 November 2026)
 
-All 37 AAS09 findings reconciled, reusing unchanged original contact with targeted text/table/native-field reads. Four candidates added (three common, one specialized); one existing relationship comparison qualified without reclassification. Current: 361 information rows; 640 source-bearing comparisons (532 colored / 108 held). All 636 prior classifications, unrelated cells and 26-sheet package preserved. Candidates are not adopted; AAS remains bounded PARTIAL and native Excel reopening pending. Next: separate Proceed for O7 reconciliation and owner-facing closeout proposal only.
+All 310 retained findings and 53 historically uncited records have dispositions. O2–O6-2 added 24 provisional candidates (19 common, five specialized); no O7 information rows or classifications changed. Current: 361 information rows; 640 source-bearing comparisons (532 colored / 108 held). AAS: 88 comparisons, 76 colored / 12 held; 264 unassessed and nine case-held rows remain explicit. Recommendation: accept completed review as bounded PARTIAL with documented holds. Owner acceptance, model adoption and next donor remain undecided.
 
 <table><thead><tr>
 <th colspan="4">SOURCE EXAMPLES · documentary / historical</th>
