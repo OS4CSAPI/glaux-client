@@ -4,19 +4,19 @@ Updated 15 November 2026, America/New_York, Profile Rewrite 46. This file owns c
 
 ## Verified checkpoint
 
-Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Pre-O7 published checkpoint: [8dcaf51fbcf5b29c1d66897a7fbf78aab2621aa4](https://github.com/OS4CSAPI/glaux-client/commit/8dcaf51fbcf5b29c1d66897a7fbf78aab2621aa4). F3 is owner-accepted; O1–O6-2 are delivered. Latest owner Proceed authorizes **O7 reconciliation and a closeout proposal only**. Asset Administration Shell (AAS) remains bounded PARTIAL; owner closeout is pending.
+Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`. Query live HEAD. Published O7 research checkpoint: [7a957a9589ebd49a9d47374aa3c3db1c54624df5](https://github.com/OS4CSAPI/glaux-client/commit/7a957a9589ebd49a9d47374aa3c3db1c54624df5), tree `e26fd8c9d2c45b21623f13e72dabe22fc16faa12`. Subsequent metadata-only publication records observed checks. F3 is owner-accepted; O1–O7 are delivered. Owner Proceed authorized **O7 reconciliation and closeout-proposal delivery only**, now complete. Asset Administration Shell (AAS) remains bounded PARTIAL; owner closeout is pending.
 
-O7 reconciliation and same-workbook guidance are complete locally. Visual review passed. Publication/readback and applicable workflow checks are PENDING. Local completion is not delivery.
+O7 reconciliation, same-workbook guidance and corrected current snapshot metadata are published. Saved-file, visual, remote readback and both applicable workflow checks passed. No owner acceptance is recorded.
 
 ## Interrupted work
 
-Pending O7 delivery is on `codex/aas-o7`, based on `8dcaf51f`; preserved interrupted commit `ec0f8e0` contains the substantive reconciliation. Preserve the canonical master, AAS ledger, both readable mirrors, same workbook, AAS10 report, existing publisher/checker and PITON. Both CSV mirrors and all research data remain unchanged. Recovery corrected stale current snapshot counts/routing; actual data/workbook bytes were already correct. The 480 ISA source-review count is preserved. Finish delivery before requesting owner disposition; do not repeat the completed source review.
+No pending O7 delivery. Local `codex/aas-o7` commit `f9784ae` matches the published research tree; it includes preserved interrupted commit `ec0f8e0` plus snapshot-metadata correction. Later local/publication changes record delivery only. Both CSV mirrors, comparison data and classifications remain unchanged. Do not repeat O1–O7 research. The 480 ISA source-review count retains its meaning.
 
 All 310 retained findings and 53 historical citation gaps have dispositions. The 316 stage records include six revisits. Three stale O5 routing notes now point to completed O5 evidence. The sequence added 24 candidates (19 common, five specialized); O7 adds no rows or classification changes.
 
 ## Active scope and evidence
 
-[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): finish O7 delivery, then stop for owner disposition. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains model/adoption gates. No new donor is selected or authorized.
+[AAS plan](PLAN_AAS_v3_2_Source_First_Donor_Review_13NOV2026.md): O7 delivered; stop for owner disposition. [Broader plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md) retains model/adoption gates. No new donor is selected or authorized.
 
 Extract only `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O7_reconciliation`: `.accountability`, `.candidate_reconciliation`, `.corpus_reconciliation`, `.hold_reconciliation`, `.owner_recommendation` and `.publication`. These point to unchanged source/stage records; use individual locators for concrete questions. [Owner closeout report](AAS10_Source_Coverage_and_Owner_Disposition_14NOV2026.md) explains all 24 additions, no-row decisions and actual remaining scope. Master keys `AAS_O7_reconciliation`, `currentEvidenceCheckpoint`, `workbookSnapshot` and `nextOwnerAction` identify the same snapshot.
 
@@ -36,11 +36,11 @@ Preserve six ISA questions, nine The Open Group SOSA hold families, 39 overlappi
 
 ## Verification and publication
 
-Local reconciliation, saved-grid, classification/style, mirror, unchanged-data/package and M00/M01 checks passed. Changed Summary/Legend guidance passed visual review; unchanged data views reuse O6-2 checks. Publication checks remain pending. Existing checker enforces compact recovery and O7 verification; no new workflow. The broader artifact check reproduced five pre-existing register/link errors; they remain outside O7 and were not repaired.
+Local reconciliation, saved-grid, classification/style, mirror, unchanged-data/package and M00/M01 checks passed. Changed Summary/Legend guidance passed visual review; unchanged data views reuse O6-2 checks. Published/local tree equality and all 6,144 actual remote saved values passed. Workflow runs `43741024724` (same-workbook publication/readback) and `43741024738` (master) succeeded, including required steps. Existing checker enforces compact recovery and O7 verification; no new workflow. The broader artifact check reproduced five pre-existing register/link errors; they remain outside O7 and were not repaired.
 
 ## Next action and stop
 
-Finish O7 delivery, then **STOP for owner disposition**. Recommend accepting the completed AAS review as bounded PARTIAL with all documented holds, or reopening one specifically named source question. This is not yet accepted. Zero routine research steps remain in O1–O7; no automatic next donor, adoption, client work or deployment.
+O7 delivered; **STOP for owner disposition**. Recommend accepting the completed AAS review as bounded PARTIAL with all documented holds, or reopening one specifically named source question. This is not yet accepted. Zero routine research steps remain in O1–O7; no automatic next donor, adoption, client work or deployment.
 
 ## History
 

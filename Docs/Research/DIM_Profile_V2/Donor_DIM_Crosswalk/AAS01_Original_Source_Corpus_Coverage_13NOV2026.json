@@ -79106,7 +79106,7 @@
     "master_preservation": "All 361 information rows, 640 source-bearing comparisons, all classifications, all case/donor data, both CSV mirrors and the two data worksheets remain unchanged. Only current status/guidance, reconciliation evidence and recovery routing are updated.",
     "forecast": "The authorized O1–O7 sequence is complete after verified publication. Owner disposition is next; zero routine research steps remain in this plan.",
     "publication": {
-      "remote_publication": "PENDING",
+      "remote_publication": "PASS",
       "visual_review": {
         "status": "PASS",
         "method": "ArtifactTool import/render only; canonical workbook not rewritten",
@@ -79208,7 +79208,34 @@
           "One nonexistent v0.6 DOCX link in Docs/Plans/CONTINUITY.md"
         ],
         "scope": "Existing project-level register/continuity errors, not an O7 comparison or workbook failure."
-      }
+      },
+      "research_commit": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
+      "research_tree": "e26fd8c9d2c45b21623f13e72dabe22fc16faa12",
+      "local_research_commit": "f9784ae404b7b2e52408953f1da0424e14e6eb07",
+      "preserved_interrupted_commit": "ec0f8e0ced1838ddb09579fe25c0de5d4d7c5a67",
+      "remote_verification": {
+        "status": "PASS",
+        "method": "Fresh Git fetch; exact published/local tree equality; actual remote workbook bytes decoded and all grid values compared to actual remote JSON",
+        "grid_values": 6144,
+        "workbook_sha256": "ffb46b0f663f0993cf39b188b03be8296ecb1b346b7512ca62e946900c1a7f15"
+      },
+      "workflow_checks": [
+        {
+          "run_id": 43741024724,
+          "name": "Publish source-qualified SAME canonical 26-sheet donor Excel checkpoint",
+          "head_sha": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
+          "conclusion": "success",
+          "required_steps": "Compile/publish, coherent formats and actual remote confirmation: success"
+        },
+        {
+          "run_id": 43741024738,
+          "name": "Verify current source-backed DIM donor crosswalk master",
+          "head_sha": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
+          "conclusion": "success",
+          "required_steps": "Verify recovery and affected master evidence: success"
+        }
+      ],
+      "handoff_note": "Metadata-only publication record follows the verified research commit. No new research, workbook edits, donor acceptance or model adoption."
     }
   }
 }
