@@ -4,11 +4,11 @@ Updated 15 November 2026, America/New_York, Profile Rewrite 49. This file owns s
 
 ## Verified checkpoint
 
-SO-2D delivery closeout is published at `1ec9dcdabbe357f0b235a2baba2b5cde85ee49ab`. The subsequent owner Proceed in Profile Rewrite 49 authorized **SO-2E only: 496 task/RF/host/transport/service records**. SO-2E assessment and same-workbook integration pass saved-file and visual checks locally; publication and readback must finish before delivery is claimed. F3 is accepted; AAS O1–O7 remain delivered with bounded-PARTIAL acceptance pending.
+SO-2E research and same-workbook delivery are published at `4f5420a4a8128370bde5b552b4a606ea309ff4f9`: **496 task/RF/host/transport/service records**. Saved-file/visual checks and remote readback passed; [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/43773936699) and [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/43773936727) passed. The owner Proceed in Profile Rewrite 49 authorized SO-2E only; this status closeout completes its delivery. F3 is accepted; AAS O1–O7 remain delivered with bounded-PARTIAL acceptance pending.
 
 ## Interrupted work
 
-SO-2E local changes based on `1ec9dcd` comprise the canonical master/mirrors/workbook, G4 ledger, existing owner result, publisher/checker and this PITON. Finish this packet's delivery before new research. No SO-2F research has started. Reuse verified SO-1/SO-2A/B/C/D/AAS evidence rather than rereading histories.
+No unpublished SO-2E research or workbook delivery remains. The preserved local research commit `b641627` and published `4f5420a` have identical trees and all eleven changed blobs match. The current status closeout records that evidence. No SO-2F research has started; reuse verified SO-1/SO-2A/B/C/D/E/AAS evidence rather than rereading histories.
 
 ## Active scope and evidence
 
@@ -34,13 +34,13 @@ AAS source/API/schema/figure/companion/template/external limits, generic Skill b
 
 ## Verification and publication
 
-Saved checks passed: exact packet membership and hash/pointer preservation; 56-group partition; nine additions/ten qualifications and first-audit classification; 6,736 saved values/mirrors/fills; prior classifications, earlier packets, 21 untouched sheets and M00/M01. Changed master cells, register definitions/evidence, Summary, Validation and Legend passed visual review. Finish publication/readback and applicable workflows. Reuse unchanged checks.
+Saved checks passed: exact packet membership and hash/pointer preservation; 56-group partition; nine additions/ten qualifications and first-audit classification; 6,736 saved values/mirrors/fills; prior classifications, earlier packets, 21 untouched sheets and M00/M01. Changed master cells, register definitions/evidence, Summary, Validation and Legend passed visual review. Published tree/file parity, current PITON text readback and both applicable workflows passed. Reuse unchanged checks.
 
 Five pre-existing broader artifact-register/link errors remain unclosed. The broader verifier was attempted for SO-2E and stopped because `Docs/Design/Details_View` is absent from this partial checkout. Previously missing `Docs/Plans/Source_Continuity` and `Docs/Design/MPSS` are not restored. No blanket repository success is claimed.
 
 ## Next action and stop
 
-Finish SO-2E delivery, then **STOP for Proceed**. The next Proceed authorizes **SO-2F only: 581 retained records**, with progressive same-master/workbook integration if warranted; stop before SO-2G. AAS acceptance remains pending separately.
+SO-2E delivery and publication-status closeout are complete. **STOP for Proceed**. The next Proceed authorizes **SO-2F only: 581 retained records**, with progressive same-master/workbook integration if warranted; stop before SO-2G. AAS acceptance remains pending separately.
 
 ## History
 
