@@ -1,3 +1,39 @@
+# SO-2F-R COMPLETE — Finite SOSA source-opportunity closeout (15 November 2026)
+
+## What was checked and why
+
+The original master began heavily populated from Integrated Sensor Architecture (ISA). This bounded corrective assessment asked whether already-reviewed The Open Group Sensor Open Systems Architecture (SOSA) C239 Edition 1.1 material included additional, genuinely different information needs. The complete frozen SO-2F inventory holds 581 distinct source IDs. The first 167 were assessed and published through SO-2F-1/2/3; this step accounted for all remaining 414 by two *meaning families*, not six more batches. Original C239 PDF230–264 and seven existing source ledgers are the evidence basis; details and exact source-ID/pointer dispositions remain in [the 581-ID manifest](SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json).
+
+## What was learned — no 414 new data fields
+
+The first 149 remaining records describe 3U/6U plug-in cards, applicable physical slot/module profiles and variants, source-specific rules and legacy-profile status. These warrant **one specialized candidate** for the named, source-qualified hardware profile and its conditional dash/connector choice. Existing physical-component, mechanical/cooling, slot-identity and conformance rows do not preserve the source-declared *base profile identifier*. But the earlier ISA extension/standardization-standing row already captures the SOSA Legacy idea, so no new general legacy/status row is justified.
+
+The next 265 records describe Alternate Module Profile Scheme (AMPS) grammar, Alternate Naming Structure, port and lane protocol assignments, allowed alternatives and example strings. These warrant **one specialized candidate** for hardware-interface *protocol allocation and encoded profile declaration*. This is not the same as a network/API representation schema, a measured Ethernet throughput, actual installed wiring or a configured service. Individual protocol codes, depth/cooling/pitch examples and populated rows in original matrices are *values and supporting evidence*, not independent universal DIM requirements.
+
+## Source accounting and results
+
+| Outcome | Earlier SO-2F-1/2/3 | This SO-2F-R | Total frozen IDs |
+| --- | ---: | ---: | ---: |
+| Warranted additions, grouped as candidate support | 125 | 250 | **375** |
+| Adequately represented | 11 | 35 | **46** |
+| Source-specific / no separate information row | 17 | 83 | **100** |
+| Held for exact original-source question | 14 | 46 | **60** |
+| **Total** | **167** | **414** | **581** |
+
+The full SO-2F sequence added **11 unadopted candidate rows** (9 earlier plus 2 here). Counts reflect original records, *not* the number of distinct requirements or new data attributes. Two candidates in this closeout are specialized, with no automatic equivalence to other standards or vendor equipment.
+
+## Important limits and recommendation
+
+Some original C239 figures and dense port/protocol matrices were reviewed at text, table-label or selected image depth only. Original ANSI/VITA companions, exact legal port matrices and several publisher discrepancies remain held; source examples are not device certifications. No field-installed hardware, true port state, vendor conformance results, model/Profile adoption or runtime interoperability was verified.
+
+**Recommend owner acceptance as bounded-PARTIAL closure of the defined SOSA opportunity check.** Do not restart another indefinite source-by-source audit merely to remove these documented holds. Preserve their original locators for later precise questions, and separately authorize model/Profile synthesis when the owner chooses; no automatic donor transition, device implementation or deployment follows from this closeout.
+
+## Files and owner boundary
+
+[Canonical master](Master_Donor_Concept_to_DIM_Crosswalk.json), [same editable Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx), [source evidence and 581-ID accountability](SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json), and [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). All 26 sheets, M00/M01, other donor/case columns, source holds, and prior 402 information rows are retained. **STOP for owner disposition**; no automatic SO-2G or additional Proceed packets.
+
+---
+
 # SOSA tasks, RF, host and service exchanges — SO-2E result, 15 November 2026
 
 SO-2E accounts for all 496 retained records in the authorized packet: task and radio-frequency (RF) interactions, host interfaces, security services and inter-module exchanges. The owner authorized this bounded step by Proceed in Profile Rewrite 49 after SO-2D delivery closeout. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns actual delivery status and next-step routing. These findings improve the whole-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile research; they do not adopt a schema or demonstrate device behavior.
