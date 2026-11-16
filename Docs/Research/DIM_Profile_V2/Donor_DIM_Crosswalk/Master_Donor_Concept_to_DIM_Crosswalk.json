@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "f0b790dbc3b8eb16e8043098f9e7bfafe9836d43e653768b0eb523051cbc69ba",
+  "currentWorkbookSha256": "687df7c71757641b937ba2671238138510691f8e2432e793f90eec41580efd0e",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption.",
@@ -7800,6 +7800,60 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Power-supply utility-plane control and fault-signal contract — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a component's designated low-level maintenance/debug console separately from its operational data, management API and ordinary remote-access endpoint. Preserve source-declared port purpose, physical/protocol and signaling characteristics, supported serial settings, optional aggregation and deployment accessibility as distinct conditional claims; actual port presence, reachability and authorization are not inferred. SOSA C239 specifies a UART Maintenance Console Port using LVCMOS signaling and minimum supported speeds, but those electrical details are source-scoped. [C239 Ed1.1 §§13.2.7–13.2.10 PDF225–230; SO-2F-3 original IDs; VITA/figure/CoV holds retained.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Maintenance-only physical console access and declared interface profile — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Record a named or selected plug-in-card slot-profile overlay that maps otherwise undefined connector positions to declared functions, protocol patterns or backplane signal distribution, with the applicable card/profile and source table. An overlay assignment is a profile/design declaration, not an installed module, actual configured security service, measured signal, or evidence of certification. SOSA C239 describes XMC Type A/Type B alternatives and an AUXCLK/REFCLK distribution example; native pin-level figure geometry and the referenced restricted Appendix C security requirements remain unverified. [C239 Ed1.1 §§13.2.7–13.2.10 PDF225–230; SO-2F-3 original IDs; VITA/figure/CoV holds retained.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Slot-profile connector overlay and electrical function mapping — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A vendor-provided memory/volatility documentation record associated with the hardware product and its constituent memories, specifying each documented memory's manufacturer/part, volatile or nonvolatile technology, capacity, function, supported write path, protection method and any retained-power source or power-removal clearing declaration. Keep the document and declared claims distinct from directly verified installed memory, actual sanitization outcome, exhaustive embedded memory discovery or security certification. SOSA C239 requires a Certificate of Volatility for its conformable hardware elements; applicability is source-scoped. [C239 Ed1.1 §§13.2.7–13.2.10 PDF225–230; SO-2F-3 original IDs; VITA/figure/CoV holds retained.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared memory inventory, volatility and protection evidence — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -63300,6 +63354,260 @@
         "native_ANSI_VITA_companions_read": false,
         "source_manifest_file": "SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json"
       }
+    },
+    {
+      "row_id": "SOSA-SO2F-MAINTENANCE-ACCESS",
+      "label": "Candidate — Maintenance-only physical console access and declared interface profile",
+      "display_row": 428,
+      "status": "SO-2F-3 provisional information-need candidate; NOT ADOPTED",
+      "definition": "Describe a component's designated low-level maintenance/debug console separately from its operational data, management API and ordinary remote-access endpoint. Preserve source-declared port purpose, physical/protocol and signaling characteristics, supported serial settings, optional aggregation and deployment accessibility as distinct conditional claims; actual port presence, reachability and authorization are not inferred. SOSA C239 specifies a UART Maintenance Console Port using LVCMOS signaling and minimum supported speeds, but those electrical details are source-scoped.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-010",
+        "SOSA-C239-G2-6A-PERMISSION-13.2.8.4-1",
+        "SOSA-C239-G2-6A-RULE-13.2.8.4-1",
+        "SOSA-C239-G2-6A-RULE-13.2.8.4-2",
+        "SOSA-C239-G2-6A-RULE-13.2.8.4-3",
+        "SOSA-C239-G2-6A-TABLE-13.2.8.4-1"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-010",
+        "SOSA-C239-G2-6A-PERMISSION-13.2.8.4-1",
+        "SOSA-C239-G2-6A-RULE-13.2.8.4-1",
+        "SOSA-C239-G2-6A-RULE-13.2.8.4-2",
+        "SOSA-C239-G2-6A-RULE-13.2.8.4-3",
+        "SOSA-C239-G2-6A-TABLE-13.2.8.4-1"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2F3_C239_PDF225_230_READ__FIGURE_OVERVIEW_ONLY__COMPANIONS_AND_INSTALLED_HOLDS",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a component's designated low-level maintenance/debug console separately from its operational data, management API and ordinary remote-access endpoint. Preserve source-declared port purpose, physical/protocol and signaling characteristics, supported serial settings, optional aggregation and deployment accessibility as distinct conditional claims; actual port presence, reachability and authorization are not inferred. SOSA C239 specifies a UART Maintenance Console Port using LVCMOS signaling and minimum supported speeds, but those electrical details are source-scoped. [C239 Ed1.1 §§13.2.7–13.2.10 PDF225–230; SO-2F-3 original IDs; VITA/figure/CoV holds retained.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Maintenance-only physical console access and declared interface profile — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-010",
+          "SOSA-C239-G2-6A-PERMISSION-13.2.8.4-1",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-1",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-2",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-3",
+          "SOSA-C239-G2-6A-TABLE-13.2.8.4-1"
+        ],
+        "original_source_locators": [
+          "Table 13.2.8.4-1",
+          "§13.2.8",
+          "§13.2.8.4"
+        ],
+        "native_meaning": "Describe a component's designated low-level maintenance/debug console separately from its operational data, management API and ordinary remote-access endpoint. Preserve source-declared port purpose, physical/protocol and signaling characteristics, supported serial settings, optional aggregation and deployment accessibility as distinct conditional claims; actual port presence, reachability and authorization are not inferred. SOSA C239 specifies a UART Maintenance Console Port using LVCMOS signaling and minimum supported speeds, but those electrical details are source-scoped.",
+        "closest_prior_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "reason_for_separate_candidate": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific.",
+        "relation": "RELATED_BUT_DISTINCT_DECLARED_NOT_INSTALLED_OR_CERTIFIED",
+        "candidate_status": "COMMON_CANDIDATE",
+        "classification_rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific.",
+        "fill": "#D9EAF8",
+        "cell": "J428",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "pin_level_figure_geometry_verified": false,
+        "native_ANSI_VITA_companions_read": false,
+        "vendor_CoV_examined": false,
+        "source_manifest_file": "SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json"
+      }
+    },
+    {
+      "row_id": "SOSA-SO2F-PLUG-IN-OVERLAY",
+      "label": "Candidate — Slot-profile connector overlay and electrical function mapping",
+      "display_row": 429,
+      "status": "SO-2F-3 provisional information-need candidate; NOT ADOPTED",
+      "definition": "Record a named or selected plug-in-card slot-profile overlay that maps otherwise undefined connector positions to declared functions, protocol patterns or backplane signal distribution, with the applicable card/profile and source table. An overlay assignment is a profile/design declaration, not an installed module, actual configured security service, measured signal, or evidence of certification. SOSA C239 describes XMC Type A/Type B alternatives and an AUXCLK/REFCLK distribution example; native pin-level figure geometry and the referenced restricted Appendix C security requirements remain unverified.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-011",
+        "SOSA-C239-G2-6A-RULE-13.2.9-1",
+        "SOSA-C239-G2-6A-RULE-13.2.9-2",
+        "SOSA-C239-G2-6A-TABLE-13.2.9-1",
+        "SOSA-C239-G2-6A-TABLE-13.2.9-2"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-011",
+        "SOSA-C239-G2-6A-RULE-13.2.9-1",
+        "SOSA-C239-G2-6A-RULE-13.2.9-2",
+        "SOSA-C239-G2-6A-TABLE-13.2.9-1",
+        "SOSA-C239-G2-6A-TABLE-13.2.9-2"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2F3_C239_PDF225_230_READ__FIGURE_OVERVIEW_ONLY__COMPANIONS_AND_INSTALLED_HOLDS",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Record a named or selected plug-in-card slot-profile overlay that maps otherwise undefined connector positions to declared functions, protocol patterns or backplane signal distribution, with the applicable card/profile and source table. An overlay assignment is a profile/design declaration, not an installed module, actual configured security service, measured signal, or evidence of certification. SOSA C239 describes XMC Type A/Type B alternatives and an AUXCLK/REFCLK distribution example; native pin-level figure geometry and the referenced restricted Appendix C security requirements remain unverified. [C239 Ed1.1 §§13.2.7–13.2.10 PDF225–230; SO-2F-3 original IDs; VITA/figure/CoV holds retained.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Slot-profile connector overlay and electrical function mapping — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-011",
+          "SOSA-C239-G2-6A-RULE-13.2.9-1",
+          "SOSA-C239-G2-6A-RULE-13.2.9-2",
+          "SOSA-C239-G2-6A-TABLE-13.2.9-1",
+          "SOSA-C239-G2-6A-TABLE-13.2.9-2"
+        ],
+        "original_source_locators": [
+          "Table 13.2.9-1",
+          "Table 13.2.9-2",
+          "§13.2.9"
+        ],
+        "native_meaning": "Record a named or selected plug-in-card slot-profile overlay that maps otherwise undefined connector positions to declared functions, protocol patterns or backplane signal distribution, with the applicable card/profile and source table. An overlay assignment is a profile/design declaration, not an installed module, actual configured security service, measured signal, or evidence of certification. SOSA C239 describes XMC Type A/Type B alternatives and an AUXCLK/REFCLK distribution example; native pin-level figure geometry and the referenced restricted Appendix C security requirements remain unverified.",
+        "closest_prior_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "reason_for_separate_candidate": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class.",
+        "relation": "RELATED_BUT_DISTINCT_DECLARED_NOT_INSTALLED_OR_CERTIFIED",
+        "candidate_status": "SPECIALIZED_CANDIDATE",
+        "classification_rationale": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class.",
+        "fill": "#F9E6B8",
+        "cell": "J429",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "pin_level_figure_geometry_verified": false,
+        "native_ANSI_VITA_companions_read": false,
+        "vendor_CoV_examined": false,
+        "source_manifest_file": "SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json"
+      }
+    },
+    {
+      "row_id": "SOSA-SO2F-MEMORY-VOLATILITY-EVIDENCE",
+      "label": "Candidate — Declared memory inventory, volatility and protection evidence",
+      "display_row": 430,
+      "status": "SO-2F-3 provisional information-need candidate; NOT ADOPTED",
+      "definition": "A vendor-provided memory/volatility documentation record associated with the hardware product and its constituent memories, specifying each documented memory's manufacturer/part, volatile or nonvolatile technology, capacity, function, supported write path, protection method and any retained-power source or power-removal clearing declaration. Keep the document and declared claims distinct from directly verified installed memory, actual sanitization outcome, exhaustive embedded memory discovery or security certification. SOSA C239 requires a Certificate of Volatility for its conformable hardware elements; applicability is source-scoped.",
+      "source_entry_ids": [
+        "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-012",
+        "SOSA-C239-G2-6A-COV_FIELD-003",
+        "SOSA-C239-G2-6A-COV_FIELD-004",
+        "SOSA-C239-G2-6A-COV_FIELD-005",
+        "SOSA-C239-G2-6A-COV_FIELD-006",
+        "SOSA-C239-G2-6A-COV_FIELD-007",
+        "SOSA-C239-G2-6A-COV_FIELD-008",
+        "SOSA-C239-G2-6A-COV_FIELD-009",
+        "SOSA-C239-G2-6A-COV_FIELD-010",
+        "SOSA-C239-G2-6A-COV_FIELD-011",
+        "SOSA-C239-G2-6A-OBSERVATION-13.2.10-1",
+        "SOSA-C239-G2-6A-RULE-13.2.10-1",
+        "SOSA-C239-G2-6A-RULE-13.2.10-2"
+      ],
+      "evidence_records": [
+        "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-012",
+        "SOSA-C239-G2-6A-COV_FIELD-003",
+        "SOSA-C239-G2-6A-COV_FIELD-004",
+        "SOSA-C239-G2-6A-COV_FIELD-005",
+        "SOSA-C239-G2-6A-COV_FIELD-006",
+        "SOSA-C239-G2-6A-COV_FIELD-007",
+        "SOSA-C239-G2-6A-COV_FIELD-008",
+        "SOSA-C239-G2-6A-COV_FIELD-009",
+        "SOSA-C239-G2-6A-COV_FIELD-010",
+        "SOSA-C239-G2-6A-COV_FIELD-011",
+        "SOSA-C239-G2-6A-OBSERVATION-13.2.10-1",
+        "SOSA-C239-G2-6A-RULE-13.2.10-1",
+        "SOSA-C239-G2-6A-RULE-13.2.10-2"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SOSA_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "SO2F3_C239_PDF225_230_READ__FIGURE_OVERVIEW_ONLY__COMPANIONS_AND_INSTALLED_HOLDS",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A vendor-provided memory/volatility documentation record associated with the hardware product and its constituent memories, specifying each documented memory's manufacturer/part, volatile or nonvolatile technology, capacity, function, supported write path, protection method and any retained-power source or power-removal clearing declaration. Keep the document and declared claims distinct from directly verified installed memory, actual sanitization outcome, exhaustive embedded memory discovery or security certification. SOSA C239 requires a Certificate of Volatility for its conformable hardware elements; applicability is source-scoped. [C239 Ed1.1 §§13.2.7–13.2.10 PDF225–230; SO-2F-3 original IDs; VITA/figure/CoV holds retained.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared memory inventory, volatility and protection evidence — NOT ADOPTED"
+      ],
+      "SO2_source_correspondence": {
+        "donor": "The Open Group SOSA C239 Edition 1.1 (2023)",
+        "source_ids": [
+          "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-012",
+          "SOSA-C239-G2-6A-COV_FIELD-003",
+          "SOSA-C239-G2-6A-COV_FIELD-004",
+          "SOSA-C239-G2-6A-COV_FIELD-005",
+          "SOSA-C239-G2-6A-COV_FIELD-006",
+          "SOSA-C239-G2-6A-COV_FIELD-007",
+          "SOSA-C239-G2-6A-COV_FIELD-008",
+          "SOSA-C239-G2-6A-COV_FIELD-009",
+          "SOSA-C239-G2-6A-COV_FIELD-010",
+          "SOSA-C239-G2-6A-COV_FIELD-011",
+          "SOSA-C239-G2-6A-OBSERVATION-13.2.10-1",
+          "SOSA-C239-G2-6A-RULE-13.2.10-1",
+          "SOSA-C239-G2-6A-RULE-13.2.10-2"
+        ],
+        "original_source_locators": [
+          "Rule 13.2.10-2",
+          "§13.2.10"
+        ],
+        "native_meaning": "A vendor-provided memory/volatility documentation record associated with the hardware product and its constituent memories, specifying each documented memory's manufacturer/part, volatile or nonvolatile technology, capacity, function, supported write path, protection method and any retained-power source or power-removal clearing declaration. Keep the document and declared claims distinct from directly verified installed memory, actual sanitization outcome, exhaustive embedded memory discovery or security certification. SOSA C239 requires a Certificate of Volatility for its conformable hardware elements; applicability is source-scoped.",
+        "closest_prior_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "reason_for_separate_candidate": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state.",
+        "relation": "RELATED_BUT_DISTINCT_DECLARED_NOT_INSTALLED_OR_CERTIFIED",
+        "candidate_status": "COMMON_CANDIDATE",
+        "classification_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state.",
+        "fill": "#D9EAF8",
+        "cell": "J430",
+        "DIM_Profile_adopted": false,
+        "case_or_runtime_verified": false,
+        "pin_level_figure_geometry_verified": false,
+        "native_ANSI_VITA_companions_read": false,
+        "vendor_CoV_examined": false,
+        "source_manifest_file": "SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json"
+      }
     }
   ],
   "originalDonorEvidence": [
@@ -66190,7 +66498,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 399,
+    "informationRows": 402,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -66243,7 +66551,9 @@
     "SOSA_SO2F1_new_candidate_rows": 3,
     "SOSA_SO2F1_records_assessed": 58,
     "SOSA_SO2F2_new_candidate_rows": 3,
-    "SOSA_SO2F2_records_assessed": 73
+    "SOSA_SO2F2_records_assessed": 73,
+    "SOSA_SO2F3_new_candidate_rows": 3,
+    "SOSA_SO2F3_records_assessed": 36
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -66287,17 +66597,17 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "SOSA_SO2F2_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "SOSA_SO2F3_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA_SO2F2_SAVED_VERIFIED",
-    "sha256": "f0b790dbc3b8eb16e8043098f9e7bfafe9836d43e653768b0eb523051cbc69ba",
-    "information_rows": 399,
+    "checkpoint": "SOSA_SO2F3_SAVED_VERIFIED",
+    "sha256": "687df7c71757641b937ba2671238138510691f8e2432e793f90eec41580efd0e",
+    "information_rows": 402,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 427×16 saved comparisons; J425:J427 specialized amber fills; all previous content preserved",
-    "textCheckpoint": "SOSA_SO2F2_PSC_OPPORTUNITIES",
-    "textInformationRows": 399,
+    "lag": "ZERO: 430x16 saved values; J428/J430 blue and J429 amber; all earlier data preserved",
+    "textCheckpoint": "SOSA_SO2F3_HARDWARE_MAINTENANCE_OVERLAY_MEMORY",
+    "textInformationRows": 402,
     "textPrimaryReviewed": 480,
     "columns": 16,
     "G2_1_affected_row_ids": [
@@ -66315,7 +66625,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2F-2",
+    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2F-3",
     "verifiedPublisherCommit": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43741024724",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -67444,11 +67754,11 @@
       "SAPIENT-F2-ALERT-LIFECYCLE",
       "SAPIENT-F2-DETECTION-LINEAGE"
     ],
-    "text_grid_rows": 427,
-    "saved_xlsx_grid_rows": 427,
+    "text_grid_rows": 430,
+    "saved_xlsx_grid_rows": 430,
     "f2_3_shifted_prior_rows": 325,
     "original_SAP06_shifted_prior_rows": 322,
-    "color_cell_count": 571,
+    "color_cell_count": 574,
     "mixed_source_cells_uncolored": 108,
     "manual_M00_preserved": true,
     "manual_M01_not_created": false,
@@ -67580,7 +67890,7 @@
     ],
     "gate_metadata_note": "SO-2E integrated; SO-2F only on a separate Proceed: hardware topology and profile families, 581 retained records; stop before SO-2G. AAS acceptance pending separately. Historical counters retain recorded scopes.",
     "source_compared_rows": 88,
-    "explicit_unassessed_rows": 311,
+    "explicit_unassessed_rows": 314,
     "AAS_candidate_colors": 76,
     "AAS_uncolored_source_holds": 12,
     "F3_04A_affected_row_ids": [
@@ -69645,7 +69955,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "STOP for owner Proceed: SO-2F-3 only (36 remaining frozen source records); no adoption, donor transition or deployment.",
+  "nextOwnerAction": "STOP for separate owner Proceed: SO-2F-4 only (72 frozen records); no adoption, donor transition, client work or deployment.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -94840,5 +95150,22 @@
     ],
     "workbook_sha256": "f0b790dbc3b8eb16e8043098f9e7bfafe9836d43e653768b0eb523051cbc69ba",
     "prior_source_holds_preserved": true
+  },
+  "SOSA_SO2F3_opportunity_review": {
+    "status": "SAVED_VERIFIED__REMOTE_PUBLICATION_READBACK_PENDING",
+    "manifest": "SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json",
+    "retained_records": 36,
+    "added_candidate_rows": [
+      "SOSA-SO2F-MAINTENANCE-ACCESS",
+      "SOSA-SO2F-PLUG-IN-OVERLAY",
+      "SOSA-SO2F-MEMORY-VOLATILITY-EVIDENCE"
+    ],
+    "new_cells": [
+      "J428",
+      "J429",
+      "J430"
+    ],
+    "workbook_sha256": "687df7c71757641b937ba2671238138510691f8e2432e793f90eec41580efd0e",
+    "prior_holds_preserved": true
   }
 }

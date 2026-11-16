@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 15 November 2026, America/New_York, SO-2F-2 integrated checkpoint. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
+Updated 15 November 2026, America/New_York, SO-2F-3 integrated checkpoint. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
 
 ## Verified checkpoint
 
@@ -8,7 +8,7 @@ SO-2E research and same-workbook delivery are published at `4f5420a4a8128370bde5
 
 ## Interrupted work
 
-SO-2E and SO-2F-1 published. SO-2F-2 assessed 73 frozen original IDs and integrated three more specialized, unadopted candidates in the same master/workbook. No interrupted local assessment or delivery remains; branch readback verified at `ca5c7c0c6448fb16a2b8fe61bb9deec394a00927`.
+SO-2E through SO-2F-2 published and remotely verified. SO-2F-3 assessed 36 original C239 records and integrated three source-qualified, unadopted candidates in the same master/workbook. Saved-file verification passed; remote readback pending.
 
 ## Active scope and evidence
 
@@ -18,13 +18,13 @@ SO-2E outcomes: **289 adequately represented, 60 supporting additions, 47 suppor
 
 Original C239 PDF 141–207 and 372–383 text read; PDF 144/185/186/197/200/201/376/382 visually inspected. All 496 original hashes matched. Twenty-two held records across twelve groups preserve key tags/configuration returns/store boundary, storage-response wording, host bearing/cosite/locator, QoS range/ownership, FACE reference, future conformance/matrix and role-symbol geometry. Task tables remain preliminary with TBD descriptions and inconsistent AMTI/Tracker reference. Source grades are unchanged; no new edition, native-companion, external-standard or general figure audit.
 
-**SO-2F source checkpoint:** Existing SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json preserves the frozen 581-ID/eight-source-file manifest and SO-2F-1 dispositions. SO-2F-2 covers 73 C239 §13.2.6 records, original PDF216–225 text and pin tables: 55 source records support three new specialized PSC power-port, regulation/sync and utility-control candidate families; 3 are represented, 7 source-specific/no row and 8 held. No record omitted or reassigned. Source cross-reference/pin-name conflicts, ANSI/VITA originals, figure pixels, installation, measured state and conformance remain held. Remaining SO-2F is 450 IDs; next separate owner Proceed reaches SO-2F-3 only (36 IDs).
+**SO-2F source checkpoint:** The frozen 581-ID manifest and SO-2F-1/2 dispositions remain in SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json. SO-2F-3 covers 36 original C239 §§13.2.7–13.2.10 records, PDF225–230: 24 support three maintenance-console, pin-overlay and memory-documentation candidates; four represented, six source-only, two held. Figure13.2.9-1 overview visually inspected, not its full pin routing. CoV may omit undocumented embedded nonvolatile memories; actual CoV/device, original VITA companions and restricted Appendix C remain unverified. SO-2F has 414 IDs left; next SO-2F-4 only (72).
 
 ## Master and workbook
 
-[Master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV/readable mirrors and [same editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **399 information rows**, **427×16 = 6,832 values**, **679 source classifications: 571 colored/108 held**. AAS retains 88 source-bearing comparisons; 311 remaining rows have explicit unassessed/case-held standing. Other donor/case values are preserved.
+[Master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV/readable mirrors and [same editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **402 information rows**, **430×16 = 6,880 values**, **682 source classifications: 574 colored/108 held**. AAS retains 88 source-bearing comparisons; 314 remaining rows have explicit unassessed/case-held standing. Other donor/case values are preserved.
 
-New SO-2F-2 amber SOSA cells J425:J427; prior J422:J424 and J413:J421 preserved; existing qualifications J95,J202,J224,J345,J379,J386,J392,J393,J401,J402. J379 is the first classified SOSA audit comparison, not a changed prior classification. Audit and reservation definitions are clarified; existing AAS/source evidence remains. Use stable IDs/actual positions, not stale `display_row`. Preserve 26 sheets, 21 unaffected parts and M00/M01; no M02. Current workbook SHA-256 `f0b790dbc3b8eb16e8043098f9e7bfafe9836d43e653768b0eb523051cbc69ba`; prior SO-2F-1 SHA-256 `c610b1ad7269ff56a5dbd97ba637952b0cbab9c584e9839970ac59a76e4cd49b`; SO-2E SHA-256 `c66e67d64a1ca1ec8e28a65a99c3f019e17d53087a0e1b0bf68bf1b5ec0aa4d2`; full checks recorded in SO-2E publication metadata. Native Microsoft Excel clean reopening remains unverified.
+New SO-2F-3 common blue J428/J430 and specialized amber J429; prior J425:J427, J422:J424, J413:J421 preserved; existing qualifications J95,J202,J224,J345,J379,J386,J392,J393,J401,J402. J379 is the first classified SOSA audit comparison, not a changed prior classification. Audit and reservation definitions are clarified; existing AAS/source evidence remains. Use stable IDs/actual positions, not stale `display_row`. Preserve 26 sheets, 21 unaffected parts and M00/M01; no M02. Current workbook SHA-256 `687df7c71757641b937ba2671238138510691f8e2432e793f90eec41580efd0e`; prior SO-2F-2 SHA-256 `f0b790dbc3b8eb16e8043098f9e7bfafe9836d43e653768b0eb523051cbc69ba`; earlier SO-2F-1 SHA-256 `c610b1ad7269ff56a5dbd97ba637952b0cbab9c584e9839970ac59a76e4cd49b`; SO-2E SHA-256 `c66e67d64a1ca1ec8e28a65a99c3f019e17d53087a0e1b0bf68bf1b5ec0aa4d2`; full checks recorded in SO-2E publication metadata. Native Microsoft Excel clean reopening remains unverified.
 
 ## Holds and owner decisions
 
@@ -34,13 +34,11 @@ AAS source/API/schema/figure/companion/template/external limits, generic Skill b
 
 ## Verification and publication
 
-SO-2F-2 publisher checked 6,832 saved grid values, three new amber cells, 21 unchanged sheets and preserved all 424 earlier grid rows. GitHub workflow and branch readback passed; native Microsoft Excel clean reopen remains unverified. Prior SO-2F-1 publisher checked 6,784 saved grid values, three earlier amber cells and 21 unchanged sheets. GitHub publication and branch readback passed; native Microsoft Excel clean reopen remains unverified. Prior SO-2E saved checks passed: exact packet membership and hash/pointer preservation; 56-group partition; nine additions/ten qualifications and first-audit classification; 6,736 saved values/mirrors/fills; prior classifications, earlier packets, 21 untouched sheets and M00/M01. Changed master cells, register definitions/evidence, Summary, Validation and Legend passed visual review. Published tree/file parity, current PITON text readback and both applicable workflows passed. Reuse unchanged checks.
-
-Five pre-existing broader artifact-register/link errors remain unclosed. The broader verifier was attempted for SO-2E and stopped because `Docs/Design/Details_View` is absent from this partial checkout. Previously missing `Docs/Plans/Source_Continuity` and `Docs/Design/MPSS` are not restored. No blanket repository success is claimed.
+SO-2F-3 publisher checked 6,880 saved values, new common/specialized fills, prior 427 comparison rows, 21 untouched sheets and exact frozen ID/pointer membership. Earlier publisher/readback passed; remote SO-2F-3 readback pending. Original M00/M01 preserved; native Microsoft Excel clean reopening unverified. Five broader artifact/link errors remain unresolved in the partial checkout; no blanket repository success claim.
 
 ## Next action and stop
 
-SO-2F-2 assessment and same-master/workbook integration **published and remotely verified** at `ca5c7c0c6448fb16a2b8fe61bb9deec394a00927`; [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43791465455). STOP for Proceed. **Next Proceed authorizes SO-2F-3 only: 36 frozen original source records.** No adoption, donor transition, client work or deployment.
+SO-2F-3 source assessment and same-master/workbook integration saved and verified; **remote publication/readback pending**. STOP for Proceed. **Next owner Proceed authorizes SO-2F-4 only: 72 frozen source records.** No adoption, donor transition, client work or deployment.
 
 ## History
 
