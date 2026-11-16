@@ -204,7 +204,10 @@ def verify():
             cells={x.get('r'):x for x in rows[n].findall(q('c'))}
             for j,v in enumerate(values,1):
                 key=letter(j)+str(n)
-                need(key in cells and pub.f3_cell_text(cells[key])==v,'saved crosswalk cell '+key)
+                if key not in cells:
+                    need((n==1 or n-1 in m['review_sections']) and v=='','merged heading/divider missing only expected blank '+key)
+                else:
+                    need(pub.f3_cell_text(cells[key])==v,'saved crosswalk cell '+key)
         amber=[next(x.get('s') for x in rows[n] if x.get('r')=='J'+str(n)) for n in (421,422,423,424)]
         need(len(set(amber))==1,'all three added SOSA cells use existing specialized amber style')
         root=ET.fromstring(new.read(pn['DIM Register']));rows={int(r.get('r')):r for r in root.find(q('sheetData')).findall(q('row'))}
