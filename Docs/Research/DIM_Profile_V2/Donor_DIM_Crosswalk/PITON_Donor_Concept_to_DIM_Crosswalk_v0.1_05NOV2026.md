@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 15 November 2026, America/New_York, SO-2F-1 partial checkpoint. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
+Updated 15 November 2026, America/New_York, SO-2F-1 integrated checkpoint. This file owns status/routing. Read [the protocol](../AGENTS.md) first. Objective: a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile preserving meaningful equipment differences. Repository `OS4CSAPI/glaux-client`; branch `research/dim-profile-v2`; verify live HEAD.
 
 ## Verified checkpoint
 
@@ -8,7 +8,7 @@ SO-2E research and same-workbook delivery are published at `4f5420a4a8128370bde5
 
 ## Interrupted work
 
-SO-2E fully published. SO-2F-1 has verified a frozen 581-ID/pointer manifest and assessed 58 native records, but **three proposed specialized rows still require canonical master/Excel integration**. No workbook content has been changed. Continue the same bounded step before SO-2F-2.
+SO-2E fully published. SO-2F-1 has verified a frozen 581-ID/pointer manifest and assessed 58 native records, and integrated three specialized source-qualified candidates into the same master and Excel. No interrupted SO-2F-1 delivery remains; next packet requires new owner Proceed.
 
 ## Active scope and evidence
 
@@ -18,13 +18,13 @@ SO-2E outcomes: **289 adequately represented, 60 supporting additions, 47 suppor
 
 Original C239 PDF 141–207 and 372–383 text read; PDF 144/185/186/197/200/201/376/382 visually inspected. All 496 original hashes matched. Twenty-two held records across twelve groups preserve key tags/configuration returns/store boundary, storage-response wording, host bearing/cosite/locator, QoS range/ownership, FACE reference, future conformance/matrix and role-symbol geometry. Task tables remain preliminary with TBD descriptions and inconsistent AMTI/Tracker reference. Source grades are unchanged; no new edition, native-companion, external-standard or general figure audit.
 
-**SO-2F-1 source checkpoint:** [compact 581-ID manifest and 58-record original-source assessment](SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json). Nine source-coherent subpacket counts: **58/73/36/72/77/77/67/77/44**; all 581 IDs/pointers match eight retained originals. In PDF208–216 of original C239, 58 residual records yielded **46 candidate-supporting, four source-specific/no-row, four already represented, four held figures**. Three specialized candidate families: PIC power inputs, mechanical/mating profile, cooling/host fit. Figure pixels, ANSI/VITA companions and prior holds remain unverified. Earlier seven-step estimate superseded; remaining in SO-2F: 523 IDs. G4-ledger merge is deferred because a 4.7 MB write failed; source checkpoint exists separately without modifying originals.
+**SO-2F-1 source checkpoint:** [compact 581-ID manifest and 58-record original-source assessment](SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json). Nine source-coherent subpacket counts: **58/73/36/72/77/77/67/77/44**; all 581 IDs/pointers match eight retained originals. In PDF208–216 of original C239, 58 residual records yielded **46 candidate-supporting, four source-specific/no-row, four already represented, four held figures**. Three specialized candidate families: PIC power inputs, mechanical/mating profile, cooling/host fit. Figure pixels, ANSI/VITA companions and prior holds remain unverified. Earlier seven-step estimate superseded; remaining in SO-2F: 523 IDs. The existing G4 ledger now routes the published 581-ID manifest and SO-2F-1 source dispositions.
 
 ## Master and workbook
 
-[Master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV/readable mirrors and [same editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **393 information rows**, **421×16 = 6,736 values**, **673 source classifications: 565 colored/108 held**. AAS retains 88 source-bearing comparisons; 305 remaining rows have explicit unassessed/case-held standing. Other donor/case values are preserved.
+[Master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV/readable mirrors and [same editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **396 information rows**, **424×16 = 6,784 values**, **676 source classifications: 568 colored/108 held**. AAS retains 88 source-bearing comparisons; 305 remaining rows have explicit unassessed/case-held standing. Other donor/case values are preserved.
 
-New SOSA cells J413:J421; existing qualifications J95,J202,J224,J345,J379,J386,J392,J393,J401,J402. J379 is the first classified SOSA audit comparison, not a changed prior classification. Audit and reservation definitions are clarified; existing AAS/source evidence remains. Use stable IDs/actual positions, not stale `display_row`. Preserve 26 sheets, 21 unaffected parts and M00/M01; no M02. Workbook SHA-256 `c66e67d64a1ca1ec8e28a65a99c3f019e17d53087a0e1b0bf68bf1b5ec0aa4d2`; full checks recorded in SO-2E publication metadata. Native Microsoft Excel clean reopening remains unverified.
+New SO-2F-1 amber SOSA cells J422:J424; prior J413:J421 preserved; existing qualifications J95,J202,J224,J345,J379,J386,J392,J393,J401,J402. J379 is the first classified SOSA audit comparison, not a changed prior classification. Audit and reservation definitions are clarified; existing AAS/source evidence remains. Use stable IDs/actual positions, not stale `display_row`. Preserve 26 sheets, 21 unaffected parts and M00/M01; no M02. Current workbook SHA-256 `c610b1ad7269ff56a5dbd97ba637952b0cbab9c584e9839970ac59a76e4cd49b`; prior SO-2E SHA-256 `c66e67d64a1ca1ec8e28a65a99c3f019e17d53087a0e1b0bf68bf1b5ec0aa4d2`; full checks recorded in SO-2E publication metadata. Native Microsoft Excel clean reopening remains unverified.
 
 ## Holds and owner decisions
 
@@ -40,7 +40,7 @@ Five pre-existing broader artifact-register/link errors remain unclosed. The bro
 
 ## Next action and stop
 
-SO-2F-1 source assessment saved, but **not closed**. **STOP for Proceed**. Next Proceed completes SO-2F-1 canonical integration only: three warranted specialized candidates in master, both CSV/readable mirrors and same 26-sheet workbook; saved-cell/fill parity, publication/readback and G4 routing if feasible. Stop before SO-2F-2. No adoption, donor transition or deployment.
+SO-2F-1 assessment and same-master/workbook integration verified locally; remote publication readback still required. **STOP for Proceed.** Next Proceed authorizes **SO-2F-2 only: 73 power-supply-card records**; stop before SO-2F-3. No adoption, donor transition or deployment.
 
 ## History
 
