@@ -747,7 +747,9 @@ def verify3():
             need(any('SO-2F-3' in pub.f3_cell_text(x) for x in root.iter(q('c'))),'current '+name+' sheet')
     l=load(LEDGER)
     need(len(l['SO2_source_opportunity_assessments'])==8 and l['SO2_source_opportunity_assessments']['SO-2F-3']['workbook_sha256']==sha,'G4 source ledger linked')
-    need('SO-2F-4 only' in (D/PITON).read_text(),'next owner Proceed stop')
+    # Accept either historical SO-2F-4 routing or the owner-approved finite closeout.
+    stop=(D/PITON).read_text().split('## Next action and stop',1)[-1].split('## History',1)[0]
+    need(('SO-2F-4 only' in stop) or ('SO-2F-R' in stop and '414' in stop and 'STOP' in stop), 'explicit owner Proceed stop; old six-packet schedule is superseded')
     print('PASS SO-2F-3: 36 IDs, 24 source supports/4 represented/6 source-only/2 held; 402 rows, 430x16 values; J428/J430 blue, J429 amber; all prior 427 rows, 21 sheets and M00/M01 preserved.')
     print('LIMIT: original VITA companions, security Appendix C, actual CoV, full overlay pin routing, native Excel clean reopen and model adoption unverified.')
 
