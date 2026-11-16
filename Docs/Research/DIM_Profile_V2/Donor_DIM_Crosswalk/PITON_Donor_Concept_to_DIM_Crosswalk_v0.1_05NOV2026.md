@@ -8,7 +8,7 @@ SO-2E research and same-workbook delivery are published at `4f5420a4a8128370bde5
 
 ## Interrupted work
 
-SO-2E through SO-2F-2 published and remotely verified. SO-2F-3 assessed 36 original C239 records and integrated three source-qualified, unadopted candidates in the same master/workbook. Saved-file verification passed; remote readback pending.
+SO-2E through SO-2F-2 published and remotely verified. SO-2F-3 assessed 36 original C239 records and integrated three source-qualified, unadopted candidates in the same master/workbook. Saved-file verification and remote publication readback passed at `29338ea8e5c969ea11e601a519e9da52d60dbc0b`.
 
 ## Active scope and evidence
 
@@ -34,12 +34,12 @@ AAS source/API/schema/figure/companion/template/external limits, generic Skill b
 
 ## Verification and publication
 
-SO-2F-3 publisher checked 6,880 saved values, new common/specialized fills, prior 427 comparison rows, 21 untouched sheets and exact frozen ID/pointer membership. Earlier publisher/readback passed; remote SO-2F-3 readback pending. Original M00/M01 preserved; native Microsoft Excel clean reopening unverified. Five broader artifact/link errors remain unresolved in the partial checkout; no blanket repository success claim.
+SO-2F-3 publisher checked 6,880 saved values, new common/specialized fills, prior 427 comparison rows, 21 untouched sheets and exact frozen ID/pointer membership. SO-2F-3 publisher and master verifier passed; branch readback confirmed. Earlier packets remain preserved. Original M00/M01 preserved; native Microsoft Excel clean reopening unverified. Five broader artifact/link errors remain unresolved in the partial checkout; no blanket repository success claim.
 
 ## Next action and stop
 
-SO-2F-3 source assessment and same-master/workbook integration saved and verified; **remote publication/readback pending**. STOP for Proceed. **Next owner Proceed authorizes SO-2F-4 only: 72 frozen source records.** No adoption, donor transition, client work or deployment.
+SO-2F-3 source assessment and same-master/workbook integration **published and remotely verified** at `29338ea8e5c969ea11e601a519e9da52d60dbc0b`; [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43794151190), [master verification PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43794151206). STOP for Proceed. **Next owner Proceed authorizes SO-2F-4 only: 72 frozen source records.** No adoption, donor transition, client work or deployment.
 
 ## History
 
-[Pre-SO-2E](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-so2e-15nov2026), [pre-SO-2D](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sosa-so2d-20261115), [pre-O7](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-aas-o7-20261115) and [pre-repair recovery history](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-recovery-protocol-before-20261115) preserve prior versions. Read history only for a concrete unresolved question.
+[Pre-SO-2F-3](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-so2f3-15nov2026), [Pre-SO-2E](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-so2e-15nov2026), [pre-SO-2D](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-sosa-so2d-20261115), [pre-O7](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-crosswalk-pre-aas-o7-20261115) and [pre-repair recovery history](https://github.com/OS4CSAPI/glaux-client/tree/archive/dim-recovery-protocol-before-20261115) preserve prior versions. Read history only for a concrete unresolved question.
