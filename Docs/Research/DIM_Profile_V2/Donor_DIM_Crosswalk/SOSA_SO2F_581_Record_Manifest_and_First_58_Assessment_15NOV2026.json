@@ -6723,5 +6723,803 @@
       "workbook_sha256": "f0b790dbc3b8eb16e8043098f9e7bfafe9836d43e653768b0eb523051cbc69ba",
       "native_excel_clean_reopen": "NOT VERIFIED"
     }
+  },
+  "SO_2F_3": {
+    "status": "SOURCE_ASSESSMENT_RECORDED__CANONICAL_INTEGRATION_NOT_DONE",
+    "scope": "C239 Edition 1.1 §§13.2.7–13.2.10, original PDF225–230 and Figure13.2.9-1 overview; 36 frozen G2-6A records",
+    "source_contact": "Original publisher C239 text/table on PDF225–230 directly read; original Figure13.2.9-1 visually inspected at overview. No ANSI/VITA 42.0/46.9/65.0, restricted Appendix C, independent CoV, installed device, native Microsoft Excel clean-open or runtime conformance evidence examined.",
+    "outcomes": {
+      "ADEQUATELY_REPRESENTED": 4,
+      "ADDITION_WARRANTED_PENDING_INTEGRATION": 24,
+      "HELD_EXACT_QUESTION": 2,
+      "SOURCE_SPECIFIC_NO_NEW_ROW": 6
+    },
+    "records": [
+      {
+        "id": "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-009",
+        "source_kind": "ANALYTICAL_CONTEXT",
+        "standing": "PROJECT_ANALYSIS_NOT_NATIVE_SOURCE_FIELD",
+        "locator": "§13.2.7",
+        "pdf_page": 225,
+        "source_pointer": "#/original_source_items/164",
+        "source_sha256_retained": "93d9297be381069dcb9b4333cbbbf526a5d70f21dbf97a608a4cf4c7bf2b9846",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Analyst synthesis: an optional mezzanine XMC installed on a payload plug-in card is a physically hosted hardware constituent, not an independently observed sensor",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "ADEQUATELY_REPRESENTED",
+        "closest_existing_rows": [
+          "S06-R007",
+          "ISA-C-099"
+        ],
+        "decision_rationale": "See existing source-qualified row; native meaning already represented."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-010",
+        "source_kind": "ANALYTICAL_CONTEXT",
+        "standing": "PROJECT_ANALYSIS_NOT_NATIVE_SOURCE_FIELD",
+        "locator": "§13.2.8",
+        "pdf_page": 225,
+        "source_pointer": "#/original_source_items/165",
+        "source_sha256_retained": "a73a68f58049e17e3709c1685902fbc0c77321dad388a17bddf1adaa8ff87a76",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Analyst synthesis: maintenance console is a low-level UART/firmware maintenance access port, not a normal operational service",
+        "group": "SERVICE",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "decision_rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-011",
+        "source_kind": "ANALYTICAL_CONTEXT",
+        "standing": "PROJECT_ANALYSIS_NOT_NATIVE_SOURCE_FIELD",
+        "locator": "§13.2.9",
+        "pdf_page": 227,
+        "source_pointer": "#/original_source_items/166",
+        "source_sha256_retained": "05131b69809941150adeef639ab7fb3972fbb3d66c71a0e7c76b484253dfd782",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Analyst synthesis: connector overlays define functional pin/profile mappings rather than physical standalone sensing equipment",
+        "group": "OVERLAY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "decision_rationale": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-012",
+        "source_kind": "ANALYTICAL_CONTEXT",
+        "standing": "PROJECT_ANALYSIS_NOT_NATIVE_SOURCE_FIELD",
+        "locator": "§13.2.10",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/167",
+        "source_sha256_retained": "bcf0696663733773398248fe240100a3ac86e5e81b2c1d70bb3546d785171358",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Analyst synthesis: vendor Certificate of Volatility describes memory/protection claims but is not an exhaustive verified device memory audit",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-001",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/145",
+        "source_sha256_retained": "3aa32ae3b7bf1475211571c2af98b14e76d5b1c2855fd100ee428f4343fee141",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Certificate of Volatility vendor/manufacturer name as a document attribute",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "ADEQUATELY_REPRESENTED",
+        "closest_existing_rows": [
+          "S06-R001"
+        ],
+        "decision_rationale": "Existing manufacturer-name candidate captures the name; it is not a new memory information field."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-002",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/146",
+        "source_sha256_retained": "fb0a36c6c53619712e4be2b0a761d1a0b6a525bfa3fe8608d06e56d09a5ceb96",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Certificate of Volatility identifies product(s), name/family or part number covered by the document",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "ADEQUATELY_REPRESENTED",
+        "closest_existing_rows": [
+          "S06-R002"
+        ],
+        "decision_rationale": "Existing product model designation covers product scope; keep document-to-product qualification under the memory-evidence candidate, without another identity row."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-003",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/147",
+        "source_sha256_retained": "60d977425bbb2415f1a8c1482f548e37db61275ee099c84284b8d9dbeb7466b8",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Memory manufacturer and part number",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-004",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/148",
+        "source_sha256_retained": "6f9f0b976054150892f9d747952302a521445fbbeda84a59e12a6aa5455012b3",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Volatile memory type",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-005",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/149",
+        "source_sha256_retained": "9ac0d8a10c038fbc0b1d378dc7db98baf5ce019d5f576b7edffb7ce4e060032a",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Non-volatile memory type",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-006",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/150",
+        "source_sha256_retained": "6600f91f3c3275704fcbb0b86eef67799eb6f13b7f16760630ec4f11e33cf09f",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Memory size",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-007",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/151",
+        "source_sha256_retained": "523d80059a39a93eaa8ccabea4ad21746aff401ab29ca195d9171f549975ef3c",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Memory functionality",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-008",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/152",
+        "source_sha256_retained": "4634d4c0c73f5941be31f772112c72474e1a5bd82225e1897b4239e39a37f5b7",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Memory write interface/method",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-009",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/153",
+        "source_sha256_retained": "00ef07a89edcce13467390df237e4b39ab35793e782bae547aa011b90db065ad",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Write-protection mechanism including NVMRO",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-010",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/154",
+        "source_sha256_retained": "5c2ec4d1ddb99119d96a46503e4dfb04b29e86c703a6c1884b5350083312fd52",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Volatile-memory documentation declares internal retention-power source such as battery or supercapacitor when applicable; not proof of installed battery/energy level",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-COV_FIELD-011",
+        "source_kind": "COV_FIELD",
+        "standing": "REQUIRED_MANUFACTURER_DOCUMENTATION",
+        "locator": "Rule 13.2.10-2",
+        "pdf_page": 230,
+        "source_pointer": "#/original_source_items/155",
+        "source_sha256_retained": "a56b7ef12ace8c8cdb40cf71d9c8cf649261c47a04bdff94aafa5eb46065af98",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Volatile-memory documentation can declare memory cleared on main-power removal if no independent retention power; not a verified wipe",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-FIGURE-13.2.9-1",
+        "source_kind": "FIGURE",
+        "standing": "SOURCE_FIGURE_REFERENCE",
+        "locator": "Figure 13.2.9-1",
+        "pdf_page": 228,
+        "source_pointer": "#/original_source_items/144",
+        "source_sha256_retained": "2c133ac85bc78a095d2f747bcea7fdfb8b1bc67fb8e4cd783458c6c2ac567197",
+        "source_contact": "C239_2023_PDF228_VISUAL_OVERVIEW__PIN_LEVEL_UNVERIFIED",
+        "native_meaning": "Original figure showing AUXCLK/REFCLK distribution overlay, caption spells RECLK while surrounding prose uses REFCLK",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "HELD_EXACT_QUESTION",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PLUG-IN-OVERLAY"
+        ],
+        "decision_rationale": "Figure 13.2.9-1 overview visually inspected but exact pin-level matrix/clock routing and RECLK versus REFCLK source-caption inconsistency not independently reconciled; do not infer precise pin geometry.",
+        "exact_hold": "Figure 13.2.9-1 overview visually inspected but exact pin-level matrix/clock routing and RECLK versus REFCLK source-caption inconsistency not independently reconciled; do not infer precise pin geometry."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-OBSERVATION-13.2.10-1",
+        "source_kind": "OBSERVATION",
+        "standing": "SOURCE_OBSERVATION_NOT_NEW_SHALL",
+        "locator": "§13.2.10",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/127",
+        "source_sha256_retained": "cd441c9d3b20ec5ab11ba8a095dd6c414d39b3771c0b6ab1205ed01c54f9ba2b",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "C239 observation: CoV intended to identify hardware memories, volatility and nonvolatile read-only protection",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-OBSERVATION-13.2.10-2",
+        "source_kind": "OBSERVATION",
+        "standing": "SOURCE_OBSERVATION_NOT_NEW_SHALL",
+        "locator": "§13.2.10",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/128",
+        "source_sha256_retained": "e28172a776e61e72bc957a928ad9cf3085dcca2d19b65eded396020dc5afdc1f",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "C239 observation: hardware vendors may require an NDA before releasing a CoV",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "SOURCE_SPECIFIC_NO_NEW_ROW",
+        "closest_existing_rows": [
+          "AAS-O2-SUPPORTING-CONTENT",
+          "SOSA-SO2F-MEMORY-VOLATILITY-EVIDENCE"
+        ],
+        "decision_rationale": "Possible vendor disclosure restriction is an access qualification, not a new memory property; no actual four-case CoV was supplied."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-OBSERVATION-13.2.10-3",
+        "source_kind": "OBSERVATION",
+        "standing": "SOURCE_OBSERVATION_NOT_NEW_SHALL",
+        "locator": "§13.2.10",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/129",
+        "source_sha256_retained": "067da747029ec5dd76998f86ca77206ea3be6a538be242910ad453a780ae9f07",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "C239 observation: undisclosed nonvolatile memories embedded inside components might not be covered by a vendor CoV",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "HELD_EXACT_QUESTION",
+        "closest_existing_rows": [
+          "SOSA-SO2F-MEMORY-VOLATILITY-EVIDENCE"
+        ],
+        "decision_rationale": "Neither a CoV nor original embedded-hardware inventory was supplied for the cases, and the source expressly warns undocumented nonvolatile memories may exist. Full coverage/sanitization cannot be attested.",
+        "exact_hold": "Neither a CoV nor original embedded-hardware inventory was supplied for the cases, and the source expressly warns undocumented nonvolatile memories may exist. Full coverage/sanitization cannot be attested."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-OBSERVATION-13.2.7-1",
+        "source_kind": "OBSERVATION",
+        "standing": "SOURCE_OBSERVATION_NOT_NEW_SHALL",
+        "locator": "§13.2.7",
+        "pdf_page": 225,
+        "source_pointer": "#/original_source_items/125",
+        "source_sha256_retained": "bd8042bbe1030045a4dcc0a0cb11dd39dfafef56ead6fa59f813c6c6d9d610a1",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Source observes target-system integration/qualification testing for installed XMC mezzanines in final payload-module configuration and environmental context",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "ADEQUATELY_REPRESENTED",
+        "closest_existing_rows": [
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "decision_rationale": "Existing scoped conformance/qualification-evidence row already preserves covered subject, deployed configuration and test basis; no real qualification report reviewed."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-OBSERVATION-13.2.8.4-1",
+        "source_kind": "OBSERVATION",
+        "standing": "SOURCE_OBSERVATION_NOT_NEW_SHALL",
+        "locator": "§13.2.8.4",
+        "pdf_page": 227,
+        "source_pointer": "#/original_source_items/126",
+        "source_sha256_retained": "30a2ead6a08f325fa317fed12f425ca2e21f149e86b53922fa697258e4b9948c",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Source explains optional external TIA-232 transceiver polarity adaptation for noninverted maintenance-console signaling",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "SOURCE_SPECIFIC_NO_NEW_ROW",
+        "closest_existing_rows": [
+          "SOSA-SO2F-MAINTENANCE-ACCESS"
+        ],
+        "decision_rationale": "Specific serial-level conversion implementation does not establish a separate whole-equipment information need beyond the qualified maintenance-console interface."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-PERMISSION-13.2.7-1",
+        "source_kind": "PERMISSION",
+        "standing": "PERMISSION_MAY",
+        "locator": "§13.2.7",
+        "pdf_page": 225,
+        "source_pointer": "#/original_source_items/104",
+        "source_sha256_retained": "ab5611914c86b54b2e7b3958c5796acb0158a7115a700a20aa284f7e1f79d7c8",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Permission to use nonconformant mezzanine cards in a SOSA implementation",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "SOURCE_SPECIFIC_NO_NEW_ROW",
+        "closest_existing_rows": [
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE",
+          "S06-R007"
+        ],
+        "decision_rationale": "Native permission is not proof that a card was installed or qualified, and is not a universal DIM conformance exception."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-PERMISSION-13.2.8.4-1",
+        "source_kind": "PERMISSION",
+        "standing": "PERMISSION_MAY",
+        "locator": "§13.2.8.4",
+        "pdf_page": 227,
+        "source_pointer": "#/original_source_items/105",
+        "source_sha256_retained": "428b93f7b2033c401f15a08171b97375440e889a13c015b1730ec40ce77b7656",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Maintenance console may support additional UART rates/protocol settings beyond required minimum",
+        "group": "SERVICE",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "decision_rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RECOMMENDATION-13.2.7-1",
+        "source_kind": "RECOMMENDATION",
+        "standing": "RECOMMENDATION_SHOULD",
+        "locator": "§13.2.7",
+        "pdf_page": 225,
+        "source_pointer": "#/original_source_items/108",
+        "source_sha256_retained": "33ef729219f540330f85e4c2f9c5932825c25ff219775607a0406fa0195febcd",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Recommendation ordering high-priority XMC user signals across ANSI/VITA 46.9 X12d, X8d, X16s, X24s patterns",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "SOURCE_SPECIFIC_NO_NEW_ROW",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY"
+        ],
+        "decision_rationale": "Mezzanine pin-pattern placement preference is a source-specific recommendation; original ANSI/VITA 46.9 tables unread."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.10-1",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.10",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/96",
+        "source_sha256_retained": "3c35669155768417bd1bb8a131ab395211640ce63c0711d95584f932fc6250d6",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "C239 rule: conformable hardware element includes a CoV as part of its user documentation package; no actual CoV received",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.10-2",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.10",
+        "pdf_page": 229,
+        "source_pointer": "#/original_source_items/97",
+        "source_sha256_retained": "d849fdf431a8cc01359278949c1c16059abaf521b05e7419f63eb93d868800a3",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "C239 rule: minimum CoV entries include product and per-memory technical/protection/retention declarations on PDF229–230",
+        "group": "MEMORY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "decision_rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.7-1",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.7",
+        "pdf_page": 225,
+        "source_pointer": "#/original_source_items/89",
+        "source_sha256_retained": "953d1b3b1a8e534925406192f2bc97e5f567762a5df9a2ceef52da248f396606",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Mezzanine cards with unused user I/O signal pins must leave them unconnected",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "SOURCE_SPECIFIC_NO_NEW_ROW",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE"
+        ],
+        "decision_rationale": "Conditional electrical-layout rule for an XMC design, not a generic equipment information field or observed pin state."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.7-2",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.7",
+        "pdf_page": 225,
+        "source_pointer": "#/original_source_items/90",
+        "source_sha256_retained": "bd34dbbb944351a3db37f4a8d2d44ca66a3be9c736d3194e4dbc94402089a149",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Payload card with an XMC site routes ANSI/VITA 42.0 I2C connections from the mezzanine site to the payload IPMC",
+        "group": "SOURCE_QUALIFICATION",
+        "outcome": "SOURCE_SPECIFIC_NO_NEW_ROW",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "S06-R007"
+        ],
+        "decision_rationale": "This is a named conditional internal board-level wiring rule, represented at an information-need level by the existing interface boundary and hosted physical constituent concepts; native pin mapping remains SOSA-specific."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.8.4-1",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.8.4",
+        "pdf_page": 226,
+        "source_pointer": "#/original_source_items/91",
+        "source_sha256_retained": "233560ce627df4b5ecd87f8a8a640c7c6612c1b95a98034f5337a6bbf3a1df1b",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "SOSA maintenance port is a two-pin UART serial interface",
+        "group": "SERVICE",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "decision_rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.8.4-2",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.8.4",
+        "pdf_page": 226,
+        "source_pointer": "#/original_source_items/92",
+        "source_sha256_retained": "6ccb6149680ea80ba6fe05be40fe42425a7815c42e31a3327285fc15157a54de",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Maintenance port LVCMOS active-high/noninverted voltage/signaling profile specified by Table13.2.8.4-1",
+        "group": "SERVICE",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "decision_rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.8.4-3",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.8.4",
+        "pdf_page": 227,
+        "source_pointer": "#/original_source_items/93",
+        "source_sha256_retained": "ba75b4821c2beee4e885383fdfef20f2e687067f102233bda8b69d8e78da0502",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Maintenance port supports 115200, 57600 and 9600 bit/s, 8 data bits, no parity, one stop bit",
+        "group": "SERVICE",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "decision_rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.9-1",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.9",
+        "pdf_page": 228,
+        "source_pointer": "#/original_source_items/94",
+        "source_sha256_retained": "ed088eef603585939c4860b1269df2cef0aa63ec2425f52dc0cbef30c8f731d6",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "3U payload-slot profile maps selected XMC Type A overlay from the AMPS Protocol Table 13.2.9-1",
+        "group": "OVERLAY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "decision_rationale": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-RULE-13.2.9-2",
+        "source_kind": "RULE",
+        "standing": "RULE_SHALL",
+        "locator": "§13.2.9",
+        "pdf_page": 228,
+        "source_pointer": "#/original_source_items/95",
+        "source_sha256_retained": "de35d0f51bc33748376f0a04c6cdf323386fbf0d619c8ec9409893b3940ea713",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "6U payload-slot profile maps selected XMC Type B overlay from AMPS Protocol Table 13.2.9-2",
+        "group": "OVERLAY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "decision_rationale": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-TABLE-13.2.8.4-1",
+        "source_kind": "TABLE",
+        "standing": "SOURCE_NATIVE_TABLE",
+        "locator": "Table 13.2.8.4-1",
+        "pdf_page": 227,
+        "source_pointer": "#/original_source_items/137",
+        "source_sha256_retained": "d98d9d46c91aefbb681f89324c365dddbe516114f3a3cbe33426a0e7e669c2fa",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "Maintenance-console LVCMOS Vcc/Vih/Vil/Voh/Vol signal levels contrasted with ANSI/VITA 65.0 reference serial/GPIO",
+        "group": "SERVICE",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "decision_rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-TABLE-13.2.9-1",
+        "source_kind": "TABLE",
+        "standing": "SOURCE_NATIVE_TABLE",
+        "locator": "Table 13.2.9-1",
+        "pdf_page": 228,
+        "source_pointer": "#/original_source_items/138",
+        "source_sha256_retained": "753f7db635d3338ca163337e35c415d5164185ebfd66482296c2d51fab241e17",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "XMC Type A overlay entries N, XA0, XA1 and XA2 map no-connect, user-defined, GPIO/GPLVDS and security options with ANSI/VITA references",
+        "group": "OVERLAY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "decision_rationale": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class."
+      },
+      {
+        "id": "SOSA-C239-G2-6A-TABLE-13.2.9-2",
+        "source_kind": "TABLE",
+        "standing": "SOURCE_NATIVE_TABLE",
+        "locator": "Table 13.2.9-2",
+        "pdf_page": 228,
+        "source_pointer": "#/original_source_items/139",
+        "source_sha256_retained": "dc407ac66ab06bec4984bf6eea66e4718a5ff8927ed3a3927f06835da5d28b31",
+        "source_contact": "C239_2023_PDF225_230_TEXT_AND_NATIVE_TABLES_DIRECTLY_READ",
+        "native_meaning": "XMC Type B overlay entries N, XB0, XB1 and XB2 map no-connect, user-defined, GPIO/GPLVDS and security options with ANSI/VITA references",
+        "group": "OVERLAY",
+        "outcome": "ADDITION_WARRANTED_PENDING_INTEGRATION",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "decision_rationale": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class."
+      }
+    ],
+    "proposed_candidates": [
+      {
+        "row_id": "SOSA-SO2F-MAINTENANCE-ACCESS",
+        "label": "Candidate — Maintenance-only physical console access and declared interface profile",
+        "definition": "Describe a component's designated low-level maintenance/debug console separately from its operational data, management API and ordinary remote-access endpoint. Preserve source-declared port purpose, physical/protocol and signaling characteristics, supported serial settings, optional aggregation and deployment accessibility as distinct conditional claims; actual port presence, reachability and authorization are not inferred. SOSA C239 specifies a UART Maintenance Console Port using LVCMOS signaling and minimum supported speeds, but those electrical details are source-scoped.",
+        "classification": "COMMON_CANDIDATE",
+        "closest_existing_rows": [
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "ISA-A-SERVICE-ROLE",
+          "ISA-A-NETWORK-CONTEXT",
+          "ISA-T-ACCESS"
+        ],
+        "rationale": "Existing interface boundary and service-role rows do not separately capture a designated maintenance-only, potentially unavailable low-level console distinct from an operational service endpoint. Maintenance-purpose qualification can transfer to other equipment; UART/LVCMOS values remain SOSA specific.",
+        "group": "SERVICE",
+        "evidence_ids": [
+          "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-010",
+          "SOSA-C239-G2-6A-PERMISSION-13.2.8.4-1",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-1",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-2",
+          "SOSA-C239-G2-6A-RULE-13.2.8.4-3",
+          "SOSA-C239-G2-6A-TABLE-13.2.8.4-1"
+        ]
+      },
+      {
+        "row_id": "SOSA-SO2F-PLUG-IN-OVERLAY",
+        "label": "Candidate — Slot-profile connector overlay and electrical function mapping",
+        "definition": "Record a named or selected plug-in-card slot-profile overlay that maps otherwise undefined connector positions to declared functions, protocol patterns or backplane signal distribution, with the applicable card/profile and source table. An overlay assignment is a profile/design declaration, not an installed module, actual configured security service, measured signal, or evidence of certification. SOSA C239 describes XMC Type A/Type B alternatives and an AUXCLK/REFCLK distribution example; native pin-level figure geometry and the referenced restricted Appendix C security requirements remain unverified.",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "closest_existing_rows": [
+          "SOSA-SO2F-PIC-MECHANICAL-PROFILE",
+          "SOSA-SO2A-INTERFACE-BOUNDARY",
+          "SOSA-SO2A-CONFORMANCE-EVIDENCE"
+        ],
+        "rationale": "Card form factor and generic interface boundary do not preserve the selected overlay and connector-function mapping; security labels cannot substitute for verified security features. Pin overlay is a specialized design relationship, not a new device class.",
+        "group": "OVERLAY",
+        "evidence_ids": [
+          "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-011",
+          "SOSA-C239-G2-6A-RULE-13.2.9-1",
+          "SOSA-C239-G2-6A-RULE-13.2.9-2",
+          "SOSA-C239-G2-6A-TABLE-13.2.9-1",
+          "SOSA-C239-G2-6A-TABLE-13.2.9-2"
+        ]
+      },
+      {
+        "row_id": "SOSA-SO2F-MEMORY-VOLATILITY-EVIDENCE",
+        "label": "Candidate — Declared memory inventory, volatility and protection evidence",
+        "definition": "A vendor-provided memory/volatility documentation record associated with the hardware product and its constituent memories, specifying each documented memory's manufacturer/part, volatile or nonvolatile technology, capacity, function, supported write path, protection method and any retained-power source or power-removal clearing declaration. Keep the document and declared claims distinct from directly verified installed memory, actual sanitization outcome, exhaustive embedded memory discovery or security certification. SOSA C239 requires a Certificate of Volatility for its conformable hardware elements; applicability is source-scoped.",
+        "classification": "COMMON_CANDIDATE",
+        "closest_existing_rows": [
+          "SOSA-SO2D-WRITE-PROTECTION",
+          "AAS-O2-SUPPORTING-CONTENT",
+          "S06-R001",
+          "S06-R002",
+          "ISA-C-232"
+        ],
+        "rationale": "An isolated write-protection capability, manufacturer identity, product name or generic file does not preserve a per-memory documentary inventory and retention/clearance claims. The information meaning is usable beyond SOSA, but documentation is not proof of exhaustive or actual memory state.",
+        "group": "MEMORY",
+        "evidence_ids": [
+          "SOSA-C239-G2-6A-ANALYTICAL_CONTEXT-012",
+          "SOSA-C239-G2-6A-COV_FIELD-003",
+          "SOSA-C239-G2-6A-COV_FIELD-004",
+          "SOSA-C239-G2-6A-COV_FIELD-005",
+          "SOSA-C239-G2-6A-COV_FIELD-006",
+          "SOSA-C239-G2-6A-COV_FIELD-007",
+          "SOSA-C239-G2-6A-COV_FIELD-008",
+          "SOSA-C239-G2-6A-COV_FIELD-009",
+          "SOSA-C239-G2-6A-COV_FIELD-010",
+          "SOSA-C239-G2-6A-COV_FIELD-011",
+          "SOSA-C239-G2-6A-OBSERVATION-13.2.10-1",
+          "SOSA-C239-G2-6A-RULE-13.2.10-1",
+          "SOSA-C239-G2-6A-RULE-13.2.10-2"
+        ]
+      }
+    ],
+    "source_holds": [
+      "C239 source CoV does not guarantee discovery of undocumented embedded NVM; none of four case CoVs available",
+      "Figure13.2.9-1 precise pin-level distribution unverified; caption RECLK inconsistent with adjacent REFCLK prose",
+      "Referenced ANSI/VITA 42.0, 46.9, 65.0 original companions unread",
+      "Restricted Appendix C security-overlay requirements unread; security options not certification",
+      "Board maintenance UART is not an operational CSAPI control interface; deployed accessibility unverified",
+      "Vendor NDA may restrict actual CoV access; no installed memory, wipe/retention result or certificate verified",
+      "SOSA/SAPIENT bounded-PARTIAL owner decisions, other source holds and adoption gates unchanged"
+    ],
+    "master_workbook": "Source decision recorded, no master/workbook edit until publisher integration and verification",
+    "next": "STOP before SO-2F-4; integrate SO-2F-3 only with next owner step as authorized."
   }
 }
