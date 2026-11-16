@@ -205,7 +205,7 @@ def verify():
             for j,v in enumerate(values,1):
                 key=letter(j)+str(n)
                 if key not in cells:
-                    need((n==1 or n-1 in m['review_sections']) and v=='','merged heading/divider missing only expected blank '+key)
+                    need(v=='','missing Excel cell must correspond to an empty canonical value '+key)
                 else:
                     need(pub.f3_cell_text(cells[key])==v,'saved crosswalk cell '+key)
         amber=[next(x.get('s') for x in rows[n] if x.get('r')=='J'+str(n)) for n in (421,422,423,424)]
