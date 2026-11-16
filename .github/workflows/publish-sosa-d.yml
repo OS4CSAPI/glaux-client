@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/publish-sosa-d.yml
       - scripts/publish_sosa_d.py
+      - scripts/integrate_sosa_opportunity_checkpoint.py
 permissions:
   contents: write
 concurrency:
@@ -27,8 +28,9 @@ jobs:
           python-version: '3.12'
       - name: Compile and publish once (full saved-cell and preserved-sheet checks)
         run: |
-          python -m py_compile scripts/publish_sosa_d.py
-          python scripts/publish_sosa_d.py
+          python -m py_compile scripts/publish_sosa_d.py scripts/integrate_sosa_opportunity_checkpoint.py
+          python scripts/integrate_sosa_opportunity_checkpoint.py --apply
+          python scripts/integrate_sosa_opportunity_checkpoint.py --verify
       - name: Commit ALL canonical formats as one coherent publication
         shell: bash
         run: |
@@ -48,6 +50,9 @@ jobs:
           git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/F2_5_Workbook_Validation_13NOV2026.json
           git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/AAS02_G_Column_Workbook_Validation_13NOV2026.json
           git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/AAS01_Original_Source_Corpus_Coverage_13NOV2026.json
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_SO2F_581_Record_Manifest_and_First_58_Assessment_15NOV2026.json
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json
+          git add Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md
           if git diff --cached --quiet; then echo "Committed canonical workbook checkpoint verified; no mutation needed"; exit 0; fi
           git commit -m "research(dim-v2): verified source-qualified canonical workbook checkpoint"
           git push origin HEAD:research/dim-profile-v2
