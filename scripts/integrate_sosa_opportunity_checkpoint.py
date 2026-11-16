@@ -241,6 +241,271 @@ def apply():
          'workbook_sha256':sha,'prior_source_holds_preserved':True}
     text_mirrors(m);save(MASTER,m);routes(a,sha);verify()
 
+
+# ---- SO-2F-2 bounded PSC packet: source-assessed 73-record increment ----
+BASE2='0c7b5499c85710b699c2f33e14400d9424679de9'
+SHA1='c610b1ad7269ff56a5dbd97ba637952b0cbab9c584e9839970ac59a76e4cd49b'
+CP2='SOSA_SO2F2_SAVED_VERIFIED'
+
+def prior2(n):
+    return subprocess.check_output(['git','show',BASE2+':'+str((D/n).relative_to(ROOT))],cwd=ROOT)
+
+def packet2_preflight(m,src):
+    need(m['currentEvidenceCheckpoint']==CP and len(m['rows'])==396 and len(m['review_grid'])==424,'SO2F2 requires exactly published SO2F1 starting master')
+    need(m['currentWorkbookSha256']==SHA1 and digest((D/BOOK).read_bytes())==SHA1,'SO2F1 workbook has not drifted')
+    before=json.loads(prior2(MASTER))
+    need(m['rows']==before['rows'] and m['review_grid']==before['review_grid'],'published SO2F1 master and grid unchanged')
+    historical=json.loads(prior2(SOURCE))
+    need(src['source_manifest']==historical['source_manifest'] and src['SO_2F_1']==historical['SO_2F_1'],'581 original refs, hashes and first 58 assessments preserved')
+    a=src['SO_2F_2']
+    need(a['status']=='SOURCE_ASSESSMENT_RECORDED__CANONICAL_INTEGRATION_NOT_DONE','source assessment stage')
+    manifest={rec[0]:rec for rec in src['source_manifest']['record_refs'] if rec[1]=='SO-2F-2'}
+    need(len(manifest)==73 and len(a['records'])==73 and set(manifest)=={r['id'] for r in a['records']},'exact 73 original IDs and no duplicates')
+    native=load('SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json')['original_source_items']
+    tally={}
+    for r in a['records']:
+        ident=r['id']; rec=manifest[ident]
+        need(rec[2]=='SOSA_G2_6A_Original_Source_Item_Coverage_10NOV2026.json' and rec[3]==r['source_pointer'] and rec[4]==r['source_sha256_retained'],'frozen ID/pointer/hash '+ident)
+        j=int(rec[3].split('/')[-1]);need(native[j]['id']==ident,'source pointer must resolve original source item '+ident)
+        need(r['locator']==native[j]['original_source_locator'] and r['source_kind']==native[j]['native_kind'] and r['standing']==native[j]['normative_standing'] and r['pdf_page']==native[j]['original_pdf_page'],'source edition/standing/locator '+ident)
+        need(bool(r['native_meaning']) and bool(r['decision_rationale']) and bool(r['closest_existing_rows']),'per-record auditable meaning and closest-row decision '+ident)
+        tally[r['outcome']]=tally.get(r['outcome'],0)+1
+        if r['outcome']=='HELD_EXACT_QUESTION':need(bool(r.get('exact_hold')),'named hold '+ident)
+    need(tally==a['outcomes']=={'ADDITION_WARRANTED_PENDING_INTEGRATION':55,'ADEQUATELY_REPRESENTED':3,'HELD_EXACT_QUESTION':8,'SOURCE_SPECIFIC_NO_NEW_ROW':7},'outcome reconciliation')
+    c=a['proposed_candidates']; need(len(c)==3 and sorted(len(x['evidence_ids']) for x in c)==[8,13,34],'three non-arbitrary meanings')
+    added={r['id'] for r in a['records'] if r['outcome']=='ADDITION_WARRANTED_PENDING_INTEGRATION'}
+    allocated=[ident for x in c for ident in x['evidence_ids']]
+    need(len(allocated)==len(added) and len(set(allocated))==len(allocated) and set(allocated)==added,'every warranted source record supports one distinct candidate')
+    need(len({x['row_id'] for x in c})==3 and all(x['row_id'] not in {v['row_id'] for v in m['rows']} for x in c),'three new stable IDs')
+    return c
+
+def packet2_candidates(m,src):
+    candidates=packet2_preflight(m,src)
+    for c in candidates:
+        i=len(m['review_grid'])+1
+        default=['Not linked here — no case evidence established.']*4 + ['Not assessed here — no verified correspondence; not evidence of absence.']*11 + ['OPTIONAL information-need candidate: '+c['label'].removeprefix('Candidate — ')+' — NOT ADOPTED']
+        need(len(default)==16 and all(v.strip() for v in default),'all new donor/case/DIM cells explicit')
+        ids=c['evidence_ids'];locs=sorted({r['locator'] for r in src['SO_2F_2']['records'] if r['id'] in ids})
+        default[9]='[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: '+c['definition']+' [C239 Edition 1.1 §13.2.6–§13.2.6.6, PDF216–225; SO-2F-2; original source IDs retained; ANSI/VITA and source-cross-reference holds.]'
+        mapping={'donor':'The Open Group SOSA C239 Edition 1.1 (2023)','source_ids':ids,'original_source_locators':locs,
+           'native_meaning':c['definition'],'closest_prior_rows':c['closest_existing_rows'],
+           'reason_for_separate_candidate':c['rationale'],
+           'relation':'RELATED_BUT_DISTINCT_PSC_ENGINEERING_INTERFACE_NOT_MEASURED_OR_INSTALLED_STATE',
+           'candidate_status':'SPECIALIZED_CANDIDATE','classification_rationale':'Conditional PSC hardware interface/design information; no universal field, installed signal or conformance claim.',
+           'fill':'#F9E6B8','cell':'J'+str(i),'DIM_Profile_adopted':False,'case_or_runtime_verified':False,'future_only':False,
+           'figure_pixels_audited':False,'native_ANSI_VITA_companions_read':False,'source_manifest_file':SOURCE}
+        m['rows'].append({'row_id':c['row_id'],'label':c['label'],'display_row':i,
+          'status':'SO-2F-2 provisional specialized information-need candidate; NOT ADOPTED',
+          'definition':c['definition'],'source_entry_ids':ids,'evidence_records':ids,
+          'master_inclusion':'PROVISIONAL_NATIVE_SOSA_CANDIDATE','dim_adoption':'NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE',
+          'source_review_status':'SO2F2_RETAINED_NATIVE_C239_TEXT_TABLES_REVIEWED__COMPANIONS_AND_SOURCE_CONFLICTS_HELD',
+          'display':default,'SO2_source_correspondence':mapping})
+        m['review_grid'].append(default)
+    need(len(m['rows'])==399 and len(m['review_grid'])==427 and len(m['review_sections'])==26,'399 information rows; 427 grid rows; original 26 dividers')
+    return candidates
+
+def packet2_workbook(m,candidates):
+    olddata=(D/BOOK).read_bytes();q=pub.q;edited={}
+    cells_info={
+      'Summary':{'A1':'CURRENT 15 NOV 2026 — SOSA SO-2F-2 complete',
+        'B1':'399 information rows in SAME 26-sheet master. F3 accepted; SOSA bounded PARTIAL; AAS acceptance pending. M00/M01 preserved.',
+        'B17':'SO-2F-2: 73 original power-supply-card records reviewed. Three source-qualified specialized candidate families: PSC power ports, regulation/synchronization interfaces, and utility-control/fault signals.',
+        'B19':'399 information rows; 679 classified source comparisons: 571 colored, 108 held. Eight original-source holds do not generate new held classification cells.',
+        'B21':'C239 Edition 1.1 PDF216–225 text and connector tables reviewed; native ANSI/VITA companions, source cross-reference conflicts and native Excel clean-open unverified.',
+        'B22':'PSC ports and control interfaces are source-scoped design declarations, not reported supply voltage/current, installed battery, issued commands or model requirements.',
+        'B23':'STOP for Proceed; next SO-2F-3 ONLY, 36 frozen source records. No advancement to SO-2F-4, donor transition or deployment.',
+        'B28':'6,832 saved crosswalk values; three new amber J425:J427 cells; earlier 424 grid rows, 21 untouched worksheets and manual M00/M01 preserved.'},
+      'Validation':{'A1':'CURRENT 15 NOV 2026 — SOSA SO-2F-2 complete',
+        'B1':'399 information rows in SAME 26-sheet master. Source holds retained. No DIM/Profile adoption.',
+        'B17':'SO-2F-2: 73 C239 §13.2.6 source records accounted for; 55 support three distinct specialized candidates, three represented, seven source-specific/no row, eight held.',
+        'B19':'399 rows; 679 classified: 571 colored, 108 held. Saved full 427×16 parity is verified.',
+        'B21':'Original PDF216–225 text and tables read; 2023 C239 source ambiguities and external ANSI/VITA companions held.',
+        'B22':'Source coverage is bounded PARTIAL; neither installed PSC state nor live conformance verified.',
+        'B23':'STOP: SO-2F-3 36 original source records requires separate owner Proceed.',
+        'B28':'Prior 424 grid rows and 21 unaffected sheets retained; M00/M01 preserved; native Excel clean-open not verified.'},
+      'Legend':{'A1':'CURRENT LEGEND — SOSA SO-2F-2; classification is not adoption',
+        'B23':'571 colored / 108 held. J425:J427 three specialized SOSA candidate amber cells; 676 earlier classifications unchanged.',
+        'B24':'399 information rows; 427 × 16 comparison grid; original 26 topic divider rows preserved.',
+        'A28':'Current SO-2F-2 boundary',
+        'B28':'73 C239 §13.2.6–§13.2.6.6 records: 55 supporting 3 candidates; 3 represented; 7 source-only; 8 exact holds. STOP before SO-2F-3.'}
+    }
+    with zipfile.ZipFile(io.BytesIO(olddata)) as z:
+        paths=pub.old.sheetpaths(z);need(len(paths)==26,'same 26 original worksheets')
+        for sheetname in ('Master Crosswalk','DIM Register'):
+            path=paths[sheetname];root=ET.fromstring(z.read(path));sd=root.find(q('sheetData'))
+            oldrows={int(rr.get('r')):rr for rr in sd.findall(q('row'))}
+            template=oldrows[424 if sheetname=='Master Crosswalk' else 397]
+            for j,c in enumerate(candidates):
+                idx=(425+j if sheetname=='Master Crosswalk' else 398+j)
+                rr=copy.deepcopy(template);rr.set('r',str(idx));rr.set('ht','330');rr.set('customHeight','1')
+                if sheetname=='Master Crosswalk':
+                    values=m['review_grid'][424+j];width=16
+                else:
+                    row=m['rows'][396+j];link=row['SO2_source_correspondence'];ids=', '.join(c['evidence_ids'])
+                    values=[row['row_id'],row['label'],row['definition'],row['status'],row['source_review_status'],
+                      row['master_inclusion'],row['dim_adoption'],'Not assessed here','Not assessed here',ids,
+                      link['relation']+'; '+link['reason_for_separate_candidate'],
+                      'C239 Ed1.1 §13.2.6 PDF216–225. Original cross-reference, figure/ANSI-VITA holds retained.',
+                      'Not assessed here','Not assessed here','SPECIALIZED_CANDIDATE; '+c['definition'],
+                      ids+'; '+SOURCE+'; '+', '.join(link['original_source_locators']),
+                      'Not assessed here','Not assessed here — AAS equivalence unassessed.'];width=18
+                need(len(values)==width,'original register/review sheet columns preserved')
+                cc={re.match('[A-Z]+',x.get('r')).group():x for x in rr.findall(q('c'))}
+                for j2,v in enumerate(values):
+                    letterj=letter(j2+1);cell=cc.get(letterj)
+                    if cell is None:cell=ET.SubElement(rr,q('c'),{'r':letterj+str(idx)})
+                    cell.set('r',letterj+str(idx));pub.f3_put(cell,str(v))
+                sd.append(rr)
+            dim=root.find(q('dimension'));need(dim is not None,'native worksheet dimension')
+            dim.set('ref','A1:'+('P427' if sheetname=='Master Crosswalk' else 'R400'))
+            af=root.find(q('autoFilter'))
+            if af is not None:af.set('ref','A2:P427' if sheetname=='Master Crosswalk' else 'A1:R400')
+            edited[path]=ET.tostring(root,encoding='utf-8',xml_declaration=True)
+        for sheetname,fields in cells_info.items():
+            root=ET.fromstring(z.read(paths[sheetname]));cells={c.get('r'):c for c in root.iter(q('c'))}
+            for address,val in fields.items():
+                need(address in cells,'preserve original summary guidance cell '+sheetname+'!'+address)
+                pub.f3_put(cells[address],val)
+            edited[paths[sheetname]]=ET.tostring(root,encoding='utf-8',xml_declaration=True)
+        outbytes=io.BytesIO()
+        with zipfile.ZipFile(outbytes,'w') as zout:
+            for info in z.infolist():zout.writestr(info,edited.get(info.filename,z.read(info.filename)))
+    result=outbytes.getvalue();need(result!=olddata,'changed workbook expected')
+    (D/BOOK).write_bytes(result)
+    return digest(result)
+
+def packet2_text(m):
+    text_mirrors(m)
+    banner=('# Current comparison — SOSA SO-2F-2, 15 November 2026\n\n'
+       '399 rows; three additional specialized source-qualified PSC design/interface candidates, not adopted model requirements. '
+       'All prior 424 comparison rows, earlier classifications, evidence and holds retained. '
+       'See '+SOURCE+' SO_2F_2 and existing G4 ledger for 73 original IDs/outcomes. '
+       'STOP for SO-2F-3 owner Proceed.\n\n')
+    for f in ('Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md'):
+        p=D/f;txt=p.read_text(encoding='utf-8');pos=txt.find('<table>')
+        need(pos>0,'readable comparison table preserved')
+        p.write_text(banner+txt[pos:],encoding='utf-8')
+
+def packet2_routes(src,sha):
+    a=src['SO_2F_2'];a['status']='SAVED_VERIFIED__REMOTE_PUBLICATION_READBACK_PENDING'
+    a['workbook_sha256']=sha
+    a['master_workbook']='399 rows; same 26 worksheets, J425:J427 amber; 427 × 16 saved grid values. All earlier evidence/classifications retained.'
+    a['next']='STOP for owner Proceed; only SO-2F-3 (36 source records).'
+    save(SOURCE,src)
+    old=(D/LEDGER).read_text(encoding='utf-8')
+    need(old.endswith('  }\n}\n') and '"SO-2F-2"' not in old,'G4 source ledger append-only boundary')
+    entry={'status':a['status'],'source_manifest_file':SOURCE,'source_ids':[r['id'] for r in a['records']],
+       'outcomes':a['outcomes'],'candidate_groups':[{ 'row_id':x['row_id'],'source_record_count':len(x['evidence_ids'])} for x in a['proposed_candidates']],
+       'specialized_new_rows':[x['row_id'] for x in a['proposed_candidates']],
+       'information_rows':399,'grid_values':6832,'new_sosa_cells':['J425','J426','J427'],
+       'workbook_sha256':sha,'holds':'Eight precise original/source-companion questions plus all earlier source holds retained. Not adopted.'}
+    newtxt=old[:-6]+',\n    "SO-2F-2": '+json.dumps(entry,indent=2,ensure_ascii=False).replace('\n','\n    ')+'\n  }\n}\n'
+    check=json.loads(newtxt);need(len(check['SO2_source_opportunity_assessments'])==7,'six earlier source packets plus new packet retained')
+    (D/LEDGER).write_text(newtxt,encoding='utf-8')
+    p=(D/PITON).read_text(encoding='utf-8')
+    p=p.replace('SO-2F-1 integrated checkpoint.','SO-2F-2 integrated checkpoint.')
+    p=p.replace('SO-2E fully published. SO-2F-1 has verified a frozen 581-ID/pointer manifest and assessed 58 native records, and integrated three specialized source-qualified candidates into the same master and Excel. No interrupted SO-2F-1 delivery remains; next packet requires new owner Proceed.',
+       'SO-2E and SO-2F-1 published. SO-2F-2 assessed 73 frozen original IDs and integrated three more specialized, unadopted candidates in the same master/workbook. No interrupted local assessment remains; remote readback pending.')
+    start=p.index('**SO-2F-1 source checkpoint:**');end=p.index('\n\n## Master and workbook',start)
+    p=p[:start]+('**SO-2F source checkpoint:** Existing '+SOURCE+' preserves the frozen 581-ID/eight-source-file manifest and SO-2F-1 dispositions. '
+      'SO-2F-2 covers 73 C239 §13.2.6 records, original PDF216–225 text and pin tables: '
+      '55 source records support three new specialized PSC power-port, regulation/sync and utility-control candidate families; '
+      '3 are represented, 7 source-specific/no row and 8 held. No record omitted or reassigned. '
+      'Source cross-reference/pin-name conflicts, ANSI/VITA originals, figure pixels, installation, measured state and conformance remain held. '
+      'Remaining SO-2F is 450 IDs; next separate owner Proceed reaches SO-2F-3 only (36 IDs).')+p[end:]
+    p=p.replace('**396 information rows**, **424×16 = 6,784 values**, **676 source classifications: 568 colored/108 held**',
+       '**399 information rows**, **427×16 = 6,832 values**, **679 source classifications: 571 colored/108 held**')
+    p=p.replace('New SO-2F-1 amber SOSA cells J422:J424; prior J413:J421 preserved;',
+       'New SO-2F-2 amber SOSA cells J425:J427; prior J422:J424 and J413:J421 preserved;')
+    p=p.replace('Current workbook SHA-256 \x60'+SHA1+'\x60; prior SO-2E SHA-256',
+       'Current workbook SHA-256 \x60'+sha+'\x60; prior SO-2F-1 SHA-256 \x60'+SHA1+'\x60; SO-2E SHA-256')
+    p=p.replace('SO-2F-1 publisher checked 6,784 saved grid values, three amber cells, 21 unchanged sheets and preserved earlier rows.',
+       'SO-2F-2 publisher checked 6,832 saved grid values, three new amber cells, 21 unchanged sheets and preserved all 424 earlier grid rows. Prior SO-2F-1 publisher checked 6,784 saved grid values, three earlier amber cells and 21 unchanged sheets.')
+    start=p.index('## Next action and stop');end=p.index('\n\n## History',start)
+    p=p[:start]+('## Next action and stop\n\n'
+      'SO-2F-2 assessment and same-master/workbook integration verified locally by publication workflow; '
+      '**remote publication/readback pending**. STOP for Proceed. '
+      '**Next Proceed authorizes SO-2F-3 only: 36 frozen original source records.** '
+      'No adoption, donor transition, client work or deployment.')+p[end:]
+    need(len(p.split())<=1000 and 'SO-2F-3' in p and 'remote publication/readback pending' in p,'PITON compact status, correct next owner gate')
+    (D/PITON).write_text(p,encoding='utf-8')
+
+def packet2_verify():
+    m=load(MASTER);s=load(SOURCE);a=s['SO_2F_2']
+    need(m['currentEvidenceCheckpoint']==CP2 and len(m['rows'])==399 and len(m['review_grid'])==427,'verified current master 399/427')
+    need(m['workbookSnapshot']['color_cell_count']==571 and m['workbookSnapshot']['mixed_source_cells_uncolored']==108,'classification totals preserved')
+    previous=json.loads(prior2(MASTER))
+    need(m['rows'][:396]==previous['rows'] and m['review_grid'][:424]==previous['review_grid'],'all old rows and 6,784 original comparison values retained')
+    pastsrc=json.loads(prior2(SOURCE))
+    need(s['source_manifest']==pastsrc['source_manifest'] and s['SO_2F_1']==pastsrc['SO_2F_1'],'frozen 581 IDs and previous 58 disposition evidence preserved')
+    need(len(a['records'])==73 and sum(a['outcomes'].values())==73 and len(a['proposed_candidates'])==3,'73 outcomes and three candidate families')
+    for j,c in enumerate(a['proposed_candidates']):
+        row=m['rows'][396+j]
+        need(row['row_id']==c['row_id'] and row['source_entry_ids']==c['evidence_ids'] and row['SO2_source_correspondence']['cell']=='J'+str(425+j),'source-to-master candidate link')
+        need(row['display']==m['review_grid'][424+j] and all(bool(v.strip()) for v in row['display']),'new row has 16 explicit statuses')
+    sha=digest((D/BOOK).read_bytes())
+    need(sha==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==a['workbook_sha256'],'saved workbook hash equality')
+    for f in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
+        with (D/f).open(encoding='utf-8',newline='') as h:need(list(csv.reader(h))==m['review_grid'],'complete saved CSV comparison parity '+f)
+    need((D/'Master_Donor_Concept_to_DIM_Crosswalk.md').read_bytes()==(D/'ISA_Correction_Review_07NOV2026.md').read_bytes(),'two readable mirrors identical')
+    with zipfile.ZipFile(io.BytesIO(prior2(BOOK))) as before,zipfile.ZipFile(D/BOOK) as after:
+        need(after.testzip() is None and before.namelist()==after.namelist(),'entire XLSX ZIP parts valid/preserved')
+        prevpaths=pub.old.sheetpaths(before);newpaths=pub.old.sheetpaths(after)
+        need(len(prevpaths)==len(newpaths)==26 and prevpaths==newpaths,'26 identical sheet names/order')
+        editing={newpaths[t] for t in ('Master Crosswalk','DIM Register','Summary','Validation','Legend')}
+        need(all(before.read(part)==after.read(part) for part in before.namelist() if part not in editing),'21 worksheets and all unrelated OOXML parts byte-preserved')
+        root=ET.fromstring(after.read(newpaths['Master Crosswalk']));q=pub.q
+        rows={int(rr.get('r')):rr for rr in root.find(q('sheetData')).findall(q('row'))}
+        for i,vals in enumerate(m['review_grid'],1):
+            cc={cell.get('r'):cell for cell in rows[i].findall(q('c'))}
+            for j,v in enumerate(vals,1):
+                name=letter(j)+str(i)
+                if name in cc:need(pub.f3_cell_text(cc[name])==v,'saved Excel equality '+name)
+                else:need(v=='','unpopulated saved cell '+name)
+        need(all(next(x.get('s') for x in rows[i] if x.get('r')=='J'+str(i))==next(x.get('s') for x in rows[424] if x.get('r')=='J424') for i in (425,426,427)), 'amber specialized source fills J425:J427')
+        root=ET.fromstring(after.read(newpaths['DIM Register']))
+        rr={int(x.get('r')):x for x in root.find(q('sheetData')).findall(q('row'))}
+        for j,c in enumerate(a['proposed_candidates']):
+            i=398+j
+            need(next(pub.f3_cell_text(x) for x in rr[i].findall(q('c')) if x.get('r')=='A'+str(i))==c['row_id'],'DIM Register new stable row '+str(i))
+        for name in ('Summary','Validation','Legend'):
+            root=ET.fromstring(after.read(newpaths[name]))
+            need(any('SO-2F-2' in pub.f3_cell_text(c) for c in root.iter(q('c'))),'current '+name+' source boundary')
+    ledger=load(LEDGER)
+    need(len(ledger['SO2_source_opportunity_assessments'])==7 and ledger['SO2_source_opportunity_assessments']['SO-2F-2']['workbook_sha256']==sha,'append-only G4 SO-2F-2 linked')
+    need('SO-2F-3 only' in (D/PITON).read_text(),'next explicit owner Proceed boundary')
+    print('PASS SO-2F-2: 73 original IDs, 55 supports/3 represented/7 source-only/8 held, 399 rows, 427×16 values, J425:J427 amber, 679 classifications, same 26 sheets, prior 424 rows and 21 sheets preserved.')
+    print('LIMIT: native Microsoft Excel clean-open, ANSI/VITA companions, original ambiguities and any runtime/conformance unverified.')
+
+def packet2_apply():
+    m=load(MASTER);src=load(SOURCE)
+    if m['currentEvidenceCheckpoint']==CP2:
+        packet2_verify();print('Already saved; no further mutations.');return
+    cc=packet2_candidates(m,src)
+    sha=packet2_workbook(m,cc)
+    m['currentWorkbookSha256']=sha;m['currentEvidenceCheckpoint']=CP2
+    m['counts']['informationRows']=399;m['counts']['SOSA_SO2F2_new_candidate_rows']=3;m['counts']['SOSA_SO2F2_records_assessed']=73
+    m['workbookSnapshot'].update(checkpoint=CP2,sha256=sha,information_rows=399,
+       textInformationRows=399,text_grid_rows=427,saved_xlsx_grid_rows=427,
+       color_cell_count=571,mixed_source_cells_uncolored=108,explicit_unassessed_rows=311,
+       lag='ZERO: 427×16 saved comparisons; J425:J427 specialized amber fills; all previous content preserved',
+       textCheckpoint='SOSA_SO2F2_PSC_OPPORTUNITIES',
+       validation_file=LEDGER+'#/SO2_source_opportunity_assessments/SO-2F-2')
+    m['nextOwnerAction']='STOP for owner Proceed: SO-2F-3 only (36 remaining frozen source records); no adoption, donor transition or deployment.'
+    m['SOSA_SO2F2_opportunity_review']={'status':'SAVED_VERIFIED__REMOTE_PUBLICATION_READBACK_PENDING','manifest':SOURCE,
+       'retained_records':73,'added_specialized_rows':[x['row_id'] for x in cc],
+       'new_cells':['J425','J426','J427'],'workbook_sha256':sha,'prior_source_holds_preserved':True}
+    packet2_text(m);save(MASTER,m);packet2_routes(src,sha);packet2_verify()
+
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
-    apply() if sys.argv[1]=='--apply' else verify()
+    current=load(MASTER)['currentEvidenceCheckpoint']
+    if sys.argv[1]=='--verify':
+        packet2_verify() if current==CP2 else verify()
+    elif current==CP2:
+        packet2_verify(); print('SO2F2 already integrated; no duplicate mutation.')
+    elif current==CP:
+        packet2_apply()
+    else:
+        need(False,'SO2F2 publisher refuses unexpected earlier master checkpoint: '+str(current))
