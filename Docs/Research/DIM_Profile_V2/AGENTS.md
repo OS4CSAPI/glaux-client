@@ -18,7 +18,7 @@ Repository: https://github.com/OS4CSAPI/glaux-client . Branch: `research/dim-pro
 4. Use supplied screenshots and pertinent prior owner decisions. Retrieve missing originals from their actual repository/attachment/Library location when required; an old access failure is not permanent unavailability. Never claim inaccessible chat history or unexamined originals were read.
 5. Report objective, live branch/HEAD, governing paths, published versus interrupted work, source limits, master/Excel parity or exact lag, binding decisions, one next action and stop boundary. State critical gaps. Recovery is sufficient when these are evidenced and no missing fact changes the next authorized action; a historical reread is not a separate completion requirement.
 
-Use `rg`, section ranges and JSON key extraction. Inspect large files locally; return relevant records/counts/diffs only. Never dump entire ledgers or duplicate results. Reuse evidence at unchanged commits. Search archives for specific questions. Required source complexity may justify more reading; efficiency never permits omitted evidence or false completeness.
+Use `rg`, targeted ranges and JSON keys. Inspect large files locally; report relevant counts/diffs, not entire ledgers. Reuse unchanged evidence and search archives for specific questions; efficiency never excuses missing original evidence.
 
 ## Source-first donor method
 
@@ -34,16 +34,18 @@ Keep canonical JSON, BOTH CSV mirrors, BOTH readable comparisons and the SAME ed
 
 At a substantive source-qualified increment, integrate warranted changes and verify saved workbook cells, fills and parity before the next packet. If it lags, record the exact snapshot and differences. Preserve browsable pre-change versions and manual M00/M01; do not create M02 automatically. Distinguish source coverage, mapping, format parity, model/Profile adoption and runtime conformance. Owner gates remain Step24, Steps35–39 and named-version Step40; no donor transition, client work or deployment by implication.
 
+Source records are **accountability IDs, not Proceed-sized tasks**. For reviewed inventories, group by native meaning, reuse evidence, and dispose every frozen ID; read originals for disputed or unreviewed meanings. One owner Proceed may cover internal meaning-family passes within a bounded step. Check and publish substantive master/workbook changes, not arbitrary record batches. Holds can justify bounded-PARTIAL closeout. After automatic read-only recovery in a new chat, the next Proceed resumes interrupted work, not a new packet.
+
 ## One Proceed and interruption safety
 
 One Proceed authorizes one bounded plan step. Before acting confirm live HEAD, scope/stop, relevant original coverage, decisions, parity and intended outputs. If interrupted, finish that step's missing delivery work before offering the next research step. A saved local commit is not publication. Archive/checkpoint preservation is not donor acceptance.
 
-During work retain exact source dispositions and preserve unrelated evidence. At each substantive checkpoint update the existing PITON IN PLACE; do not prepend another status history. Record: verified research commit; owner decision locator; pending branch/commit/files; active plan section; ledger keys; workbook snapshot/parity; checks actually run and limits; named holds; one next action and stop. Do not put secrets or unrelated user data in handoffs. Keep detailed changes in existing ledgers and Git history.
+Preserve unrelated evidence. At substantive checkpoints update the PITON IN PLACE (no status-history prepends). Record verified commit, decision locator, pending branch/commit/files, active plan, ledger keys, workbook snapshot/parity, checks run/limits, holds, one next action and stop. No secrets or unrelated personal data; keep details in ledgers/Git history.
 
-At exit commit on the correct branch, read back published files and applicable checks, then report actual work, coverage, workbook link when changed, remaining limits and one next step in plain English. Spell out acronyms initially and keep paragraphs to five sentences. Reuse unchanged verification; repeat only for changed dependencies, failures or unresolved concerns. Never imply publication, acceptance or completeness before evidence exists.
+At exit commit on the correct branch; read back published files and checks. Report work, coverage, updated workbook link, limits and one next step in plain English (expand acronyms; ≤5 sentences/paragraph). Reuse unchanged checks. Never imply unverified publication, acceptance or completeness.
 
 ## Keeping recovery small
 
 Budgets: this protocol <=8,000 characters; current PITON <=1,000 words; active AAS plan <=1,400; broader crosswalk plan <=1,600; each research/crosswalk README <=300. Existing checker `python -B scripts/check_dim_crosswalk_step06.py --recovery-only` enforces these limits and required PITON sections. Limits apply to navigation/status, not original evidence or research scope.
 
-Before replacing history, preserve its exact commit in a named archive and link it. Do not delete original evidence, decisions or manual workbook versions. Keep one current status in the PITON; other navigation files link to it. Retain history at pinned commits rather than copying it into every active file. When limits are exceeded, move historical narration out of the startup path while preserving references; do not drop live holds, decisions or required controls to pass the check. No extra process documents, per-packet scripts or new workflows merely for recovery.
+Before replacing history, preserve/link its exact commit in a named archive. Keep original evidence, decisions and manual workbook versions. PITON is sole current status; keep history at pinned commits, not in startup files. If over budget, move old narration but keep live holds/controls. No extra recovery documents, per-packet scripts or workflows.
