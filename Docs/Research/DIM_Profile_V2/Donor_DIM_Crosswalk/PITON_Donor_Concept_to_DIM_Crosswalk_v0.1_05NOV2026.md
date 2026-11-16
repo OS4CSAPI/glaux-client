@@ -34,13 +34,13 @@ AAS source/API/schema/figure/companion/template/external limits, generic Skill b
 
 ## Verification and publication
 
-Saved checks passed: exact packet membership and hash/pointer preservation; 56-group partition; nine additions/ten qualifications and first-audit classification; 6,736 saved values/mirrors/fills; prior classifications, earlier packets, 21 untouched sheets and M00/M01. Changed master cells, register definitions/evidence, Summary, Validation and Legend passed visual review. Published tree/file parity, current PITON text readback and both applicable workflows passed. Reuse unchanged checks.
+SO-2F-1 publisher checked 6,784 saved grid values, three amber cells, 21 unchanged sheets and preserved earlier rows. GitHub publication and branch readback passed; native Microsoft Excel clean reopen remains unverified. Prior SO-2E saved checks passed: exact packet membership and hash/pointer preservation; 56-group partition; nine additions/ten qualifications and first-audit classification; 6,736 saved values/mirrors/fills; prior classifications, earlier packets, 21 untouched sheets and M00/M01. Changed master cells, register definitions/evidence, Summary, Validation and Legend passed visual review. Published tree/file parity, current PITON text readback and both applicable workflows passed. Reuse unchanged checks.
 
 Five pre-existing broader artifact-register/link errors remain unclosed. The broader verifier was attempted for SO-2E and stopped because `Docs/Design/Details_View` is absent from this partial checkout. Previously missing `Docs/Plans/Source_Continuity` and `Docs/Design/MPSS` are not restored. No blanket repository success is claimed.
 
 ## Next action and stop
 
-SO-2F-1 assessment and same-master/workbook integration verified locally; remote publication readback still required. **STOP for Proceed.** Next Proceed authorizes **SO-2F-2 only: 73 power-supply-card records**; stop before SO-2F-3. No adoption, donor transition or deployment.
+SO-2F-1 assessment and same-master/workbook integration **published and remotely verified** at `ab74ba635224a96958f730ef139650fa28ae77ca`; [publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43779812841). **STOP for Proceed.** Next Proceed authorizes **SO-2F-2 only: 73 power-supply-card records**; stop before SO-2F-3. No adoption, donor transition or deployment.
 
 ## History
 
