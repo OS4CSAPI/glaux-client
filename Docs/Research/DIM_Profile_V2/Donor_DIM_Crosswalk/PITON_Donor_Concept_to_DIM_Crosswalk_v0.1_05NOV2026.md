@@ -44,7 +44,7 @@ Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM origina
 
 Complete the remaining targeted source metadata/default/inheritance reconciliation affecting mappings, especially PA-F038 effective-user access. Then finalize the21 proposals and all454 donor-cell assessments for integration. All40 finding-group dispositions and overlap decisions are saved; do not restart that comparison. Original vector parity remains a declared limit; supporting document parts are finished. Preserve PA-Q011–013; do not repeat completed definitions or joins. Then complete comparison with the454-row master; PA-DIM requires a separate donor column, preserving Devices and existing donor order. Do not restart Devices, reacquire unchanged originals, repeat successful checks, or transition to another donor automatically.
 
-The all40-finding comparison is locally complete and awaiting publication verification; no spreadsheet changes.
+All40-finding comparison published at **15dc0b8314bebe9ac427c58303285d6e53bccda1**; full remote-tree readback matched local tree4ac341e4116428a60bff43a5effb5fea9c6a1d4a. Scoped preservation/recovery checks passed. Workbook unchanged.
 
 ## History
 
