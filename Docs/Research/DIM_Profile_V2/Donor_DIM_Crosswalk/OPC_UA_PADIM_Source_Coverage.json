@@ -12695,43 +12695,51 @@
   "document_supporting_parts": [
     {
       "part": "word/footnotes.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "No technical requirements; empty/separator-only part",
+      "text_observed": ""
     },
     {
       "part": "word/endnotes.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "No technical requirements; empty/separator-only part",
+      "text_observed": ""
     },
     {
       "part": "word/header3.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "Publication header only; not an alternative source edition",
+      "text_observed": "OPC 30081, UA for PA-DIM™ 4 1.02.0"
     },
     {
       "part": "word/footer2.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "No technical requirements; empty/separator-only part",
+      "text_observed": ""
     },
     {
       "part": "word/header1.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "Publication header only; not an alternative source edition",
+      "text_observed": "Error! Unknown document property name. 2 Release   1.0.2"
     },
     {
       "part": "word/header2.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "No technical requirements; empty/separator-only part",
+      "text_observed": ""
     },
     {
       "part": "word/footer1.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "No technical requirements; empty/separator-only part",
+      "text_observed": ""
     },
     {
       "part": "word/header4.xml",
-      "contact": "UNREVIEWED",
-      "semantic_disposition": "PENDING_CONTENT_OR_STRUCTURAL_DISPOSITION"
+      "contact": "SUPPORTING_PART_TEXT_INSPECTED",
+      "semantic_disposition": "No technical requirements; empty/separator-only part",
+      "text_observed": ""
     }
   ],
   "supporting_sheet_inventory": [
@@ -13658,7 +13666,9 @@
     "dictionary_references_resolved": 529,
     "dictionary_reference_distinct_targets": 164,
     "additional_dependency_files_acquired": 2,
-    "original_raster_assets_visually_inspected": 1
+    "original_raster_assets_visually_inspected": 1,
+    "supporting_parts_inspected": 8,
+    "qualified_existing_row_recommendations": 2
   },
   "workbook_status": "UNCHANGED verified Devices454-row baseline; PA-DIM column not declared complete",
   "remaining": [
@@ -20937,5 +20947,35 @@
       "interpretation": "Diagram separates PA-DIM device identification/health/process variables/services/parameters from FDI UI/business rules and proprietary vendor content. Embedded and mapped device representations support generic and class-specific applications."
     },
     "render_limit": "Original EMF conversion failed because LibreOffice is absent. Package installation failed for filesystem permissions. Original vector parity remains unverified; publisher figures are not silently substituted as equivalent originals."
-  }
+  },
+  "supporting_part_review": {
+    "result": "All8 inventoried supporting parts inspected; no additional technical requirements. Header1 has an unknown-property field error and Release1.0.2; header3 identifies OPC30081 and1.02.0. Pinned original/body/model release is unchanged.",
+    "original_vector_limit": "Retained after failed renderer/package access; no additional repeated install attempts planned. This does not block comparing already-read meanings, but prevents an unqualified complete-source claim."
+  },
+  "comparison_decisions": [
+    {
+      "finding_ids": [
+        "PA-F007",
+        "PA-F037",
+        "PA-F039"
+      ],
+      "row_id": "AAS-O6-UNIT-CONTEXT",
+      "outcome": "QUALIFIED_EXISTING_ROW_RECOMMENDED",
+      "reason": "Existing row explicitly separates unit identity, quantity meaning and dictionary/version context, and gives explicit concept units precedence over dictionary defaults. PA-DIM adds source-specific EngineeringUnits and dictionary links; preserve encoding-unit conversion and PA-Q011 rather than add a duplicate general unit row.",
+      "qualification": "Dictionary primary unit and encoded field unit may differ; no universal conversion algorithm or full unit-table correctness is established.",
+      "integrated": false
+    },
+    {
+      "finding_ids": [
+        "PA-F012",
+        "PA-F020",
+        "PA-F025"
+      ],
+      "row_id": "OPCDI-OPERATION-COUNTERS",
+      "outcome": "QUALIFIED_EXISTING_ROW_RECOMMENDED",
+      "reason": "Existing row already distinguishes powered duration, active duration and transitions into activity, preserves no-reset lifetime semantics and separates resolution from update frequency. PA-DIM inherited DI1.04 counters support this meaning; sensor-specific powered duration requires its own subject qualification.",
+      "qualification": "Do not absorb cleaning/sterilization counts, accumulated gas dosage, overload exposure or normalized residual-life/sensitivity into this row. Preserve dictionary hours versus encoded milliseconds.",
+      "integrated": false
+    }
+  ]
 }
