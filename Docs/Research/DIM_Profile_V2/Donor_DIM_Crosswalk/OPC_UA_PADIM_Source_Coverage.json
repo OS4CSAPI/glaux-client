@@ -20976,6 +20976,185 @@
       "reason": "Existing row already distinguishes powered duration, active duration and transitions into activity, preserves no-reset lifetime semantics and separates resolution from update frequency. PA-DIM inherited DI1.04 counters support this meaning; sensor-specific powered duration requires its own subject qualification.",
       "qualification": "Do not absorb cleaning/sterilization counts, accumulated gas dosage, overload exposure or normalized residual-life/sensitivity into this row. Preserve dictionary hours versus encoded milliseconds.",
       "integrated": false
+    },
+    {
+      "candidate_id": "PADIM-SIMULATION-VALUES",
+      "finding_ids": [
+        "PA-F013"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Reported, unsimulated and substituted signal values",
+      "proposed_meaning": "Keep reported Value, unsimulated ActualValue, substituted SimulationValue and simulation state associated with one signal. Analog values share EngineeringUnits; optional components are not mandatory for every device.",
+      "closest_existing_rows": [
+        "S06-R012",
+        "SOSA-SO2B-EQUIPMENT-SETTINGS",
+        "ISA-C-086",
+        "ISA-C-089"
+      ],
+      "reason": "A generic output or configuration setting does not preserve the value-selection relationship. Existing position-override rows are position-specific; they remain related analogies, not established coverage of arbitrary process signals. Their original ISA evidence has not been reopened for this decision.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-DAMPING",
+      "finding_ids": [
+        "PA-F014"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Signal damping time constant",
+      "proposed_meaning": "Represent the first-order 63.2-percent rise/decay time constant in seconds for a qualified signal.",
+      "closest_existing_rows": [
+        "ISA-K-REL-THRESHOLD",
+        "SAPIENT-R11-STATUS-INTERVAL"
+      ],
+      "reason": "A change-trigger threshold or report interval answers when to publish; it does not describe signal smoothing response. Do not infer sampling frequency or end-to-end latency.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-CALIBRATION-RECORD",
+      "finding_ids": [
+        "PA-F015"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Signal calibration timestamp and purpose",
+      "proposed_meaning": "Associate calibration time and intended-use classification with the measurement channel and its calibration container; preserve optional fields and repeated containers.",
+      "closest_existing_rows": [
+        "SOSA-SO2E-CALIBRATION-STATUS",
+        "AAS-O4-RECORD-HISTORY",
+        "CASE-H01"
+      ],
+      "reason": "Current calibration activity/result explicitly excludes calibration dates and methods. Digital-record history is not equipment calibration history, and a held service-history row is not established coverage. No certificate, traceability or successful calibration is inferred.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-CALIBRATION-POINTS",
+      "finding_ids": [
+        "PA-F016"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Calibration point inputs and readouts",
+      "proposed_meaning": "Keep each calibration point associated with its optional supplied input and optional observed readout, preserving the measurement-dependent quantity and dictionary identity.",
+      "closest_existing_rows": [
+        "ISA-R-MEASUREMENT",
+        "SOSA-SO2E-CALIBRATION-STATUS"
+      ],
+      "reason": "An unqualified measurement loses the input/readout roles and point association. Neither both optional values nor a universal calibration quantity is required.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-CALIBRATION-CHARACTERISTICS",
+      "finding_ids": [
+        "PA-F017",
+        "PA-F018"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Technique-specific calibration characteristics and conditions",
+      "proposed_meaning": "Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure and measured t90 with the relevant calibration and subject. Preserve each quantity, unit and last-calibration standing.",
+      "closest_existing_rows": [
+        "ISA-R-MEASUREMENT",
+        "SOSA-SO2E-CALIBRATION-STATUS",
+        "SOSA-SO2B-EQUIPMENT-SETTINGS"
+      ],
+      "reason": "Generic measurement/configuration rows lose calibration context and distinguish neither calibration conditions nor derived characteristics from live readings. Group related evidence here without asserting interchangeable slopes or zero points; preserve PA-Q004 and PA-Q007. No unsupported universal coefficient schema is proposed.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-CALIBRATION-RANGES",
+      "finding_ids": [
+        "PA-F019"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Range-specific chromatograph calibration factors",
+      "proposed_meaning": "Preserve the association of each named chromatograph calibration range with its lower/upper concentration boundaries and response factor.",
+      "closest_existing_rows": [
+        "ISA-K-VALUE-RANGE",
+        "ISA-R-MEASUREMENT"
+      ],
+      "reason": "Permitted/excluded operating values do not express a calibration factor attached to a range. Keep the three source groups; do not infer continuous interpolation, universal number of segments or endpoint inclusivity absent evidence.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-MAINTENANCE-COUNTERS",
+      "finding_ids": [
+        "PA-F023"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Cleaning and sterilization event counts",
+      "proposed_meaning": "Represent sensor cleaning-in-place and sterilization-in-place counts with their separate event types and subject.",
+      "closest_existing_rows": [
+        "OPCDI-OPERATION-COUNTERS",
+        "SOSA-SO2B-HEALTH-LOG",
+        "CASE-H01"
+      ],
+      "reason": "Activity transitions are not maintenance events; a managed health log does not establish these aggregate counts. Counts do not provide dated event records or prove successful maintenance. Do not import DI operation-counter no-reset rules into these distinct counters.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-NEXT-CALIBRATION",
+      "finding_ids": [
+        "PA-F024"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Remaining interval to next calibration and calculation basis",
+      "proposed_meaning": "Represent time remaining until calibration, preserving configured-interval calculation versus operational/history-based estimate and day units. Retain the combined source property when its basis is not separately reported.",
+      "closest_existing_rows": [
+        "SOSA-SO2E-CALIBRATION-STATUS",
+        "OPCDI-LIFETIME",
+        "SAPIENT-R11-STATUS-INTERVAL"
+      ],
+      "reason": "Activity/result, remaining equipment capacity and status-report schedules do not express the next-calibration interval with its calculation basis. This is neither the last calibration date nor a guaranteed maintenance deadline.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-EXPOSURE-HISTORY",
+      "finding_ids": [
+        "PA-F025"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_FINAL_COMPARISON",
+      "title": "Accumulated gas exposure and overload measures",
+      "proposed_meaning": "Retain gas dosage with concentration-times-time dimensions, extrapolated peak concentration upon overload, and accumulated overload duration as distinct measures for the qualified sensor.",
+      "closest_existing_rows": [
+        "OPCDI-OPERATION-COUNTERS",
+        "OPCDI-LIFETIME",
+        "ISA-R-MEASUREMENT",
+        "SOSA-SO2B-HEALTH-LOG"
+      ],
+      "reason": "Powered/active duration loses exposure and overload condition. Lifetime progress does not by itself establish the overload peak or its extrapolated standing. A generic reading or log loses aggregation basis. Do not infer reset policy, exact event times or a remaining-service prediction.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
     }
-  ]
+  ],
+  "comparison_review": {
+    "date": "2026-11-17",
+    "scope": "Simulation, damping, calibration and selected maintenance/exposure meanings. Nine proposed information-need groups, not nine integrated rows or an exclusive donor contribution count.",
+    "master_basis": "454 information-row labels screened; targeted definitions and relevant donor cells read for close alternatives. This is not a completed semantic comparison of every master row or reopening of every prior donor source.",
+    "source_contact": "Pinned original Word paragraphs for simulation, damping, calibration timestamp/purpose, calibration-point readout, range factors, next-calibration basis and overload measures read; supporting dictionary definitions for cleaning/sterilization counts and next-calibration intervals read. Prior native finding evidence retained.",
+    "new_addition_recommendations": 9,
+    "prior_qualified_existing_row_recommendations": 2,
+    "pending_specific_comparison": {
+      "finding_id": "PA-F020",
+      "reason": "Normalized degradation/residual sensitivity must be compared against qualified condition/lifetime rows with PA-Q006 retained; do not declare a new row solely because the label differs."
+    },
+    "limits": [
+      "Recommendations remain provisional until remaining native findings, overlapping proposals and master meanings are reconciled.",
+      "Source questions, optionality and external-dictionary limits remain. No donor exclusivity or DIM/Profile adoption.",
+      "All six master/workbook/mirror files unchanged."
+    ]
+  }
 }
