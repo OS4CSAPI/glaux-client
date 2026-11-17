@@ -1,3 +1,43 @@
+# SAPIENT contribution diagnostic — 16 November 2026
+
+The owner asked whether the absence of a separate SAPIENT-looking row block meant SAPIENT had been denied the opportunity given to ISA, AAS and The Open Group SOSA. The current 425-row master and saved workbook show **five SAPIENT-origin candidate rows**. They were inserted among existing topics rather than collected in a later appended donor block. Their provenance is SAPIENT; “Not assessed here” in another donor's cell does not establish that only SAPIENT can represent the meaning.
+
+| Current Master Crosswalk cell | Stable row ID | Candidate information need |
+|---|---|---|
+| H12 | SAPIENT-F2-FUSION-ROLE | Hierarchical fusion Node role and aggregated capabilities |
+| H28 | SAPIENT-F2-TARGET-CLAIMS | Detected target taxonomy, behavior and confidence assertions |
+| H77 | SAPIENT-F2-PERFORMANCE | Declared detection performance and geometric error |
+| H97 | SAPIENT-F2-ALERT-LIFECYCLE | Alert identity, condition, status and acknowledgment lifecycle |
+| H222 | SAPIENT-F2-DETECTION-LINEAGE | Reported contributor to fused detection relationships |
+
+All five are present in the saved workbook and classified SPECIALIZED_CANDIDATE. The row locations above come from the current saved grid, not historical display-row metadata. No workbook cells, colors, order, or research decisions were changed by this diagnostic.
+
+## What the previous correction actually did
+
+The existing [SAPIENT ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json), key `F2_3_native_candidate_opportunity`, records a 13 November native-first assessment of **all 109 retained native findings**, including **27 without a previous source-packet row mapping**. Its 22 addition-support findings feed the five candidates above; 41 were called already represented, nine compressed into existing rows, 25 unresolved and 12 native-only/coverage evidence. The diagnostic checked unique IDs and matched all candidate references to the current master. Thus SAPIENT did receive an explicit contribution-opportunity review; it was not confined entirely to filling ISA rows.
+
+The earlier SAP02–SAP06 original-source review and accepted SAP07 bounded-PARTIAL closure remain valid at their recorded depth. The later F3 classification work explicitly concerned existing comparisons; it was not another complete opportunity discovery pass. Five SAPIENT additions, 24 AAS additions and 64 later SOSA opportunity additions are outcomes of different source inventories and review histories, not directly comparable coverage percentages or proof of donor value.
+
+## Specific follow-through questions found
+
+**Regular heartbeat interval — SAP03A-N06.** The original BSI Flex 335 v2 PDF page41, §§6.2.5.4–.5/Table20, and the retained Dstl `registration.proto` define a declared interval between regular status reports. F3 correctly removed the earlier min/max-interval classifications at ISA-C-078 and ISA-C-079 because a regular interval is not those two bounds. However, the earlier opportunity record still calls this meaning already represented using those targets plus generic reported-output and property-value-report rows. The current record does not settle how the distinct declared interval is adequately retained after that correction; an explicit adequacy judgment or warranted candidate is still needed.
+
+**Required permission for autonomous mode changes — SAP03A-N11.** Original BSI PDF page47, §6.2.5.14/Table31, describes a registration declaration that a Node requires permission. This is distinct from an individual permission decision being granted or denied. The opportunity record labels the meaning compressed but supplies no previous target row IDs, and its native finding ID has no reference in the current master. This is a traceability/adequacy question, not proof that a generic representation could never carry it.
+
+**Initialization and reconnection — SAP02-N04.** This is classified already represented without a target row in the opportunity record or a direct native-ID reference in the current master. Existing participation/lifecycle rows may provide relevant coverage; the record needs an explicit mapping and rationale rather than an assumed new row.
+
+The original BSI PDF used for the two targeted rereads has SHA-256 `77f1de81d88c2828228ae6e1254ecdea966db329545da20840e448d230496303`, matching the previously recorded source. This diagnostic does not claim a new full-source audit, resolution of original holds, or that every compressed finding needs a new row.
+
+## Bounded recommendation and stop
+
+The defensible finding is **a presentation inconsistency plus unresolved opportunity-to-master follow-through**, not zero SAPIENT contribution or proof that the entire earlier review failed. Retain the accepted work and five candidates. Before advancing to OPC UA Devices, recommend one bounded reconciliation of the **nine compressed findings plus SAP02-N04 and SAP03A-N06: eleven exact IDs**.
+
+Frozen proposed set: `SAP02-N04`, `SAP02-N06`, `SAP03A-N06`, `SAP03A-N10`, `SAP03A-N11`, `SAP03B-N01`, `SAP03B-N09`, `SAP03B-N10`, `SAP04-N09`, `SAP04-N15`, `SAP06-N14`. For each, resolve adequate existing coverage with exact rows and rationale, a warranted addition/clarification under the same common/specialized criteria, or a precise retained hold. Reuse the original research and inspect only passages needed for disputed meanings; do not start a new exhaustive corpus or conformance audit.
+
+This is a recommendation following the owner's diagnostic question, not authorization to change the workbook or restart the accepted SAPIENT review. Stop for Proceed before the eleven-record correction. Do not alter column order or invent donor-exclusive categories merely to make the donor sections look alike.
+
+---
+
 # SO-2GJ — Completed remaining SOSA opportunity assessment (16 November 2026)
 
 **Owner accepted the completed SOSA correction/opportunity assessment with its recorded limitations on 16 November 2026, Profile Rewrite 53.** All 3,755 opportunity IDs are accounted for and the assessment's 64 additions, including the final 21 below, are delivered. Source holds remain; AAS acceptance and subsequent donor work are separate.

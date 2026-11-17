@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 16 November 2026, America/New_York: **SOSA correction accepted; owner confirms AAS already accepted. Next: Step21 OPC UA Devices.** This is the sole current status and next-action record. Read [AGENTS.md](../AGENTS.md), then only relevant sections of the [SOSA plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). Objective: source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile. Donor research/master work precedes later owner model decisions. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD.
+Updated 16 November 2026, America/New_York: **SAPIENT contribution diagnostic complete; OPC UA transition paused for a bounded follow-through decision.** This is the sole current status and next-action record. Read [AGENTS.md](../AGENTS.md), then only relevant sections of the [SOSA plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). Objective: source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile. Donor research/master work precedes later owner model decisions. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD.
 
 ## Verified checkpoint
 
@@ -13,6 +13,8 @@ Result published at **c5b7ca2a87d6a22952c71f01e958aaf4d4cb4b24**. Remote tree ex
 Automatic approval review blocked an earlier backup push. The owner's renewed **Proceed in Profile Rewrite 53** explicitly authorized publication of the preserved research files and explanation. Publication then succeeded through the connected GitHub account; the earlier block is no longer a pending delivery task.
 
 ## Active scope and evidence
+
+Owner questioned SAPIENT's apparently absent donor-origin row block. The [published diagnostic](Donor_Native_High_Level_Information_Groupings_Comparison.md) verifies five native candidates at current H12/H28/H77/H97/H222 and the prior F2-3 assessment of 109 retained findings. It also identifies unresolved follow-through after later classification corrections: native heartbeat interval coverage, permission-to-change declaration traceability, and initialization/reconnection mapping. Original BSI PDF41/47 and the pinned heartbeat field were rechecked. This diagnostic changes no workbook/research decisions and does not revoke accepted source-review standing.
 
 Profile Rewrite 52 authorized all four remaining groups, integration, reconciliation, publication and a plain-English explanation. Profile Rewrite 53 completed that delivery, then the owner replied “proceed” to the recommendation to accept the SOSA correction plan as complete with documented limitations. Acceptance is recorded in `SO2_remaining_scope_closeout.owner_acceptance_record` and the matching master closeout metadata. The [published findings](Donor_Native_High_Level_Information_Groupings_Comparison.md) explain the additions, source accounting, value and remaining limits.
 
@@ -40,7 +42,7 @@ Five broader artifact/link errors are pre-existing; no project-wide or native Ex
 
 ## Next action and stop
 
-**Next actual work: Step21, OPC UA Devices v1.05.0**, under the existing [master donor plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md). On Proceed, begin the source-first review of DeviceType/Device, nameplate information, connections, information and state, with exact original-source scope and a finite completion boundary. Use the existing 425-row master and preserve source limits; integrate only warranted findings in the same workbook. Step22, OPC UA PA-DIM v1.02.0, follows separately. No repeat AAS acceptance, further automatic SOSA audit, or jump to DIM/Profile development. This status correction does not itself begin the new donor.
+**STOP for Proceed on one proposed eleven-record SAPIENT reconciliation**, before Step21 OPC UA Devices. Scope: nine F2-3 compressed findings plus SAP02-N04 and SAP03A-N06. Exact IDs, source evidence, findings and finish criteria are in the diagnostic above. Determine warranted additions/clarifications, explicit existing-row adequacy, or exact holds; preserve the five existing candidates and accepted source limits. Do not restart the whole donor or create arbitrary record batches. OPC UA Devices v1.05.0 remains the next donor after this question is resolved; PA-DIM v1.02.0 follows separately. No repeat AAS acceptance or DIM/Profile development.
 
 ## History
 
