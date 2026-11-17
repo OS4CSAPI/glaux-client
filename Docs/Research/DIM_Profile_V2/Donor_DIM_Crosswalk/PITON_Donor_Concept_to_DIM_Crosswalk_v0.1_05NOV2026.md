@@ -38,7 +38,7 @@ The completed Devices tree and original local commit e8c5497 are preserved. The 
 
 ## Interrupted work
 
-Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM originals: `/workspace/scratch/705ccec1d857/padim`. Prior PA-DIM source checkpoints and their verification receipts remain in Git history and the ledger. Latest verified publication before this comparison is **4c06bc052f143f18f51c66acfd449b9099b3bb7b**, receipt1bf7e33e880b757a51bea7469f93df1464c79ad0; full remote-tree readback passed. The current comparison adds nine provisional information-need groups while preserving the pinned manifest,40 native findings and all6 master/workbook/mirror files. Publication receipt follows successful remote readback; do not treat an interrupted local edit as published.
+Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM originals: `/workspace/scratch/705ccec1d857/padim`. Prior PA-DIM source checkpoints and their verification receipts remain in Git history and the ledger. Latest verified publication before this comparison is **4c06bc052f143f18f51c66acfd449b9099b3bb7b**, receipt1bf7e33e880b757a51bea7469f93df1464c79ad0; full remote-tree readback passed. The current comparison adds nine provisional information-need groups while preserving the pinned manifest,40 native findings and all6 master/workbook/mirror files. Comparison published at **9c1eebfa057ad2e32f69f4b17ba0773c76fb34b0**; full remote-tree readback exactly matched local tree c1517dc1b2291db48814be87969f14ab00a4e2a0. Scoped preservation and recovery checks passed; semantic completion is not claimed.
 
 ## Next action and stop
 
