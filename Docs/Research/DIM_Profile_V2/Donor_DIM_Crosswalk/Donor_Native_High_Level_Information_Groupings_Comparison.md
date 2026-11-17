@@ -1,5 +1,7 @@
 # SO-2GJ — Completed remaining SOSA opportunity assessment (16 November 2026)
 
+**Owner accepted the completed SOSA correction/opportunity assessment with its recorded limitations on 16 November 2026, Profile Rewrite 53.** All 3,755 opportunity IDs are accounted for and the assessment's 64 additions, including the final 21 below, are delivered. Source holds remain; AAS acceptance and subsequent donor work are separate.
+
 ## Result and purpose
 
 The single authorized continuation accounted for **all 1,646 remaining source records** and added **21 distinct, provisional information-need candidates** to the same canonical master and editable workbook. Together with the 2,109 previously completed records, **all 3,755 frozen SOSA opportunity IDs now have a disposition**. The master grew from 404 to **425 information rows**; this continuation did not adopt Domain Information Model (DIM) classes or Connected Systems API (CSAPI) Profile requirements. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records publication/readback and the owner decision boundary; the [authorized plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) preserves the finite scope and interruption protocol.
@@ -67,7 +69,7 @@ The [canonical master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV mir
 
 The saved-file checks reconciled all 1,646 original IDs/pointers/hashes, all 3,755 opportunity IDs, candidate support, outcome counts, both CSVs, readable mirrors, saved cell values and classification fills. The affected source cells and guidance/register views were rendered and visually inspected. Native Microsoft Excel clean reopening remains **unverified**; five pre-existing unrelated broader artifact/link errors are not converted into a project-wide PASS. Actual remote publication and checks are recorded in the PITON and closeout publication record.
 
-**Recommend owner acceptance of this completed, bounded-PARTIAL SOSA opportunity assessment.** There are no undispositioned IDs left in the authorized scope; specific source holds stay documented without becoming automatic new research projects. AAS acceptance remains a separate pending decision. The broader donor sequence next calls for OPC UA Devices, followed by PA-DIM, after applicable authorization; this checkpoint does not jump directly to model/Profile development.
+**Owner acceptance of this completed, bounded-PARTIAL SOSA opportunity assessment is recorded.** There are no undispositioned IDs left in the authorized scope; specific source holds stay documented without becoming automatic new research projects. AAS acceptance remains a separate pending decision. The broader donor sequence next calls for OPC UA Devices, followed by PA-DIM, after applicable authorization; this checkpoint does not jump directly to model/Profile development.
 
 ---
 

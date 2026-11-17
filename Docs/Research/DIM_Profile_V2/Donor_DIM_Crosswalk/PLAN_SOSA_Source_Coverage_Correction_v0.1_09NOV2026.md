@@ -1,5 +1,9 @@
 # SOSA remaining opportunity assessment and finite closeout
 
+**COMPLETE — OWNER ACCEPTED WITH RECORDED LIMITATIONS, 16 November 2026 (Profile Rewrite 53).** The owner replied “proceed” to the recommendation to accept the completed SOSA correction plan. All 3,755 defined opportunity records are accounted for, the assessment's 64 candidate additions are integrated, and the 425-row master/workbook and explanation are published and verified. This closes the authorized corrective work; no further SOSA iterations are pending under this plan.
+
+All source holds and actual contact grades remain. Acceptance does not adopt DIM/Profile requirements, claim exhaustive source coverage, accept AAS, or authorize another donor. The execution instructions below preserve the completed method and scope; they do not restart it. The acceptance record is in the existing ledger's `SO2_remaining_scope_closeout.owner_acceptance_record` and the matching master closeout metadata.
+
 **Owner authorized 16 November 2026, Profile Rewrite 52.** The owner approved the proposed single continuation and explicitly requested that this plan be documented for recovery after a chat limit. This authorization covers **all remaining SO-2G, SO-2H, SO-2I and SO-2J opportunity records**, warranted integration into the same master/workbook, reconciliation, publication verification and a plain-English result. The four groups are internal organization, not four new Proceed gates.
 
 [Current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns current progress and the only next action. [AGENTS.md](../AGENTS.md) governs source-first execution and read-only new-chat recovery. [Exact pre-continuation state](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-sosa-remainder-20261116), commit `49ba4a4a2e6ebbedccc667a881bb94ce1d052395`, preserves the previous plan, source evidence and workbook.
