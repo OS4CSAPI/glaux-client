@@ -3,7 +3,7 @@
   "date": "2026-11-13",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "0f25363a3d5b78c5c92297cf401a2bceda7ce009a8aa6dba4ce10ccae38207ce",
+  "currentWorkbookSha256": "bd112e5368e292a7fe33fe4c7015f763eee3ad430135a0b21704ecde3d463318",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption. Profile Rewrite 53 (16 November 2026): completed SOSA correction/opportunity assessment OWNER ACCEPTED with recorded limitations; all 3755 IDs accounted, 64 candidate additions. No DIM/Profile adoption; AAS acceptance separate. Profile Rewrite 53 owner clarification (16 November 2026): AAS work was already accepted with its recorded limitations; the repeated pending-acceptance routing was stale.",
@@ -375,7 +375,7 @@
       "",
       "",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: LocationAspect and LocatedAt provide an engineering location context for a product aspect. Retain a specialized location-context candidate, with planned/actual context explicit; this is not a defined physical host relation or surveyed station/probe coordinates. [Sources: AAS09-N009, AAS09-N012; F3-05-S06-R009]",
-      "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
+      "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01] SAP11 retains the directed tasking-dependency meaning separately at SAPIENT-R11-TASK-DEPENDENCY; this hosting-context mapping remains RELATED only.",
       "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Host Platform explicitly denotes the physical entity on which the sensor is mounted and its supporting connections. This supports qualified hosting context. The integral Sensor Pod and the glossary computing-platform sense remain distinct; neither a surveyed station nor a particular installation is established. [F3-04A-S06-R009]",
       "≈ sosa:Platform",
@@ -483,7 +483,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "RELATED: Middleware's separate registration without modes/detections is scoped informative guidance with an unresolved Table15 M-list applicability issue, not ISA's exact six-phase connection lifecycle. [SAP06-N14]",
+      "[COMMON CANDIDATE] PARTIAL/RELATED: BSI §§4.4–5,4.8–9 define registration → acknowledgment → initial status, default-task override, GOODBYE and reconnection (10 s retry; registration repeated after more than 2 min). This is connection participation, not physical asset lifetime or ISA’s exact six-phase lifecycle. Informative middleware separate registration retains the Table15 mandatory-list conflict. [PDF20–22,107–108; SAP02-N04, SAP06-N14; SAP11]",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The native connection, registration, configuration, operational, deregistration and disconnection phases describe participation in an ISA connection. Retain a specialized lifecycle candidate, separate from physical equipment operating state and other donors' task lifecycles. [SDD-5.1.1, SDD-6.3.2, SDD-6.3.3; F3-06-ISA-ISA-A-PARTICIPATION-LIFECYCLE]",
       "[HELD] NO_ESTABLISHED: C239 audit startup, shutdown and restart events describe the audit subsystem lifecycle. They do not establish connection-specific registration, configuration, operation and deregistration states. Keep this participation-lifecycle mapping held; retain the audit-event meaning. [F3-04A-ISA-A-PARTICIPATION-LIFECYCLE]",
       "",
@@ -537,7 +537,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL/RELATED: A typed Property with semantic identity and the defined value-retrieval operation supports a qualified reported-field candidate. It is a digital property interface, not proof of a sensor observation, publication policy or a live logger diagnostic. [Sources: AAS03-N005, AAS03-N019, AAS07-N005; F3-05-S06-R012]",
-      "[COMMON CANDIDATE] RELATED: Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence. [SAP03A-N06, SAP03A-N08, SAP03B-N01, SAP03B-N02, SAP04-N01, SAP04-N09, SAP06-N15, SAP06-N16, SAP04-N12]",
+      "[COMMON CANDIDATE] RELATED: Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence. [SAP03A-N06, SAP03A-N08, SAP03B-N01, SAP03B-N02, SAP04-N01, SAP04-N09, SAP06-N15, SAP06-N16, SAP04-N12] SAP11: Tables33–35 (PDF49–50) declare report field names, units and on-change behavior, not performed observations. Geometric error is mapped to SAPIENT-F2-PERFORMANCE; regular heartbeat timing has its own SAPIENT-R11-STATUS-INTERVAL candidate.",
       "[COMMON CANDIDATE] PARTIAL: Observable Declaration describes a named output and its type/structure/range; Config.ccd carries capability declarations. Describing a reportable output is common. Declaration is distinct from occurrence: every reported observable should be declared, but every declaration need not appear in every Event. [ISA21:S06-R012; F3-02]",
       "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
       "",
@@ -573,7 +573,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
+      "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14] SAP11: outer SapientMessage.node_id names the sending Node (pinned proto field2), while report/object/task IDs identify different subjects. Sender identity does not authenticate the original observing instrument.",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event.source identifies the original message-authoring component by UCI. Hold the observing-System comparison: a message author is not guaranteed to be the physical sensing probe or observation performer. [ISA21:S06-R014; F3-02]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: C239 Sensor is a sensing device/system; the 2022 SignalDetection and SignalCharacterization explicitly associate their information with a Sensor. This supports qualified producing-sensor information. Functional processing modules are not automatically physical observers or individual CSAPI Systems. 2022 lineage; exact 2023 companion bytes unverified. [F3-04A-S06-R014]",
       "≈ sosa:Sensor",
@@ -897,7 +897,7 @@
       "Not assessed here",
       "Not assessed here",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "[COMMON CANDIDATE] RELATED: DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established. [SAP04-N09]",
+      "[COMMON CANDIDATE] RELATED: DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established. [SAP04-N09] SAP11 clarifies that when the sensor edge node cannot associate detections of the same object, object_id is unique per detection (§6.4.2.2, PDF71). No persistent real-world identity is inferred.",
       "BSO [observable]",
       "Not assessed here",
       "Not assessed here",
@@ -1491,7 +1491,7 @@
       "Not assessed here",
       "Not assessed here",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §§6.2.5.16–22 Tables33–39 (PDF49–53) includes registered performance/confidence characteristics and geometric error/variation, not real measured accuracy, universal performance field schema, confirmed usable detection range or proven installed device. [Original SAPIENT source findings: SAP03B-N03, SAP03B-N04]",
+      "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §§6.2.5.16–22 Tables33–39 (PDF49–53) includes registered performance/confidence characteristics and geometric error/variation, not real measured accuracy, universal performance field schema, confirmed usable detection range or proven installed device. [Original SAPIENT source findings: SAP03B-N03, SAP03B-N04] SAP11 adds explicit SAP03B-N01 → Tables33–34 (PDF49–50) traceability for declared geometric-error type, units, variation and performance values; source limits unchanged.",
       "Not assessed here",
       "Not assessed here",
       "Not assessed here",
@@ -1563,7 +1563,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Input/inoutput OperationVariables provide typed argument declarations and request values. Promote to common parameter information; a required variable wrapper does not make a particular argument mandatory. Default/optional-argument metadata remains future material, and timeout scopes remain distinct. [Sources: AAS04-N004, AAS07-N009; F3-05-ISA-K-PARAMETER-DECL]",
-      "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality. [SAP03B-N10, SAP03B-N11, SAP03B-N12, SAP05-N03, SAP05-N05; F3-06-SAPIENT-ISA-K-PARAMETER-DECL]",
+      "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality. [SAP03B-N10, SAP03B-N11, SAP03B-N12, SAP05-N03, SAP05-N05; F3-06-SAPIENT-ISA-K-PARAMETER-DECL] SAP11: the specific advertised task-region purposes and coordinate forms are retained at SAPIENT-R11-TASK-REGION-SUPPORT; no applied zone or generic ISA parameter-catalogue equivalence is implied.",
       "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
       "[COMMON CANDIDATE] PARTIAL: The 2022 UpdateMode_Request names componentMode with type ComponentMode_Info, and C239 updateSensorMode names ComponentMode and ComponentId inputs. These support qualified typed command parameters. Names, optionality and bounds remain source-specific; no universal ISA or CSAPI parameter contract is inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-ISA-K-PARAMETER-DECL]",
       "",
@@ -1761,7 +1761,7 @@
       "≈ SampMode (sampling capability)",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "[COMMON CANDIDATE] RELATED: Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable. [SAP03A-N09, SAP03A-N10, SAP03B-N01, SAP03B-N09]",
+      "[COMMON CANDIDATE] RELATED: Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable. [SAP03A-N09, SAP03A-N10, SAP03B-N01, SAP03B-N09] SAP11 retains separate persistence, scan and tracking axes in SAPIENT-R11-MODE-CHARACTERISTICS; this supported-mode-list mapping remains valid.",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Capability Declaration catalogues properties, commands, observables and types. Hold the supported-operating-mode comparison: that catalogue does not itself enumerate allowed modes. ISA-K-CAPABILITIES remains blue for its narrower declared-capability meaning. [ISA21:S06-R016; F3-02]",
       "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 ComponentModeEnum_Type defines TACTICAL and DEBUG as possible mode values, and mode-change requests use that type. This supports a qualified allowed-mode vocabulary. It does not advertise the modes supported by a particular device, select a default, or establish the current setting. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-S06-R016]",
       "",
@@ -3939,7 +3939,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL/RELATED: ServiceDescription advertises supported profiles; profiles govern operation/modifier/path subsets. Promote to a common qualified service-role/support candidate, preserving AAS-specific registry/repository/service roles and avoiding universal ISA command requirements or observed conformance. [Sources: AAS06-N006, AAS06-N007; F3-05-ISA-A-SERVICE-ROLE]",
-      "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15]",
+      "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15] SAP11 confirms AnnexC C.3.1–2 (PDF107–108) offers routing, persistence and validation as optional middleware guidance; no new physical-equipment class or required universal middleware contract follows.",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The six named services have native purposes and required command lists. Their grouping is useful specialized architecture information; do not turn each service into a physical class or require all optional services everywhere. [ISA-DMS-001, ISA-DMS-002, ISA-DMS-003, ISA-DMS-004, ISA-DMS-005, ISA-DMS-006, INTRO-6.1.1, WHITE-4.3; F3-06-ISA-ISA-A-SERVICE-ROLE]",
       "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T] SO-2A: logical mission/support functions and their implementation allocation are retained separately in SOSA-SO2A-FUNCTION-ALLOCATION; no ISA required-command equivalence is added.",
       "",
@@ -4119,7 +4119,7 @@
       "",
       "",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-      "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
+      "[COMMON CANDIDATE] PARTIAL/RELATED: DetectionReport.report_id is a ULID identifying the individual report; its date/time portion changes with each report. Useful message identity is supported, with a different source scope from ISA’s conversation-scoped ID. Keep object_id, task_id and outer node_id separate. [BSI §§6.4.1–6.4.2.3 Table69, PDF69–71; detection_report.proto fields1–3; SAP04-N09; SAP11]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Native message schemas declare a conversation-unique identifier. This supports message identification independently of event identity and does not create a globally persistent identifier. [ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-MESSAGE-ID]",
       "[COMMON CANDIDATE] PARTIAL: The 2022 Message_Info header carries id from Message.elementID, with an unsigned-long IDL type. This supports qualified individual-message identification. Conversation-wide uniqueness, persistence and request/response correlation are not established; LogEvent.messageId instead denotes a message type and must remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-MESSAGE-ID]",
       "",
@@ -5649,7 +5649,7 @@
       "Not assessed here",
       "Not assessed here",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Experimental maxInterval defines output-event status-update spacing and is inapplicable to input. Retain a specialized event-report interval candidate, distinct from a universal component Status heartbeat or a command that changes it. [Sources: AAS04-N011; F3-05-ISA-C-078]",
-      "[HELD] RELATED/NO_ESTABLISHED: The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question. [SAP03A-N06; F3-06-SAPIENT-ISA-C-078]",
+      "[HELD] RELATED/NO_ESTABLISHED: The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question. [SAP03A-N06; F3-06-SAPIENT-ISA-C-078] SAP11: the useful ordinary heartbeat interval is retained at SAPIENT-R11-STATUS-INTERVAL. This min/max correspondence remains held.",
       "Maximum Status Interval",
       "Not assessed here",
       "Not assessed here",
@@ -5667,7 +5667,7 @@
       "Not assessed here",
       "Not assessed here",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Experimental minInterval constrains maximum input handling or output sending frequency. Retain a specialized event-rate candidate; it is neither sensor sample period nor automatically a minimum component Status interval. [Sources: AAS04-N010; F3-05-ISA-C-079]",
-      "[HELD] RELATED/NO_ESTABLISHED: A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits. [SAP03A-N06; F3-06-SAPIENT-ISA-C-079]",
+      "[HELD] RELATED/NO_ESTABLISHED: A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits. [SAP03A-N06; F3-06-SAPIENT-ISA-C-079] SAP11: the useful ordinary heartbeat interval is retained at SAPIENT-R11-STATUS-INTERVAL. This min/max correspondence remains held.",
       "Minimum Status Interval",
       "Not assessed here",
       "Not assessed here",
@@ -7539,7 +7539,7 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
-      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL: DetectionReport.task_id refers to the task the Node was carrying out when the detection occurred. This supplies an explicit report-to-identified-task reference; it does not establish SOSA’s complete task lifecycle, priority or task-assignment schema. [BSI §6.4.2.3/Table69, PDF70–71; detection_report.proto field3; SAP04-N09; SAP11]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe an identified task, including its planned or active standing, task state, status and task-specific priority where provided. Retain the task identifier or tracking number across creation, modification, start, state change and deletion requests. A task is not the message that carries its request, the priority of that message or a record limited to a currently executing command. C239 task-manager interactions are preliminary; host EW interactions additionally describe scheduled tasks and return a tracking number on start. Exact task schemas, universal state values, scheduling guarantees and actual execution are not established. [C239: §7.1.1 PDF141–145 (preliminary); §8 PDF146/152; Table12.10.2-1 PDF200–201; SO-2E]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -8268,6 +8268,132 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Configuration completion and clearing state — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Relate a mobile or pointable platform Node to the identified Nodes affected by its tasking. Preserve direction, dependent Node identifiers and nested platform relationships. This declaration tells a controller which Nodes may be affected by platform movement or pointing; it is not proof of physical containment, an installed mount or a generic capability prerequisite. [SAP02-N06; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared platform-to-node tasking dependency — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the declared interval and time unit between regular status/heartbeat reports from a Node. Retain the source-qualified interpretation of missed reports: BSI permits a potential disabled, off or lost-communication inference after three intervals. The declaration is not a minimum/maximum configurable interval, actual inter-arrival measurement or confirmed hardware failure. [SAP03A-N06; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared regular status-report interval — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a supported mode using separate persistence/reversion, field-of-view scan behavior and detection-association capability axes. Preserve permanent/temporary/default, fixed/scanning/steerable, and none/tracklet/track/re-identification meanings separately. These are declared characteristics of the mode, not current mode, guaranteed tracking performance or the platform Node type POINTABLE. [SAP03A-N10; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared mode persistence, scan and tracking characteristics — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Declare whether a Node requires permission before changing its behavior in a mode. BSI requires a ModeParameter with type PermissionToChange and value Required for Nodes needing that permission. Distinguish this advertised autonomy constraint from a request for permission, an accept/reject decision and the action itself. [SAP03A-N11; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared permission requirement for autonomous behavior change — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the declared number of tasks a Node supports concurrently in a particular mode, with the source interpretation of what is counted. Keep capacity distinct from currently assigned tasks, available resources, commands being executed or guaranteed successful scheduling. [SAP03B-N09; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared concurrent task capacity within a mode — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the region types and coordinate representations that a Node can accept for tasking in a mode. Preserve the distinct interests, ignored areas, operation boundaries, mobile no-go areas and mobile stay-within areas. This is an advertised input-support contract, not an issued region task, a current field of view or an enforced exclusion zone. [SAP03B-N10; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Declared accepted task-region types and coordinate systems — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a signal reported as part of a detection using its amplitude, center frequency, optional lower/upper frequencies and optional pulse duration, with units supplied by the registration definition. Keep reported signal characteristics associated with that detection; do not conflate them with communication-link received power, transmitter settings, pulse repetition interval or an undefined signal-strength ratio. [SAP04-N15; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Detected-signal amplitude, frequency span and pulse duration — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -11985,7 +12111,7 @@
         "",
         "",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: LocationAspect and LocatedAt provide an engineering location context for a product aspect. Retain a specialized location-context candidate, with planned/actual context explicit; this is not a defined physical host relation or surveyed station/probe coordinates. [Sources: AAS09-N009, AAS09-N012; F3-05-S06-R009]",
-        "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
+        "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01] SAP11 retains the directed tasking-dependency meaning separately at SAPIENT-R11-TASK-DEPENDENCY; this hosting-context mapping remains RELATED only.",
         "Not assessed here — no verified ISA correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[COMMON CANDIDATE] NARROWER/PARTIAL: C239 Host Platform explicitly denotes the physical entity on which the sensor is mounted and its supporting connections. This supports qualified hosting context. The integral Sensor Pod and the glossary computing-platform sense remain distinct; neither a surveyed station nor a particular installation is established. [F3-04A-S06-R009]",
         "≈ sosa:Platform",
@@ -12422,6 +12548,18 @@
           "AAS09-N012"
         ],
         "rationale": "LocationAspect and LocatedAt provide an engineering location context for a product aspect. Retain a specialized location-context candidate, with planned/actual context explicit; this is not a defined physical host relation or surveyed station/probe coordinates."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP02-N06"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01]",
+        "current_cell_text": "RELATED: BSI §6.2.1/Table15 and §4.10 describe dependent_nodes UUIDs for movement/task effects; they are not a general proof of installed station attachment or hardware parentage. [SAP02-N06, SAP03A-N01] [SAP03A-N01] SAP11 retains the directed tasking-dependency meaning separately at SAPIENT-R11-TASK-DEPENDENCY; this hosting-context mapping remains RELATED only.",
+        "cell": "H15",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -13991,7 +14129,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "RELATED: Middleware's separate registration without modes/detections is scoped informative guidance with an unresolved Table15 M-list applicability issue, not ISA's exact six-phase connection lifecycle. [SAP06-N14]",
+        "[COMMON CANDIDATE] PARTIAL/RELATED: BSI §§4.4–5,4.8–9 define registration → acknowledgment → initial status, default-task override, GOODBYE and reconnection (10 s retry; registration repeated after more than 2 min). This is connection participation, not physical asset lifetime or ISA’s exact six-phase lifecycle. Informative middleware separate registration retains the Table15 mandatory-list conflict. [PDF20–22,107–108; SAP02-N04, SAP06-N14; SAP11]",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The native connection, registration, configuration, operational, deregistration and disconnection phases describe participation in an ISA connection. Retain a specialized lifecycle candidate, separate from physical equipment operating state and other donors' task lifecycles. [SDD-5.1.1, SDD-6.3.2, SDD-6.3.3; F3-06-ISA-ISA-A-PARTICIPATION-LIFECYCLE]",
         "[HELD] NO_ESTABLISHED: C239 audit startup, shutdown and restart events describe the audit subsystem lifecycle. They do not establish connection-specific registration, configuration, operation and deregistration states. Keep this participation-lifecycle mapping held; retain the audit-event meaning. [F3-04A-ISA-A-PARTICIPATION-LIFECYCLE]",
         "",
@@ -14172,6 +14310,19 @@
           "SDD-6.3.3"
         ],
         "rationale": "The native connection, registration, configuration, operational, deregistration and disconnection phases describe participation in an ISA connection. Retain a specialized lifecycle candidate, separate from physical equipment operating state and other donors' task lifecycles."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP02-N04",
+          "SAP06-N14"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "RELATED: Middleware's separate registration without modes/detections is scoped informative guidance with an unresolved Table15 M-list applicability issue, not ISA's exact six-phase connection lifecycle. [SAP06-N14]",
+        "current_cell_text": "[COMMON CANDIDATE] PARTIAL/RELATED: BSI §§4.4–5,4.8–9 define registration → acknowledgment → initial status, default-task override, GOODBYE and reconnection (10 s retry; registration repeated after more than 2 min). This is connection participation, not physical asset lifetime or ISA’s exact six-phase lifecycle. Informative middleware separate registration retains the Table15 mandatory-list conflict. [PDF20–22,107–108; SAP02-N04, SAP06-N14; SAP11]",
+        "cell": "H21",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "COMMON_CANDIDATE",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -14280,7 +14431,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL/RELATED: A typed Property with semantic identity and the defined value-retrieval operation supports a qualified reported-field candidate. It is a digital property interface, not proof of a sensor observation, publication policy or a live logger diagnostic. [Sources: AAS03-N005, AAS03-N019, AAS07-N005; F3-05-S06-R012]",
-        "[COMMON CANDIDATE] RELATED: Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence. [SAP03A-N06, SAP03A-N08, SAP03B-N01, SAP03B-N02, SAP04-N01, SAP04-N09, SAP06-N15, SAP06-N16, SAP04-N12]",
+        "[COMMON CANDIDATE] RELATED: Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence. [SAP03A-N06, SAP03A-N08, SAP03B-N01, SAP03B-N02, SAP04-N01, SAP04-N09, SAP06-N15, SAP06-N16, SAP04-N12] SAP11: Tables33–35 (PDF49–50) declare report field names, units and on-change behavior, not performed observations. Geometric error is mapped to SAPIENT-F2-PERFORMANCE; regular heartbeat timing has its own SAPIENT-R11-STATUS-INTERVAL candidate.",
         "[COMMON CANDIDATE] PARTIAL: Observable Declaration describes a named output and its type/structure/range; Config.ccd carries capability declarations. Describing a reportable output is common. Declaration is distinct from occurrence: every reported observable should be declared, but every declaration need not appear in every Event. [ISA21:S06-R012; F3-02]",
         "RELATED/NO_ESTABLISHED: C239 §4.2 reporting/archival, Data Products and §15 transport may carry structured data. Hardware PIC protocol, connector/pin and RF/fiber channel labels (J2/J3/J8/J9, RX/TX) are NOT digital observation fields, observable properties or separate sensors. Raw Data Products differ from processed Information Products. [SOSA-D/G2-4A/B/G2-7M–7P/G2-7S/T]",
         "",
@@ -14701,6 +14852,19 @@
           "AAS07-N005"
         ],
         "rationale": "A typed Property with semantic identity and the defined value-retrieval operation supports a qualified reported-field candidate. It is a digital property interface, not proof of a sensor observation, publication policy or a live logger diagnostic."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP03B-N01",
+          "SAP03A-N06"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "[COMMON CANDIDATE] RELATED: Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence. [SAP03A-N06, SAP03A-N08, SAP03B-N01, SAP03B-N02, SAP04-N01, SAP04-N09, SAP06-N15, SAP06-N16, SAP04-N12]",
+        "current_cell_text": "[COMMON CANDIDATE] RELATED: Registration declares output type/name and units; DetectionReport carries named object/track values. These support qualified reported-output information. File references and out-of-scope video guidance do not erase those fields or prove exact SWE output equivalence. [SAP03A-N06, SAP03A-N08, SAP03B-N01, SAP03B-N02, SAP04-N01, SAP04-N09, SAP06-N15, SAP06-N16, SAP04-N12] SAP11: Tables33–35 (PDF49–50) declare report field names, units and on-change behavior, not performed observations. Geometric error is mapped to SAPIENT-F2-PERFORMANCE; regular heartbeat timing has its own SAPIENT-R11-STATUS-INTERVAL candidate.",
+        "cell": "H24",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -14954,7 +15118,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
+        "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14] SAP11: outer SapientMessage.node_id names the sending Node (pinned proto field2), while report/object/task IDs identify different subjects. Sender identity does not authenticate the original observing instrument.",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Event.source identifies the original message-authoring component by UCI. Hold the observing-System comparison: a message author is not guaranteed to be the physical sensing probe or observation performer. [ISA21:S06-R014; F3-02]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: C239 Sensor is a sensing device/system; the 2022 SignalDetection and SignalCharacterization explicitly associate their information with a Sensor. This supports qualified producing-sensor information. Functional processing modules are not automatically physical observers or individual CSAPI Systems. 2022 lineage; exact 2023 companion bytes unverified. [F3-04A-S06-R014]",
         "≈ sosa:Sensor",
@@ -15146,6 +15310,19 @@
           "SOSA-V1-DSDM-1.1.3.101"
         ],
         "rationale": "C239 Sensor is a sensing device/system; the 2022 SignalDetection and SignalCharacterization explicitly associate their information with a Sensor. This supports qualified producing-sensor information. Functional processing modules are not automatically physical observers or individual CSAPI Systems."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP04-N09",
+          "SAP06-N14"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14]",
+        "current_cell_text": "RELATED: Optional middleware may forward/validate/cache/rewrite routing destinations, so SAPIENT Node/transport identity is not standalone proof of the physical observing instrument. [SAP06-N14] SAP11: outer SapientMessage.node_id names the sending Node (pinned proto field2), while report/object/task IDs identify different subjects. Sender identity does not authenticate the original observing instrument.",
+        "cell": "H26",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -16685,7 +16862,7 @@
         "Not assessed here",
         "Not assessed here",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "[COMMON CANDIDATE] RELATED: DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established. [SAP04-N09]",
+        "[COMMON CANDIDATE] RELATED: DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established. [SAP04-N09] SAP11 clarifies that when the sensor edge node cannot associate detections of the same object, object_id is unique per detection (§6.4.2.2, PDF71). No persistent real-world identity is inferred.",
         "BSO [observable]",
         "Not assessed here",
         "Not assessed here",
@@ -16778,6 +16955,18 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "evidence_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/F3_03_classification_review/records"
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP04-N09"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "[COMMON CANDIDATE] RELATED: DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established. [SAP04-N09]",
+        "current_cell_text": "[COMMON CANDIDATE] RELATED: DetectionReport.object_id identifies the reported object/track and may equal report_id when tracking is unavailable. Useful entity-identifier information, with a different scope from the ISA battle-space identifier; no shared identity namespace is established. [SAP04-N09] SAP11 clarifies that when the sensor edge node cannot associate detections of the same object, object_id is unique per detection (§6.4.2.2, PDF71). No persistent real-world identity is inferred.",
+        "cell": "H44",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -20973,7 +21162,7 @@
         "Not assessed here",
         "Not assessed here",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §§6.2.5.16–22 Tables33–39 (PDF49–53) includes registered performance/confidence characteristics and geometric error/variation, not real measured accuracy, universal performance field schema, confirmed usable detection range or proven installed device. [Original SAPIENT source findings: SAP03B-N03, SAP03B-N04]",
+        "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §§6.2.5.16–22 Tables33–39 (PDF49–53) includes registered performance/confidence characteristics and geometric error/variation, not real measured accuracy, universal performance field schema, confirmed usable detection range or proven installed device. [Original SAPIENT source findings: SAP03B-N03, SAP03B-N04] SAP11 adds explicit SAP03B-N01 → Tables33–34 (PDF49–50) traceability for declared geometric-error type, units, variation and performance values; source limits unchanged.",
         "Not assessed here",
         "Not assessed here",
         "Not assessed here",
@@ -21023,6 +21212,18 @@
         "original_source_ids": [],
         "explanation": "The inspected AAS evidence does not establish this comparison; not a statement that AAS lacks it.",
         "candidate_only_not_adopted": true
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP03B-N01"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §§6.2.5.16–22 Tables33–39 (PDF49–53) includes registered performance/confidence characteristics and geometric error/variation, not real measured accuracy, universal performance field schema, confirmed usable detection range or proven installed device. [Original SAPIENT source findings: SAP03B-N03, SAP03B-N04]",
+        "current_cell_text": "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §§6.2.5.16–22 Tables33–39 (PDF49–53) includes registered performance/confidence characteristics and geometric error/variation, not real measured accuracy, universal performance field schema, confirmed usable detection range or proven installed device. [Original SAPIENT source findings: SAP03B-N03, SAP03B-N04] SAP11 adds explicit SAP03B-N01 → Tables33–34 (PDF49–50) traceability for declared geometric-error type, units, variation and performance values; source limits unchanged.",
+        "cell": "H77",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -21856,7 +22057,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Input/inoutput OperationVariables provide typed argument declarations and request values. Promote to common parameter information; a required variable wrapper does not make a particular argument mandatory. Default/optional-argument metadata remains future material, and timeout scopes remain distinct. [Sources: AAS04-N004, AAS07-N009; F3-05-ISA-K-PARAMETER-DECL]",
-        "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality. [SAP03B-N10, SAP03B-N11, SAP03B-N12, SAP05-N03, SAP05-N05; F3-06-SAPIENT-ISA-K-PARAMETER-DECL]",
+        "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality. [SAP03B-N10, SAP03B-N11, SAP03B-N12, SAP05-N03, SAP05-N05; F3-06-SAPIENT-ISA-K-PARAMETER-DECL] SAP11: the specific advertised task-region purposes and coordinate forms are retained at SAPIENT-R11-TASK-REGION-SUPPORT; no applied zone or generic ISA parameter-catalogue equivalence is implied.",
         "Parameter Declaration: name, description, type, optional, structure; range:Range Declaration [0-1]",
         "[COMMON CANDIDATE] PARTIAL: The 2022 UpdateMode_Request names componentMode with type ComponentMode_Info, and C239 updateSensorMode names ComponentMode and ComponentId inputs. These support qualified typed command parameters. Names, optionality and bounds remain source-specific; no universal ISA or CSAPI parameter contract is inferred. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-ISA-K-PARAMETER-DECL]",
         "",
@@ -22132,6 +22333,18 @@
           "SAP05-N05"
         ],
         "rationale": "The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP03B-N10"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality. [SAP03B-N10, SAP03B-N11, SAP03B-N12, SAP05-N03, SAP05-N05; F3-06-SAPIENT-ISA-K-PARAMETER-DECL]",
+        "current_cell_text": "[COMMON CANDIDATE] PARTIAL/RELATED: The pinned schema declares typed command alternatives, Region inputs and an optional string command_parameter. These support qualified parameter information; the string does not supply a general per-command argument catalogue, ranges or identical ISA optionality. [SAP03B-N10, SAP03B-N11, SAP03B-N12, SAP05-N03, SAP05-N05; F3-06-SAPIENT-ISA-K-PARAMETER-DECL] SAP11: the specific advertised task-region purposes and coordinate forms are retained at SAPIENT-R11-TASK-REGION-SUPPORT; no applied zone or generic ISA parameter-catalogue equivalence is implied.",
+        "cell": "H81",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -24518,7 +24731,7 @@
         "≈ SampMode (sampling capability)",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "[COMMON CANDIDATE] RELATED: Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable. [SAP03A-N09, SAP03A-N10, SAP03B-N01, SAP03B-N09]",
+        "[COMMON CANDIDATE] RELATED: Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable. [SAP03A-N09, SAP03A-N10, SAP03B-N01, SAP03B-N09] SAP11 retains separate persistence, scan and tracking axes in SAPIENT-R11-MODE-CHARACTERISTICS; this supported-mode-list mapping remains valid.",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Capability Declaration catalogues properties, commands, observables and types. Hold the supported-operating-mode comparison: that catalogue does not itself enumerate allowed modes. ISA-K-CAPABILITIES remains blue for its narrower declared-capability meaning. [ISA21:S06-R016; F3-02]",
         "[COMMON CANDIDATE] NARROWER/PARTIAL: The 2022 ComponentModeEnum_Type defines TACTICAL and DEBUG as possible mode values, and mode-change requests use that type. This supports a qualified allowed-mode vocabulary. It does not advertise the modes supported by a particular device, select a default, or establish the current setting. 2022 lineage; exact 2023 companion bytes unverified. [F3-04B-S06-R016]",
         "",
@@ -24787,6 +25000,18 @@
           "SOSA-V1-IDL:UpdateMode_Request.idl"
         ],
         "rationale": "The 2022 ComponentModeEnum_Type defines TACTICAL and DEBUG as possible mode values, and mode-change requests use that type. This supports a qualified allowed-mode vocabulary. It does not advertise the modes supported by a particular device, select a default, or establish the current setting."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP03A-N10"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "[COMMON CANDIDATE] RELATED: Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable. [SAP03A-N09, SAP03A-N10, SAP03B-N01, SAP03B-N09]",
+        "current_cell_text": "[COMMON CANDIDATE] RELATED: Registration.ModeDefinition explicitly lists named supported modes with their sensing/task contracts. This is a supported-mode candidate; mode-specific scan/tracking details do not make the general supported-mode meaning unusable. [SAP03A-N09, SAP03A-N10, SAP03B-N01, SAP03B-N09] SAP11 retains separate persistence, scan and tracking axes in SAPIENT-R11-MODE-CHARACTERISTICS; this supported-mode-list mapping remains valid.",
+        "cell": "H92",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -38320,7 +38545,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL/RELATED: ServiceDescription advertises supported profiles; profiles govern operation/modifier/path subsets. Promote to a common qualified service-role/support candidate, preserving AAS-specific registry/repository/service roles and avoiding universal ISA command requirements or observed conformance. [Sources: AAS06-N006, AAS06-N007; F3-05-ISA-A-SERVICE-ROLE]",
-        "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15]",
+        "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15] SAP11 confirms AnnexC C.3.1–2 (PDF107–108) offers routing, persistence and validation as optional middleware guidance; no new physical-equipment class or required universal middleware contract follows.",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: The six named services have native purposes and required command lists. Their grouping is useful specialized architecture information; do not turn each service into a physical class or require all optional services everywhere. [ISA-DMS-001, ISA-DMS-002, ISA-DMS-003, ISA-DMS-004, ISA-DMS-005, ISA-DMS-006, INTRO-6.1.1, WHITE-4.3; F3-06-ISA-ISA-A-SERVICE-ROLE]",
         "RELATED but different: C239 §§4/6–7 System Manager, Task Manager and supporting services define scoped modules/management operations, some Future or conditionally required; they do not define ISA's six service categories, their required-command sets or a universal CSAPI service registry. [SOSA-D/G2-1/2/G2-7T] SO-2A: logical mission/support functions and their implementation allocation are retained separately in SOSA-SO2A-FUNCTION-ALLOCATION; no ISA required-command equivalence is added.",
         "",
@@ -38739,6 +38964,18 @@
         "rationale": "SO-2A: logical mission/support functions and their implementation allocation are retained separately in SOSA-SO2A-FUNCTION-ALLOCATION; no ISA required-command equivalence is added.",
         "classification_changed": false,
         "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_source_opportunity_assessments/SO-2A"
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP06-N14"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15]",
+        "current_cell_text": "[SPECIALIZED CANDIDATE] RELATED: Annex C describes optional message-handling and file-serving roles. These are architecture-specific service candidates, not required ISA standard-service contracts or necessarily separate equipment. [SAP05-N10, SAP06-N14, SAP06-N15] SAP11 confirms AnnexC C.3.1–2 (PDF107–108) offers routing, persistence and validation as optional middleware guidance; no new physical-equipment class or required universal middleware contract follows.",
+        "cell": "H213",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -41281,7 +41518,7 @@
         "",
         "",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
-        "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
+        "[COMMON CANDIDATE] PARTIAL/RELATED: DetectionReport.report_id is a ULID identifying the individual report; its date/time portion changes with each report. Useful message identity is supported, with a different source scope from ISA’s conversation-scoped ID. Keep object_id, task_id and outer node_id separate. [BSI §§6.4.1–6.4.2.3 Table69, PDF69–71; detection_report.proto fields1–3; SAP04-N09; SAP11]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Native message schemas declare a conversation-unique identifier. This supports message identification independently of event identity and does not create a globally persistent identifier. [ISA-DMS-304, ISA-DMS-305, ISA-DMS-306, ISA-DMS-307, ISA-DMS-308, ISA-DMS-309, ISA-DMS-310; F3-06-ISA-ISA-T-MESSAGE-ID]",
         "[COMMON CANDIDATE] PARTIAL: The 2022 Message_Info header carries id from Message.elementID, with an unsigned-long IDL type. This supports qualified individual-message identification. Conversation-wide uniqueness, persistence and request/response correlation are not established; LogEvent.messageId instead denotes a message type and must remain distinct. 2022 lineage; exact 2023 companion bytes unverified. [F3-04C-ISA-T-MESSAGE-ID]",
         "",
@@ -41388,6 +41625,18 @@
           "ISA-DMS-310"
         ],
         "rationale": "Native message schemas declare a conversation-unique identifier. This supports message identification independently of event identity and does not create a globally persistent identifier."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP04-N09"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
+        "current_cell_text": "[COMMON CANDIDATE] PARTIAL/RELATED: DetectionReport.report_id is a ULID identifying the individual report; its date/time portion changes with each report. Useful message identity is supported, with a different source scope from ISA’s conversation-scoped ID. Keep object_id, task_id and outer node_id separate. [BSI §§6.4.1–6.4.2.3 Table69, PDF69–71; detection_report.proto fields1–3; SAP04-N09; SAP11]",
+        "cell": "H223",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "COMMON_CANDIDATE",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -53990,7 +54239,7 @@
         "Not assessed here",
         "Not assessed here",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Experimental maxInterval defines output-event status-update spacing and is inapplicable to input. Retain a specialized event-report interval candidate, distinct from a universal component Status heartbeat or a command that changes it. [Sources: AAS04-N011; F3-05-ISA-C-078]",
-        "[HELD] RELATED/NO_ESTABLISHED: The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question. [SAP03A-N06; F3-06-SAPIENT-ISA-C-078]",
+        "[HELD] RELATED/NO_ESTABLISHED: The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question. [SAP03A-N06; F3-06-SAPIENT-ISA-C-078] SAP11: the useful ordinary heartbeat interval is retained at SAPIENT-R11-STATUS-INTERVAL. This min/max correspondence remains held.",
         "Maximum Status Interval",
         "Not assessed here",
         "Not assessed here",
@@ -54105,6 +54354,18 @@
           "SAP03A-N06"
         ],
         "rationale": "The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP03A-N06"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "[HELD] RELATED/NO_ESTABLISHED: The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question. [SAP03A-N06; F3-06-SAPIENT-ISA-C-078]",
+        "current_cell_text": "[HELD] RELATED/NO_ESTABLISHED: The registered status_interval is a regular heartbeat interval. It does not declare a maximum spacing bound equivalent to ISA Maximum Status Interval. Remove the common color for this specific comparison while retaining the native heartbeat evidence and its source-serial question. [SAP03A-N06; F3-06-SAPIENT-ISA-C-078] SAP11: the useful ordinary heartbeat interval is retained at SAPIENT-R11-STATUS-INTERVAL. This min/max correspondence remains held.",
+        "cell": "H308",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -54130,7 +54391,7 @@
         "Not assessed here",
         "Not assessed here",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Experimental minInterval constrains maximum input handling or output sending frequency. Retain a specialized event-rate candidate; it is neither sensor sample period nor automatically a minimum component Status interval. [Sources: AAS04-N010; F3-05-ISA-C-079]",
-        "[HELD] RELATED/NO_ESTABLISHED: A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits. [SAP03A-N06; F3-06-SAPIENT-ISA-C-079]",
+        "[HELD] RELATED/NO_ESTABLISHED: A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits. [SAP03A-N06; F3-06-SAPIENT-ISA-C-079] SAP11: the useful ordinary heartbeat interval is retained at SAPIENT-R11-STATUS-INTERVAL. This min/max correspondence remains held.",
         "Minimum Status Interval",
         "Not assessed here",
         "Not assessed here",
@@ -54245,6 +54506,18 @@
           "SAP03A-N06"
         ],
         "rationale": "A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits."
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP03A-N06"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "[HELD] RELATED/NO_ESTABLISHED: A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits. [SAP03A-N06; F3-06-SAPIENT-ISA-C-079]",
+        "current_cell_text": "[HELD] RELATED/NO_ESTABLISHED: A regular status_interval and its typical value range do not declare a minimum inter-report bound. Remove this color for the specific minimum-interval comparison; do not turn typical values into normative scheduling limits. [SAP03A-N06; F3-06-SAPIENT-ISA-C-079] SAP11: the useful ordinary heartbeat interval is retained at SAPIENT-R11-STATUS-INTERVAL. This min/max correspondence remains held.",
+        "cell": "H309",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "PRIOR_CLASSIFICATION_RETAINED",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -62468,7 +62741,7 @@
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
-        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL: DetectionReport.task_id refers to the task the Node was carrying out when the detection occurred. This supplies an explicit report-to-identified-task reference; it does not establish SOSA’s complete task lifecycle, priority or task-assignment schema. [BSI §6.4.2.3/Table69, PDF70–71; detection_report.proto field3; SAP04-N09; SAP11]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe an identified task, including its planned or active standing, task state, status and task-specific priority where provided. Retain the task identifier or tracking number across creation, modification, start, state change and deletion requests. A task is not the message that carries its request, the priority of that message or a record limited to a currently executing command. C239 task-manager interactions are preliminary; host EW interactions additionally describe scheduled tasks and return a tracking number on start. Exact task schemas, universal state values, scheduling guarantees and actual execution are not established. [C239: §7.1.1 PDF141–145 (preliminary); §8 PDF146/152; Table12.10.2-1 PDF200–201; SO-2E]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -62521,6 +62794,18 @@
         "DIM_Profile_adopted": false,
         "case_or_runtime_verified": false,
         "future_only": false
+      },
+      "SAP11_source_correspondence": {
+        "native_finding_ids": [
+          "SAP04-N09"
+        ],
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "previous_cell_text": "Not assessed here — no verified correspondence; not evidence of absence.",
+        "current_cell_text": "[COMMON CANDIDATE] PARTIAL: DetectionReport.task_id refers to the task the Node was carrying out when the detection occurred. This supplies an explicit report-to-identified-task reference; it does not establish SOSA’s complete task lifecycle, priority or task-assignment schema. [BSI §6.4.2.3/Table69, PDF70–71; detection_report.proto field3; SAP04-N09; SAP11]",
+        "cell": "H413",
+        "relation": "PARTIAL_OR_RELATED_WITH_EXPLICIT_BOUNDARY",
+        "classification": "COMMON_CANDIDATE",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -70627,6 +70912,439 @@
         "source_limits": "No universal state machine, transition rules, clearing effectiveness or live report verified. 2022 conceptual declaration does not fill missing 2023 native schema fields.",
         "source_ledger": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_remaining_scope_closeout/candidates"
       }
+    },
+    {
+      "row_id": "SAPIENT-R11-TASK-DEPENDENCY",
+      "label": "Candidate — Declared platform-to-node tasking dependency",
+      "display_row": 454,
+      "status": "SAP11 provisional source-qualified information-need candidate; NOT ADOPTED",
+      "definition": "Relate a mobile or pointable platform Node to the identified Nodes affected by its tasking. Preserve direction, dependent Node identifiers and nested platform relationships. This declaration tells a controller which Nodes may be affected by platform movement or pointing; it is not proof of physical containment, an installed mount or a generic capability prerequisite.",
+      "source_entry_ids": [
+        "SAP02-N06"
+      ],
+      "evidence_records": [
+        "SAP02-N06"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SAPIENT_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Relate a mobile or pointable platform Node to the identified Nodes affected by its tasking. Preserve direction, dependent Node identifiers and nested platform relationships. This declaration tells a controller which Nodes may be affected by platform movement or pointing; it is not proof of physical containment, an installed mount or a generic capability prerequisite. [SAP02-N06; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared platform-to-node tasking dependency — NOT ADOPTED"
+      ],
+      "SAP11_source_correspondence": {
+        "row_id": "SAPIENT-R11-TASK-DEPENDENCY",
+        "evidence_ids": [
+          "SAP02-N06"
+        ],
+        "label": "Candidate — Declared platform-to-node tasking dependency",
+        "definition": "Relate a mobile or pointable platform Node to the identified Nodes affected by its tasking. Preserve direction, dependent Node identifiers and nested platform relationships. This declaration tells a controller which Nodes may be affected by platform movement or pointing; it is not proof of physical containment, an installed mount or a generic capability prerequisite.",
+        "classification": "COMMON_CANDIDATE",
+        "original_source_locators": [
+          "BSI Flex 335 v2.0 §4.10, PDF22–23, Figures3–4 contextual only; §6.2.1 Table15 dependent_nodes",
+          "registration.proto Registration.dependent_nodes, pinned 244a741c13bcee628f84944aef91e4a66854bd7d"
+        ],
+        "closest_existing_rows": [
+          "S06-R007",
+          "S06-R008",
+          "S06-R009",
+          "AAS-O6-CAPABILITY-DEPENDENCY"
+        ],
+        "rationale": "Physical constituents, external equipment and station context do not encode the directed effect of tasking one Node on another. AAS capability-to-capability temporal prerequisites have a different subject and relation.",
+        "source_limits": "The selected prose was read; figures are contextual, not a new diagram/interface audit. No real installation or control outcome established.",
+        "relation": "PARTIAL_SOURCE_QUALIFIED_INFORMATION_NEED",
+        "source_contact": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+        "classification_rationale": "Reusable information need with source-specific constraints; neither exact peer-schema equivalence nor universal support is asserted.",
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "cell": "H454",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "SAPIENT-R11-STATUS-INTERVAL",
+      "label": "Candidate — Declared regular status-report interval",
+      "display_row": 455,
+      "status": "SAP11 provisional source-qualified information-need candidate; NOT ADOPTED",
+      "definition": "Describe the declared interval and time unit between regular status/heartbeat reports from a Node. Retain the source-qualified interpretation of missed reports: BSI permits a potential disabled, off or lost-communication inference after three intervals. The declaration is not a minimum/maximum configurable interval, actual inter-arrival measurement or confirmed hardware failure.",
+      "source_entry_ids": [
+        "SAP03A-N06"
+      ],
+      "evidence_records": [
+        "SAP03A-N06"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SAPIENT_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the declared interval and time unit between regular status/heartbeat reports from a Node. Retain the source-qualified interpretation of missed reports: BSI permits a potential disabled, off or lost-communication inference after three intervals. The declaration is not a minimum/maximum configurable interval, actual inter-arrival measurement or confirmed hardware failure. [SAP03A-N06; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared regular status-report interval — NOT ADOPTED"
+      ],
+      "SAP11_source_correspondence": {
+        "row_id": "SAPIENT-R11-STATUS-INTERVAL",
+        "evidence_ids": [
+          "SAP03A-N06"
+        ],
+        "label": "Candidate — Declared regular status-report interval",
+        "definition": "Describe the declared interval and time unit between regular status/heartbeat reports from a Node. Retain the source-qualified interpretation of missed reports: BSI permits a potential disabled, off or lost-communication inference after three intervals. The declaration is not a minimum/maximum configurable interval, actual inter-arrival measurement or confirmed hardware failure.",
+        "classification": "COMMON_CANDIDATE",
+        "original_source_locators": [
+          "BSI §§6.2.5.4–5 Tables20–22, PDF41–42",
+          "registration.proto StatusDefinition.status_interval, Duration and TimeUnits"
+        ],
+        "closest_existing_rows": [
+          "ISA-C-078",
+          "ISA-C-079",
+          "ISA-C-195",
+          "ISA-C-196",
+          "ISA-T-STATUS",
+          "S06-R012"
+        ],
+        "rationale": "The old bounds mappings were correctly rejected by F3 but the ordinary heartbeat interval never received its own adequate target. A generic status value or output-field row does not retain this timing contract.",
+        "source_limits": "BSI Table21 uses Duration.value serial2 while the pinned proto reserves2 and uses3; keep the wire-tag conflict. Typical values are examples, not min/max limits. No runtime liveness test.",
+        "relation": "PARTIAL_SOURCE_QUALIFIED_INFORMATION_NEED",
+        "source_contact": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+        "classification_rationale": "Reusable information need with source-specific constraints; neither exact peer-schema equivalence nor universal support is asserted.",
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "cell": "H455",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "SAPIENT-R11-MODE-CHARACTERISTICS",
+      "label": "Candidate — Declared mode persistence, scan and tracking characteristics",
+      "display_row": 456,
+      "status": "SAP11 provisional source-qualified information-need candidate; NOT ADOPTED",
+      "definition": "Describe a supported mode using separate persistence/reversion, field-of-view scan behavior and detection-association capability axes. Preserve permanent/temporary/default, fixed/scanning/steerable, and none/tracklet/track/re-identification meanings separately. These are declared characteristics of the mode, not current mode, guaranteed tracking performance or the platform Node type POINTABLE.",
+      "source_entry_ids": [
+        "SAP03A-N10"
+      ],
+      "evidence_records": [
+        "SAP03A-N10"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SAPIENT_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a supported mode using separate persistence/reversion, field-of-view scan behavior and detection-association capability axes. Preserve permanent/temporary/default, fixed/scanning/steerable, and none/tracklet/track/re-identification meanings separately. These are declared characteristics of the mode, not current mode, guaranteed tracking performance or the platform Node type POINTABLE. [SAP03A-N10; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared mode persistence, scan and tracking characteristics — NOT ADOPTED"
+      ],
+      "SAP11_source_correspondence": {
+        "row_id": "SAPIENT-R11-MODE-CHARACTERISTICS",
+        "evidence_ids": [
+          "SAP03A-N10"
+        ],
+        "label": "Candidate — Declared mode persistence, scan and tracking characteristics",
+        "definition": "Describe a supported mode using separate persistence/reversion, field-of-view scan behavior and detection-association capability axes. Preserve permanent/temporary/default, fixed/scanning/steerable, and none/tracklet/track/re-identification meanings separately. These are declared characteristics of the mode, not current mode, guaranteed tracking performance or the platform Node type POINTABLE.",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "original_source_locators": [
+          "BSI §§6.2.5.11–13 Tables28–30, PDF46–47",
+          "registration.proto ModeDefinition, ModeType, ScanType, TrackingType"
+        ],
+        "closest_existing_rows": [
+          "S06-R016",
+          "S06-R017",
+          "S06-R018"
+        ],
+        "rationale": "A list of supported modes and a default selection can remain valid while omitting the three independent behavior axes. Preserve them as one qualified mode-description candidate, not one row per enumeration.",
+        "source_limits": "BSI omitted-field defaults and pinned proto mandatory/options and comment wording are not silently reconciled. TEMPORARY prose reverts to previous mode; proto comment says another node. Source examples do not establish an operating device.",
+        "relation": "PARTIAL_SOURCE_QUALIFIED_INFORMATION_NEED",
+        "source_contact": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+        "classification_rationale": "The meaning depends on the specialized sensing/tasking domain; preserve the native qualifications rather than impose it on every system.",
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "cell": "H456",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "SAPIENT-R11-PERMISSION-REQUIREMENT",
+      "label": "Candidate — Declared permission requirement for autonomous behavior change",
+      "display_row": 457,
+      "status": "SAP11 provisional source-qualified information-need candidate; NOT ADOPTED",
+      "definition": "Declare whether a Node requires permission before changing its behavior in a mode. BSI requires a ModeParameter with type PermissionToChange and value Required for Nodes needing that permission. Distinguish this advertised autonomy constraint from a request for permission, an accept/reject decision and the action itself.",
+      "source_entry_ids": [
+        "SAP03A-N11"
+      ],
+      "evidence_records": [
+        "SAP03A-N11"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SAPIENT_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Declare whether a Node requires permission before changing its behavior in a mode. BSI requires a ModeParameter with type PermissionToChange and value Required for Nodes needing that permission. Distinguish this advertised autonomy constraint from a request for permission, an accept/reject decision and the action itself. [SAP03A-N11; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared permission requirement for autonomous behavior change — NOT ADOPTED"
+      ],
+      "SAP11_source_correspondence": {
+        "row_id": "SAPIENT-R11-PERMISSION-REQUIREMENT",
+        "evidence_ids": [
+          "SAP03A-N11"
+        ],
+        "label": "Candidate — Declared permission requirement for autonomous behavior change",
+        "definition": "Declare whether a Node requires permission before changing its behavior in a mode. BSI requires a ModeParameter with type PermissionToChange and value Required for Nodes needing that permission. Distinguish this advertised autonomy constraint from a request for permission, an accept/reject decision and the action itself.",
+        "classification": "COMMON_CANDIDATE",
+        "original_source_locators": [
+          "BSI §6.2.5.14 Table31, PDF47–48; §4.6, PDF21",
+          "registration.proto ModeDefinition.mode_parameter and ModeParameter"
+        ],
+        "closest_existing_rows": [
+          "S06-R016",
+          "ISA-C-174",
+          "ISA-K-PARAMETER-DECL",
+          "SAPIENT-F2-ALERT-LIFECYCLE",
+          "AAS-O6-CAPABILITY-CONDITION"
+        ],
+        "rationale": "The source finding had no explicit current target. Supported modes, input arguments, property conditions and individual authorization decisions do not explicitly capture a declared requirement to seek permission.",
+        "source_limits": "The specific PermissionToChange convention comes from BSI prose; the proto offers generic type/value strings and has tasking-related comments. No universal authorization protocol, grant, enforcement or security assurance inferred.",
+        "relation": "PARTIAL_SOURCE_QUALIFIED_INFORMATION_NEED",
+        "source_contact": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+        "classification_rationale": "Reusable information need with source-specific constraints; neither exact peer-schema equivalence nor universal support is asserted.",
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "cell": "H457",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "SAPIENT-R11-TASK-CAPACITY",
+      "label": "Candidate — Declared concurrent task capacity within a mode",
+      "display_row": 458,
+      "status": "SAP11 provisional source-qualified information-need candidate; NOT ADOPTED",
+      "definition": "Describe the declared number of tasks a Node supports concurrently in a particular mode, with the source interpretation of what is counted. Keep capacity distinct from currently assigned tasks, available resources, commands being executed or guaranteed successful scheduling.",
+      "source_entry_ids": [
+        "SAP03B-N09"
+      ],
+      "evidence_records": [
+        "SAP03B-N09"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SAPIENT_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the declared number of tasks a Node supports concurrently in a particular mode, with the source interpretation of what is counted. Keep capacity distinct from currently assigned tasks, available resources, commands being executed or guaranteed successful scheduling. [SAP03B-N09; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared concurrent task capacity within a mode — NOT ADOPTED"
+      ],
+      "SAP11_source_correspondence": {
+        "row_id": "SAPIENT-R11-TASK-CAPACITY",
+        "evidence_ids": [
+          "SAP03B-N09"
+        ],
+        "label": "Candidate — Declared concurrent task capacity within a mode",
+        "definition": "Describe the declared number of tasks a Node supports concurrently in a particular mode, with the source interpretation of what is counted. Keep capacity distinct from currently assigned tasks, available resources, commands being executed or guaranteed successful scheduling.",
+        "classification": "COMMON_CANDIDATE",
+        "original_source_locators": [
+          "BSI §6.2.5.32 Table49, PDF57",
+          "registration.proto ModeDefinition.task and TaskDefinition.concurrent_tasks"
+        ],
+        "closest_existing_rows": [
+          "ISA-K-CAPABILITIES",
+          "SOSA-SO2E-TASK-RECORD",
+          "SOSA-SO2E-TASK-ASSIGNMENT",
+          "ISA-K-CAPABILITY-STATE"
+        ],
+        "rationale": "A capability catalogue, identified task or resource assignment does not retain a declared simultaneous-task count. Command repertoire and result meanings remain mapped to existing rows.",
+        "source_limits": "Exact count semantics are HELD: BSI says different tasks running in this mode; pinned proto comment says instances of this task. BSI marks mandatory while proto field lacks mandatory option. Do not settle either disagreement by inference.",
+        "relation": "PARTIAL_SOURCE_QUALIFIED_INFORMATION_NEED",
+        "source_contact": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+        "classification_rationale": "Reusable information need with source-specific constraints; neither exact peer-schema equivalence nor universal support is asserted.",
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "cell": "H458",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "SAPIENT-R11-TASK-REGION-SUPPORT",
+      "label": "Candidate — Declared accepted task-region types and coordinate systems",
+      "display_row": 459,
+      "status": "SAP11 provisional source-qualified information-need candidate; NOT ADOPTED",
+      "definition": "Describe the region types and coordinate representations that a Node can accept for tasking in a mode. Preserve the distinct interests, ignored areas, operation boundaries, mobile no-go areas and mobile stay-within areas. This is an advertised input-support contract, not an issued region task, a current field of view or an enforced exclusion zone.",
+      "source_entry_ids": [
+        "SAP03B-N10"
+      ],
+      "evidence_records": [
+        "SAP03B-N10"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SAPIENT_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe the region types and coordinate representations that a Node can accept for tasking in a mode. Preserve the distinct interests, ignored areas, operation boundaries, mobile no-go areas and mobile stay-within areas. This is an advertised input-support contract, not an issued region task, a current field of view or an enforced exclusion zone. [SAP03B-N10; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Declared accepted task-region types and coordinate systems — NOT ADOPTED"
+      ],
+      "SAP11_source_correspondence": {
+        "row_id": "SAPIENT-R11-TASK-REGION-SUPPORT",
+        "evidence_ids": [
+          "SAP03B-N10"
+        ],
+        "label": "Candidate — Declared accepted task-region types and coordinate systems",
+        "definition": "Describe the region types and coordinate representations that a Node can accept for tasking in a mode. Preserve the distinct interests, ignored areas, operation boundaries, mobile no-go areas and mobile stay-within areas. This is an advertised input-support contract, not an issued region task, a current field of view or an enforced exclusion zone.",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "original_source_locators": [
+          "BSI §§6.2.5.33 Tables50–51, PDF57–58",
+          "registration.proto RegionDefinition.region_type, region_area and RegionType"
+        ],
+        "closest_existing_rows": [
+          "ISA-K-PARAMETER-DECL",
+          "ISA-K-VALUE-RANGE",
+          "ISA-C-233",
+          "ISA-C-120",
+          "ISA-C-117",
+          "ISA-C-163"
+        ],
+        "rationale": "Generic input/range rows and requested/applied boundaries do not explicitly retain mode-qualified support for different region purposes and coordinate forms. Keep the support declaration separate from region instances.",
+        "source_limits": "Specific task-region vocabulary is source-scoped. Do not infer that every Node accepts every region type, that a declared zone was applied, or that movement constraints are enforced.",
+        "relation": "PARTIAL_SOURCE_QUALIFIED_INFORMATION_NEED",
+        "source_contact": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+        "classification_rationale": "The meaning depends on the specialized sensing/tasking domain; preserve the native qualifications rather than impose it on every system.",
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "cell": "H459",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "SAPIENT-R11-DETECTED-SIGNAL",
+      "label": "Candidate — Detected-signal amplitude, frequency span and pulse duration",
+      "display_row": 460,
+      "status": "SAP11 provisional source-qualified information-need candidate; NOT ADOPTED",
+      "definition": "Describe a signal reported as part of a detection using its amplitude, center frequency, optional lower/upper frequencies and optional pulse duration, with units supplied by the registration definition. Keep reported signal characteristics associated with that detection; do not conflate them with communication-link received power, transmitter settings, pulse repetition interval or an undefined signal-strength ratio.",
+      "source_entry_ids": [
+        "SAP04-N15"
+      ],
+      "evidence_records": [
+        "SAP04-N15"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_SAPIENT_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "source_review_status": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[SPECIALIZED CANDIDATE] PARTIAL / NEW INFORMATION NEED: Describe a signal reported as part of a detection using its amplitude, center frequency, optional lower/upper frequencies and optional pulse duration, with units supplied by the registration definition. Keep reported signal characteristics associated with that detection; do not conflate them with communication-link received power, transmitter settings, pulse repetition interval or an undefined signal-strength ratio. [SAP04-N15; SAP11; exact source locators and qualifications in the SAPIENT ledger.]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Detected-signal amplitude, frequency span and pulse duration — NOT ADOPTED"
+      ],
+      "SAP11_source_correspondence": {
+        "row_id": "SAPIENT-R11-DETECTED-SIGNAL",
+        "evidence_ids": [
+          "SAP04-N15"
+        ],
+        "label": "Candidate — Detected-signal amplitude, frequency span and pulse duration",
+        "definition": "Describe a signal reported as part of a detection using its amplitude, center frequency, optional lower/upper frequencies and optional pulse duration, with units supplied by the registration definition. Keep reported signal characteristics associated with that detection; do not conflate them with communication-link received power, transmitter settings, pulse repetition interval or an undefined signal-strength ratio.",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "original_source_locators": [
+          "BSI §6.4.2.16 Table76, PDF75; §6.4.1 Table69, PDF70–71",
+          "detection_report.proto DetectionReport.signal and Signal fields1–5"
+        ],
+        "closest_existing_rows": [
+          "ISA-C-098",
+          "ISA-C-115",
+          "ISA-C-107",
+          "ISA-C-093",
+          "ISA-C-200",
+          "SOSA-SO2J-WAVE-SIGNAL-CONTEXT"
+        ],
+        "rationale": "The recent SOSA wave/source-context candidate partly overlaps frequency/power, but it does not retain this detection-carried amplitude/frequency/pulse-duration tuple; physical source/antenna links cannot be assumed from it. Pulse duration also differs from inter-pulse time.",
+        "source_limits": "BSI typical dB/MHz/ns units are examples and do not define a universal amplitude reference or calibrated power quantity. Proto specifies peak amplitude. No physical emitter identity, calibration or real measurement validity established.",
+        "relation": "PARTIAL_SOURCE_QUALIFIED_INFORMATION_NEED",
+        "source_contact": "ORIGINAL_BSI_SELECTED_PASSAGES_AND_PINNED_PROTO_FIELDS_REVISITED",
+        "classification_rationale": "The meaning depends on the specialized sensing/tasking domain; preserve the native qualifications rather than impose it on every system.",
+        "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+        "cell": "H460",
+        "DIM_Profile_adopted": false
+      }
     }
   ],
   "originalDonorEvidence": [
@@ -73517,7 +74235,7 @@
     "columns": 16,
     "caseColumns": 4,
     "donorColumns": 11,
-    "informationRows": 425,
+    "informationRows": 432,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -73578,7 +74296,10 @@
     "SOSA_SO2F_total_original_records_accounted": 581,
     "SOSA_SO2GJ_new_candidate_rows": 21,
     "SOSA_SO2GJ_original_records_accounted": 1646,
-    "SOSA_SO2_total_opportunity_records_accounted": 3755
+    "SOSA_SO2_total_opportunity_records_accounted": 3755,
+    "SAPIENT_SAP11_new_candidate_rows": 7,
+    "SAPIENT_current_native_candidate_rows": 12,
+    "SAPIENT_SAP11_reconciled_findings": 11
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -73622,17 +74343,17 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "SOSA_SO2GJ_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "SAPIENT_SAP11_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "SOSA_SO2GJ_SAVED_VERIFIED",
-    "sha256": "0f25363a3d5b78c5c92297cf401a2bceda7ce009a8aa6dba4ce10ccae38207ce",
-    "information_rows": 425,
+    "checkpoint": "SAPIENT_SAP11_SAVED_VERIFIED",
+    "sha256": "bd112e5368e292a7fe33fe4c7015f763eee3ad430135a0b21704ecde3d463318",
+    "information_rows": 432,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 453x16 saved values; 21 new candidate cells; all prior rows/fills preserved",
-    "textCheckpoint": "SOSA_SO2GJ_FULL_REMAINDER_CLOSEOUT",
-    "textInformationRows": 425,
+    "lag": "ZERO: 460x16 saved values; 7 SAPIENT candidates and 13 named cell clarifications; unchanged rows and package parts preserved",
+    "textCheckpoint": "SAPIENT_SAP11_COMPLETE",
+    "textInformationRows": 432,
     "textPrimaryReviewed": 480,
     "columns": 16,
     "G2_1_affected_row_ids": [
@@ -73650,7 +74371,7 @@
       "ISA-K-MUTABILITY"
     ],
     "refreshed_cell_count": 33,
-    "validation_file": "SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json#/SO2_remaining_scope_closeout",
+    "validation_file": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
     "verifiedPublisherCommit": "7a957a9589ebd49a9d47374aa3c3db1c54624df5",
     "verifiedPublisherAction": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43741024724",
     "L23": "After any bounded substantive source-qualified donor packet changes canonical comparison cells, synchronize and verify the SAME editable 26-sheet Excel before further research; explicit owner approval required to defer.",
@@ -74779,11 +75500,11 @@
       "SAPIENT-F2-ALERT-LIFECYCLE",
       "SAPIENT-F2-DETECTION-LINEAGE"
     ],
-    "text_grid_rows": 453,
-    "saved_xlsx_grid_rows": 453,
+    "text_grid_rows": 460,
+    "saved_xlsx_grid_rows": 460,
     "f2_3_shifted_prior_rows": 325,
     "original_SAP06_shifted_prior_rows": 322,
-    "color_cell_count": 597,
+    "color_cell_count": 607,
     "mixed_source_cells_uncolored": 108,
     "manual_M00_preserved": true,
     "manual_M01_not_created": false,
@@ -74913,9 +75634,9 @@
       "S06-R021",
       "S06-R010"
     ],
-    "gate_metadata_note": "Verified 425-row research-delivery snapshot preserved unchanged. SOSA correction is accepted; owner confirms AAS was already accepted. Current decisions are in the corresponding master/ledger acceptance metadata. Next planned donor is OPC UA Devices, subject to Proceed.",
+    "gate_metadata_note": "SAPIENT eleven-record reconciliation complete; prior bounded-PARTIAL standing retained. SOSA and AAS already accepted. Stop before OPC UA Devices; no model adoption.",
     "source_compared_rows": 88,
-    "explicit_unassessed_rows": 337,
+    "explicit_unassessed_rows": 344,
     "AAS_candidate_colors": 76,
     "AAS_uncolored_source_holds": 12,
     "F3_04A_affected_row_ids": [
@@ -75032,6 +75753,28 @@
       "ISA-C-111",
       "ISA-C-071",
       "ISA-C-107"
+    ],
+    "SAP11_affected_row_ids": [
+      "ISA-A-PARTICIPATION-LIFECYCLE",
+      "S06-R009",
+      "S06-R012",
+      "SAPIENT-F2-PERFORMANCE",
+      "ISA-C-078",
+      "ISA-C-079",
+      "S06-R016",
+      "ISA-K-PARAMETER-DECL",
+      "ISA-T-MESSAGE-ID",
+      "ISA-C-131",
+      "SOSA-SO2E-TASK-RECORD",
+      "ISA-A-SERVICE-ROLE",
+      "S06-R014",
+      "SAPIENT-R11-TASK-DEPENDENCY",
+      "SAPIENT-R11-STATUS-INTERVAL",
+      "SAPIENT-R11-MODE-CHARACTERISTICS",
+      "SAPIENT-R11-PERMISSION-REQUIREMENT",
+      "SAPIENT-R11-TASK-CAPACITY",
+      "SAPIENT-R11-TASK-REGION-SUPPORT",
+      "SAPIENT-R11-DETECTED-SIGNAL"
     ]
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
@@ -76980,7 +77723,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "Next planned work is Step21: OPC UA Devices v1.05.0. Await Proceed to begin the source-first donor review; Step22 PA-DIM v1.02.0 remains separate. No repeat AAS acceptance step.",
+  "nextOwnerAction": "SAPIENT eleven-record reconciliation complete; review findings. Next donor is OPC UA Devices v1.05.0 only after owner Proceed. No repeat AAS or SOSA acceptance gate.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -102275,5 +103018,52 @@
       "adoption": "No DIM/Profile content adoption or universal source-completeness claim.",
       "boundary": "AAS acceptance remains separate. No new donor, client work or deployment authorized."
     }
+  },
+  "SAPIENT_SAP11_reconciliation": {
+    "status": "SAVED_VERIFIED_REMOTE_READBACK_PENDING",
+    "source_ledger": "SAP01_Original_Corpus_Coverage_12NOV2026.json#/SAP11_current_master_reconciliation",
+    "scope_ids": [
+      "SAP02-N04",
+      "SAP02-N06",
+      "SAP03A-N06",
+      "SAP03A-N10",
+      "SAP03A-N11",
+      "SAP03B-N01",
+      "SAP03B-N09",
+      "SAP03B-N10",
+      "SAP04-N09",
+      "SAP04-N15",
+      "SAP06-N14"
+    ],
+    "counts": {
+      "scope_records": 11,
+      "addition_records": 7,
+      "adequately_represented_records": 4,
+      "new_rows": 7,
+      "common_new_rows": 4,
+      "specialized_new_rows": 3,
+      "prior_sapient_origin_rows": 5,
+      "total_sapient_origin_rows": 12,
+      "existing_cells_clarified": 13,
+      "newly_classified_existing_cells": 3,
+      "information_rows": 432,
+      "grid_rows": 460,
+      "grid_values": 7360,
+      "classified_cells": 715,
+      "colored_cells": 607,
+      "held_comparisons": 108
+    },
+    "new_candidate_rows": [
+      "SAPIENT-R11-TASK-DEPENDENCY",
+      "SAPIENT-R11-STATUS-INTERVAL",
+      "SAPIENT-R11-MODE-CHARACTERISTICS",
+      "SAPIENT-R11-PERMISSION-REQUIREMENT",
+      "SAPIENT-R11-TASK-CAPACITY",
+      "SAPIENT-R11-TASK-REGION-SUPPORT",
+      "SAPIENT-R11-DETECTED-SIGNAL"
+    ],
+    "all_original_holds_preserved": true,
+    "workbook_sha256": "bd112e5368e292a7fe33fe4c7015f763eee3ad430135a0b21704ecde3d463318",
+    "owner_acceptance": "Prior SAPIENT bounded-PARTIAL standing retained; this correction delivered under explicit Proceed; no adoption decision inferred."
   }
 }

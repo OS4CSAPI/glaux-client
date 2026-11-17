@@ -1,49 +1,49 @@
 # Current Profile Rewrite checkpoint
 
-Updated 16 November 2026, America/New_York: **SAPIENT contribution diagnostic complete; OPC UA transition paused for a bounded follow-through decision.** This is the sole current status and next-action record. Read [AGENTS.md](../AGENTS.md), then only relevant sections of the [SOSA plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). Objective: source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile. Donor research/master work precedes later owner model decisions. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD.
-
-## Verified checkpoint
-
-Result published at **c5b7ca2a87d6a22952c71f01e958aaf4d4cb4b24**. Remote tree exactly matched every verified delivery file, including the workbook. [Crosswalk check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43989427600) and [same-workbook publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43989427589). Acceptance metadata records the owner’s subsequent “proceed” in Profile Rewrite 53; workbook/research findings are unchanged. Profile Rewrite 53 context controls at `fdcf9b636d79940393b2af9906566d13f424f08c` remain in force.
-
-## Interrupted work
-
-**None in the authorized SOSA continuation.** Research, integration, verification and publication are complete. Original local preservation commit `e9f3b084519ea0c92ad416fea6cbe3944405b308` is superseded for recovery by the published result; do not restart it or republish its older PITON. Delivery checkout: `/workspace/scratch/eb7bba69536f/glaux-delivery`. Older unrelated worktrees remain untouched.
-
-Automatic approval review blocked an earlier backup push. The owner's renewed **Proceed in Profile Rewrite 53** explicitly authorized publication of the preserved research files and explanation. Publication then succeeded through the connected GitHub account; the earlier block is no longer a pending delivery task.
+Updated 16 November 2026, America/New_York: **SAPIENT eleven-record reconciliation complete locally; final publication/readback pending.** This is the sole current status and next-action record. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only the named evidence. Donor research precedes later Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile decisions.
 
 ## Active scope and evidence
 
-Owner questioned SAPIENT's apparently absent donor-origin row block. The [published diagnostic](Donor_Native_High_Level_Information_Groupings_Comparison.md) verifies five native candidates at current H12/H28/H77/H97/H222 and the prior F2-3 assessment of 109 retained findings. It also identifies unresolved follow-through after later classification corrections: native heartbeat interval coverage, permission-to-change declaration traceability, and initialization/reconnection mapping. Original BSI PDF41/47 and the pinned heartbeat field were rechecked. This diagnostic changes no workbook/research decisions and does not revoke accepted source-review standing.
+The owner asked whether SAPIENT had received a fair contribution opportunity. The diagnostic found five existing candidates but specific opportunity-to-master follow-through gaps. The latest **Proceed in Profile Rewrite53** authorized the proposed finite eleven-record reconciliation, including warranted additions/clarifications, master/workbook integration, verification and publication. Complete this delivery without another permission gate; stop before OPC UA Devices.
 
-Profile Rewrite 52 authorized all four remaining groups, integration, reconciliation, publication and a plain-English explanation. Profile Rewrite 53 completed that delivery, then the owner replied “proceed” to the recommendation to accept the SOSA correction plan as complete with documented limitations. Acceptance is recorded in `SO2_remaining_scope_closeout.owner_acceptance_record` and the matching master closeout metadata. The [published findings](Donor_Native_High_Level_Information_Groupings_Comparison.md) explain the additions, source accounting, value and remaining limits.
+Exact scope: SAP02-N04/N06; SAP03A-N06/N10/N11; SAP03B-N01/N09/N10; SAP04-N09/N15; SAP06-N14. The [SAPIENT ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json), key `SAP11_current_master_reconciliation`, owns all eleven outcomes, previous-record hashes, source contact, seven candidate definitions, thirteen cell changes and exact holds. Do not re-audit the entire corpus or split the remaining publication into new research iterations.
 
-The [SOSA ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) keys `SO2_source_opportunity_assessments` and `SO2_remaining_scope_closeout` account for **1,646** remaining IDs: **944 addition-support, 207 represented, 286 source-specific/no-row, 209 exact-held**. G348/H427/I609/J262 reconcile; **2,109 + 1,646 = 3,755** total opportunity IDs. Result: **21 provisional candidates, 7 common and 14 specialized**. Earlier A–F/F-R added 43, giving 64 SOSA opportunity additions across the full continuation. F3 accepted; AAS O1–O7 delivered 24 candidates and the owner confirms that work was already accepted. Record: `AAS_O7_reconciliation.owner_acceptance_confirmation` in the master and AAS ledger.
+## Verified checkpoint
 
-G–I retain C239 recorded-finding depth with relevant original passages reconsulted; J retains original 2022 heading/text/selective-field depth. Other inventory classes (32 reused, 120 reference limits, 227 structural IDL records) remain separate. All original IDs, pointers, hashes and standing remain.
+Pre-correction live HEAD **ec29e583792ea5d799dea0417417961ee115524c** was verified and preserved at [archive/pre-sapient-eleven-16nov2026](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-sapient-eleven-16nov2026). Baseline workbook SHA256: `0f25363a3d5b78c5c92297cf401a2bceda7ce009a8aa6dba4ce10ccae38207ce`. Original local research recovery from Profile Rewrite52 is superseded by published SOSA delivery; do not restart it.
+
+## Completed result
+
+**11/11 findings reconciled: seven additions, four adequate existing-row mappings.** Seven candidates preserve tasking dependency, heartbeat interval, mode characteristics, permission requirement, concurrent task capacity, task-region support and detected-signal characteristics. Four are common, three specialized. Five earlier SAPIENT candidates remain at H12/H28/H77/H97/H222; new candidates are H454:H460. SAPIENT now has twelve source-origin candidates. Origin does not prove exclusive donor coverage.
+
+Thirteen existing SAPIENT comparison cells are clarified; three receive newly supported common classifications. Original109 F2 findings and all earlier accepted source records remain unchanged. See the [plain-English result](Donor_Native_High_Level_Information_Groupings_Comparison.md) for all eleven decisions and value. The prior source review was real; this corrects specific broad/unsupported follow-through mappings, not the entire donor history.
 
 ## Master and workbook
 
-Published [master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV/readable mirrors and [same Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **425 information rows, 453 × 16 = 7,248 values, 705 classifications (597 colored / 108 held)**. Workbook SHA-256 **0f25363a3d5b78c5c92297cf401a2bceda7ce009a8aa6dba4ce10ccae38207ce** verified against published bytes. Zero value/fill/mirror publication lag. The workbook retains the verified research-delivery snapshot; current acceptance is recorded in this PITON and master/ledger decision metadata.
+[Canonical master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV/readable mirrors and [same Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **432 information rows; 460 ×16 =7,360 values; 715 classifications (607 colored /108 held)**. Checkpoint `SAPIENT_SAP11_SAVED_VERIFIED`. Current workbook SHA256: **bd112e5368e292a7fe33fe4c7015f763eee3ad430135a0b21704ecde3d463318**. Zero saved value/fill/mirror lag.
 
-All 404 previous information rows, 432 previous grid rows, layout/dividers, 26 worksheets and protected M00/M01 are preserved. The 21 unaffected worksheets and other unaffected package parts are byte-identical. No M02. Native Microsoft Excel clean reopening remains unverified.
+All425 prior row IDs, original column order/dividers,26 sheets, other donor cells and M00/M01 retained. Only thirteen named SAPIENT cells, related register/guidance and seven appended rows changed; three expanded rows received sufficient height. Twenty-one unaffected sheets and all other package parts are byte-identical. No M02.
 
 ## Holds and owner decisions
 
-Preserve six ISA questions, nine original SOSA hold families, 39 overlapping SAPIENT limitations, AAS limits and four-case ceilings. Retain C239 figure/pin/modalities, external ANSI/VITA originals, restricted Appendix C, missing vendor volatility evidence, 2023 companions and full 227-file IDL semantic audit holds. The 209 source questions and 108 held comparison classifications are different counts.
+SAPIENT bounded-PARTIAL acceptance and39 overlapping original limitations remain. Selected original BSI passages and pinned Dstl fields were revisited; no complete narrative/figure/field audit or runtime test claimed. The concurrency wording/mandatoryness difference is explicitly retained as SAP11-Q01. Duration wire tags, mode comments/defaults, permission-schema wording, middleware applicability and signal-reference limits remain qualified.
 
-Earlier SOSA/SAPIENT bounded-PARTIAL standing was accepted. The completed SOSA correction/opportunity assessment is now **OWNER ACCEPTED WITH RECORDED LIMITATIONS**. The owner corrected stale AAS routing in Profile Rewrite 53: “no, I already accepted that work. what is really next?” AAS is **accepted with its recorded limitations**; do not ask for acceptance again. This confirmation is dated 16 November 2026; the earlier acceptance date is not inferred. No DIM/Profile adoption, donor transition, client work or deployment. Step24, Steps35–39 and named-version Step40 remain gated.
+**SOSA correction and AAS work are already accepted.** SOSA's3,755 frozen opportunities, including1,646 final records and64 total opportunity additions, remain unchanged. AAS's24 additions and acceptance confirmation remain. Do not ask for either acceptance again. Six ISA questions, nine original SOSA hold families, AAS limits and case ceilings remain. No DIM/Profile adoption, client work or deployment; Step24, Steps35–39 and named-version Step40 remain gated.
 
 ## Verification and publication
 
-The existing verifier passed on assembled delivery: all original IDs/pointers/hashes, all 3,755 opportunities, candidate support/outcomes, 7,248 saved cells, both CSV/readable mirrors, fills, prior rows, 26 sheets and milestones. Affected views were rendered in Profile Rewrite 52; unchanged rendering/source research was reused. Remote Git readback confirmed the complete result tree and workbook hash; both linked workflows succeeded.
+Working checkout `/workspace/scratch/eb7bba69536f/glaux-delivery`. Source decisions were locally committed at `c5bdc4a` before integration. Current local final artifacts require publication through the connected GitHub account: shell Git push has no credentials. Publish the assembled tree with expected-head protection, read back the tree/workbook hash and record CI results here. Backup creation succeeded; no approval block is pending.
 
-Five broader artifact/link errors are pre-existing; no project-wide or native Excel PASS is claimed. Process the approximately 10.4 MB ledger locally and emit selected keys/excerpts. Exact prior-chat cutoff accounting is unavailable; context controls mitigate avoidable volume without changing the platform limit.
+Existing verifier now routes SAP11 and passes original-record preservation, exact outcomes/targets, all7,360 saved cells, candidate fills, mirrors, allowed changes, sheet/part preservation and milestones. Affected views were rendered using the existing workbook conventions; unchanged views reused. Native Microsoft Excel reopening is unverified; five pre-existing wider artifact/link errors remain outside this correction. Reuse unchanged source checks; keep tool output bounded.
 
 ## Next action and stop
 
-**STOP for Proceed on one proposed eleven-record SAPIENT reconciliation**, before Step21 OPC UA Devices. Scope: nine F2-3 compressed findings plus SAP02-N04 and SAP03A-N06. Exact IDs, source evidence, findings and finish criteria are in the diagnostic above. Determine warranted additions/clarifications, explicit existing-row adequacy, or exact holds; preserve the five existing candidates and accepted source limits. Do not restart the whole donor or create arbitrary record batches. OPC UA Devices v1.05.0 remains the next donor after this question is resolved; PA-DIM v1.02.0 follows separately. No repeat AAS acceptance or DIM/Profile development.
+Finish pending publication/readback of this completed correction, then **STOP before Step21 OPC UA Devices v1.05.0**. After delivery, one owner Proceed can authorize that next donor step; PA-DIM v1.02.0 follows separately. Do not offer another eleven-record review, a repeat AAS/SOSA acceptance or immediate DIM/Profile development.
+
+## Interrupted work
+
+Research and integration are complete in the working checkout; only final publication/readback remains. Do not restart source review.
 
 ## History
 
-[Pre-continuation archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-sosa-remainder-20261116), baseline `49ba4a4a2e6ebbedccc667a881bb94ce1d052395`, preserves the prior 404-row workbook. [Pre-SO-2F-R](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-so2fr-20261115). No extra recovery document.
+The verified pre-SAPIENT archive above preserves the diagnostic and425-row snapshot. Earlier SOSA delivery at `c5b7ca2a87d6a22952c71f01e958aaf4d4cb4b24` and acceptance history remain in Git.

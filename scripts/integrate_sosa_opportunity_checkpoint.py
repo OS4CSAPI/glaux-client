@@ -1403,9 +1403,101 @@ def apply_gj():
       M00_M01_preserved=True)
     save(LEDGER,l)
 
+SAP11_LEDGER='SAP01_Original_Corpus_Coverage_12NOV2026.json'
+SAP11_KEY='SAP11_current_master_reconciliation'
+SAP11_BASE='ec29e583792ea5d799dea0417417961ee115524c'
+SAP11_CP='SAPIENT_SAP11_SAVED_VERIFIED'
+
+def sap11_prior(name):
+    return subprocess.check_output(['git','show',SAP11_BASE+':'+str((D/name).relative_to(ROOT))],cwd=ROOT)
+
+def verify_sap11():
+    """Verify the finite SAPIENT follow-through and preservation of its accepted baseline."""
+    m=load(MASTER);ledger=load(SAP11_LEDGER);scope=ledger[SAP11_KEY]
+    base=json.loads(sap11_prior(MASTER));oldledger=json.loads(sap11_prior(SAP11_LEDGER))
+    expected={'SAP02-N04','SAP02-N06','SAP03A-N06','SAP03A-N10','SAP03A-N11','SAP03B-N01',
+              'SAP03B-N09','SAP03B-N10','SAP04-N09','SAP04-N15','SAP06-N14'}
+    need(m['currentEvidenceCheckpoint']==SAP11_CP,'SAP11 checkpoint')
+    need(len(scope['records'])==11 and {r['native_finding_id'] for r in scope['records']}==expected,'SAP11 frozen eleven IDs')
+    need(all(ledger[k]==v for k,v in oldledger.items()),'SAP11 all prior source/acceptance records unchanged')
+    findings={r['native_finding_id']:r for r in oldledger['F2_3_native_candidate_opportunity']['source_records']}
+    rowids={r['row_id'] for r in m['rows']}
+    for r in scope['records']:
+        raw=json.dumps(findings[r['native_finding_id']],sort_keys=True,ensure_ascii=False).encode()
+        need(digest(raw)==r['prior_F2_record_sha256'],'SAP11 original finding hash '+r['native_finding_id'])
+        need(r['rationale'] and set(r['target_row_ids'])<=rowids,'SAP11 explicit supported targets')
+    cs=scope['candidates'];changes={r['row_id']:r for r in scope['cell_changes']}
+    need(len(cs)==7 and len(changes)==13,'SAP11 seven additions/thirteen clarified cells')
+    need(sum(r['outcome']=='ADDITION_WARRANTED' for r in scope['records'])==7,'SAP11 complete outcomes')
+    need(sum(c['classification']=='COMMON_CANDIDATE' for c in cs)==4,'SAP11 classification distribution')
+    need(len(m['rows'])==432 and len(m['review_grid'])==460 and len(rowids)==432,'SAP11 unique dimensions')
+    need([r['row_id'] for r in m['rows'][:425]]==[r['row_id'] for r in base['rows']],'SAP11 prior stable ID order')
+    for old,row in zip(base['rows'],m['rows'][:425]):
+        if row['row_id'] not in changes: need(row==old,'SAP11 untouched row '+row['row_id']);continue
+        ch=changes[row['row_id']];rest=copy.deepcopy(row);rest.pop('SAP11_source_correspondence')
+        rest['display'][7]=old['display'][7]
+        need(rest==old and row['display'][7]==ch['current_value'] and old['display'][7]==ch['previous_value'],'SAP11 exact allowed change '+row['row_id'])
+    allowed={c['grid_row']:c['current_value'] for c in changes.values()}
+    for i,(old,new) in enumerate(zip(base['review_grid'],m['review_grid'][:453]),1):
+        expect=old.copy()
+        if i in allowed:expect[7]=allowed[i]
+        need(new==expect,'SAP11 preserve prior grid except named H cells '+str(i))
+    for key in ('columns','review_sections','manualWorkbookMilestones','caseEvidence','priorHolds','SOSA_SO2GJ_opportunity_closeout','AAS_O7_reconciliation'):
+        need(m[key]==base[key],'SAP11 preserve '+key)
+    for c,r in zip(cs,m['rows'][425:]):
+        need(r['row_id']==c['row_id'] and r['SAP11_source_correspondence']['DIM_Profile_adopted'] is False,'SAP11 new candidate provenance')
+        need(r['display']==m['review_grid'][r['display_row']-1] and all(v.strip() for v in r['display']),'SAP11 explicit complete candidate cells')
+    sha=digest((D/BOOK).read_bytes())
+    need(sha==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==scope['workbook_sha256'],'SAP11 workbook hash')
+    for f in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
+        with (D/f).open(encoding='utf-8',newline='') as h:need(list(csv.reader(h))==m['review_grid'],'SAP11 CSV parity')
+    need((D/'Master_Donor_Concept_to_DIM_Crosswalk.md').read_bytes()==(D/'ISA_Correction_Review_07NOV2026.md').read_bytes(),'SAP11 readable parity')
+    with zipfile.ZipFile(io.BytesIO(sap11_prior(BOOK))) as old,zipfile.ZipFile(D/BOOK) as new:
+        need(new.testzip() is None and new.namelist()==old.namelist(),'SAP11 ZIP integrity and original parts')
+        op=pub.old.sheetpaths(old);np=pub.old.sheetpaths(new)
+        need(op==np and len(np)==26,'SAP11 original26 worksheets')
+        edited={np[n] for n in scope['workbook_edits']}
+        need(all(old.read(f)==new.read(f) for f in old.namelist() if f not in edited),'SAP11 21 unaffected sheets and all unrelated parts byte-identical')
+        def sheetrows(z,p):return {int(r.get('r')):r for r in ET.fromstring(z.read(p)).find(pub.q('sheetData')).findall(pub.q('row'))}
+        mr=sheetrows(new,np['Master Crosswalk']);omr=sheetrows(old,op['Master Crosswalk'])
+        need(len(mr)==460 and list(mr)==sorted(mr),'SAP11 ordered unique master rows')
+        styles={kind:next(c.get('s') for c in omr[idx] if c.get('r')=='J'+str(idx)) for kind,idx in [('COMMON_CANDIDATE',428),('SPECIALIZED_CANDIDATE',431)]}
+        for i,values in enumerate(m['review_grid'],1):
+            cells={c.get('r'):c for c in mr[i]}
+            need(len(cells)==len(mr[i]),'SAP11 no duplicate cells')
+            for j,v in enumerate(values,1):
+                c=cells.get(letter(j)+str(i));need((pub.f3_cell_text(c) if c is not None else '')==v,'SAP11 saved grid '+letter(j)+str(i))
+                if c is not None:need(c.get('t')!='e','SAP11 no error cells')
+        for name,edit in scope['workbook_edits'].items():
+            oldrows=sheetrows(old,op[name]);newrows=sheetrows(new,np[name])
+            for n,rr in oldrows.items():
+                clean=copy.deepcopy(newrows[n]);cells={c.get('r'):c for c in clean}
+                if str(n) in edit.get('row_heights',{}):
+                    need(float(clean.get('ht'))==edit['row_heights'][str(n)],'SAP11 fitted affected row')
+                    clean.attrib.clear();clean.attrib.update(rr.attrib)
+                for oc in rr:
+                    addr=oc.get('r')
+                    if addr in edit['cells']:
+                        nc=cells[addr];need(pub.f3_cell_text(nc)==edit['cells'][addr],'SAP11 saved edit '+name+'!'+addr)
+                        if addr in edit['fills']:need(nc.get('s')==styles['COMMON_CANDIDATE'],'SAP11 common fill '+addr)
+                        clean.remove(nc);clean.insert(list(rr).index(oc),copy.deepcopy(oc))
+                need(ET.tostring(clean)==ET.tostring(rr),'SAP11 unrelated cells/row attributes preserved '+name+' '+str(n))
+            for added in edit['append']:
+                rr=newrows[added['number']];cells={c.get('r'):c for c in rr}
+                for i,v in enumerate(added['values'],1):need(pub.f3_cell_text(cells[letter(i)+str(added['number'])])==v,'SAP11 appended value')
+        for c,r in zip(cs,m['rows'][425:]):
+            cell=next(x for x in mr[r['display_row']] if x.get('r')=='H'+str(r['display_row']))
+            need(cell.get('s')==styles[c['classification']],'SAP11 source candidate fill')
+        need(all(m['rows'][i]['display'][7].strip() for i in range(432)),'SAP11 no blank SAPIENT information cells')
+    need(scope['counts']['classified_cells']==715 and m['workbookSnapshot']['color_cell_count']==607 and m['workbookSnapshot']['mixed_source_cells_uncolored']==108,'SAP11 current count metadata')
+    print('PASS SAP11: 11/11 outcomes; 7 new candidates, 13 clarified cells; 432 rows / 7,360 saved values; CSV/readable parity; source holds and prior425 IDs preserved; 26 sheets, 21 unaffected sheets/other parts and M00/M01 unchanged.')
+    print('LIMIT: selected original-source depth, source conflicts and native Microsoft Excel reopen limitations retained; no model adoption or donor transition.')
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
+    if current==SAP11_CP:
+        verify_sap11();sys.exit(0)
     if current==CP_GJ or 'SO2_remaining_scope_closeout' in load(LEDGER):
         if sys.argv[1]=='--verify':verify_gj()
         else:apply_gj()
