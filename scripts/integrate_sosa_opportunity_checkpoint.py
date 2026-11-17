@@ -1949,10 +1949,260 @@ def verify_padim_corrective():
     print('LIMIT: original-source contact and retained holds remain as recorded; automated checks do not establish source completeness, Excel application behavior or runtime conformance. Joint Step 3 remains pending.')
 
 
+JOINT_CP='DEVICES_PADIM_JOINT_3_SAVED_VERIFIED'
+JOINT_BASE='d4a40e4c58fe355f4b14d80b807522341e5e8065'
+JOINT_BASE_SHA='d3882d2f0db02ea829e07f59c849b785184dbed211635258c31165479f282dce'
+JOINT_KEY='joint_corrective_closeout'
+JOINT_BLUE='#D9EAF8'
+JOINT_TARGETS={
+    'F190':('ISA-C-176','OPC',5),
+    'G82':('ISA-K-RESULT-DECL','PADIM',6),
+    'G95':('S06-R019','PADIM',6),
+    'G96':('S06-R020','PADIM',6),
+}
+JOINT_LEDGERS=('OPC_UA_Devices_Source_Coverage.json','OPC_UA_PADIM_Source_Coverage.json')
+JOINT_CSVS=('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv')
+JOINT_READABLES=('Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md')
+
+
+def joint_before(name):
+    return subprocess.check_output(['git','show',JOINT_BASE+':'+str((D/name).relative_to(ROOT))],cwd=ROOT)
+
+
+def joint_recipe(m):
+    """Validate the one authorized four-cell recipe, independently of publication status."""
+    v=m[JOINT_KEY]
+    need(v['baseline_commit']==JOINT_BASE and v['baseline_workbook_sha256']==JOINT_BASE_SHA,'joint published baseline')
+    need(v['appended_rows']=={},'joint closeout adds no rows')
+    need(set(v['workbook_edits'])=={'Master Crosswalk'},'joint worksheet scope')
+    edits=v['workbook_edits']['Master Crosswalk']
+    need(set(edits)==set(JOINT_TARGETS),'exact four authorized joint cells')
+    changes={item['cell']:item for item in v['changes']}
+    need(len(changes)==len(v['changes'])==4 and set(changes)==set(JOINT_TARGETS),'four unique joint dispositions')
+    for cell,(row_id,donor,column) in JOINT_TARGETS.items():
+        change=changes[cell]
+        need((change['row_id'],change['donor'],change['column_index'])==(row_id,donor,column),'joint row/donor identity '+cell)
+        need(change['classification']=='COMMON_CANDIDATE' and change['fill']==JOINT_BLUE,'joint common classification '+cell)
+        need(isinstance(change['old_text'],str) and isinstance(change['new_text'],str) and change['new_text'].startswith('[COMMON CANDIDATE]'),'joint qualified old/new text '+cell)
+        need(change['old_text']!=change['new_text'],'substantive joint cell change '+cell)
+        need(all(isinstance(change.get(key),str) and change[key].strip() for key in ('relation','evidence_id')),'joint relation/evidence '+cell)
+        need(edits[cell]=={'value':change['new_text'],'fill':JOINT_BLUE},'joint disposition/recipe agreement '+cell)
+    return v,changes
+
+
+def joint_check_master(m,b,v,changes):
+    """Permit only four display edits and explicitly recorded current metadata."""
+    need(len(m['rows'])==478 and len(m['review_grid'])==507 and all(len(row)==17 for row in m['review_grid']),'joint 478-row, 507-by-17 shape')
+    expected=copy.deepcopy(b['review_grid']);by_id={item['row_id']:item for item in changes.values()}
+    need(len({row['row_id'] for row in m['rows']})==478,'joint unique row identities')
+    for old,new in zip(b['rows'],m['rows']):
+        row_id=old['row_id'];restored=copy.deepcopy(new)
+        need(new['row_id']==row_id,'joint information-row order '+row_id)
+        if row_id in by_id:
+            change=by_id[row_id];column=change['column_index'];n=new['display_row']
+            need(change['cell']==letter(column+1)+str(n),'joint recorded current cell '+row_id)
+            need(old['display'][column]==change['old_text'] and new['display'][column]==change['new_text'],'joint exact old/new text '+row_id)
+            need(new.get('joint_corrective_correspondence')==change,'joint current row evidence '+row_id)
+            restored.pop('joint_corrective_correspondence');restored['display'][column]=old['display'][column]
+            expected[n-1][column]=change['new_text']
+        need(restored==old,'joint untouched row metadata/evidence/donors '+row_id)
+        need(new['display']==m['review_grid'][new['display_row']-1],'joint row/grid location '+row_id)
+        need(all(str(new['display'][i]).strip() for i in (5,6,7,8,9,10)),'joint completed donor statuses '+row_id)
+    need(m['review_grid']==expected,'joint exact four comparison-grid changes')
+    current_keys={'checkpoint','sha256','color_cell_count','lag','textCheckpoint','validation_file',
+                  'PADIM_classified_cells','PADIM_explicit_cells','gate_metadata_note',JOINT_KEY}
+    snapshot=copy.deepcopy(m['workbookSnapshot'])
+    for key in current_keys:
+        if key in b['workbookSnapshot']:snapshot[key]=b['workbookSnapshot'][key]
+        else:snapshot.pop(key,None)
+    need(snapshot==b['workbookSnapshot'],'joint historical workbook snapshot preserved')
+    restored=copy.deepcopy(m);restored['rows']=b['rows'];restored['review_grid']=b['review_grid']
+    for key in ('date','currentEvidenceCheckpoint','currentWorkbookSha256','workbookSnapshot','nextOwnerAction',JOINT_KEY):
+        if key in b:restored[key]=b[key]
+        else:restored.pop(key,None)
+    need(restored==b,'joint other master metadata and prior evidence preserved')
+
+
+def joint_check_ledgers(v):
+    for name in JOINT_LEDGERS:
+        ledger=load(name);need(ledger.get(JOINT_KEY)==v,'joint shared ledger/master record '+name)
+        historical=copy.deepcopy(ledger);historical.pop(JOINT_KEY)
+        need(historical==json.loads(joint_before(name)),'joint historical source and corrective evidence preserved '+name)
+
+
+def joint_strings(z):
+    if 'xl/sharedStrings.xml' not in z.namelist():return []
+    return [''.join(node.text or '' for node in item.iter(pub.q('t'))) for item in ET.fromstring(z.read('xl/sharedStrings.xml'))]
+
+
+def joint_value(cell,strings):
+    if cell is not None and cell.get('t')=='s':return strings[int(cell.findtext(pub.q('v')))]
+    return pub.f3_cell_text(cell)
+
+
+def joint_fill(cell,styles):
+    xf=styles.find(pub.q('cellXfs'))[int(cell.get('s','0'))]
+    fill=styles.find(pub.q('fills'))[int(xf.get('fillId','0'))].find('.//'+pub.q('fgColor'))
+    return '#'+fill.get('rgb')[-6:].upper() if fill is not None and fill.get('rgb') else None
+
+
+def joint_style_signature(xf):
+    return ({key:value for key,value in xf.attrib.items() if key not in ('fillId','applyFill')},
+            [ET.tostring(child) for child in xf])
+
+
+def joint_blue_style(cell,styles):
+    xfs=styles.find(pub.q('cellXfs'));source=xfs[int(cell.get('s','0'))]
+    for i,xf in enumerate(xfs):
+        sample=ET.Element(pub.q('c'),{'s':str(i)})
+        if xf.get('applyFill')!='0' and joint_fill(sample,styles)==JOINT_BLUE and joint_style_signature(xf)==joint_style_signature(source):return str(i)
+    need(False,'existing compatible common-candidate style '+cell.get('r',''))
+
+
+def joint_readable_grid(text):
+    start=text.index('<table>');end=text.index('</table>',start)+len('</table>')
+    result=[]
+    for row in ET.fromstring(text[start:end]).iter('tr'):
+        values=[]
+        for cell in row:values.extend([''.join(cell.itertext())]+['']*(int(cell.get('colspan','1'))-1))
+        result.append(values)
+    return result
+
+
+def joint_refresh_mirrors(m,b,changes):
+    """Replace only the four existing readable cells; retain headers and narrative bytes."""
+    for name in JOINT_READABLES:
+        text=(D/name).read_text(encoding='utf-8');grid=joint_readable_grid(text);restored=copy.deepcopy(grid)
+        for cell,change in changes.items():
+            n=int(re.search(r'\d+',cell).group())-1;column=change['column_index']
+            need(grid[n][column] in (change['old_text'],change['new_text']),'joint readable prior/updated text '+name+' '+cell)
+            restored[n][column]=change['old_text']
+        need(restored==b['review_grid'],'joint readable unaffected values '+name)
+        start=text.index('<table>');end=text.index('</table>',start)+len('</table>');table=text[start:end]
+        rows=list(re.finditer(r'<tr\b[^>]*>.*?</tr>',table,re.S));replacements=[]
+        need(len(rows)==507,'joint existing readable row count '+name)
+        for cell,change in changes.items():
+            n=int(re.search(r'\d+',cell).group())-1;row=rows[n]
+            cells=list(re.finditer(r'(<t[dh]\b[^>]*>)(.*?)(</t[dh]>)',row.group(),re.S))
+            need(len(cells)==17,'joint existing readable information columns '+cell)
+            target=cells[change['column_index']]
+            replacements.append((start+row.start()+target.start(2),start+row.start()+target.end(2),html.escape(change['new_text'])))
+        for a,z,value in sorted(replacements,reverse=True):text=text[:a]+value+text[z:]
+        need(joint_readable_grid(text)==m['review_grid'],'joint refreshed readable parity '+name)
+        (D/name).write_text(text,encoding='utf-8')
+    for name in JOINT_CSVS:
+        with (D/name).open('w',newline='',encoding='utf-8') as output:
+            csv.writer(output,lineterminator='\n').writerows(m['review_grid'])
+
+
+def joint_check_workbook(data,m,v,before):
+    """Check the whole grid and prove that the four cells are the entire package delta."""
+    need(digest(before)==JOINT_BASE_SHA,'joint archived workbook hash')
+    with zipfile.ZipFile(io.BytesIO(before)) as old,zipfile.ZipFile(io.BytesIO(data)) as new:
+        need(old.namelist()==new.namelist(),'joint original package inventory/order')
+        op=pub.old.sheetpaths(old);np=pub.old.sheetpaths(new)
+        need(op==np and len(np)==26,'joint 26 original worksheet identities')
+        part=op['Master Crosswalk']
+        need({name for name in new.namelist() if old.read(name)!=new.read(name)}=={part},'joint only Master Crosswalk worksheet part changed')
+        need(v['changed_workbook_parts']==[part],'joint recorded package-part scope')
+        for a,z in zip(old.infolist(),new.infolist()):
+            need(all(getattr(a,key)==getattr(z,key) for key in ('filename','date_time','compress_type','comment','extra','create_system','internal_attr','external_attr')),'joint ZIP member metadata '+a.filename)
+        a=ET.fromstring(old.read(part));c=ET.fromstring(new.read(part));restored=copy.deepcopy(c)
+        ac={node.get('r'):node for node in a.iter(pub.q('c'))};cc={node.get('r'):node for node in c.iter(pub.q('c'))}
+        need(set(ac)==set(cc),'joint existing worksheet cell inventory')
+        styles=ET.fromstring(new.read('xl/styles.xml'));xfs=styles.find(pub.q('cellXfs'));strings=joint_strings(new)
+        for ref,item in v['workbook_edits']['Master Crosswalk'].items():
+            need(joint_value(cc[ref],strings)==item['value'],'joint saved authored value '+ref)
+            need(joint_fill(cc[ref],styles)==JOINT_BLUE and joint_fill(ac[ref],styles)!=JOINT_BLUE,'joint four white-to-blue fills '+ref)
+            need(xfs[int(cc[ref].get('s','0'))].get('applyFill')!='0','joint active saved fill '+ref)
+            need(joint_style_signature(xfs[int(cc[ref].get('s','0'))])==joint_style_signature(xfs[int(ac[ref].get('s','0'))]),'joint unchanged non-fill cell styling '+ref)
+        for row in restored.find(pub.q('sheetData')):
+            for i,cell in enumerate(list(row)):
+                if cell.get('r') in JOINT_TARGETS:row.remove(cell);row.insert(i,copy.deepcopy(ac[cell.get('r')]))
+        need(ET.tostring(restored)==ET.tostring(a),'joint all other worksheet content, cells, styles and views preserved')
+        for i,row in enumerate(m['review_grid'],1):
+            for j,value in enumerate(row,1):need(joint_value(cc.get(letter(j)+str(i)),strings)==value,'joint full saved grid '+letter(j)+str(i))
+        pane=c.find(pub.q('sheetViews')).find(pub.q('sheetView')).find(pub.q('pane'))
+        need(pane.get('xSplit','0')=='0' and pane.get('ySplit')=='2','joint row-only freezing retained')
+        for column,expected in ((5,(97,5,376)),(6,(71,12,395))):
+            counts=[0,0,0]
+            for row in m['rows']:
+                cell=cc[letter(column+1)+str(row['display_row'])];fill=joint_fill(cell,styles)
+                counts[0 if fill==JOINT_BLUE else 1 if fill=='#F9E6B8' else 2]+=1
+                need(('[COMMON CANDIDATE]' in row['display'][column])==(fill==JOINT_BLUE),'joint explicit common status/fill '+row['row_id'])
+                need(('[SPECIALIZED CANDIDATE]' in row['display'][column])==(fill=='#F9E6B8'),'joint explicit specialized status/fill '+row['row_id'])
+            need(tuple(counts)==expected,'joint saved donor palette '+letter(column+1))
+
+
+def verify_joint_closeout():
+    m=load(MASTER);v,changes=joint_recipe(m);b=json.loads(joint_before(MASTER))
+    need(m['currentEvidenceCheckpoint']==JOINT_CP,'joint current checkpoint')
+    joint_check_master(m,b,v,changes);joint_check_ledgers(v)
+    for name in JOINT_CSVS:
+        with (D/name).open(newline='',encoding='utf-8') as source:need(list(csv.reader(source))==m['review_grid'],'joint CSV mirror '+name)
+    for name in JOINT_READABLES:need(joint_readable_grid((D/name).read_text(encoding='utf-8'))==m['review_grid'],'joint readable mirror '+name)
+    data=(D/BOOK).read_bytes();sha=digest(data);snapshot=m['workbookSnapshot']
+    need(sha==m['currentWorkbookSha256']==snapshot['sha256']==v['workbook_sha256'],'joint saved workbook hashes')
+    need(snapshot['checkpoint']==JOINT_CP and snapshot['color_cell_count']==792 and snapshot['mixed_source_cells_uncolored']==108,'joint current counts and retained held comparisons')
+    need(snapshot['PADIM_classified_cells']==83 and snapshot['PADIM_explicit_cells']==478,'joint current PA-DIM snapshot counts')
+    joint_check_workbook(data,m,v,joint_before(BOOK));verify_workbook_structure(io.BytesIO(data))
+    manual_dir=str((D/'Manual_Workbook_Versions').relative_to(ROOT))
+    names=subprocess.check_output(['git','ls-tree','-r','--name-only',JOINT_BASE,'--',manual_dir],cwd=ROOT,text=True).splitlines()
+    baseline={str(Path(name).relative_to(D.relative_to(ROOT))) for name in names if Path(name).suffix=='.xlsx' and Path(name).name.startswith(('M00_','M01_'))}
+    current={str(name.relative_to(D)) for name in (D/'Manual_Workbook_Versions').glob('M0[01]_*.xlsx')}
+    need(current==baseline,'joint M00/M01 inventory preserved')
+    for name in baseline:need((D/name).read_bytes()==joint_before(name),'joint M00/M01 bytes '+name)
+    print('PASS Devices/PA-DIM joint Step 3: exactly four qualified cell/fill corrections; 478 rows / 8,619 saved grid values; both CSV/readable mirrors; 26 sheets, other cells/styles/package parts, historical assessments, row-only freezing and M00/M01 preserved.')
+    print('LIMIT: retained source questions and adoption gates remain; saved-file checks do not establish original-source completeness or runtime behavior. Earlier application evidence is reused for unchanged workbook structure.')
+
+
+def apply_joint_closeout(authored_path):
+    """Import only four Artifact-authored cells into the verified original package."""
+    m=load(MASTER);v,changes=joint_recipe(m);b=json.loads(joint_before(MASTER));prior=joint_before(BOOK)
+    if (D/BOOK).read_bytes()!=prior:
+        verify_joint_closeout();print('Previously saved joint closeout is unchanged.');return
+    joint_check_master(m,b,v,changes);joint_check_ledgers(v)
+    with zipfile.ZipFile(authored_path) as authored,zipfile.ZipFile(io.BytesIO(prior)) as original:
+        ap=pub.old.sheetpaths(authored);op=pub.old.sheetpaths(original)
+        need('Master Crosswalk' in ap,'joint authored original worksheet name')
+        ar=ET.fromstring(authored.read(ap['Master Crosswalk']));ac={cell.get('r'):cell for cell in ar.iter(pub.q('c'))}
+        ast=ET.fromstring(authored.read('xl/styles.xml'));strings=joint_strings(authored)
+        part=op['Master Crosswalk'];root=ET.fromstring(original.read(part));cells={cell.get('r'):cell for cell in root.iter(pub.q('c'))}
+        styles=ET.fromstring(original.read('xl/styles.xml'))
+        for ref,item in v['workbook_edits']['Master Crosswalk'].items():
+            need(ref in ac and ac[ref].find(pub.q('f')) is None,'joint authored text cell '+ref)
+            need(joint_value(ac[ref],strings)==item['value'],'joint Artifact-authored value '+ref)
+            need(joint_fill(ac[ref],ast)==item['fill'],'joint Artifact-authored classification fill '+ref)
+            style=joint_blue_style(cells[ref],styles);pub.f3_put(cells[ref],item['value']);cells[ref].set('s',style)
+        replacement=ET.tostring(root,encoding='utf-8',xml_declaration=True);buf=io.BytesIO()
+        with zipfile.ZipFile(buf,'w') as saved:
+            for info in original.infolist():saved.writestr(copy.copy(info),replacement if info.filename==part else original.read(info.filename))
+    data=buf.getvalue();sha=digest(data)
+    v.update(status='SAVED_AND_VERIFIED_PENDING_PUBLICATION',workbook_sha256=sha,changed_workbook_parts=[part],
+        authoring='Artifact Tool authored the four specified values and blue fills; only those cells transferred into the verified original OOXML package using compatible existing styles.',
+        publication={'status':'PENDING_CANONICAL_PUBLICATION','workbook_sha256':sha,'remote_verification':'PENDING'},
+        verification={'status':'SAVED_FILE_VERIFIED','scope':'Four changed cells/fills, complete current grid and canonical mirrors, unchanged package/worksheet structure and historical records, M00/M01.',
+            'grid_values':8619,'information_rows':478,'worksheets':26,'source_completeness_claim':False,
+            'application_evidence':'Reuse the Step 2 application evidence for unchanged worksheet structure; inspect the four newly authored cells separately.'})
+    m['currentEvidenceCheckpoint']=JOINT_CP;m['currentWorkbookSha256']=sha
+    m['workbookSnapshot'].update(checkpoint=JOINT_CP,sha256=sha,color_cell_count=792,PADIM_classified_cells=83,PADIM_explicit_cells=478,
+        lag='ZERO: 507x17 saved grid; four joint Devices/PA-DIM corrections synchronized in canonical mirrors',
+        textCheckpoint='DEVICES_PADIM_JOINT_STEP_3',validation_file=JOINT_LEDGERS[0]+'#/'+JOINT_KEY,
+        gate_metadata_note='Joint Step 3 current counts are recorded in joint_corrective_closeout; prior publication and assessment fields retain their historical checkpoint scopes. Retained source holds and adoption gates remain; stop for owner disposition.')
+    m['workbookSnapshot'][JOINT_KEY]={'ledger':JOINT_LEDGERS[0],'pointer':'/'+JOINT_KEY,'baseline_commit':JOINT_BASE,'workbook_sha256':sha}
+    joint_check_master(m,b,v,changes);joint_check_workbook(data,m,v,prior);verify_workbook_structure(io.BytesIO(data))
+    joint_refresh_mirrors(m,b,changes);(D/BOOK).write_bytes(data);save(MASTER,m)
+    for name in JOINT_LEDGERS:
+        ledger=load(name);ledger[JOINT_KEY]=copy.deepcopy(v);save(name,ledger)
+    verify_joint_closeout()
+
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current==JOINT_CP:
+        verify_joint_closeout();sys.exit(0)
     if current=='PADIM_CORRECTIVE_2_SAVED_VERIFIED':
         verify_padim_corrective();sys.exit(0)
     if current=='DEVICES_CORRECTIVE_1_SAVED_VERIFIED':

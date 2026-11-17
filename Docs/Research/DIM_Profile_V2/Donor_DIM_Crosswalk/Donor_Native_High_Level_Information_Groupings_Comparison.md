@@ -1,6 +1,116 @@
 # Donor contributions and corrective assessments — 17 November 2026
 
+## Devices and PA-DIM joint corrective closeout — 17 November 2026
+
+### Result and scope
+
+The three-step corrective assessment is complete as a finite research and delivery task, subject to publication verification and the owner's acceptance decision recorded in the current PITON. The final joint comparison corrected four existing donor cells and added no rows. The master remains at 478 information rows. All earlier source limits, unresolved questions and adoption decisions remain visible; completion of this assessment does not decide those matters for the owner.
+
+The two donors are OPC Unified Architecture (OPC UA) Devices, version 1.05.0, and the Process Automation Device Information Model (PA-DIM), version 1.02.0. PA-DIM declares Devices 1.04.0 as a dependency. The comparison therefore preserves an edition distinction as well as a difference in subject matter. It does not import newer Devices wording into PA-DIM or assume that every feature in a dependency is inherited by every dependent type.
+
+Step 3 compared the explicit statuses and classifications of all 478 current cells in each donor column, a total of 956 positions. It reused the completed native-source assessments and examined original passages and model declarations for a frozen list of concrete discrepancies. Four correction dispositions and five retention/count-scope dispositions close that list. The matching `joint_corrective_closeout` records in the master and both donor ledgers retain the row IDs, exact old/new text, source locators, classification basis, checked populations and remaining limits.
+
+### Four corrections made by the joint comparison
+
+| Existing information need | Changed cell | Final treatment | Why the correction is warranted |
+| --- | --- | --- | --- |
+| Cancellation of a control request (`ISA-C-176`) | Devices F190 | Blue common candidate; partial correspondence | Devices explicitly declares an Abort operation for its update-preparation workflow. A qualified cancellation comparison is warranted, with the specific workflow and unresolved state contradiction retained. |
+| Expected response-value definition (`ISA-K-RESULT-DECL`) | PA-DIM G82 | Blue common candidate; partial, inherited correspondence | The declared inheritance chain reaches an optional Lock whose ExitLock method has a typed OutputArguments declaration. The three PA-DIM-specific methods still lack application OutputArguments. |
+| Issued control request (`S06-R019`) | PA-DIM G95 | Blue common candidate; partial/related, declaration only | Reset and commissioning methods define request inputs. Devices already received qualified credit on the same basis without claiming that a request had actually been issued. |
+| Control acknowledgement or outcome (`S06-R020`) | PA-DIM G96 | Blue common candidate; partial/related, declaration only | PA-DIM defines invocation outcomes, including invalid arguments and insufficient rights. Those declared outcomes support a qualified comparison while remaining distinct from observed acknowledgement, completed work and physical effects. |
+
+The cancellation correction repairs a missed native contribution. Devices section 8.4.8.4 permits an update client to use Abort to return the preparation state machine toward Idle. Its prose names both Preparing and Resuming, while the error-code description excludes states other than Preparing. The corrected cell therefore keeps DI-Q005 open and does not generalize the method into cancellation of every queued command or claim that recovery occurred (OPC Foundation 2025a, sec. 8.4.8.4).
+
+The response-definition correction repairs an incomplete inheritance analysis. The pinned original models establish the chain from PADIMType to ComponentType, TopologyElementType, optional Lock, LockingServicesType, ExitLock and OutputArguments. The final argument is a scalar Int32 named ExitLockStatus. Its declaration supplies a narrow response-value contract, but its empty description does not justify importing numerical result meanings from Devices 1.05 (OPC Foundation 2022, nodes 15063, 1001, 6161, 6388, 6398–6399; OPC Foundation 2025b, sec. 7.2).
+
+This finding revises the Step 2 treatment of G82 without discarding the valid distinction established there. FactoryReset, ZeroPointAdjustment and AutoAdjustPositioner still declare no application OutputArguments. Their invocation status codes remain different from the explicitly typed inherited ExitLock result. The new cell records both facts rather than applying the absence of outputs in those three methods to all methods reachable through the declared model.
+
+The two control-event comparisons correct inconsistent use of the accepted classification rule. PA-DIM defines reset-mode inputs and commissioning start/abort inputs, together with Call Service outcomes for invalid arguments or insufficient rights. These are declaration-level correspondences to request/outcome information needs. The cells expressly retain that they are not records of issued requests, observed acknowledgements, completed procedures or measured effects (OPC Foundation 2025b, secs. 9.1–9.3, 10.1–10.2).
+
+The accepted F3 rule separates potential usefulness in the Domain Information Model (DIM) from exactness of correspondence, source status, optionality and actual execution. The previous Devices cells already received blue classifications with the same declaration-versus-observation limitation. Applying that limitation alone to make the PA-DIM cells white was inconsistent. Blue now means a qualified common candidate in both columns; it does not turn a declared capability into an observed event or approve a DIM mapping.
+
+### What the complete corrective effort changed
+
+The earlier apparent blanks and Excel repair notice concerned workbook packaging and display. That defect was repaired before this three-step research plan began. The research plan then addressed a separate question: whether the displayed text, classification and opportunity to contribute were justified by the sources. A workbook that opens correctly still requires sound research judgments.
+
+| Corrective step | Existing donor-cell changes in that step | Other substantive result | Information rows after the step |
+| --- | ---: | --- | ---: |
+| Step 1: Devices | 39 | One new update-unlocking-input candidate; explicit treatment of the 22 earlier PA-DIM additions and existing case holds | 477 |
+| Step 2: PA-DIM | 29 | Two existing definitions clarified; one new signal-compensation-method/reference-context candidate; three detail-hold cells under two questions | 478 |
+| Step 3: joint comparison | 4 | Consistent qualified cancellation, inherited result, request and outcome comparisons; no new definition or row | 478 |
+
+These are changes within each step, not a count of distinct cells across the whole plan. G82, for example, was revised in Step 2 and refined again in Step 3 after the inherited output declaration was reconciled. The completed plan added two rows to the repaired 476-row starting master. Neither a new row nor an unchanged row is automatically evidence of research quality; each needs an accountable meaning and disposition.
+
+Step 1 recovered missed Devices contributions involving diagnostic recovery advice, client-loadable user-interface content, typed/structured results and selected inherited or dictionary-related meanings. It withdrew overbroad mappings from addressing information to interface operational state and from update timeouts to a client-suggested execution deadline. It also restored explicit case holds and classified desired mode consistently with supported and actual mode. UpdateKey became a distinct specialized candidate because its update-specific unlocking lifecycle was not preserved by existing lock ownership, permissions, key-store inventory or anticipated-update-effect rows.
+
+Step 2 recovered specific inherited grouping, access and Lock meanings, clarified calibration and chromatogram definitions, and distinguished operation-counter subjects. Its compensation row preserves the declared compensation method and relevant reference context rather than treating that information as a temperature setting, damping value or calibration quantity. The two enriched definitions retain voltage upon calibration and the distinction between device-wide chromatogram totals and individual signal peaks. These changes make the existing concepts more precise without manufacturing additional rows for every native property.
+
+Two current snapshot counts also required correction. `workbookSnapshot.PADIM_classified_cells` still contained 60, and `PADIM_explicit_cells` still contained 477, although the current worksheet had advanced beyond those earlier checkpoints. They now state 83 colored and 478 explicit PA-DIM information cells. Historical Step 1/Step 2 counts remain attached to their original assessments; this metadata repair does not add rows or change the four-cell correction count.
+
+### What each donor contributes in this comparison
+
+Devices provides broad device-management and integration structures. Its native organization includes device, communication and integration-host models, with additional locking and software-update features. PA-DIM builds on a declared Devices foundation and adds detailed process-instrument, signal and measurement-related meanings. These are complementary contributions to the research; neither source's native organization has been adopted as the DIM's final hierarchy (OPC Foundation 2025a, sec. 1; OPC Foundation 2025b, secs. 6–7).
+
+| Subject | Devices' distinctive contribution here | PA-DIM's distinctive contribution here |
+| --- | --- | --- |
+| Identity and organization | Components, nameplate information, functional groups, communication topology and integration-host relationships | Inherited component identity with process-device, subdevice and signal-set organization and specific instance requirements |
+| Configuration and management | Parameter organization, offline/online representations, transfer results, compatibility, locking and update workflows | Instrument-specific reset, adjustment and commissioning contracts, together with explicitly inherited management meanings |
+| Signals and measurement meaning | General structures for representing parameters and grouping information | Named signal quantities, measuring methods, calibration characteristics, compensation context and analytical detail |
+| Condition and maintenance | Device health, diagnostic context, lifecycle state and qualified lifetime/remaining-time information | Separate device, component and signal condition subjects, instrument-specific counters and calibration-related information |
+| Information semantics | Native declarations, typed results and selected dictionary references with their actual source strength | Detailed process vocabulary and dictionary-qualified signal/parameter meanings, with external-definition limits preserved |
+| Software lifecycle | Loading, preparation, installation, confirmation, patches and the specialized UpdateKey handling contract | Only update meanings actually declared or inherited in the assessed PA-DIM contract; dependency membership alone supplies no update architecture |
+
+“Distinctive” describes the contribution found in this comparison, not exclusive ownership of a concept. Other donors can contribute to the same information need, and the origin of a row does not reserve that row to its originating donor. The master retains 23 Devices-origin and 23 PA-DIM-origin candidate rows after their respective corrective additions. Step 3's four findings belong in existing rows, so there is a source-supported reason for adding zero rows in this step.
+
+### Why justified differences remain
+
+The final classifications are 97 common, five specialized and 376 explicit white cells for Devices, and 71 common, 12 specialized and 395 explicit white cells for PA-DIM. Each column totals 478 information cells. Fifty-two rows are colored common/common in both columns; 50 additional rows are colored only for Devices and 31 only for PA-DIM. These are classification intersections, not semantic-coverage percentages or donor rankings.
+
+| Final current-column status | Devices | PA-DIM |
+| --- | ---: | ---: |
+| Common candidate, blue | 97 | 71 |
+| Specialized candidate, amber | 5 | 12 |
+| Explicit white status | 376 | 395 |
+| Information cells | 478 | 478 |
+
+Several source-based reasons explain the remaining differences. A generic parameter container does not, by itself, define a conductivity compensation method or a chromatographic quantity. A common information need can have a narrower or broader correspondence in one donor, and the qualification must remain in the cell. Explicit white cells include negative, related-only, unresolved and case-limited dispositions; their shared color does not mean that every white cell says the same thing.
+
+Actual inheritance also matters. A traceable parent/interface chain can establish an inherited property or method. Merely finding a software-update type in the same dependency file does not attach that type to PADIMType. This preserves the justified difference between Devices' UpdateKey candidate and PA-DIM's absence of an established inherited update-key contract.
+
+The new UpdateKey and compensation rows illustrate the independent classification judgment. The former preserves a specific update-unlocking and non-retention contract whose source-specific requirements remain specialized. The latter captures a reusable information need for a signal's compensation basis while retaining the conductivity context and reference distinctions. Optionality and donor origin do not determine either color, and neither classification adopts an implementation (OPC Foundation 2025a, sec. 8.4.2.2; OPC Foundation 2025b, secs. 7.1.23, 7.35).
+
+### What remains unknown or limited
+
+Three PA-DIM cells remain white under PA-C2-Q015 and PA-C2-Q016: changeable name, requested name change and fault-associated suggested action. The question is whether the required detail is established under the declared Devices 1.04 contract. The inspected legacy web routes returned Devices 1.05, so the newer text was not substituted for the older source. These are unresolved source-detail questions, not proof that the meanings are absent.
+
+All 12 Devices source limits and all 14 earlier PA-DIM questions remain, together with those two later PA-DIM questions and the earlier owner/source/case holds. Devices' controlling-document parity limitation and DI-Q005's state contradiction remain explicit. PA-Q001 also preserves the difference between the publisher-index date and the original PA-DIM release/model date. The master's 108 earlier held classifications are retained separately from this step's four ordinary white-to-blue corrections.
+
+Source contact is not measured by counting filled cells. The Devices assessment accounts for 286 section IDs, including 244 textual sections, 41 structural headings and one excluded website-legal item, with models, files and figures retained at their recorded contact depths. PA-DIM accounts for its original-document/reference inventories, native finding groups, parameter-definition groups and recorded figure/model contacts. Its historical model inventory still marks 952 of 1,059 entries as inventoried but unread; the specific model reads used here do not become a claim of complete recursive model coverage.
+
+The earlier negative subreview's zero-new-hold count and the final three-detail-hold-cell count concern different stages. Both are retained with their scopes rather than rewriting the earlier record. Likewise, completed comparisons, preserved source evidence, common/specialized classification, owner acceptance, model adoption and implemented behavior are separate claims. This closeout establishes the completed finite comparison and its delivered corrections.
+
+### Value for the eventual DIM and Connected Systems Profile
+
+The corrected master provides a more reliable basis for identifying reusable information needs while preserving equipment differences. Devices contributes much of the lifecycle, configuration and integration context; PA-DIM contributes deeper process-signal, calibration, compensation and condition detail. The shared concepts now receive the same classification test, with the strength and limits of each correspondence still visible. This makes later synthesis less dependent on donor order or on the original wording of an existing row.
+
+A future OGC API – Connected Systems Profile can use this evidence when deciding which information needs belong in a common part and which require additional modules. A profile-aware client could then distinguish a declared command from an observed invocation, a declared outcome from completed work, or a compensation-method description from evidence that compensation was applied. Those examples explain the intended value; this assessment does not implement the profile, settle bindings, prescribe a final hierarchy or demonstrate runtime behavior. The broader work remains donor comparison before DIM/Profile development.
+
+### Completion and recommendation
+
+The finite register is closed through the four recorded cell corrections and the explicit retention/count-scope dispositions. Every information cell in the two current columns has an explicit status, and the saved delivery checks cover values, fills, both CSV mirrors, both readable comparisons, original package structure and unaffected content. The workbook remains the same editable 26-sheet artifact, with row-only freezing and the original M00/M01 versions preserved. The current PITON and joint publication receipt distinguish saved validation from verified remote publication.
+
+The recommendation is to accept the finite corrective result while retaining its source limits and unresolved questions explicitly. A further general review is not required by this plan. The owner can identify a concrete disputed finding or accept this result, then decide the next donor step separately. There is no automatic fourth corrective round, donor transition or DIM/Profile authoring step.
+
+### Sources for this joint closeout
+
+- OPC Foundation. 2022. *OPC UA Devices NodeSet*, version 1.04.0, release `DI-1.04.0-2022-11-03`. [Pinned original XML](https://raw.githubusercontent.com/OPCFoundation/UA-Nodeset/DI-1.04.0-2022-11-03/DI/Opc.Ua.Di.NodeSet2.xml). The ledger retains the exact source hash and nodes used for the Lock/ExitLock argument chain.
+- OPC Foundation. 2025a. *OPC Unified Architecture—Part 100: Devices*. OPC 10000-100, version 1.05.0, November 15. [Edition and authority](https://reference.opcfoundation.org/specs/OPC-10000-100); [scope](https://reference.opcfoundation.org/specs/OPC-10000-100/1); [Abort](https://reference.opcfoundation.org/specs/OPC-10000-100/8.4.8.4); [UpdateKey](https://reference.opcfoundation.org/specs/OPC-10000-100/8.4.2.2). The reference site does not resolve the retained controlling-document parity hold.
+- OPC Foundation. 2025b. *OPC UA for Process Automation Devices—PA-DIM*. OPC 30081, version 1.02.0, joint specification. The original release/model snapshot is dated November 26; PA-Q001 retains the publisher-index date discrepancy. [PADIMType](https://reference.opcfoundation.org/specs/OPC-30081/7.2); [conductivity compensation](https://reference.opcfoundation.org/specs/OPC-30081/7.35); [FactoryReset](https://reference.opcfoundation.org/specs/OPC-30081/9.1); [AutoAdjustPositioner](https://reference.opcfoundation.org/specs/OPC-30081/9.3); [pinned PA-DIM model](https://raw.githubusercontent.com/OPCFoundation/UA-Nodeset/eeb15c51735012383d926a23ff4f62955eb11c64/PADIM/Opc.Ua.PADIM.NodeSet2.xml).
+- Project research records. 2026. [Devices source ledger](OPC_UA_Devices_Source_Coverage.json), [PA-DIM source ledger](OPC_UA_PADIM_Source_Coverage.json), both at `joint_corrective_closeout`; [accepted classification decision](PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md), section 2; [three-step corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md), Step 3; [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). These records distinguish original-source meanings from project classification judgments and measured delivery results.
+
 ## PA-DIM corrective Step 2 — 17 November 2026
+
+This section retains the Step 2 checkpoint before the joint closeout above. G82 is subsequently refined by the explicit inherited ExitLock output; G95/G96 receive consistent declaration-level classifications. The original Step 2 assessment and its source limits remain preserved.
 
 The Step 2 assessment result is 29 corrections to existing PA-DIM cells: seven from the positive/related correspondence and prior-addition review, plus 22 from the other-cell review. Two existing candidate definitions are enriched, and one new compensation candidate brings the integrated master to 478 rows. Every one of the 477 baseline PA-DIM cells has an explicit assessment in the [PA-DIM source ledger](OPC_UA_PADIM_Source_Coverage.json), alongside reconciliation of the original 40 finding groups, 142 supporting parameter-definition groups and 22 PA-DIM additions.
 
