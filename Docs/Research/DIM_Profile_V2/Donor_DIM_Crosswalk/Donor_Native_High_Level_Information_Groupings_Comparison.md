@@ -1,3 +1,79 @@
+# SO-2GJ — Completed remaining SOSA opportunity assessment (16 November 2026)
+
+## Result and purpose
+
+The single authorized continuation accounted for **all 1,646 remaining source records** and added **21 distinct, provisional information-need candidates** to the same canonical master and editable workbook. Together with the 2,109 previously completed records, **all 3,755 frozen SOSA opportunity IDs now have a disposition**. The master grew from 404 to **425 information rows**; this continuation did not adopt Domain Information Model (DIM) classes or Connected Systems API (CSAPI) Profile requirements. The [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records publication/readback and the owner decision boundary; the [authorized plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md) preserves the finite scope and interruption protocol.
+
+The question was whether retained The Open Group Sensor Open Systems Architecture (SOSA) evidence contained useful meanings not adequately expressed in an Integrated Sensor Architecture (ISA)-heavy master. The assessment compared subjects, roles, standing and information meaning against existing rows. Repeated connector contacts, requirements and datatype declarations were grouped into shared meanings; they did not become a separate row for every source record. Source records supporting an addition can overlap across related candidates, but each frozen ID has exactly one outcome.
+
+## Exact source accounting
+
+| Internal group | Addition-support records | Already represented | Source-specific, no separate row | Exact source question held | Total |
+|---|---:|---:|---:|---:|---:|
+| SO-2G | 194 | 65 | 44 | 45 | 348 |
+| SO-2H | 317 | 1 | 69 | 40 | 427 |
+| SO-2I | 361 | 5 | 124 | 119 | 609 |
+| SO-2J | 72 | 136 | 49 | 5 | 262 |
+| **Remaining scope completed** | **944** | **207** | **286** | **209** | **1,646** |
+
+Every ID retains its original file/JSON pointer and verified hash, source locator, normative or descriptive standing, actual source-contact grade, meaning group, rationale and applicable existing/candidate row links. Exact exceptions remain individual record questions. These records live in the existing [SOSA source ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json), under `SO2_source_opportunity_assessments` entries `SO-2G` through `SO-2J`; `SO2_remaining_scope_closeout` contains the consolidated candidates and reconciliation. The separately recorded 32 reused opportunities, 120 source/reference limits and 227 structural Interface Definition Language (IDL) file records retain their previous dispositions.
+
+## What the 21 additions contribute
+
+The 1,384 C239 Edition 1.1 records in G/H/I support **seven** new meanings. Five recur across G/H and I and were merged into one candidate each. Original inline and table text was reconsulted for proposed new meanings and disputed distinctions, while every retained member record was checked against its original hash. Exact figures, external standards and conditional class differences remain qualified.
+
+| C239 information need | Class | Useful distinction preserved |
+|---|---|---|
+| External physical connector inventory and contact functions | Common | Identifies each external connector and its declared contacts, including fixed versus configurable input functions; separate from internal card/slot profiles or installed wiring. |
+| External power-interface design envelope | Specialized | Supply/return, nominal and maximum limits, inrush, grounding and isolation; separate from reported voltage/current or battery charge. |
+| Hardwired control and indication signal contract | Specialized | Supplier/controller roles, electrical thresholds, timing and intended response; separate from software requests, virtual discretes and observed actions. |
+| Physical signal-interface and medium design limits | Specialized | Physical medium, impedance, wavelength/frequency and qualified connector/cable performance; separate from active throughput or measured signal quality. |
+| Stored angular emission-suppression map | Specialized | Sensor-relative azimuth/elevation and intended platform/mounting context; separate from geographic areas and the selector circuit. |
+| Aperture mechanical envelope and host mounting | Specialized | Package shape, mounting dimension, weight and center-of-gravity reference; source classes and overlapping size bands remain native values. |
+| Declared recovery after a power cycle | Common | Trigger, intended return to communication and physical operator intervention; the C239 Class5 rule does not prove a witnessed recovery. |
+
+The principal original locations are C239 §§13.5.1–13.5.4 (PDF273–357) for external interfaces, §§13.5.2.3.4.2 and 13.5.3.3.4.2 for stored maps, §13.5.5.1/Table13.5.5.1-1 (PDF357–358) for the mechanical envelope, and Rule13.5.4.2.1-6 (PDF354) for Class5 power-cycle recovery. Exact candidate/member locators and source-specific limits are retained in the ledger. Internal plug-in-card, slot and power-supply-card meanings remain unchanged.
+
+The 262 retained original **April 2022 Edition 1.0 Domain-Specific Data Model (DSDM)** records support **14** additional meanings. The assessment read the relevant original definitions and selected composition/message fields; it does not claim a complete field/cardinality, diagram or IDL audit. This earlier edition remains distinct from the 2023 C239 native companions.
+
+| 2022 DSDM information need | Class | Useful distinction preserved |
+|---|---|---|
+| Antenna electromagnetic characteristics | Specialized | Declared band, gain and polarization; separate from a currently selected emission frequency or gain command. |
+| Antenna beam pattern and lobe geometry | Specialized | Frequency-qualified lobes/nulls, direction, width and gain; separate from scan coverage, field of view and pointing requests. |
+| Electromagnetic wave and signal source context | Specialized | Emitter/reflector/antenna roles, a signal within an aggregate wave, detection and characterization; separate from message-source and digital-copy lineage. |
+| Wave digitization scale and resolution | Specialized | Sample rate, full scale and nominal/effective bits linked to a physical wave; separate from generic numeric typing or spatial resolution. |
+| Modulation input/output/carrier relationship | Specialized | Carrier, modulating and modulated signal roles; separate from an equipment mode or coarse product-processing stage. |
+| Signal-to-noise ratio and bandwidth basis | Specialized | The explicit signal/noise power ratio and its reference bandwidth; ISA-Q004 remains unresolved. |
+| Subject-qualified acceleration | Common | Identified physical subject/platform, frame and units; separate from position, velocity or a movement request. |
+| Subject-qualified angular velocity | Common | Orientation rates, axes and units; separate from orientation angles and requested slewing. ISA-Q006 remains held. |
+| Storage partition, address range and key association | Specialized | Logical partition boundaries and encryption-key identifiers; separate from physical memory-volatility certificates or general key inventories. |
+| Security classification, compartments and dissemination | Specialized | Source-defined levels, memberships and restrictions; separate from tactical identity, equipment security condition or an authorization result. |
+| Log/fault retrieval window and ordering | Specialized | Offset, result count and ordering alongside matching criteria; no universal DIM query syntax or CSAPI paging contract. |
+| Component-to-power-source-interface association | Common | Identified load/source-interface relationship; separate from source category and electrical design envelope. |
+| Fault-associated suggested corrective action | Common | Advice tied to a fault; separate from an available command, issued request or completed repair. |
+| Configuration completion and clearing state | Common | Configured/not configured/sanitized/zeroized standing; separate from setting values, revision, operating mode and health. |
+
+These are **7 common and 14 specialized candidates**, all optional and unadopted. Familiar API parameter names did not justify a common classification for collection retrieval: it remains specialized, consistent with the accepted F3 filtering assessment. The existing power-source-category cell already mentions PowerBus/PowerPort; the new row preserves their association meaning separately and does not claim that the earlier evidence was absent. Existing networking, general settings, health and other adequate meanings were reused without redundant additions.
+
+## What remains qualified or held
+
+The **209 exact-held source records** are not 209 new held comparison cells; the existing **108 uncolored comparison classifications** remain unchanged. C239 exceptions include figure/pin/keying conflicts, VNX future/TBD material, external-standard references, missing threshold behavior and contradictory printed values. The five primary DSDM questions concern inconsistent CryptographicComponent participants, InfosecMode values printed as TBD, power-unit prose versus axis units, a header-only GetKey response and missing ShutdownSensor selection parameters. Other local qualifications, including effective-resolution typing and incomplete complex-sample representation, stay attached to the relevant records and candidates.
+
+All six ISA questions, nine original SOSA hold families, 39 overlapping SAPIENT limitations, AAS limitations and four-case evidence ceilings remain. Restricted Appendix C, exact C239 figure geometry, external ANSI/VITA and other standards, vendor volatility certificates, 2023 native companion equivalence and a full 227-file IDL semantic audit remain outside the verified coverage. No installed equipment, successful actuation, actual motion, safe-emission result, physical compatibility or runtime conformance follows from these declarations. Source-accounting completion therefore supports **bounded-PARTIAL closure**, not an assertion that every SOSA source dependency has been fully examined.
+
+## Delivery, verification and owner boundary
+
+The [canonical master](Master_Donor_Concept_to_DIM_Crosswalk.json), both CSV mirrors, both readable comparisons and [same editable Excel workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) contain **425 information rows and 453 × 16 = 7,248 comparison values**. The workbook has **705 classifications: 597 colored and 108 held**. All 404 preceding information rows, 432 preceding grid rows, approved column order, topic dividers, source holds, case evidence and protected M00/M01 remain; no M02 was created. The 21 unaffected worksheets and all other unaffected workbook package parts are byte-identical to the baseline.
+
+The saved-file checks reconciled all 1,646 original IDs/pointers/hashes, all 3,755 opportunity IDs, candidate support, outcome counts, both CSVs, readable mirrors, saved cell values and classification fills. The affected source cells and guidance/register views were rendered and visually inspected. Native Microsoft Excel clean reopening remains **unverified**; five pre-existing unrelated broader artifact/link errors are not converted into a project-wide PASS. Actual remote publication and checks are recorded in the PITON and closeout publication record.
+
+**Recommend owner acceptance of this completed, bounded-PARTIAL SOSA opportunity assessment.** There are no undispositioned IDs left in the authorized scope; specific source holds stay documented without becoming automatic new research projects. AAS acceptance remains a separate pending decision. The broader donor sequence next calls for OPC UA Devices, followed by PA-DIM, after applicable authorization; this checkpoint does not jump directly to model/Profile development.
+
+---
+
+## Preserved prior assessment: SO-2F-R
+
+
 # SO-2F-R COMPLETE — Finite SOSA source-opportunity closeout (15 November 2026)
 
 ## What was checked and why

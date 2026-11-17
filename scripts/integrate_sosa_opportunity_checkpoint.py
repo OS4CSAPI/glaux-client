@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Complete source-qualified SO-2F-1 in the existing master and 26-sheet workbook.
+"""Integrate source-qualified SOSA opportunities in the existing master and workbook.
 Uses the repository's established OOXML/ZIP publisher helpers to preserve other parts.
 --apply is idempotent; --verify checks the saved result without edits.
 """
@@ -1122,9 +1122,294 @@ def applyR():
     mirrorsR(m);save(MASTER,m);narrativeR();routesR(src,sha);verifyR()
 
 
+
+# The owner-authorized G-J continuation uses the same publisher and saved-file gates.
+BASE_GJ='49ba4a4a2e6ebbedccc667a881bb94ce1d052395'
+CP_GJ='SOSA_SO2GJ_SAVED_VERIFIED'
+PACKETS_GJ={'SO-2G':348,'SO-2H':427,'SO-2I':609,'SO-2J':262}
+OUTCOMES_GJ={'ADEQUATELY_REPRESENTED','ADDITION_WARRANTED',
+             'SOURCE_SPECIFIC_NO_NEW_ROW','HELD_EXACT_QUESTION'}
+def prior_gj(name):
+    return subprocess.check_output(['git','show',BASE_GJ+':'+str((D/name).relative_to(ROOT))],cwd=ROOT)
+def json_pointer(value,pointer):
+    need(pointer.startswith('#/'),'GJ original pointer')
+    for token in pointer[2:].split('/'):
+        token=token.replace('~1','/').replace('~0','~')
+        value=value[int(token)] if isinstance(value,list) else value[token]
+    return value
+def opportunity_ids(entry):
+    if 'records' in entry:
+        return [r.get('source_id',r.get('id')) for r in entry['records']]
+    return entry.get('source_ids',[])
+def preflight_gj(ledger):
+    base=json.loads(prior_gj(LEDGER))
+    need(ledger['SO1_existing_findings_opportunity_inventory']==base['SO1_existing_findings_opportunity_inventory'],
+         'GJ frozen original inventory unchanged')
+    for key,value in base['SO2_source_opportunity_assessments'].items():
+        need(ledger['SO2_source_opportunity_assessments'][key]==value,'GJ preserve previous assessment '+key)
+    for key,value in base.items():
+        if key!='SO2_source_opportunity_assessments':
+            need(ledger[key]==value,'GJ preserve original ledger key '+key)
+    frozen={r['source_id']:r for r in ledger['SO1_existing_findings_opportunity_inventory']['records']
+            if r.get('proposed_packet') in PACKETS_GJ}
+    need(len(frozen)==1646,'GJ frozen exact scope')
+    files={}; records=[]; seen=set()
+    close=ledger['SO2_remaining_scope_closeout']
+    candidates=close['candidates']; candidate_ids={c['row_id'] for c in candidates}
+    need(len(candidates)==len(candidate_ids),'GJ unique candidate IDs')
+    old_master=json.loads(prior_gj(MASTER)); existing={r['row_id'] for r in old_master['rows']}
+    need(not existing.intersection(candidate_ids),'GJ candidate IDs new')
+    for packet,count in PACKETS_GJ.items():
+        entry=ledger['SO2_source_opportunity_assessments'][packet]
+        expected={k for k,v in frozen.items() if v['proposed_packet']==packet}
+        rows=entry['records']
+        need(len(rows)==count and {r['source_id'] for r in rows}==expected,'GJ exact '+packet+' IDs')
+        need(entry['record_count']==len(rows),'GJ packet count '+packet)
+        need(entry['outcomes']=={k:sum(r['outcome']==k for r in rows) for k in OUTCOMES_GJ
+                                if any(r['outcome']==k for r in rows)},'GJ packet outcomes '+packet)
+        groups={g['group_id']:g for g in entry['groups']}
+        need(len(groups)==len(entry['groups']),'GJ unique groups '+packet)
+        for r in rows:
+            rid=r['source_id']; f=frozen[rid]
+            need(rid not in seen,'GJ no duplicate ID');seen.add(rid)
+            need(r['outcome'] in OUTCOMES_GJ,'GJ evidenced outcome '+rid)
+            need(r['original_records']==f['original_records'],'GJ original pointers/hashes '+rid)
+            need(r['retained_contact_tier']==f['contact_tier'],'GJ retained actual contact '+rid)
+            need(r['group_id'] in groups and rid in groups[r['group_id']]['source_ids'],'GJ member/group '+rid)
+            need(bool(r['original_locator']) and bool(r['original_standing']) and bool(r['rationale']),'GJ source grade/rationale '+rid)
+            need(set(r.get('existing_row_ids',[]))<=existing,'GJ existing links '+rid)
+            need(set(r.get('candidate_row_ids',[]))<=candidate_ids,'GJ candidate links '+rid)
+            if r['outcome']=='ADDITION_WARRANTED':need(bool(r.get('candidate_row_ids')),'GJ addition has candidate '+rid)
+            if r['outcome']=='ADEQUATELY_REPRESENTED':need(bool(r.get('existing_row_ids')),'GJ represented meaning has row '+rid)
+            if r['outcome']=='HELD_EXACT_QUESTION':need(bool(r.get('exact_hold')),'GJ exact held question '+rid)
+            for source in r['original_records']:
+                if source['file'] not in files:files[source['file']]=load(source['file'])
+                native=json_pointer(files[source['file']],source['pointer'])
+                actual=digest(json.dumps(native,ensure_ascii=False,sort_keys=True).encode())
+                need(actual==source['record_sha256'],'GJ original source record hash '+rid)
+            records.append(r)
+        for group in groups.values():
+            members=[r['source_id'] for r in rows if r['group_id']==group['group_id']]
+            need(set(members)==set(group['source_ids']) and len(members)==len(group['source_ids']),'GJ exact group members')
+            need(bool(group['rationale']),'GJ group source-based rationale')
+    need(seen==set(frozen),'GJ no missing or extra original IDs')
+    actual_outcomes={key:sum(r['outcome']==key for r in records) for key in OUTCOMES_GJ}
+    need(close['counts']['outcomes']==actual_outcomes,'GJ outcomes reconcile to all original records')
+    index={r['source_id']:r for r in records}
+    for c in candidates:
+        need(c['classification'] in ('COMMON_CANDIDATE','SPECIALIZED_CANDIDATE'),'GJ qualified class')
+        need(bool(c['definition']) and bool(c['classification_rationale']) and bool(c['rationale']),'GJ candidate rationale')
+        need(set(c['closest_existing_rows'])<=existing,'GJ closest prior meanings')
+        ids=c['evidence_ids'];need(ids and len(ids)==len(set(ids)),'GJ candidate source IDs')
+        for rid in ids:
+            need(rid in index and c['row_id'] in index[rid]['candidate_row_ids'],'GJ supported candidate '+rid)
+        actual={r['source_id'] for r in records if c['row_id'] in r.get('candidate_row_ids',[])}
+        need(actual==set(ids),'GJ candidate support exactly reconciled')
+    all_ids=[]
+    for entry in ledger['SO2_source_opportunity_assessments'].values():all_ids+=opportunity_ids(entry)
+    expected_all={r['source_id'] for r in ledger['SO1_existing_findings_opportunity_inventory']['records']
+                  if r['inventory_outcome']=='RESIDUAL_OPPORTUNITY_ASSESSMENT_REQUIRED'}
+    need(len(all_ids)==len(set(all_ids))==3755 and set(all_ids)==expected_all,'GJ complete 3755 opportunity inventory')
+    need(close['counts']['remaining_records']==1646 and close['counts']['total_opportunity_records']==3755,
+         'GJ truthful completion counts')
+    need(close['counts']['new_candidate_rows']==len(candidates),'GJ candidate count')
+    need(close['counts']['candidate_classifications']=={
+        k:sum(c['classification']==k for c in candidates)
+        for k in ('COMMON_CANDIDATE','SPECIALIZED_CANDIDATE')},'GJ classification counts')
+    return candidates,records
+
+def add_gj_rows(m,candidates):
+    need(len(m['rows'])==404 and len(m['review_grid'])==432,'GJ original master dimensions')
+    for c in candidates:
+        n=len(m['review_grid'])+1
+        vals=['Not linked here — no case evidence established.']*4+[
+            'Not assessed here — no verified correspondence; not evidence of absence.']*11+[
+            'OPTIONAL information-need candidate: '+c['label'].removeprefix('Candidate — ')+' — NOT ADOPTED']
+        vals[9]='['+c['classification'].replace('_',' ')+'] PARTIAL / NEW INFORMATION NEED: '+c['definition']+' ['+c['source_summary']+'; SO-2GJ; exact original IDs and limits in the source ledger.]'
+        mapping={'donor':c['donor_edition'],'source_ids':c['evidence_ids'],
+          'original_source_locators':c['original_source_locators'],'native_meaning':c['definition'],
+          'closest_prior_rows':c['closest_existing_rows'],'reason_for_separate_candidate':c['rationale'],
+          'relation':c['relation'],'candidate_status':c['classification'],
+          'classification_rationale':c['classification_rationale'],
+          'fill':'#D9EAF8' if c['classification']=='COMMON_CANDIDATE' else '#F9E6B8',
+          'cell':'J'+str(n),'DIM_Profile_adopted':False,'case_or_runtime_verified':False,
+          'source_contact':c['source_contact'],'source_limits':c['source_limits'],
+          'source_ledger':LEDGER+'#/SO2_remaining_scope_closeout/candidates'}
+        r={'row_id':c['row_id'],'label':c['label'],'display_row':n,
+          'status':'SO-2GJ provisional source-qualified information-need candidate; NOT ADOPTED',
+          'definition':c['definition'],'source_entry_ids':c['evidence_ids'],'evidence_records':c['evidence_ids'],
+          'master_inclusion':'PROVISIONAL_NATIVE_SOSA_CANDIDATE',
+          'dim_adoption':'NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE','source_review_status':c['source_contact'],
+          'display':vals,'SO2_source_correspondence':mapping}
+        need(len(vals)==16 and all(str(x).strip() for x in vals),'GJ explicit new cells')
+        m['rows'].append(r);m['review_grid'].append(vals)
+
+def workbook_gj(m,candidates,close):
+    olddata=(D/BOOK).read_bytes();q=pub.q;edited={}
+    n=len(m['rows']);ng=len(m['review_grid']);nc=len(candidates)
+    outcomes=close['counts']['outcomes']
+    overview=f'{n} information rows; SAME 26-sheet workbook. {nc} new source-qualified candidates; no DIM/Profile adoption. F3 accepted; AAS acceptance separate; M00/M01 preserved.'
+    brief=f'1,646 remaining records accounted: {outcomes["ADDITION_WARRANTED"]} candidate support; {outcomes["ADEQUATELY_REPRESENTED"]} represented; {outcomes["SOURCE_SPECIFIC_NO_NEW_ROW"]} source-specific/no row; {outcomes["HELD_EXACT_QUESTION"]} held.'
+    summary={'A1':'CURRENT — SOSA remaining opportunity assessment completed',
+      'B1':overview,
+      'B13':'Earlier SOSA bounded-PARTIAL standing accepted; this completed opportunity continuation awaits owner disposition. Nine original source-hold families retained.',
+      'B17':brief,
+      'B19':f'{ng} × 16 = {ng*16:,} saved comparison values; {684+nc} classified cells, {576+nc} colored / 108 held. Source holds and comparison classifications are separate counts.',
+      'B21':close['source_contact_summary'],
+      'B22':close['candidate_summary'],
+      'B23':'STOP for owner disposition. All 3,755 frozen opportunities accounted for at recorded source depth. AAS acceptance remains separate; next planned donor OPC UA Devices requires authorization.',
+      'B28':'All prior 404 information rows and 432 grid rows, 21 unaffected sheets and protected M00/M01 preserved. Native Microsoft Excel clean reopening remains unverified.'}
+    sheets={'Summary':summary,'Validation':dict(summary),
+      'Legend':{'A1':'CURRENT LEGEND — SOSA SO-2GJ; candidate classification is not adoption',
+      'B23':f'{576+nc} colored / 108 held classifications. {nc} additional source-qualified candidate cells; all 684 preceding classifications retained.',
+      'B24':f'{n} information rows; {ng} × 16 complete comparison values; 26 original divider rows.',
+      'A28':'Finite SOSA remaining-scope completion',
+      'B28':'2,109 prior + 1,646 remaining = 3,755 opportunity IDs. Exact source holds remain; candidate rows do not prove actual device support or conformance.'}}
+    with zipfile.ZipFile(io.BytesIO(olddata)) as z:
+        paths=pub.old.sheetpaths(z);need(len(paths)==26,'GJ same sheets')
+        for name in ('Master Crosswalk','DIM Register'):
+            path=paths[name];root=ET.fromstring(z.read(path));sd=root.find(q('sheetData'))
+            rm={int(r.get('r')):r for r in sd.findall(q('row'))}
+            template=rm[432 if name=='Master Crosswalk' else 405]
+            styles={}
+            if name=='Master Crosswalk':
+                styles={kind:next(c.get('s') for c in rm[idx] if c.get('r')=='J'+str(idx))
+                        for kind,idx in [('COMMON_CANDIDATE',428),('SPECIALIZED_CANDIDATE',431)]}
+            for j,c in enumerate(candidates):
+                idx=433+j if name=='Master Crosswalk' else 406+j
+                rr=copy.deepcopy(template);rr.set('r',str(idx));rr.set('ht','330');rr.set('customHeight','1')
+                item=m['rows'][404+j]
+                source_trace=', '.join(c['evidence_ids'][:5])+f'; {len(c["evidence_ids"])} exact supporting IDs in '+LEDGER+'#/SO2_remaining_scope_closeout/candidates/'+str(j)
+                if name=='Master Crosswalk':values=item['display']
+                else:
+                    values=[item['row_id'],item['label'],item['definition'],item['status'],item['source_review_status'],
+                      item['master_inclusion'],item['dim_adoption'],'Not assessed here','Not assessed here',source_trace,
+                      c['relation']+'; '+c['rationale'],c['source_summary'],'Not assessed here','Not assessed here',
+                      c['classification']+'; '+c['classification_rationale'],
+                      source_trace+'; '+c['source_limits'],'Not assessed here',
+                      'Not assessed here — AAS equivalence unassessed.']
+                cells={re.match('[A-Z]+',x.get('r')).group():x for x in rr.findall(q('c'))}
+                for k,value in enumerate(values,1):
+                    col=letter(k);cell=cells.get(col)
+                    if cell is None:cell=ET.SubElement(rr,q('c'),{'r':col+str(idx)})
+                    cell.set('r',col+str(idx));pub.f3_put(cell,str(value))
+                    if name=='Master Crosswalk' and col=='J':cell.set('s',styles[c['classification']])
+                sd.append(rr)
+            last=('P'+str(ng)) if name=='Master Crosswalk' else ('R'+str(n+1))
+            root.find(q('dimension')).set('ref','A1:'+last)
+            af=root.find(q('autoFilter'))
+            if af is not None:af.set('ref',('A2:' if name=='Master Crosswalk' else 'A1:')+last)
+            edited[path]=ET.tostring(root,encoding='utf-8',xml_declaration=True)
+        for name,values in sheets.items():
+            root=ET.fromstring(z.read(paths[name]));cells={c.get('r'):c for c in root.iter(q('c'))}
+            for address,value in values.items():
+                need(address in cells,'GJ existing guidance '+name+'!'+address)
+                pub.f3_put(cells[address],value)
+            if name in ('Summary','Validation'):
+                r13=next(r for r in root.find(q('sheetData')).findall(q('row')) if r.get('r')=='13')
+                r13.set('ht','64');r13.set('customHeight','1')
+            edited[paths[name]]=ET.tostring(root,encoding='utf-8',xml_declaration=True)
+        buf=io.BytesIO()
+        with zipfile.ZipFile(buf,'w') as out:
+            for info in z.infolist():out.writestr(info,edited.get(info.filename,z.read(info.filename)))
+    (D/BOOK).write_bytes(buf.getvalue())
+    return digest(buf.getvalue())
+
+def verify_gj():
+    m=load(MASTER);l=load(LEDGER);c=l['SO2_remaining_scope_closeout']
+    cs,records=preflight_gj(l);n=len(cs);base=json.loads(prior_gj(MASTER))
+    need(m['currentEvidenceCheckpoint']==CP_GJ,'GJ checkpoint')
+    need(len(m['rows'])==404+n and len(m['review_grid'])==432+n,'GJ dimensions')
+    need(m['rows'][:404]==base['rows'] and m['review_grid'][:432]==base['review_grid'],'GJ every prior information row unchanged')
+    for key in ('columns','review_sections','manualWorkbookMilestones','caseEvidence','priorHolds'):
+        need(m[key]==base[key],'GJ preserve '+key)
+    sha=digest((D/BOOK).read_bytes())
+    need(sha==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==c['workbook_sha256'],'GJ workbook hashes')
+    need(m['workbookSnapshot']['color_cell_count']==576+n and m['workbookSnapshot']['mixed_source_cells_uncolored']==108,'GJ classification counts')
+    for j,candidate in enumerate(cs):
+        row=m['rows'][404+j]
+        need(row['row_id']==candidate['row_id'] and row['display']==m['review_grid'][432+j],'GJ added row links')
+        need(all(str(v).strip() for v in row['display']),'GJ no blanks in completed row')
+    for f in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
+        with (D/f).open(encoding='utf-8',newline='') as inp:need(list(csv.reader(inp))==m['review_grid'],'GJ CSV '+f)
+    need((D/'Master_Donor_Concept_to_DIM_Crosswalk.md').read_bytes()==(D/'ISA_Correction_Review_07NOV2026.md').read_bytes(),'GJ readable parity')
+    with zipfile.ZipFile(io.BytesIO(prior_gj(BOOK))) as old,zipfile.ZipFile(D/BOOK) as new:
+        need(new.testzip() is None and new.namelist()==old.namelist(),'GJ original ZIP inventory')
+        op=pub.old.sheetpaths(old);np=pub.old.sheetpaths(new)
+        need(op==np and len(np)==26,'GJ same original 26 sheets')
+        changed={np[k] for k in ('Master Crosswalk','DIM Register','Summary','Validation','Legend')}
+        need(all(old.read(f)==new.read(f) for f in old.namelist() if f not in changed),'GJ all unrelated parts/21 sheets byte-identical')
+        q=pub.q;root=ET.fromstring(new.read(np['Master Crosswalk']))
+        rows={int(r.get('r')):r for r in root.find(q('sheetData')).findall(q('row'))}
+        need(list(rows)==sorted(rows) and len(rows)==len(m['review_grid']),'GJ ordered unique worksheet rows')
+        for i,values in enumerate(m['review_grid'],1):
+            cells={c.get('r'):c for c in rows[i].findall(q('c'))}
+            need(len(cells)==len(rows[i].findall(q('c'))),'GJ unique cells')
+            for j,value in enumerate(values,1):
+                cell=cells.get(letter(j)+str(i))
+                need((pub.f3_cell_text(cell) if cell is not None else '')==value,'GJ saved cell '+letter(j)+str(i))
+                if cell is not None:need(cell.get('t')!='e','GJ no error cell')
+        oldrows={int(r.get('r')):r for r in ET.fromstring(old.read(op['Master Crosswalk'])).find(q('sheetData')).findall(q('row'))}
+        for i in range(1,433):
+            need(ET.tostring(rows[i])==ET.tostring(oldrows[i]),'GJ prior saved row/fill preserved '+str(i))
+        styles={kind:next(c.get('s') for c in rows[idx] if c.get('r')=='J'+str(idx))
+                for kind,idx in [('COMMON_CANDIDATE',428),('SPECIALIZED_CANDIDATE',431)]}
+        reg={int(r.get('r')):r for r in ET.fromstring(new.read(np['DIM Register'])).find(q('sheetData')).findall(q('row'))}
+        for j,candidate in enumerate(cs):
+            addr='J'+str(433+j);cell=next(c for c in rows[433+j] if c.get('r')==addr)
+            need(cell.get('s')==styles[candidate['classification']],'GJ saved source fill '+addr)
+            need(next(pub.f3_cell_text(v) for v in reg[406+j] if v.get('r')=='A'+str(406+j))==candidate['row_id'],'GJ register row')
+        for name in ('Summary','Validation','Legend'):
+            text=' '.join(pub.f3_cell_text(c) for c in ET.fromstring(new.read(np[name])).iter(q('c')))
+            need('1,646' in text and '3,755' in text,'GJ current summary '+name)
+    print(f'PASS SO-2GJ: all1646 original IDs/pointers/hashes and 3755 total opportunities; {n} new candidates; {404+n} rows, {(432+n)*16} saved values; prior404 rows, 21 unaffected sheets, 26-sheet workbook and M00/M01 preserved.')
+    print('LIMIT: retained source grades and exact holds remain; native Microsoft Excel reopen and model/Profile adoption unverified.')
+
+def apply_gj():
+    m=load(MASTER);l=load(LEDGER)
+    if m['currentEvidenceCheckpoint']==CP_GJ:
+        verify_gj();return
+    cs,records=preflight_gj(l);close=l['SO2_remaining_scope_closeout']
+    need(m['currentEvidenceCheckpoint']==CPR,'GJ expected published F-R')
+    need(digest((D/BOOK).read_bytes())==m['currentWorkbookSha256']==digest(prior_gj(BOOK)),'GJ baseline workbook')
+    add_gj_rows(m,cs);sha=workbook_gj(m,cs,close);n=len(cs);ng=432+n
+    m['currentEvidenceCheckpoint']=CP_GJ;m['currentWorkbookSha256']=sha
+    m['counts'].update(informationRows=404+n,SOSA_SO2GJ_new_candidate_rows=n,
+      SOSA_SO2GJ_original_records_accounted=1646,SOSA_SO2_total_opportunity_records_accounted=3755)
+    m['workbookSnapshot'].update(checkpoint=CP_GJ,sha256=sha,information_rows=404+n,textInformationRows=404+n,
+      text_grid_rows=ng,saved_xlsx_grid_rows=ng,color_cell_count=576+n,mixed_source_cells_uncolored=108,
+      explicit_unassessed_rows=316+n,lag=f'ZERO: {ng}x16 saved values; {n} new candidate cells; all prior rows/fills preserved',
+      textCheckpoint='SOSA_SO2GJ_FULL_REMAINDER_CLOSEOUT',
+      gate_metadata_note='All 3,755 frozen SOSA opportunity IDs accounted; STOP for owner disposition. AAS acceptance separate. Historical source counters retain their recorded scopes.',
+      validation_file=LEDGER+'#/SO2_remaining_scope_closeout')
+    m['nextOwnerAction']='STOP for owner disposition of completed bounded-PARTIAL SOSA opportunity assessment. AAS acceptance separate; donor research remains; no automatic DIM/Profile development.'
+    m['SOSA_SO2GJ_opportunity_closeout']={'status':'SAVED_VERIFIED__REMOTE_READBACK_PENDING','source_ledger':LEDGER,
+      'remaining_source_records_accounted':1646,'total_opportunity_records_accounted':3755,
+      'new_candidate_rows':[c['row_id'] for c in cs],'workbook_sha256':sha,'all_original_holds_preserved':True}
+    close.update(status='SAVED_VERIFIED__REMOTE_READBACK_PENDING',workbook_sha256=sha,
+      information_rows=404+n,grid_values=ng*16,classified_cells=684+n,colored_cells=576+n,held_comparisons=108)
+    for packet in PACKETS_GJ:
+        l['SO2_source_opportunity_assessments'][packet]['status']='SAVED_VERIFIED__REMOTE_READBACK_PENDING'
+    text_mirrors(m)
+    banner=f'# Current comparison — SOSA remaining opportunity assessment completed\n\n{404+n} information rows; {n} new source-qualified candidates. All 1,646 remaining and 3,755 total frozen opportunities accounted at recorded source depth. Prior404 rows and684 classifications preserved. See {LEDGER}#/SO2_remaining_scope_closeout for exact outcomes and holds. STOP for owner disposition; AAS acceptance separate; donor research continues before later model decisions.\n\n'
+    for f in ('Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md'):
+        p=D/f;txt=p.read_text();p.write_text(banner+txt[txt.index('<table>'):],encoding='utf-8')
+    save(MASTER,m);save(LEDGER,l);verify_gj()
+    close['verification'].update(all_original_record_hashes=True,
+      same_workbook_saved_value_fill_parity=True,
+      exact_remaining_and_total_opportunity_reconciliation=True,
+      both_CSV_and_readable_mirrors=True,
+      all_prior_master_rows_and_21_unaffected_sheets_preserved=True,
+      M00_M01_preserved=True)
+    save(LEDGER,l)
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
+    if current==CP_GJ or 'SO2_remaining_scope_closeout' in load(LEDGER):
+        if sys.argv[1]=='--verify':verify_gj()
+        else:apply_gj()
+        sys.exit(0)
     if sys.argv[1]=='--verify':
         if current==CPR:verifyR()
         elif current==CP3:verify3()
