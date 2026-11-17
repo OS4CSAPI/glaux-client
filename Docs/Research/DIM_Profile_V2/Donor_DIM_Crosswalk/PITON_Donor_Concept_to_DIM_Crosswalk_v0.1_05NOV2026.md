@@ -1,10 +1,10 @@
 # Current Profile Rewrite checkpoint
 
-Updated 17 November 2026, America/New_York, Profile Rewrite 60, corrective Step 3. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`. Verify live HEAD; follow [AGENTS.md](../AGENTS.md).
+Updated 17 November 2026, America/New_York, Profile Rewrite 61, owner acceptance of the joint corrective assessment. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`. Verify live HEAD; follow [AGENTS.md](../AGENTS.md).
 
 ## Active scope and evidence
 
-The owner's Proceed after `d4a40e4` authorizes Step 3, the final step of the [Devices and PA-DIM corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md). The finite joint comparison accounts for 478 current cells per donor (956 positions), four correction dispositions and five retention/count-scope dispositions. It adds no rows or definitions. The [comparison narrative](Donor_Native_High_Level_Information_Groupings_Comparison.md#devices-and-pa-dim-joint-corrective-closeout--17-november-2026) gives the complete plain-English explanation, rationale, source references and recommendation.
+The owner accepted the completed three-step corrective assessment with its documented source limits. The earlier Proceed after `d4a40e4` authorized the final comparison under the [Devices and PA-DIM corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md). The finite joint comparison accounts for 478 current cells per donor (956 positions), four correction dispositions and five retention/count-scope dispositions. It adds no rows or definitions. The [comparison narrative](Donor_Native_High_Level_Information_Groupings_Comparison.md#devices-and-pa-dim-joint-corrective-closeout--17-november-2026) gives the complete plain-English explanation, rationale, source references and recommendation.
 
 The master and both source ledgers record the identical `joint_corrective_closeout`: exact old/new texts, source locators, frozen discrepancies, original-source contact, classification intersections, saved checks and publication state. [Devices ledger](OPC_UA_Devices_Source_Coverage.json) · [PA-DIM ledger](OPC_UA_PADIM_Source_Coverage.json).
 
@@ -22,7 +22,7 @@ Earlier Excel-for-web evidence is reused for unchanged structure. These new imag
 
 ## Holds and owner decisions
 
-PA-DIM 1.02.0 declares Devices 1.04.0; the independent Devices donor is 1.05.0. PA-C2-Q015/Q016 retain three white source-detail holds on changeable/requested names and recovery advice. All 12 Devices limits, all 14 earlier PA-DIM questions, the two later questions, DI-Q005's state contradiction and earlier ISA/SOSA/SAPIENT/AAS/case holds remain. PA-DIM's historical inventory still marks 952 of 1,059 model entries unread; targeted reads do not establish a full recursive audit. Owner acceptance of bounded source coverage, model adoption, Step 24, Steps 35–39 and named-version Step 40 remain separate decisions.
+PA-DIM 1.02.0 declares Devices 1.04.0; the independent Devices donor is 1.05.0. PA-C2-Q015/Q016 retain three white source-detail holds on changeable/requested names and recovery advice. All 12 Devices limits, all 14 earlier PA-DIM questions, the two later questions, DI-Q005's state contradiction and earlier ISA/SOSA/SAPIENT/AAS/case holds remain. PA-DIM's historical inventory still marks 952 of 1,059 model entries unread; targeted reads do not establish a full recursive audit. The owner accepted the corrective assessment at this bounded source depth. Model adoption, Step 24, Steps 35–39 and named-version Step 40 still require separate decisions.
 
 ## History
 
@@ -30,7 +30,7 @@ The exact [pre-joint checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/d
 
 ## Interrupted work
 
-Step 3 content is published at `22613c0`; this receipt closes its publication record. The verified local checkout is `/workspace/scratch/8d381dcd4fda/glaux-step3`. No research execution step remains within this three-step corrective plan.
+Step 3 content is published at `22613c0`; the [verified publication receipt](https://github.com/OS4CSAPI/glaux-client/commit/c6d7c00dccdde7fc37c6a2c9ba993aca23f2482c) closed its publication record. The verified local checkout is `/workspace/scratch/8d381dcd4fda/glaux-step3`. No research execution step remains within this three-step corrective plan.
 
 ## Verification and publication
 
@@ -38,4 +38,4 @@ Current evidence checkpoint: `DEVICES_PADIM_JOINT_3_SAVED_VERIFIED`. Run `python
 
 ## Next action and stop
 
-Stop for the owner's decision on the completed and published joint closeout with retained source limits. The recommendation is to accept this finite corrective result, retaining those limits, and decide the next donor step separately. No automatic fourth review round, next donor or DIM/Profile authoring is authorized. Continue to use the enforced output guard; it reduces avoidable output but does not diagnose or fix ChatGPT's platform limit.
+In Profile Rewrite 61 on 17 November 2026, the owner replied “Proceed” to the explicit action of recording acceptance of the published joint corrective result with its retained source limits. The master and both donor ledgers record the decision under `joint_corrective_closeout.owner_decision`. This closes the three-step plan. The next action is for the owner to choose the next donor. Further donor research and DIM/Profile authoring await separate direction.

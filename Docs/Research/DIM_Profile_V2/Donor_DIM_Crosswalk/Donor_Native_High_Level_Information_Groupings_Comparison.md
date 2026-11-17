@@ -4,7 +4,7 @@
 
 ### Result and scope
 
-The three-step corrective assessment is complete as a finite research and delivery task, and its [content delivery](https://github.com/OS4CSAPI/glaux-client/commit/22613c00fcb905800477dce66bcae81a48c71a06) is published and verified. The owner's acceptance decision remains separate, as recorded in the current PITON. The final joint comparison corrected four existing donor cells and added no rows. The master remains at 478 information rows. All earlier source limits, unresolved questions and adoption decisions remain visible; completion of this assessment does not decide those matters for the owner.
+The three-step corrective assessment is complete as a finite research and delivery task, and its [content delivery](https://github.com/OS4CSAPI/glaux-client/commit/22613c00fcb905800477dce66bcae81a48c71a06) is published and verified. On 17 November 2026 the owner accepted the assessment at its documented source depth in Profile Rewrite 61. The final joint comparison corrected four existing donor cells and added no rows. The master remains at 478 information rows. All earlier source limits, unresolved questions and adoption decisions remain visible; the recorded acceptance covers the corrective result with those limits.
 
 The two donors are OPC Unified Architecture (OPC UA) Devices, version 1.05.0, and the Process Automation Device Information Model (PA-DIM), version 1.02.0. PA-DIM declares Devices 1.04.0 as a dependency. The comparison therefore preserves an edition distinction as well as a difference in subject matter. It does not import newer Devices wording into PA-DIM or assume that every feature in a dependency is inherited by every dependent type.
 
@@ -95,11 +95,11 @@ The corrected master provides a more reliable basis for identifying reusable inf
 
 A future OGC API – Connected Systems Profile can use this evidence when deciding which information needs belong in a common part and which require additional modules. A profile-aware client could then distinguish a declared command from an observed invocation, a declared outcome from completed work, or a compensation-method description from evidence that compensation was applied. Those examples explain the intended value; this assessment does not implement the profile, settle bindings, prescribe a final hierarchy or demonstrate runtime behavior. The broader work remains donor comparison before DIM/Profile development.
 
-### Completion and recommendation
+### Completion and owner decision
 
 The finite register is closed through the four recorded cell corrections and the explicit retention/count-scope dispositions. Every information cell in the two current columns has an explicit status, and the saved delivery checks cover values, fills, both CSV mirrors, both readable comparisons, original package structure and unaffected content. The workbook remains the same editable 26-sheet artifact, with row-only freezing and the original M00/M01 versions preserved. All 16 delivery files matched on remote readback, a fresh workbook download matched the verified SHA-256, and both affected GitHub checks passed. The current PITON and identical joint publication receipts record that evidence.
 
-The recommendation is to accept the finite corrective result while retaining its source limits and unresolved questions explicitly. A further general review is not required by this plan. The owner can identify a concrete disputed finding or accept this result, then decide the next donor step separately. There is no automatic fourth corrective round, donor transition or DIM/Profile authoring step.
+The owner accepted the completed Devices and PA-DIM corrective assessment with the recorded source limits on 17 November 2026 (Profile Rewrite 61). The acceptance applies to the findings in the [verified publication receipt](https://github.com/OS4CSAPI/glaux-client/commit/c6d7c00dccdde7fc37c6a2c9ba993aca23f2482c). The outstanding source questions remain available for future decisions. The next donor and any model adoption require separate owner direction.
 
 ### Sources for this joint closeout
 
