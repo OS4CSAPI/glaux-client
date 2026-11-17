@@ -36,7 +36,7 @@ The completed Devices tree and original local commit e8c5497 are preserved. The 
 
 ## Interrupted work
 
-Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM originals: `/workspace/scratch/705ccec1d857/padim`. The initial PA-DIM ledger/plan and current publication receipts are being saved on the research branch; record their verified publication receipt after readback. They do not modify the454-row workbook. Existing unrelated repository errors do not authorize cleanup.
+Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM originals: `/workspace/scratch/705ccec1d857/padim`. The initial PA-DIM plan/ledger and Devices publication receipts were published at **23c6f3f53416ee3ba3c1bf4a875ecc2fbeeab45e**. Remote full-tree readback exactly matched local tree755a5fd05eea50478018c348c07dcf600f2366dc, including all8 findings and the unchanged454-row workbook hash. [Affected crosswalk/recovery check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44009211609). Initial source-ID/contact/hash/link checks passed; they do not establish full PA-DIM coverage. No unpublished substantive research remains; this receipt changes no source findings or workbook content.
 
 ## Next action and stop
 
