@@ -12,6 +12,8 @@ Start with [the recovery/execution protocol](../AGENTS.md) and [the current PITO
 - [AAS source/coverage ledger](AAS01_Original_Source_Corpus_Coverage_13NOV2026.json): extract only the keys named in the PITON
 - [Accepted F3 explanation](PLAN_F3_Cross_Donor_Classification_Fairness_14NOV2026.md#f3-owner-explanation-and-accepted-results)
 - [Reusable lessons](LESSONS_Donor_Review_Process.md): search applicable lessons; not a startup full-read requirement
+- [Devices plan](PLAN_OPC_UA_Devices_Source_First_Donor_Review.md) and [source ledger](OPC_UA_Devices_Source_Coverage.json)
+- [PA-DIM plan](PLAN_OPC_UA_PADIM_Source_First_Donor_Review.md) and [source ledger](OPC_UA_PADIM_Source_Coverage.json)
 - [Protected manual workbook versions](Manual_Workbook_Versions/)
 
 Source coverage, mappings, workbook integrity, owner adoption and runtime conformance are separate. One Proceed covers one bounded step under the PITON's stop boundary.

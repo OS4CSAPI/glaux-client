@@ -1,41 +1,47 @@
 # Current Profile Rewrite checkpoint
 
-Updated16 November2026, America/New_York. OPC UA Devices research and saved-workbook verification are complete at recorded source depth; publication/readback remains. Repository OS4CSAPI/glaux-client, branch research/dim-profile-v2. Read [AGENTS.md](../AGENTS.md) once, then only relevant evidence.
+Updated 16 November 2026, America/New_York, Profile Rewrite 54. **Devices is published and verified; PA-DIM has begun.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only relevant evidence. This is the sole current status and next-action record.
 
 ## Active scope and evidence
 
-Owner authorized the whole [Devices assignment](PLAN_OPC_UA_Devices_Source_First_Donor_Review.md) in Profile Rewrite53: “Proceed and fucking begin asshole.” No internal Proceed gates. The [single ledger](OPC_UA_Devices_Source_Coverage.json) owns286 section dispositions,507 primary model nodes,21 release files,83 inspected source images,33 native findings and12 precise limits. Release DI-1.05.0-2025-11-15 is pinned to8e8a9e13ce922ffe68e9a15897f729a3604fb277. Do not restart source research.
+Owner instruction in Profile Rewrite 54: **“Proceed and also begin the next step.”** This authorized finishing the already approved Devices delivery and beginning Step22, Process Automation Device Information Model (PA-DIM). The [PA-DIM plan](PLAN_OPC_UA_PADIM_Source_First_Donor_Review.md) applies the finite source-first method. Its first milestone is original-source acquisition, inventory and initial native reading; detailed review/comparison remains. No following donor, Domain Information Model (DIM)/Profile adoption, client or deployment work is authorized.
 
 ## Verified checkpoint
 
-Remote source checkpoint792013847a990997594350e60b7fb24690b4289b previously published inventory only. Local delivery now passes research/accounting and saved-workbook checks; this record does not yet claim remote publication of454 rows. The preserved [pre-Devices archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-opc-devices-16nov2026) is7d965e2a174190a39e3b0e3506da467c5c3cc50e,432 rows. Baseline workbook SHA256 bd112e5368e292a7fe33fe4c7015f763eee3ad430135a0b21704ecde3d463318.
+Commit **ce333128a62bcfaf1e1e5f5cc6c2afc629196aa4** is published on the research branch. Full remote Git tree readback exactly matched verified local tree `0ce043bdab7bc23c1f51fc14e0932b88ee379d37`; the workbook bytes match the hash below. [Crosswalk check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44007825674); [same-workbook publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44007825707).
+
+The [Devices ledger](OPC_UA_Devices_Source_Coverage.json) records33 finding groups,22 justified additions (17 common/5 specialized),73 qualified existing correspondences and359 explicit prior non-correspondences. Its286 section entries,507 nodes,21 files and83 inspected source images retain their actual review depth and12 precise source limits. The [plain-English explanation](Donor_Native_High_Level_Information_Groupings_Comparison.md) is published. No repeat Devices research cycle is scheduled; source-limit acceptance is not inferred.
 
 ## Master and workbook
 
-[Canonical JSON](Master_Donor_Concept_to_DIM_Crosswalk.json), CSV/readable mirrors and [same Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx):454 information rows,482×16=7,712 saved values,810 classifications (702 colored/108 prior held). Checkpoint OPCDI_SAVED_VERIFIED. Workbook SHA256 d7aae483db6546d2ff68ce9da768de9767b0d2f9aed3423e2f9e1dceae08d8c0.
+[Same editable Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx), canonical JSON and both CSV/readable mirrors remain **454 information rows;482×16=7,712 saved values;810 classifications (702 colored/108 held)** at `OPCDI_SAVED_VERIFIED`. Workbook SHA256: **d7aae483db6546d2ff68ce9da768de9767b0d2f9aed3423e2f9e1dceae08d8c0**. All454 Devices cells are explicit; zero saved-value/fill/mirror lag. PA-DIM has changed no master or workbook cells.
 
-Devices adds22 candidates (17 common/5 specialized), qualifies73 prior rows and explicitly records359 prior non-correspondences. All454 Devices cells are explicit. All432 original row IDs/order, other donor/case/DIM values,26 worksheets, prior holds and M00/M01 remain. Twenty-one unaffected sheets and unrelated ZIP parts are byte-identical. No M02. The [plain-English result](Donor_Native_High_Level_Information_Groupings_Comparison.md) explains value and limits.
+All432 preceding rows/order and other donor/case/DIM evidence,26 worksheets and M00/M01 are preserved;21 unaffected sheets and unrelated workbook ZIP parts remain identical. Native Microsoft Excel reopening was not performed. The [pre-Devices432-row archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-opc-devices-16nov2026) remains at7d965e2a174190a39e3b0e3506da467c5c3cc50e. Preserve a separate browsable454-row baseline before PA-DIM integration; no automatic M02.
+
+## PA-DIM acquired evidence and actual contact
+
+The [single PA-DIM ledger](OPC_UA_PADIM_Source_Coverage.json) pins release `PADIM-1.02.0-2025-11-26` at **eeb15c51735012383d926a23ff4f62955eb11c64**. All7 release files were acquired and matched their upstream Git blob IDs. They include the original Word specification,788-node PA-DIM model,271-node semantic dictionary model, two spreadsheets and two CSV files. The original Word/model dates differ from the publisher index date; the discrepancy is retained.
+
+Inventory comprises161 original heading spans plus front matter,164 web headings,1,059 declared nodes,32 embedded media assets and22 supporting workbook sheets. **These are inventory counts, not completed semantic reviews.** Six original text spans and eight web sections were read; four selected type declarations were inspected without recursively reviewing their members. Eight preliminary native findings are saved; no master mappings or additions are claimed. Figures and spreadsheet contents remain unreviewed.
+
+A critical boundary: PA-DIM declares **Devices1.04.0**, while our completed Devices donor used1.05.0. Verify relevant inherited meanings in their declared edition; do not wholesale import later features. External dictionary definitions, full native definitions and document/reference reconciliation remain pending. Use exact ledger IDs and contact statuses rather than rereading this inventory.
 
 ## Holds and owner decisions
 
-Twelve Devices source limits remain: controlling-download403/external profile access, edition metadata differences and exact prose/model/diagram conflicts. Reviewed publisher reference and pinned models are not proof of controlling-document byte parity, full OPC ecosystem coverage or certification. No runtime/case observation claimed. Limits are disclosed, not accepted on the owner's behalf.
-
-SOSA and AAS are already accepted; do not reopen or ask acceptance again. Preserve SOSA3,755 opportunities/64 additions, AAS24 additions, SAPIENT11-finding reconciliation/seven additions/twelve total source-origin candidates and its prior bounded-PARTIAL standing. Original ISA/SOSA/SAPIENT/AAS limits and case ceilings remain. No donor exclusivity, DIM/Profile adoption or client/deployment work. Step24, Steps35–39 and named-version Step40 remain gated.
+Preserve the12 Devices source limits; controlling-document byte parity and external profile details remain unverified. SOSA and AAS are already accepted, including SOSA3,755 opportunities/64 additions and AAS24 additions. SAPIENT's eleven-finding reconciliation/seven additions/twelve total source-origin candidates and prior bounded-PARTIAL standing remain. ISA/SOSA/SAPIENT/AAS holds and case ceilings remain. No donor exclusivity or runtime certification is claimed; Step24, Steps35–39 and named-version Step40 remain gated.
 
 ## Verification and publication
 
-Local checkout /workspace/scratch/eb7bba69536f/glaux-delivery. Devices verifier passes finite inventory/targets, preserved prior records,7,712 saved values, classifications, mirrors and unaffected package parts. Saved identity/update/lifetime/summary/register views were rendered and visually inspected. Native Microsoft Excel reopening not performed. Do not repeat unchanged source checks.
-
-Publish the verified tree with expected-head protection, read back tree/workbook and inspect applicable checks. Then replace this pending status with exact result commit and check receipts. Existing unrelated repository errors do not authorize cleanup.
-
-## Next action and stop
-
-Finish publication/readback and owner explanation under existing full-scope authorization. Then STOP before PA-DIM. No automatic new Devices correction round. PA-DIM is next in the broader donor sequence and requires its own authorization.
+The completed Devices tree and original local commit e8c5497 are preserved. The wider artifact check still reports five pre-existing register/link errors in Details_View, MPSS, ARTIFACT_REGISTER and CONTINUITY; no unrelated cleanup was performed.
 
 ## Interrupted work
 
-The454-row integrated result is currently local, distinct from remote7920138 inventory. Preserve it. Resume publication, not acquisition or comparison. If remote changed, inspect the new HEAD before publishing; never overwrite unseen changes.
+Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM originals: `/workspace/scratch/705ccec1d857/padim`. The initial PA-DIM ledger/plan and current publication receipts are being saved on the research branch; record their verified publication receipt after readback. They do not modify the454-row workbook. Existing unrelated repository errors do not authorize cleanup.
+
+## Next action and stop
+
+Continue PA-DIM's remaining native document/model/figure and supporting-parameter review, preserving the declared dependency editions and actual contact grades; then compare with the454-row master under its finite plan. Do not restart Devices, reacquire unchanged originals, repeat successful checks, or transition to another donor automatically.
 
 ## History
 
-Prior published SAPIENT result2a4a791cda826aead24df76d48c7bbca410c36fb and successful checks43999468438/43999468437 remain unchanged. Earlier SOSA deliveryc5b7ca2a87d6a22952c71f01e958aaf4d4cb4b24 and acceptance history remain in Git. Retrieve older history only for a concrete evidence need.
+Published SAPIENT result2a4a791cda826aead24df76d48c7bbca410c36fb and earlier accepted SOSA/AAS evidence remain in Git. Devices local result e8c5497 is superseded for delivery by published ce333128. Retrieve earlier history only for a concrete evidence need.
