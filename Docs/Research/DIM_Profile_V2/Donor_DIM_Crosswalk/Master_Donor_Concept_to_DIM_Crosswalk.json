@@ -3,7 +3,7 @@
   "date": "2026-11-17",
   "branch": "research/dim-profile-v2",
   "currentWorkbook": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-  "currentWorkbookSha256": "40231f8eb3335aa2f7066cfd978d66d3506d34d46e1c71c82d345f4c95063fe3",
+  "currentWorkbookSha256": "d3882d2f0db02ea829e07f59c849b785184dbed211635258c31165479f282dce",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
   "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption. Profile Rewrite 53 (16 November 2026): completed SOSA correction/opportunity assessment OWNER ACCEPTED with recorded limitations; all 3755 IDs accounted, 64 candidate additions. No DIM/Profile adoption; AAS acceptance separate. Profile Rewrite 53 owner clarification (16 November 2026): AAS work was already accepted with its recorded limitations; the repeated pending-acceptance routing was stale.",
@@ -416,7 +416,7 @@
       "ATemp 15-min mean of 5-second samples",
       "",
       "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison S06-R010]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Observing procedure / method”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: PhMeasuringMethod and ConductivityMeasuringMethod identify the physical measuring method of the respective sensor. These technique-qualified method descriptions do not define a complete reusable procedure, an executed observation or processing history. [PA-DIM 1.02; §§7.1.22–7.1.23; original DOCX paragraphs 3167,3334; PA-C2-NEG-S06-R010]",
       "[HELD] RELATED/NO_ESTABLISHED: Required industrial functions, temporal dependencies and process planning do not define an observing procedure or method. Remove this color because the subject remains unestablished, while retaining the capability-planning evidence for later native-first consideration. [Sources: AAS09-N023, AAS09-N028, AAS09-N031; F3-05-S06-R010]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Method is an accepted-extension observable naming the primary way an Event was generated. Hold the reusable observing-procedure comparison. A generation-method tag is not an identified procedure specification; the distinct ISA-C-147 method-label candidate stays blue. [ISA21:S06-R010; F3-02]",
@@ -739,7 +739,7 @@
       "Not linked here",
       "Not assessed here",
       "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison ISA-C-127]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Environmental/tactical detection or event-specific output is not established by generic process/analyser quantities for “Observed atmospheric pressure”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[SPECIALIZED CANDIDATE] NARROWER / PARTIAL: AbsoluteAirPressure in the amperometric and optical-fluorescence calibration interfaces records the air pressure under which the last calibration was performed. This is a narrower historical atmospheric-pressure context, not a current weather observation or the ISA event representation. [PA-DIM 1.02; §§7.1.5–7.1.6; original DOCX paragraphs 1313,1421; PA-C2-NEG-ISA-C-127]",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Atmospheric Pressure",
@@ -1157,7 +1157,7 @@
       "Not linked here",
       "Not assessed here",
       "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison ISA-C-138]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Environmental/tactical detection or event-specific output is not established by generic process/analyser quantities for “Detailed reported chemical analysis levels”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[SPECIALIZED CANDIDATE] PARTIAL: Analytical/PAT measurements support chemical substance identity and concentration through dictionary-qualified measurands and matrix entries. The ISA Chemical Level confidence, confirmation level, arbitrary detector-scale levels, persistency and tactical detection-type semantics are not established by these PA-DIM structures. [PA-DIM 1.02; §§8.13–8.14,10.3–10.4; retained ISA-TYPE-372 original definition and field manifest; PA-C2-NEG-ISA-C-138]",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Chemical Level [Accepted extension]",
@@ -1176,7 +1176,7 @@
       "Not linked here",
       "Not assessed here",
       "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison ISA-C-139]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Environmental/tactical detection or event-specific output is not established by generic process/analyser quantities for “Reported chemical sample-analysis reading”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[SPECIALIZED CANDIDATE] PARTIAL: PatMeasurementVariableType represents an analytical measurement with identified measurand and matrix; ChemicalSubstanceDataType preserves dictionary discriminator, label and ID, including CAS identity. This supports chemical-analyte identity and concentration reporting, not the ISA event schema, harmful flag, exposure/deposition fields or proof that a sample was analysed. [PA-DIM 1.02; §§8.13–8.14,10.3–10.4; retained ISA-TYPE-371 original definition and field manifest; PA-C2-NEG-ISA-C-139]",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Chemical Reading",
@@ -1670,7 +1670,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL / RELATED: TopologyElement ParameterSet/MethodSet and native method argument declarations describe supported information and operations. Mandatory/optional modeling and instance support stay explicit; generic UA typing is inherited, not a Devices-original command vocabulary. [DI §§1, 11, 12, 3.3, 4.1, 4.2, 4.3, 4.4.1, 4.4.2, 4.4.3, A.1; DI-N001, DI-N003, DI-N028]",
-      "[COMMON CANDIDATE] [QUALIFIED_CORRESPONDENCE] ResetMode/ExecutionMode input declarations and method status/error behavior provide qualified contracts; no application result payload or completion proof is invented. [PA-F029] [OPC 30081 1.02: 9.1, 9.2, 9.3, 10.1, 10.2]",
+      "[RELATED_ONLY] FactoryReset, ZeroPointAdjustment and AutoAdjustPositioner define Call Service result/status codes, but their signatures declare no OutputArguments. This does not establish the expected application Response value, optionality or range definition in this row. Preserve the native call outcomes at S06-R020 and the operation contracts at ISA-K-COMMAND-DECL. [PA-DIM 1.02 §§9.1–9.3, Tables 273–280; PA-F029]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Output/inoutput declarations and OperationResult support common result information. Preserve optional argument arrays, execution-state versus business-success distinction and the absence of ISA-specific range/optionality equivalence or proven physical effect. [Sources: AAS04-N003, AAS04-N004, AAS07-N010; F3-05-ISA-K-RESULT-DECL]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: TaskAck declares task identity, typed task status, repeated reasons and an optional AssociatedFile. This supports qualified response/result structure like the other donors' response schemas; it does not establish arbitrary named outputs or prove a physical result. [SAP03B-N09, SAP03B-N12, SAP05-N11, SAP05-N12; F3-06-SAPIENT-ISA-K-RESULT-DECL]",
       "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
@@ -1689,7 +1689,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL / RELATED: Devices defines transfer-result and package metadata structures, field types and scalar/array shapes. These support typed contracts but do not make the whole ISA declaration scheme equivalent. PatchIdentifiers shape conflict DI-Q003 remains explicit. [DI §§11, 12, 3.3, 8.7.1, 8.7.2, 8.7.3, A.1; DI-N021, DI-N028]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Declared custom data structure”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: ChemicalSubstanceDataType declares a structured chemical-substance description with PatDictionary, Label and Id fields. Its declared purpose and typed structure support a common structure-description need without adopting ISA serialization or making chemical content universal. [PA-DIM 1.02; §10.4/Tables 287–288; PA-C2-NEG-ISA-K-CUSTOM-TYPE]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Submodel templates and nested named collections/typed lists provide reusable structured declarations. Promote to common structured-information candidate without treating a Submodel template as an ISA named custom type or a data-specification template. [Sources: AAS03-N002, AAS03-N015, AAS03-N016; F3-05-ISA-K-CUSTOM-TYPE]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Custom Type Declaration supplies a name, purpose and field list. A declared data structure is useful common information even when its encoding is ISA-specific; this is not adoption of an ISA class. [ISA-DMS-323; F3-06-ISA-ISA-K-CUSTOM-TYPE]",
@@ -1708,7 +1708,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL / RELATED: Devices defines transfer-result and package metadata structures, field types and scalar/array shapes. These support typed contracts but do not make the whole ISA declaration scheme equivalent. PatchIdentifiers shape conflict DI-Q003 remains explicit. [DI §§11, 12, 3.3, 8.7.1, 8.7.2, 8.7.3, A.1; DI-N021, DI-N028]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Declared field within a custom structure”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: ChemicalSubstanceDataType specifies field names, data types, meanings and Allow Subtypes choices for PatDictionary, Label and Id. These are concrete field declarations; ISA cardinality/omission conventions and wire grammar are not asserted. [PA-DIM 1.02; §10.4/Table 287; PA-C2-NEG-ISA-K-FIELD-DECL]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Named collection members can declare typed, semantically qualified fields. Promote to common field-declaration candidate; ISA optionality and omission rules are not inherited, and list children retain positional referencing. [Sources: AAS03-N003, AAS03-N005, AAS03-N015, AAS03-N023; F3-05-ISA-K-FIELD-DECL]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Field Declaration identifies a field, its meaning, type, shape and optionality. These support the same qualified information need as AAS and SOSA field declarations; source cardinalities remain native. [ISA-DMS-325; F3-06-ISA-ISA-K-FIELD-DECL]",
@@ -1936,7 +1936,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL / RELATED: Devices specifies calls and returned status for transfer, locking and updates. Successful initiation differs from asynchronous completion and physical effect; no actual issued call or device result was observed. [DI §§6.4.1, 6.4.2, 6.4.3, 6.4.4, 6.4.5, 6.4.6, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.4.10, 8.4.8, 8.4.9; DI-N011, DI-N012, DI-N018]",
-      "[RELATED_DECLARATION_ONLY] Methods define possible requests and return behavior; no issued request, observed acknowledgement or completed physical effect occurred. [PA-F029] [OPC 30081 1.02: 9.1, 9.2, 9.3, 10.1, 10.2]",
+      "[RELATED_DECLARATION_ONLY] The method contracts declare Call Service result codes: Bad_InvalidArgument for an invalid reset/execution mode and Bad_UserAccessDenied for insufficient rights. These are defined invocation outcomes, not an observed acknowledgement, an application OutputArgument or proof that reset/adjustment completed. [PA-DIM 1.02 §§9.1–9.3; PA-F029]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: The API separates receipt, execution state and reported business success. A 202 response can precede failure; HTTP 200 with executionState Failed reports invocation failure. Optional success separately describes the business operation. Neither transport success nor a reported result proves physical effect. Preserve the executionState prose/schema requiredness conflict. [Sources: AAS07-N008, AAS07-N010, AAS07-N011, AAS07-N012, AAS07-N052; O5-S06-R020]",
       "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
       "[COMMON CANDIDATE] PARTIAL: Response reports ongoing or final request disposition and result values. Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No. [ISA21:S06-R020; F3-02]",
@@ -1955,7 +1955,7 @@
       "",
       "Not assessed here",
       "[COMMON CANDIDATE] PARTIAL / RELATED: DeviceHealthDiagnosticAlarm subtypes specialize inherited alarm/condition behavior. This is related alert evidence, not SAPIENT AlertAck status semantics or resolution of its source contradiction. [DI §§4.12, 4.5.4; DI-N005]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This detection/tasking/mode contract is not established by the reviewed process-device declarations for “Candidate — Alert identity, condition, status and acknowledgment lifecycle”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL / INHERITED: PA-DIM includes optional DeviceHealthAlarms through the declared Devices 1.04 interface. DeviceHealth diagnostic alarm types indicate abnormal conditions and diagnostic information. This is qualified alert/condition evidence; SAPIENT AlertAck codes, acknowledgment semantics and its retained source contradiction are not resolved. [PA-DIM 1.02; §§6.1,7.2; DI 1.04 nodes 15051/15053/15143; legacy v104 §§4.12.1–4.12.2 corroborative text; PA-C2-NEG-SAPIENT-F2-ALERT-LIFECYCLE]",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §6.3.3, §§6.6.1–13 Tables88–94 (PDF85–89) distinguishes Alert/AlertAck from regular StatusReport and TaskAck. Trigger conditions system-specific; acceptance is not physical action, and Table93/94 wording contradiction remains held. [Original SAPIENT source findings: SAP04-N08, SAP05-N13, SAP05-N14, SAP05-N16]",
       "Not assessed here",
@@ -2468,7 +2468,7 @@
       "Not linked here",
       "Not assessed here",
       "[COMMON CANDIDATE] PARTIAL / RELATED: ITagNameplate ComponentName is user-writable display text. A writable field supports changing the label; it is not evidence of an issued ISA SET_NAME request. [DI §§4.5.3; DI-N030]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specific requested operation is not established by the scoped reset/adjustment methods or writable process properties for “Requested component display name”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[SOURCE DETAIL HOLD] Inherited ComponentName provides a possible target for a requested name change. Its Devices1.04 writable-name contract remains unverified in the inspected source declarations; the legacy prose endpoint returned1.05. Keep this exact question open rather than assert an ISA Change Name correspondence, actual user permission or absence. [PA-DIM1.02 §§7.2,3.4.3.3; DI1.04 nodes15048/15050/15063/15099; PA-C2-Q015]",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Change Name [core command]",
@@ -3741,7 +3741,7 @@
       "Not linked here",
       "Not assessed here",
       "[COMMON CANDIDATE] PARTIAL / RELATED: InitLock/RenewLock/ExitLock/BreakLock provide client/user-qualified locking and release. They are related to exclusive control but have their own scope, inactivity timeout and status codes; lock state is separately retained. [DI §§7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8; DI-N012]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specific requested operation is not established by the scoped reset/adjustment methods or writable process properties for “Requested time-bounded exclusive command access”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: The inherited optional Devices 1.04 Lock exposes InitLock, its status result and RemainingLockTime. This supports a qualified scoped lock request and time/status contract, not ISA time-bounded tasking authorization, universal exclusion of readers or an observed granted lock. [PA-DIM 1.02; §7.2; DI 1.04 Lock 6161, InitLock 6393–6395, RemainingLockTime 6392; PA-C2-NEG-ISA-C-219]",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Lock",
@@ -3779,7 +3779,7 @@
       "Not linked here",
       "Not assessed here",
       "[COMMON CANDIDATE] PARTIAL / RELATED: InitLock/RenewLock/ExitLock/BreakLock provide client/user-qualified locking and release. They are related to exclusive control but have their own scope, inactivity timeout and status codes; lock state is separately retained. [DI §§7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8; DI-N012]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specific requested operation is not established by the scoped reset/adjustment methods or writable process properties for “Requested release of component control with approval result”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: The inherited optional Devices1.04 Lock declares ExitLock with an ExitLockStatus output. This supports qualified lock-release result information. ISA component-control approval semantics, an initiating-client authorization rule and an observed physical control change are not inferred from these inspected declarations. [PA-DIM1.02 §7.2; DI1.04 ExitLock6398/OutputArguments6399; PA-C2-NEG-ISA-C-255]",
       "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
       "Not assessed here",
       "Unlock",
@@ -4178,7 +4178,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL / RELATED: FunctionalGroups group parameters/properties/methods by purpose and may share members. This is related to capability organization but not the ISA component capability-group catalogue. [DI §§4.3, 4.4.1, 4.4.2, 4.4.3; DI-N003]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Capability group membership”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: Through ComponentType/TopologyElementType, PA-DIM inherits optional FunctionalGroup declarations that organize Parameters and Methods by application. This is qualified logical grouping, not ISA capability-category syntax, readiness selection or proof of installed membership. [PA-DIM 1.02; §7.2; DI 1.04 nodes 15063→1001→6567 and FunctionalGroupType 1005/description; PA-C2-NEG-ISA-A-CAPABILITY-GROUP]",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: CapabilitySet groups industrial function descriptions and their properties/relations. Retain a specialized grouping candidate; this is not ISA membership across property/observable/command declarations, and grouping alone does not determine a DIM class. [Sources: AAS09-N023, AAS09-N024; F3-05-ISA-A-CAPABILITY-GROUP]",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Node types and Capability.category explicitly organize declared capabilities. They support specialized native grouping information without matching ISA's 22 bins or adopting a shared hierarchy. [SAP03A-N04, SAP03A-N05; F3-06-SAPIENT-ISA-A-CAPABILITY-GROUP]",
       "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Capability bins group properties, observables and commands and can overlap. Retain specialized catalogue organization, including the separately qualified required/recommended bins, without adopting these bins as a DIM class hierarchy. [ISA-DMS-007, ISA-DMS-008, ISA-DMS-009, ISA-DMS-010, ISA-DMS-011, ISA-DMS-012, ISA-DMS-013, ISA-DMS-014, ISA-DMS-015, ISA-DMS-016, ISA-DMS-017, ISA-DMS-018, ISA-DMS-019, ISA-DMS-020, ISA-DMS-021, ISA-DMS-022, ISA-DMS-023, ISA-DMS-024, ISA-DMS-027, ISA-DMS-028, ISA-DMS-029, ISA-DMS-030; F3-06-ISA-ISA-A-CAPABILITY-GROUP]",
@@ -4501,7 +4501,7 @@
       "",
       "",
       "[COMMON CANDIDATE] RELATED: ParameterSet contains uniquely named Parameters with typed values; the online/offline model preserves corresponding BrowseNames while values belong to different access contexts. This is an address-space representation, not the ISA named-value wire grammar. [Devices 1.05 §§4.3, 6.3.1; DI-C1-ISA-R-NAMED-VALUE]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Named value payload”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] RELATED / PARTIAL: PA-DIM defines named, typed Variables for process, condition and calibration values and inherits optional ParameterSet through Devices 1.04 ComponentType/TopologyElementType. This is address-space representation of named values, not ISA NameValuePair wire grammar. [PA-DIM 1.02; §§7.2,7.24,8.2.1–8.2.2; DI 1.04 pinned nodes 15063→1001→5002/6017; PA-C2-NEG-ISA-R-NAMED-VALUE]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Typed Property and separate multilingual Property values support common named-value information; values can be absent. Preserve normal versus ValueOnly representation and distinguish instance values from concept-definition coded values. [Sources: AAS03-N005, AAS03-N006, AAS07-N005; F3-05-ISA-R-NAMED-VALUE]",
       "[COMMON CANDIDATE] PARTIAL: StatusType/status_value and TrackObjectInfo.type/value provide native named-value records for different subjects. They support common named-value information while remaining distinct from the exact ISA typed Name Value Pair datatype. [SAP04-N07, SAP04-N12]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Name Value Pair identifies a named value used for arguments and properties. Like the qualified AAS and SAPIENT comparisons, it supports named data without establishing the meaning of every value. [ISA-DMS-426; F3-06-ISA-ISA-R-NAMED-VALUE]",
@@ -4539,7 +4539,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL: TransferResultDataDataType.parameterDefs is a typed list of per-parameter results. Method argument arrays and package structures retain native types/cardinalities; no equivalence with ISA Property/Parameter/Observable declarations is asserted. [Devices 1.05 §§6.4.6, 8.7.3; DI-C1-ISA-R-LIST]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Declared-type value list”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: PatMatrixDescription is an array of ChemicalSubstanceDataType values; EnumDictionaryEntries and EnumValues preserve corresponding arrays of dictionary identifiers and labels. This supports typed value collections without asserting ISA empty-list, omission or update semantics. [PA-DIM 1.02; §§8.14,8.2.4,10.4; PA-C2-NEG-ISA-R-LIST]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Lists declare element type, order relevance and repeated values. Promote to common list information while retaining normal-JSON empty omission, positional identity and the unproved lossless ordered RDF conversion; no automatic ISA wire equivalence follows. [Sources: AAS03-N016, AAS03-N025; F3-05-ISA-R-LIST]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[COMMON CANDIDATE] PARTIAL/RELATED: List holds values of a type defined by the associated declaration. This supports a qualified common collection candidate without claiming cross-donor order, cardinality or update equivalence. [ISA-DMS-393; F3-06-ISA-ISA-R-LIST]",
@@ -4558,7 +4558,7 @@
       "",
       "",
       "[COMMON CANDIDATE] PARTIAL: FetchTransferResultData returns typed structures with transfer status, sequence/end markers and parameter-result entries; PackageMetadata defines other structured values. These are concrete structured payloads, not the ISA custom-type serialization contract. [Devices 1.05 §§6.4.6, 8.7.3; DI-C1-ISA-R-CUSTOM]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Custom-structure field values”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: PatMeasurandDescription holds a ChemicalSubstanceDataType value with PatDictionary, Label and Id; PatMatrixDescription holds an array of that structure. These are concrete structured values, not the ISA named-field wire representation. [PA-DIM 1.02; §§8.14,10.3–10.4; PA-C2-NEG-ISA-R-CUSTOM]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: A collection instance carries named structured values guided by a template. Promote to common structured-value information; template declarations do not prove instance values and normal-JSON omission does not reproduce ISA custom-type payload rules. [Sources: AAS03-N002, AAS03-N015, AAS03-N025; F3-05-ISA-R-CUSTOM]",
       "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Custom Type carries named structure fields. The common candidate is structured field values; ISA wire representation is retained separately and is not a required DIM encoding. [ISA-DMS-378; F3-06-ISA-ISA-R-CUSTOM]",
@@ -4881,7 +4881,7 @@
       "Not linked here",
       "Not assessed here",
       "[COMMON CANDIDATE] PARTIAL / RELATED: RevisionCounter increments when static configuration changes and is -1 when unsupported; it is not a firmware version or change of measured value. [DI §§4.5.2, 4.5.3; DI-N004]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Component configuration version”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL / SOURCE QUALIFICATION: PA-DIM makes inherited RevisionCounter mandatory. Its supporting parameter definition describes a count of parameter-set stores, while the shared Devices 1.04 nameplate-property description counts static-device-data modifications. Preserve PA-Q013: these triggers are not assumed equivalent, and neither is asserted to reproduce ISA capability-version rules. [PA-DIM 1.02; §7.2/Table 109; PA parameter dictionary ABN603#002; DI 1.04 interface property 15047→ComponentType property 15097 and DeviceType described counterpart 6002; PA-Q013; PA-C2-NEG-ISA-C-048]",
       "[HELD] RELATED/NO_ESTABLISHED: Administrative version/revision and timestamps describe business-relevant digital-element changes, not the revision of applied equipment configuration. Retain the specific configuration-version hold and integer-prose versus digit-string-schema conflict. [Sources: AAS04-N019, AAS04-N020, AAS04-N023, AAS05-S006; F3-05-ISA-C-048]",
       "[HELD] NO_ESTABLISHED: ConfigurationData hardware_version and software_version identify product versions. They do not establish a configuration-parameter revision or configuration version identifier. [SAP03A-N12]",
       "Capability Version",
@@ -4976,7 +4976,7 @@
       "Not linked here",
       "Not assessed here",
       "[COMMON CANDIDATE] PARTIAL / RELATED: ITagNameplate ComponentName is user-writable display text. A writable field supports changing the label; it is not evidence of an issued ISA SET_NAME request. [DI §§4.5.3; DI-N030]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Changeable component display name”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[SOURCE DETAIL HOLD] Pinned Devices1.04 declares inherited ComponentName:LocalizedText through ITagNameplateType, but the inspected declarations do not establish the changeable-name behavior required by this row. Verification of the legacy1.04 prose endpoint returned1.05. Retain the possible correspondence and native name declaration; do not import later-edition writable behavior or conclude absence. [PA-DIM1.02 §7.2; DI1.04 nodes15048/15050/15063/15099; PA-C2-Q015]",
       "[HELD] RELATED/NO_ESTABLISHED: The sources define display labels for information elements and fallback presentation names, not a changeable equipment component name. Remove this color for the equipment-name comparison; retain the repeated preferredName source issue and native presentation evidence. [Sources: AAS09-N019, AAS02-N019; F3-05-ISA-C-081]",
       "Not assessed here",
       "Name",
@@ -5546,7 +5546,7 @@
       "Not linked here",
       "Not assessed here",
       "[COMMON CANDIDATE] PARTIAL / RELATED: DeviceHealth and diagnostic alarms distinguish normal, failure, check-function, off-spec and maintenance-required conditions. Multiple alarms can coexist. Health is separate from operating mode; this is a native vocabulary, not a verified equipment reading. [DI §§4.12, 4.5.4; DI-N005]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] The specific spatial, electrical-role, network, imaging or device-state meaning is not established by generic process values or device classifications for “Reported component operating condition”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: PA-DIM explicitly includes inherited DeviceHealth and optional DeviceHealthAlarms. The Devices 1.04 health vocabulary distinguishes normal/failure/check-function/off-specification/maintenance-required conditions. This is health/condition information, not a full operating-mode state machine or an actual reading. [PA-DIM 1.02; §§6.1,7.2; DI 1.04 IDeviceHealthType 15051/DeviceHealth 15052 and DeviceHealthEnumeration; PA-C2-NEG-ISA-C-082]",
       "[HELD] RELATED/NO_ESTABLISHED: A generic Property/Qualifier can carry many subjects, but the reviewed concepts do not define equipment operating condition. Event state means on/off, and the qualifier example concerns value quality. Remove this specific condition color; no absence of condition concepts elsewhere in AAS is claimed. [Sources: AAS04-N007, AAS04-N018, AAS04-N029; F3-05-ISA-C-082]",
       "[COMMON CANDIDATE] RELATED: StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed. [SAP04-N03, SAP04-N07, SAP05-N13, SAP05-N14, SAP06-N05]",
       "Operating State",
@@ -6952,7 +6952,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] PARTIAL / RELATED: FunctionalGroups and companion views organize information aspects. They can share nodes and need not be globally identified AAS Submodels; contextual grouping is retained separately. [DI §§4.3, 4.4.1, 4.4.2, 4.4.3, C.1, C.2, C.3, C.4, C.5; DI-N003, DI-N027]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This digital-record, packaging, event, history or relationship contract is not established by the reviewed PA-DIM declarations for “Candidate — Identified information aspect and contained elements”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL: PA-DIM separates administration, signal, device-condition and component-condition information and inherits purpose-based FunctionalGroups. These support information-aspect grouping without AAS globally identified Submodel records or its template/instance contract; a logical group is not an installed subdevice. [PA-DIM 1.02; §§6.1,7.2,7.24–7.26; DI 1.04 FunctionalGroupType 1005 and inherited group 6567; PA-C2-NEG-AAS-O2-ASPECT-GROUP]",
       "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A Submodel is a globally identified information aspect of the represented asset with zero or more elements. Template/instance modeling status qualifies its contents. Information grouping is distinct from an installed subsystem or physical part. [Sources: AAS02-N007, AAS02-N017, AAS03-N001, AAS03-N002; O2-ASPECT-GROUP]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -7009,7 +7009,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] PARTIAL: SupportInfo distinguishes product images, documentation, protocol files and UI images; package metadata adds release/license/pre-install content. UIElement additionally carries a client-loadable user interface in its FunctionalGroup context; concrete UI formats are defined elsewhere. Content availability is not execution. [Devices 1.05 §§4.4.3, 4.5.6, 8.7.3; DI-C1-AAS-O2-SUPPORTING-CONTENT]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This digital-record, packaging, event, history or relationship contract is not established by the reviewed PA-DIM declarations for “Candidate — Supporting file locator or embedded file content”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL / INHERITED: PADIMType inherits optional DeviceManual:String through ComponentType and the VendorNameplate interface. The shared Devices 1.04 property description identifies a filesystem pathname or URL to the device manual. This supports a documentation locator, not embedded file bytes, all support-file roles or the AAS package association contract. [PA-DIM 1.02; §7.2; DI 1.04 IVendorNameplateType 15035/DeviceManual 15043, ComponentType 15063/15093, DeviceType 1002 subtype→15063 with described counterpart 6005; PA-C2-NEG-AAS-O2-SUPPORTING-CONTENT]",
       "[COMMON CANDIDATE] PARTIAL/RELATED: Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media. [Sources: AAS02-N036, AAS03-N008, AAS03-N009, AAS08-N050; O6-1-AAS-O2-SUPPORTING-CONTENT]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -7294,7 +7294,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] PARTIAL / RELATED: Package signatures and server-specific role/user access preserve a trust/authorization context. Devices does not supply the AAS access-rule exchange grammar or prove authenticated installed equipment. [DI §§11, 12, 3.3, 8.7.4, A.1, B.3.6.3, B.3.6.4; DI-N023, DI-N028]",
-      "[RELATED_ONLY] Optional RolePermissions and AccessRestrictions are related access-policy context; no AAS attribute-condition grammar equivalence, policy enforcement or effective-user right inferred. [PA-F038] [OPC 30081 1.02: 3.4.3.1, 3.4.3.2, 3.4.3.3, 3.4.3.5]",
+      "[COMMON CANDIDATE] PARTIAL: Optional server-specific RolePermissions and AccessRestrictions describe permissions/restrictions attached to a qualified Node. The declared core RolePermissionType pairs RoleId with Permissions; effective current-session permissions remain separate. No AAS Boolean-condition grammar, exchanged-rule equivalence or enforcement result is established. [PA-DIM 1.02 §3.4.3.1; pinned core types i=94/95/96; PA-F038]",
       "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An access rule identifies protected information, applicable rights and attribute-based Boolean conditions. Attributes may come from authenticated claims, trusted environment values or referenced model data. Default deny, disabled rules and optional result filters remain explicit. The rule definition is separate from request credentials and an actual authorization decision. Exchanged rules are suggestions for recipient policy; implementation-specific enforcement and grammar/schema conflicts remain unresolved. [Sources: AAS08-N032, AAS08-N034, AAS08-N035, AAS08-N036, AAS08-N038, AAS08-N040; AAS-O6-ACCESS-RULE]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -8700,7 +8700,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] PARTIAL: DeviceHealthDiagnosticAlarm notifications use Message for additional health information, with possible cause and suggested recovery action as examples. Advice is associated with the abnormal condition; it is not an executed repair or a separately typed Action object. [Devices 1.05 §§4.12.2; DI-C1-SOSA-SO2J-FAULT-SUGGESTED-ACTION]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specialized equipment, management or interface contract is not established by the reviewed PA-DIM declarations for “Candidate — Fault associated suggested corrective action”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[SOURCE DETAIL HOLD] PA-DIM includes optional DeviceHealthAlarms and the pinned Devices1.04 model declares DeviceHealthDiagnosticAlarmType. Whether its message contract specifically includes suggested recovery advice is not established by the inspected1.04 declarations; the legacy prose endpoint returned1.05. Preserve the alarm evidence and this advice question, without inferring a typed Action, executed repair or absence of advice. [PA-DIM1.02 §§6.1,7.2; DI1.04 nodes15051/15053/15143; PA-C2-Q016]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -8928,7 +8928,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] NEW INFORMATION NEED: Organize parameters, properties and operations into named contextual groups, with nested groups and potentially shared members. Preserve group purpose and state-dependent visibility; informational grouping does not establish a physical subsystem or globally identified record. [DI §§4.3, 4.4.1, 4.4.2, 4.4.3, B.1, B.2, B.3, C.1, C.2, C.3, C.4, C.5; DI-N003, DI-N027, DI-N033]",
-      "[RELATED_ONLY] Signal/condition sets provide contextual information grouping; shared membership, nested FunctionGroup semantics and state-dependent visibility are not all established. [PA-F011 PA-F012] [OPC 30081 1.02: 7.1.2, 7.22, 7.25, 7.26, 7.1.9, 7.24]",
+      "[COMMON CANDIDATE] PARTIAL: PADIMType inherits DI1.04 ComponentType, which inherits TopologyElementType and its optional FunctionalGroupType groups for organizing parameters and methods by application, including Identification. This is information grouping, not physical composition. Nested/shared membership and state-dependent visibility are not newly established by this targeted model contact. [PA-DIM 1.02 §7.2; pinned DI1.04 nodes 15063/1001/6567/1005/6014; PA-F008]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -8966,7 +8966,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] NEW INFORMATION NEED: Describe cumulative powered duration, duration actively performing work and transitions into activity for an identified device. Keep their counting basis separate, retain implementation-specific counting rules and no-reset lifetime semantics. Unit resolution does not establish reporting frequency. [DI §§4.5.5; DI-N006]",
-      "[COMMON CANDIDATE] [QUALIFIED_CORRESPONDENCE] DI1.04 powered/active duration and activity-transition counts retain subject and no-reset lifetime rules; sensor duration and encoded milliseconds versus dictionary hours remain qualified. [PA-F008 PA-F012] [OPC 30081 1.02: Opc.Ua.PADIM.NodeSet2.xml/Models/RequiredModel, 7.1.9, 7.24, 7.26]",
+      "[COMMON CANDIDATE] QUALIFIED_CORRESPONDENCE: GeneralDeviceConditionSet explicitly applies DI1.04 powered/active-duration and entering-activity counters with their lifetime/no-reset rules. PA-DIM also defines valve opening OR closing counts and sensor powered duration. Preserve each subject and counting basis; do not transfer the DI no-reset contract to those separate fields or equate encoded milliseconds with dictionary hours. [PA-DIM 1.02 §§7.1.12, 7.24, 7.1.25, 7.1.32; primary nodes1316–1318 and DI1.04 IOperationCounterType480; PA-F008/PA-F012]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -9061,7 +9061,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[COMMON CANDIDATE] NEW INFORMATION NEED: Describe whether a qualified object/network is locked, the locking client and user, remaining inactivity lifetime and renew/release/break behavior. Preserve cascaded scope and optional exclusivity; requested lock, granted lock and forced break are separate, and a lock does not prove safe physical action. [DI §§5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8; DI-N009, DI-N012]",
-      "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Declaring DI1.04 as a dependency does not establish use of this separate Devices feature in the reviewed PA-DIM contract for “Candidate — Scoped control lock ownership and lifetime”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+      "[COMMON CANDIDATE] PARTIAL / INHERITED: PADIMType inherits optional Lock through Devices 1.04 ComponentType/TopologyElementType. Pinned LockingServicesType supplies Locked, LockingClient, LockingUser, RemainingLockTime and InitLock/RenewLock/ExitLock/BreakLock methods. This declares a scoped lock mechanism, not an active lock or safe physical action. [PA-DIM 1.02; §7.2; DI 1.04 nodes 15063→1001→6161; LockingServicesType 6388 and children 6534,6390–6401; PA-C2-NEG-OPCDI-LOCK-STATE]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -9384,7 +9384,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "NO NATIVE CORRESPONDENCE ESTABLISHED: No native cell constant, slope, calibration pressure or technique-specific calibration characteristic is established. This conclusion is bounded to reviewed Devices 1.05, not other companion models. [Devices 1.05 §§4.3; DI-C1-PADIM-CALIBRATION-CHARACTERISTICS]",
-      "[SPECIALIZED CANDIDATE] Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure and measured t90 with the relevant calibration and subject. Preserve each quantity, unit and last-calibration standing. [OPC 30081 1.02: 7.1.4, 7.1.5, 7.1.6, 7.1.8; PA-F017, PA-F018]",
+      "[SPECIALIZED CANDIDATE] Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure, measured t90 and catalytic-bead bridge voltage upon calibration with the relevant calibration and subject. Preserve each quantity, unit, native container and last-calibration versus upon-calibration wording. The catalytic source table/model says SensorValue while its prose says SensingValue; retain that label discrepancy. [PA-DIM 1.02 §§7.1.4–7.1.8, 7.1.32; model6260/6288→ABQ021#001; PA-F017/PA-F018]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -9574,7 +9574,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "NO NATIVE CORRESPONDENCE ESTABLISHED: No native chromatogram peak, retention-duration or injection-context definition is established. This conclusion is bounded to reviewed Devices 1.05, not other companion models. [Devices 1.05 §§4.3; DI-C1-PADIM-CHROMATOGRAM]",
-      "[SPECIALIZED CANDIDATE] Associate signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium, preserving source optionality and units. [OPC 30081 1.02: 7.1.12, 7.1.27; PA-F026]",
+      "[SPECIALIZED CANDIDATE] Associate per-signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium. Keep the device-wide TotalAreaMeasuredPeaks aggregate distinct from an individual signal peak area, preserving manufacturer-defined area units, source subjects and optionality. [PA-DIM 1.02 §§7.1.12, 7.1.27; PA-F026]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -9726,7 +9726,7 @@
       "Not linked here — no case evidence established.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "[SPECIALIZED CANDIDATE] NEW INFORMATION NEED: Describe the requirement for a vendor-specific, write-only key to unlock an update feature, its provision before installation or preparation, and its retention for no more than one update. Keep the requirement and lifecycle separate from secret key material, general user authorization, concurrent locks and software-package signatures. [Devices 1.05 §§8.4.2.1–8.4.2.2; DI-C1-N034]",
-      "PENDING STEP 2 — Devices update-key candidate added after PA-DIM assessment; no PA-DIM correspondence or absence inferred.",
+      "NO PA-DIM CORRESPONDENCE ESTABLISHED NO_ESTABLISHED: The declared Devices 1.04 dependency contains SoftwareLoadingType/UpdateKey, but this is a separate software-update feature. The reviewed PA-DIM declaration and ComponentType inheritance do not include SoftwareLoadingType, SoftwareUpdateType or UpdateKey. Dependency presence alone does not establish a PA-DIM update-key contract; implementations may add features. [PA-DIM 1.02; §7.2; PA-DIM PADIMType ns=3;i=1009; DI 1.04 ComponentType 15063→TopologyElementType 1001, SoftwareLoadingType 135/UpdateKey 136/SoftwareUpdateType 1; PA-C2-NEG-OPCDI-UPDATE-KEY]",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -9737,6 +9737,25 @@
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "Not assessed here — no verified correspondence; not evidence of absence.",
       "OPTIONAL information-need candidate: Per-update unlocking key requirement and lifecycle — NOT ADOPTED"
+    ],
+    [
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not linked here — no case evidence established.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "[NOT_ESTABLISHED_IN_REVIEWED_DEVICES_EVIDENCE] Generic ParameterSet/FunctionalGroup structures and block operating modes provide possible carriers but do not establish signal-compensation method or reference-context semantics. Preserve reviewed scope and source holds; this is not proof of absence from implementations. [Devices1.05 §§4.3–4.4,4.11; DI-N003,DI-N008]",
+      "[COMMON CANDIDATE] NEW INFORMATION NEED: Identify the declared temperature-compensation method exposed for a conductivity signal, retaining no-compensation and dictionary-qualified alternatives with their stated medium/reference-temperature context. TemperatureCompensationStyle is optional; a declaration does not prove compensation was applied or supply algorithm/coefficients. [OPC30081 1.02 §§7.1.23,7.35; PA-C2-N041]",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "Not assessed here — no verified correspondence; not evidence of absence.",
+      "OPTIONAL information-need candidate: Signal compensation method and reference context — NOT ADOPTED"
     ]
   ],
   "review_sections": [
@@ -14316,7 +14335,7 @@
         "ATemp 15-min mean of 5-second samples",
         "",
         "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison S06-R010]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Observing procedure / method”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: PhMeasuringMethod and ConductivityMeasuringMethod identify the physical measuring method of the respective sensor. These technique-qualified method descriptions do not define a complete reusable procedure, an executed observation or processing history. [PA-DIM 1.02; §§7.1.22–7.1.23; original DOCX paragraphs 3167,3334; PA-C2-NEG-S06-R010]",
         "[HELD] RELATED/NO_ESTABLISHED: Required industrial functions, temporal dependencies and process planning do not define an observing procedure or method. Remove this color because the subject remains unestablished, while retaining the capability-planning evidence for later native-first consideration. [Sources: AAS09-N023, AAS09-N028, AAS09-N031; F3-05-S06-R010]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[HELD — NO ESTABLISHED ROW EQUIVALENCE] RELATED_BUT_DIFFERENT: Method is an accepted-extension observable naming the primary way an Event was generated. Hold the reusable observing-procedure comparison. A generation-method tag is not an identified procedure specification; the distinct ISA-C-147 method-label candidate stays blue. [ISA21:S06-R010; F3-02]",
@@ -14495,6 +14514,24 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G16",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "S06-R010",
+        "cell": "G16",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: PhMeasuringMethod and ConductivityMeasuringMethod identify the physical measuring method of the respective sensor. These technique-qualified method descriptions do not define a complete reusable procedure, an executed observation or processing history. [PA-DIM 1.02; §§7.1.22–7.1.23; original DOCX paragraphs 3167,3334; PA-C2-NEG-S06-R010]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Method identity is reusable across unlike sensors; pH/conductivity context and limited procedural detail remain explicit.",
+        "source_locators": [
+          "§§7.1.22–7.1.23",
+          "original DOCX paragraphs 3167,3334"
+        ],
+        "native_finding_ids": [
+          "PA-C2-N042"
+        ],
+        "evidence_id": "PA-C2-NEG-S06-R010",
         "DIM_Profile_adopted": false
       }
     },
@@ -18275,7 +18312,7 @@
         "Not linked here",
         "Not assessed here",
         "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison ISA-C-127]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Environmental/tactical detection or event-specific output is not established by generic process/analyser quantities for “Observed atmospheric pressure”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[SPECIALIZED CANDIDATE] NARROWER / PARTIAL: AbsoluteAirPressure in the amperometric and optical-fluorescence calibration interfaces records the air pressure under which the last calibration was performed. This is a narrower historical atmospheric-pressure context, not a current weather observation or the ISA event representation. [PA-DIM 1.02; §§7.1.5–7.1.6; original DOCX paragraphs 1313,1421; PA-C2-NEG-ISA-C-127]",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Atmospheric Pressure",
@@ -18348,6 +18385,24 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G33",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-127",
+        "cell": "G33",
+        "new_text": "[SPECIALIZED CANDIDATE] NARROWER / PARTIAL: AbsoluteAirPressure in the amperometric and optical-fluorescence calibration interfaces records the air pressure under which the last calibration was performed. This is a narrower historical atmospheric-pressure context, not a current weather observation or the ISA event representation. [PA-DIM 1.02; §§7.1.5–7.1.6; original DOCX paragraphs 1313,1421; PA-C2-NEG-ISA-C-127]",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "NARROWER / PARTIAL",
+        "rationale": "The native subject is air pressure at calibration; retaining this specific environmental quantity is optional specialized detail. Historical calibration evidence is not promoted to present atmosphere.",
+        "source_locators": [
+          "§§7.1.5–7.1.6",
+          "original DOCX paragraphs 1313,1421"
+        ],
+        "native_finding_ids": [
+          "PA-F018"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-127",
         "DIM_Profile_adopted": false
       }
     },
@@ -20854,7 +20909,7 @@
         "Not linked here",
         "Not assessed here",
         "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison ISA-C-138]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Environmental/tactical detection or event-specific output is not established by generic process/analyser quantities for “Detailed reported chemical analysis levels”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[SPECIALIZED CANDIDATE] PARTIAL: Analytical/PAT measurements support chemical substance identity and concentration through dictionary-qualified measurands and matrix entries. The ISA Chemical Level confidence, confirmation level, arbitrary detector-scale levels, persistency and tactical detection-type semantics are not established by these PA-DIM structures. [PA-DIM 1.02; §§8.13–8.14,10.3–10.4; retained ISA-TYPE-372 original definition and field manifest; PA-C2-NEG-ISA-C-138]",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Chemical Level [Accepted extension]",
@@ -20931,6 +20986,24 @@
         "cell": "G55",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-138",
+        "cell": "G55",
+        "new_text": "[SPECIALIZED CANDIDATE] PARTIAL: Analytical/PAT measurements support chemical substance identity and concentration through dictionary-qualified measurands and matrix entries. The ISA Chemical Level confidence, confirmation level, arbitrary detector-scale levels, persistency and tactical detection-type semantics are not established by these PA-DIM structures. [PA-DIM 1.02; §§8.13–8.14,10.3–10.4; retained ISA-TYPE-372 original definition and field manifest; PA-C2-NEG-ISA-C-138]",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "PARTIAL",
+        "rationale": "Chemical analysis is meaningful optional domain detail. Substance/concentration overlap warrants partial contribution; mandatory confidence and the other detailed source fields prevent exact equivalence.",
+        "source_locators": [
+          "§§8.13–8.14,10.3–10.4",
+          "retained ISA-TYPE-372 original definition and field manifest"
+        ],
+        "native_finding_ids": [
+          "PA-F030"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-138",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -20955,7 +21028,7 @@
         "Not linked here",
         "Not assessed here",
         "NO NATIVE CORRESPONDENCE ESTABLISHED: The specific subject/quantity/action in this row is not established by the reviewed Devices core. Generic parameters or extensibility do not count as a native definition of it; no claim about other OPC UA companion donors. [Devices1.05; DI comparison ISA-C-139]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Environmental/tactical detection or event-specific output is not established by generic process/analyser quantities for “Reported chemical sample-analysis reading”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[SPECIALIZED CANDIDATE] PARTIAL: PatMeasurementVariableType represents an analytical measurement with identified measurand and matrix; ChemicalSubstanceDataType preserves dictionary discriminator, label and ID, including CAS identity. This supports chemical-analyte identity and concentration reporting, not the ISA event schema, harmful flag, exposure/deposition fields or proof that a sample was analysed. [PA-DIM 1.02; §§8.13–8.14,10.3–10.4; retained ISA-TYPE-371 original definition and field manifest; PA-C2-NEG-ISA-C-139]",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Chemical Reading",
@@ -21035,6 +21108,24 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G56",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-139",
+        "cell": "G56",
+        "new_text": "[SPECIALIZED CANDIDATE] PARTIAL: PatMeasurementVariableType represents an analytical measurement with identified measurand and matrix; ChemicalSubstanceDataType preserves dictionary discriminator, label and ID, including CAS identity. This supports chemical-analyte identity and concentration reporting, not the ISA event schema, harmful flag, exposure/deposition fields or proof that a sample was analysed. [PA-DIM 1.02; §§8.13–8.14,10.3–10.4; retained ISA-TYPE-371 original definition and field manifest; PA-C2-NEG-ISA-C-139]",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8",
+        "relation": "PARTIAL",
+        "rationale": "The information need is optional chemical-analyte composition/concentration reporting, not generic result metadata. This agrees with the peer ISA specialized classification while retaining PA-DIM payload limitations.",
+        "source_locators": [
+          "§§8.13–8.14,10.3–10.4",
+          "retained ISA-TYPE-371 original definition and field manifest"
+        ],
+        "native_finding_ids": [
+          "PA-F030"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-139",
         "DIM_Profile_adopted": false
       }
     },
@@ -26292,7 +26383,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL / RELATED: TopologyElement ParameterSet/MethodSet and native method argument declarations describe supported information and operations. Mandatory/optional modeling and instance support stay explicit; generic UA typing is inherited, not a Devices-original command vocabulary. [DI §§1, 11, 12, 3.3, 4.1, 4.2, 4.3, 4.4.1, 4.4.2, 4.4.3, A.1; DI-N001, DI-N003, DI-N028]",
-        "[COMMON CANDIDATE] [QUALIFIED_CORRESPONDENCE] ResetMode/ExecutionMode input declarations and method status/error behavior provide qualified contracts; no application result payload or completion proof is invented. [PA-F029] [OPC 30081 1.02: 9.1, 9.2, 9.3, 10.1, 10.2]",
+        "[RELATED_ONLY] FactoryReset, ZeroPointAdjustment and AutoAdjustPositioner define Call Service result/status codes, but their signatures declare no OutputArguments. This does not establish the expected application Response value, optionality or range definition in this row. Preserve the native call outcomes at S06-R020 and the operation contracts at ISA-K-COMMAND-DECL. [PA-DIM 1.02 §§9.1–9.3, Tables 273–280; PA-F029]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Output/inoutput declarations and OperationResult support common result information. Preserve optional argument arrays, execution-state versus business-success distinction and the absence of ISA-specific range/optionality equivalence or proven physical effect. [Sources: AAS04-N003, AAS04-N004, AAS07-N010; F3-05-ISA-K-RESULT-DECL]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: TaskAck declares task identity, typed task status, repeated reasons and an optional AssociatedFile. This supports qualified response/result structure like the other donors' response schemas; it does not establish arbitrary named outputs or prove a physical result. [SAP03B-N09, SAP03B-N12, SAP05-N11, SAP05-N12; F3-06-SAPIENT-ISA-K-RESULT-DECL]",
         "Result Declaration: name, description, type, structure, optional; range:Range [0-1]",
@@ -26630,6 +26721,29 @@
         "cell": "G82",
         "fill": "#D9EAF8",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-K-RESULT-DECL",
+        "cell": "G82",
+        "label": "Declared command result",
+        "old_classification": "COMMON_CANDIDATE",
+        "disposition": "CORRECTED",
+        "relation": "RELATED_ONLY",
+        "rationale": "The three explicitly declared PA-DIM methods have no OutputArguments. Their documented Call Service result codes are invocation status/errors, not the expected application Response value/optionality/range contract named by this row. Preserve those source meanings at declared command interface and S06-R020, rather than treating generic method status as an application-result declaration.",
+        "finding_ids": [
+          "PA-F029"
+        ],
+        "source_locators": [
+          "9.1",
+          "9.2",
+          "9.3",
+          "Opc.Ua.PADIM.NodeSet2.xml nodes ns=3;i=1028/1072/1109/1116"
+        ],
+        "contact": "Existing recorded native/source/model/figure contacts reused at their stated depths; current original-definition/model contacts listed in source_reviews. No new full-document or full dependency audit is claimed.",
+        "new_text": "[RELATED_ONLY] FactoryReset, ZeroPointAdjustment and AutoAdjustPositioner define Call Service result/status codes, but their signatures declare no OutputArguments. This does not establish the expected application Response value, optionality or range definition in this row. Preserve the native call outcomes at S06-R020 and the operation contracts at ISA-K-COMMAND-DECL. [PA-DIM 1.02 §§9.1–9.3, Tables 273–280; PA-F029]",
+        "new_classification": "NO_CLASSIFICATION_FILL",
+        "classification": "NO_CLASSIFICATION_FILL",
+        "fill": "#FFFFFF"
       }
     },
     {
@@ -26654,7 +26768,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL / RELATED: Devices defines transfer-result and package metadata structures, field types and scalar/array shapes. These support typed contracts but do not make the whole ISA declaration scheme equivalent. PatchIdentifiers shape conflict DI-Q003 remains explicit. [DI §§11, 12, 3.3, 8.7.1, 8.7.2, 8.7.3, A.1; DI-N021, DI-N028]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Declared custom data structure”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: ChemicalSubstanceDataType declares a structured chemical-substance description with PatDictionary, Label and Id fields. Its declared purpose and typed structure support a common structure-description need without adopting ISA serialization or making chemical content universal. [PA-DIM 1.02; §10.4/Tables 287–288; PA-C2-NEG-ISA-K-CUSTOM-TYPE]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Submodel templates and nested named collections/typed lists provide reusable structured declarations. Promote to common structured-information candidate without treating a Submodel template as an ISA named custom type or a data-specification template. [Sources: AAS03-N002, AAS03-N015, AAS03-N016; F3-05-ISA-K-CUSTOM-TYPE]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Custom Type Declaration supplies a name, purpose and field list. A declared data structure is useful common information even when its encoding is ISA-specific; this is not adoption of an ISA class. [ISA-DMS-323; F3-06-ISA-ISA-K-CUSTOM-TYPE]",
@@ -26818,6 +26932,23 @@
         "cell": "G83",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-K-CUSTOM-TYPE",
+        "cell": "G83",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: ChemicalSubstanceDataType declares a structured chemical-substance description with PatDictionary, Label and Id fields. Its declared purpose and typed structure support a common structure-description need without adopting ISA serialization or making chemical content universal. [PA-DIM 1.02; §10.4/Tables 287–288; PA-C2-NEG-ISA-K-CUSTOM-TYPE]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "The compared need is a declared typed structure, usable beyond chemical sensors. Native domain and encoding remain qualified.",
+        "source_locators": [
+          "§10.4/Tables 287–288"
+        ],
+        "native_finding_ids": [
+          "PA-F030"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-K-CUSTOM-TYPE",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -26842,7 +26973,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL / RELATED: Devices defines transfer-result and package metadata structures, field types and scalar/array shapes. These support typed contracts but do not make the whole ISA declaration scheme equivalent. PatchIdentifiers shape conflict DI-Q003 remains explicit. [DI §§11, 12, 3.3, 8.7.1, 8.7.2, 8.7.3, A.1; DI-N021, DI-N028]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Declared field within a custom structure”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: ChemicalSubstanceDataType specifies field names, data types, meanings and Allow Subtypes choices for PatDictionary, Label and Id. These are concrete field declarations; ISA cardinality/omission conventions and wire grammar are not asserted. [PA-DIM 1.02; §10.4/Table 287; PA-C2-NEG-ISA-K-FIELD-DECL]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Named collection members can declare typed, semantically qualified fields. Promote to common field-declaration candidate; ISA optionality and omission rules are not inherited, and list children retain positional referencing. [Sources: AAS03-N003, AAS03-N005, AAS03-N015, AAS03-N023; F3-05-ISA-K-FIELD-DECL]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Field Declaration identifies a field, its meaning, type, shape and optionality. These support the same qualified information need as AAS and SOSA field declarations; source cardinalities remain native. [ISA-DMS-325; F3-06-ISA-ISA-K-FIELD-DECL]",
@@ -27121,6 +27252,23 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G84",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-K-FIELD-DECL",
+        "cell": "G84",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: ChemicalSubstanceDataType specifies field names, data types, meanings and Allow Subtypes choices for PatDictionary, Label and Id. These are concrete field declarations; ISA cardinality/omission conventions and wire grammar are not asserted. [PA-DIM 1.02; §10.4/Table 287; PA-C2-NEG-ISA-K-FIELD-DECL]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Typed field contracts are common information independent of the containing chemical structure. The evidence is concrete declaration, not generic extensibility.",
+        "source_locators": [
+          "§10.4/Table 287"
+        ],
+        "native_finding_ids": [
+          "PA-F030"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-K-FIELD-DECL",
         "DIM_Profile_adopted": false
       }
     },
@@ -30559,7 +30707,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL / RELATED: Devices specifies calls and returned status for transfer, locking and updates. Successful initiation differs from asynchronous completion and physical effect; no actual issued call or device result was observed. [DI §§6.4.1, 6.4.2, 6.4.3, 6.4.4, 6.4.5, 6.4.6, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.4.10, 8.4.8, 8.4.9; DI-N011, DI-N012, DI-N018]",
-        "[RELATED_DECLARATION_ONLY] Methods define possible requests and return behavior; no issued request, observed acknowledgement or completed physical effect occurred. [PA-F029] [OPC 30081 1.02: 9.1, 9.2, 9.3, 10.1, 10.2]",
+        "[RELATED_DECLARATION_ONLY] The method contracts declare Call Service result codes: Bad_InvalidArgument for an invalid reset/execution mode and Bad_UserAccessDenied for insufficient rights. These are defined invocation outcomes, not an observed acknowledgement, an application OutputArgument or proof that reset/adjustment completed. [PA-DIM 1.02 §§9.1–9.3; PA-F029]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: The API separates receipt, execution state and reported business success. A 202 response can precede failure; HTTP 200 with executionState Failed reports invocation failure. Optional success separately describes the business operation. Neither transport success nor a reported result proves physical effect. Preserve the executionState prose/schema requiredness conflict. [Sources: AAS07-N008, AAS07-N010, AAS07-N011, AAS07-N012, AAS07-N052; O5-S06-R020]",
         "PARTIAL: BSI TaskAck reports ACCEPTED/REJECTED/COMPLETED/FAILED and may repeat during a task; this is a reported disposition, not verified physical actuation or ISA Response schema. [SAP05-N11,SAP05-N12]",
         "[COMMON CANDIDATE] PARTIAL: Response reports ongoing or final request disposition and result values. Acknowledgement/outcome reporting is common; queued/in-progress is not final success and a reported result is not independently verified physical effect. Authorization-service SUCCESS can accompany authorized=No. [ISA21:S06-R020; F3-02]",
@@ -31032,6 +31180,28 @@
         "cell": "G96",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "S06-R020",
+        "cell": "G96",
+        "label": "Command acknowledgement / reported outcome",
+        "old_classification": "NO_CLASSIFICATION_FILL",
+        "disposition": "CORRECTED",
+        "relation": "RELATED_DECLARATION_ONLY",
+        "rationale": "Preserve the native result-code meanings after narrowing ISA-K-RESULT-DECL. The source describes method-call status, not an actual acknowledgement or completed adjustment/reset.",
+        "finding_ids": [
+          "PA-F029"
+        ],
+        "source_locators": [
+          "9.1",
+          "9.2",
+          "9.3"
+        ],
+        "contact": "Existing recorded native/source/model/figure contacts reused at their stated depths; current original-definition/model contacts listed in source_reviews. No new full-document or full dependency audit is claimed.",
+        "new_text": "[RELATED_DECLARATION_ONLY] The method contracts declare Call Service result codes: Bad_InvalidArgument for an invalid reset/execution mode and Bad_UserAccessDenied for insufficient rights. These are defined invocation outcomes, not an observed acknowledgement, an application OutputArgument or proof that reset/adjustment completed. [PA-DIM 1.02 §§9.1–9.3; PA-F029]",
+        "new_classification": "NO_CLASSIFICATION_FILL",
+        "classification": "NO_CLASSIFICATION_FILL",
+        "fill": "#FFFFFF"
       }
     },
     {
@@ -31062,7 +31232,7 @@
         "",
         "Not assessed here",
         "[COMMON CANDIDATE] PARTIAL / RELATED: DeviceHealthDiagnosticAlarm subtypes specialize inherited alarm/condition behavior. This is related alert evidence, not SAPIENT AlertAck status semantics or resolution of its source contradiction. [DI §§4.12, 4.5.4; DI-N005]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This detection/tasking/mode contract is not established by the reviewed process-device declarations for “Candidate — Alert identity, condition, status and acknowledgment lifecycle”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL / INHERITED: PA-DIM includes optional DeviceHealthAlarms through the declared Devices 1.04 interface. DeviceHealth diagnostic alarm types indicate abnormal conditions and diagnostic information. This is qualified alert/condition evidence; SAPIENT AlertAck codes, acknowledgment semantics and its retained source contradiction are not resolved. [PA-DIM 1.02; §§6.1,7.2; DI 1.04 nodes 15051/15053/15143; legacy v104 §§4.12.1–4.12.2 corroborative text; PA-C2-NEG-SAPIENT-F2-ALERT-LIFECYCLE]",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "SPECIALIZED_CANDIDATE / RELATED_BUT_DISTINCT — original BSI Flex 335 v2.0:2024-03 and relevant pinned Dstl source: BSI §6.3.3, §§6.6.1–13 Tables88–94 (PDF85–89) distinguishes Alert/AlertAck from regular StatusReport and TaskAck. Trigger conditions system-specific; acceptance is not physical action, and Table93/94 wording contradiction remains held. [Original SAPIENT source findings: SAP04-N08, SAP05-N13, SAP05-N14, SAP05-N16]",
         "Not assessed here",
@@ -31147,6 +31317,26 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G97",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "SAPIENT-F2-ALERT-LIFECYCLE",
+        "cell": "G97",
+        "new_text": "[COMMON CANDIDATE] PARTIAL / INHERITED: PA-DIM includes optional DeviceHealthAlarms through the declared Devices 1.04 interface. DeviceHealth diagnostic alarm types indicate abnormal conditions and diagnostic information. This is qualified alert/condition evidence; SAPIENT AlertAck codes, acknowledgment semantics and its retained source contradiction are not resolved. [PA-DIM 1.02; §§6.1,7.2; DI 1.04 nodes 15051/15053/15143; legacy v104 §§4.12.1–4.12.2 corroborative text; PA-C2-NEG-SAPIENT-F2-ALERT-LIFECYCLE]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL / INHERITED",
+        "rationale": "Equipment alarm/condition information is a common potential need. Partial correspondence preserves the different native health-alarm scope and does not import the complete SAPIENT lifecycle.",
+        "source_locators": [
+          "§§6.1,7.2",
+          "DI 1.04 nodes 15051/15053/15143",
+          "legacy v104 §§4.12.1–4.12.2 corroborative text"
+        ],
+        "native_finding_ids": [
+          "PA-F004",
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-SAPIENT-F2-ALERT-LIFECYCLE",
         "DIM_Profile_adopted": false
       }
     },
@@ -33954,7 +34144,7 @@
         "Not linked here",
         "Not assessed here",
         "[COMMON CANDIDATE] PARTIAL / RELATED: ITagNameplate ComponentName is user-writable display text. A writable field supports changing the label; it is not evidence of an issued ISA SET_NAME request. [DI §§4.5.3; DI-N030]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specific requested operation is not established by the scoped reset/adjustment methods or writable process properties for “Requested component display name”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[SOURCE DETAIL HOLD] Inherited ComponentName provides a possible target for a requested name change. Its Devices1.04 writable-name contract remains unverified in the inspected source declarations; the legacy prose endpoint returned1.05. Keep this exact question open rather than assert an ISA Change Name correspondence, actual user permission or absence. [PA-DIM1.02 §§7.2,3.4.3.3; DI1.04 nodes15048/15050/15063/15099; PA-C2-Q015]",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Change Name [core command]",
@@ -34026,6 +34216,34 @@
         "cell": "G124",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-197",
+        "cell": "G124",
+        "new_text": "[SOURCE DETAIL HOLD] Inherited ComponentName provides a possible target for a requested name change. Its Devices1.04 writable-name contract remains unverified in the inspected source declarations; the legacy prose endpoint returned1.05. Keep this exact question open rather than assert an ISA Change Name correspondence, actual user permission or absence. [PA-DIM1.02 §§7.2,3.4.3.3; DI1.04 nodes15048/15050/15063/15099; PA-C2-Q015]",
+        "classification": "SOURCE_DETAIL_HOLD",
+        "fill": "#FFFFFF",
+        "relation": "UNRESOLVED_SOURCE_DETAIL",
+        "rationale": "Pinned1.04 declaration was inspected; root retrieval of the exact legacy endpoint explicitly redirected to v1.05.0. Hold edition-specific behavior rather than treat corroborative legacy text as controlling1.04 evidence.",
+        "source_locators": [
+          "§§7.2,3.4.3.3",
+          "DI 1.04 ComponentName 15099/15050",
+          "legacy v104 §4.5.3 corroborative text"
+        ],
+        "native_finding_ids": [
+          "PA-F008",
+          "PA-F009",
+          "PA-F038"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-197",
+        "DIM_Profile_adopted": false,
+        "pre_resolution_recommendation": {
+          "new_text": "[COMMON CANDIDATE] PARTIAL: The inherited optional ComponentName supports changing a user-provided component label where the feature and user write access are supplied. This follows the Devices 1.04 TagNameplate meaning; it is not an ISA Change Name message, an observed issued request or proof that a particular user may write it. [PA-DIM 1.02; §§7.2,3.4.3.3; DI 1.04 ComponentName 15099/15050; legacy v104 §4.5.3 corroborative text; PA-C2-NEG-ISA-C-197]",
+          "classification": "COMMON_CANDIDATE",
+          "rationale": "Changing an equipment label is a common potential need. Optionality and user access separate the declared mechanism from execution."
+        },
+        "disposition": "CORRECTED_TO_SOURCE_DETAIL_HOLD",
+        "root_resolution": "Pinned1.04 declaration was inspected; root retrieval of the exact legacy endpoint explicitly redirected to v1.05.0. Hold edition-specific behavior rather than treat corroborative legacy text as controlling1.04 evidence."
       }
     },
     {
@@ -42014,7 +42232,7 @@
         "Not linked here",
         "Not assessed here",
         "[COMMON CANDIDATE] PARTIAL / RELATED: InitLock/RenewLock/ExitLock/BreakLock provide client/user-qualified locking and release. They are related to exclusive control but have their own scope, inactivity timeout and status codes; lock state is separately retained. [DI §§7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8; DI-N012]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specific requested operation is not established by the scoped reset/adjustment methods or writable process properties for “Requested time-bounded exclusive command access”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: The inherited optional Devices 1.04 Lock exposes InitLock, its status result and RemainingLockTime. This supports a qualified scoped lock request and time/status contract, not ISA time-bounded tasking authorization, universal exclusion of readers or an observed granted lock. [PA-DIM 1.02; §7.2; DI 1.04 Lock 6161, InitLock 6393–6395, RemainingLockTime 6392; PA-C2-NEG-ISA-C-219]",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Lock",
@@ -42092,6 +42310,24 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G191",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-219",
+        "cell": "G191",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: The inherited optional Devices 1.04 Lock exposes InitLock, its status result and RemainingLockTime. This supports a qualified scoped lock request and time/status contract, not ISA time-bounded tasking authorization, universal exclusion of readers or an observed granted lock. [PA-DIM 1.02; §7.2; DI 1.04 Lock 6161, InitLock 6393–6395, RemainingLockTime 6392; PA-C2-NEG-ISA-C-219]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Scoped access coordination is common. Actual method/status/time declarations support qualified correspondence without assuming full ISA exclusivity/authorization policy.",
+        "source_locators": [
+          "§7.2",
+          "DI 1.04 Lock 6161, InitLock 6393–6395, RemainingLockTime 6392"
+        ],
+        "native_finding_ids": [
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-219",
         "DIM_Profile_adopted": false
       }
     },
@@ -42225,7 +42461,7 @@
         "Not linked here",
         "Not assessed here",
         "[COMMON CANDIDATE] PARTIAL / RELATED: InitLock/RenewLock/ExitLock/BreakLock provide client/user-qualified locking and release. They are related to exclusive control but have their own scope, inactivity timeout and status codes; lock state is separately retained. [DI §§7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8; DI-N012]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specific requested operation is not established by the scoped reset/adjustment methods or writable process properties for “Requested release of component control with approval result”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: The inherited optional Devices1.04 Lock declares ExitLock with an ExitLockStatus output. This supports qualified lock-release result information. ISA component-control approval semantics, an initiating-client authorization rule and an observed physical control change are not inferred from these inspected declarations. [PA-DIM1.02 §7.2; DI1.04 ExitLock6398/OutputArguments6399; PA-C2-NEG-ISA-C-255]",
         "Not assessed here — no AAS comparison established from the reviewed source; not evidence of absence.",
         "Not assessed here",
         "Unlock",
@@ -42304,6 +42540,26 @@
         "cell": "G193",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-255",
+        "cell": "G193",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: The inherited optional Devices1.04 Lock declares ExitLock with an ExitLockStatus output. This supports qualified lock-release result information. ISA component-control approval semantics, an initiating-client authorization rule and an observed physical control change are not inferred from these inspected declarations. [PA-DIM1.02 §7.2; DI1.04 ExitLock6398/OutputArguments6399; PA-C2-NEG-ISA-C-255]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Releasing scoped control and reporting a result is reusable; ownership and response-contract differences stay explicit.",
+        "source_locators": [
+          "§7.2",
+          "DI 1.04 ExitLock 6398/OutputArguments 6399",
+          "legacy v104 §7.6 corroborative text"
+        ],
+        "native_finding_ids": [
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-255",
+        "DIM_Profile_adopted": false,
+        "root_resolution": "Retain the pinned release/result declaration while removing the initiating-client behavioral claim that depended on unverified legacy prose."
       }
     },
     {
@@ -47226,7 +47482,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL / RELATED: FunctionalGroups group parameters/properties/methods by purpose and may share members. This is related to capability organization but not the ISA component capability-group catalogue. [DI §§4.3, 4.4.1, 4.4.2, 4.4.3; DI-N003]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Capability group membership”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: Through ComponentType/TopologyElementType, PA-DIM inherits optional FunctionalGroup declarations that organize Parameters and Methods by application. This is qualified logical grouping, not ISA capability-category syntax, readiness selection or proof of installed membership. [PA-DIM 1.02; §7.2; DI 1.04 nodes 15063→1001→6567 and FunctionalGroupType 1005/description; PA-C2-NEG-ISA-A-CAPABILITY-GROUP]",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: CapabilitySet groups industrial function descriptions and their properties/relations. Retain a specialized grouping candidate; this is not ISA membership across property/observable/command declarations, and grouping alone does not determine a DIM class. [Sources: AAS09-N023, AAS09-N024; F3-05-ISA-A-CAPABILITY-GROUP]",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Node types and Capability.category explicitly organize declared capabilities. They support specialized native grouping information without matching ISA's 22 bins or adopting a shared hierarchy. [SAP03A-N04, SAP03A-N05; F3-06-SAPIENT-ISA-A-CAPABILITY-GROUP]",
         "[SPECIALIZED CANDIDATE] PARTIAL/RELATED: Capability bins group properties, observables and commands and can overlap. Retain specialized catalogue organization, including the separately qualified required/recommended bins, without adopting these bins as a DIM class hierarchy. [ISA-DMS-007, ISA-DMS-008, ISA-DMS-009, ISA-DMS-010, ISA-DMS-011, ISA-DMS-012, ISA-DMS-013, ISA-DMS-014, ISA-DMS-015, ISA-DMS-016, ISA-DMS-017, ISA-DMS-018, ISA-DMS-019, ISA-DMS-020, ISA-DMS-021, ISA-DMS-022, ISA-DMS-023, ISA-DMS-024, ISA-DMS-027, ISA-DMS-028, ISA-DMS-029, ISA-DMS-030; F3-06-ISA-ISA-A-CAPABILITY-GROUP]",
@@ -47477,6 +47733,24 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G214",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-A-CAPABILITY-GROUP",
+        "cell": "G214",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: Through ComponentType/TopologyElementType, PA-DIM inherits optional FunctionalGroup declarations that organize Parameters and Methods by application. This is qualified logical grouping, not ISA capability-category syntax, readiness selection or proof of installed membership. [PA-DIM 1.02; §7.2; DI 1.04 nodes 15063→1001→6567 and FunctionalGroupType 1005/description; PA-C2-NEG-ISA-A-CAPABILITY-GROUP]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Purpose-based grouping is reusable; the pinned DI 1.04 FunctionalGroup description supplies actual meaning, so a blanket dependency exclusion was inappropriate.",
+        "source_locators": [
+          "§7.2",
+          "DI 1.04 nodes 15063→1001→6567 and FunctionalGroupType 1005/description"
+        ],
+        "native_finding_ids": [
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-A-CAPABILITY-GROUP",
         "DIM_Profile_adopted": false
       }
     },
@@ -51534,7 +51808,7 @@
         "",
         "",
         "[COMMON CANDIDATE] RELATED: ParameterSet contains uniquely named Parameters with typed values; the online/offline model preserves corresponding BrowseNames while values belong to different access contexts. This is an address-space representation, not the ISA named-value wire grammar. [Devices 1.05 §§4.3, 6.3.1; DI-C1-ISA-R-NAMED-VALUE]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Named value payload”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] RELATED / PARTIAL: PA-DIM defines named, typed Variables for process, condition and calibration values and inherits optional ParameterSet through Devices 1.04 ComponentType/TopologyElementType. This is address-space representation of named values, not ISA NameValuePair wire grammar. [PA-DIM 1.02; §§7.2,7.24,8.2.1–8.2.2; DI 1.04 pinned nodes 15063→1001→5002/6017; PA-C2-NEG-ISA-R-NAMED-VALUE]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Typed Property and separate multilingual Property values support common named-value information; values can be absent. Preserve normal versus ValueOnly representation and distinguish instance values from concept-definition coded values. [Sources: AAS03-N005, AAS03-N006, AAS07-N005; F3-05-ISA-R-NAMED-VALUE]",
         "[COMMON CANDIDATE] PARTIAL: StatusType/status_value and TrackObjectInfo.type/value provide native named-value records for different subjects. They support common named-value information while remaining distinct from the exact ISA typed Name Value Pair datatype. [SAP04-N07, SAP04-N12]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Name Value Pair identifies a named value used for arguments and properties. Like the qualified AAS and SAPIENT comparisons, it supports named data without establishing the meaning of every value. [ISA-DMS-426; F3-06-ISA-ISA-R-NAMED-VALUE]",
@@ -51762,6 +52036,26 @@
         "rationale": "Apply the same qualified treatment used for declared property/type mappings to native represented values; retain protocol distinction.",
         "cell": "F231",
         "fill": "#D9EAF8"
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-R-NAMED-VALUE",
+        "cell": "G231",
+        "new_text": "[COMMON CANDIDATE] RELATED / PARTIAL: PA-DIM defines named, typed Variables for process, condition and calibration values and inherits optional ParameterSet through Devices 1.04 ComponentType/TopologyElementType. This is address-space representation of named values, not ISA NameValuePair wire grammar. [PA-DIM 1.02; §§7.2,7.24,8.2.1–8.2.2; DI 1.04 pinned nodes 15063→1001→5002/6017; PA-C2-NEG-ISA-R-NAMED-VALUE]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "RELATED / PARTIAL",
+        "rationale": "The native typed variables and inherited parameter container support a common named-value need while preserving the different representation.",
+        "source_locators": [
+          "§§7.2,7.24,8.2.1–8.2.2",
+          "DI 1.04 pinned nodes 15063→1001→5002/6017"
+        ],
+        "native_finding_ids": [
+          "PA-F008",
+          "PA-F013",
+          "PA-F021"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-R-NAMED-VALUE",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -51932,7 +52226,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL: TransferResultDataDataType.parameterDefs is a typed list of per-parameter results. Method argument arrays and package structures retain native types/cardinalities; no equivalence with ISA Property/Parameter/Observable declarations is asserted. [Devices 1.05 §§6.4.6, 8.7.3; DI-C1-ISA-R-LIST]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Declared-type value list”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: PatMatrixDescription is an array of ChemicalSubstanceDataType values; EnumDictionaryEntries and EnumValues preserve corresponding arrays of dictionary identifiers and labels. This supports typed value collections without asserting ISA empty-list, omission or update semantics. [PA-DIM 1.02; §§8.14,8.2.4,10.4; PA-C2-NEG-ISA-R-LIST]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Lists declare element type, order relevance and repeated values. Promote to common list information while retaining normal-JSON empty omission, positional identity and the unproved lossless ordered RDF conversion; no automatic ISA wire equivalence follows. [Sources: AAS03-N016, AAS03-N025; F3-05-ISA-R-LIST]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[COMMON CANDIDATE] PARTIAL/RELATED: List holds values of a type defined by the associated declaration. This supports a qualified common collection candidate without claiming cross-donor order, cardinality or update equivalence. [ISA-DMS-393; F3-06-ISA-ISA-R-LIST]",
@@ -52108,6 +52402,24 @@
         "rationale": "Typed actual result lists warrant qualified correspondence consistent with the earlier declaration-level assessment.",
         "cell": "F233",
         "fill": "#D9EAF8"
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-R-LIST",
+        "cell": "G233",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: PatMatrixDescription is an array of ChemicalSubstanceDataType values; EnumDictionaryEntries and EnumValues preserve corresponding arrays of dictionary identifiers and labels. This supports typed value collections without asserting ISA empty-list, omission or update semantics. [PA-DIM 1.02; §§8.14,8.2.4,10.4; PA-C2-NEG-ISA-R-LIST]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Concrete arrays support the general collection need; order/cardinality and supplied-versus-omitted meanings stay source-qualified.",
+        "source_locators": [
+          "§§8.14,8.2.4,10.4"
+        ],
+        "native_finding_ids": [
+          "PA-F030",
+          "PA-F037"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-R-LIST",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -52132,7 +52444,7 @@
         "",
         "",
         "[COMMON CANDIDATE] PARTIAL: FetchTransferResultData returns typed structures with transfer status, sequence/end markers and parameter-result entries; PackageMetadata defines other structured values. These are concrete structured payloads, not the ISA custom-type serialization contract. [Devices 1.05 §§6.4.6, 8.7.3; DI-C1-ISA-R-CUSTOM]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Custom-structure field values”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: PatMeasurandDescription holds a ChemicalSubstanceDataType value with PatDictionary, Label and Id; PatMatrixDescription holds an array of that structure. These are concrete structured values, not the ISA named-field wire representation. [PA-DIM 1.02; §§8.14,10.3–10.4; PA-C2-NEG-ISA-R-CUSTOM]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: A collection instance carries named structured values guided by a template. Promote to common structured-value information; template declarations do not prove instance values and normal-JSON omission does not reproduce ISA custom-type payload rules. [Sources: AAS03-N002, AAS03-N015, AAS03-N025; F3-05-ISA-R-CUSTOM]",
         "Not assessed here — no verified SAPIENT correspondence is recorded for this topic; not evidence that the donor lacks it.",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Custom Type carries named structure fields. The common candidate is structured field values; ISA wire representation is retained separately and is not a required DIM encoding. [ISA-DMS-378; F3-06-ISA-ISA-R-CUSTOM]",
@@ -52282,6 +52594,23 @@
         "rationale": "The existing blanket negative overlooked concrete structured result payloads already described in the native findings.",
         "cell": "F234",
         "fill": "#D9EAF8"
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-R-CUSTOM",
+        "cell": "G234",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: PatMeasurandDescription holds a ChemicalSubstanceDataType value with PatDictionary, Label and Id; PatMatrixDescription holds an array of that structure. These are concrete structured values, not the ISA named-field wire representation. [PA-DIM 1.02; §§8.14,10.3–10.4; PA-C2-NEG-ISA-R-CUSTOM]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Structure-valued properties support reusable structured field-value information rather than only a type-declaration analogy.",
+        "source_locators": [
+          "§§8.14,10.3–10.4"
+        ],
+        "native_finding_ids": [
+          "PA-F030"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-R-CUSTOM",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -56999,7 +57328,7 @@
         "Not linked here",
         "Not assessed here",
         "[COMMON CANDIDATE] PARTIAL / RELATED: RevisionCounter increments when static configuration changes and is -1 when unsupported; it is not a firmware version or change of measured value. [DI §§4.5.2, 4.5.3; DI-N004]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Component configuration version”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL / SOURCE QUALIFICATION: PA-DIM makes inherited RevisionCounter mandatory. Its supporting parameter definition describes a count of parameter-set stores, while the shared Devices 1.04 nameplate-property description counts static-device-data modifications. Preserve PA-Q013: these triggers are not assumed equivalent, and neither is asserted to reproduce ISA capability-version rules. [PA-DIM 1.02; §7.2/Table 109; PA parameter dictionary ABN603#002; DI 1.04 interface property 15047→ComponentType property 15097 and DeviceType described counterpart 6002; PA-Q013; PA-C2-NEG-ISA-C-048]",
         "[HELD] RELATED/NO_ESTABLISHED: Administrative version/revision and timestamps describe business-relevant digital-element changes, not the revision of applied equipment configuration. Retain the specific configuration-version hold and integer-prose versus digit-string-schema conflict. [Sources: AAS04-N019, AAS04-N020, AAS04-N023, AAS05-S006; F3-05-ISA-C-048]",
         "[HELD] NO_ESTABLISHED: ConfigurationData hardware_version and software_version identify product versions. They do not establish a configuration-parameter revision or configuration version identifier. [SAP03A-N12]",
         "Capability Version",
@@ -57278,6 +57607,27 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G251",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-048",
+        "cell": "G251",
+        "new_text": "[COMMON CANDIDATE] PARTIAL / SOURCE QUALIFICATION: PA-DIM makes inherited RevisionCounter mandatory. Its supporting parameter definition describes a count of parameter-set stores, while the shared Devices 1.04 nameplate-property description counts static-device-data modifications. Preserve PA-Q013: these triggers are not assumed equivalent, and neither is asserted to reproduce ISA capability-version rules. [PA-DIM 1.02; §7.2/Table 109; PA parameter dictionary ABN603#002; DI 1.04 interface property 15047→ComponentType property 15097 and DeviceType described counterpart 6002; PA-Q013; PA-C2-NEG-ISA-C-048]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL / SOURCE QUALIFICATION",
+        "rationale": "Configuration-change indication is a common information need. Shared interface/property inheritance and actual descriptions establish qualified contribution; the existing trigger conflict remains explicit rather than becoming a new unsupported negative.",
+        "source_locators": [
+          "§7.2/Table 109",
+          "PA parameter dictionary ABN603#002",
+          "DI 1.04 interface property 15047→ComponentType property 15097 and DeviceType described counterpart 6002",
+          "PA-Q013"
+        ],
+        "native_finding_ids": [
+          "PA-F008",
+          "PA-F009"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-048",
         "DIM_Profile_adopted": false
       }
     },
@@ -57828,7 +58178,7 @@
         "Not linked here",
         "Not assessed here",
         "[COMMON CANDIDATE] PARTIAL / RELATED: ITagNameplate ComponentName is user-writable display text. A writable field supports changing the label; it is not evidence of an issued ISA SET_NAME request. [DI §§4.5.3; DI-N030]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] No sufficient same-subject/same-purpose correspondence is established by the reviewed PA-DIM findings for “Changeable component display name”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[SOURCE DETAIL HOLD] Pinned Devices1.04 declares inherited ComponentName:LocalizedText through ITagNameplateType, but the inspected declarations do not establish the changeable-name behavior required by this row. Verification of the legacy1.04 prose endpoint returned1.05. Retain the possible correspondence and native name declaration; do not import later-edition writable behavior or conclude absence. [PA-DIM1.02 §7.2; DI1.04 nodes15048/15050/15063/15099; PA-C2-Q015]",
         "[HELD] RELATED/NO_ESTABLISHED: The sources define display labels for information elements and fallback presentation names, not a changeable equipment component name. Remove this color for the equipment-name comparison; retain the repeated preferredName source issue and native presentation evidence. [Sources: AAS09-N019, AAS02-N019; F3-05-ISA-C-081]",
         "Not assessed here",
         "Name",
@@ -57922,6 +58272,33 @@
         "cell": "G256",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-081",
+        "cell": "G256",
+        "new_text": "[SOURCE DETAIL HOLD] Pinned Devices1.04 declares inherited ComponentName:LocalizedText through ITagNameplateType, but the inspected declarations do not establish the changeable-name behavior required by this row. Verification of the legacy1.04 prose endpoint returned1.05. Retain the possible correspondence and native name declaration; do not import later-edition writable behavior or conclude absence. [PA-DIM1.02 §7.2; DI1.04 nodes15048/15050/15063/15099; PA-C2-Q015]",
+        "classification": "SOURCE_DETAIL_HOLD",
+        "fill": "#FFFFFF",
+        "relation": "UNRESOLVED_SOURCE_DETAIL",
+        "rationale": "Pinned1.04 declaration was inspected; root retrieval of the exact legacy endpoint explicitly redirected to v1.05.0. Hold edition-specific behavior rather than treat corroborative legacy text as controlling1.04 evidence.",
+        "source_locators": [
+          "§7.2",
+          "DI 1.04 nodes 15063/15099 and 15048/15050",
+          "legacy v104 §4.5.3 corroborative text"
+        ],
+        "native_finding_ids": [
+          "PA-F008",
+          "PA-F009"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-081",
+        "DIM_Profile_adopted": false,
+        "pre_resolution_recommendation": {
+          "new_text": "[COMMON CANDIDATE] PARTIAL: PADIMType inherits optional ComponentName:LocalizedText from the declared Devices 1.04 ComponentType/TagNameplate interface. The recorded legacy v104 reference describes a user-provided writable name; actual provision/access remains instance- and user-dependent. It is distinct from dictionary-constrained DisplayName. [PA-DIM 1.02; §7.2; DI 1.04 nodes 15063/15099 and 15048/15050; legacy v104 §4.5.3 corroborative text; PA-C2-NEG-ISA-C-081]",
+          "classification": "COMMON_CANDIDATE",
+          "rationale": "Assignable equipment labels are common. Pinned XML establishes inheritance; legacy TagNameplate prose corroborates purpose/write meaning without claiming controlling-document parity."
+        },
+        "disposition": "CORRECTED_TO_SOURCE_DETAIL_HOLD",
+        "root_resolution": "Pinned1.04 declaration was inspected; root retrieval of the exact legacy endpoint explicitly redirected to v1.05.0. Hold edition-specific behavior rather than treat corroborative legacy text as controlling1.04 evidence."
       }
     },
     {
@@ -61842,7 +62219,7 @@
         "Not linked here",
         "Not assessed here",
         "[COMMON CANDIDATE] PARTIAL / RELATED: DeviceHealth and diagnostic alarms distinguish normal, failure, check-function, off-spec and maintenance-required conditions. Multiple alarms can coexist. Health is separate from operating mode; this is a native vocabulary, not a verified equipment reading. [DI §§4.12, 4.5.4; DI-N005]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] The specific spatial, electrical-role, network, imaging or device-state meaning is not established by generic process values or device classifications for “Reported component operating condition”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: PA-DIM explicitly includes inherited DeviceHealth and optional DeviceHealthAlarms. The Devices 1.04 health vocabulary distinguishes normal/failure/check-function/off-specification/maintenance-required conditions. This is health/condition information, not a full operating-mode state machine or an actual reading. [PA-DIM 1.02; §§6.1,7.2; DI 1.04 IDeviceHealthType 15051/DeviceHealth 15052 and DeviceHealthEnumeration; PA-C2-NEG-ISA-C-082]",
         "[HELD] RELATED/NO_ESTABLISHED: A generic Property/Qualifier can carry many subjects, but the reviewed concepts do not define equipment operating condition. Event state means on/off, and the qualifier example concerns value quality. Remove this specific condition color; no absence of condition concepts elsewhere in AAS is claimed. [Sources: AAS04-N007, AAS04-N018, AAS04-N029; F3-05-ISA-C-082]",
         "[COMMON CANDIDATE] RELATED: StatusReport.system and status entries report Node operating health/conditions. These support qualified operating-condition information; detected-target behaviour and alert severity remain separate, and no exact ISA condition vocabulary is assumed. [SAP04-N03, SAP04-N07, SAP05-N13, SAP05-N14, SAP06-N05]",
         "Operating State",
@@ -62174,6 +62551,26 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G286",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "ISA-C-082",
+        "cell": "G286",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: PA-DIM explicitly includes inherited DeviceHealth and optional DeviceHealthAlarms. The Devices 1.04 health vocabulary distinguishes normal/failure/check-function/off-specification/maintenance-required conditions. This is health/condition information, not a full operating-mode state machine or an actual reading. [PA-DIM 1.02; §§6.1,7.2; DI 1.04 IDeviceHealthType 15051/DeviceHealth 15052 and DeviceHealthEnumeration; PA-C2-NEG-ISA-C-082]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Equipment condition is common information; exact inherited applicability supports the same qualified need as the Devices peer, with health distinct from operating mode.",
+        "source_locators": [
+          "§§6.1,7.2",
+          "DI 1.04 IDeviceHealthType 15051/DeviceHealth 15052 and DeviceHealthEnumeration"
+        ],
+        "native_finding_ids": [
+          "PA-F004",
+          "PA-F008",
+          "PA-F012"
+        ],
+        "evidence_id": "PA-C2-NEG-ISA-C-082",
         "DIM_Profile_adopted": false
       }
     },
@@ -70998,7 +71395,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] PARTIAL / RELATED: FunctionalGroups and companion views organize information aspects. They can share nodes and need not be globally identified AAS Submodels; contextual grouping is retained separately. [DI §§4.3, 4.4.1, 4.4.2, 4.4.3, C.1, C.2, C.3, C.4, C.5; DI-N003, DI-N027]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This digital-record, packaging, event, history or relationship contract is not established by the reviewed PA-DIM declarations for “Candidate — Identified information aspect and contained elements”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL: PA-DIM separates administration, signal, device-condition and component-condition information and inherits purpose-based FunctionalGroups. These support information-aspect grouping without AAS globally identified Submodel records or its template/instance contract; a logical group is not an installed subdevice. [PA-DIM 1.02; §§6.1,7.2,7.24–7.26; DI 1.04 FunctionalGroupType 1005 and inherited group 6567; PA-C2-NEG-AAS-O2-ASPECT-GROUP]",
         "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: A Submodel is a globally identified information aspect of the represented asset with zero or more elements. Template/instance modeling status qualifies its contents. Information grouping is distinct from an installed subsystem or physical part. [Sources: AAS02-N007, AAS02-N017, AAS03-N001, AAS03-N002; O2-ASPECT-GROUP]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -71113,6 +71510,26 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G360",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "AAS-O2-ASPECT-GROUP",
+        "cell": "G360",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: PA-DIM separates administration, signal, device-condition and component-condition information and inherits purpose-based FunctionalGroups. These support information-aspect grouping without AAS globally identified Submodel records or its template/instance contract; a logical group is not an installed subdevice. [PA-DIM 1.02; §§6.1,7.2,7.24–7.26; DI 1.04 FunctionalGroupType 1005 and inherited group 6567; PA-C2-NEG-AAS-O2-ASPECT-GROUP]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL",
+        "rationale": "Information organization by purpose is common across unlike equipment. The AAS-specific identity/template conditions are withheld rather than used to suppress narrower grouping evidence.",
+        "source_locators": [
+          "§§6.1,7.2,7.24–7.26",
+          "DI 1.04 FunctionalGroupType 1005 and inherited group 6567"
+        ],
+        "native_finding_ids": [
+          "PA-F004",
+          "PA-F012",
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-AAS-O2-ASPECT-GROUP",
         "DIM_Profile_adopted": false
       }
     },
@@ -71410,7 +71827,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] PARTIAL: SupportInfo distinguishes product images, documentation, protocol files and UI images; package metadata adds release/license/pre-install content. UIElement additionally carries a client-loadable user interface in its FunctionalGroup context; concrete UI formats are defined elsewhere. Content availability is not execution. [Devices 1.05 §§4.4.3, 4.5.6, 8.7.3; DI-C1-AAS-O2-SUPPORTING-CONTENT]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This digital-record, packaging, event, history or relationship contract is not established by the reviewed PA-DIM declarations for “Candidate — Supporting file locator or embedded file content”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL / INHERITED: PADIMType inherits optional DeviceManual:String through ComponentType and the VendorNameplate interface. The shared Devices 1.04 property description identifies a filesystem pathname or URL to the device manual. This supports a documentation locator, not embedded file bytes, all support-file roles or the AAS package association contract. [PA-DIM 1.02; §7.2; DI 1.04 IVendorNameplateType 15035/DeviceManual 15043, ComponentType 15063/15093, DeviceType 1002 subtype→15063 with described counterpart 6005; PA-C2-NEG-AAS-O2-SUPPORTING-CONTENT]",
         "[COMMON CANDIDATE] PARTIAL/RELATED: Resource/File identifies a file by absolute or relative path; Blob embeds content, with optional content type. In an AASX package, a relative File URI can reference a supplementary file through a relationship from the serialized AAS-content file. Blob content is not a supplementary file. Preserve the source cardinality/sample conflicts. Package membership does not establish acquisition, observation lineage, accessibility or component-generated media. [Sources: AAS02-N036, AAS03-N008, AAS03-N009, AAS08-N050; O6-1-AAS-O2-SUPPORTING-CONTENT]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -71534,6 +71951,25 @@
         "rationale": "Prior cell covered static resources but omitted the native client-loadable interface value. Existing supporting-content and functional-group targets can retain this without a duplicate row.",
         "cell": "F363",
         "fill": "#D9EAF8"
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "AAS-O2-SUPPORTING-CONTENT",
+        "cell": "G363",
+        "new_text": "[COMMON CANDIDATE] PARTIAL / INHERITED: PADIMType inherits optional DeviceManual:String through ComponentType and the VendorNameplate interface. The shared Devices 1.04 property description identifies a filesystem pathname or URL to the device manual. This supports a documentation locator, not embedded file bytes, all support-file roles or the AAS package association contract. [PA-DIM 1.02; §7.2; DI 1.04 IVendorNameplateType 15035/DeviceManual 15043, ComponentType 15063/15093, DeviceType 1002 subtype→15063 with described counterpart 6005; PA-C2-NEG-AAS-O2-SUPPORTING-CONTENT]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL / INHERITED",
+        "rationale": "Locating supporting equipment documentation is common. The exact shared nameplate inheritance and property type connect the qualified DeviceType description to the inherited ComponentType property; unrelated DeviceType features are not imported.",
+        "source_locators": [
+          "§7.2",
+          "DI 1.04 IVendorNameplateType 15035/DeviceManual 15043, ComponentType 15063/15093, DeviceType 1002 subtype→15063 with described counterpart 6005"
+        ],
+        "native_finding_ids": [
+          "PA-F008",
+          "PA-F009"
+        ],
+        "evidence_id": "PA-C2-NEG-AAS-O2-SUPPORTING-CONTENT",
+        "DIM_Profile_adopted": false
       }
     },
     {
@@ -73113,7 +73549,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] PARTIAL / RELATED: Package signatures and server-specific role/user access preserve a trust/authorization context. Devices does not supply the AAS access-rule exchange grammar or prove authenticated installed equipment. [DI §§11, 12, 3.3, 8.7.4, A.1, B.3.6.3, B.3.6.4; DI-N023, DI-N028]",
-        "[RELATED_ONLY] Optional RolePermissions and AccessRestrictions are related access-policy context; no AAS attribute-condition grammar equivalence, policy enforcement or effective-user right inferred. [PA-F038] [OPC 30081 1.02: 3.4.3.1, 3.4.3.2, 3.4.3.3, 3.4.3.5]",
+        "[COMMON CANDIDATE] PARTIAL: Optional server-specific RolePermissions and AccessRestrictions describe permissions/restrictions attached to a qualified Node. The declared core RolePermissionType pairs RoleId with Permissions; effective current-session permissions remain separate. No AAS Boolean-condition grammar, exchanged-rule equivalence or enforcement result is established. [PA-DIM 1.02 §3.4.3.1; pinned core types i=94/95/96; PA-F038]",
         "[COMMON CANDIDATE] PARTIAL / NEW INFORMATION NEED: An access rule identifies protected information, applicable rights and attribute-based Boolean conditions. Attributes may come from authenticated claims, trusted environment values or referenced model data. Default deny, disabled rules and optional result filters remain explicit. The rule definition is separate from request credentials and an actual authorization decision. Exchanged rules are suggestions for recipient policy; implementation-specific enforcement and grammar/schema conflicts remain unresolved. [Sources: AAS08-N032, AAS08-N034, AAS08-N035, AAS08-N036, AAS08-N038, AAS08-N040; AAS-O6-ACCESS-RULE]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -73259,6 +73695,27 @@
         "cell": "G378",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "AAS-O6-ACCESS-RULE",
+        "cell": "G378",
+        "label": "Candidate — Access-rule definition and protected information",
+        "old_classification": "NO_CLASSIFICATION_FILL",
+        "disposition": "CORRECTED",
+        "relation": "PARTIAL",
+        "rationale": "PA-DIM explicitly permits RolePermissions and AccessRestrictions per Node; pinned core RolePermissionType pairs RoleId with Permissions and the option sets name rights/restrictions. This supports the reusable policy-definition portion of the row independently of the different AAS Boolean-condition grammar. Do not infer effective-user rights, enforcement or identical policy language. Keeping this uncolored solely because AAS syntax differs applied a stricter equivalence test than other qualified common mappings, including the Devices access-policy comparison.",
+        "finding_ids": [
+          "PA-F038"
+        ],
+        "source_locators": [
+          "3.4.3.1",
+          "dependencies/Opc.Ua.NodeSet2.xml types i=94, i=95, i=96"
+        ],
+        "contact": "Existing recorded native/source/model/figure contacts reused at their stated depths; current original-definition/model contacts listed in source_reviews. No new full-document or full dependency audit is claimed.",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: Optional server-specific RolePermissions and AccessRestrictions describe permissions/restrictions attached to a qualified Node. The declared core RolePermissionType pairs RoleId with Permissions; effective current-session permissions remain separate. No AAS Boolean-condition grammar, exchanged-rule equivalence or enforcement result is established. [PA-DIM 1.02 §3.4.3.1; pinned core types i=94/95/96; PA-F038]",
+        "new_classification": "COMMON_CANDIDATE",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
       }
     },
     {
@@ -86089,7 +86546,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] PARTIAL: DeviceHealthDiagnosticAlarm notifications use Message for additional health information, with possible cause and suggested recovery action as examples. Advice is associated with the abnormal condition; it is not an executed repair or a separately typed Action object. [Devices 1.05 §§4.12.2; DI-C1-SOSA-SO2J-FAULT-SUGGESTED-ACTION]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] This specialized equipment, management or interface contract is not established by the reviewed PA-DIM declarations for “Candidate — Fault associated suggested corrective action”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[SOURCE DETAIL HOLD] PA-DIM includes optional DeviceHealthAlarms and the pinned Devices1.04 model declares DeviceHealthDiagnosticAlarmType. Whether its message contract specifically includes suggested recovery advice is not established by the inspected1.04 declarations; the legacy prose endpoint returned1.05. Preserve the alarm evidence and this advice question, without inferring a typed Action, executed repair or absence of advice. [PA-DIM1.02 §§6.1,7.2; DI1.04 nodes15051/15053/15143; PA-C2-Q016]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -86219,6 +86676,33 @@
         "rationale": "The prior negative contradicts the explicit diagnostic-message rule; structured action identity remains narrower than this text-based representation.",
         "cell": "F452",
         "fill": "#D9EAF8"
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "SOSA-SO2J-FAULT-SUGGESTED-ACTION",
+        "cell": "G452",
+        "new_text": "[SOURCE DETAIL HOLD] PA-DIM includes optional DeviceHealthAlarms and the pinned Devices1.04 model declares DeviceHealthDiagnosticAlarmType. Whether its message contract specifically includes suggested recovery advice is not established by the inspected1.04 declarations; the legacy prose endpoint returned1.05. Preserve the alarm evidence and this advice question, without inferring a typed Action, executed repair or absence of advice. [PA-DIM1.02 §§6.1,7.2; DI1.04 nodes15051/15053/15143; PA-C2-Q016]",
+        "classification": "SOURCE_DETAIL_HOLD",
+        "fill": "#FFFFFF",
+        "relation": "UNRESOLVED_SOURCE_DETAIL",
+        "rationale": "Pinned1.04 declaration was inspected; root retrieval of the exact legacy endpoint explicitly redirected to v1.05.0. Hold edition-specific behavior rather than treat corroborative legacy text as controlling1.04 evidence.",
+        "source_locators": [
+          "§§6.1,7.2",
+          "DI 1.04 nodes 15051/15053/15143",
+          "legacy v104 §4.12.2 corroborative text"
+        ],
+        "native_finding_ids": [
+          "PA-F004",
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-SOSA-SO2J-FAULT-SUGGESTED-ACTION",
+        "DIM_Profile_adopted": false,
+        "pre_resolution_recommendation": {
+          "new_text": "[COMMON CANDIDATE] PARTIAL / INHERITED: PA-DIM health interfaces include optional Devices 1.04 diagnostic alarms; the recorded v104 definition permits health-message information such as a possible cause and suggested recovery action. This is fault-associated advice in message text, not a separately typed Action, executed repair or universal advice field. [PA-DIM 1.02; §§6.1,7.2; DI 1.04 nodes 15051/15053/15143; legacy v104 §4.12.2 corroborative text; PA-C2-NEG-SOSA-SO2J-FAULT-SUGGESTED-ACTION]",
+          "classification": "COMMON_CANDIDATE",
+          "rationale": "Fault-associated corrective advice is reusable across equipment. Inherited applicability and text-based representation are retained, consistent with the corrected Devices peer."
+        },
+        "disposition": "CORRECTED_TO_SOURCE_DETAIL_HOLD",
+        "root_resolution": "Pinned1.04 declaration was inspected; root retrieval of the exact legacy endpoint explicitly redirected to v1.05.0. Hold edition-specific behavior rather than treat corroborative legacy text as controlling1.04 evidence."
       }
     },
     {
@@ -87241,7 +87725,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] NEW INFORMATION NEED: Organize parameters, properties and operations into named contextual groups, with nested groups and potentially shared members. Preserve group purpose and state-dependent visibility; informational grouping does not establish a physical subsystem or globally identified record. [DI §§4.3, 4.4.1, 4.4.2, 4.4.3, B.1, B.2, B.3, C.1, C.2, C.3, C.4, C.5; DI-N003, DI-N027, DI-N033]",
-        "[RELATED_ONLY] Signal/condition sets provide contextual information grouping; shared membership, nested FunctionGroup semantics and state-dependent visibility are not all established. [PA-F011 PA-F012] [OPC 30081 1.02: 7.1.2, 7.22, 7.25, 7.26, 7.1.9, 7.24]",
+        "[COMMON CANDIDATE] PARTIAL: PADIMType inherits DI1.04 ComponentType, which inherits TopologyElementType and its optional FunctionalGroupType groups for organizing parameters and methods by application, including Identification. This is information grouping, not physical composition. Nested/shared membership and state-dependent visibility are not newly established by this targeted model contact. [PA-DIM 1.02 §7.2; pinned DI1.04 nodes 15063/1001/6567/1005/6014; PA-F008]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -87308,6 +87792,29 @@
         "cell": "G464",
         "fill": "#FFFFFF",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "OPCDI-FUNCTIONAL-GROUP",
+        "cell": "G464",
+        "label": "Candidate — Purpose-based information group and shared membership",
+        "old_classification": "NO_CLASSIFICATION_FILL",
+        "disposition": "CORRECTED",
+        "relation": "PARTIAL",
+        "rationale": "The exact declared dependency chain reaches TopologyElementType and its functional-group placeholder and Identification group. Earlier comparison considered only PA-DIM signal/condition containers and missed this explicit inherited purpose-based organization. Pinned XML proves application grouping; it is not used to claim fully verified nested/shared/state-dependent behavior or physical composition.",
+        "finding_ids": [
+          "PA-F008",
+          "PA-F011",
+          "PA-F012"
+        ],
+        "source_locators": [
+          "7.2",
+          "dependencies/Opc.Ua.Di.NodeSet2.xml nodes ns=1;i=15063/1001/6567/1005/6014"
+        ],
+        "contact": "Existing recorded native/source/model/figure contacts reused at their stated depths; current original-definition/model contacts listed in source_reviews. No new full-document or full dependency audit is claimed.",
+        "new_text": "[COMMON CANDIDATE] PARTIAL: PADIMType inherits DI1.04 ComponentType, which inherits TopologyElementType and its optional FunctionalGroupType groups for organizing parameters and methods by application, including Identification. This is information grouping, not physical composition. Nested/shared membership and state-dependent visibility are not newly established by this targeted model contact. [PA-DIM 1.02 §7.2; pinned DI1.04 nodes 15063/1001/6567/1005/6014; PA-F008]",
+        "new_classification": "COMMON_CANDIDATE",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
       }
     },
     {
@@ -87408,7 +87915,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] NEW INFORMATION NEED: Describe cumulative powered duration, duration actively performing work and transitions into activity for an identified device. Keep their counting basis separate, retain implementation-specific counting rules and no-reset lifetime semantics. Unit resolution does not establish reporting frequency. [DI §§4.5.5; DI-N006]",
-        "[COMMON CANDIDATE] [QUALIFIED_CORRESPONDENCE] DI1.04 powered/active duration and activity-transition counts retain subject and no-reset lifetime rules; sensor duration and encoded milliseconds versus dictionary hours remain qualified. [PA-F008 PA-F012] [OPC 30081 1.02: Opc.Ua.PADIM.NodeSet2.xml/Models/RequiredModel, 7.1.9, 7.24, 7.26]",
+        "[COMMON CANDIDATE] QUALIFIED_CORRESPONDENCE: GeneralDeviceConditionSet explicitly applies DI1.04 powered/active-duration and entering-activity counters with their lifetime/no-reset rules. PA-DIM also defines valve opening OR closing counts and sensor powered duration. Preserve each subject and counting basis; do not transfer the DI no-reset contract to those separate fields or equate encoded milliseconds with dictionary hours. [PA-DIM 1.02 §§7.1.12, 7.24, 7.1.25, 7.1.32; primary nodes1316–1318 and DI1.04 IOperationCounterType480; PA-F008/PA-F012]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -87460,6 +87967,32 @@
         "cell": "G466",
         "fill": "#D9EAF8",
         "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "OPCDI-OPERATION-COUNTERS",
+        "cell": "G466",
+        "label": "Candidate — Lifetime powered duration, active duration and activity cycles",
+        "old_classification": "COMMON_CANDIDATE",
+        "disposition": "CORRECTED",
+        "relation": "QUALIFIED_CORRESPONDENCE",
+        "rationale": "Existing DI1.04 lifetime counter correspondence is sound, but the separate PA-DIM valve opening/closing counter was not represented in the cell. Preserve both counting bases and do not apply DI lifetime/no-reset rules automatically to the separately defined valve or sensor fields.",
+        "finding_ids": [
+          "PA-F008",
+          "PA-F012"
+        ],
+        "source_locators": [
+          "7.1.12",
+          "7.24",
+          "7.1.25",
+          "7.1.32",
+          "Opc.Ua.PADIM.NodeSet2.xml ns=3;i=1316/1317/1318",
+          "dependencies/Opc.Ua.Di.NodeSet2.xml ns=1;i=480/481/482/483"
+        ],
+        "contact": "Existing recorded native/source/model/figure contacts reused at their stated depths; current original-definition/model contacts listed in source_reviews. No new full-document or full dependency audit is claimed.",
+        "new_text": "[COMMON CANDIDATE] QUALIFIED_CORRESPONDENCE: GeneralDeviceConditionSet explicitly applies DI1.04 powered/active-duration and entering-activity counters with their lifetime/no-reset rules. PA-DIM also defines valve opening OR closing counts and sensor powered duration. Preserve each subject and counting basis; do not transfer the DI no-reset contract to those separate fields or equate encoded milliseconds with dictionary hours. [PA-DIM 1.02 §§7.1.12, 7.24, 7.1.25, 7.1.32; primary nodes1316–1318 and DI1.04 IOperationCounterType480; PA-F008/PA-F012]",
+        "new_classification": "COMMON_CANDIDATE",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8"
       }
     },
     {
@@ -87800,7 +88333,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[COMMON CANDIDATE] NEW INFORMATION NEED: Describe whether a qualified object/network is locked, the locking client and user, remaining inactivity lifetime and renew/release/break behavior. Preserve cascaded scope and optional exclusivity; requested lock, granted lock and forced break are separate, and a lock does not prove safe physical action. [DI §§5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8; DI-N009, DI-N012]",
-        "[NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE] Declaring DI1.04 as a dependency does not establish use of this separate Devices feature in the reviewed PA-DIM contract for “Candidate — Scoped control lock ownership and lifetime”. This is a bounded evidence result, not proof of absence from all dependencies or implementations.",
+        "[COMMON CANDIDATE] PARTIAL / INHERITED: PADIMType inherits optional Lock through Devices 1.04 ComponentType/TopologyElementType. Pinned LockingServicesType supplies Locked, LockingClient, LockingUser, RemainingLockTime and InitLock/RenewLock/ExitLock/BreakLock methods. This declares a scoped lock mechanism, not an active lock or safe physical action. [PA-DIM 1.02; §7.2; DI 1.04 nodes 15063→1001→6161; LockingServicesType 6388 and children 6534,6390–6401; PA-C2-NEG-OPCDI-LOCK-STATE]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -87857,6 +88390,25 @@
         "classification_rationale": "Related-only, bounded not-established or retained prior hold; no positive source-based candidate classification is added.",
         "cell": "G471",
         "fill": "#FFFFFF",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "OPCDI-LOCK-STATE",
+        "cell": "G471",
+        "new_text": "[COMMON CANDIDATE] PARTIAL / INHERITED: PADIMType inherits optional Lock through Devices 1.04 ComponentType/TopologyElementType. Pinned LockingServicesType supplies Locked, LockingClient, LockingUser, RemainingLockTime and InitLock/RenewLock/ExitLock/BreakLock methods. This declares a scoped lock mechanism, not an active lock or safe physical action. [PA-DIM 1.02; §7.2; DI 1.04 nodes 15063→1001→6161; LockingServicesType 6388 and children 6534,6390–6401; PA-C2-NEG-OPCDI-LOCK-STATE]",
+        "classification": "COMMON_CANDIDATE",
+        "fill": "#D9EAF8",
+        "relation": "PARTIAL / INHERITED",
+        "rationale": "Exact declared inheritance supports scoped lock information. Detailed policy is not reconstructed from redirected 1.05 prose.",
+        "source_locators": [
+          "§7.2",
+          "DI 1.04 nodes 15063→1001→6161",
+          "LockingServicesType 6388 and children 6534,6390–6401"
+        ],
+        "native_finding_ids": [
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-OPCDI-LOCK-STATE",
         "DIM_Profile_adopted": false
       }
     },
@@ -88933,7 +89485,7 @@
     {
       "row_id": "PADIM-CALIBRATION-CHARACTERISTICS",
       "label": "Candidate — Technique-specific calibration characteristics and conditions",
-      "definition": "Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure and measured t90 with the relevant calibration and subject. Preserve each quantity, unit and last-calibration standing.",
+      "definition": "Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure, measured t90 and catalytic-bead bridge voltage upon calibration with the relevant calibration and subject. Preserve each quantity, unit, native container and last-calibration versus upon-calibration standing as specified.",
       "display_row": 488,
       "status": "PA-DIM source-qualified candidate; NOT ADOPTED",
       "source_review_status": "PINNED_ORIGINAL_DOCUMENT_MODELS_AND_SUPPORTING_FILES_WITH_EXPLICIT_LIMITS",
@@ -88954,7 +89506,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "NO NATIVE CORRESPONDENCE ESTABLISHED: No native cell constant, slope, calibration pressure or technique-specific calibration characteristic is established. This conclusion is bounded to reviewed Devices 1.05, not other companion models. [Devices 1.05 §§4.3; DI-C1-PADIM-CALIBRATION-CHARACTERISTICS]",
-        "[SPECIALIZED CANDIDATE] Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure and measured t90 with the relevant calibration and subject. Preserve each quantity, unit and last-calibration standing. [OPC 30081 1.02: 7.1.4, 7.1.5, 7.1.6, 7.1.8; PA-F017, PA-F018]",
+        "[SPECIALIZED CANDIDATE] Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure, measured t90 and catalytic-bead bridge voltage upon calibration with the relevant calibration and subject. Preserve each quantity, unit, native container and last-calibration versus upon-calibration wording. The catalytic source table/model says SensorValue while its prose says SensingValue; retain that label discrepancy. [PA-DIM 1.02 §§7.1.4–7.1.8, 7.1.32; model6260/6288→ABQ021#001; PA-F017/PA-F018]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -89000,6 +89552,34 @@
         "rationale": "Previously unassessed later-added row now compared with the nearest Devices meaning; generic extensibility is not native coverage.",
         "cell": "F488",
         "fill": "#FFFFFF"
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "PADIM-CALIBRATION-CHARACTERISTICS",
+        "cell": "G488",
+        "label": "Candidate — Technique-specific calibration characteristics and conditions",
+        "old_classification": "SPECIALIZED_CANDIDATE",
+        "disposition": "CORRECTED",
+        "relation": "NEW_INFORMATION_NEED_ENRICHED",
+        "rationale": "The row already preserves technique-specific calibration characteristics and conditions. Catalytic-bead SensorValue adds a measured bridge voltage upon calibration that was in the native source but omitted from this candidate. It fits this existing information need without a duplicate row; retain its condition-container subject and the source SensorValue/SensingValue naming discrepancy.",
+        "finding_ids": [
+          "PA-F017",
+          "PA-F018"
+        ],
+        "source_locators": [
+          "7.1.4",
+          "7.1.5",
+          "7.1.6",
+          "7.1.8",
+          "7.1.32",
+          "Opc.Ua.PADIM.NodeSet2.xml ns=3;i=6260/6288"
+        ],
+        "contact": "Existing recorded native/source/model/figure contacts reused at their stated depths; current original-definition/model contacts listed in source_reviews. No new full-document or full dependency audit is claimed.",
+        "new_text": "[SPECIALIZED CANDIDATE] Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure, measured t90 and catalytic-bead bridge voltage upon calibration with the relevant calibration and subject. Preserve each quantity, unit, native container and last-calibration versus upon-calibration wording. The catalytic source table/model says SensorValue while its prose says SensingValue; retain that label discrepancy. [PA-DIM 1.02 §§7.1.4–7.1.8, 7.1.32; model6260/6288→ABQ021#001; PA-F017/PA-F018]",
+        "new_classification": "SPECIALIZED_CANDIDATE",
+        "old_definition": "Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure and measured t90 with the relevant calibration and subject. Preserve each quantity, unit and last-calibration standing.",
+        "new_definition": "Associate technique-specific cell constant, slope, zero point, asymmetry potential, calibration pressure, measured t90 and catalytic-bead bridge voltage upon calibration with the relevant calibration and subject. Preserve each quantity, unit, native container and last-calibration versus upon-calibration standing as specified.",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
       }
     },
     {
@@ -89623,7 +90203,7 @@
     {
       "row_id": "PADIM-CHROMATOGRAM",
       "label": "Candidate — Chromatogram features and sample injection context",
-      "definition": "Associate signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium, preserving source optionality and units.",
+      "definition": "Associate per-signal chromatogram peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium. Preserve the distinct device-wide total area of all measured substance peaks, source subjects, optionality and units.",
       "display_row": 498,
       "status": "PA-DIM source-qualified candidate; NOT ADOPTED",
       "source_review_status": "PINNED_ORIGINAL_DOCUMENT_MODELS_AND_SUPPORTING_FILES_WITH_EXPLICIT_LIMITS",
@@ -89642,7 +90222,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "NO NATIVE CORRESPONDENCE ESTABLISHED: No native chromatogram peak, retention-duration or injection-context definition is established. This conclusion is bounded to reviewed Devices 1.05, not other companion models. [Devices 1.05 §§4.3; DI-C1-PADIM-CHROMATOGRAM]",
-        "[SPECIALIZED CANDIDATE] Associate signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium, preserving source optionality and units. [OPC 30081 1.02: 7.1.12, 7.1.27; PA-F026]",
+        "[SPECIALIZED CANDIDATE] Associate per-signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium. Keep the device-wide TotalAreaMeasuredPeaks aggregate distinct from an individual signal peak area, preserving manufacturer-defined area units, source subjects and optionality. [PA-DIM 1.02 §§7.1.12, 7.1.27; PA-F026]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -89685,6 +90265,29 @@
         "rationale": "Previously unassessed later-added row now compared with the nearest Devices meaning; generic extensibility is not native coverage.",
         "cell": "F498",
         "fill": "#FFFFFF"
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "PADIM-CHROMATOGRAM",
+        "cell": "G498",
+        "label": "Candidate — Chromatogram features and sample injection context",
+        "old_classification": "SPECIALIZED_CANDIDATE",
+        "disposition": "CORRECTED",
+        "relation": "NEW_INFORMATION_NEED_ENRICHED",
+        "rationale": "Native finding PA-F026 already distinguished device-wide total peak area from per-signal features, but the candidate omitted the aggregate. Explicitly retaining both subjects closes that loss within the existing chromatogram information need, without a redundant new row.",
+        "finding_ids": [
+          "PA-F026"
+        ],
+        "source_locators": [
+          "7.1.12",
+          "7.1.27"
+        ],
+        "contact": "Existing recorded native/source/model/figure contacts reused at their stated depths; current original-definition/model contacts listed in source_reviews. No new full-document or full dependency audit is claimed.",
+        "new_text": "[SPECIALIZED CANDIDATE] Associate per-signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium. Keep the device-wide TotalAreaMeasuredPeaks aggregate distinct from an individual signal peak area, preserving manufacturer-defined area units, source subjects and optionality. [PA-DIM 1.02 §§7.1.12, 7.1.27; PA-F026]",
+        "new_classification": "SPECIALIZED_CANDIDATE",
+        "old_definition": "Associate signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium, preserving source optionality and units.",
+        "new_definition": "Associate per-signal chromatogram peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium. Preserve the distinct device-wide total area of all measured substance peaks, source subjects, optionality and units.",
+        "classification": "SPECIALIZED_CANDIDATE",
+        "fill": "#F9E6B8"
       }
     },
     {
@@ -90170,7 +90773,7 @@
         "Not linked here — no case evidence established.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "[SPECIALIZED CANDIDATE] NEW INFORMATION NEED: Describe the requirement for a vendor-specific, write-only key to unlock an update feature, its provision before installation or preparation, and its retention for no more than one update. Keep the requirement and lifecycle separate from secret key material, general user authorization, concurrent locks and software-package signatures. [Devices 1.05 §§8.4.2.1–8.4.2.2; DI-C1-N034]",
-        "PENDING STEP 2 — Devices update-key candidate added after PA-DIM assessment; no PA-DIM correspondence or absence inferred.",
+        "NO PA-DIM CORRESPONDENCE ESTABLISHED NO_ESTABLISHED: The declared Devices 1.04 dependency contains SoftwareLoadingType/UpdateKey, but this is a separate software-update feature. The reviewed PA-DIM declaration and ComponentType inheritance do not include SoftwareLoadingType, SoftwareUpdateType or UpdateKey. Dependency presence alone does not establish a PA-DIM update-key contract; implementations may add features. [PA-DIM 1.02; §7.2; PA-DIM PADIMType ns=3;i=1009; DI 1.04 ComponentType 15063→TopologyElementType 1001, SoftwareLoadingType 135/UpdateKey 136/SoftwareUpdateType 1; PA-C2-NEG-OPCDI-UPDATE-KEY]",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
         "Not assessed here — no verified correspondence; not evidence of absence.",
@@ -90213,6 +90816,154 @@
         "addition_rationale": "Existing rows describe concurrent lock ownership, anticipated update effects, key-store inventory or user/session permissions. None preserves the vendor-specific write-only unlocking input and one-update retention boundary. Do not store actual secret keys in the research master.",
         "cell": "F506",
         "fill": "#F9E6B8",
+        "DIM_Profile_adopted": false
+      },
+      "PADIM_corrective_correspondence": {
+        "row_id": "OPCDI-UPDATE-KEY",
+        "cell": "G506",
+        "new_text": "NO PA-DIM CORRESPONDENCE ESTABLISHED NO_ESTABLISHED: The declared Devices 1.04 dependency contains SoftwareLoadingType/UpdateKey, but this is a separate software-update feature. The reviewed PA-DIM declaration and ComponentType inheritance do not include SoftwareLoadingType, SoftwareUpdateType or UpdateKey. Dependency presence alone does not establish a PA-DIM update-key contract; implementations may add features. [PA-DIM 1.02; §7.2; PA-DIM PADIMType ns=3;i=1009; DI 1.04 ComponentType 15063→TopologyElementType 1001, SoftwareLoadingType 135/UpdateKey 136/SoftwareUpdateType 1; PA-C2-NEG-OPCDI-UPDATE-KEY]",
+        "classification": "NO_ESTABLISHED_CORRESPONDENCE",
+        "fill": "#FFFFFF",
+        "relation": "NO_ESTABLISHED",
+        "rationale": "The exact 1.04 model and PA-DIM declaration/inheritance closure resolve the pending cell. This is a bounded native-contract result, not ecosystem-wide absence.",
+        "source_locators": [
+          "§7.2",
+          "PA-DIM PADIMType ns=3;i=1009",
+          "DI 1.04 ComponentType 15063→TopologyElementType 1001, SoftwareLoadingType 135/UpdateKey 136/SoftwareUpdateType 1"
+        ],
+        "native_finding_ids": [
+          "PA-F008"
+        ],
+        "evidence_id": "PA-C2-NEG-OPCDI-UPDATE-KEY",
+        "DIM_Profile_adopted": false
+      }
+    },
+    {
+      "row_id": "PADIM-SIGNAL-COMPENSATION",
+      "label": "Candidate — Signal compensation method and reference context",
+      "definition": "Identify a signal's declared compensation method and any source-defined reference context, retaining a no-compensation choice, dictionary-qualified method alternatives, and stated medium or reference-temperature distinctions. PA-DIM exposes this as TemperatureCompensationStyle for a conductivity signal. A declaration does not establish that compensation was applied or supply an algorithm or coefficients.",
+      "display_row": 507,
+      "display": [
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not linked here — no case evidence established.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "[NOT_ESTABLISHED_IN_REVIEWED_DEVICES_EVIDENCE] Generic ParameterSet/FunctionalGroup structures and block operating modes provide possible carriers but do not establish signal-compensation method or reference-context semantics. Preserve reviewed scope and source holds; this is not proof of absence from implementations. [Devices1.05 §§4.3–4.4,4.11; DI-N003,DI-N008]",
+        "[COMMON CANDIDATE] NEW INFORMATION NEED: Identify the declared temperature-compensation method exposed for a conductivity signal, retaining no-compensation and dictionary-qualified alternatives with their stated medium/reference-temperature context. TemperatureCompensationStyle is optional; a declaration does not prove compensation was applied or supply algorithm/coefficients. [OPC30081 1.02 §§7.1.23,7.35; PA-C2-N041]",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "Not assessed here — no verified correspondence; not evidence of absence.",
+        "OPTIONAL information-need candidate: Signal compensation method and reference context — NOT ADOPTED"
+      ],
+      "status": "PA-DIM corrective candidate; NOT ADOPTED",
+      "source_review_status": "PINNED_ORIGINAL_DOCUMENT_MODELS_AND_SUPPORTING_FILES_WITH_EXPLICIT_LIMITS",
+      "source_entry_ids": [
+        "PA-C2-N041"
+      ],
+      "evidence_records": [
+        "PA-C2-N041"
+      ],
+      "master_inclusion": "PROVISIONAL_NATIVE_PADIM_CANDIDATE",
+      "dim_adoption": "NO_CONTENT_ADOPTION_DECISION_IN_THIS_UPDATE",
+      "PADIM_corrective_correspondence": {
+        "finding_id": "PA-C2-N041",
+        "row_id": "PADIM-SIGNAL-COMPENSATION",
+        "label": "Candidate — Signal compensation method and reference context",
+        "definition": "Identify a signal's declared compensation method and any source-defined reference context, retaining a no-compensation choice, dictionary-qualified method alternatives, and stated medium or reference-temperature distinctions. PA-DIM exposes this as TemperatureCompensationStyle for a conductivity signal. A declaration does not establish that compensation was applied or supply an algorithm or coefficients.",
+        "classification": "COMMON_CANDIDATE",
+        "classification_rationale": "The reusable need is the declared compensation basis of a signal, distinct from primary sensing method, sensor wiring, response-time filtering and calibration evidence. This role can qualify unlike sensing equipment while retaining the donor's conductivity-specific choices. Common classification does not universalize the choices, prove application or adopt algorithms. Optionality/origin is not the rationale.",
+        "source_locators": [
+          "OPC30081 1.02.0 §7.1.23 Tables79–81; original paragraphs3284–3404, especially3336",
+          "§7.35 Tables184–187; paragraphs7298–7470, especially7395–7398 and7450–7462",
+          "Primary NodeSet nodes1368,1481,1483,1488,1492,1499,1506,1508,1509,1514 in namespace3",
+          "ParameterList.xlsx row609, IRDI0112/2///61987#ABP642#002"
+        ],
+        "contact": "Original Word text/tables and primary declarations, nine enumeration labels and paired dictionary entries examined; supporting definition reused. External CDD and compensation-algorithm standards not read.",
+        "standing": "Optional declaration. Model default no-compensation value is not an observed instance.",
+        "enum_values": [
+          {
+            "value": 0,
+            "label": "no temperature compensation"
+          },
+          {
+            "value": 1,
+            "label": "linear compensation"
+          },
+          {
+            "value": 2,
+            "label": "NaCl (IEC 60746-3)"
+          },
+          {
+            "value": 3,
+            "label": "water ISO 7888 (20°C)"
+          },
+          {
+            "value": 4,
+            "label": "water ISO 7888 (25°C)"
+          },
+          {
+            "value": 5,
+            "label": "UPW NaCl"
+          },
+          {
+            "value": 6,
+            "label": "UPW HCl"
+          },
+          {
+            "value": 7,
+            "label": "compensation table"
+          },
+          {
+            "value": 8,
+            "label": "others"
+          }
+        ],
+        "nearest_existing_alternatives": [
+          {
+            "row_id": "PADIM-TEMPERATURE-CONFIGURATION",
+            "insufficiency": "Hardware element/material, wiring and reference junction; not signal compensation."
+          },
+          {
+            "row_id": "PADIM-DAMPING",
+            "insufficiency": "First-order time response; not compensation basis."
+          },
+          {
+            "row_id": "PADIM-CALIBRATION-CHARACTERISTICS",
+            "insufficiency": "Calibration coefficients/conditions/readouts; not compensation method offered in signal operation."
+          },
+          {
+            "row_id": "SOSA-SO2B-EQUIPMENT-SETTINGS",
+            "insufficiency": "Generic modifiable settings do not preserve this distinct role or prove this property is user-modifiable."
+          },
+          {
+            "row_id": "S06-R010",
+            "insufficiency": "Primary observing method/procedure identity differs from compensation basis."
+          },
+          {
+            "row_id": "AAS-O3-QUALIFIED-CONTEXT",
+            "insufficiency": "General context carrier does not establish the particular compensation information need."
+          }
+        ],
+        "addition_rationale": "Previously subsumed under general signal/configuration context. A dedicated candidate preserves method/reference distinctions without claiming algorithms or application.",
+        "padim_cell": "[COMMON CANDIDATE] NEW INFORMATION NEED: Identify the declared temperature-compensation method exposed for a conductivity signal, retaining no-compensation and dictionary-qualified alternatives with their stated medium/reference-temperature context. TemperatureCompensationStyle is optional; a declaration does not prove compensation was applied or supply algorithm/coefficients. [OPC30081 1.02 §§7.1.23,7.35; PA-C2-N041]",
+        "devices_counterpart": {
+          "status": "NOT_ESTABLISHED_IN_REVIEWED_DEVICES_EVIDENCE",
+          "relation": "NO_ESTABLISHED_CORRESPONDENCE",
+          "classification": null,
+          "fill": "#FFFFFF",
+          "cell": "[NOT_ESTABLISHED_IN_REVIEWED_DEVICES_EVIDENCE] Generic ParameterSet/FunctionalGroup structures and block operating modes provide possible carriers but do not establish signal-compensation method or reference-context semantics. Preserve reviewed scope and source holds; this is not proof of absence from implementations. [Devices1.05 §§4.3–4.4,4.11; DI-N003,DI-N008]",
+          "contact": "Directly reread retained primary reference §§4.3 and4.11; reuse DI-N003/008 native inventory and all source limits. Full-reference keyword locator search is not treated as proof of absence."
+        },
+        "other_donors": "Explicit not assessed/no verified correspondence, not evidence of absence; no exclusivity claim.",
+        "cell": "G507",
+        "fill": "#D9EAF8",
         "DIM_Profile_adopted": false
       }
     }
@@ -93102,10 +93853,10 @@
     }
   },
   "counts": {
-    "columns": 16,
+    "columns": 17,
     "caseColumns": 4,
-    "donorColumns": 11,
-    "informationRows": 477,
+    "donorColumns": 12,
+    "informationRows": 478,
     "originalRows": 31,
     "ISADerivedContributions": 298,
     "supportedISACandidates": 292,
@@ -93173,7 +93924,10 @@
     "OPCDI_native_candidate_rows": 22,
     "OPCDI_existing_correspondences": 73,
     "OPCDI_corrective_changed_existing_cells": 39,
-    "OPCDI_corrective_new_rows": 1
+    "OPCDI_corrective_new_rows": 1,
+    "PADIM_corrective_changed_existing_cells": 29,
+    "PADIM_corrective_definition_enrichments": 2,
+    "PADIM_corrective_new_rows": 1
   },
   "adoptionPolicy": {
     "recorded": "2026-11-08",
@@ -93217,17 +93971,17 @@
     "ISA Original Clause Audit": "ISA Initial Clause Audit"
   },
   "publicationPolicy": "AAS10 usability correction using original retained source evidence; all 337 rows have explicit statuses and candidate/hold classification. No increase in source coverage, DIM/Profile adoption or runtime conformance.",
-  "currentEvidenceCheckpoint": "DEVICES_CORRECTIVE_1_SAVED_VERIFIED",
+  "currentEvidenceCheckpoint": "PADIM_CORRECTIVE_2_SAVED_VERIFIED",
   "workbookSnapshot": {
     "file": "Master_Donor_Concept_to_DIM_Crosswalk.xlsx",
-    "checkpoint": "DEVICES_CORRECTIVE_1_SAVED_VERIFIED",
-    "sha256": "40231f8eb3335aa2f7066cfd978d66d3506d34d46e1c71c82d345f4c95063fe3",
-    "information_rows": 477,
+    "checkpoint": "PADIM_CORRECTIVE_2_SAVED_VERIFIED",
+    "sha256": "d3882d2f0db02ea829e07f59c849b785184dbed211635258c31165479f282dce",
+    "information_rows": 478,
     "primary_reviewed": 480,
     "currently_matches_readable_view": true,
-    "lag": "ZERO: 506x17 saved grid; changed Devices cells and appended candidate integrated in canonical mirrors",
-    "textCheckpoint": "DEVICES_CORRECTIVE_STEP_1",
-    "textInformationRows": 477,
+    "lag": "ZERO: 507x17 saved grid; 29 PA-DIM corrections, two definitions and one candidate integrated in canonical mirrors",
+    "textCheckpoint": "PADIM_CORRECTIVE_STEP_2",
+    "textInformationRows": 478,
     "textPrimaryReviewed": 480,
     "columns": 17,
     "G2_1_affected_row_ids": [
@@ -94374,11 +95128,11 @@
       "SAPIENT-F2-ALERT-LIFECYCLE",
       "SAPIENT-F2-DETECTION-LINEAGE"
     ],
-    "text_grid_rows": 506,
-    "saved_xlsx_grid_rows": 506,
+    "text_grid_rows": 507,
+    "saved_xlsx_grid_rows": 507,
     "f2_3_shifted_prior_rows": 325,
     "original_SAP06_shifted_prior_rows": 322,
-    "color_cell_count": 768,
+    "color_cell_count": 788,
     "mixed_source_cells_uncolored": 108,
     "manual_M00_preserved": true,
     "manual_M01_not_created": false,
@@ -94508,7 +95262,7 @@
       "S06-R021",
       "S06-R010"
     ],
-    "gate_metadata_note": "Stop for PA-DIM corrective Step 2 Proceed; twelve Devices source limits retained.",
+    "gate_metadata_note": "Step 2 pending saved verification, Excel inspection and publication; joint Step 3 requires Proceed.",
     "source_compared_rows": 88,
     "explicit_unassessed_rows": 344,
     "AAS_candidate_colors": 76,
@@ -94656,7 +95410,24 @@
     "masterColumnCount": 17,
     "PADIM_explicit_cells": 477,
     "PADIM_classified_cells": 60,
-    "structure_repair_record": "OPC_UA_PADIM_Source_Coverage.json#/integration/workbook_structure_repair"
+    "structure_repair_record": "OPC_UA_PADIM_Source_Coverage.json#/integration/workbook_structure_repair",
+    "PADIM_corrective_2_changed_existing_cells": 29,
+    "PADIM_corrective_2_definition_enrichments": 2,
+    "PADIM_corrective_2_new_rows": 1,
+    "PADIM_corrective_2_new_source_detail_questions": 2,
+    "PADIM_corrective_2_new_white_source_detail_hold_cells": 3,
+    "publication_provenance_note": "Inherited verifiedPublisher*, last_verified_* and earlier checkpoint-specific fields are historical provenance, not this Step 2 publication. Current Step 2 publication is recorded only in PADIM_corrective_2_publication.",
+    "PADIM_corrective_2_publication": {
+      "status": "EXCEL_WEB_VERIFIED_PENDING_PUBLICATION_READBACK",
+      "checkpoint": "PADIM_CORRECTIVE_2_SAVED_VERIFIED",
+      "baseline_commit": "7d2593a4be7150a487e3960cad532ee970e60a67",
+      "workbook_sha256": "d3882d2f0db02ea829e07f59c849b785184dbed211635258c31165479f282dce",
+      "content_commit": null,
+      "checker_action": null,
+      "publisher_action": null,
+      "remote_readback_verified": false,
+      "excel_web_candidate_commit": "ea119fa73e95c2c5cd08637572255e67541746cc"
+    }
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
   "SOSAEvidence": {
@@ -96604,7 +97375,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "Proceed authorizes Step 2 PA-DIM corrective assessment and delivery; include OPCDI-UPDATE-KEY. Step 1 Devices complete; no automatic source-limit acceptance, donor transition or model adoption.",
+  "nextOwnerAction": "After Step 2 saved verification, Excel inspection, publication and explanation, stop. One Proceed authorizes bounded joint Step 3 reconciliation; no automatic donor transition, corpus expansion, hold acceptance or model adoption.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -121997,6 +122768,40 @@
       "bounded_not_established": 389
     },
     "candidate_origin_not_exclusivity": true,
-    "DIM_Profile_adopted": false
+    "DIM_Profile_adopted": false,
+    "corrective_review": {
+      "ledger_key": "corrective_review",
+      "starting_cells": 477,
+      "changed_existing_cells": 29,
+      "definition_enrichments": 2,
+      "new_rows": 1,
+      "information_rows": 478,
+      "prior_question_ids_retained": [
+        "PA-Q001",
+        "PA-Q002",
+        "PA-Q003",
+        "PA-Q004",
+        "PA-Q005",
+        "PA-Q006",
+        "PA-Q007",
+        "PA-Q008",
+        "PA-Q009",
+        "PA-Q010",
+        "PA-Q011",
+        "PA-Q012",
+        "PA-Q013",
+        "PA-Q014"
+      ],
+      "new_source_detail_question_ids": [
+        "PA-C2-Q015",
+        "PA-C2-Q016"
+      ],
+      "new_white_source_detail_hold_row_ids": [
+        "ISA-C-197",
+        "ISA-C-081",
+        "SOSA-SO2J-FAULT-SUGGESTED-ACTION"
+      ],
+      "status": "STEP_2_SAVED_VERIFIED_PENDING_APPLICATION_AND_PUBLICATION"
+    }
   }
 }
