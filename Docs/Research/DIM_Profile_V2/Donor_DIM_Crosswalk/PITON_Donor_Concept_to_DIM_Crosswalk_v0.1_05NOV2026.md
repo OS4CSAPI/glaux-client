@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 16 November 2026, America/New_York: **SAPIENT eleven-record reconciliation complete locally; final publication/readback pending.** This is the sole current status and next-action record. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only the named evidence. Donor research precedes later Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile decisions.
+Updated 16 November 2026, America/New_York: **SAPIENT eleven-record reconciliation complete, published and verified.** This is the sole current status and next-action record. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only the named evidence. Donor research precedes later Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile decisions.
 
 ## Active scope and evidence
 
@@ -9,6 +9,8 @@ The owner asked whether SAPIENT had received a fair contribution opportunity. Th
 Exact scope: SAP02-N04/N06; SAP03A-N06/N10/N11; SAP03B-N01/N09/N10; SAP04-N09/N15; SAP06-N14. The [SAPIENT ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json), key `SAP11_current_master_reconciliation`, owns all eleven outcomes, previous-record hashes, source contact, seven candidate definitions, thirteen cell changes and exact holds. Do not re-audit the entire corpus or split the remaining publication into new research iterations.
 
 ## Verified checkpoint
+
+Result **2a4a791cda826aead24df76d48c7bbca410c36fb** was published on the research branch. Remote Git readback exactly matched the complete verified delivery tree and workbook hash. [Crosswalk checker PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43999468438) and [same-workbook publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/43999468437). This receipt changes no research or workbook content.
 
 Pre-correction live HEAD **ec29e583792ea5d799dea0417417961ee115524c** was verified and preserved at [archive/pre-sapient-eleven-16nov2026](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-sapient-eleven-16nov2026). Baseline workbook SHA256: `0f25363a3d5b78c5c92297cf401a2bceda7ce009a8aa6dba4ce10ccae38207ce`. Original local research recovery from Profile Rewrite52 is superseded by published SOSA delivery; do not restart it.
 
@@ -32,17 +34,17 @@ SAPIENT bounded-PARTIAL acceptance and39 overlapping original limitations remain
 
 ## Verification and publication
 
-Working checkout `/workspace/scratch/eb7bba69536f/glaux-delivery`. Source decisions were locally committed at `c5bdc4a` before integration. Current local final artifacts require publication through the connected GitHub account: shell Git push has no credentials. Publish the assembled tree with expected-head protection, read back the tree/workbook hash and record CI results here. Backup creation succeeded; no approval block is pending.
+Delivery checkout `/workspace/scratch/eb7bba69536f/glaux-delivery`. The connected GitHub publication and complete readback succeeded. Source-stage commit `c5bdc4a` and local integrated commit `7bc30a6` are superseded for recovery by the published result above. No publication or approval blocker remains.
 
 Existing verifier now routes SAP11 and passes original-record preservation, exact outcomes/targets, all7,360 saved cells, candidate fills, mirrors, allowed changes, sheet/part preservation and milestones. Affected views were rendered using the existing workbook conventions; unchanged views reused. Native Microsoft Excel reopening is unverified; five pre-existing wider artifact/link errors remain outside this correction. Reuse unchanged source checks; keep tool output bounded.
 
 ## Next action and stop
 
-Finish pending publication/readback of this completed correction, then **STOP before Step21 OPC UA Devices v1.05.0**. After delivery, one owner Proceed can authorize that next donor step; PA-DIM v1.02.0 follows separately. Do not offer another eleven-record review, a repeat AAS/SOSA acceptance or immediate DIM/Profile development.
+**STOP before Step21 OPC UA Devices v1.05.0**. The eleven-record correction is delivered; one owner Proceed can authorize that next donor step; PA-DIM v1.02.0 follows separately. Do not offer another eleven-record review, a repeat AAS/SOSA acceptance or immediate DIM/Profile development.
 
 ## Interrupted work
 
-Research and integration are complete in the working checkout; only final publication/readback remains. Do not restart source review.
+**None.** Research, same-workbook integration, publication, full-tree readback and both repository checks are complete. Do not restart this correction or the prior SOSA recovery.
 
 ## History
 

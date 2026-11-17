@@ -13159,7 +13159,7 @@
   },
   "SAP11_current_master_reconciliation": {
     "date": "2026-11-16",
-    "status": "SAVED_VERIFIED_REMOTE_READBACK_PENDING",
+    "status": "PUBLISHED_VERIFIED",
     "owner_authorization": "Profile Rewrite53: Proceed following the proposed finite eleven-record SAPIENT reconciliation; finish source decisions, master/workbook integration, verification and publication, then stop before OPC UA Devices.",
     "baseline_commit": "ec29e583792ea5d799dea0417417961ee115524c",
     "archive_branch": "archive/pre-sapient-eleven-16nov2026",
@@ -14271,8 +14271,17 @@
     "verification": {
       "saved_values_and_fills": "PASS",
       "native_Microsoft_Excel_reopen": "NOT_PERFORMED",
-      "publication_readback": "PENDING",
+      "publication_readback": "PASS; complete tree and workbook hash",
       "affected_view_rendering": "PASS; new candidates, source clarifications, register and current summary/disposition views"
+    },
+    "publication": {
+      "result_commit": "2a4a791cda826aead24df76d48c7bbca410c36fb",
+      "complete_remote_tree_matches_verified_local_tree": true,
+      "workbook_sha256": "bd112e5368e292a7fe33fe4c7015f763eee3ad430135a0b21704ecde3d463318",
+      "checker": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43999468438",
+      "checker_result": "PASS",
+      "same_workbook_publisher": "https://github.com/OS4CSAPI/glaux-client/actions/runs/43999468437",
+      "publisher_result": "PASS"
     }
   }
 }

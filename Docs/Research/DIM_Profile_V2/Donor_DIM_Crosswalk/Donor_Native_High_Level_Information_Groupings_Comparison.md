@@ -44,7 +44,7 @@ The [same editable Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx), canonical
 
 All 425 prior stable row IDs, order, source evidence, other donor cells, 26 worksheets and protected M00/M01 milestones are retained. The 21 unaffected worksheets and other unrelated workbook parts are byte-identical. Thirteen specified SAPIENT cells and their register entries were clarified; three expanded rows were given enough height for the added text. Saved values, classifications and mirrors passed verification. Native Microsoft Excel reopening remains unverified.
 
-The pre-change version is preserved at [the SAPIENT archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-sapient-eleven-16nov2026), commit `ec29e583792ea5d799dea0417417961ee115524c`. The [PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records publication standing and any pending delivery step. This authorized eleven-record correction is finished at the saved-artifact level; publication verification is recorded there separately.
+The pre-change version is preserved at [the SAPIENT archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-sapient-eleven-16nov2026), commit `ec29e583792ea5d799dea0417417961ee115524c`. The [PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records publication standing and any pending delivery step. This authorized eleven-record correction was published at `2a4a791cda826aead24df76d48c7bbca410c36fb`; complete-tree/workbook readback and both repository workflows passed.
 
 **Next: OPC UA Devices v1.05.0, only after owner Proceed.** AAS and SOSA were already accepted and require no repeat acceptance. No further SAPIENT packet, full donor restart or move into DIM/Profile development is implied.
 
