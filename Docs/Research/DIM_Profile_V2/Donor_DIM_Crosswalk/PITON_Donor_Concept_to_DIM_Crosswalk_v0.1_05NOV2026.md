@@ -6,7 +6,7 @@ Updated 17 November 2026, America/New_York, Profile Rewrite 56. **Workbook repai
 
 The owner's Profile Rewrite 55 request authorized fixing Excel's repair warning and unfreezing the first four Master Crosswalk columns. **Profile Rewrite 56 Proceed** authorizes finishing the interrupted repair, preventive checks, Excel verification, canonical publication and this checkpoint. Preserve two frozen header rows and all research content/classifications. No donor transition, source-limit acceptance, model adoption, client or deployment work follows automatically.
 
-The separate owner concerns about Devices and PA-DIM coverage, classification accuracy and fair opportunity remain open. This file repair does not resolve them or establish research completeness. There is no new corrective research plan yet.
+The separate owner concerns about Devices and PA-DIM coverage, classification accuracy and fair opportunity remain open. The subsequent Profile Rewrite 56 Proceed authorized documenting/publishing the [finite corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md). Planning is complete; execution has not started. Three planned execution steps: Devices assessment/delivery, PA-DIM assessment/delivery, joint closeout/explanation. Each Proceed authorizes one step; internal checkpoints do not add gates. The repaired-file result does not establish research completeness.
 
 ## Verified checkpoint
 
@@ -36,11 +36,11 @@ PA-DIM research/integration remains the previously delivered result: 40 finding 
 
 ## Interrupted work
 
-No workbook or research delivery remains interrupted. Current checkout: `/workspace/scratch/acb9b2ea127e/glaux-client`, local branch `codex/profile-rewrite-56`. The delivery tree is identical to the published tree above; this receipt is a metadata-only follow-up. The original Profile Rewrite 55 checkout and order-only guard edit remain at `/workspace/scratch/9e6e4c6747b1/glaux-client` for preservation, not as the current deliverable. Source cache: `/workspace/scratch/705ccec1d857/padim`.
+No workbook or research delivery remains interrupted. Current checkout: `/workspace/scratch/acb9b2ea127e/glaux-client`, local branch `codex/profile-rewrite-56`. The repaired workbook remains the published verified artifact above. The planning follow-up changes only this PITON and the linked corrective plan; no workbook or research correction is performed. Its baseline is the verified repair receipt `6cd94b3d4016af8a3807ca7aba1e1dc68152ae99`; verify the live HEAD and both planning files on recovery. The original Profile Rewrite 55 checkout and order-only guard edit remain at `/workspace/scratch/9e6e4c6747b1/glaux-client` for preservation, not as the current deliverable. Source cache: `/workspace/scratch/705ccec1d857/padim`.
 
 ## Next action and stop
 
-The authorized workbook repair is complete. Stop for owner direction. The next proposed bounded step is to document a finite corrective assessment of the owner's Devices/PA-DIM coverage, classification and fairness concerns before another donor; do not start it without direction.
+Workbook repair and corrective planning are complete. Stop for Proceed. The next bounded action is Step 1 of the [corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md): assess Devices native opportunity, all 476 current donor cells and classifications, preserve a pre-correction snapshot, integrate justified changes into every canonical format, verify/publish, and explain results. Do not start PA-DIM Step 2 in the same authorization.
 
 ## History
 
