@@ -1763,10 +1763,70 @@ def verify_padim():
     print('PASS PA-DIM: 40 finding dispositions; 22 additions (13 common/9 specialized); 454 prepared assessments preserved; 476 rows and 8,585 saved values; both CSV/readable mirrors and all PA-DIM fills verified; prior 454 rows/donor order/holds, 26 worksheets, 21 untouched sheets and M00/M01 preserved.')
     print('LIMIT: source boundaries unchanged; this automated check does not test Microsoft Excel, runtime conformance or model adoption. Excel web observations are recorded separately in the PA-DIM ledger.')
 
+def verify_devices_corrective():
+    """Verify the explicit Step 1 edit set against the repaired, published baseline."""
+    m=load(MASTER);l=load(OPCDI_LEDGER);v=l['corrective_review']
+    def before(name):return subprocess.check_output(['git','show',v['baseline_commit']+':'+str((D/name).relative_to(ROOT))],cwd=ROOT)
+    b=json.loads(before(MASTER));bl=json.loads(before(OPCDI_LEDGER));clean=copy.deepcopy(l);clean.pop('corrective_review');need(clean==bl,'Devices historical evidence preserved')
+    need(len(v['cell_assessments'])==476 and {x['row_id'] for x in v['cell_assessments']}=={x['row_id'] for x in b['rows']},'all baseline cells accounted for')
+    need(len(m['rows'])==477 and len(m['review_grid'])==506 and m['columns']==b['columns'] and m['review_sections']==b['review_sections'],'row count, columns and dividers')
+    changes={x['row_id']:x for x in v['changes']};need(len(changes)==39,'explicit changed cell set')
+    for old,new in zip(b['rows'],m['rows']):
+        r=copy.deepcopy(new);r.pop('OPCDI_corrective_correspondence',None);r['display'][5]=old['display'][5];r['display_row']=old['display_row']
+        need(new['display']==m['review_grid'][new['display_row']-1],'accurate row location metadata')
+        need(r==old,'all prior row evidence and other donor/case values '+old['row_id'])
+        if old['row_id'] in changes:need(new['display'][5]==changes[old['row_id']]['new_text'],'current corrective text')
+        else:need(new['display'][5]==old['display'][5],'unchanged Devices text')
+    for i,(a,c) in enumerate(zip(b['review_grid'],m['review_grid'])):
+        need(a[:5]+a[6:]==c[:5]+c[6:],'other grid columns preserved')
+        need(c[5]==v['workbook_edits']['Master Crosswalk'].get('F'+str(i+1),{'value':a[5]})['value'],'exact grid edit')
+    need(m['rows'][-1]['row_id']=='OPCDI-UPDATE-KEY' and len({r['row_id'] for r in m['rows']})==477,'unique new identity')
+    for r in m['rows']:need(all(r['display'][i].strip() for i in [5,6,7,8,9,10]),'completed donor positions explicit')
+    need('PENDING STEP 2' in m['rows'][-1]['display'][6],'new PA-DIM position explicitly pending')
+    for f in ['Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv']:
+        need(list(csv.reader((D/f).open()))==m['review_grid'],'CSV mirror '+f)
+    for f in ['Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md']:
+        t=(D/f).read_text();root=ET.fromstring(t[t.index('<table>'):]);rows=[]
+        for row in root.iter('tr'):
+            values=[]
+            for cell in row:values.extend([''.join(cell.itertext())]+['']*(int(cell.get('colspan','1'))-1))
+            rows.append(values)
+        need(rows==m['review_grid'],'readable mirror '+f)
+    sha=digest((D/BOOK).read_bytes());need(sha==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==v['workbook_sha256'],'corrective saved hashes')
+    with zipfile.ZipFile(io.BytesIO(before(BOOK))) as old,zipfile.ZipFile(D/BOOK) as new:
+        need(set(old.namelist())==set(new.namelist()),'repaired package inventory retained')
+        op=pub.old.sheetpaths(old);np=pub.old.sheetpaths(new);need(op==np and len(np)==26,'26 original sheets')
+        changed={np[n] for n in v['workbook_edits']};need(changed==set(v['changed_workbook_parts']),'scoped sheets')
+        for name in new.namelist():
+            if name not in changed:need(old.read(name)==new.read(name),'unrelated package part '+name)
+        for name,items in v['workbook_edits'].items():
+            a=ET.fromstring(old.read(op[name]));c=ET.fromstring(new.read(np[name]));ac={x.get('r'):x for x in a.iter(pub.q('c'))};cc={x.get('r'):x for x in c.iter(pub.q('c'))}
+            for ref,x in ac.items():
+                if ref not in items:need(ET.tostring(x)==ET.tostring(cc[ref]),'unaffected cell/style '+name+'!'+ref)
+            for ref,item in items.items():need(pub.f3_cell_text(cc.get(ref))==item['value'],'saved authored cell '+name+'!'+ref)
+            need(set(cc)-set(ac)<=set(items),'no undocumented new cells '+name)
+            need(ET.tostring(a.find(pub.q('sheetViews')))==ET.tostring(c.find(pub.q('sheetViews'))),'pane/view preserved '+name)
+            if name=='Master Crosswalk':
+                styles=ET.fromstring(new.read('xl/styles.xml'));xf=styles.find(pub.q('cellXfs'));fills=styles.find(pub.q('fills'))
+                for ref,item in items.items():
+                    if 'fill' in item:
+                        fill=fills[int(xf[int(cc[ref].get('s','0'))].get('fillId'))].find('.//'+pub.q('fgColor'))
+                        need(fill is not None and fill.get('rgb')[-6:]==item['fill'][1:],'saved classification fill '+ref)
+                for i,row in enumerate(m['review_grid'],1):
+                    for j,value in enumerate(row,1):need(pub.f3_cell_text(cc.get(letter(j)+str(i)))==value,'full saved grid '+letter(j)+str(i))
+                pane=c.find(pub.q('sheetViews')).find(pub.q('sheetView')).find(pub.q('pane'))
+                need(pane.get('xSplit','0')=='0' and pane.get('ySplit')=='2','row-only freeze retained')
+        for name in ['OPC_UA_PADIM_Source_Coverage.json']+[str(x.relative_to(D)) for x in (D/'Manual_Workbook_Versions').glob('M0[01]_*.xlsx')]:need((D/name).read_bytes()==before(name),'held donor evidence/manual version '+name)
+    print('PASS Devices corrective Step 1: 476 starting cells accounted for; 39 explicit corrections + one candidate; 477 rows / 8,602 saved values; both CSV/readable mirrors and affected fills match; prior donor/case values, source evidence, 26 sheets, 21 untouched sheets, repaired package and M00/M01 preserved.')
+    print('LIMIT: evidence reused at recorded source depths with targeted original review; 12 Devices source limits retained; PA-DIM Step 2 pending. Automated checks do not establish source completeness or runtime conformance.')
+
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current=='DEVICES_CORRECTIVE_1_SAVED_VERIFIED':
+        verify_devices_corrective();sys.exit(0)
     if current=='PADIM_SAVED_VERIFIED':
         verify_padim();sys.exit(0)
     if current==OPCDI_CP:
