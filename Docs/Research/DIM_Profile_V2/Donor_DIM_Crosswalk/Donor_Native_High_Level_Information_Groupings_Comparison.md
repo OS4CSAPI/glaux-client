@@ -1,3 +1,26 @@
+# PA-DIM core source review — in progress, 16 November 2026
+
+The Process Automation Device Information Model (PA-DIM) review now records **32 native findings**, including the eight preserved from the starting checkpoint. This is a source-review milestone, not a completed donor assessment or 32 proposed spreadsheet rows. The [single ledger](OPC_UA_PADIM_Source_Coverage.json) records exact source locators, contact depth, declarations, four inspected publisher figures and preliminary comparisons. The [PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) owns publication status and the remaining action.
+
+PA-DIM distinguishes the device, a measuring or control point, the value reported for that point, its calibration information and the conditions affecting it. That organization is useful for our whole-system research because it keeps information attached to the right subject. For example, a sensing element's temperature is different from the process temperature it measures; a simulated reported value is different from the unsimulated value retained alongside it. These distinctions are evidenced in §§7.1, 7.2, 7.24–7.27 and 8.2.2, with Figures11–14 supporting the device-view and signal structures.
+
+| Source-grounded distinction | Preliminary implication for the existing master |
+|---|---|
+| Calibration date, purpose, multiple calibration records and points; technique-specific coefficients and conditions (§§7.1.3–7.1.8, 7.23, 7.26, 7.52) | The existing SOSA calibration-state/result row explicitly does not establish date, method or coefficients. Preserve these as distinct information needs for the complete comparison, rather than marking all calibration information covered by that row. |
+| Reported Value, ActualValue, SimulationValue and SimulationState (§8.2.2, Figure14) | A generic reported-output field does not retain whether a value was substituted or preserve the actual value alongside it. |
+| ResidualLife as a degradation score, with1 meaning good and0 meaning bad (§7.24 and technique-specific interfaces) | Test qualified correspondence with the existing Devices lifetime row. Do not treat the score as estimated time remaining or automatically create a duplicate merely because its name differs. |
+| Cleaning and sterilization counts (§§7.1.22–7.1.26) | Existing active-operation counters use a different counting event. Any reuse must preserve the specific maintenance-event basis. |
+| Fixed versus dynamically estimated next-calibration intervals (§§7.1.25, 7.1.31–7.1.32) | A future interval and its calculation basis are different from a current calibration state, latest success result or past calibration timestamp. |
+| Totalizer pulse quantity and pulse width (§8.12) | Existing pulse-interval labels do not establish mass/volume-per-pulse scaling. Preserve quantity, time meaning and source-specific units before choosing a target or addition. |
+
+Other recorded meanings include chromatogram features and injection timing, actual versus target control values, sample-path conditions, diagnostic quality measures, exposure/overload history, and chemical measurand-versus-matrix identity. These remain tied to their native device or signal context; they are not a reason to impose one analyser's fields on every sensor. Likewise, method definitions describe requests and access constraints, not evidence that an operation ran or succeeded. The source distinguishes a watchdog function's existence from a live heartbeat or successful fault test.
+
+The review reconciled37 additional full web text sections against the original Word text:36 matched after alphanumeric normalization, and one retained a broken Word cross-reference omitted from the web rendering. It also inspected24 condition interfaces at definition/prose depth and13 direct type/member groups comprising73 model nodes. Those counts do not establish complete review of additional reference/default tables, nested model definitions, external dictionary entries, inherited versions, remaining figures or supporting spreadsheet contents. Four publisher figures were visually inspected; their byte identity with embedded Word media was not established.
+
+Specific source questions remain visible, including conductivity conformance labels using a pH category, conflicting infrared residual-life dictionary identifiers, and mismatched or undefined specialized interface references. None is silently repaired or used to claim full equivalence. **The454-row master and same workbook are unchanged by this milestone.** Finish the remaining native-source reconciliation before final contribution decisions and integration; PA-DIM will require a separate donor column rather than overwriting Devices.
+
+---
+
 # OPC UA Devices assessment — 16 November 2026
 
 **Devices contributes22 justified new information needs and73 qualified correspondences to existing rows.** The same [master workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now has454 information rows and26 worksheets. All454 Devices cells have explicit results. The [source ledger](OPC_UA_Devices_Source_Coverage.json) records33 native finding groups, every comparison and the reasons for each addition. Publication status is in the [PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).

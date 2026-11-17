@@ -1,10 +1,10 @@
 # Current Profile Rewrite checkpoint
 
-Updated 16 November 2026, America/New_York, Profile Rewrite 54. **Devices is published and verified; PA-DIM has begun.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only relevant evidence. This is the sole current status and next-action record.
+Updated 16 November 2026, America/New_York, Profile Rewrite 54. **Devices is published and verified; PA-DIM core native review has advanced.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only relevant evidence. This is the sole current status and next-action record.
 
 ## Active scope and evidence
 
-Owner instruction in Profile Rewrite 54: **“Proceed and also begin the next step.”** This authorized finishing the already approved Devices delivery and beginning Step22, Process Automation Device Information Model (PA-DIM). The [PA-DIM plan](PLAN_OPC_UA_PADIM_Source_First_Donor_Review.md) applies the finite source-first method. Its first milestone is original-source acquisition, inventory and initial native reading; detailed review/comparison remains. No following donor, Domain Information Model (DIM)/Profile adoption, client or deployment work is authorized.
+Owner instruction in Profile Rewrite 54: **“Proceed and also begin the next step.”** This authorized finishing the already approved Devices delivery and beginning Step22, Process Automation Device Information Model (PA-DIM). The [PA-DIM plan](PLAN_OPC_UA_PADIM_Source_First_Donor_Review.md) applies the finite source-first method. The subsequent “Proceed” continued the bounded core native review. Detailed corpus reconciliation and comparison remain; no completed donor claim is made. No following donor, Domain Information Model (DIM)/Profile adoption, client or deployment work is authorized.
 
 ## Verified checkpoint
 
@@ -22,9 +22,9 @@ All432 preceding rows/order and other donor/case/DIM evidence,26 worksheets and 
 
 The [single PA-DIM ledger](OPC_UA_PADIM_Source_Coverage.json) pins release `PADIM-1.02.0-2025-11-26` at **eeb15c51735012383d926a23ff4f62955eb11c64**. All7 release files were acquired and matched their upstream Git blob IDs. They include the original Word specification,788-node PA-DIM model,271-node semantic dictionary model, two spreadsheets and two CSV files. The original Word/model dates differ from the publisher index date; the discrepancy is retained.
 
-Inventory comprises161 original heading spans plus front matter,164 web headings,1,059 declared nodes,32 embedded media assets and22 supporting workbook sheets. **These are inventory counts, not completed semantic reviews.** Six original text spans and eight web sections were read; four selected type declarations were inspected without recursively reviewing their members. Eight preliminary native findings are saved; no master mappings or additions are claimed. Figures and spreadsheet contents remain unreviewed.
+Inventory comprises161 original heading spans plus front matter,164 web headings,1,059 declared nodes,32 embedded media assets and22 supporting workbook sheets. **These are inventory counts, not completed semantic reviews.** The initial six original spans/eight web sections remain preserved. Core review now records32 native findings,37 additional full web sections reconciled with Word text (36 normalized matches; one broken reference retained),24 condition interfaces read at definition/prose depth,13 direct type/member groups comprising73 nodes, and four visually inspected publisher figures. Forty-five web sections have full text contact; partial sections remain distinct. Six preliminary comparison groups reject unsupported equivalences; no final mappings or master additions are claimed. Remaining figures, detailed model/dependency reconciliation and spreadsheet contents are still pending.
 
-A critical boundary: PA-DIM declares **Devices1.04.0**, while our completed Devices donor used1.05.0. Verify relevant inherited meanings in their declared edition; do not wholesale import later features. External dictionary definitions, full native definitions and document/reference reconciliation remain pending. Use exact ledger IDs and contact statuses rather than rereading this inventory.
+A critical boundary: PA-DIM declares **Devices1.04.0**, while our completed Devices donor used1.05.0. Verify relevant inherited meanings in their declared edition; do not wholesale import later features. External dictionary definitions, remaining native definitions and complete document/reference reconciliation remain pending. Seven PA-DIM questions now include date/dependency/dictionary boundaries, a broken reference, conductivity conformance labels, infrared residual-life versus sensitivity conflict, and specialized-interface inconsistencies. Use exact ledger IDs and contact statuses rather than rereading this inventory.
 
 ## Holds and owner decisions
 
@@ -36,11 +36,11 @@ The completed Devices tree and original local commit e8c5497 are preserved. The 
 
 ## Interrupted work
 
-Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM originals: `/workspace/scratch/705ccec1d857/padim`. The initial PA-DIM plan/ledger and Devices publication receipts were published at **23c6f3f53416ee3ba3c1bf4a875ecc2fbeeab45e**. Remote full-tree readback exactly matched local tree755a5fd05eea50478018c348c07dcf600f2366dc, including all8 findings and the unchanged454-row workbook hash. [Affected crosswalk/recovery check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44009211609). Initial source-ID/contact/hash/link checks passed; they do not establish full PA-DIM coverage. No unpublished substantive research remains; this receipt changes no source findings or workbook content.
+Current checkout: `/workspace/scratch/705ccec1d857/glaux-client`; PA-DIM originals: `/workspace/scratch/705ccec1d857/padim`. The initial PA-DIM plan/ledger and Devices publication receipts were published at **23c6f3f53416ee3ba3c1bf4a875ecc2fbeeab45e**. Remote full-tree readback exactly matched local tree755a5fd05eea50478018c348c07dcf600f2366dc, including all8 findings and the unchanged454-row workbook hash. [Affected crosswalk/recovery check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44009211609). Initial source-ID/contact/hash/link checks passed; they do not establish full PA-DIM coverage. This is the preceding published starting checkpoint. The current32-finding core review is locally saved pending publication/readback; update this receipt after saving it. It changes no master/workbook cells.
 
 ## Next action and stop
 
-Continue PA-DIM's remaining native document/model/figure and supporting-parameter review, preserving the declared dependency editions and actual contact grades; then compare with the454-row master under its finite plan. Do not restart Devices, reacquire unchanged originals, repeat successful checks, or transition to another donor automatically.
+Finish PA-DIM's remaining specialized type/variable/convention definitions, additional tables, exact dependencies, model/dictionary and supporting spreadsheet contents, and remaining figures. Then complete comparison with the454-row master; PA-DIM requires a separate donor column, preserving Devices and existing donor order. Do not restart Devices, reacquire unchanged originals, repeat successful checks, or transition to another donor automatically.
 
 ## History
 
