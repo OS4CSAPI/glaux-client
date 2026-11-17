@@ -1585,9 +1585,104 @@ def verify_opcdi():
     print('PASS Devices:33 finding groups,286 section entries,507 nodes,83 inspected images;22 candidates/73 existing correspondences/359 explicit nonmatches;454 rows and7,712 saved values; exact mirrors/fills;432 prior IDs,26 sheets,21 unaffected sheets and other ZIP parts/M00/M01 preserved.')
     print('LIMIT:12 exact source limits retained; controlling-document parity, external profile detail, runtime/certification and native Microsoft Excel reopening not claimed.')
 
+def verify_padim():
+    """Verify PA-DIM integration against the preserved, published 454-row baseline."""
+    from html.parser import HTMLParser
+    from collections import Counter
+    m=load(MASTER);l=load('OPC_UA_PADIM_Source_Coverage.json');it=l['integration']
+    def previous(name):return subprocess.check_output(['git','show',it['baseline_commit']+':'+str((D/name).relative_to(ROOT))],cwd=ROOT)
+    b=json.loads(previous(MASTER));bl=json.loads(previous('OPC_UA_PADIM_Source_Coverage.json'))
+    need(m['currentEvidenceCheckpoint']=='PADIM_SAVED_VERIFIED','PA-DIM checkpoint')
+    need(len(m['rows'])==len({r['row_id'] for r in m['rows']})==476,'PA-DIM row identities')
+    need(len(m['review_grid'])==505 and all(len(r)==17 for r in m['review_grid']),'PA-DIM grid')
+    cols=copy.deepcopy(m['columns']);need(cols.pop(6)['key']=='PADIM' and cols==b['columns'],'prior donor order')
+    for old,new in zip(b['rows'],m['rows'][:454]):
+        restored=copy.deepcopy(new);restored.pop('PADIM_source_correspondence');restored['display'].pop(6)
+        need(restored==old,'preserved prior row '+old['row_id'])
+    for old,new in zip(b['review_grid'],m['review_grid'][:482]):
+        restored=new.copy();restored.pop(6);need(restored==old,'preserved prior visible grid')
+    need(m['review_sections']==b['review_sections']+[482],'section preservation')
+    allowed={'date','columns','rows','review_grid','review_sections','counts','currentEvidenceCheckpoint','currentWorkbookSha256','workbookSnapshot','nextOwnerAction','PADIMEvidence'}
+    for k,v in b.items():
+        if k not in allowed:need(m[k]==v,'prior master evidence '+k)
+    for k,v in b['counts'].items():
+        if k!='informationRows':need(m['counts'][k]==v,'historical count '+k)
+    need(l['source_manifest']==bl['source_manifest'] and l['native_findings']==bl['native_findings'] and l['open_questions']==bl['open_questions'],'source meanings, originals and questions preserved')
+    need(l['original_figure_review']==bl['original_figure_review'],'completed figure review preserved')
+    need(len(l['finding_comparison_dispositions'])==40 and len(l['existing_row_assessment']['rows'])==454,'finite source and comparison accounting')
+    assessments={x['row_id']:x for x in l['existing_row_assessment']['rows']}
+    need(Counter(x['status'] for x in assessments.values())==Counter({'QUALIFIED_CORRESPONDENCE':38,'RELATED_ONLY':8,'RELATED_DECLARATION_ONLY':4,'PRIOR_SOURCE_HOLD_PRESERVED':6,'CASE_HOLD_PRESERVED':9,'NOT_ESTABLISHED_IN_REVIEWED_PADIM_EVIDENCE':389}),'qualified versus related/held/negative counts')
+    for old in bl['existing_row_assessment']['rows']:
+        current=copy.deepcopy(assessments[old['row_id']]);current['integrated']=False;need(current==old,'prepared assessment preserved '+old['row_id'])
+    proposals={x['candidate_id']:x for x in l['comparison_decisions'] if 'candidate_id' in x}
+    need(len(proposals)==22 and Counter(x['provisional_classification'] for x in proposals.values())==Counter({'COMMON_CANDIDATE':13,'SPECIALIZED_CANDIDATE':9}),'22 approved prepared additions')
+    for r in m['rows'][454:]:
+        p=proposals[r['row_id']];c=r['PADIM_source_correspondence']
+        need(r['definition']==p['proposed_meaning'] and c['addition_rationale']==p['reason'] and c['closest_existing_rows']==p['closest_existing_rows'],'candidate meaning and alternatives preserved')
+        need(all(v.strip() for v in r['display']) and not c['DIM_Profile_adopted'],'explicit new-row statuses, no adoption')
+    need(all(r['display'][6].strip() for r in m['rows']),'PA-DIM completed column no blanks')
+    need([r for i,r in enumerate(m['review_grid']) if i>1 and i not in m['review_sections']]==[r['display'] for r in m['rows']],'canonical display parity')
+    for name in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
+        with (D/name).open(newline='',encoding='utf-8') as f:need(list(csv.reader(f))==m['review_grid'],'CSV parity '+name)
+    class Table(HTMLParser):
+        def __init__(self):super().__init__();self.rows=[];self.row=None;self.cell=None;self.span=1
+        def handle_starttag(self,t,a):
+            if t=='tr':self.row=[]
+            if t in ('td','th'):self.cell='';self.span=int(dict(a).get('colspan',1))
+        def handle_data(self,s):
+            if self.cell is not None:self.cell+=s
+        def handle_endtag(self,t):
+            if t in ('td','th') and self.cell is not None:self.row.extend([self.cell]+['']*(self.span-1));self.cell=None
+            if t=='tr':self.rows.append(self.row);self.row=None
+    for name in ('Master_Donor_Concept_to_DIM_Crosswalk.md','ISA_Correction_Review_07NOV2026.md'):
+        t=Table();t.feed((D/name).read_text());need(t.rows==m['review_grid'],'readable comparison parity')
+    def shifted(ref):
+        col,n=re.match(r'([A-Z]+)(\d+)',ref).groups();i=0
+        for ch in col:i=i*26+ord(ch)-64
+        return letter(i+1 if i>=7 else i)+n
+    sha=digest((D/BOOK).read_bytes());need(sha==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==it['workbook_sha256'],'saved workbook hash')
+    with zipfile.ZipFile(io.BytesIO(previous(BOOK))) as old,zipfile.ZipFile(D/BOOK) as new:
+        need(new.testzip() is None and old.namelist()==new.namelist(),'workbook package integrity')
+        op=pub.old.sheetpaths(old);np=pub.old.sheetpaths(new);need(op==np and len(np)==26,'26 original sheets')
+        changed=set(it['changed_workbook_parts']);need(changed=={np[n] for n in it['workbook_edits']}|{np['Master Crosswalk']},'five scoped changed sheets')
+        for name in old.namelist():
+            if name not in changed:need(old.read(name)==new.read(name),'untouched package part '+name)
+        roots={name:ET.fromstring(new.read(path)) for name,path in np.items() if path in changed}
+        for name,root in roots.items():
+            cells={c.get('r'):c for c in root.iter(pub.q('c'))};oldroot=ET.fromstring(old.read(op[name]));oldcells={c.get('r'):c for c in oldroot.iter(pub.q('c'))}
+            need(len(cells)==len(list(root.iter(pub.q('c')))),'unique saved addresses '+name)
+            need(not any(c.get('t')=='e' or c.find(pub.q('f')) is not None for c in cells.values()),'no unexpected formulas/errors '+name)
+            if name=='Master Crosswalk':
+                for ref,c in oldcells.items():
+                    nc=copy.deepcopy(cells[shifted(ref)]);nc.set('r',ref);need(ET.tostring(nc)==ET.tostring(c),'prior cell preserved including style '+ref)
+                for i,row in enumerate(m['review_grid'],1):
+                    for j,v in enumerate(row,1):need(pub.f3_cell_text(cells.get(letter(j)+str(i)))==v,'saved master value '+letter(j)+str(i))
+                need(ET.tostring(root.find(pub.q('sheetViews')))==ET.tostring(oldroot.find(pub.q('sheetViews'))),'frozen panes preserved')
+                need(root.find(pub.q('dimension')).get('ref')=='A1:Q505','saved extent')
+                styles=ET.fromstring(new.read('xl/styles.xml'));xf=styles.find(pub.q('cellXfs'));fills=styles.find(pub.q('fills'))
+                for r in m['rows']:
+                    c=r['PADIM_source_correspondence'];cell=cells[c['cell']];fill=fills[int(xf[int(cell.get('s','0'))].get('fillId'))];color=fill.find('.//'+pub.q('fgColor')).get('rgb')[-6:]
+                    need(color==c['fill'][1:],'PA-DIM saved fill '+c['cell'])
+            else:
+                edits=it['workbook_edits'][name]
+                for ref,c in oldcells.items():
+                    if ref in edits:need(pub.f3_cell_text(cells[ref])==edits[ref] and c.get('s','0')==cells[ref].get('s','0'),'targeted edit/style '+name+'!'+ref)
+                    else:need(ET.tostring(cells[ref])==ET.tostring(c),'unrelated cell '+name+'!'+ref)
+                for ref,value in edits.items():need(pub.f3_cell_text(cells.get(ref))==value,'all metadata edits saved')
+                if name=='DIM Register':
+                    for i,row in enumerate(it['register_append'],456):
+                        for j,v in enumerate(row,1):need(pub.f3_cell_text(cells.get(letter(j)+str(i)))==v,'register addition')
+    need(m['workbookSnapshot']['color_cell_count']==762 and m['workbookSnapshot']['mixed_source_cells_uncolored']==108,'classification totals')
+    for name in D.glob('*M0[01]*'):
+        if name.is_file():need(name.read_bytes()==previous(name.name),'manual milestone preserved '+name.name)
+    print('PASS PA-DIM: 40 finding dispositions; 22 additions (13 common/9 specialized); 454 prepared assessments preserved; 476 rows and 8,585 saved values; both CSV/readable mirrors and all PA-DIM fills verified; prior 454 rows/donor order/holds, 26 worksheets, 21 untouched sheets and M00/M01 preserved.')
+    print('LIMIT: retained exact source boundaries; native Microsoft Excel reopening, runtime conformance and model adoption not claimed.')
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
+    if current=='PADIM_SAVED_VERIFIED':
+        verify_padim();sys.exit(0)
     if current==OPCDI_CP:
         verify_opcdi();sys.exit(0)
     if current==SAP11_CP:
