@@ -30165,7 +30165,7 @@
     },
     "workbook_structure_repair": {
       "date": "2026-11-17",
-      "status": "VERIFIED_LOCAL_AND_EXCEL_WEB_PENDING_CANONICAL_PUBLICATION",
+      "status": "PUBLISHED_AND_VERIFIED",
       "authorization": "Profile Rewrite 55 owner request to fix Excel repair and unfreeze the first four columns; Profile Rewrite 56 Proceed to finish, verify and publish the repair.",
       "baseline_commit": "8516d932bcc7e0284575176bdb2012038ef2b339",
       "baseline_workbook_sha256": "824a48974df18e90bbdc9bb85f38c2f9a19a96c47bdd366ded41590deaaf9292",
@@ -30212,7 +30212,25 @@
       },
       "preventive_check": "python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify",
       "publication": {
-        "status": "PENDING"
+        "status": "PUBLISHED_AND_VERIFIED",
+        "branch": "research/dim-profile-v2",
+        "commit": "866cc39efaab24b7130af97710f00f17779871ee",
+        "tree": "08487eedf6b79d3f5a81a20a66d10b7648940621",
+        "all_affected_remote_blobs_match_verified_local": true,
+        "remote_workbook_sha256": "50690f1a6af7d0604de0d93f8b61aae9c2433d3e99c885d918567b2ceaca1341",
+        "checks": [
+          {
+            "name": "current source-backed crosswalk",
+            "conclusion": "success",
+            "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44101967322"
+          },
+          {
+            "name": "same-workbook publisher",
+            "conclusion": "success",
+            "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44101967345"
+          }
+        ],
+        "receipt_note": "The following receipt changes metadata and the PITON only; verified workbook bytes and research decisions remain unchanged."
       },
       "verification": {
         "status": "PASS",

@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 17 November 2026, America/New_York, Profile Rewrite 56. **Workbook repair is verified locally and in Microsoft Excel for the web; canonical publication is pending.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once. This is the sole current status/next-action record.
+Updated 17 November 2026, America/New_York, Profile Rewrite 56. **Workbook repair is published and verified, including Microsoft Excel for the web.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once. This is the sole current status/next-action record.
 
 ## Active scope and evidence
 
@@ -9,6 +9,8 @@ The owner's Profile Rewrite 55 request authorized fixing Excel's repair warning 
 The separate owner concerns about Devices and PA-DIM coverage, classification accuracy and fair opportunity remain open. This file repair does not resolve them or establish research completeness. There is no new corrective research plan yet.
 
 ## Verified checkpoint
+
+**Published repair: `866cc39efaab24b7130af97710f00f17779871ee`, tree `08487eedf6b79d3f5a81a20a66d10b7648940621`.** All six affected remote blobs match the verified local artifacts, and a fresh download of the published workbook matches the recorded SHA256. [Crosswalk check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44101967322); [same-workbook publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44101967345). This receipt update changes metadata and the PITON only.
 
 The pre-repair canonical HEAD is `8516d932bcc7e0284575176bdb2012038ef2b339`, preserved by [archive/pre-opc-workbook-repair-17nov2026](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-opc-workbook-repair-17nov2026). Earlier pre-Devices/pre-PA-DIM archives and manual M00/M01 remain; no automatic M02.
 
@@ -34,11 +36,11 @@ PA-DIM research/integration remains the previously delivered result: 40 finding 
 
 ## Interrupted work
 
-Canonical publication remains pending. Working checkout: `/workspace/scratch/acb9b2ea127e/glaux-client`, branch `codex/profile-rewrite-56`. Its verified workbook is already saved on the remote candidate branch; local guard, ledger, master hash/snapshot labels, this PITON and Excel evidence await publication. Original Profile Rewrite 55 work remains at `/workspace/scratch/9e6e4c6747b1/glaux-client`; do not use its unrepaired workbook. Source cache `/workspace/scratch/705ccec1d857/padim` remains available.
+No workbook or research delivery remains interrupted. Current checkout: `/workspace/scratch/acb9b2ea127e/glaux-client`, local branch `codex/profile-rewrite-56`. The delivery tree is identical to the published tree above; this receipt is a metadata-only follow-up. The original Profile Rewrite 55 checkout and order-only guard edit remain at `/workspace/scratch/9e6e4c6747b1/glaux-client` for preservation, not as the current deliverable. Source cache: `/workspace/scratch/705ccec1d857/padim`.
 
 ## Next action and stop
 
-Finish the already authorized coherent canonical publication and remote readback/checks. Then stop. The next proposed bounded step is to document a finite corrective assessment of the owner's Devices/PA-DIM coverage, classification and fairness concerns before another donor; do not start it without direction.
+The authorized workbook repair is complete. Stop for owner direction. The next proposed bounded step is to document a finite corrective assessment of the owner's Devices/PA-DIM coverage, classification and fairness concerns before another donor; do not start it without direction.
 
 ## History
 
