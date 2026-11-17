@@ -1,6 +1,6 @@
 # Profile Rewrite: efficient recovery and execution protocol
 
-Profile Rewrite 45 protocol, tightened 16 November 2026 under Profile Rewrite 53's explicit request to fix chat-length disruption. Controls mitigate context use/interruption loss; they cannot change ChatGPT's limit.
+Owner-approved protocol; output enforcement strengthened in Profile Rewrite 60 (17 November 2026). Controls reduce context waste and interruption loss; ChatGPT's limit is unchanged.
 
 ## Objective and authority
 
@@ -20,14 +20,13 @@ Repository: https://github.com/OS4CSAPI/glaux-client ; branch `research/dim-prof
 
 ## Context and checkpoint controls
 
-- Process large files locally; inspect sizes/keys first. Return relevant excerpts/counts, never whole ledgers, workbooks, broad diffs, logs, base64, registries or histories.
-- Default routine command output to <=1,200 tokens; startup documents together may use <=4,000. Larger original passages are allowed when needed for a named evidence question. Query missing ranges rather than repeatedly truncating the same output. These are output controls, not limits on research depth.
-- Filter connector results; discover only needed tools. Keep raw logs outside chat; return failures/counts. Batch independent reads; sequence dependent changes.
-- Read unchanged files once. Reuse successful verification for unchanged inputs; rerun only checks affected by changes, failures or a stated unresolved concern. A branch lookup is not publication verification.
-- Within authorization, save each substantive completed stage before further large analysis/integration. Record commits/files, remaining work and check limits in the PITON. Mark incomplete backup branches pending, never canonical delivery; verify remote saves. Preserve work before the final reply.
+- For commands and large reads use `python -B scripts/dim_context.py` (`run -- COMMAND`, `stat`, `keys`, `read`; `--help`). The 4,000-byte guard retains oversized command logs on disk and refuses oversized excerpts. Narrow the selection; bytes are not tokens. Larger original passages need `--source-question`; research depth is unrestricted.
+- Process files locally; inspect sizes/keys first. Never emit whole ledgers, workbooks, broad diffs, logs, base64, registries or histories. Keep startup documents together <=4,000 tokens; read them once. Filter connector results before display; discover only needed tools. Keep large upload payloads in file transport, outside chat. Batch independent reads; sequence dependent changes.
+- Reuse verification for unchanged inputs; rerun only checks affected by changes, failures or a named concern. A branch lookup is not publication verification. The recovery-only checker validates routing documents, not conversation capacity or tool-output volume.
+- Within authorization, save substantive stages before further large analysis. Record commits/files, remaining work and check limits in the PITON. Mark incomplete backup branches pending, never canonical delivery; verify remote saves before the final reply.
 - Checkpoints add no owner gates. Complete the authorized step and delivery; no scope expansion, research restart or repeated permission for internal passes.
-- Keep updates brief; default final status <=250 words unless explanation/detail is requested. Do not request screenshots/history recoverable from the checkpoint.
-- No exact remaining-capacity/prior-cutoff accounting is available here. Do not invent a token meter, prove a platform bug by assertion, or promise no more cutoffs.
+- Default final status <=250 words unless detail is requested. Do not request recoverable screenshots/history.
+- No backend cutoff accounting or remaining-capacity meter is available. Distinguish observed failures, workflow defects and possible platform causes. A safeguard cannot diagnose or fix ChatGPT's limit.
 
 ## Source-first donor method
 

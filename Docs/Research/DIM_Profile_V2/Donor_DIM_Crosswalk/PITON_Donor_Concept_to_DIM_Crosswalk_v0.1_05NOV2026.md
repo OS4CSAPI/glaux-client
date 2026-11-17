@@ -1,10 +1,10 @@
 # Current Profile Rewrite checkpoint
 
-Updated 17 November 2026, America/New_York, Profile Rewrite 58. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`. Verify live HEAD. Read [AGENTS.md](../AGENTS.md) once.
+Updated 17 November 2026, America/New_York, Profile Rewrite 60. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`. Verify live HEAD. Read [AGENTS.md](../AGENTS.md) once.
 
 ## Active scope and evidence
 
-The owner’s Profile Rewrite 57 and 58 Proceeds cover Step 2 of the [Devices and PA-DIM corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md). The [PA-DIM source ledger](OPC_UA_PADIM_Source_Coverage.json), under `corrective_review`, records dispositions for all 477 starting cells, 40 native finding groups, 142 supporting definition groups and 22 prior additions. Step 2 corrected 29 existing PA-DIM cells, expanded two candidate definitions and added one provisional row for a signal’s compensation method and reference conditions. The [comparison narrative](Donor_Native_High_Level_Information_Groupings_Comparison.md) explains the source meanings and distinctions.
+The owner’s Profile Rewrite 57 and 58 Proceeds cover Step 2 of the [Devices and PA-DIM corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md); Profile Rewrite 59 authorized its publication receipt. Profile Rewrite 60 explicitly authorizes investigating and fixing chat-length disruption. The [PA-DIM source ledger](OPC_UA_PADIM_Source_Coverage.json), under `corrective_review`, records dispositions for all 477 starting cells, 40 native finding groups, 142 supporting definition groups and 22 prior additions. Step 2 corrected 29 existing PA-DIM cells, expanded two candidate definitions and added one provisional row for a signal’s compensation method and reference conditions. The [comparison narrative](Donor_Native_High_Level_Information_Groupings_Comparison.md) explains the source meanings and distinctions.
 
 ## Master and workbook
 
@@ -24,12 +24,16 @@ Step 1’s published [baseline and archive](https://github.com/OS4CSAPI/glaux-cl
 
 ## Interrupted work
 
-The recovered checkout is `/workspace/scratch/acb9b2ea127e/glaux-client`.
+Profile Rewrite 58 published the workbook at `2fde004`. Profile Rewrite 59's receipt survived locally at `16b098d7e6c0cc6d3db26381010e89cb834aba39` in `/workspace/scratch/055f432dd14f/receipt`; it had not reached GitHub when Profile Rewrite 60 verified the branch. Its master/ledger receipt changes are carried forward here with the updated PITON. This is previously authorized delivery, with no workbook or donor-assessment change; confirm this commit is live before treating the receipt as published.
 
 ## Verification and publication
 
-Excel verification is complete. Read back the published content tree and a fresh workbook download, confirm the affected repository checks, and record the receipt here and in the PA-DIM ledger and master.
+Profile Rewrite 59’s Proceed authorized this receipt. The [published Step 2 commit](https://github.com/OS4CSAPI/glaux-client/commit/2fde004c0819b0faad536d889e24e0942721411d) has tree `5da290b4ece8521f1086a61e2bf746b21f63fcef`, identical to the Excel-verified local commit `4626a88`. A fresh 501,831-byte workbook download matched the SHA-256 above. Both GitHub checks passed. [Master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/44152080376) · [Workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/44152080510). The PA-DIM ledger records the receipt under `corrective_review.publication` and the master under `workbookSnapshot.PADIM_corrective_2_publication`.
+
+Profile Rewrite 60 found that existing recovery checks enforce document sizes only; output limits were behavioral instructions. The reusable [output guard](../../../../scripts/dim_context.py) now bounds command output and selected file reads; complete command logs stay on disk, oversized evidence requires a narrower selection, and original-source exceptions remain explicit. Live master/PA-DIM files measured 7,121,177/2,534,639 bytes; their size alone does not establish that they entered the failed conversation. The screenshot establishes a cutoff during the first authorized step, but no exact prior execution transcript or backend cutoff accounting was available. This safeguard does not establish a platform root cause or guarantee future conversation length.
+
+The guard passed 23 focused checks plus a refusal/selection check against the actual master. The active CI verification commands, `check_dim_crosswalk_step06.py --recovery-only` and `integrate_sosa_opportunity_checkpoint.py --verify`, pass; use that route for this checkpoint, because the former's default legacy path expects an earlier 329-row master. Both recovered JSON receipts match `16b098d` exactly and the workbook hash is unchanged. The broader `verify-artifacts.py` check still reports the same five pre-existing document-register/link issues reproduced in the preserved receipt checkout; they are outside this repair.
 
 ## Next action and stop
 
-After the receipt, stop for Proceed. Step 3 is the one remaining corrective-plan step. It covers a finite comparison of the two donors and a plain-English joint explanation.
+Step 2 is complete. On one new Proceed, carry out Step 3, the final corrective-plan step. Reconcile the concrete differences between Devices and PA-DIM and explain in plain English what each contributes, what changed and which questions remain. Stop after joint closeout for the owner’s decision.

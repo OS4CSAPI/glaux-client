@@ -95262,7 +95262,7 @@
       "S06-R021",
       "S06-R010"
     ],
-    "gate_metadata_note": "Step 2 pending saved verification, Excel inspection and publication; joint Step 3 requires Proceed.",
+    "gate_metadata_note": "Step 2 delivery is published and verified. The joint comparison in Step 3 requires a separate owner Proceed.",
     "source_compared_rows": 88,
     "explicit_unassessed_rows": 344,
     "AAS_candidate_colors": 76,
@@ -95418,15 +95418,17 @@
     "PADIM_corrective_2_new_white_source_detail_hold_cells": 3,
     "publication_provenance_note": "Inherited verifiedPublisher*, last_verified_* and earlier checkpoint-specific fields are historical provenance, not this Step 2 publication. Current Step 2 publication is recorded only in PADIM_corrective_2_publication.",
     "PADIM_corrective_2_publication": {
-      "status": "EXCEL_WEB_VERIFIED_PENDING_PUBLICATION_READBACK",
+      "status": "PUBLISHED_AND_VERIFIED",
       "checkpoint": "PADIM_CORRECTIVE_2_SAVED_VERIFIED",
       "baseline_commit": "7d2593a4be7150a487e3960cad532ee970e60a67",
       "workbook_sha256": "d3882d2f0db02ea829e07f59c849b785184dbed211635258c31165479f282dce",
-      "content_commit": null,
-      "checker_action": null,
-      "publisher_action": null,
-      "remote_readback_verified": false,
-      "excel_web_candidate_commit": "ea119fa73e95c2c5cd08637572255e67541746cc"
+      "content_commit": "2fde004c0819b0faad536d889e24e0942721411d",
+      "checker_action": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44152080376",
+      "publisher_action": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44152080510",
+      "remote_readback_verified": true,
+      "excel_web_candidate_commit": "ea119fa73e95c2c5cd08637572255e67541746cc",
+      "content_tree": "5da290b4ece8521f1086a61e2bf746b21f63fcef",
+      "download_bytes": 501831
     }
   },
   "finalDelivery22Validation": "ISA22_Validated_Workbook_Record_09NOV2026.json",
@@ -97375,7 +97377,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "After Step 2 saved verification, Excel inspection, publication and explanation, stop. One Proceed authorizes bounded joint Step 3 reconciliation; no automatic donor transition, corpus expansion, hold acceptance or model adoption.",
+  "nextOwnerAction": "One Proceed authorizes Step 3, the finite joint comparison and plain-English explanation in the Devices and PA-DIM corrective plan. Earlier source holds and owner decisions carry forward.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -122801,7 +122803,7 @@
         "ISA-C-081",
         "SOSA-SO2J-FAULT-SUGGESTED-ACTION"
       ],
-      "status": "STEP_2_SAVED_VERIFIED_PENDING_APPLICATION_AND_PUBLICATION"
+      "status": "PUBLISHED_AND_VERIFIED"
     }
   }
 }

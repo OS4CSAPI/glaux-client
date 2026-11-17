@@ -30261,7 +30261,7 @@
     }
   },
   "corrective_review": {
-    "status": "EXCEL_WEB_VERIFIED_PENDING_PUBLICATION_READBACK",
+    "status": "PUBLISHED_AND_VERIFIED",
     "authorization": {
       "chat": "Profile Rewrite57",
       "text": "Proceed",
@@ -46955,9 +46955,7 @@
         "limits": "Sampled Microsoft web viewing. The saved-file verification covers grid values and fills. Desktop Excel and device runtime behavior were not tested."
       }
     },
-    "current_remaining_work": [
-      "Publish the verified delivery and confirm its remote tree, workbook download and repository checks."
-    ],
+    "current_remaining_work": [],
     "pa_dim_current_fill_counts": {
       "common_blue": 68,
       "specialized_amber": 12,
@@ -46968,6 +46966,35 @@
       "Integrate the29 corrections,2 definition enrichments and1 new provisional row into all canonical formats",
       "Verify saved values/fills, preservation and extended workbook in Excel",
       "Publish and read back coherent delivery, explain results, stop for Step3 Proceed"
-    ]
+    ],
+    "publication": {
+      "commit": "2fde004c0819b0faad536d889e24e0942721411d",
+      "tree": "5da290b4ece8521f1086a61e2bf746b21f63fcef",
+      "branch": "research/dim-profile-v2",
+      "local_delivery_commit": "4626a88",
+      "verified_remote_files": 13,
+      "readback": "The published tree matched the Excel-verified local tree, including all 13 paths changed from 91b4a67.",
+      "fresh_download": {
+        "bytes": 501831,
+        "sha256": "d3882d2f0db02ea829e07f59c849b785184dbed211635258c31165479f282dce",
+        "matches_verified_workbook": true
+      },
+      "checks": [
+        {
+          "name": "Verify current source-backed DIM donor crosswalk master",
+          "conclusion": "success",
+          "run_id": 44152080376,
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44152080376"
+        },
+        {
+          "name": "Publish source-qualified SAME canonical 26-sheet donor Excel checkpoint",
+          "conclusion": "success",
+          "run_id": 44152080510,
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44152080510"
+        }
+      ],
+      "receipt_authorization": "Profile Rewrite 59, owner Proceed for the Step 2 publication receipt.",
+      "receipt_note": "Step 2 delivery is complete. Step 3 joint closeout awaits a separate Proceed."
+    }
   }
 }
