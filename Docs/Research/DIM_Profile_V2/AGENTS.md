@@ -1,51 +1,60 @@
 # Profile Rewrite: efficient recovery and execution protocol
 
-Owner-authorized replacement, 15 November 2026, Profile Rewrite 45. Replaces whole-history/all-links startup rereads; preserves source-first research, owner decisions and stop boundaries.
+Profile Rewrite 45 protocol, tightened 16 November 2026 under Profile Rewrite 53's explicit request to fix chat-length disruption. Controls mitigate context use/interruption loss; they cannot change ChatGPT's limit.
 
 ## Objective and authority
 
-Develop a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile for a useful common Details view without erasing vendor/equipment differences. Do not invent a final domain name, chassis or class hierarchy.
+Develop a source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile for a common Details view preserving equipment differences. Do not invent its final name, chassis or hierarchy.
 
-Repository: https://github.com/OS4CSAPI/glaux-client . Branch: `research/dim-profile-v2`. Verify live remote HEAD. Committed evidence governs delivery; owner decisions govern authorization. Distinguish published, local-only, verified, accepted and adopted. Source completeness never follows from plan completion or successful checks.
+Repository: https://github.com/OS4CSAPI/glaux-client ; branch `research/dim-profile-v2`. Verify live HEAD. Evidence governs delivery; owner decisions govern authorization. Distinguish published, local-only, verified, accepted and adopted. Checks/plan completion do not prove source completeness.
 
 ## Automatic recovery
 
-“Profile Rewrite” plus a number starts READ-ONLY recovery automatically; “stand by” pauses it. Recovery may inspect/download existing evidence but must not edit, publish, advance research or create new recovery artifacts. Stop after reporting readiness; wait for Proceed unless the owner explicitly requests action in the same message.
+“Profile Rewrite” plus a number starts READ-ONLY recovery; “stand by” pauses it. Inspect/download evidence but do not edit, publish, advance research or create artifacts during recovery. Report readiness and stop for Proceed unless the owner explicitly requests action in the same message; that action authorizes its stated scope.
 
-1. Read this protocol and `Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md` fully. These are the startup set. The PITON owns current status and the one next action; READMEs are indexes, plans own methods/sequences, ledgers own detailed evidence.
-2. Verify remote branch/HEAD and relevant local commits/dirty files. Compare against the PITON's delivered checkpoint. Check only changes since that checkpoint and the named pending work. Preserve interrupted work; never reset, overwrite, cherry-pick or publish it during recovery.
-3. Read the active plan's applicable step and controls; extract the exact ledger keys, row IDs, source locators and saved verification named in the PITON. Read original passages when needed to resolve a conflict, validate an unverified claim or support the next action. A link is a locator, not an instruction to recursively read everything it references.
-4. Use supplied screenshots and pertinent prior owner decisions. Retrieve missing originals from their actual repository/attachment/Library location when required; an old access failure is not permanent unavailability. Never claim inaccessible chat history or unexamined originals were read.
-5. Report objective, live branch/HEAD, governing paths, published versus interrupted work, source limits, master/Excel parity or exact lag, binding decisions, one next action and stop boundary. State critical gaps. Recovery is sufficient when these are evidenced and no missing fact changes the next authorized action; a historical reread is not a separate completion requirement.
+1. Read this file and `Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md` once, fully. PITON owns status/next action; plans own methods; ledgers own evidence; READMEs are indexes.
+2. Verify remote HEAD and relevant local commits/dirty files. Compare only changes since the PITON checkpoint and named interrupted work. Preserve that work; no reset, overwrite, cherry-pick or publication during recovery.
+3. Read applicable plan sections and named ledger keys, IDs, source locators and saved verification. Read originals for unresolved claims, disputed meanings or the next action. Links are locators, not recursive reading instructions.
+4. Use supplied screenshots and pertinent owner decisions. Retrieve missing originals from their real repository/attachment location; old access failures do not prove permanent absence. Never claim unexamined history or sources were read.
+5. Report HEAD, governing paths, published/interrupted work, parity/lag, holds, decisions, one next action and stop. Recovery ends when no missing fact changes that action.
 
-Use `rg`, targeted ranges and JSON keys. Inspect large files locally; report relevant counts/diffs, not entire ledgers. Reuse unchanged evidence and search archives for specific questions; efficiency never excuses missing original evidence.
+## Context and checkpoint controls
+
+- Process large files locally; inspect sizes/keys first. Return relevant excerpts/counts, never whole ledgers, workbooks, broad diffs, logs, base64, registries or histories.
+- Default routine command output to <=1,200 tokens; startup documents together may use <=4,000. Larger original passages are allowed when needed for a named evidence question. Query missing ranges rather than repeatedly truncating the same output. These are output controls, not limits on research depth.
+- Filter connector results; discover only needed tools. Keep raw logs outside chat; return failures/counts. Batch independent reads; sequence dependent changes.
+- Read unchanged files once. Reuse successful verification for unchanged inputs; rerun only checks affected by changes, failures or a stated unresolved concern. A branch lookup is not publication verification.
+- Within authorization, save each substantive completed stage before further large analysis/integration. Record commits/files, remaining work and check limits in the PITON. Mark incomplete backup branches pending, never canonical delivery; verify remote saves. Preserve work before the final reply.
+- Checkpoints add no owner gates. Complete the authorized step and delivery; no scope expansion, research restart or repeated permission for internal passes.
+- Keep updates brief; default final status <=250 words unless explanation/detail is requested. Do not request screenshots/history recoverable from the checkpoint.
+- No exact remaining-capacity/prior-cutoff accounting is available here. Do not invent a token meter, prove a platform bug by assertion, or promise no more cutoffs.
 
 ## Source-first donor method
 
-For newly reviewed or disputed meanings, inspect the original publisher corpus: edition, scope, companions, native schemas/APIs and relevant sections. Distinguish similarly named families, especially The Open Group SOSA and W3C SOSA/SSN. Preserve ISA's rigor without copying its delivery count; material method/scope changes require owner direction.
+For new or disputed meanings inspect original publisher scope, edition, companions, native schemas/APIs and relevant passages. Distinguish The Open Group SOSA from W3C SOSA/SSN. Preserve ISA's rigor without copying its delivery count; material method/scope changes require owner direction.
 
-Maintain stable source IDs and exact locators, native meaning/kind, normative standing (rule, recommendation, permission, observation, definition, example or future), actual contact (fully read, sampled, unread, inaccessible, irrelevant with reason or unresolved), and qualified relation (exact/direct, partial, broader, narrower, related, conflict, no-established or unreviewed). Count actual audited material separately from samples. TOCs, citations and references to companion files do not prove those originals were examined.
+Retain stable source IDs, exact locators, native meaning/kind, normative standing (rule, recommendation, permission, observation, definition, example, future), actual contact (fully read, sampled, unread, inaccessible, irrelevant with reason, unresolved), and qualified relation (exact/direct, partial, broader, narrower, related, conflict, no-established, unreviewed). Separate audited material from samples. A TOC, citation or companion reference does not prove original-source contact.
 
-Compare meanings, subjects and roles, not names. Distinguish physical equipment, logical roles, design, service, observed installation and synthetic examples. Unreviewed is not absent; native declarations can support qualified candidates without proving execution. Record exact questions and source holds. Donor closure requires corpus reconciliation and an owner decision; missing key originals mean bounded PARTIAL. Do not change donor automatically or decide models by donor votes or one class per term.
+Compare meanings, subjects and roles, not labels. Distinguish physical equipment, logical roles, design, service, observed installation and synthetic examples. Unreviewed is not absent; declarations do not prove execution. Preserve exact questions and source holds. Donor closure requires corpus reconciliation and owner disposition; missing key originals mean bounded PARTIAL. No automatic donor transition, donor voting or one class per term.
 
-## One canonical master and owner control
+## Canonical master and owner control
 
-Keep canonical JSON, BOTH CSV mirrors, BOTH readable comparisons and the SAME editable Excel workbook. Preserve approved cases-left/donors/grouped-OGC/DIM-right layout, stable row IDs, topic dividers, prior cells, provenance and holds. No silent reordering; completed donor columns need explicit status instead of blank information cells. Use the same source-based classification criteria across donors; a color is not adoption or exact equivalence.
+Keep canonical JSON, BOTH CSV mirrors, BOTH readable comparisons and the SAME editable Excel. Preserve cases-left/donors/grouped-OGC/DIM-right layout, row IDs, dividers, existing cells, provenance and holds. No silent reordering. Completed donor columns require explicit status in every information cell. Apply identical source-based classification criteria; color is not adoption or exact equivalence.
 
-At a substantive source-qualified increment, integrate warranted changes and verify saved workbook cells, fills and parity before the next packet. If it lags, record the exact snapshot and differences. Preserve browsable pre-change versions and manual M00/M01; do not create M02 automatically. Distinguish source coverage, mapping, format parity, model/Profile adoption and runtime conformance. Owner gates remain Step24, Steps35–39 and named-version Step40; no donor transition, client work or deployment by implication.
+Integrate warranted substantive increments and verify saved cells, fills and parity before further integration. Record exact lag if any. Preserve browsable pre-change versions and manual M00/M01; no automatic M02. Separate coverage, mapping, parity, adoption and runtime conformance. Step24, Steps35–39 and named-version Step40 remain gated; no client/deployment work by implication.
 
-Source records are **accountability IDs, not Proceed-sized tasks**. For reviewed inventories, group by native meaning, reuse evidence, and dispose every frozen ID; read originals for disputed or unreviewed meanings. One owner Proceed may cover internal meaning-family passes within a bounded step. Check and publish substantive master/workbook changes, not arbitrary record batches. Holds can justify bounded-PARTIAL closeout. After automatic read-only recovery in a new chat, the next Proceed resumes interrupted work, not a new packet.
+Source IDs are accountability units, not Proceed-sized tasks. Group by native meaning with explicit members/exceptions, reuse adequate evidence, dispose every frozen ID and inspect originals for disputed/unreviewed meanings. Holds may justify bounded-PARTIAL closeout. Do not abandon unassessed IDs or create an unlimited audit.
 
-## One Proceed and interruption safety
+## Execution and interruption safety
 
-One Proceed authorizes one bounded plan step. Before acting confirm live HEAD, scope/stop, relevant original coverage, decisions, parity and intended outputs. If interrupted, finish that step's missing delivery work before offering the next research step. A saved local commit is not publication. Archive/checkpoint preservation is not donor acceptance.
+One Proceed authorizes one bounded plan step. Confirm live HEAD, scope/stop, relevant original coverage, decisions, parity and outputs. Finish interrupted delivery before offering new research. Local commits and backup branches are not canonical publication or donor acceptance.
 
-Preserve unrelated evidence. At substantive checkpoints update the PITON IN PLACE (no status-history prepends). Record verified commit, decision locator, pending branch/commit/files, active plan, ledger keys, workbook snapshot/parity, checks run/limits, holds, one next action and stop. No secrets or unrelated personal data; keep details in ledgers/Git history.
+Update the PITON IN PLACE: verified commit, authorization locator, pending branch/commit/files, plan, ledger keys, workbook snapshot/parity, checks/limits, holds, one next action and stop. Preserve unrelated work; exclude secrets and unrelated personal data. Store evidence in existing ledgers and history, not new recovery documents, per-packet scripts or workflows.
 
-At exit commit on the correct branch; read back published files and checks. Report work, coverage, updated workbook link, limits and one next step in plain English (expand acronyms; ≤5 sentences/paragraph). Reuse unchanged checks. Never imply unverified publication, acceptance or completeness.
+At exit publish only within authorization on the correct branch; read back affected files and checks. Report work, coverage, workbook link when updated, limits and next action in plain English; expand acronyms and keep paragraphs <=5 sentences. Never imply unverified delivery, acceptance or completeness.
 
-## Keeping recovery small
+## Recovery budgets
 
-Budgets: this protocol <=8,000 characters; current PITON <=1,000 words; active AAS plan <=1,400; broader crosswalk plan <=1,600; each research/crosswalk README <=300. Existing checker `python -B scripts/check_dim_crosswalk_step06.py --recovery-only` enforces these limits and required PITON sections. Limits apply to navigation/status, not original evidence or research scope.
+This protocol <=8,000 characters; PITON <=1,000 words; active AAS plan <=1,400; broader crosswalk plan <=1,600; each research/crosswalk README <=300. Run `python -B scripts/check_dim_crosswalk_step06.py --recovery-only` after relevant edits. These bound navigation, not original evidence.
 
-Before replacing history, preserve/link its exact commit in a named archive. Keep original evidence, decisions and manual workbook versions. PITON is sole current status; keep history at pinned commits, not in startup files. If over budget, move old narration but keep live holds/controls. No extra recovery documents, per-packet scripts or workflows.
+Preserve/link exact history in a named archive before replacing it. Keep decisions, originals and manual workbook versions. PITON is sole current status; no accumulated histories in startup files. Preserve live holds/controls when shortening.
