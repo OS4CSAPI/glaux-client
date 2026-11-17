@@ -1,5 +1,7 @@
 # AAS O7 reconciliation and owner closeout recommendation
 
+**Owner clarification — AAS already accepted (confirmed 16 November 2026, Profile Rewrite 53).** When the assistant proposed another AAS acceptance step, the owner replied: “no, I already accepted that work. what is really next?” Current standing is accepted with the recorded source limitations preserved. Earlier pending-disposition wording below records the delivery-time position and must not create another acceptance gate. The next planned donor is Step21, OPC UA Devices v1.05.0, followed separately by Step22, PA-DIM v1.02.0; this clarification does not itself start that review.
+
 15 November 2026, America/New_York. Publication status and the one next action are maintained in the [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). Detailed reconciliation is in `AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O7_reconciliation`. Owner acceptance is pending.
 
 ## Recommendation and practical result

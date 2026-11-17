@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-Updated 16 November 2026, America/New_York: **SOSA correction COMPLETE and OWNER ACCEPTED with recorded limitations.** This is the sole current status and next-action record. Read [AGENTS.md](../AGENTS.md), then only relevant sections of the [SOSA plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). Objective: source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile. Donor research/master work precedes later owner model decisions. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD.
+Updated 16 November 2026, America/New_York: **SOSA correction accepted; owner confirms AAS already accepted. Next: Step21 OPC UA Devices.** This is the sole current status and next-action record. Read [AGENTS.md](../AGENTS.md), then only relevant sections of the [SOSA plan](PLAN_SOSA_Source_Coverage_Correction_v0.1_09NOV2026.md). Objective: source-grounded whole-sensing-system Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile. Donor research/master work precedes later owner model decisions. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD.
 
 ## Verified checkpoint
 
@@ -16,7 +16,7 @@ Automatic approval review blocked an earlier backup push. The owner's renewed **
 
 Profile Rewrite 52 authorized all four remaining groups, integration, reconciliation, publication and a plain-English explanation. Profile Rewrite 53 completed that delivery, then the owner replied “proceed” to the recommendation to accept the SOSA correction plan as complete with documented limitations. Acceptance is recorded in `SO2_remaining_scope_closeout.owner_acceptance_record` and the matching master closeout metadata. The [published findings](Donor_Native_High_Level_Information_Groupings_Comparison.md) explain the additions, source accounting, value and remaining limits.
 
-The [SOSA ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) keys `SO2_source_opportunity_assessments` and `SO2_remaining_scope_closeout` account for **1,646** remaining IDs: **944 addition-support, 207 represented, 286 source-specific/no-row, 209 exact-held**. G348/H427/I609/J262 reconcile; **2,109 + 1,646 = 3,755** total opportunity IDs. Result: **21 provisional candidates, 7 common and 14 specialized**. Earlier A–F/F-R added 43, giving 64 SOSA opportunity additions across the full continuation. F3 accepted; AAS O1–O7 delivered 24 candidates, with acceptance separate.
+The [SOSA ledger](SOSA_G4_F_192_Heading_Source_and_Master_Ledger_11NOV2026.json) keys `SO2_source_opportunity_assessments` and `SO2_remaining_scope_closeout` account for **1,646** remaining IDs: **944 addition-support, 207 represented, 286 source-specific/no-row, 209 exact-held**. G348/H427/I609/J262 reconcile; **2,109 + 1,646 = 3,755** total opportunity IDs. Result: **21 provisional candidates, 7 common and 14 specialized**. Earlier A–F/F-R added 43, giving 64 SOSA opportunity additions across the full continuation. F3 accepted; AAS O1–O7 delivered 24 candidates and the owner confirms that work was already accepted. Record: `AAS_O7_reconciliation.owner_acceptance_confirmation` in the master and AAS ledger.
 
 G–I retain C239 recorded-finding depth with relevant original passages reconsulted; J retains original 2022 heading/text/selective-field depth. Other inventory classes (32 reused, 120 reference limits, 227 structural IDL records) remain separate. All original IDs, pointers, hashes and standing remain.
 
@@ -30,7 +30,7 @@ All 404 previous information rows, 432 previous grid rows, layout/dividers, 26 w
 
 Preserve six ISA questions, nine original SOSA hold families, 39 overlapping SAPIENT limitations, AAS limits and four-case ceilings. Retain C239 figure/pin/modalities, external ANSI/VITA originals, restricted Appendix C, missing vendor volatility evidence, 2023 companions and full 227-file IDL semantic audit holds. The 209 source questions and 108 held comparison classifications are different counts.
 
-Earlier SOSA/SAPIENT bounded-PARTIAL standing was accepted. The completed SOSA correction/opportunity assessment is now **OWNER ACCEPTED WITH RECORDED LIMITATIONS**. AAS acceptance remains a separate pending owner decision. No DIM/Profile adoption, donor transition, client work or deployment. Step24, Steps35–39 and named-version Step40 remain gated.
+Earlier SOSA/SAPIENT bounded-PARTIAL standing was accepted. The completed SOSA correction/opportunity assessment is now **OWNER ACCEPTED WITH RECORDED LIMITATIONS**. The owner corrected stale AAS routing in Profile Rewrite 53: “no, I already accepted that work. what is really next?” AAS is **accepted with its recorded limitations**; do not ask for acceptance again. This confirmation is dated 16 November 2026; the earlier acceptance date is not inferred. No DIM/Profile adoption, donor transition, client work or deployment. Step24, Steps35–39 and named-version Step40 remain gated.
 
 ## Verification and publication
 
@@ -40,7 +40,7 @@ Five broader artifact/link errors are pre-existing; no project-wide or native Ex
 
 ## Next action and stop
 
-**SOSA correction is complete, published, verified and owner-accepted. STOP; no further SOSA work is pending under this plan.** Next present a concise explanation of the already-delivered AAS work for its separate owner disposition. Do not infer AAS acceptance from this SOSA decision. Subsequent donor work requires authorization; the planned order remains OPC UA Devices, then PA-DIM. Do not jump to DIM/Profile development or reopen held SOSA questions automatically.
+**Next actual work: Step21, OPC UA Devices v1.05.0**, under the existing [master donor plan](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md). On Proceed, begin the source-first review of DeviceType/Device, nameplate information, connections, information and state, with exact original-source scope and a finite completion boundary. Use the existing 425-row master and preserve source limits; integrate only warranted findings in the same workbook. Step22, OPC UA PA-DIM v1.02.0, follows separately. No repeat AAS acceptance, further automatic SOSA audit, or jump to DIM/Profile development. This status correction does not itself begin the new donor.
 
 ## History
 

@@ -6,7 +6,7 @@
   "currentWorkbookSha256": "0f25363a3d5b78c5c92297cf401a2bceda7ce009a8aa6dba4ce10ccae38207ce",
   "previousMaster": "Master_Donor_Concept_to_DIM_Crosswalk_v0.9_Step15_ISA_07NOV2026.xlsx",
   "previousMasterCommit": "da168cf68b6fb96c090daacf70d3c8efcf004b77",
-  "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption. Profile Rewrite 53 (16 November 2026): completed SOSA correction/opportunity assessment OWNER ACCEPTED with recorded limitations; all 3755 IDs accounted, 64 candidate additions. No DIM/Profile adoption; AAS acceptance separate.",
+  "ownerDecision": "Step16 working source comparison accepted; The Open Group SOSA G5-D bounded PARTIAL—OWNER ACCEPTED, all source holds retained. Approved ISA/SOSA C1 presentation completed only; zero DIM/Profile content adoption. Profile Rewrite 53 (16 November 2026): completed SOSA correction/opportunity assessment OWNER ACCEPTED with recorded limitations; all 3755 IDs accounted, 64 candidate additions. No DIM/Profile adoption; AAS acceptance separate. Profile Rewrite 53 owner clarification (16 November 2026): AAS work was already accepted with its recorded limitations; the repeated pending-acceptance routing was stale.",
   "columns": [
     {
       "key": "Dragino",
@@ -74913,7 +74913,7 @@
       "S06-R021",
       "S06-R010"
     ],
-    "gate_metadata_note": "Verified 425-row research-delivery snapshot preserved unchanged. Current SOSA correction acceptance is recorded in SOSA_SO2GJ_opportunity_closeout.owner_acceptance_record; all source holds remain. AAS disposition is separate.",
+    "gate_metadata_note": "Verified 425-row research-delivery snapshot preserved unchanged. SOSA correction is accepted; owner confirms AAS was already accepted. Current decisions are in the corresponding master/ledger acceptance metadata. Next planned donor is OPC UA Devices, subject to Proceed.",
     "source_compared_rows": 88,
     "explicit_unassessed_rows": 337,
     "AAS_candidate_colors": 76,
@@ -76980,7 +76980,7 @@
       "DIM_Profile_adopted": false
     }
   },
-  "nextOwnerAction": "STOP. SOSA correction is complete and owner-accepted with recorded limitations. Next present completed AAS work for separate owner disposition; do not restart SOSA or begin a new donor automatically.",
+  "nextOwnerAction": "Next planned work is Step21: OPC UA Devices v1.05.0. Await Proceed to begin the source-first donor review; Step22 PA-DIM v1.02.0 remains separate. No repeat AAS acceptance step.",
   "SOSAReviewCompletion": {
     "status": "BOUNDED_PARTIAL_OWNER_ACCEPTED_20261112__C4_READABILITY_EXCEL_VERIFIED",
     "corrected_on": "2026-11-09",
@@ -101866,11 +101866,21 @@
   },
   "AAS_O7_reconciliation": {
     "source_ledger": "AAS01_Original_Source_Corpus_Coverage_13NOV2026.json#/AAS_O7_reconciliation",
-    "status": "O7_COMPLETE__OWNER_DISPOSITION_PENDING",
+    "status": "O7_COMPLETE__OWNER_ACCEPTANCE_CONFIRMED",
     "finding_count": 310,
     "new_candidates_total": 24,
-    "owner_decision": "PENDING",
-    "one_next": "STOP for owner disposition: accept the completed AAS review as bounded PARTIAL with documented holds, or name a specific remaining source question to reopen. No automatic donor transition, model/Profile adoption or implementation."
+    "owner_decision": "ACCEPTED_WITH_RECORDED_LIMITATIONS",
+    "one_next": "Next planned work is Step21: OPC UA Devices v1.05.0. Await Proceed to begin the source-first donor review; Step22 PA-DIM v1.02.0 remains separate. No repeat AAS acceptance step.",
+    "owner_acceptance_confirmation": {
+      "status": "OWNER_CONFIRMED_PREVIOUSLY_ACCEPTED_WITH_RECORDED_LIMITATIONS",
+      "confirmation_date": "2026-11-16",
+      "timezone": "America/New_York",
+      "decision_locator": "Profile Rewrite 53: user corrected the proposed repeat AAS acceptance step.",
+      "owner_statement": "no, I already accepted that work. what is really next?",
+      "interpretation": "Owner confirms the completed AAS work was already accepted. This records that clarification, not a new acceptance gate. The original acceptance date is not inferred.",
+      "scope": "Completed AAS O1-O7 review with 24 provisional candidate additions; all recorded source limits retained.",
+      "boundary": "No DIM/Profile adoption or automatic start of a new donor."
+    }
   },
   "SOSA_SO2A_opportunity_review": {
     "status": "PUBLISHED_READBACK_VERIFIED",
