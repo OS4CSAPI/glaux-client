@@ -30,12 +30,12 @@ The exact [pre-joint checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/d
 
 ## Interrupted work
 
-Local Step 3 implementation is complete in `/workspace/scratch/8d381dcd4fda/glaux-step3`; canonical publication is pending. Resume the existing delivery if interrupted; do not restart either donor or create another audit.
+Step 3 content is published at `22613c0`; this receipt closes its publication record. The verified local checkout is `/workspace/scratch/8d381dcd4fda/glaux-step3`. No research execution step remains within this three-step corrective plan.
 
 ## Verification and publication
 
-Current evidence checkpoint: `DEVICES_PADIM_JOINT_3_SAVED_VERIFIED`. Run `python -B scripts/check_dim_crosswalk_step06.py --recovery-only` and `python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify` through the output guard. The updated current-checkpoint workflow uses that route; prior Step 1/2 verifier bodies are unchanged. The joint publication receipt is explicitly pending until remote files, workbook bytes and affected checks are verified. Unrelated pre-existing document-register issues remain recorded in the pre-joint checkpoint.
+Current evidence checkpoint: `DEVICES_PADIM_JOINT_3_SAVED_VERIFIED`. Run `python -B scripts/check_dim_crosswalk_step06.py --recovery-only` and `python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify` through the output guard. The updated current-checkpoint workflow uses that route; prior Step 1/2 verifier bodies are unchanged. The [published content commit](https://github.com/OS4CSAPI/glaux-client/commit/22613c00fcb905800477dce66bcae81a48c71a06) has tree `440a6bc9b89cbba0755290bc14b6e8ffb2604383`; all 16 delivery files matched on readback. A fresh 502,268-byte workbook download matched the current hash. Both affected checks passed: [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/44186968874) and [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/44186969059). The identical joint publication receipts are saved in the master and both ledgers. Unrelated pre-existing document-register issues remain recorded in the pre-joint checkpoint.
 
 ## Next action and stop
 
-Finish and verify the already-authorized Step 3 publication, then stop for the owner's decision on the completed joint closeout with retained source limits. No automatic fourth review round, next donor or DIM/Profile authoring is authorized. Continue to use the enforced output guard; it reduces avoidable output but does not diagnose or fix ChatGPT's platform limit.
+Stop for the owner's decision on the completed and published joint closeout with retained source limits. The recommendation is to accept this finite corrective result, retaining those limits, and decide the next donor step separately. No automatic fourth review round, next donor or DIM/Profile authoring is authorized. Continue to use the enforced output guard; it reduces avoidable output but does not diagnose or fix ChatGPT's platform limit.

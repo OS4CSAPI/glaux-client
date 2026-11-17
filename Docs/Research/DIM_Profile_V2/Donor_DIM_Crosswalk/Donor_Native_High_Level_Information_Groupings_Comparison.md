@@ -4,7 +4,7 @@
 
 ### Result and scope
 
-The three-step corrective assessment is complete as a finite research and delivery task, subject to publication verification and the owner's acceptance decision recorded in the current PITON. The final joint comparison corrected four existing donor cells and added no rows. The master remains at 478 information rows. All earlier source limits, unresolved questions and adoption decisions remain visible; completion of this assessment does not decide those matters for the owner.
+The three-step corrective assessment is complete as a finite research and delivery task, and its [content delivery](https://github.com/OS4CSAPI/glaux-client/commit/22613c00fcb905800477dce66bcae81a48c71a06) is published and verified. The owner's acceptance decision remains separate, as recorded in the current PITON. The final joint comparison corrected four existing donor cells and added no rows. The master remains at 478 information rows. All earlier source limits, unresolved questions and adoption decisions remain visible; completion of this assessment does not decide those matters for the owner.
 
 The two donors are OPC Unified Architecture (OPC UA) Devices, version 1.05.0, and the Process Automation Device Information Model (PA-DIM), version 1.02.0. PA-DIM declares Devices 1.04.0 as a dependency. The comparison therefore preserves an edition distinction as well as a difference in subject matter. It does not import newer Devices wording into PA-DIM or assume that every feature in a dependency is inherited by every dependent type.
 
@@ -97,7 +97,7 @@ A future OGC API – Connected Systems Profile can use this evidence when decidi
 
 ### Completion and recommendation
 
-The finite register is closed through the four recorded cell corrections and the explicit retention/count-scope dispositions. Every information cell in the two current columns has an explicit status, and the saved delivery checks cover values, fills, both CSV mirrors, both readable comparisons, original package structure and unaffected content. The workbook remains the same editable 26-sheet artifact, with row-only freezing and the original M00/M01 versions preserved. The current PITON and joint publication receipt distinguish saved validation from verified remote publication.
+The finite register is closed through the four recorded cell corrections and the explicit retention/count-scope dispositions. Every information cell in the two current columns has an explicit status, and the saved delivery checks cover values, fills, both CSV mirrors, both readable comparisons, original package structure and unaffected content. The workbook remains the same editable 26-sheet artifact, with row-only freezing and the original M00/M01 versions preserved. All 16 delivery files matched on remote readback, a fresh workbook download matched the verified SHA-256, and both affected GitHub checks passed. The current PITON and identical joint publication receipts record that evidence.
 
 The recommendation is to accept the finite corrective result while retaining its source limits and unresolved questions explicitly. A further general review is not required by this plan. The owner can identify a concrete disputed finding or accept this result, then decide the next donor step separately. There is no automatic fourth corrective round, donor transition or DIM/Profile authoring step.
 
