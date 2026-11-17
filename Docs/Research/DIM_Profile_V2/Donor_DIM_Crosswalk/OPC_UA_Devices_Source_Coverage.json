@@ -37013,7 +37013,7 @@
     }
   },
   "corrective_review": {
-    "status": "COMPLETE_VERIFIED__PUBLICATION_RECEIPT_PENDING",
+    "status": "COMPLETE_VERIFIED_PUBLISHED",
     "authorization": "Profile Rewrite 56 Proceed after publication of three-step corrective plan; Step 1 Devices only",
     "baseline_commit": "07704a67a2405eaccc055f5ceb3ddac3adeb63cb",
     "archive_branch": "archive/pre-devices-correction-17nov2026",
@@ -38810,10 +38810,7 @@
       }
     ],
     "holds": "All 12 existing source limits retained; no source-limit acceptance or runtime/model adoption. New row PA-DIM comparison explicitly deferred to Step 2.",
-    "remaining": [
-      "Publish coherent canonical delivery and verify remote files/checks",
-      "Explain outcome and stop for Step 2 Proceed"
-    ],
+    "remaining": [],
     "cell_assessments": [
       {
         "row_id": "S06-R001",
@@ -44022,6 +44019,34 @@
         ],
         "limits": "Sampled application viewing is separate from programmatic full-cell parity. Desktop Excel and runtime conformance remain untested."
       }
+    },
+    "publication": {
+      "commit": "b8d585054f55fc6477dc7bd1e08b667047b7da8e",
+      "tree": "73a92299addf02430ba3c1a227631c74c4af46a6",
+      "branch": "research/dim-profile-v2",
+      "local_delivery_commit": "0b34260",
+      "verified_remote_files": 13,
+      "readback": "Fetched published commit/tree and verified exact tree equality to the saved local delivery; all 13 changed file blobs match.",
+      "fresh_download": {
+        "bytes": 496117,
+        "sha256": "40231f8eb3335aa2f7066cfd978d66d3506d34d46e1c71c82d345f4c95063fe3",
+        "matches_verified_workbook": true
+      },
+      "checks": [
+        {
+          "name": "Verify current source-backed DIM donor crosswalk master",
+          "conclusion": "success",
+          "run_id": 44124001352,
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44124001352"
+        },
+        {
+          "name": "Publish source-qualified SAME canonical 26-sheet donor Excel checkpoint",
+          "conclusion": "success",
+          "run_id": 44124001318,
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44124001318"
+        }
+      ],
+      "receipt_note": "This follow-up changes delivery metadata and recovery wording only; workbook, source decisions, grid and classifications are unchanged."
     }
   }
 }

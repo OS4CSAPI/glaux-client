@@ -10,8 +10,9 @@ The [Devices ledger](OPC_UA_Devices_Source_Coverage.json), key `corrective_revie
 
 ## Verified checkpoint
 
-Planning baseline: **07704a67a2405eaccc055f5ceb3ddac3adeb63cb**, preserved by [archive/pre-devices-correction-17nov2026](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-devices-correction-17nov2026). It contains the verified repaired workbook and published corrective plan. Local assessment checkpoint: `958cd3a`; integrated checkpoint: `d2c876dd185cef71c31a4deab46eae2323a652f0`. The exact workbook was staged at remote candidate `8118923152276187aa299b4108dadfaf4ef54441` on `codex/profile-rewrite-56`; that candidate contains only the workbook increment and is not the coherent canonical delivery. Canonical publication/readback is pending. Do not confuse local completion with canonical delivery.
+**Published Step 1 delivery: `b8d585054f55fc6477dc7bd1e08b667047b7da8e`, tree `73a92299addf02430ba3c1a227631c74c4af46a6`.** The fetched remote tree exactly matches the saved local delivery (`0b34260`); all 13 changed file blobs match. A fresh download of the published workbook matches the SHA256 below. [Crosswalk check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44124001352); [same-workbook publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44124001318). This receipt update changes metadata/recovery wording only; verify live HEAD.
 
+Planning baseline `07704a67a2405eaccc055f5ceb3ddac3adeb63cb` is preserved by [archive/pre-devices-correction-17nov2026](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-devices-correction-17nov2026). Assessment checkpoint `958cd3a` and integration checkpoint `d2c876dd` remain locally preserved.
 Earlier workbook repair: `866cc39efaab24b7130af97710f00f17779871ee`, receipt `6cd94b3d4016af8a3807ca7aba1e1dc68152ae99`. It corrected 102 out-of-order rows, removed three orphan table definitions/relationships, and unfroze the first four columns. All original 30,863 cells/styles survived that repair. The new research corrections intentionally change the recorded cells after that preserved baseline. [Pre-repair archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-opc-workbook-repair-17nov2026) and M00/M01 remain.
 
 ## Master and workbook
@@ -24,7 +25,7 @@ Current saved SHA256: **40231f8eb3335aa2f7066cfd978d66d3506d34d46e1c71c82d345f4c
 
 `python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify` passes ordered/unique cells, style validity and table relationships; exact recorded changes and unaffected-content preservation; all saved grid values/fills and both CSV/readable mirrors; prior source evidence and M00/M01. The existing workflow routes the new checkpoint to this verifier. No new script or workflow is added to the repository.
 
-Fresh Microsoft Excel for the web verification PASS on the exact 477-row file: it reopened without WORKBOOK REPAIRED; F506 shows the amber new candidate, F468 the corrected blue target mode, and G506 its explicit Step 2 pending status. Horizontal scrolling places F at the left while A-D move off screen and header rows 1-2 stay fixed. Saved evidence: [new row and scrolling](Workbook_Verification/Excel_Web_Devices_Step1_New_Row_17NOV2026.jpg), [target mode](Workbook_Verification/Excel_Web_Devices_Step1_Mode_17NOV2026.jpg). The Devices ledger `corrective_review.verification.application_evidence` records the candidate and exact file hashes. Desktop Excel and runtime conformance are not claimed. Canonical publication/readback is pending.
+Fresh Microsoft Excel for the web verification PASS on the exact 477-row file: it reopened without WORKBOOK REPAIRED; F506 shows the amber new candidate, F468 the corrected blue target mode, and G506 its explicit Step 2 pending status. Horizontal scrolling places F at the left while A-D move off screen and header rows 1-2 stay fixed. Saved evidence: [new row and scrolling](Workbook_Verification/Excel_Web_Devices_Step1_New_Row_17NOV2026.jpg), [target mode](Workbook_Verification/Excel_Web_Devices_Step1_Mode_17NOV2026.jpg). The Devices ledger `corrective_review.verification.application_evidence` records the candidate and exact file hashes. Desktop Excel and runtime conformance are not claimed. Canonical publication/readback is complete; the Devices ledger `corrective_review.publication` records the receipt and checks.
 
 ## Holds and owner decisions
 
@@ -32,11 +33,11 @@ All twelve Devices source limits remain. Publisher document197 was retried witho
 
 ## Interrupted work
 
-Checkout: `/workspace/scratch/acb9b2ea127e/glaux-client`, local branch `codex/profile-rewrite-56`. Devices source cache: `/workspace/scratch/eb7bba69536f/opc-di`; PA-DIM cache: `/workspace/scratch/705ccec1d857/padim`. Step 1 research, integration and application verification are complete; the coherent delivery awaits canonical publication and readback. The comparison explanation now labels the earlier 476-row PA-DIM results as historical, preserving their substance. Temporary authored inputs and preservation builder: `/tmp/profile56-devices`. Original Profile Rewrite 55 checkout remains at `/workspace/scratch/9e6e4c6747b1/glaux-client`; do not use its obsolete workbook/guard as current.
+Checkout: `/workspace/scratch/acb9b2ea127e/glaux-client`, local branch `codex/profile-rewrite-56`. Devices source cache: `/workspace/scratch/eb7bba69536f/opc-di`; PA-DIM cache: `/workspace/scratch/705ccec1d857/padim`. No Step 1 research or delivery remains interrupted. Research, integration, application verification, canonical publication and remote readback are complete. The comparison explanation now labels the earlier 476-row PA-DIM results as historical, preserving their substance. Temporary authored inputs and preservation builder: `/tmp/profile56-devices`. Original Profile Rewrite 55 checkout remains at `/workspace/scratch/9e6e4c6747b1/glaux-client`; do not use its obsolete workbook/guard as current.
 
 ## Next action and stop
 
-Finish the already authorized Step 1 canonical publication/readback and explanation, then stop for Proceed. Next is Step 2 PA-DIM assessment and delivery, including the newly added update-key row, under the same corrective plan. Do not begin Step 2 on Step 1 authorization or create another general Devices review round.
+Step 1 is complete. Stop for Proceed. The next bounded action is Step 2 PA-DIM assessment and delivery, including the newly added update-key row, under the same corrective plan. Do not begin Step 2 on Step 1 authorization or create another general Devices review round.
 
 ## History
 

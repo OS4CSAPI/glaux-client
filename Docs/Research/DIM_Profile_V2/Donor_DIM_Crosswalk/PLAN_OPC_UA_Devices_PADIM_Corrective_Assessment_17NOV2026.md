@@ -1,6 +1,6 @@
 # Devices and PA-DIM corrective assessment
 
-Prepared 17 November 2026, America/New_York, Profile Rewrite 56. **Plan documented; execution has not started.** The owner's latest Proceed authorizes documenting/publishing this plan. The next Proceed authorizes Step 1 only. This is a finite response to the owner's coverage, color-classification and fairness concerns, not a presumption that either donor's research is wrong.
+Prepared 17 November 2026, America/New_York, Profile Rewrite 56. This finite corrective plan was authorized for publication before execution. Current execution status and the next action are owned by the [current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). One Proceed authorizes one numbered step. This plan responds to the owner's coverage, color-classification and fairness concerns without presuming either donor's research is wrong.
 
 ## Purpose and fixed baseline
 
