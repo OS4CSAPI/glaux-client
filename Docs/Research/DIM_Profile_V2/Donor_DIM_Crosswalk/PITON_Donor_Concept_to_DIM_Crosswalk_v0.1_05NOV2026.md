@@ -1,12 +1,14 @@
 # Current Profile Rewrite checkpoint
 
-Updated 17 November 2026, America/New_York, Profile Rewrite 55. **PA-DIM integration is saved and locally verified; canonical publication/readback is the remaining delivery action.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only relevant evidence. This is the sole current status and next-action record.
+Updated 17 November 2026, America/New_York, Profile Rewrite 55. **PA-DIM integration is published and verified; the authorized delivery is complete.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only relevant evidence. This is the sole current status and next-action record.
 
 ## Active scope and evidence
 
-The owner's **Proceed in Profile Rewrite 55** authorized publishing the recovered correction, preserving the 454-row baseline, integrating PA-DIM, verifying/publishing and explaining its contributions. Continue this delivery without another permission gate. No following donor, source-limit acceptance, Domain Information Model (DIM)/Profile adoption, client or deployment work is authorized.
+The owner's **Proceed in Profile Rewrite 55** authorized publishing the recovered correction, preserving the 454-row baseline, integrating PA-DIM, verifying/publishing and explaining its contributions. The delivery, source-boundary explanation and publication verification are complete. No following donor, source-limit acceptance, Domain Information Model (DIM)/Profile adoption, client or deployment work is authorized.
 
 ## Verified checkpoint
+
+PA-DIM integration is published at **de10a1d61cadb4e572c32efa8ed2b5155dfb1ec1**, tree **3c2d094d5b0c1ed4b57112c3e231a89f282a2255**. Full remote-tree readback and the remote workbook SHA256 match the verified local artifacts. [Crosswalk check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44076481949); [same-workbook publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44076482010). The following receipt update changes only this PITON and the ledger publication status.
 
 Original-figure closure and the corrected allowed-types/configured-components mapping are published at **de6980e1242c42da16bc1e826833cf4ceacaae31**, tree **d543a4884cf77dbf95e97f5f9dd5f3c8c6151978**; remote-tree readback passed. The [pre-PA-DIM 454-row archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-padim-17nov2026) points to that commit. It preserves the prior workbook, source records and narrative.
 
@@ -36,11 +38,11 @@ Preserve exact publisher-date, external dictionary, unit-conversion, label/refer
 
 ## Interrupted work
 
-Current checkout: `/workspace/scratch/9e6e4c6747b1/glaux-client`, local branch `codex/profile-rewrite-55`. Original source cache: `/workspace/scratch/705ccec1d857/padim`. Earlier local branch `codex/profile-rewrite-54` is historical. Current integration files are local pending publication; use the completed files, not a rerun of temporary preparation scripts. Existing automated verification is extended; no extra workflow or research packet is created.
+Current checkout: `/workspace/scratch/9e6e4c6747b1/glaux-client`, local branch `codex/profile-rewrite-55`. Original source cache: `/workspace/scratch/705ccec1d857/padim`. Earlier local branch `codex/profile-rewrite-54` is historical. Integration local commit `83ccf965ed5b04ea4f597d01e98d51775eb928af` has the same tree as the published integration. No research or workbook integration remains interrupted; use the completed published artifacts, not temporary preparation scripts. Existing automated verification is extended; no extra workflow or research packet is created.
 
 ## Next action and stop
 
-Publish this verified integration atomically to the canonical branch, read back its exact tree and workbook, and record the checks/publication receipt here. Finish the plain-English handoff with the workbook link. Then stop for owner review of the result and retained limits and direction for the next donor; do not start it automatically.
+Owner reviews the delivered PA-DIM result and retained source limits, then directs the next donor. Stop here: no automatic donor transition, model adoption or further PA-DIM research cycle. On recovery, verify live HEAD and any later change before proposing a bounded next step.
 
 ## History
 

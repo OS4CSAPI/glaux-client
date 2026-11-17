@@ -1,6 +1,6 @@
 {
   "schema": "OPC_UA_PADIM_SOURCE_COVERAGE_v1",
-  "status": "INTEGRATED_AT_RECORDED_SOURCE_DEPTH_PENDING_PUBLICATION",
+  "status": "PUBLISHED_SAVED_VERIFIED_AT_RECORDED_SOURCE_DEPTH",
   "authorization": {
     "chat": "Profile Rewrite 54",
     "text": "Proceed and also begin the next step",
@@ -13992,7 +13992,7 @@
   },
   "workbook_status": "SAVED_VERIFIED: 476 information rows; all PA-DIM column G information cells explicit; six master/workbook/mirror files agree. Publication receipt is in the PITON.",
   "remaining": [
-    "Publish verified integration and read back the exact remote tree/workbook; then owner review of delivered results and retained limits before directing another donor."
+    "Owner review of delivered PA-DIM contributions and retained source boundaries; owner direction before another donor or DIM/Profile adoption. No automatic extra PA-DIM review cycle."
   ],
   "verification": {
     "acquisition": "All7 release files match upstream Git blob IDs and have recorded SHA256 hashes",
@@ -30128,7 +30128,7 @@
       "482": 285.0
     },
     "verification": {
-      "status": "LOCAL_SAVED_PASS_PUBLICATION_PENDING",
+      "status": "PASS_LOCAL_SAVED_AND_PUBLISHED_READBACK",
       "command": "python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify",
       "scope": "40 finding dispositions, 22 additions, 454 preserved assessments and source records; 476 row identities; 505x17 saved grid; both CSV and both readable mirrors; all PA-DIM fills; prior cell values/styles and donor order; 26 sheets with 21 byte-identical; M00/M01 preserved.",
       "visual_scope": "Saved header and all 22 new PA-DIM cells inspected; affected Summary, Validation, Legend and DIM Register views inspected. No clipping in reviewed changes.",
@@ -30142,6 +30142,26 @@
       "xl/worksheets/sheet9.xml",
       "xl/worksheets/sheet8.xml",
       "xl/worksheets/sheet25.xml"
-    ]
+    ],
+    "publication": {
+      "branch": "research/dim-profile-v2",
+      "integration_commit": "de10a1d61cadb4e572c32efa8ed2b5155dfb1ec1",
+      "tree": "3c2d094d5b0c1ed4b57112c3e231a89f282a2255",
+      "full_remote_tree_matches_verified_local": true,
+      "remote_workbook_sha256": "824a48974df18e90bbdc9bb85f38c2f9a19a96c47bdd366ded41590deaaf9292",
+      "checks": [
+        {
+          "name": "current source-backed crosswalk",
+          "conclusion": "success",
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44076481949"
+        },
+        {
+          "name": "same canonical 26-sheet workbook publisher",
+          "conclusion": "success",
+          "url": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44076482010"
+        }
+      ],
+      "receipt_note": "This metadata receipt does not change source findings, prepared assessments or workbook bytes."
+    }
   }
 }
