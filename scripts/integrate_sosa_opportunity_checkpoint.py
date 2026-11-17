@@ -1493,9 +1493,103 @@ def verify_sap11():
     print('PASS SAP11: 11/11 outcomes; 7 new candidates, 13 clarified cells; 432 rows / 7,360 saved values; CSV/readable parity; source holds and prior425 IDs preserved; 26 sheets, 21 unaffected sheets/other parts and M00/M01 unchanged.')
     print('LIMIT: selected original-source depth, source conflicts and native Microsoft Excel reopen limitations retained; no model adoption or donor transition.')
 
+OPCDI_CP='OPCDI_SAVED_VERIFIED'
+OPCDI_LEDGER='OPC_UA_Devices_Source_Coverage.json'
+OPCDI_BASE='7d965e2a174190a39e3b0e3506da467c5c3cc50e'
+
+def verify_opcdi():
+    """Verify the fixed Devices corpus dispositions and exact authorized workbook delta."""
+    m=load(MASTER);l=load(OPCDI_LEDGER)
+    def prior(name):return subprocess.check_output(['git','show',OPCDI_BASE+':'+str((D/name).relative_to(ROOT))],cwd=ROOT)
+    base=json.loads(prior(MASTER));rowids={r['row_id'] for r in m['rows']}
+    need(m['currentEvidenceCheckpoint']==OPCDI_CP,'Devices checkpoint')
+    need(len(m['rows'])==454 and len(rowids)==454 and len(m['review_grid'])==482,'Devices dimensions/unique IDs')
+    need(len(l['native_findings'])==33 and len(l['candidates'])==22 and len(l['row_comparisons'])==432,'Devices finite representation inventory')
+    need(len(l['section_inventory'])==286 and len({x['id'] for x in l['section_inventory']})==286,'Devices section accounting')
+    need(len(l['model_node_inventory'])==507 and len({x['id'] for x in l['model_node_inventory']})==507,'Devices model accounting')
+    need(len(l['source_manifest']['files'])==21 and len(l['figure_contact'])==84,'Devices source manifest/figure inventory including logo')
+    need(sum(x['contact']=='VISUALLY_INSPECTED' for x in l['figure_contact'])==83,'Devices actual figure contact')
+    need(all(x.get('native_finding_ids') for x in l['model_node_inventory']),'Devices all nodes have semantic family disposition')
+    need(all(x['status']=='ACCOUNTED_FOR_AT_RECORDED_DEPTH' for x in l['source_manifest']['files']),'Devices no unread support file silently complete')
+    need(len(l['holds'])==12 and l['completion_limits'],'Devices precise limitations retained')
+    for f in l['native_findings']:
+        need(f['mapping_outcome']!='PENDING_CURRENT_MASTER_COMPARISON','Devices no pending finding')
+        need(set(f['existing_row_targets']+f['candidate_row_targets'])<=rowids,'Devices finding targets exist')
+    comparisons={c['row_id']:c for c in l['row_comparisons']}
+    need(sum(c['classification']=='COMMON_CANDIDATE' for c in comparisons.values())==73,'Devices existing correspondence count')
+    need(sum(c['classification']=='UNCOLORED' for c in comparisons.values())==359,'Devices explicit no-correspondence count')
+    need(sum(c['classification']=='COMMON_CANDIDATE' for c in l['candidates'])==17,'Devices new classification')
+    need([r['row_id'] for r in m['rows'][:432]]==[r['row_id'] for r in base['rows']],'Devices preserves prior row order')
+    for old,new in zip(base['rows'],m['rows'][:432]):
+        copyrow=copy.deepcopy(new);copyrow.pop('OPCDI_source_correspondence');copyrow['display'][5]=old['display'][5]
+        need(copyrow==old,'Devices only F evidence added to prior row '+old['row_id'])
+        need(new['display'][5]==comparisons[old['row_id']]['current_value'],'Devices comparison text parity')
+    for k in ('columns','review_sections','manualWorkbookMilestones','caseEvidence','priorHolds','SOSA_SO2GJ_opportunity_closeout','AAS_O7_reconciliation','SAPIENT_SAP11_reconciliation'):
+        need(m[k]==base[k],'Devices prior decisions/evidence preserved '+k)
+    for k in base:
+        if k.endswith('Evidence'):need(m[k]==base[k],'Devices prior donor evidence untouched '+k)
+    allowed={c['grid_row']:c['current_value'] for c in comparisons.values()}
+    for i,(old,new) in enumerate(zip(base['review_grid'],m['review_grid'][:460]),1):
+        expect=old.copy()
+        if i in allowed:expect[5]=allowed[i]
+        need(new==expect,'Devices prior grid delta '+str(i))
+    for c,r in zip(l['candidates'],m['rows'][432:]):
+        need(c['row_id']==r['row_id'] and r['OPCDI_source_correspondence']['DIM_Profile_adopted'] is False,'Devices candidate provenance')
+        need(r['display']==m['review_grid'][r['display_row']-1] and all(v.strip() for v in r['display']),'Devices explicit candidate cells')
+        need(c['addition_rationale'] and set(c['nearest_existing_rows'])<=rowids,'Devices reconsidered nearest existing meanings')
+    sha=digest((D/BOOK).read_bytes());need(sha==l['workbook_sha256']==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256'],'Devices saved hash')
+    for name in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
+        with (D/name).open(newline='',encoding='utf-8') as h:need(list(csv.reader(h))==m['review_grid'],'Devices CSV parity')
+    need((D/'Master_Donor_Concept_to_DIM_Crosswalk.md').read_bytes()==(D/'ISA_Correction_Review_07NOV2026.md').read_bytes(),'Devices readable mirror parity')
+    with zipfile.ZipFile(io.BytesIO(prior(BOOK))) as old,zipfile.ZipFile(D/BOOK) as new:
+        need(new.testzip() is None and new.namelist()==old.namelist(),'Devices ZIP and original part list')
+        op=pub.old.sheetpaths(old);np=pub.old.sheetpaths(new);need(op==np and len(np)==26,'Devices same26 sheets')
+        changed={np[name] for name in l['workbook_edits']}
+        need(all(old.read(f)==new.read(f) for f in old.namelist() if f not in changed),'Devices21 unaffected sheets and all unrelated parts byte-identical')
+        def rows(z,path):return {int(r.get('r')):r for r in ET.fromstring(z.read(path)).find(pub.q('sheetData'))}
+        omr=rows(old,op['Master Crosswalk']);mr=rows(new,np['Master Crosswalk'])
+        styles={kind:next(c.get('s') for c in omr[n] if c.get('r')=='J'+str(n)) for kind,n in [('COMMON_CANDIDATE',428),('SPECIALIZED_CANDIDATE',431)]}
+        need(len(mr)==482,'Devices master saved rows')
+        for i,vals in enumerate(m['review_grid'],1):
+            cells={c.get('r'):c for c in mr[i]};need(len(cells)==len(mr[i]),'Devices unique cell addresses')
+            for j,v in enumerate(vals,1):
+                c=cells.get(letter(j)+str(i));need((pub.f3_cell_text(c) if c is not None else '')==v,'Devices saved value '+letter(j)+str(i))
+                if c is not None:need(c.get('t')!='e','Devices no cell errors')
+        for name,ed in l['workbook_edits'].items():
+            ors=rows(old,op[name]);nrs=rows(new,np[name])
+            for n,rr in ors.items():
+                clean=copy.deepcopy(nrs[n]);cells={c.get('r'):c for c in clean}
+                if str(n) in ed['row_heights']:
+                    need(float(clean.get('ht'))==ed['row_heights'][str(n)],'Devices fitted affected height');clean.attrib.clear();clean.attrib.update(rr.attrib)
+                for oc in rr:
+                    addr=oc.get('r')
+                    if addr in ed['cells']:
+                        nc=cells[addr];need(pub.f3_cell_text(nc)==ed['cells'][addr],'Devices saved edit '+name+'!'+addr)
+                        if addr in ed['fills']:need(nc.get('s')==styles['COMMON_CANDIDATE'],'Devices existing common fill')
+                        clean.remove(nc);clean.insert(list(rr).index(oc),copy.deepcopy(oc))
+                oldaddrs={x.get('r') for x in rr}
+                for addr in ed['cells']:
+                    if addr not in oldaddrs and addr in cells:
+                        need(pub.f3_cell_text(cells[addr])==ed['cells'][addr],'Devices newly explicit cell')
+                        clean.remove(cells[addr])
+                need(ET.tostring(clean)==ET.tostring(rr),'Devices unaffected old cells/styles '+name+' '+str(n))
+            for item in ed['append']:
+                cells={c.get('r'):c for c in nrs[item['number']]}
+                for j,v in enumerate(item['values'],1):need(pub.f3_cell_text(cells[letter(j)+str(item['number'])])==v,'Devices appended register/grid')
+        neutral=next(c.get('s') for c in omr[460] if c.get('r')=='F460')
+        for c,r in zip(l['candidates'],m['rows'][432:]):
+            cells={re.match('[A-Z]+',x.get('r')).group():x for x in mr[r['display_row']]}
+            need(cells['F'].get('s')==styles[c['classification']],'Devices candidate fill')
+            need(all(cells[col].get('s')==neutral for col in 'EGHIJKLMNO'),'Devices no inherited other-donor classification')
+    need(all(r['display'][5].strip() for r in m['rows']),'Devices completed column no blanks')
+    print('PASS Devices:33 finding groups,286 section entries,507 nodes,83 inspected images;22 candidates/73 existing correspondences/359 explicit nonmatches;454 rows and7,712 saved values; exact mirrors/fills;432 prior IDs,26 sheets,21 unaffected sheets and other ZIP parts/M00/M01 preserved.')
+    print('LIMIT:12 exact source limits retained; controlling-document parity, external profile detail, runtime/certification and native Microsoft Excel reopening not claimed.')
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
+    if current==OPCDI_CP:
+        verify_opcdi();sys.exit(0)
     if current==SAP11_CP:
         verify_sap11();sys.exit(0)
     if current==CP_GJ or 'SO2_remaining_scope_closeout' in load(LEDGER):

@@ -1,3 +1,49 @@
+# OPC UA Devices assessment — 16 November 2026
+
+**Devices contributes22 justified new information needs and73 qualified correspondences to existing rows.** The same [master workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx) now has454 information rows and26 worksheets. All454 Devices cells have explicit results. The [source ledger](OPC_UA_Devices_Source_Coverage.json) records33 native finding groups, every comparison and the reasons for each addition. Publication status is in the [PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
+
+## What Devices adds to our research
+
+Devices organizes information about equipment and its software, reusable component descriptions, logical networks, host-visible views, parameter access, updates and lifetime. This extends our whole-system perspective beyond measurements. Its useful structures include shared functional groups, different digital views of one physical asset, paired offline/online parameters, and relationships identifying what can update what. These relationships must retain their actual meaning rather than all being flattened into physical containment.
+
+| New information needs | Why existing broad rows were insufficient |
+|---|---|
+| Product code; overall device revision; local asset tag | Commercial product identity, a whole-device revision and an owner-assigned tag differ from model name, software version and serial number. |
+| Functional groups; multiple views of one asset | Shared purpose-based membership and multiple representations do not imply separate physical assets or exclusive containment. |
+| Powered/active time and cycle counters; qualified lifetime progress | Use history differs from current state, calendar age and a maintenance guarantee. |
+| Audible/visual locating indication | Identifying equipment physically differs from reporting its geographic position. |
+| Requested target mode; offline/online counterparts; parameter-transfer outcomes | Requested, prepared, transferred and actually active values are different facts. |
+| Lock state | Ownership, scope and timeout of exclusive access differ from generic authorization. |
+| Current/pending/fallback software; update behavior; update backup; update lifecycle; confirmation/rollback | A package can be staged without being installed, installed without restored operation, or rolled back after failed reconnection. |
+| Update relationships; package compatibility; package signatures; solution assignments | Update authority/targets, compatibility predicates, authenticity and coordinated subpackages carry distinct constraints. |
+| Allowed versus configured composition | Knowing which module types are allowed does not establish which instances are installed. |
+
+The22 additions comprise17 common candidates and5 specialized candidates. Common means potentially reusable across equipment contexts; it does not mean every donor covers it. Specialized preserves a more particular block, transfer or update contract. All remain research candidates, not adopted Domain Information Model (DIM) or Profile requirements.
+
+Illustratively, equipment powered for1,000 hours might have been actively operating for600 hours and started200 times: those quantities answer different questions. Likewise, a downloaded update, an installed update and a successfully reconnected device are separate facts; Devices connectivity confirmation does not establish complete functional correctness. These are explanatory examples, not observed case-study results.
+
+## Was the donor given a fair opportunity?
+
+The review first recorded Devices-native meanings, then compared them against the432-row baseline, including the later AAS, SOSA and SAPIENT contributions. Seventy-three existing rows have qualified PARTIAL/RELATED correspondences; these are not73 full equivalences. The remaining359 baseline rows explicitly say that native correspondence was not established in the reviewed Devices corpus. That does not prove absence across the entire OPC UA ecosystem.
+
+Every proposed addition identifies nearby existing rows and explains the distinction they do not preserve. Repeated inherited declarations, generated encodings and informative examples were not counted as separate contributions. Generic parameter extensibility was not treated as native support for every conceivable information need. There was no additions quota, and source origin does not establish exclusivity: other donors were not automatically reassessed against all22 new rows.
+
+## Actual coverage and limits
+
+The publisher's reference §§1–12 and Annexes A–C,83 source images,507 primary model nodes and21 release files are accounted for in the ledger. Release DI-1.05.0-2025-11-15 is pinned to commit8e8a9e13ce922ffe68e9a15897f729a3604fb277. The286 section inventory distinguishes244 substantive/reference sections,41 structural headings and one excluded website legal agreement. Supporting serializations were reconciled as supporting evidence, not treated as independent discoveries.
+
+Twelve precise source limits remain. They include inaccessible controlling-document download and external profile details, differing publication dates, patch-identifier cardinality, singular/plural package terminology, an Abort-state contradiction, JSON encoding wording and mandatoryness, compatibility operand descriptions, a topology inheritance disagreement, and version/range presentation differences. The ledger records each affected meaning and its bounded interpretation. No inaccessible document, complete external standard, certification test or runtime behavior is claimed examined; no owner acceptance of these limits is invented.
+
+## Preservation, value and next action
+
+All432 previous information rows, their ordering and other donor evidence remain;22 rows were appended. The same26 worksheets, approved donor order, prior source holds and M00/M01 remain. Saved workbook values, fills and mirrors passed comparison;21 unaffected sheets and unrelated package parts are byte-identical. Affected views were rendered and visually checked. The [pre-Devices baseline](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-opc-devices-16nov2026) remains available.
+
+This gives later DIM/Profile design more precise distinctions about equipment use, digital representation and software change, without choosing Devices as the overarching model. The finite reference/model assessment has reached its documented finish line; remaining source questions stay visible rather than creating an automatic research loop. Publication/readback completes this assignment. The next donor is PA-DIM, under separate authorization; no DIM/Profile development begins here.
+
+---
+
+## Retained earlier donor results
+
 # SAPIENT eleven-record reconciliation completed — 16 November 2026
 
 **SAPIENT had received a real source-first correction, but the master still understated several useful contributions. This bounded follow-through adds seven justified candidates and makes thirteen existing SAPIENT cells more explicit.** All eleven selected findings now have a recorded outcome: seven warrant an additional row and four are adequately represented by identified existing rows. The same master workbook now has **432 information rows**, with **twelve SAPIENT-origin candidates: the previous five plus seven new ones**.

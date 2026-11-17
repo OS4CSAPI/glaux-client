@@ -1,6 +1,6 @@
 # OPC UA Devices — finite source-first donor assessment
 
-Status: OWNER APPROVED; EXECUTION ACTIVE. Authorization: Profile Rewrite53, owner message “Proceed and fucking begin asshole” following the explicit full-assignment approval proposal. Prepared 16 November 2026 in Profile Rewrite53. Owner requested a durable, fair and complete donor assessment without endless prompts. This document proposes the execution authorization below; planning does not imply approval of research.
+Status: RESEARCH AND SAVED WORKBOOK VERIFIED; PUBLICATION IN PROGRESS. Authorization: Profile Rewrite53, owner message “Proceed and fucking begin asshole” following the explicit full-assignment approval proposal. Prepared 16 November 2026 in Profile Rewrite53. Owner requested a durable, fair and complete donor assessment without endless prompts. The recorded approval authorizes the entire finite assignment.
 
 ## Objective and baseline
 
@@ -8,11 +8,11 @@ Understand what OPC UA Devices offers for whole-sensing-system information, then
 
 ## One assignment and authorization
 
-Approval of this plan authorizes ONE bounded assignment: establish the source inventory, perform the complete agreed OPC UA Devices assessment, integrate warranted findings, reconcile evidence, publish and explain results. The four stages below are internal execution stages, not separate Proceed gates. Preserve owner control at completion; do not automatically start PA-DIM or model development. Record the actual approval text in the PITON before execution. Until approval, the next action is approval of this plan, not a small research packet.
+Approval of this plan authorizes ONE bounded assignment: establish the source inventory, perform the complete agreed OPC UA Devices assessment, integrate warranted findings, reconcile evidence, publish and explain results. The four stages below are internal execution stages, not separate Proceed gates. Preserve owner control at completion; do not automatically start PA-DIM or model development. Record the actual approval text in the PITON before execution. Approval is recorded; internal stages require no further Proceed.
 
 ## Scope and source boundary
 
-The planned edition is OPC UA Devices v1.05.0; verify the exact authoritative edition, publisher identification and companion model version before analysis. This plan makes no claim that those originals have already been retrieved. Inventory the complete specification and official accompanying machine-readable model files for that edition, including normative annexes, informative explanations/examples and relevant figures. Distinguish their authority. Identify optional/deprecated features, inherited meanings and dependencies without assuming they are Devices-original contributions.
+The planned edition is OPC UA Devices v1.05.0; verify the exact authoritative edition, publisher identification and companion model version before analysis. The execution record below identifies actual source contact and remaining limits. Inventory the complete specification and official accompanying machine-readable model files for that edition, including normative annexes, informative explanations/examples and relevant figures. Distinguish their authority. Identify optional/deprecated features, inherited meanings and dependencies without assuming they are Devices-original contributions.
 
 Freeze an enumerated source manifest after initial acquisition: source/version/hash or stable revision, meaningful section and model-item IDs, availability, expected review depth, dependencies and exclusions with reasons. Reconcile prose and machine-readable declarations so neither becomes an unnoticed second corpus. Inspect inherited definitions only to the depth necessary to interpret Devices; record these as supporting evidence. PA-DIM and unrelated companion specifications remain separate donors. A reference is not automatic authorization to audit an entire external standard.
 
@@ -73,3 +73,11 @@ Keep tool output bounded: process large ledgers locally; return relevant excerpt
 ## Governing records
 
 [Current PITON](PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md); [research protocol](../AGENTS.md); [broader sequence](PLAN_Donor_Concept_to_DIM_Master_Crosswalk_v0.1_05NOV2026.md); [recorded donor findings and lessons](Donor_Native_High_Level_Information_Groupings_Comparison.md). Current SAPIENT reconciliation is complete; AAS and SOSA are already accepted. No repeat acceptance gates for those donors.
+
+## Execution outcome — 16 November 2026
+
+All four stages have reached saved-workbook verification; publication receipt belongs in the PITON. The fixed release is DI-1.05.0-2025-11-15 at8e8a9e13ce922ffe68e9a15897f729a3604fb277. The publisher reference §§1–12 and Annexes A–C, 83 source images, 507 primary model nodes and21 release files are accounted for at their recorded depth. The286 section inventory contains244 substantive/reference sections,41 structural headings and one excluded website legal agreement. The authoritative downloadable document returned403 and external profile details remained behind an application shell; neither is claimed read. Twelve precise limitations remain in the ledger.
+
+Thirty-three native finding groups were compared against all432 baseline rows:73 qualified existing correspondences,359 explicit no-native-correspondence results, and22 justified additions (17 common,5 specialized). Every finding has identified targets or an explicit context-only disposition; each addition records the closest existing alternatives and why they lose useful meaning. The master now contains454 information rows in the same26-sheet workbook. Source coverage means the reviewed reference/model corpus, not unqualified certification, external dependencies or inaccessible-document parity. These remaining limits are disclosed, not silently accepted on the owner's behalf.
+
+The preserved baseline is archive/pre-opc-devices-16nov2026 at7d965e2a174190a39e3b0e3506da467c5c3cc50e. Saved values, classifications, mirrors, prior rows, other donor evidence and unaffected package parts passed verification; affected rendered views were visually inspected. No additional research batch is scheduled. Finish publication/readback and explain; then stop before PA-DIM.
