@@ -30134,7 +30134,7 @@
       "visual_scope": "Saved header and all 22 new PA-DIM cells inspected; affected Summary, Validation, Legend and DIM Register views inspected. No clipping in reviewed changes.",
       "limits": "No native Microsoft Excel reopening, runtime conformance or DIM/Profile adoption. Historical row-position metadata retained; integration uses stable IDs and current review-grid order."
     },
-    "workbook_sha256": "824a48974df18e90bbdc9bb85f38c2f9a19a96c47bdd366ded41590deaaf9292",
+    "workbook_sha256": "50690f1a6af7d0604de0d93f8b61aae9c2433d3e99c885d918567b2ceaca1341",
     "changed_master_row_heights": {},
     "changed_workbook_parts": [
       "xl/worksheets/sheet2.xml",
@@ -30162,6 +30162,84 @@
         }
       ],
       "receipt_note": "This metadata receipt does not change source findings, prepared assessments or workbook bytes."
+    },
+    "workbook_structure_repair": {
+      "date": "2026-11-17",
+      "status": "VERIFIED_LOCAL_AND_EXCEL_WEB_PENDING_CANONICAL_PUBLICATION",
+      "authorization": "Profile Rewrite 55 owner request to fix Excel repair and unfreeze the first four columns; Profile Rewrite 56 Proceed to finish, verify and publish the repair.",
+      "baseline_commit": "8516d932bcc7e0284575176bdb2012038ef2b339",
+      "baseline_workbook_sha256": "824a48974df18e90bbdc9bb85f38c2f9a19a96c47bdd366ded41590deaaf9292",
+      "baseline_archive": "archive/pre-opc-workbook-repair-17nov2026",
+      "initial_order_only_candidate": "537671fa338298ae60e574e83280d3fb004adb34",
+      "verified_candidate_commit": "1b5cf34a7f01f0666c101ab86d5609080f4aa250",
+      "workbook_sha256": "50690f1a6af7d0604de0d93f8b61aae9c2433d3e99c885d918567b2ceaca1341",
+      "defects": {
+        "unordered_Master_Crosswalk_rows": 101,
+        "unordered_DIM_Register_rows": 1,
+        "dangling_table_relationships": 3
+      },
+      "changed_package_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/worksheets/sheet25.xml",
+        "[Content_Types].xml"
+      ],
+      "removed_package_parts": [
+        "xl/tables/table1.xml",
+        "xl/tables/table3.xml",
+        "xl/tables/table4.xml",
+        "xl/worksheets/_rels/sheet10.xml.rels",
+        "xl/worksheets/_rels/sheet12.xml.rels",
+        "xl/worksheets/_rels/sheet25.xml.rels"
+      ],
+      "preservation": "Every existing cell record, style definition, row/column layout and both active table definitions are unchanged. Removed metadata was already unreferenced by its worksheet. All 26 sheets remain. M00/M01 and the full pre-repair archive remain. ZIP compression changes no contained part bytes.",
+      "scope_limit": "Repairs file structure and requested pane only. Does not resolve donor coverage, classification correctness, fairness or source holds.",
+      "excel_web": {
+        "date": "2026-11-17",
+        "candidate_commit": "1b5cf34a7f01f0666c101ab86d5609080f4aa250",
+        "opened_without_repair_warning": true,
+        "directly_selected_and_read": [
+          "Master Crosswalk!F8",
+          "Master Crosswalk!F204"
+        ],
+        "visually_observed": [
+          "F8 restored text and blue fill",
+          "G8 PA-DIM explicit bounded status",
+          "horizontal scroll to J8 places G at the left, with A-D off screen",
+          "header rows 1-2 remain fixed"
+        ],
+        "evidence": "Workbook_Verification/Excel_Web_Repaired_Workbook_17NOV2026.jpg",
+        "limits": "Microsoft Excel for the web Reading View tested. Windows/Mac desktop Excel not tested. Full cell parity is programmatic, not an assertion that every cell was manually viewed."
+      },
+      "preventive_check": "python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify",
+      "publication": {
+        "status": "PENDING"
+      },
+      "verification": {
+        "status": "PASS",
+        "all_saved_cells_preserved": 30863,
+        "information_rows": 476,
+        "comparison_cells": 8585,
+        "all_classifications_unchanged": 870,
+        "removed_orphan_relationships": 3,
+        "active_tables_preserved": 2,
+        "manual_versions_preserved": [
+          "M00",
+          "M01"
+        ],
+        "negative_regression_checks": [
+          {
+            "input": "original published workbook",
+            "expected_rejection": true,
+            "reason": "SO2F1: worksheet cell order/address xl/worksheets/sheet2.xml F7"
+          },
+          {
+            "input": "order-only repair",
+            "expected_rejection": true,
+            "reason": "SO2F1: worksheet table references/relationships xl/worksheets/sheet10.xml"
+          }
+        ],
+        "limits": "No new donor-content audit; desktop Excel not tested."
+      }
     }
   }
 }

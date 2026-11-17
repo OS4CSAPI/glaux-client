@@ -3,7 +3,7 @@
 Uses the repository's established OOXML/ZIP publisher helpers to preserve other parts.
 --apply is idempotent; --verify checks the saved result without edits.
 """
-import copy,csv,hashlib,html,io,json,re,subprocess,sys,zipfile
+import copy,csv,hashlib,html,io,json,posixpath,re,subprocess,sys,zipfile
 from pathlib import Path
 from xml.etree import ElementTree as ET
 import publish_sosa_d as pub
@@ -1585,11 +1585,87 @@ def verify_opcdi():
     print('PASS Devices:33 finding groups,286 section entries,507 nodes,83 inspected images;22 candidates/73 existing correspondences/359 explicit nonmatches;454 rows and7,712 saved values; exact mirrors/fills;432 prior IDs,26 sheets,21 unaffected sheets and other ZIP parts/M00/M01 preserved.')
     print('LIMIT:12 exact source limits retained; controlling-document parity, external profile detail, runtime/certification and native Microsoft Excel reopening not claimed.')
 
+def verify_workbook_structure(path):
+    """Reject cell-order and dangling-table defects before publication."""
+    with zipfile.ZipFile(path) as z:
+        need(z.testzip() is None, 'workbook ZIP integrity')
+        styles=ET.fromstring(z.read('xl/styles.xml'))
+        style_count=len(styles.find(pub.q('cellXfs')))
+        for part in z.namelist():
+            if not (part.startswith('xl/worksheets/') and part.endswith('.xml')):continue
+            root=ET.fromstring(z.read(part));data=root.find(pub.q('sheetData'))
+            need(data is not None, 'worksheet sheetData '+part)
+            previous_row=0
+            for row in data:
+                number=int(row.get('r'));need(previous_row<number<=1048576,'worksheet row order '+part)
+                previous_row=number;previous_col=0
+                for cell in row:
+                    ref=cell.get('r','');match=re.fullmatch(r'([A-Z]+)([1-9][0-9]*)',ref)
+                    need(match is not None,'cell address '+part+' '+ref)
+                    column=0
+                    for ch in match[1]:column=column*26+ord(ch)-64
+                    need(previous_col<column<=16384 and int(match[2])==number,
+                         'worksheet cell order/address '+part+' '+ref)
+                    previous_col=column
+                    need(0<=int(cell.get('s','0'))<style_count,'cell style '+part+' '+ref)
+            used={x.get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id')
+                  for x in root.iter(pub.q('tablePart'))}
+            relpart=posixpath.dirname(part)+'/_rels/'+posixpath.basename(part)+'.rels'
+            table_rels={}
+            if relpart in z.namelist():
+                for rel in ET.fromstring(z.read(relpart)):
+                    if rel.get('Type','').endswith('/table'):
+                        table_rels[rel.get('Id')]=rel.get('Target')
+            need(used==set(table_rels), 'worksheet table references/relationships '+part)
+            for target in table_rels.values():
+                resolved=target.lstrip('/') if target.startswith('/') else posixpath.normpath(posixpath.join(posixpath.dirname(part),target))
+                need(resolved in z.namelist(), 'missing table part '+resolved)
+        print('PASS workbook structure: ordered unique row/cell addresses, valid style references, and matched worksheet/table relationships.')
+
+
+def verify_workbook_repair(record):
+    """Prove the repair changes no cell content/style or unrelated sheet feature."""
+    baseline=subprocess.check_output(['git','show',record['baseline_commit']+':'+str((D/BOOK).relative_to(ROOT))],cwd=ROOT)
+    need(digest(baseline)==record['baseline_workbook_sha256'], 'repair baseline hash')
+    removed={'xl/tables/table1.xml','xl/tables/table3.xml','xl/tables/table4.xml',
+             'xl/worksheets/_rels/sheet10.xml.rels','xl/worksheets/_rels/sheet12.xml.rels',
+             'xl/worksheets/_rels/sheet25.xml.rels'}
+    need(set(record['removed_package_parts'])==removed,'exact orphan metadata removal scope')
+    changed={'xl/worksheets/sheet2.xml','xl/worksheets/sheet25.xml','[Content_Types].xml'}
+    count=0
+    with zipfile.ZipFile(io.BytesIO(baseline)) as old,zipfile.ZipFile(D/BOOK) as new:
+        need(set(new.namelist())==set(old.namelist())-removed, 'repair package inventory')
+        for relpart in sorted(p for p in removed if p.endswith('.rels')):
+            sheet=posixpath.dirname(posixpath.dirname(relpart))+'/'+posixpath.basename(relpart)[:-5]
+            need(not list(ET.fromstring(old.read(sheet)).iter(pub.q('tablePart'))), 'removed metadata was unreferenced '+sheet)
+            for rel in ET.fromstring(old.read(relpart)):
+                need(rel.get('Type','').endswith('/table') and rel.get('Target','').lstrip('/') in removed,'only orphan table relationships removed')
+        for part in new.namelist():
+            if part not in changed:need(old.read(part)==new.read(part),'repair unrelated part preserved '+part)
+            if part.startswith('xl/worksheets/') and part.endswith('.xml'):
+                a=ET.fromstring(old.read(part));b=ET.fromstring(new.read(part))
+                ac={c.get('r'):ET.tostring(c) for c in a.iter(pub.q('c'))}
+                bc={c.get('r'):ET.tostring(c) for c in b.iter(pub.q('c'))}
+                need(ac==bc,'every repair cell value/formula/style preserved '+part);count+=len(ac)
+                for row in a.find(pub.q('sheetData')):
+                    row[:]=sorted(row,key=lambda c:(len(re.match('[A-Z]+',c.get('r')).group()),re.match('[A-Z]+',c.get('r')).group()))
+                if part=='xl/worksheets/sheet2.xml':
+                    a.remove(a.find(pub.q('sheetViews')));b.remove(b.find(pub.q('sheetViews')))
+                need(ET.tostring(a)==ET.tostring(b),'repair preserves sheet layout/features '+part)
+        types=ET.fromstring(old.read('[Content_Types].xml'))
+        for entry in list(types):
+            if entry.get('PartName','').lstrip('/') in removed:types.remove(entry)
+        need(ET.tostring(types)==ET.tostring(ET.fromstring(new.read('[Content_Types].xml'))),'only orphan content-type entries removed')
+    print(f'PASS repair preservation: all {count:,} cells and styles, 26 sheets, both active tables, layout and unrelated package parts unchanged; only cell order, requested pane and orphan metadata repaired.')
+
+
 def verify_padim():
     """Verify PA-DIM integration against the preserved, published 454-row baseline."""
     from html.parser import HTMLParser
     from collections import Counter
     m=load(MASTER);l=load('OPC_UA_PADIM_Source_Coverage.json');it=l['integration']
+    repair=it.get('workbook_structure_repair')
+    if repair:verify_workbook_repair(repair)
     def previous(name):return subprocess.check_output(['git','show',it['baseline_commit']+':'+str((D/name).relative_to(ROOT))],cwd=ROOT)
     b=json.loads(previous(MASTER));bl=json.loads(previous('OPC_UA_PADIM_Source_Coverage.json'))
     need(m['currentEvidenceCheckpoint']=='PADIM_SAVED_VERIFIED','PA-DIM checkpoint')
@@ -1621,6 +1697,7 @@ def verify_padim():
         need(r['definition']==p['proposed_meaning'] and c['addition_rationale']==p['reason'] and c['closest_existing_rows']==p['closest_existing_rows'],'candidate meaning and alternatives preserved')
         need(all(v.strip() for v in r['display']) and not c['DIM_Profile_adopted'],'explicit new-row statuses, no adoption')
     need(all(r['display'][6].strip() for r in m['rows']),'PA-DIM completed column no blanks')
+    need(all(r['display'][5].strip() for r in m['rows']),'Devices completed column no blanks')
     need([r for i,r in enumerate(m['review_grid']) if i>1 and i not in m['review_sections']]==[r['display'] for r in m['rows']],'canonical display parity')
     for name in ('Master_Donor_Concept_to_DIM_Crosswalk.csv','ISA_Correction_Review_07NOV2026.csv'):
         with (D/name).open(newline='',encoding='utf-8') as f:need(list(csv.reader(f))==m['review_grid'],'CSV parity '+name)
@@ -1642,10 +1719,12 @@ def verify_padim():
         return letter(i+1 if i>=7 else i)+n
     sha=digest((D/BOOK).read_bytes());need(sha==m['currentWorkbookSha256']==m['workbookSnapshot']['sha256']==it['workbook_sha256'],'saved workbook hash')
     with zipfile.ZipFile(io.BytesIO(previous(BOOK))) as old,zipfile.ZipFile(D/BOOK) as new:
-        need(new.testzip() is None and old.namelist()==new.namelist(),'workbook package integrity')
+        removed=set(repair['removed_package_parts']) if repair else set()
+        need(new.testzip() is None and set(new.namelist())==set(old.namelist())-removed,'workbook package integrity')
         op=pub.old.sheetpaths(old);np=pub.old.sheetpaths(new);need(op==np and len(np)==26,'26 original sheets')
         changed=set(it['changed_workbook_parts']);need(changed=={np[n] for n in it['workbook_edits']}|{np['Master Crosswalk']},'five scoped changed sheets')
         for name in old.namelist():
+            if name in removed or (repair and name=='[Content_Types].xml'):continue
             if name not in changed:need(old.read(name)==new.read(name),'untouched package part '+name)
         roots={name:ET.fromstring(new.read(path)) for name,path in np.items() if path in changed}
         for name,root in roots.items():
@@ -1657,7 +1736,13 @@ def verify_padim():
                     nc=copy.deepcopy(cells[shifted(ref)]);nc.set('r',ref);need(ET.tostring(nc)==ET.tostring(c),'prior cell preserved including style '+ref)
                 for i,row in enumerate(m['review_grid'],1):
                     for j,v in enumerate(row,1):need(pub.f3_cell_text(cells.get(letter(j)+str(i)))==v,'saved master value '+letter(j)+str(i))
-                need(ET.tostring(root.find(pub.q('sheetViews')))==ET.tostring(oldroot.find(pub.q('sheetViews'))),'frozen panes preserved')
+                if it.get('workbook_structure_repair'):
+                    pane=root.find(pub.q('sheetViews')).find(pub.q('sheetView')).find(pub.q('pane'))
+                    need(pane is not None and pane.get('xSplit','0')=='0' and pane.get('ySplit')=='2'
+                         and pane.get('topLeftCell')=='A3' and pane.get('state')=='frozen',
+                         'owner-requested row-only freeze; no locked columns')
+                else:
+                    need(ET.tostring(root.find(pub.q('sheetViews')))==ET.tostring(oldroot.find(pub.q('sheetViews'))),'frozen panes preserved')
                 need(root.find(pub.q('dimension')).get('ref')=='A1:Q505','saved extent')
                 styles=ET.fromstring(new.read('xl/styles.xml'));xf=styles.find(pub.q('cellXfs'));fills=styles.find(pub.q('fills'))
                 for r in m['rows']:
@@ -1673,14 +1758,15 @@ def verify_padim():
                     for i,row in enumerate(it['register_append'],456):
                         for j,v in enumerate(row,1):need(pub.f3_cell_text(cells.get(letter(j)+str(i)))==v,'register addition')
     need(m['workbookSnapshot']['color_cell_count']==762 and m['workbookSnapshot']['mixed_source_cells_uncolored']==108,'classification totals')
-    for name in D.glob('*M0[01]*'):
-        if name.is_file():need(name.read_bytes()==previous(name.name),'manual milestone preserved '+name.name)
+    for name in (D/'Manual_Workbook_Versions').glob('M0[01]_*.xlsx'):
+        need(name.read_bytes()==previous(str(name.relative_to(D))),'manual milestone preserved '+name.name)
     print('PASS PA-DIM: 40 finding dispositions; 22 additions (13 common/9 specialized); 454 prepared assessments preserved; 476 rows and 8,585 saved values; both CSV/readable mirrors and all PA-DIM fills verified; prior 454 rows/donor order/holds, 26 worksheets, 21 untouched sheets and M00/M01 preserved.')
-    print('LIMIT: retained exact source boundaries; native Microsoft Excel reopening, runtime conformance and model adoption not claimed.')
+    print('LIMIT: source boundaries unchanged; this automated check does not test Microsoft Excel, runtime conformance or model adoption. Excel web observations are recorded separately in the PA-DIM ledger.')
 
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
+    if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
     if current=='PADIM_SAVED_VERIFIED':
         verify_padim();sys.exit(0)
     if current==OPCDI_CP:

@@ -1,49 +1,45 @@
 # Current Profile Rewrite checkpoint
 
-Updated 17 November 2026, America/New_York, Profile Rewrite 55. **PA-DIM integration is published and verified; the authorized delivery is complete.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only relevant evidence. This is the sole current status and next-action record.
+Updated 17 November 2026, America/New_York, Profile Rewrite 56. **Workbook repair is verified locally and in Microsoft Excel for the web; canonical publication is pending.** Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once. This is the sole current status/next-action record.
 
 ## Active scope and evidence
 
-The owner's **Proceed in Profile Rewrite 55** authorized publishing the recovered correction, preserving the 454-row baseline, integrating PA-DIM, verifying/publishing and explaining its contributions. The delivery, source-boundary explanation and publication verification are complete. No following donor, source-limit acceptance, Domain Information Model (DIM)/Profile adoption, client or deployment work is authorized.
+The owner's Profile Rewrite 55 request authorized fixing Excel's repair warning and unfreezing the first four Master Crosswalk columns. **Profile Rewrite 56 Proceed** authorizes finishing the interrupted repair, preventive checks, Excel verification, canonical publication and this checkpoint. Preserve two frozen header rows and all research content/classifications. No donor transition, source-limit acceptance, model adoption, client or deployment work follows automatically.
+
+The separate owner concerns about Devices and PA-DIM coverage, classification accuracy and fair opportunity remain open. This file repair does not resolve them or establish research completeness. There is no new corrective research plan yet.
 
 ## Verified checkpoint
 
-PA-DIM integration is published at **de10a1d61cadb4e572c32efa8ed2b5155dfb1ec1**, tree **3c2d094d5b0c1ed4b57112c3e231a89f282a2255**. Full remote-tree readback and the remote workbook SHA256 match the verified local artifacts. [Crosswalk check PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44076481949); [same-workbook publisher PASS](https://github.com/OS4CSAPI/glaux-client/actions/runs/44076482010). The following receipt update changes only this PITON and the ledger publication status.
+The pre-repair canonical HEAD is `8516d932bcc7e0284575176bdb2012038ef2b339`, preserved by [archive/pre-opc-workbook-repair-17nov2026](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-opc-workbook-repair-17nov2026). Earlier pre-Devices/pre-PA-DIM archives and manual M00/M01 remain; no automatic M02.
 
-Original-figure closure and the corrected allowed-types/configured-components mapping are published at **de6980e1242c42da16bc1e826833cf4ceacaae31**, tree **d543a4884cf77dbf95e97f5f9dd5f3c8c6151978**; remote-tree readback passed. The [pre-PA-DIM 454-row archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-padim-17nov2026) points to that commit. It preserves the prior workbook, source records and narrative.
+The initial order-only candidate `537671fa338298ae60e574e83280d3fb004adb34` still triggered Excel's repair warning. Verified candidate **`1b5cf34a7f01f0666c101ab86d5609080f4aa250`**, on `codex/profile-rewrite-56`, also removes three dangling table relationships and their already unreferenced definitions. Both active tables remain. It corrects cell order in 101 Master Crosswalk rows and one DIM Register row and changes Master Crosswalk to row-only freezing at A3.
 
-Devices remains published and verified at `ce333128a62bcfaf1e1e5f5cc6c2afc629196aa4`; its source findings, limitations and results are unchanged. The [pre-Devices archive](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-opc-devices-16nov2026), M00/M01 and earlier accepted decisions remain preserved. No automatic M02.
+**All 30,863 existing cell records and styles across all 26 sheets are preserved.** Only worksheet cell order, the requested pane, three orphan table definitions/relationships and their content-type entries change. ZIP recompression alters no contained part bytes. Source meanings, research decisions, cases, donor order, row identities, layouts and holds are unchanged. Current snapshot count labels are corrected to the already published 476-row/17-column PA-DIM result; no rows are added by this repair.
 
 ## Master and workbook
 
-The [same editable Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx), canonical JSON, both CSV and both readable mirrors contain **476 information rows; 505×17=8,585 saved values; 870 classifications (762 colored/108 previously held)** at `PADIM_SAVED_VERIFIED`. Workbook SHA256: **824a48974df18e90bbdc9bb85f38c2f9a19a96c47bdd366ded41590deaaf9292**. All 476 PA-DIM information cells are explicit; there is zero saved value/fill/mirror lag.
+[Same editable Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx): **476 information rows; 505×17=8,585 comparison cells; 870 unchanged classifications (762 colored/108 held).** All 476 Devices and PA-DIM information cells are explicit. Canonical JSON, both CSV and both readable mirrors match saved values; zero value/fill/mirror lag.
 
-PA-DIM occupies G after Devices F; earlier donor order remains intact, the foundational group remains together and DIM moves to Q. The 22 additions comprise **13 common and nine specialized candidates**. The prior 454 rows receive **38 qualified correspondences, 12 related-only results, 15 preserved-hold statuses and 389 bounded not-established results**. The 15 statuses do not add new classified holds. The [comparison narrative](Donor_Native_High_Level_Information_Groupings_Comparison.md) explains the practical value and limits.
-
-All earlier source meanings, cases, row order and cell values/styles are preserved. Five sheets change: Master Crosswalk, Summary, Validation, Legend and DIM Register; 21 other sheets and unrelated package parts remain byte-identical. All 26 sheets and M00/M01 are preserved. Inherited `display_row` metadata was stale for some earlier rows; stable IDs and actual review-grid order govern current PA-DIM placement, while historical coordinates remain unchanged.
-
-## Source contact and boundaries
-
-The [single PA-DIM ledger](OPC_UA_PADIM_Source_Coverage.json) pins release `PADIM-1.02.0-2025-11-26` at `eeb15c51735012383d926a23ff4f62955eb11c64`. All seven original files match upstream blobs. Forty native findings have explicit representation dispositions; all 22 additions retain closest alternatives and reasons. The [finite plan](PLAN_OPC_UA_PADIM_Source_First_Donor_Review.md) has completed its research/integration stages; no repeated source-review cycle is scheduled.
-
-All 15 original numbered figures and all 32 media assets are accounted, alongside original text, models and supporting definitions at their recorded contact depths. Inventories and structural checks are not exhaustive semantic certification. Fourteen source-question records retain their resolved, limited or held standing; PA-Q009 original-contact gap is resolved, while source/web differences remain recorded. PA-DIM declares Devices 1.04, distinct from the separately assessed Devices 1.05 donor.
-
-## Holds and owner decisions
-
-Preserve exact publisher-date, external dictionary, unit-conversion, label/reference and overview-figure limitations. Preserve Devices, ISA, SOSA, SAPIENT, AAS and case holds. SOSA/AAS acceptance and SAPIENT's prior bounded-PARTIAL standing are unchanged. No donor exclusivity, source-limit acceptance, runtime certification or adoption is established; Step24, Steps35–39 and named-version Step40 remain gated.
+Repaired workbook SHA256: **50690f1a6af7d0604de0d93f8b61aae9c2433d3e99c885d918567b2ceaca1341**. The [PA-DIM ledger](OPC_UA_PADIM_Source_Coverage.json), key `integration.workbook_structure_repair`, owns exact repair scope, removed parts, checks, Excel observations and publication receipt.
 
 ## Verification and publication
 
-`python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify` passes source/old-row preservation, all saved values, mirrors, colors and workbook preservation. Affected rendered views are inspected; native Microsoft Excel reopening is not performed. The wider artifact check retains five pre-existing register/link errors; do not repair unrelated material.
+`python -B scripts/integrate_sosa_opportunity_checkpoint.py --verify` passes structural checks, exact pre-repair cell/style preservation, existing source/preservation checks, mirror/fill parity and M00/M01 preservation. The strengthened check rejects both the original workbook's out-of-order F7 and the order-only candidate's dangling table relationship. Existing publisher/check workflows use this command; no extra workflow is introduced.
+
+Microsoft Excel for the web opened the exact candidate without WORKBOOK REPAIRED. F8 shows its text and blue fill; F204 has its explicit status; G8's PA-DIM text is visible. Horizontal scrolling places G at the left with A-D off screen while rows 1-2 stay fixed. [Saved Excel evidence](Workbook_Verification/Excel_Web_Repaired_Workbook_17NOV2026.jpg). Desktop Excel is not tested; programmatic full-cell parity is distinct from sampled UI viewing.
+
+## Holds and owner decisions
+
+PA-DIM research/integration remains the previously delivered result: 40 finding dispositions, 22 additions (13 common/nine specialized), and 454 prior-row assessments. No source research is repeated. Preserve publisher-date, external-dictionary, unit-conversion, label/reference and overview-figure limits; Devices, ISA, SOSA, SAPIENT, AAS and case holds; previous SOSA/AAS acceptance and SAPIENT bounded-PARTIAL standing. Step24, Steps35–39 and named-version Step40 remain gated. Unrelated historical register/link errors are outside this repair.
 
 ## Interrupted work
 
-Current checkout: `/workspace/scratch/9e6e4c6747b1/glaux-client`, local branch `codex/profile-rewrite-55`. Original source cache: `/workspace/scratch/705ccec1d857/padim`. Earlier local branch `codex/profile-rewrite-54` is historical. Integration local commit `83ccf965ed5b04ea4f597d01e98d51775eb928af` has the same tree as the published integration. No research or workbook integration remains interrupted; use the completed published artifacts, not temporary preparation scripts. Existing automated verification is extended; no extra workflow or research packet is created.
+Canonical publication remains pending. Working checkout: `/workspace/scratch/acb9b2ea127e/glaux-client`, branch `codex/profile-rewrite-56`. Its verified workbook is already saved on the remote candidate branch; local guard, ledger, master hash/snapshot labels, this PITON and Excel evidence await publication. Original Profile Rewrite 55 work remains at `/workspace/scratch/9e6e4c6747b1/glaux-client`; do not use its unrepaired workbook. Source cache `/workspace/scratch/705ccec1d857/padim` remains available.
 
 ## Next action and stop
 
-Owner reviews the delivered PA-DIM result and retained source limits, then directs the next donor. Stop here: no automatic donor transition, model adoption or further PA-DIM research cycle. On recovery, verify live HEAD and any later change before proposing a bounded next step.
+Finish the already authorized coherent canonical publication and remote readback/checks. Then stop. The next proposed bounded step is to document a finite corrective assessment of the owner's Devices/PA-DIM coverage, classification and fairness concerns before another donor; do not start it without direction.
 
 ## History
 
-Earlier checkpoints remain in Git and the named archives; retrieve only for a concrete evidence need.
+Earlier status and exact originals remain in Git and the named archives. Retrieve only for a concrete evidence need.
