@@ -40,7 +40,7 @@ Existing verifier now routes SAP11 and passes original-record preservation, exac
 
 ## Next action and stop
 
-**STOP before Step21 OPC UA Devices v1.05.0**. The eleven-record correction is delivered; one owner Proceed can authorize that next donor step; PA-DIM v1.02.0 follows separately. Do not offer another eleven-record review, a repeat AAS/SOSA acceptance or immediate DIM/Profile development.
+The [OPC UA Devices donor plan](PLAN_OPC_UA_Devices_Source_First_Donor_Review.md) is prepared; research has NOT started. **STOP for approval of that plan.** Approval is proposed to authorize the complete finite Devices assignment through integration, publication and explanation, with internal stages/checkpoints requiring no extra Proceed prompts. Record actual approval before execution. The source inventory will be established from authoritative originals; no source completeness or duration estimate is claimed yet. Stop after Devices before PA-DIM. SAPIENT correction is finished; AAS/SOSA acceptance and later model gates remain unchanged.
 
 ## Interrupted work
 
