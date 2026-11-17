@@ -13613,6 +13613,11 @@
       "id": "PA-Q013",
       "topic": "RevisionCounter trigger differs between inherited description and supporting dictionary wording",
       "detail": "Declared DI1.04 DeviceType RevisionCounter node6002 describes changes to static device data; the PA-DIM parameter dictionary describes storing the parameter set. Preserve the more specific trigger descriptions separately when mapping. Targeted original model reading does not establish that every static modification equals a parameter-set store."
+    },
+    {
+      "id": "PA-Q014",
+      "topic": "Overview diagrams are not exhaustive1.02 type inventories",
+      "detail": "Publisher Figures8–10 retain1.00/1.01 presentation and omit newer release types; Figure9 also labels AmperometricSensorType. Preserve release-model/text declarations as type-membership evidence. Original vector parity remains pending."
     }
   ],
   "counts": {
@@ -13634,7 +13639,7 @@
     "additional_definition_only_condition_sections": 24,
     "original_core_spans_reconciled": 37,
     "direct_core_model_declarations_inspected": 73,
-    "publisher_figures_visually_inspected": 4,
+    "publisher_figures_visually_inspected": 8,
     "preliminary_comparison_groups": 6,
     "word_media_assets_matched_to_inspected_figures": 0,
     "web_structural_entries_accounted": 19,
@@ -13652,7 +13657,8 @@
     "documentation_csv_node_ids_resolved": 110,
     "dictionary_references_resolved": 529,
     "dictionary_reference_distinct_targets": 164,
-    "additional_dependency_files_acquired": 2
+    "additional_dependency_files_acquired": 2,
+    "original_raster_assets_visually_inspected": 1
   },
   "workbook_status": "UNCHANGED verified Devices454-row baseline; PA-DIM column not declared complete",
   "remaining": [
@@ -20884,5 +20890,52 @@
       "The Quality Report claim of no outdated CDD references is a source assertion and does not resolve the documented prose/model revision conflicts or confirm all unit conversion factors."
     ],
     "sheet_limits": "Full lookup-table certification, remaining Browsenames/Hierarchy/use-case flags, default/enum values and original figures are not completed by these joins. Keep next review targeted; do not repeat142+45 definitions or successful joins."
+  },
+  "figure_review_extension": {
+    "publisher_figures": [
+      {
+        "section": "6.2 Process Analyser",
+        "figure": 8,
+        "url": "https://reference.opcfoundation.org/img/d3a4ea28e9ead4e0ba083991686476ce2d83adbaa2f8f8d79febc14d6ff259e1.png",
+        "sha256": "d3a4ea28e9ead4e0ba083991686476ce2d83adbaa2f8f8d79febc14d6ff259e1",
+        "contact": "PUBLISHER_IMAGE_VISUALLY_READ",
+        "interpretation": "Overview distinguishes device inheritance, signal instances, condition sets and calibration interfaces; revision legend stops at1.01, so do not infer complete1.02 coverage.",
+        "original_vector_byte_or_visual_parity": false
+      },
+      {
+        "section": "6.2 Process Analyser",
+        "figure": 9,
+        "url": "https://reference.opcfoundation.org/img/1ad1c3ec780f8c993dad7e1c98ed21186d3be71731c1ec5ba88b0c8287b3ca83.png",
+        "sha256": "1ad1c3ec780f8c993dad7e1c98ed21186d3be71731c1ec5ba88b0c8287b3ca83",
+        "contact": "PUBLISHER_IMAGE_VISUALLY_READ",
+        "interpretation": "Device overview omits newer1.02 analyser types and uses AmperometricSensorType rather than the declared AmperometricAnalyserType. It is not the complete release inventory.",
+        "original_vector_byte_or_visual_parity": false
+      },
+      {
+        "section": "6.2 Process Analyser",
+        "figure": 10,
+        "url": "https://reference.opcfoundation.org/img/5dd77955ab7e4cf4106a7c4f75ca139be36c25f9f1b88a55e5ac5cdc19b978e9.png",
+        "sha256": "5dd77955ab7e4cf4106a7c4f75ca139be36c25f9f1b88a55e5ac5cdc19b978e9",
+        "contact": "PUBLISHER_IMAGE_VISUALLY_READ",
+        "interpretation": "Signal overview distinguishes calibration and condition interfaces; omits newer1.02 signal types. Use release definitions/models for exhaustive membership.",
+        "original_vector_byte_or_visual_parity": false
+      },
+      {
+        "section": "8.2.3 Engineering units with reference to IEC 61987 CDD",
+        "figure": 15,
+        "url": "https://reference.opcfoundation.org/img/e553a6a9d37711bb6b55a74743751c03c48598d20be63f414e882020921e22fd.png",
+        "sha256": "e553a6a9d37711bb6b55a74743751c03c48598d20be63f414e882020921e22fd",
+        "contact": "PUBLISHER_IMAGE_VISUALLY_READ",
+        "interpretation": "EngineeringUnits dictionary reference describes the unit property, while actual/simulated values inherit signal units; does not make every numeric field use the same unit.",
+        "original_vector_byte_or_visual_parity": false
+      }
+    ],
+    "original_raster": {
+      "part": "word/media/image16.png",
+      "sha256": "2c01b1bac4e1c5eed07080a1a7a5faa551ad2031971726feb94628ba8e222e3d",
+      "contact": "EXTRACTED_ORIGINAL_VISUALLY_READ",
+      "interpretation": "Diagram separates PA-DIM device identification/health/process variables/services/parameters from FDI UI/business rules and proprietary vendor content. Embedded and mapped device representations support generic and class-specific applications."
+    },
+    "render_limit": "Original EMF conversion failed because LibreOffice is absent. Package installation failed for filesystem permissions. Original vector parity remains unverified; publisher figures are not silently substituted as equivalent originals."
   }
 }
