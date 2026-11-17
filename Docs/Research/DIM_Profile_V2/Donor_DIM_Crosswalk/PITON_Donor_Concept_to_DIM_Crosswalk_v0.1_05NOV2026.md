@@ -1,12 +1,10 @@
 # Current Profile Rewrite checkpoint
 
-Updated 16 November 2026, America/New_York: **SAPIENT eleven-record reconciliation complete, published and verified.** This is the sole current status and next-action record. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only the named evidence. Donor research precedes later Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile decisions.
+Updated 16 November 2026, America/New_York: **OPC UA Devices plan approved; source acquisition and inventory underway. SAPIENT correction remains complete.** This is the sole current status and next-action record. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`; verify live HEAD. Read [AGENTS.md](../AGENTS.md) once, then only the named evidence. Donor research precedes later Domain Information Model (DIM) and OGC API – Connected Systems (CSAPI) Profile decisions.
 
 ## Active scope and evidence
 
-The owner asked whether SAPIENT had received a fair contribution opportunity. The diagnostic found five existing candidates but specific opportunity-to-master follow-through gaps. The latest **Proceed in Profile Rewrite53** authorized the proposed finite eleven-record reconciliation, including warranted additions/clarifications, master/workbook integration, verification and publication. Complete this delivery without another permission gate; stop before OPC UA Devices.
-
-Exact scope: SAP02-N04/N06; SAP03A-N06/N10/N11; SAP03B-N01/N09/N10; SAP04-N09/N15; SAP06-N14. The [SAPIENT ledger](SAP01_Original_Corpus_Coverage_12NOV2026.json), key `SAP11_current_master_reconciliation`, owns all eleven outcomes, previous-record hashes, source contact, seven candidate definitions, thirteen cell changes and exact holds. Do not re-audit the entire corpus or split the remaining publication into new research iterations.
+Owner explicitly approved the [complete Devices plan](PLAN_OPC_UA_Devices_Source_First_Donor_Review.md): “Proceed and fucking begin asshole” in Profile Rewrite53. This authorizes the full finite Devices assessment through comparison, same-workbook integration, publication and explanation, not merely one source batch. No further Proceed is needed for internal stages. Stop after Devices before PA-DIM. The [Devices ledger](OPC_UA_Devices_Source_Coverage.json) now inventories286 reference-text sections,507 primary model nodes and21 release-tagged supporting files. Initial81 text sections and12 native findings are recorded; semantic/model/figure review and comparison remain incomplete. Primary release commit is8e8a9e13ce922ffe68e9a15897f729a3604fb277. Do not treat the earlier SAPIENT scope as the active assignment.
 
 ## Verified checkpoint
 
@@ -40,11 +38,11 @@ Existing verifier now routes SAP11 and passes original-record preservation, exac
 
 ## Next action and stop
 
-The [OPC UA Devices donor plan](PLAN_OPC_UA_Devices_Source_First_Donor_Review.md) is prepared; research has NOT started. **STOP for approval of that plan.** Approval is proposed to authorize the complete finite Devices assignment through integration, publication and explanation, with internal stages/checkpoints requiring no extra Proceed prompts. Record actual approval before execution. The source inventory will be established from authoritative originals; no source completeness or duration estimate is claimed yet. Stop after Devices before PA-DIM. SAPIENT correction is finished; AAS/SOSA acceptance and later model gates remain unchanged.
+Continue the authorized OPC UA Devices assignment: establish the exact authoritative v1.05.0 prose/model inventory, review native meanings, compare against the432-row baseline, integrate and publish. Model originals and downloaded specification are acquired in `/workspace/scratch/eb7bba69536f/opc-di`; authoritative evidence belongs in the single donor ledger as it is assessed. Do not ask for another Proceed between stages. Stop only at the plan's genuine blocker/material-scope boundary or after delivery, before PA-DIM.
 
 ## Interrupted work
 
-**None.** Research, same-workbook integration, publication, full-tree readback and both repository checks are complete. Do not restart this correction or the prior SOSA recovery.
+Devices execution is in progress, not complete. The initial source checkpoint saves authorization, inventory and12 native findings; subsequent local research must be compared with that published checkpoint. Workbook remains the verified432-row SAPIENT baseline; no Devices integration is claimed yet. Continue from acquired sources, preserving successful downloads and actual contact grades.
 
 ## History
 
