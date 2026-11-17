@@ -21138,23 +21138,728 @@
       "provisional_classification": "SPECIALIZED_CANDIDATE",
       "integrated": false,
       "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-DICTIONARY-SEMANTICS",
+      "finding_ids": [
+        "PA-F002",
+        "PA-F003",
+        "PA-F037"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Dictionary-qualified property meaning and enumerated values",
+      "proposed_meaning": "Associate property meaning with dictionary identity, authority and version; preserve corresponding enumeration labels and semantic identifiers. Keep the model rule requiring semantic references on instances as a PA-DIM qualification.",
+      "closest_existing_rows": [
+        "ISA-K-PROPERTY-DECL",
+        "AAS-O6-UNIT-CONTEXT",
+        "AAS-O6-PRODUCT-CLASS"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Property declarations alone do not capture authoritative semantic identifiers; unit context and product classes cover different subjects. Do not treat example ECLASS placeholders as verified equivalence.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-DISPLAY-LANGUAGE",
+      "finding_ids": [
+        "PA-F010"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Device local display language",
+      "proposed_meaning": "Describe the language selected for the device local display, distinct from client locale or multilingual record text.",
+      "closest_existing_rows": [
+        "AAS-O2-ELEMENT-LABEL",
+        "SOSA-SO2B-EQUIPMENT-SETTINGS"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Multilingual labels are available text alternatives; they do not establish the selected local device language. A generic configuration bundle would hide this explicit presentation setting.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-PARAMETER-CHANGE-TIME",
+      "finding_ids": [
+        "PA-F010"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Last device-parameter change time",
+      "proposed_meaning": "Describe the server-timestamped last change of a device parameter.",
+      "closest_existing_rows": [
+        "AAS-O2-RECORD-ADMIN",
+        "AAS-O6-AUDIT-RECORD",
+        "ISA-C-048"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Record business revision, configuration version and audit events do not establish this timestamp. Preserve server time basis; no changed-parameter identity, full history or physical application is inferred.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-SIGNAL-POINT-ID",
+      "finding_ids": [
+        "PA-F011"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Measurement or control point identifier",
+      "proposed_meaning": "Identify a measurement or control point using its signal tag and source context, separately from the physical device or address used to access its value.",
+      "closest_existing_rows": [
+        "S06-R011",
+        "S06-R004",
+        "OPCDI-ASSET-TAG"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Channel addressing and equipment tags identify different referents. SignalSet is an information container, not proof of an independently installed sensor.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-ANALYTICAL-QUALITY",
+      "finding_ids": [
+        "PA-F022"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Technique-qualified analytical signal diagnostics",
+      "proposed_meaning": "Retain baseline noise, linear signal/noise ratio, fit correlation, transmission ratio, Mahalanobis distance, spectral residual and electronic read noise with their technique, subject, basis and units.",
+      "closest_existing_rows": [
+        "SOSA-SO2J-SIGNAL-TO-NOISE",
+        "ISA-C-107",
+        "ISA-R-MEASUREMENT"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Existing electromagnetic power-ratio row requires bandwidth context and decibels; PA-DIM linear level ratio does not establish that equivalence or a conversion. ISA reference-quantity hold remains. These diagnostics are not interchangeable confidence scores.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-CHROMATOGRAM",
+      "finding_ids": [
+        "PA-F026"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Chromatogram features and sample injection context",
+      "proposed_meaning": "Associate signal peak width, height, area and tailing with expected/actual retention duration, injection timestamp and medium, preserving source optionality and units.",
+      "closest_existing_rows": [
+        "ISA-R-MEASUREMENT",
+        "ISA-T-EVENT-TIME",
+        "S06-R012"
+      ],
+      "related_candidate_targets": [],
+      "reason": "An isolated value or event time loses peak/sample relationships. Device total peak area differs from a signal peak area; retention duration differs from injection time. Valve-counter array pairing is not inferred.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-AVAILABLE-STORAGE",
+      "finding_ids": [
+        "PA-F027"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Remaining device-data storage capacity",
+      "proposed_meaning": "Describe remaining capacity for device-data storage, retaining the source terabyte unit.",
+      "closest_existing_rows": [
+        "SOSA-SO2J-STORAGE-PARTITION",
+        "SOSA-SO2F-MEMORY-VOLATILITY-EVIDENCE"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Partition addresses and memory inventory/protection do not report available capacity. No retention time, successful storage or capacity reservation is inferred.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-CONTROL-VALUE-ROLES",
+      "finding_ids": [
+        "PA-F028"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Control target and readback relationship",
+      "proposed_meaning": "Associate a control signal setpoint with readback and source-qualified actuator kind and operating direction. Preserve analog versus discrete representations and optionality.",
+      "closest_existing_rows": [
+        "S06-R019",
+        "S06-R020",
+        "SOSA-SO2B-EQUIPMENT-SETTINGS"
+      ],
+      "related_candidate_targets": [],
+      "reason": "An issued request, acknowledgement or generic configuration bundle does not describe the stored target/readback relationship. Readback is not inferred from a requested target; source direction is not a geographical vector.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-TOTALIZER-PULSE",
+      "finding_ids": [
+        "PA-F031"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Totalizer pulse quantity and pulse width",
+      "proposed_meaning": "Associate a totalizer pulse with the mass or actual-volume quantity represented by one pulse and its distinct width/time unit.",
+      "closest_existing_rows": [
+        "SAPIENT-R11-DETECTED-SIGNAL",
+        "AAS-O6-UNIT-CONTEXT",
+        "ISA-C-093"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Detected-signal duration and inter-pulse interval do not describe quantity-per-pulse scaling. Keep quantity-dependent dictionary entries; no normalized-volume equivalence or pulse repetition rate is inferred.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-TEMPERATURE-CONFIGURATION",
+      "finding_ids": [
+        "PA-F033"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Temperature sensing element and connection configuration",
+      "proposed_meaning": "Preserve RTD/thermocouple material/type, sensing-element class, RTD wire connection and thermocouple reference-junction roles.",
+      "closest_existing_rows": [
+        "AAS-O6-PRODUCT-CLASS",
+        "SOSA-SO2B-EQUIPMENT-SETTINGS"
+      ],
+      "related_candidate_targets": [],
+      "reason": "Product classification alone loses connection and reference-junction settings; generic settings do not express these distinct roles. SensorType is mandatory within its applicable type, not mandatory for every device; it is not a serial identifier.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-FLOW-CONFIGURATION",
+      "finding_ids": [
+        "PA-F034"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Flow low-cutoff threshold and forward sign convention",
+      "proposed_meaning": "Describe low-flow suppression threshold and forward-flow sign configuration; retain percent-of-span semantics and the source EURange-high default wording.",
+      "closest_existing_rows": [
+        "ISA-K-ABS-THRESHOLD",
+        "SOSA-SO2B-EQUIPMENT-SETTINGS"
+      ],
+      "related_candidate_targets": [],
+      "reason": "A publication threshold controls reporting rather than suppression of low-flow output. Do not invent a nonzero-range default formula or infer a physical flow direction vector.",
+      "provisional_classification": "SPECIALIZED_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
+    },
+    {
+      "candidate_id": "PADIM-FAILURE-OUTPUT",
+      "finding_ids": [
+        "PA-F035"
+      ],
+      "outcome": "ADDITION_RECOMMENDED_PENDING_SOURCE_CLOSEOUT",
+      "title": "Failure replacement output value",
+      "proposed_meaning": "Represent an optional replacement output value upon failure for a two-state or multistate control signal.",
+      "closest_existing_rows": [
+        "SOSA-SO2B-HEALTH-ASSESSMENT",
+        "SOSA-SO2B-EQUIPMENT-SETTINGS"
+      ],
+      "related_candidate_targets": [
+        "PADIM-CONTROL-VALUE-ROLES"
+      ],
+      "reason": "A fault assessment, ordinary setpoint and observed readback are different meanings. The replacement value declaration does not prove failure occurred or the output was physically applied.",
+      "provisional_classification": "COMMON_CANDIDATE",
+      "integrated": false,
+      "DIM_Profile_adopted": false
     }
   ],
   "comparison_review": {
     "date": "2026-11-17",
-    "scope": "Simulation, damping, calibration and selected maintenance/exposure meanings. Nine proposed information-need groups, not nine integrated rows or an exclusive donor contribution count.",
+    "scope": "All40 native finding groups have explicit comparison dispositions.21 proposed addition groups; none integrated. This does not complete source reconciliation or all454 donor-cell assessments.",
     "master_basis": "454 information-row labels screened; targeted definitions and relevant donor cells read for close alternatives. This is not a completed semantic comparison of every master row or reopening of every prior donor source.",
     "source_contact": "Pinned original Word paragraphs for simulation, damping, calibration timestamp/purpose, calibration-point readout, range factors, next-calibration basis and overload measures read; supporting dictionary definitions for cleaning/sterilization counts and next-calibration intervals read. Prior native finding evidence retained.",
-    "new_addition_recommendations": 9,
+    "new_addition_recommendations": 12,
     "prior_qualified_existing_row_recommendations": 2,
     "pending_specific_comparison": {
-      "finding_id": "PA-F020",
-      "reason": "Normalized degradation/residual sensitivity must be compared against qualified condition/lifetime rows with PA-Q006 retained; do not declare a new row solely because the label differs."
+      "finding_id": "PA-F038",
+      "reason": "Current-user effective access is not identical to a policy rule or a declared server capability; preserve this mapping limit through targeted metadata closeout."
     },
     "limits": [
       "Recommendations remain provisional until remaining native findings, overlapping proposals and master meanings are reconciled.",
       "Source questions, optionality and external-dictionary limits remain. No donor exclusivity or DIM/Profile adoption.",
       "All six master/workbook/mirror files unchanged."
-    ]
-  }
+    ],
+    "status": "ALL_40_FINDING_GROUPS_HAVE_COMPARISON_DISPOSITIONS_NOT_INTEGRATED",
+    "total_proposed_addition_groups": 21,
+    "overlap_resolution": [
+      "PA-F020 uses subject-qualified health condition with normalized scale; no separate remaining-life estimate is invented.",
+      "PA-F017/018 share one technique-qualified calibration-characteristics group; calibration points and segmented range/factor association remain separate needs.",
+      "PA-F002/003/037 share one dictionary-semantics group; propagation and positional pairing remain native rules.",
+      "PA-F021/036 use qualified quantity/value rows; no row for every temperature, flow or quantity.",
+      "PA-F022 combines distinct analytical diagnostics without asserting interchangeable meanings.",
+      "PA-F035 remains separate from ordinary control setpoint/readback and from fault assessment."
+    ],
+    "source_contact_extension": "Targeted original Word definitions for residual life, watchdog, storage, signal tag, control readback, reset/adjustment methods, last parameter change, low-flow cutoff and failure output; supporting definitions for chromatogram features and diagnostic metrics were read. Existing row definitions and selected donor cells were compared. No blanket reread of prior donor originals.",
+    "next": "Complete only remaining source metadata/default/inheritance questions that affect mapping, including PA-F038; finalize candidate granularity and assess all454 donor cells before integration. Preserve the454-row archive before changing the master."
+  },
+  "finding_comparison_dispositions": [
+    {
+      "finding_id": "PA-F001",
+      "outcome": "SOURCE_SCOPE_RULE",
+      "row_targets": [],
+      "reason": "Use cases delimit the assessment; no extra information row follows merely from an advertised lifecycle use case.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F002",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Dictionary semantics represented by PADIM-DICTIONARY-SEMANTICS; product-class subset also relates to AAS-O6-PRODUCT-CLASS.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-DICTIONARY-SEMANTICS"
+      ]
+    },
+    {
+      "finding_id": "PA-F003",
+      "outcome": "PROPOSED_ADDITION_WITH_NATIVE_RULE",
+      "row_targets": [],
+      "reason": "Use PADIM-DICTIONARY-SEMANTICS; reference propagation is a native model rule, not a second information need.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-DICTIONARY-SEMANTICS"
+      ]
+    },
+    {
+      "finding_id": "PA-F004",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "S06-R005",
+        "S06-R007",
+        "OPCDI-ASSET-VIEWS"
+      ],
+      "reason": "Qualified physical-device, modular subdevice and alternate-view meanings are already represented.",
+      "qualification": "A model reference/interface is not proof of physical containment; multiple views are not multiple assets.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F005",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "AAS-O6-PRODUCT-CLASS",
+        "S06-R011",
+        "S06-R013"
+      ],
+      "reason": "Separate device class from signal/measurand; type names alone add no information need.",
+      "qualification": "Detailed analytical fields are represented by their own findings, not erased by this classification mapping.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F006",
+      "outcome": "SOURCE_CONFORMANCE_RULE",
+      "row_targets": [],
+      "reason": "Optional provision and required behavior qualify every applicable mapping, rather than creating a field or claiming installed capability.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F007",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "AAS-O6-UNIT-CONTEXT"
+      ],
+      "reason": "Keep dictionary primary units, encoding units and modification permission separate.",
+      "qualification": "PA-Q011 remains; no universal conversion claim.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F008",
+      "outcome": "DEPENDENCY_BOUNDARY",
+      "row_targets": [],
+      "reason": "DI1.04 and core dependency/version-date qualifications constrain inherited mappings; not new PA-DIM rows.",
+      "qualification": "PA-Q002 and PA-Q012 remain; no wholesale DI1.05 feature import.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F009",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "S06-R001",
+        "S06-R002",
+        "S06-R003",
+        "S06-R004",
+        "OPCDI-PRODUCT-CODE",
+        "OPCDI-DEVICE-REVISION",
+        "OPCDI-ASSET-TAG",
+        "ISA-C-066",
+        "ISA-C-108"
+      ],
+      "reason": "Inherited identity/revision fields reuse existing meanings, retaining stronger PA-DIM requirements and qualified product-instance URI identity.",
+      "qualification": "No actual installed identity inferred. DeviceRevision is not the static-data RevisionCounter; preserve PA-Q013.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F010",
+      "outcome": "TWO_PROPOSED_ADDITIONS",
+      "row_targets": [],
+      "reason": "Local display language and last parameter change time have different subjects/purposes; retain separate proposals.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-DISPLAY-LANGUAGE",
+        "PADIM-PARAMETER-CHANGE-TIME"
+      ]
+    },
+    {
+      "finding_id": "PA-F011",
+      "outcome": "PROPOSED_ADDITION_AND_EXISTING_GROUP",
+      "row_targets": [
+        "OPCDI-FUNCTIONAL-GROUP"
+      ],
+      "reason": "Use PADIM-SIGNAL-POINT-ID for point identity; SignalSet is source-qualified grouping.",
+      "qualification": "Do not equate signal tag with device asset tag or channel address.",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-SIGNAL-POINT-ID"
+      ]
+    },
+    {
+      "finding_id": "PA-F012",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "SOSA-SO2B-HEALTH-ASSESSMENT",
+        "S06-R013",
+        "ISA-R-MEASUREMENT",
+        "ISA-C-112"
+      ],
+      "reason": "Use assessed subject and quantity context; internal-component temperature is related to existing internal-device temperature with narrowed subject.",
+      "qualification": "Condition containers do not by themselves establish faults or health-assessment algorithms.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F013",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the preserved calibration/simulation/damping recommendation(s) referencing this finding; preserve point, signal, technique and calibration context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-SIMULATION-VALUES"
+      ]
+    },
+    {
+      "finding_id": "PA-F014",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the preserved calibration/simulation/damping recommendation(s) referencing this finding; preserve point, signal, technique and calibration context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-DAMPING"
+      ]
+    },
+    {
+      "finding_id": "PA-F015",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the preserved calibration/simulation/damping recommendation(s) referencing this finding; preserve point, signal, technique and calibration context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-CALIBRATION-RECORD"
+      ]
+    },
+    {
+      "finding_id": "PA-F016",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the preserved calibration/simulation/damping recommendation(s) referencing this finding; preserve point, signal, technique and calibration context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-CALIBRATION-POINTS"
+      ]
+    },
+    {
+      "finding_id": "PA-F017",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the preserved calibration/simulation/damping recommendation(s) referencing this finding; preserve point, signal, technique and calibration context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-CALIBRATION-CHARACTERISTICS"
+      ]
+    },
+    {
+      "finding_id": "PA-F018",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the preserved calibration/simulation/damping recommendation(s) referencing this finding; preserve point, signal, technique and calibration context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-CALIBRATION-CHARACTERISTICS"
+      ]
+    },
+    {
+      "finding_id": "PA-F019",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the preserved calibration/simulation/damping recommendation(s) referencing this finding; preserve point, signal, technique and calibration context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-CALIBRATION-RANGES"
+      ]
+    },
+    {
+      "finding_id": "PA-F020",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "SOSA-SO2B-HEALTH-ASSESSMENT"
+      ],
+      "reason": "Normalized 1-good/0-bad degradation is subject-qualified condition information. Add PA-DIM scale and calibration-derived sensitivity qualifications in its donor cell; no duplicate normalized-life row.",
+      "qualification": "OPCDI-LIFETIME is related but not an adequate exact match: its start/current/end and warning-level contract is not established here. PA-Q006 infrared residual-life/sensitivity conflict remains held.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F021",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "S06-R013",
+        "ISA-R-MEASUREMENT"
+      ],
+      "reason": "Auxiliary supply, sample-path and component readings fit explicitly subject-qualified quantity/value meanings.",
+      "qualification": "Reference versus actual injection volume additionally uses the target/readback distinction; never map all temperatures to ambient conditions or infer an emitted observation.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F022",
+      "outcome": "PROPOSED_ADDITION_WITH_REJECTED_EQUIVALENCE",
+      "row_targets": [],
+      "reason": "Use PADIM-ANALYTICAL-QUALITY. Preserve specialized bases within one group rather than invent one row for every metric.",
+      "qualification": "Do not equate linear level ratio with the existing bandwidth-qualified electromagnetic power ratio or resolve ISA-Q004.",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-ANALYTICAL-QUALITY"
+      ]
+    },
+    {
+      "finding_id": "PA-F023",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the specific preserved maintenance, exposure or chromatogram proposal; generic counter/value/history rows lose its recorded distinctions.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-MAINTENANCE-COUNTERS"
+      ]
+    },
+    {
+      "finding_id": "PA-F024",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the specific preserved maintenance, exposure or chromatogram proposal; generic counter/value/history rows lose its recorded distinctions.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-NEXT-CALIBRATION"
+      ]
+    },
+    {
+      "finding_id": "PA-F025",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the specific preserved maintenance, exposure or chromatogram proposal; generic counter/value/history rows lose its recorded distinctions.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-EXPOSURE-HISTORY"
+      ]
+    },
+    {
+      "finding_id": "PA-F026",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the specific preserved maintenance, exposure or chromatogram proposal; generic counter/value/history rows lose its recorded distinctions.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-CHROMATOGRAM"
+      ]
+    },
+    {
+      "finding_id": "PA-F027",
+      "outcome": "MIXED_ADDITION_AND_EXISTING_ROW",
+      "row_targets": [
+        "ISA-K-CAPABILITIES"
+      ],
+      "reason": "Available storage requires PADIM-AVAILABLE-STORAGE; watchdog existence is a narrowly qualified declared fault-detection capability.",
+      "qualification": "Watchdog existence is not a heartbeat, current functioning test result or guaranteed fault detection.",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-AVAILABLE-STORAGE"
+      ]
+    },
+    {
+      "finding_id": "PA-F028",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use PADIM-CONTROL-VALUE-ROLES to preserve stored target/readback roles and actuator/direction context.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-CONTROL-VALUE-ROLES"
+      ]
+    },
+    {
+      "finding_id": "PA-F029",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "ISA-K-COMMAND-DECL",
+        "ISA-K-PARAMETER-DECL",
+        "ISA-K-RESULT-DECL",
+        "S06-R019",
+        "S06-R020"
+      ],
+      "reason": "Factory-reset scope and start/abort adjustment methods qualify declared command contracts. Issued request/outcome rows are related only at the declaration-versus-occurrence boundary.",
+      "qualification": "No invocation occurred. Device/manufacturer-specific procedures and authorization remain native; method return is not physical completion.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F030",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "S06-R013",
+        "ISA-K-VALUE-RANGE"
+      ],
+      "reason": "Measurand and available matrix choices qualify observable-property and declared permitted-values meanings.",
+      "qualification": "Use proposed dictionary-semantics association for authority discriminator/identifier/label; CAS, PAT and user terms are not equivalent authorities.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F031",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use PADIM-TOTALIZER-PULSE; no one-row-per-quantity duplication.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-TOTALIZER-PULSE"
+      ]
+    },
+    {
+      "finding_id": "PA-F032",
+      "outcome": "EXTERNAL_SOURCE_LIMIT",
+      "row_targets": [],
+      "reason": "External profile/conformance requirements remain outside verified contact. No certification or new row follows from category labels.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F033",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the specific temperature, flow or failure-output proposal; preserve applicable-type optionality and source defaults.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-TEMPERATURE-CONFIGURATION"
+      ]
+    },
+    {
+      "finding_id": "PA-F034",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the specific temperature, flow or failure-output proposal; preserve applicable-type optionality and source defaults.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-FLOW-CONFIGURATION"
+      ]
+    },
+    {
+      "finding_id": "PA-F035",
+      "outcome": "PROPOSED_ADDITION",
+      "row_targets": [],
+      "reason": "Use the specific temperature, flow or failure-output proposal; preserve applicable-type optionality and source defaults.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-FAILURE-OUTPUT"
+      ]
+    },
+    {
+      "finding_id": "PA-F036",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "S06-R013",
+        "ISA-R-MEASUREMENT",
+        "AAS-O6-UNIT-CONTEXT"
+      ],
+      "reason": "Quantity meaning and operating/base-condition context distinguish actual volume, normalized volume, mass, density, pressure and level.",
+      "qualification": "No new row per quantity and no inferred conversion between actual and normalized values.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F037",
+      "outcome": "PROPOSED_ADDITION_WITH_NATIVE_RULE",
+      "row_targets": [],
+      "reason": "Use PADIM-DICTIONARY-SEMANTICS; keep positional label/identifier association and unverified example placeholders.",
+      "qualification": "",
+      "integrated": false,
+      "candidate_targets": [
+        "PADIM-DICTIONARY-SEMANTICS"
+      ]
+    },
+    {
+      "finding_id": "PA-F038",
+      "outcome": "QUALIFIED_EXISTING_ROWS_AND_RETAINED_LIMIT",
+      "row_targets": [
+        "ISA-K-MUTABILITY",
+        "ISA-K-CAPABILITIES",
+        "AAS-O6-ACCESS-RULE"
+      ],
+      "reason": "Declaration mutability, server support and policy are related existing needs. Native per-user effective attributes must remain explicit alongside them.",
+      "qualification": "Existing policy rules are not an exact match for current-user access results. Retain this as a mapping limit pending focused metadata reconciliation; do not collapse UserExecutable into general capability.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F039",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "AAS-O2-RECORD-ID",
+        "ISA-K-STRUCTURE",
+        "ISA-K-TYPE-CHOICE"
+      ],
+      "reason": "Namespace-qualified digital identity and declared shape/types fit existing needs.",
+      "qualification": "Namespace index is local; BrowseName is not a globally unique ID; Any is broader than array and is not an asserted current value shape.",
+      "integrated": false,
+      "candidate_targets": []
+    },
+    {
+      "finding_id": "PA-F040",
+      "outcome": "QUALIFIED_EXISTING_ROWS",
+      "row_targets": [
+        "AAS-O6-PRODUCT-CLASS"
+      ],
+      "reason": "Dictionary class association fits product classification with classification-system context.",
+      "qualification": "No separate PA-DIM subtype or complete specialized interface inferred for each listed transmitter class.",
+      "integrated": false,
+      "candidate_targets": []
+    }
+  ]
 }
