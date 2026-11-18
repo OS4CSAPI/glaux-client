@@ -4,32 +4,32 @@
 
 ## Active scope and evidence
 
-Profile Rewrite 63. The owner directed reuse of the earlier ranking and preparation of the next donor plan. The [27 ranked choices](Donor_Research_Priority_Order.md) preserve the Profile Rewrite 61 recommendation order. Ranks 1 and 2 are accepted at bounded-partial depth. Rank 3 is the [OSUS-R source-first donor review](PLAN_OSUS_R_Source_First_Donor_Review.md). Its registered implementation source is artifact 34, pinned at d09088fbe56d4b64f0544d72e98c3cb70fa941f6, with companions 27 and 59. Planning confirmed the two source entry points. The owner authorized execution in Profile Rewrite 63. The [source inventory and native findings](OSUS_R_Source_Coverage.json) freeze the edition, groups, companion contact and holds before workbook integration.
+Profile Rewrite 63. The owner authorized the rank 3 OSUS-R review through delivery. The [27 ranked choices](Donor_Research_Priority_Order.md) preserve the earlier research order. The [review plan](PLAN_OSUS_R_Source_First_Donor_Review.md) and [source ledger](OSUS_R_Source_Coverage.json) identify artifact 34 at `d09088fbe56d4b64f0544d72e98c3cb70fa941f6`, its 13 native groups, 99 inventoried files, original passage limits, and companion artifacts 27 and 59. Use ledger keys `coverage_counts`, `new_rows`, `qualified_comparisons`, `holds` and individual `row_dispositions` as needed. [Plain-English findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#osus-r-asset-interfaces-and-capabilities).
 
 ## Master and workbook
 
-[Editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). 493 information rows, 524 grid rows, 19 columns and 26 worksheets. On the existing rows 12 SAREF cells and 16 Web of Things cells changed, including five previously unassessed SAREF positions. Two additional Web of Things rows cover request-time address variables and directory record change notifications. Both donors have an explicit disposition on every information row. Other donors have explicit pending comparisons on the two new rows.
+[Editable Excel master](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). The comparison covers 521 information rows, 553 grid rows, 20 columns and 26 sheets. All 493 existing rows and 28 additions have an explicit OSUS-R disposition in N. Nine additions are common candidates and 19 are specialized. Earlier donors retain their prior order. Final ordering from least contributing at left to largest foundational contribution at right awaits comparative judgment.
 
 ## Verified checkpoint
 
-SAREF_WOT_63_SAVED_VERIFIED. The saved grid matches the canonical JSON, both CSVs and both readable tables. Both columns’ classifications match their fills. Earlier cell contents and styles outside the corrected positions, other worksheet parts and row-only freezing were checked. Artifact Tool reopened the saved workbook. [Saved correction render](Workbook_Verification/SAREF_WoT_63_New_Rows.png). Native Microsoft Excel was not exercised for this revision.
+`OSUSR_SAVED_VERIFIED`. Saved workbook SHA-256 `26e4b05639f90117efb50e239d65dae566e1b9a602ae36dfdf3731bb6dc90926`. JSON, both CSVs and both readable tables match the complete saved grid. Classification colors, older cell contents and styles, the 26 worksheet identities, unaffected package parts, ascending row/cell addresses and row-only freezing were checked. Artifact Tool reopened the workbook and matched the values in column N. Native Microsoft Excel was not run. [Saved workbook render](Workbook_Verification/OSUSR_N526.png).
 
 ## Holds and owner decisions
 
-SAREF Core acceptance at fe598e0 and SRF-Q1–Q3 stand. On 18 November 2026 the owner accepted the corrected Web of Things review as bounded partial. The ledger records the decision under `owner_decision`. WOT-Q1 retains selective passage and schema depth, WOT-Q2 retains companion and implementation limits, and WOT-Q3 retains installation and runtime holds. Prior donor and case holds, manual M00/M01, Step 24, Steps 35–39 and named-version Step 40 retain their standing. Final column order runs from least contributing at left toward largest foundational contribution at right. Ordering awaits comparative judgment.
+SAREF Core acceptance at fe598e0 with SRF-Q1–Q3 and corrected Web of Things acceptance at 32240618 with WOT-Q1–Q3 stand. For OSUS-R, Q1 records selective schema and implementation depth, Q2 records companion and other plug-in limits, and Q3 records missing installation and runtime evidence. OSUS-R owner acceptance is pending. The 28 candidates await separate Step 24 adoption. Earlier donor and case holds, manual versions M00/M01, Steps 35–39 and named-version Step 40 retain their standing.
 
 ## Interrupted work
 
-The corrected comparison and both ledgers were published at 6f8d318. The accepted decision was recorded at 32240618. OSUS-R has a research plan and no outstanding partial workbook delivery.
+The OSUS-R source inventory was published at [7efc70f2](https://github.com/OS4CSAPI/glaux-client/commit/7efc70f2174475b940fa73a41fce4b24740fab83). The reviewed workbook and both pairs of mirrors are included together in this delivery.
 
 ## History
 
-The Web of Things inventory was checkpointed at 44428bc and the original assessment was delivered at 54fbc09.
+[Exact prior checkpoint before workbook integration](https://github.com/OS4CSAPI/glaux-client/blob/7efc70f2174475b940fa73a41fce4b24740fab83/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). [Preserved 493-row workbook before OSUS-R](https://github.com/OS4CSAPI/glaux-client/blob/4b9c7382a47f8f7446d89a27b535e8ddb16b4b45/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). SAREF and Web of Things corrections were published at 6f8d318 and the subsequent owner decision at 32240618.
 
 ## Verification and publication
 
-The pre-correction publication was 54fbc09. [Pre-correction master workbook](https://github.com/OS4CSAPI/glaux-client/blob/54fbc09aef66562c7558e32d4411fbf026f7c17f/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). [Pre-WoT workbook](https://github.com/OS4CSAPI/glaux-client/blob/751f4bccdec751fe8db90fdcf701c1409f755027/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). The accepted workbook is pinned to [the verified correction](https://github.com/OS4CSAPI/glaux-client/commit/6f8d318072e2c97e938949b911128b691ae43550). The owner acceptance is recorded at [32240618](https://github.com/OS4CSAPI/glaux-client/commit/32240618bad639aa71804855e380d6a47866e493).
+Compare the branch copy of the workbook with the SHA-256 above and check the branch workflow for this delivery. The workbook's SHA-256 identifies its content independently of the commit that contains this checkpoint.
 
 ## Next action and stop
 
-Execution is authorized. Resume the OSUS-R source-to-row comparison and deliver the verified workbook under the existing plan. The current published workbook is the 493-row baseline until integration is published. Stop for owner disposition after delivery.
+Stop for owner disposition on the bounded-partial OSUS-R research with Q1–Q3 retained. Redfish is rank 4 and requires its own authorization. The final donor contribution order and Step 24 adoption remain separate decisions.

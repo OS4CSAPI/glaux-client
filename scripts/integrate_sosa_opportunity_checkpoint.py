@@ -2197,14 +2197,38 @@ def apply_joint_closeout(authored_path):
     verify_joint_closeout()
 
 
-def verify_saref_core(wot=False, corrected=False):
+def verify_saref_core(wot=False, corrected=False, osusr=False):
     master = load(MASTER)
-    ledger = load('WoT_1_1_Source_Coverage.json' if wot else 'SAREF_Core_Source_Coverage.json')
+    ledger_name = 'WoT_1_1_Source_Coverage.json' if wot else 'SAREF_Core_Source_Coverage.json'
+    ledger = load('OSUS_R_Source_Coverage.json' if osusr else ledger_name)
+    column = 13 if osusr else (12 if wot else 11)
+    width = 20 if osusr else (19 if wot else 18)
     grid = master['review_grid']
     dispositions = ledger['row_dispositions']
     row_count = 493 if corrected else (491 if wot else 486)
     grid_count = 524 if corrected else (522 if wot else 516)
-    need(len(grid) == grid_count and all(len(row) == (19 if wot else 18) for row in grid), 'SAREF grid dimensions')
+    if osusr:
+        row_count, grid_count = 521, 553
+        counts = ledger['coverage_counts']
+        candidates = {record['row_id']: record for record in ledger['new_rows']}
+        prior_ids = {row['row_id'] for row in master['rows'][:493]}
+        need(len(prior_ids) == counts['baseline_rows'] == 493, 'OSUS-R prior rows')
+        need(len(candidates) == counts['new_rows'] == 28, 'OSUS-R new candidates')
+        need(set(candidates) == {row['row_id'] for row in master['rows'][493:]}, 'OSUS-R candidate identity')
+        for row in master['rows'][493:]:
+            record = candidates[row['row_id']]
+            need(record['closest_existing_id'] in prior_ids and bool(record['loss'].strip()), 'OSUS-R distinction from existing rows')
+            need(all(str(cell).strip() for cell in row['display']), 'OSUS-R explicit prior positions on additions')
+            need(row['dim_adoption'] == 'OWNER_DECISION_PENDING', 'OSUS-R adoption requires an owner decision')
+        groups = [rid for group in ledger['coverage_by_group'].values() for rid in group['row_ids']]
+        need(set(groups) == set(dispositions) and len(groups) == row_count, 'OSUS-R native groups account for rows')
+        for category, totals in [('classification', 'classifications'), ('relation', 'relations')]:
+            actual = {}
+            for decision in dispositions.values():
+                value = decision[category]
+                actual[value] = actual.get(value, 0) + 1
+            need(actual == counts[totals], 'OSUS-R ledger totals ' + totals)
+    need(len(grid) == grid_count and all(len(row) == width for row in grid), 'Donor grid dimensions')
     need(len(dispositions) == len(master['rows']) == row_count, 'SAREF information-row count')
     need(set(dispositions) == {row['row_id'] for row in master['rows']}, 'SAREF row ID coverage')
     for name in JOINT_CSVS:
@@ -2215,7 +2239,9 @@ def verify_saref_core(wot=False, corrected=False):
     data = (D / BOOK).read_bytes()
     need(digest(data) == master['currentWorkbookSha256'] == master['workbookSnapshot']['sha256'], 'SAREF workbook hash')
     baseline = '751f4bccdec751fe8db90fdcf701c1409f755027' if wot else '44e566e456bb77236b8b04ee7743c71ab8537d3b'
-    ledgers = {12 if wot else 11: ledger}
+    if osusr:
+        baseline = '4b9c7382a47f8f7446d89a27b535e8ddb16b4b45'
+    ledgers = {column: ledger}
     corrected_refs = set()
     if corrected:
         baseline = '54fbc09aef66562c7558e32d4411fbf026f7c17f'
@@ -2248,23 +2274,26 @@ def verify_saref_core(wot=False, corrected=False):
             col = addr[0]
             if addr in corrected_refs:
                 continue
-            ref = addr if corrected else (chr(ord(col) + 1) if col >= ('M' if wot else 'L') else col) + addr[1:]
+            ref = addr if corrected else (chr(ord(col) + 1) if col >= letter(column + 1) else col) + addr[1:]
             need(old.get('s') == cells[ref].get('s') and joint_value(old, strings) == joint_value(cells[ref], strings), 'SAREF prior cell ' + addr)
         for row in master['rows']:
             idx = row['display_row']
             disp = dispositions[row['row_id']]
-            need(row['display'] == grid[idx-1] and row['display'][12 if wot else 11].strip(), 'SAREF explicit populated row ' + str(idx))
+            need(row['display'] == grid[idx-1] and row['display'][column].strip(), 'SAREF explicit populated row ' + str(idx))
             for col, record in ledgers.items():
                 disposition = record['row_dispositions'][row['row_id']]
                 value = row['display'][col]
                 ref = letter(col + 1) + str(idx)
                 need(bool(value.strip()), 'Empty donor position ' + ref)
-                if corrected:
+                if corrected or osusr:
                     need(disposition['reason'] in value, 'Source ledger and cell meaning ' + ref)
-                target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unfilled': '#FFFFFF'}[disposition['classification']]
+                target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unresolved': '#E9DEFA', 'unfilled': '#FFFFFF'}[disposition['classification']]
                 need(joint_fill(cells[ref], styles) == target, 'Donor classification fill ' + ref)
         pane = sheet.find('.//' + pub.q('pane'))
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'SAREF row-only freeze')
+    if osusr:
+        print('PASS OSUS-R: 521 explicit decisions, including 28 candidates, all workbook values, fills, earlier cells, both pairs of mirrors and 26-sheet package.')
+        return
     if corrected:
         print('PASS corrected SAREF and WoT: 493 positions per donor, 26 sheets, both mirrors of each format, classifications and preserved cells.')
         return
@@ -2275,6 +2304,8 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current=='OSUSR_SAVED_VERIFIED':
+        verify_saref_core(osusr=True);sys.exit(0)
     if current=='SAREF_WOT_63_SAVED_VERIFIED':
         verify_saref_core(wot=True, corrected=True);sys.exit(0)
     if current=='WOT_11_SAVED_VERIFIED':
