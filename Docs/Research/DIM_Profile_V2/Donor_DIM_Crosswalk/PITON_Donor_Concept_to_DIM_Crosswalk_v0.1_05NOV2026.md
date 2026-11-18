@@ -16,7 +16,7 @@ Profile Rewrite 61 owner Proceed authorized the [SAREF Core v4.1.1 assignment](P
 
 ## Holds and owner decisions
 
-Bounded partial. Retain SRF-Q1–Q3 on formal text/figure depth, the deployment-specific oneM2M dependency, and external terms or conformance evidence. Anonymous axioms are inventoried; logical interpretation was selective. The 441 explicit statuses include scoped noncorrespondence, related evidence and case holds. All earlier Devices/PA-DIM and other source and case holds remain in force. The owner accepted the prior Devices/PA-DIM bounded closeout at `d767976`. SAREF acceptance and DIM adoption are separate decisions. Step 24, Steps 35–39 and named-version Step 40 remain gated.
+Bounded partial. Retain SRF-Q1–Q3 on formal text/figure depth, the deployment-specific oneM2M dependency, and external terms or conformance evidence. Anonymous axioms are inventoried; logical interpretation was selective. The 441 explicit statuses include scoped noncorrespondence, related evidence and case holds. All earlier Devices/PA-DIM and other source and case holds remain in force. The owner accepted the prior Devices/PA-DIM bounded closeout at `d767976`. On 17 November 2026 in Profile Rewrite 61, the owner accepted the published SAREF assessment as bounded partial, retaining SRF-Q1 through SRF-Q3. The eight new rows remain candidates for later DIM adoption. Step 24, Steps 35–39 and named-version Step 40 remain gated.
 
 ## History
 
@@ -32,4 +32,4 @@ Content commit `bd3ee09` matched the verified local tree. A fresh download match
 
 ## Next action and stop
 
-Stop for the owner’s decision on the bounded SAREF result and retained source limits. Web of Things requires separate direction.
+SAREF is closed at the accepted source depth. Await owner direction on preparing a research plan for W3C Web of Things 1.1, the second donor in Step 23.

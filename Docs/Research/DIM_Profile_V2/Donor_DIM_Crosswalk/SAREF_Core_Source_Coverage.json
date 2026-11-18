@@ -1,7 +1,7 @@
 {
   "edition": "ETSI SAREF Core v4.1.1",
   "authorization": "Profile Rewrite 61: Proceed following the published SAREF plan",
-  "status": "PUBLISHED_VERIFIED_BOUNDED_PARTIAL_AWAITING_OWNER",
+  "status": "OWNER_ACCEPTED_BOUNDED_PARTIAL",
   "baseline": "44e566e456bb77236b8b04ee7743c71ab8537d3b",
   "archive": "archive/pre-saref-core-v4-1-1",
   "sources": {
@@ -4999,7 +4999,7 @@
     }
   ],
   "remaining": [
-    "Owner acceptance after workbook publication; outstanding source questions SRF-Q1 through SRF-Q3 remain scoped."
+    "Retain SRF-Q1 through SRF-Q3 at their documented scopes."
   ],
   "rule_findings": {
     "kind inheritance": "hasDeviceKind followed by hasFunction entails hasFunction on the unit. It does not infer an invocation, installed service endpoint or successful result.",
@@ -9055,5 +9055,17 @@
     "master_check": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950066",
     "workbook_check": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950114",
     "status": "both checks passed"
+  },
+  "owner_decision": {
+    "status": "OWNER_ACCEPTED_BOUNDED_PARTIAL",
+    "date": "2026-11-17",
+    "authorization": "Profile Rewrite 61: owner replied Proceed to the explicit offer to record acceptance.",
+    "publication_receipt": "456e401c8bd30b134b870df0c9778d3165f88b47",
+    "retained_holds": [
+      "SRF-Q1",
+      "SRF-Q2",
+      "SRF-Q3"
+    ],
+    "scope": "SAREF Core v4.1.1 donor assessment at its documented source depth. The eight proposed rows remain candidates for later model decisions."
   }
 }
