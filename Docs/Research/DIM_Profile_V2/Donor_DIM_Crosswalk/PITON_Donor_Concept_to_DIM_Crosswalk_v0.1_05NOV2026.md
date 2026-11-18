@@ -32,4 +32,4 @@ Content commit `bd3ee09` matched the verified local tree. A fresh download match
 
 ## Next action and stop
 
-SAREF is closed at the accepted source depth. Await owner direction on preparing a research plan for W3C Web of Things 1.1, the second donor in Step 23.
+SAREF acceptance was published at `fe598e0`. The owner authorized planning for W3C Web of Things 1.1. The [bounded research plan](PLAN_W3C_WoT_1_1_Source_First_Donor_Review.md) is ready. One Proceed authorizes its full execution through publication and plain-English closeout. Start at the W3C source inventory. No WoT findings have been integrated.
