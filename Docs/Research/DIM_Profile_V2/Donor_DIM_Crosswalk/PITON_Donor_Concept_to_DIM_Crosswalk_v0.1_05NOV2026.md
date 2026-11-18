@@ -1,3 +1,7 @@
+## Joint corrective review in progress
+
+The owner requested the same two-way reassessment used for SAREF Core and Web of Things, now for OSUS-R and Redfish. The [pre-change workbook and recovery record](https://github.com/OS4CSAPI/glaux-client/tree/d423e3943b136a7317c401c22b1d79466a51d2a4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) remain the delivered baseline. OSUS-R has 521 formal dispositions against 568 information rows. On the 47 Redfish additions, 43 OSUS-R cells were pending and four contained preliminary comparisons. Source checks also distinguish historical observations from current properties, an empty bay from offline equipment, and station pressure from pressure corrected to sea level. Finish both donor ledgers, integrate justified corrections and candidates, verify the workbook and report for owner disposition. No additional owner gate during delivery.
+
 # Current Profile Rewrite checkpoint
 
 18 November 2026, America/New_York. Branch `research/dim-profile-v2`, [execution protocol](../AGENTS.md).
