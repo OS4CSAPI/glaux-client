@@ -1,0 +1,732 @@
+{
+  "donor": "IETF RFC 8348, A YANG Data Model for Hardware Management",
+  "source_register_id": "133",
+  "roster_key": "IETF-RFC8348",
+  "research_priority": 5,
+  "baseline_commit": "2188f1102ed8662b6da225a2ab983b099ead39d6",
+  "baseline_information_rows": 574,
+  "phase": "Published source intake. Native declarations indexed, row-level comparison pending.",
+  "source": {
+    "edition": "March 2018",
+    "rfc": "https://www.rfc-editor.org/rfc/rfc8348.html",
+    "text": "https://www.rfc-editor.org/rfc/rfc8348.txt",
+    "text_sha256": "d2b2f7ab05ec0e6446442df622d8f257559a4339e92af41403bfad4ebcaa56ce",
+    "errata_search": "https://www.rfc-editor.org/errata/rfc8348",
+    "errata_contact": "The RFC Editor search, filtered to RFC 8348, returned no matching errata on 18 November 2026."
+  },
+  "modules": {
+    "ietf-hardware": {
+      "file": "ietf-hardware@2018-03-13.yang",
+      "section": "7.1",
+      "source_role": "Standards Track module for the principal equipment comparison",
+      "declared_items": [
+        {
+          "kind": "import",
+          "name": "ietf-inet-types",
+          "path": "ietf-inet-types"
+        },
+        {
+          "kind": "import",
+          "name": "ietf-yang-types",
+          "path": "ietf-yang-types"
+        },
+        {
+          "kind": "import",
+          "name": "iana-hardware",
+          "path": "iana-hardware"
+        },
+        {
+          "kind": "revision",
+          "name": "2018-03-13",
+          "path": "2018-03-13"
+        },
+        {
+          "kind": "feature",
+          "name": "entity-mib",
+          "path": "entity-mib"
+        },
+        {
+          "kind": "feature",
+          "name": "hardware-state",
+          "path": "hardware-state"
+        },
+        {
+          "kind": "feature",
+          "name": "hardware-sensor",
+          "path": "hardware-sensor"
+        },
+        {
+          "kind": "typedef",
+          "name": "admin-state",
+          "path": "admin-state"
+        },
+        {
+          "kind": "typedef",
+          "name": "oper-state",
+          "path": "oper-state"
+        },
+        {
+          "kind": "typedef",
+          "name": "usage-state",
+          "path": "usage-state"
+        },
+        {
+          "kind": "typedef",
+          "name": "alarm-state",
+          "path": "alarm-state"
+        },
+        {
+          "kind": "typedef",
+          "name": "standby-state",
+          "path": "standby-state"
+        },
+        {
+          "kind": "typedef",
+          "name": "sensor-value-type",
+          "path": "sensor-value-type"
+        },
+        {
+          "kind": "typedef",
+          "name": "sensor-value-scale",
+          "path": "sensor-value-scale"
+        },
+        {
+          "kind": "typedef",
+          "name": "sensor-value-precision",
+          "path": "sensor-value-precision"
+        },
+        {
+          "kind": "typedef",
+          "name": "sensor-value",
+          "path": "sensor-value"
+        },
+        {
+          "kind": "typedef",
+          "name": "sensor-status",
+          "path": "sensor-status"
+        },
+        {
+          "kind": "container",
+          "name": "hardware",
+          "path": "/hardware"
+        },
+        {
+          "kind": "leaf",
+          "name": "last-change",
+          "path": "/hardware/last-change"
+        },
+        {
+          "kind": "list",
+          "name": "component",
+          "path": "/hardware/component"
+        },
+        {
+          "kind": "leaf",
+          "name": "name",
+          "path": "/hardware/component/name"
+        },
+        {
+          "kind": "leaf",
+          "name": "class",
+          "path": "/hardware/component/class"
+        },
+        {
+          "kind": "leaf",
+          "name": "physical-index",
+          "path": "/hardware/component/physical-index"
+        },
+        {
+          "kind": "leaf",
+          "name": "description",
+          "path": "/hardware/component/description"
+        },
+        {
+          "kind": "leaf",
+          "name": "parent",
+          "path": "/hardware/component/parent"
+        },
+        {
+          "kind": "leaf",
+          "name": "parent-rel-pos",
+          "path": "/hardware/component/parent-rel-pos"
+        },
+        {
+          "kind": "leaf-list",
+          "name": "contains-child",
+          "path": "/hardware/component/contains-child"
+        },
+        {
+          "kind": "leaf",
+          "name": "hardware-rev",
+          "path": "/hardware/component/hardware-rev"
+        },
+        {
+          "kind": "leaf",
+          "name": "firmware-rev",
+          "path": "/hardware/component/firmware-rev"
+        },
+        {
+          "kind": "leaf",
+          "name": "software-rev",
+          "path": "/hardware/component/software-rev"
+        },
+        {
+          "kind": "leaf",
+          "name": "serial-num",
+          "path": "/hardware/component/serial-num"
+        },
+        {
+          "kind": "leaf",
+          "name": "mfg-name",
+          "path": "/hardware/component/mfg-name"
+        },
+        {
+          "kind": "leaf",
+          "name": "model-name",
+          "path": "/hardware/component/model-name"
+        },
+        {
+          "kind": "leaf",
+          "name": "alias",
+          "path": "/hardware/component/alias"
+        },
+        {
+          "kind": "leaf",
+          "name": "asset-id",
+          "path": "/hardware/component/asset-id"
+        },
+        {
+          "kind": "leaf",
+          "name": "is-fru",
+          "path": "/hardware/component/is-fru"
+        },
+        {
+          "kind": "leaf",
+          "name": "mfg-date",
+          "path": "/hardware/component/mfg-date"
+        },
+        {
+          "kind": "leaf-list",
+          "name": "uri",
+          "path": "/hardware/component/uri"
+        },
+        {
+          "kind": "leaf",
+          "name": "uuid",
+          "path": "/hardware/component/uuid"
+        },
+        {
+          "kind": "container",
+          "name": "state",
+          "path": "/hardware/component/state"
+        },
+        {
+          "kind": "leaf",
+          "name": "state-last-changed",
+          "path": "/hardware/component/state/state-last-changed"
+        },
+        {
+          "kind": "leaf",
+          "name": "admin-state",
+          "path": "/hardware/component/state/admin-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "oper-state",
+          "path": "/hardware/component/state/oper-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "usage-state",
+          "path": "/hardware/component/state/usage-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "alarm-state",
+          "path": "/hardware/component/state/alarm-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "standby-state",
+          "path": "/hardware/component/state/standby-state"
+        },
+        {
+          "kind": "container",
+          "name": "sensor-data",
+          "path": "/hardware/component/sensor-data"
+        },
+        {
+          "kind": "leaf",
+          "name": "value",
+          "path": "/hardware/component/sensor-data/value"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-type",
+          "path": "/hardware/component/sensor-data/value-type"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-scale",
+          "path": "/hardware/component/sensor-data/value-scale"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-precision",
+          "path": "/hardware/component/sensor-data/value-precision"
+        },
+        {
+          "kind": "leaf",
+          "name": "oper-status",
+          "path": "/hardware/component/sensor-data/oper-status"
+        },
+        {
+          "kind": "leaf",
+          "name": "units-display",
+          "path": "/hardware/component/sensor-data/units-display"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-timestamp",
+          "path": "/hardware/component/sensor-data/value-timestamp"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-update-rate",
+          "path": "/hardware/component/sensor-data/value-update-rate"
+        },
+        {
+          "kind": "notification",
+          "name": "hardware-state-change",
+          "path": "/hardware-state-change"
+        },
+        {
+          "kind": "notification",
+          "name": "hardware-state-oper-enabled",
+          "path": "/hardware-state-oper-enabled"
+        },
+        {
+          "kind": "leaf",
+          "name": "name",
+          "path": "/hardware-state-oper-enabled/name"
+        },
+        {
+          "kind": "leaf",
+          "name": "admin-state",
+          "path": "/hardware-state-oper-enabled/admin-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "alarm-state",
+          "path": "/hardware-state-oper-enabled/alarm-state"
+        },
+        {
+          "kind": "notification",
+          "name": "hardware-state-oper-disabled",
+          "path": "/hardware-state-oper-disabled"
+        },
+        {
+          "kind": "leaf",
+          "name": "name",
+          "path": "/hardware-state-oper-disabled/name"
+        },
+        {
+          "kind": "leaf",
+          "name": "admin-state",
+          "path": "/hardware-state-oper-disabled/admin-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "alarm-state",
+          "path": "/hardware-state-oper-disabled/alarm-state"
+        }
+      ]
+    },
+    "iana-hardware": {
+      "file": "iana-hardware@2018-03-13.yang",
+      "section": "7.2",
+      "source_role": "Initial class vocabulary published with this edition; later IANA revisions require separate dating",
+      "declared_items": [
+        {
+          "kind": "revision",
+          "name": "2018-03-13",
+          "path": "2018-03-13"
+        },
+        {
+          "kind": "identity",
+          "name": "hardware-class",
+          "path": "hardware-class"
+        },
+        {
+          "kind": "identity",
+          "name": "unknown",
+          "path": "unknown"
+        },
+        {
+          "kind": "identity",
+          "name": "chassis",
+          "path": "chassis"
+        },
+        {
+          "kind": "identity",
+          "name": "backplane",
+          "path": "backplane"
+        },
+        {
+          "kind": "identity",
+          "name": "container",
+          "path": "container"
+        },
+        {
+          "kind": "identity",
+          "name": "power-supply",
+          "path": "power-supply"
+        },
+        {
+          "kind": "identity",
+          "name": "fan",
+          "path": "fan"
+        },
+        {
+          "kind": "identity",
+          "name": "sensor",
+          "path": "sensor"
+        },
+        {
+          "kind": "identity",
+          "name": "module",
+          "path": "module"
+        },
+        {
+          "kind": "identity",
+          "name": "port",
+          "path": "port"
+        },
+        {
+          "kind": "identity",
+          "name": "stack",
+          "path": "stack"
+        },
+        {
+          "kind": "identity",
+          "name": "cpu",
+          "path": "cpu"
+        },
+        {
+          "kind": "identity",
+          "name": "energy-object",
+          "path": "energy-object"
+        },
+        {
+          "kind": "identity",
+          "name": "battery",
+          "path": "battery"
+        },
+        {
+          "kind": "identity",
+          "name": "storage-drive",
+          "path": "storage-drive"
+        }
+      ]
+    },
+    "ietf-hardware-state": {
+      "file": "ietf-hardware-state@2018-03-13.yang",
+      "section": "Appendix A.1",
+      "source_role": "Non-normative, temporary legacy operational-state companion. Retain separate provenance and count repeated concepts once.",
+      "declared_items": [
+        {
+          "kind": "import",
+          "name": "ietf-inet-types",
+          "path": "ietf-inet-types"
+        },
+        {
+          "kind": "import",
+          "name": "ietf-yang-types",
+          "path": "ietf-yang-types"
+        },
+        {
+          "kind": "import",
+          "name": "iana-hardware",
+          "path": "iana-hardware"
+        },
+        {
+          "kind": "import",
+          "name": "ietf-hardware",
+          "path": "ietf-hardware"
+        },
+        {
+          "kind": "revision",
+          "name": "2018-03-13",
+          "path": "2018-03-13"
+        },
+        {
+          "kind": "feature",
+          "name": "entity-mib",
+          "path": "entity-mib"
+        },
+        {
+          "kind": "feature",
+          "name": "hardware-state",
+          "path": "hardware-state"
+        },
+        {
+          "kind": "feature",
+          "name": "hardware-sensor",
+          "path": "hardware-sensor"
+        },
+        {
+          "kind": "container",
+          "name": "hardware",
+          "path": "/hardware"
+        },
+        {
+          "kind": "leaf",
+          "name": "last-change",
+          "path": "/hardware/last-change"
+        },
+        {
+          "kind": "list",
+          "name": "component",
+          "path": "/hardware/component"
+        },
+        {
+          "kind": "leaf",
+          "name": "name",
+          "path": "/hardware/component/name"
+        },
+        {
+          "kind": "leaf",
+          "name": "class",
+          "path": "/hardware/component/class"
+        },
+        {
+          "kind": "leaf",
+          "name": "physical-index",
+          "path": "/hardware/component/physical-index"
+        },
+        {
+          "kind": "leaf",
+          "name": "description",
+          "path": "/hardware/component/description"
+        },
+        {
+          "kind": "leaf",
+          "name": "parent",
+          "path": "/hardware/component/parent"
+        },
+        {
+          "kind": "leaf",
+          "name": "parent-rel-pos",
+          "path": "/hardware/component/parent-rel-pos"
+        },
+        {
+          "kind": "leaf-list",
+          "name": "contains-child",
+          "path": "/hardware/component/contains-child"
+        },
+        {
+          "kind": "leaf",
+          "name": "hardware-rev",
+          "path": "/hardware/component/hardware-rev"
+        },
+        {
+          "kind": "leaf",
+          "name": "firmware-rev",
+          "path": "/hardware/component/firmware-rev"
+        },
+        {
+          "kind": "leaf",
+          "name": "software-rev",
+          "path": "/hardware/component/software-rev"
+        },
+        {
+          "kind": "leaf",
+          "name": "serial-num",
+          "path": "/hardware/component/serial-num"
+        },
+        {
+          "kind": "leaf",
+          "name": "mfg-name",
+          "path": "/hardware/component/mfg-name"
+        },
+        {
+          "kind": "leaf",
+          "name": "model-name",
+          "path": "/hardware/component/model-name"
+        },
+        {
+          "kind": "leaf",
+          "name": "alias",
+          "path": "/hardware/component/alias"
+        },
+        {
+          "kind": "leaf",
+          "name": "asset-id",
+          "path": "/hardware/component/asset-id"
+        },
+        {
+          "kind": "leaf",
+          "name": "is-fru",
+          "path": "/hardware/component/is-fru"
+        },
+        {
+          "kind": "leaf",
+          "name": "mfg-date",
+          "path": "/hardware/component/mfg-date"
+        },
+        {
+          "kind": "leaf-list",
+          "name": "uri",
+          "path": "/hardware/component/uri"
+        },
+        {
+          "kind": "leaf",
+          "name": "uuid",
+          "path": "/hardware/component/uuid"
+        },
+        {
+          "kind": "container",
+          "name": "state",
+          "path": "/hardware/component/state"
+        },
+        {
+          "kind": "leaf",
+          "name": "state-last-changed",
+          "path": "/hardware/component/state/state-last-changed"
+        },
+        {
+          "kind": "leaf",
+          "name": "admin-state",
+          "path": "/hardware/component/state/admin-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "oper-state",
+          "path": "/hardware/component/state/oper-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "usage-state",
+          "path": "/hardware/component/state/usage-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "alarm-state",
+          "path": "/hardware/component/state/alarm-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "standby-state",
+          "path": "/hardware/component/state/standby-state"
+        },
+        {
+          "kind": "container",
+          "name": "sensor-data",
+          "path": "/hardware/component/sensor-data"
+        },
+        {
+          "kind": "leaf",
+          "name": "value",
+          "path": "/hardware/component/sensor-data/value"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-type",
+          "path": "/hardware/component/sensor-data/value-type"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-scale",
+          "path": "/hardware/component/sensor-data/value-scale"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-precision",
+          "path": "/hardware/component/sensor-data/value-precision"
+        },
+        {
+          "kind": "leaf",
+          "name": "oper-status",
+          "path": "/hardware/component/sensor-data/oper-status"
+        },
+        {
+          "kind": "leaf",
+          "name": "units-display",
+          "path": "/hardware/component/sensor-data/units-display"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-timestamp",
+          "path": "/hardware/component/sensor-data/value-timestamp"
+        },
+        {
+          "kind": "leaf",
+          "name": "value-update-rate",
+          "path": "/hardware/component/sensor-data/value-update-rate"
+        },
+        {
+          "kind": "notification",
+          "name": "hardware-state-change",
+          "path": "/hardware-state-change"
+        },
+        {
+          "kind": "notification",
+          "name": "hardware-state-oper-enabled",
+          "path": "/hardware-state-oper-enabled"
+        },
+        {
+          "kind": "leaf",
+          "name": "name",
+          "path": "/hardware-state-oper-enabled/name"
+        },
+        {
+          "kind": "leaf",
+          "name": "admin-state",
+          "path": "/hardware-state-oper-enabled/admin-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "alarm-state",
+          "path": "/hardware-state-oper-enabled/alarm-state"
+        },
+        {
+          "kind": "notification",
+          "name": "hardware-state-oper-disabled",
+          "path": "/hardware-state-oper-disabled"
+        },
+        {
+          "kind": "leaf",
+          "name": "name",
+          "path": "/hardware-state-oper-disabled/name"
+        },
+        {
+          "kind": "leaf",
+          "name": "admin-state",
+          "path": "/hardware-state-oper-disabled/admin-state"
+        },
+        {
+          "kind": "leaf",
+          "name": "alarm-state",
+          "path": "/hardware-state-oper-disabled/alarm-state"
+        }
+      ]
+    }
+  },
+  "source_contact": {
+    "full_declaration_inventory": "All three embedded module blocks in the published text were indexed for definitions, imports, data nodes, features and notifications. An index entry alone gives no semantic correspondence.",
+    "selected_meanings_read": [
+      "Sections 2 and 3.1: scope and component key/class.",
+      "Section 7.1 /hardware/component: detection and intended-configuration matching by class, parent and parent-relative position, including fallback when no entry matches.",
+      "Section 7.1 /hardware/component/mfg-name: manufacturer context for comparing serial, model, firmware and software revision.",
+      "Appendix A: the legacy state-only representation has a different standing."
+    ],
+    "companion_routing": "Sections 4, 5 and 6 supply in-RFC mappings to ENTITY-MIB, ENTITY-SENSOR-MIB and ENTITY-STATE-MIB. These do not imply independent semantic review of every object in the referenced MIBs."
+  },
+  "comparison_questions": [
+    "When may the client identify an expected component as detected, and when does a slot still describe only planned hardware?",
+    "Which identifiers refer to a server-local component, a manufacturer-scoped identity or an individual asset?",
+    "Which links express physical containment and sibling position?",
+    "How should a client display a scaled reading, age, units and validity alongside the component state?"
+  ],
+  "pending": "Read source semantics for the indexed declarations in scope, compare all 574 existing rows and reconcile newly proposed rows in both directions under the donor plan."
+}
