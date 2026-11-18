@@ -7782,10 +7782,10 @@
       "display_row": 17,
       "label": "Network participation role and responsibilities",
       "group": "MED",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "Asset.java#Asset; AssetProxy.java#AssetProxy",
-      "reason": "Consumers use the core asset interface. A plug-in implements custom device behavior behind it. The source supplies a mediation role, without proving a particular link, service endpoint or installation."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "AssetProxy.java; Asset.java",
+      "reason": "Core and plug-in responsibilities describe a software boundary. They do not establish whether the equipment initiates or accepts network connections."
     },
     "ISA-A-NETWORK-CONTEXT": {
       "display_row": 18,
@@ -9239,11 +9239,11 @@
     "ISA-C-211": {
       "display_row": 181,
       "label": "Requested current component configuration message",
-      "group": "ID",
-      "relation": "related",
-      "classification": "unfilled",
-      "locator": "Asset.java#getConfig; AssetProxy.java#initialize",
-      "reason": "Managed configuration and plug-in initialization are visible. These do not establish a full deployment/configuration message or its security settings."
+      "group": "MED",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "Asset.java#getConfig; AssetAttributes.java",
+      "reason": "A client of the framework can read the current configuration attributes of the managed asset. This is an API operation. It does not prescribe the ISA message or every field it would return."
     },
     "ISA-C-212": {
       "display_row": 182,
@@ -9251,8 +9251,8 @@
       "group": "STORE",
       "relation": "partial",
       "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "locator": "ObservationQuery.java#withSubType; ObservationQuery.java#withOrder",
+      "reason": "A query can order stored status observations and limit the result count. Finding the latest occurrence of one state code still requires testing the record contents."
     },
     "ISA-C-213": {
       "display_row": 183,
@@ -9260,8 +9260,8 @@
       "group": "STORE",
       "relation": "partial",
       "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "locator": "ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+      "reason": "Status observations can be selected on observed or creation time. The store does not require a complete transition history for any particular operating-state code."
     },
     "ISA-C-214": {
       "display_row": 184,
@@ -9276,10 +9276,10 @@
       "display_row": 185,
       "label": "Requested current values of declared ready properties",
       "group": "STORE",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "ObservationQuery.java#withOrder",
+      "reason": "Selecting the newest stored observation supplies historical evidence. It does not request the current values of declared ready properties."
     },
     "ISA-C-216": {
       "display_row": 186,
@@ -9287,8 +9287,8 @@
       "group": "STORE",
       "relation": "partial",
       "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "locator": "ObservationQuery.java#withRange; ObservationQuery.java#withMaxObservations",
+      "reason": "The API can retrieve a bounded result from archived observations. A reusable identifier for that query result is not specified by these selectors."
     },
     "ISA-C-162": {
       "display_row": 187,
@@ -9438,28 +9438,28 @@
       "display_row": 203,
       "label": "Requested message kinds and returned fields",
       "group": "STORE",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "ObservationQuery.java#withSubType",
+      "reason": "A subtype filter selects eligible observations. The query interface does not select the fields to return for each eligible message kind."
     },
     "ISA-Q-MATCH": {
       "display_row": 204,
       "label": "Message-matching criteria",
       "group": "STORE",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "ObservationQuery.java#withAssetUuid; ObservationQuery.java#withTimeObservedRange",
+      "reason": "The query accepts named filters. It provides no general expression tree of nested AND/OR predicates and arbitrary field comparators."
     },
     "ISA-Q-NAVIGATION": {
       "display_row": 205,
       "label": "Field navigation and contextual filtering",
       "group": "STORE",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "ObservationQuery.java#withSubType",
+      "reason": "Filtering by a known subtype does not navigate from an arbitrary message field through nested values and predicates."
     },
     "ISA-Q-FUNCTION": {
       "display_row": 206,
@@ -9512,8 +9512,8 @@
       "group": "STORE",
       "relation": "partial",
       "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "locator": "ObservationQuery.java#withAssetUuid; ObservationQuery.java#withSystemId",
+      "reason": "The query can constrain both the asset and the creating system. It does not specify lookup of other cached messages while evaluating a predicate."
     },
     "ISA-Q-SPATIAL": {
       "display_row": 212,
@@ -9566,8 +9566,8 @@
       "group": "MED",
       "relation": "partial",
       "classification": "common",
-      "locator": "Asset.java#captureData(String); Observation.xsd#sensorId",
-      "reason": "One managed asset can represent several sensors. A capture can address a sensor by an asset-scoped string. Physical attachment, global sensor identity and independent network taskability require separate evidence."
+      "locator": "AssetProxy.java; Asset.java#captureData",
+      "reason": "The core delegates device-specific capture to an asset plug-in. An asset can expose subordinate sensors. This establishes a software mediation role without a general rule for distributing tasks among composed systems."
     },
     "ISA-K-CAPABILITY-STATE": {
       "display_row": 218,
@@ -9663,10 +9663,10 @@
       "display_row": 229,
       "label": "Message author or registration announcer",
       "group": "ATTR",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "AssetImpl.java#setBaseObservationFields; Observation.xsd#systemId",
-      "reason": "Controller, managed asset and record identity can be assigned by the core. The observed time and referenced sensing element need independent attribution. This does not identify a human author or prove derivation."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Observation.xsd#systemId; AssetImpl.java#setBaseObservationFields",
+      "reason": "System ID identifies the system creating an observation. It does not identify the original author or the registration announcer of an arbitrary message."
     },
     "ISA-R-MESSAGE-REFERENCE": {
       "display_row": 230,
@@ -10806,10 +10806,10 @@
       "display_row": 368,
       "label": "Candidate — Attributed initiator of event creation",
       "group": "ATTR",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "AssetImpl.java#setBaseObservationFields; Observation.xsd#systemId",
-      "reason": "Controller, managed asset and record identity can be assigned by the core. The observed time and referenced sensing element need independent attribution. This does not identify a human author or prove derivation."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Observation.xsd#systemId; AssetImpl.java#setBaseObservationFields",
+      "reason": "The core assigns creating-system identity. It does not record which person or process initiated the creation event."
     },
     "AAS-O3-QUALIFIED-CONTEXT": {
       "display_row": 369,
@@ -11033,8 +11033,8 @@
       "group": "STORE",
       "relation": "partial",
       "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "locator": "ObservationQuery.java#withSubType; ObservationQuery.java#withTimeObservedRange",
+      "reason": "Stored status observations can be selected by type and time. They provide a possible condition history without prescribing a managed fault log or projected health."
     },
     "SOSA-SO2B-LOGGING-SETTINGS": {
       "display_row": 400,
@@ -11465,8 +11465,8 @@
       "group": "STORE",
       "relation": "partial",
       "classification": "common",
-      "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
-      "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+      "locator": "ObservationQuery.java#withRange; ObservationQuery.java#withOrder; ObservationQuery.java#withTimeCreatedRange",
+      "reason": "The store supports a result range, ordering and time bounds for observations. Applying those controls to status observations does not establish a dedicated managed fault-log service."
     },
     "SOSA-SO2J-POWER-SOURCE-ASSOCIATION": {
       "display_row": 451,
@@ -12137,11 +12137,11 @@
     "OSUSR-SENSOR-SELECTOR": {
       "display_row": 529,
       "label": "Optional subordinate sensor identifier and sensor-specific capture support",
-      "group": "MED",
+      "group": "OBS",
       "relation": "direct",
       "classification": "common",
-      "locator": "Observation.xsd#sensorId; Asset.java#captureData(String); AssetCapabilities.xsd#captureDataBySensor",
-      "reason": "Associate an optional asset-scoped sensor key with a record. Separately declare whether capture can select a sensor and whether the observation can carry the key."
+      "locator": "Observation.xsd#sensorId; AssetCapabilities.xsd#sensorIdAvailable; Bmp180Sensor.java#onCaptureData",
+      "reason": "The framework can represent a subordinate sensor identifier. The BMP180 example implements whole-asset capture and rejects capture by sensor ID. Display the option only for a supporting asset."
     },
     "OSUSR-ASYNC-UPDATE": {
       "display_row": 530,
@@ -12358,6 +12358,483 @@
       "classification": "specialized",
       "locator": "Image.xsd#maskSamplesOfInterest; Audio.xsd#sampleOfInterest; Channel.xsd#sampleOfInterest",
       "reason": "An image region or mask, an audio interval or a channel sample identifies a part of a recording of interest. Preserve its representation and enclosing media."
+    },
+    "RF-MANAGER-ENDPOINTS": {
+      "display_row": 555,
+      "label": "Management responsibility versus physical controller location",
+      "group": "MED",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "AssetProxy.java; Observation.xsd#assetLocation; Observation.xsd#systemId",
+      "reason": "The framework separates a managed asset and its creating system, and can record the asset position. It gives no separate physical location for its management controller."
+    },
+    "RF-CHASSIS-ZONE": {
+      "display_row": 556,
+      "label": "Physical enclosure versus logical chassis zone",
+      "group": "ID",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "AssetDirectoryService.java#getAssets; Observation.xsd#assetUuid",
+      "reason": "A managed asset has an identity. Neither identity nor directory membership declares whether a chassis represents a physical enclosure or a logical zone."
+    },
+    "RF-SYSTEM-COMPOSITION": {
+      "display_row": 557,
+      "label": "Supplying, consuming and hosting system instances",
+      "group": "MED",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "AssetProxy.java; AssetDirectoryService.java#getAssets",
+      "reason": "The core mediates plug-in access to equipment. This does not assign supplying, consuming and hosting roles to composed system instances."
+    },
+    "RF-SERVICEABILITY": {
+      "display_row": 558,
+      "label": "Independent replacement and removal while operating",
+      "group": "LIFE",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "Asset.java#getActiveStatus; AssetDirectoryService.java#isAssetAvailable",
+      "reason": "Software availability and activation do not declare independent physical replaceability or safe removal while operating."
+    },
+    "RF-ASSEMBLY-PEDIGREE": {
+      "display_row": 559,
+      "label": "Assembly production, vendor and engineering change level",
+      "group": "CAP",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "BaseCapabilities.xsd#BaseCapabilities; FactoryDescriptor.java#getProductType",
+      "reason": "Product and manufacturer describe a declared product. The reviewed records do not establish assembly producer, vendor and engineering change level for an installed item."
+    },
+    "RF-CABLE-ENDS": {
+      "display_row": 560,
+      "label": "Installed cable and separately identified upstream and downstream endpoints",
+      "group": "MED",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "AssetProxy.java; Observation.xsd#assetUuid",
+      "reason": "The mediation interface supplies no identified cable with separate physical endpoints and connector types."
+    },
+    "RF-REDUNDANCY": {
+      "display_row": 561,
+      "label": "Redundancy group membership and minimum operating complement",
+      "group": "STATUS",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "Status.xsd#componentStatuses; Status.xsd#summaryStatus",
+      "reason": "A list of component statuses and an asset summary gives no redundancy membership policy or minimum complement."
+    },
+    "RF-LOCAL-ROLLUP": {
+      "display_row": 562,
+      "label": "Individual resource health and aggregate health including dependencies",
+      "group": "STATUS",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "Status.xsd#componentStatuses; Status.xsd#summaryStatus",
+      "reason": "Status separates component-level reports from an asset summary. It does not prescribe local-only health versus a dependency-inclusive rollup for the same resource."
+    },
+    "RF-SENSOR-SUBJECT": {
+      "display_row": 563,
+      "label": "Sensor resource, source of an excerpt and equipment the reading describes",
+      "group": "OBS",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "Observation.xsd#sensorId; Observation.xsd#assetUuid; Observation.xsd#systemId",
+      "reason": "A record identifies the managed asset, originating system and optionally a subordinate sensor. There is no general excerpt-source link or independently named piece of equipment being measured."
+    },
+    "RF-READING-BASIS": {
+      "display_row": 564,
+      "label": "Absolute, delta or headroom basis of a reported reading",
+      "group": "OBS",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "Weather.xsd#temperature; Status.xsd#temperature",
+      "reason": "These fields specify temperature measurements. They do not declare whether a reading is an absolute value, a difference or remaining headroom."
+    },
+    "RF-READING-ORIGIN": {
+      "display_row": 565,
+      "label": "Physical, synthesized or externally reported sensor implementation",
+      "group": "OBS",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Observation.xsd#relatedObservations; ObservationTypes.xsd#RelationshipTypeEnum",
+      "reason": "Parent, child and peer relationships can link observations. A link alone cannot classify a sensor as physical, synthesized or external."
+    },
+    "RF-AVERAGE-COVERAGE": {
+      "display_row": 566,
+      "label": "Configured averaging interval and whether the available samples cover it",
+      "group": "ENV",
+      "relation": "partial",
+      "classification": "specialized",
+      "locator": "Weather.xsd#windAvg; Weather.xsd#timeWindowSeconds",
+      "reason": "An average wind measurement can state its window. The record does not state a configured averaging policy or whether sufficient samples covered it."
+    },
+    "RF-LIMITS": {
+      "display_row": 567,
+      "label": "Sensor measurement range, equipment operating limits and environmental derating",
+      "group": "CAP",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "AssetCapabilities.xsd#minRange; AssetCapabilities.xsd#maxRange; Status.xsd#ambientStatus",
+      "reason": "Declared sensing range and reported ambient impairment contribute to the distinction. They do not specify allowed equipment operating values or calculate an environmentally adjusted limit."
+    },
+    "RF-EXTREMA": {
+      "display_row": 568,
+      "label": "Recorded minima, peaks and their timestamps",
+      "group": "ENV",
+      "relation": "partial",
+      "classification": "specialized",
+      "locator": "Weather.xsd#windGust; Weather.xsd#timeWindowSeconds",
+      "reason": "The maximum gust in a window is an extreme value. The record does not require its individual occurrence timestamp or the reset history of a retained peak."
+    },
+    "RF-ACCUMULATION": {
+      "display_row": 569,
+      "label": "Accumulated sensor reading and start of the accumulation interval",
+      "group": "ENV",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Weather.xsd; Observation.xsd#observedTimestamp",
+      "reason": "A weather accumulation and an observation time can coexist. The observation time cannot be assumed to mark the start of an accumulation interval."
+    },
+    "RF-THRESHOLD-HYSTERESIS": {
+      "display_row": 570,
+      "label": "Threshold crossing direction, dwell time and return hysteresis",
+      "group": "STATUS",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "StatusTypes.xsd#OperatingStatus; Status.xsd#summaryStatus",
+      "reason": "Reported operating states supply no activation dwell, crossing direction or return hysteresis policy."
+    },
+    "RF-CONTROL-DEADBAND": {
+      "display_row": 571,
+      "label": "Control deadband and delay before activation",
+      "group": "CMD",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "SetPointingLocationCommand.xsd; GetPointingLocationResponse.xsd",
+      "reason": "A pointing request and returned position do not declare allowable control error or the delay before the controller responds."
+    },
+    "RF-LOOP-COEFFICIENTS": {
+      "display_row": 572,
+      "label": "Control loop tuning coefficients and update time",
+      "group": "CMD",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "SetPanTiltCommand.xsd; GetPanTiltResponse.xsd",
+      "reason": "The command and response describe positioning. They do not expose control-loop tuning coefficients or update time."
+    },
+    "RF-FEEDBACK-ROLES": {
+      "display_row": 573,
+      "label": "Automation node feedback, position, velocity and output roles",
+      "group": "CMD",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "SetPanTiltCommand.xsd; GetPanTiltResponse.xsd",
+      "reason": "A requested and returned orientation are related. They do not identify separate feedback, drive-output and velocity roles for an automation node."
+    },
+    "RF-REPORT-HISTORY": {
+      "display_row": 574,
+      "label": "Metric report replacement, append limit, wrap and suppression of repeated values",
+      "group": "STORE",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "StatusTypes.xsd#InternalArchiveStatus; ObservationStore.java",
+      "reason": "Internal recording and stored observations supply archive context. They do not establish metric-report wrap, append, overwrite or repeat suppression policies."
+    },
+    "RF-TIME-ACCURACY": {
+      "display_row": 575,
+      "label": "Accuracy of a metric timestamp separately from value accuracy and precision",
+      "group": "OBS",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Observation.xsd#observedTimestamp; AssetCapabilities.xsd#observedTimestampAvailable",
+      "reason": "The record can expose an observation timestamp and a capability to supply it. Neither describes accuracy of the clock or timestamp."
+    },
+    "RF-METRIC-SAMPLE": {
+      "display_row": 576,
+      "label": "Metric sample linked to its resource property and metric definition",
+      "group": "OBS",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "Observation.xsd#assetUuid; Observation.xsd#sensorId; Weather.xsd#temperature",
+      "reason": "A typed sample is associated with the asset and optionally a subordinate sensor. There are no separate resource-property and metric-definition links in these records."
+    },
+    "RF-BATTERY-CAPACITY": {
+      "display_row": 577,
+      "label": "Rated capacity, current maximum capacity and present stored charge or energy",
+      "group": "POWER",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "Status.xsd#batteryChargeLevel; StatusTypes.xsd#BatteryChargeLevel",
+      "reason": "The asset can report present charge as a level or percentage. The declared fields do not separately quantify rated and currently achievable capacity."
+    },
+    "RF-BATTERY-HEALTH": {
+      "display_row": 578,
+      "label": "Battery health, discharge-cycle count and current charge",
+      "group": "POWER",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "StatusTypes.xsd#BatteryChargeLevel; Status.xsd#componentStatuses",
+      "reason": "Present charge and component operating condition can be recorded. A battery state-of-health measurement and discharge-cycle count are distinct and are not established here."
+    },
+    "RF-CELL-VOLTAGE": {
+      "display_row": 579,
+      "label": "Per-cell voltage readings within a battery",
+      "group": "POWER",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Status.xsd#batteryVoltage",
+      "reason": "The voltage belongs to the unit battery. It does not identify or enumerate the cells within it."
+    },
+    "RF-BATTERY-C-RATE": {
+      "display_row": 580,
+      "label": "Battery charge or discharge current normalized by rated charge capacity",
+      "group": "POWER",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Power.xsd#current; StatusTypes.xsd#BatteryChargeLevel",
+      "reason": "Measured current and a charge percentage provide no normalization by rated ampere-hour capacity or charge/discharge direction."
+    },
+    "RF-BATTERY-E-RATE": {
+      "display_row": 581,
+      "label": "Battery charge or discharge power normalized by rated energy capacity",
+      "group": "POWER",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Power.xsd#activePower; StatusTypes.xsd#BatteryChargeLevel",
+      "reason": "Active power and a charge percentage provide no battery power normalization by rated watt-hour capacity."
+    },
+    "RF-SUPPLY-EFFICIENCY": {
+      "display_row": 582,
+      "label": "Power-supply efficiency at a specified percentage load",
+      "group": "POWER",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "Power.xsd#activePower; Power.xsd#loadActivePower",
+      "reason": "Reported power and load-attributable power do not establish a supply efficiency curve indexed by percentage load."
+    },
+    "RF-BUDGET": {
+      "display_row": 583,
+      "label": "Requested electrical-power allocation and actual allocated budget",
+      "group": "POWER",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Status.xsd#powerConsumption; Power.xsd#activePower",
+      "reason": "Observed consumption is distinct from requested and granted electrical budgets."
+    },
+    "RF-POWER-QUALITY": {
+      "display_row": 584,
+      "label": "Quality of an AC electrical waveform",
+      "group": "POWER",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Power.xsd#activePower; Power.xsd#reactivePower; Power.xsd#voltage; Power.xsd#current",
+      "reason": "The power record distinguishes real and reactive power and voltage and current. These describe parts of the electrical condition without measuring harmonic distortion, crest factor or waveform quality directly."
+    },
+    "RF-ABS-HUMIDITY": {
+      "display_row": 585,
+      "label": "Absolute atmospheric humidity by mass per volume",
+      "group": "ENV",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Weather.xsd#relativeHumidity; Weather.xsd#dewPoint",
+      "reason": "Relative humidity and dew point differ from a reported mass of water vapor per unit volume. Do not substitute one humidity quantity for another."
+    },
+    "RF-COOLANT-PAIR": {
+      "display_row": 586,
+      "label": "Coolant supply and return temperatures, pressures and heat removal",
+      "group": "ENV",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "WaterQuality.xsd#temperature; WaterQuality.xsd#waterFlowPressure",
+      "reason": "The water record supports temperature and pressure. It gives no paired coolant supply and return sites or heat removal across equipment."
+    },
+    "RF-COOLANT-MIX": {
+      "display_row": 587,
+      "label": "Coolant formulation and thermophysical properties",
+      "group": "ENV",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "WaterQuality.xsd#specificGravity; WaterQuality.xsd#salinity",
+      "reason": "Water properties can be measured. These do not identify the coolant mixture, additive share or specific heat of the loop."
+    },
+    "RF-LEAK": {
+      "display_row": 588,
+      "label": "Leak detection state, response severity and delay",
+      "group": "STATUS",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "Status.xsd#ambientStatus; StatusTypes.xsd#AmbientTypeEnum",
+      "reason": "The reviewed ambient-condition vocabulary covers temperature and occlusion. It supplies no leak detector with response severity and delay."
+    },
+    "RF-AIRFLOW": {
+      "display_row": 589,
+      "label": "Cooling airflow and pressure differential across equipment",
+      "group": "ENV",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Weather.xsd#windAvg; Weather.xsd#pressure",
+      "reason": "Ambient wind and station pressure have a different subject from cooling airflow and differential pressure across equipment."
+    },
+    "RF-APPLY-WINDOW": {
+      "display_row": 590,
+      "label": "Permitted settings application times and maintenance window",
+      "group": "CMD",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "ConfigureProfileCommand.xsd; ConfigureProfileResponse.xsd",
+      "reason": "Changing a profile does not identify when pending settings may be applied or set a maintenance window."
+    },
+    "RF-LOG-LOSS": {
+      "display_row": 591,
+      "label": "Log overflow count and first and last overflow times",
+      "group": "STORE",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "ObservationStore.java; StatusTypes.xsd#InternalArchiveStatus",
+      "reason": "Archive activity and availability do not count overflow losses or give the first and last overflow times."
+    },
+    "RF-DELIVERY-RECOVERY": {
+      "display_row": 592,
+      "label": "Subscription delivery retry policy, backup destinations and heartbeat",
+      "group": "OBS",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Asset.java#postResponseUpdate; Status.xsd#nextStatusDurationMs",
+      "reason": "An asynchronous response update or expected status interval is not a subscription-delivery heartbeat, retry policy or failover destination."
+    },
+    "RF-FILTER-SERVICE": {
+      "display_row": 593,
+      "label": "Filter differential pressure, actual service hours and rated service life",
+      "group": "STATUS",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "WaterQuality.xsd#waterFlowPressure; Status.xsd#assetOnTimeMs",
+      "reason": "Water pressure and elapsed asset uptime do not establish pressure drop across a particular filter or that filter’s rated service life."
+    },
+    "RF-CHASSIS-ENVELOPE": {
+      "display_row": 594,
+      "label": "Manufacturer-declared chassis dimensions and mass",
+      "group": "CAP",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "BaseCapabilities.xsd#BaseCapabilities; AssetCapabilities.xsd#minRange",
+      "reason": "Product identity and sensing distances do not declare the dimensions and mass of the chassis."
+    },
+    "RF-REPLACEMENT-PART": {
+      "display_row": 595,
+      "label": "Replacement part number versus installed assembly part number",
+      "group": "CAP",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "BaseCapabilities.xsd#BaseCapabilities; FactoryDescriptor.java#getProductType",
+      "reason": "Product identification does not distinguish the installed part number from the part number for its service replacement."
+    },
+    "RF-SENSOR-DIGITS": {
+      "display_row": 596,
+      "label": "Significant digits versus percent and absolute accuracy of a reading",
+      "group": "OBS",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "SharedTypes.xsd; Weather.xsd#temperature",
+      "reason": "Typed measurement values alone do not establish significant digits and separate percentage and absolute sensor accuracy for a reading."
+    },
+    "RF-COLLECTION-FUNCTION": {
+      "display_row": 597,
+      "label": "Metric aggregation function, time scope and collection duration",
+      "group": "ENV",
+      "relation": "partial",
+      "classification": "specialized",
+      "locator": "Weather.xsd#windAvg; Weather.xsd#windGust; Weather.xsd#timeWindowSeconds",
+      "reason": "Average wind and maximum gust have distinct statistics and can carry a window. They do not provide a configurable general-purpose metric collection function."
+    },
+    "RF-RESOURCE-SHARING": {
+      "display_row": 598,
+      "label": "Composition sharing capability, permission and current use",
+      "group": "MED",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "AssetDirectoryService.java#getAssets; AssetProxy.java",
+      "reason": "Shared access to a directory or proxy does not declare a composable resource’s sharing capability, permission and current use."
+    },
+    "RF-MOTION-PROFILE": {
+      "display_row": 599,
+      "label": "Automation-node motion axis and commanded movement profile",
+      "group": "CMD",
+      "relation": "partial",
+      "classification": "specialized",
+      "locator": "AssetCapabilities.xsd#PanTilt; SetPanTiltCommand.xsd; GetPanTiltResponse.xsd",
+      "reason": "Pan and tilt have separate angular axes and commands. These do not specify a primary motion axis and a velocity or acceleration profile for reaching a target."
+    },
+    "RF-REMEDIATION-STEP": {
+      "display_row": 600,
+      "label": "Ordered corrective step with identified target and retry policy",
+      "group": "CMD",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "MasterCommands.xsd; MasterResponses.xsd",
+      "reason": "Command and response types do not define an ordered service-remediation plan with a target and a retry policy for each step."
+    },
+    "RF-SUPPLY-DOMAINS": {
+      "display_row": 601,
+      "label": "Separately identified cooling and electrical suppliers for managed equipment",
+      "group": "POWER",
+      "relation": "no established correspondence in reviewed scope",
+      "classification": "unfilled",
+      "locator": "Power.xsd#source; Power.xsd#loadActivePower",
+      "reason": "Attribution within a power event does not identify separately linked pieces of equipment responsible for cooling and supplying electricity."
+    },
+    "JOINT-SAMPLE-RECORD-TIMES": {
+      "display_row": 603,
+      "label": "Measurement acquisition time and record creation time",
+      "group": "ATTR",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "Observation.xsd#observedTimestamp; Observation.xsd#createdTimestamp; AssetImpl.java#setBaseObservationFields; AssetCapabilities.xsd#observedTimestampAvailable",
+      "reason": "The acquisition time is optional and record creation time is required. The core fills a missing creation time. The BMP180 capability declares that an observed timestamp is unavailable."
+    },
+    "OSUSR-PRESSURE-REFERENCE": {
+      "display_row": 604,
+      "label": "Atmospheric pressure at local elevation versus sea-level-corrected pressure",
+      "group": "ENV",
+      "relation": "direct",
+      "classification": "specialized",
+      "locator": "Weather.xsd#pressure; Weather.xsd#pressureAtSeaLevel; Bmp180Sensor.java#onCaptureData",
+      "reason": "Weather distinguishes pressure at current elevation and pressure corrected to sea level. The BMP180 capture example populates the local pressure member."
+    },
+    "OSUSR-AMBIENT-IMPAIRMENT": {
+      "display_row": 605,
+      "label": "Ambient condition affecting sensor performance",
+      "group": "STATUS",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "Status.xsd#ambientStatus; StatusTypes.xsd#AmbientStatus; StatusTypes.xsd#AmbientTypeEnum",
+      "reason": "An ambient status identifies temperature or occlusion as a condition affecting performance and carries an operating status for that condition."
+    },
+    "RF-INVENTORY-OCCUPANCY": {
+      "display_row": 606,
+      "label": "Known equipment location with an absent or unavailable occupant",
+      "group": "ID",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "AssetDirectoryService.java#isAssetAvailable; Asset.java#getActiveStatus",
+      "reason": "Directory availability and asset activation do not establish that a physical slot exists and is empty or that an occupant is present but unusable."
+    },
+    "RF-SENSOR-READING-PRESENCE": {
+      "display_row": 607,
+      "label": "Disabled sensor, omitted reading, null reading and numeric zero",
+      "group": "ENV",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "Weather.xsd#temperature; Weather.xsd#pressure",
+      "reason": "The optional XML measurement elements allow an omitted temperature or pressure to be distinguished from a supplied zero. They do not define an enable flag or the Redfish disablement rule."
+    },
+    "RF-LAST-RESET-EVENT": {
+      "display_row": 608,
+      "label": "Last system reset time and reported cause",
+      "group": "STATUS",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "Status.xsd#assetOnTimeMs; Asset.java#getActiveStatus",
+      "reason": "Elapsed physical asset on-time and the software activation state do not identify the time and cause of the last system reset."
     }
   },
   "new_rows": [
@@ -12729,21 +13206,23 @@
   "coverage_counts": {
     "baseline_rows": 493,
     "new_rows": 28,
-    "explicit_rows": 521,
+    "explicit_rows": 574,
     "relations": {
-      "partial": 122,
-      "related": 65,
-      "no established correspondence in reviewed scope": 292,
-      "direct": 32,
+      "partial": 128,
+      "related": 92,
+      "no established correspondence in reviewed scope": 309,
+      "direct": 35,
       "quantity unresolved": 1,
       "case hold": 9
     },
     "classifications": {
-      "common": 100,
-      "unfilled": 366,
-      "specialized": 54,
+      "common": 104,
+      "unfilled": 410,
+      "specialized": 59,
       "unresolved": 1
-    }
+    },
+    "joint_corrective_additions": 6,
+    "subsequent_other_donor_rows": 47
   },
   "source_index_policy": "Each locator starts with the filename in inventory (unique within this scoped set) and gives an exact symbol, field or method as applicable. Group scopes and original paths are recoverable from this ledger and the source_base revision.",
   "qualified_comparisons": {
@@ -12759,7 +13238,6 @@
         "S06-R003",
         "S06-R004",
         "ISA-C-197",
-        "ISA-C-211",
         "SOSA-F2-RTE-CONFIG",
         "ISA-C-048",
         "ISA-C-066",
@@ -12784,12 +13262,14 @@
         "OPCDI-DEVICE-REVISION",
         "OPCDI-ASSET-TAG",
         "PADIM-SIGNAL-POINT-ID",
-        "SAREF-DEVICE-KIND"
+        "SAREF-DEVICE-KIND",
+        "RF-CHASSIS-ZONE",
+        "RF-INVENTORY-OCCUPANCY"
       ],
       "relations": {
         "related": 10,
         "partial": 8,
-        "no established correspondence in reviewed scope": 11
+        "no established correspondence in reviewed scope": 12
       }
     },
     "MED": {
@@ -12804,6 +13284,7 @@
         "ISA-A-MEMBER-EXPOSURE",
         "S06-R011",
         "S06-R014",
+        "ISA-C-211",
         "ISA-A-MEMBER-TASKABILITY",
         "ISA-A-CIC-MEDIATION",
         "SOSA-SO2A-INTERFACE-BOUNDARY",
@@ -12819,13 +13300,15 @@
         "WOT-FORM-RESPONSES",
         "WOT-MODEL-INSTANTIATION",
         "WOT-REQUEST-URI-VARIABLES",
-        "OSUSR-SENSOR-SELECTOR"
+        "RF-MANAGER-ENDPOINTS",
+        "RF-SYSTEM-COMPOSITION",
+        "RF-CABLE-ENDS",
+        "RF-RESOURCE-SHARING"
       ],
       "relations": {
-        "partial": 12,
-        "related": 5,
-        "no established correspondence in reviewed scope": 8,
-        "direct": 1
+        "partial": 13,
+        "related": 7,
+        "no established correspondence in reviewed scope": 10
       }
     },
     "LIFE": {
@@ -12863,12 +13346,13 @@
         "OPCDI-CONFIGURABLE-COMPOSITION",
         "OPCDI-LIFETIME",
         "WOT-DIRECTORY-CHANGE-EVENT",
-        "OSUSR-ACTIVE-LIFECYCLE"
+        "OSUSR-ACTIVE-LIFECYCLE",
+        "RF-SERVICEABILITY"
       ],
       "relations": {
         "partial": 7,
         "related": 3,
-        "no established correspondence in reviewed scope": 23,
+        "no established correspondence in reviewed scope": 24,
         "direct": 1
       }
     },
@@ -12982,12 +13466,16 @@
         "SOSA-SO2J-SECURITY-LABELS",
         "SOSA-SO2J-FAULT-SUGGESTED-ACTION",
         "SOSA-SO2J-CONFIGURATION-STATE",
-        "SAREF-PURPOSE"
+        "SAREF-PURPOSE",
+        "RF-ASSEMBLY-PEDIGREE",
+        "RF-LIMITS",
+        "RF-CHASSIS-ENVELOPE",
+        "RF-REPLACEMENT-PART"
       ],
       "relations": {
-        "partial": 19,
-        "no established correspondence in reviewed scope": 82,
-        "related": 8
+        "partial": 20,
+        "no established correspondence in reviewed scope": 84,
+        "related": 9
       }
     },
     "ATTR": {
@@ -13008,12 +13496,13 @@
         "PADIM-SIMULATION-VALUES",
         "OSUSR-FIELD-ATTRIBUTION",
         "OSUSR-SPATIAL-AUTHORITY",
-        "OSUSR-TEST-MODE"
+        "OSUSR-TEST-MODE",
+        "JOINT-SAMPLE-RECORD-TIMES"
       ],
       "relations": {
-        "partial": 10,
-        "related": 4,
-        "direct": 3
+        "partial": 8,
+        "related": 6,
+        "direct": 4
       }
     },
     "OBS": {
@@ -13039,12 +13528,22 @@
         "CASE-H08",
         "CASE-H09",
         "AAS-O2-LOGICAL-RELATION",
-        "AAS-O6-UNIT-CONTEXT"
+        "AAS-O6-UNIT-CONTEXT",
+        "OSUSR-SENSOR-SELECTOR",
+        "RF-SENSOR-SUBJECT",
+        "RF-READING-BASIS",
+        "RF-READING-ORIGIN",
+        "RF-TIME-ACCURACY",
+        "RF-METRIC-SAMPLE",
+        "RF-DELIVERY-RECOVERY",
+        "RF-SENSOR-DIGITS"
       ],
       "relations": {
-        "related": 4,
-        "partial": 9,
-        "case hold": 9
+        "related": 8,
+        "partial": 11,
+        "case hold": 9,
+        "direct": 1,
+        "no established correspondence in reviewed scope": 1
       }
     },
     "CMD": {
@@ -13144,12 +13643,18 @@
         "ISA-C-069",
         "ISA-C-121",
         "OPCDI-TARGET-MODE",
-        "OSUSR-ASYNC-UPDATE"
+        "OSUSR-ASYNC-UPDATE",
+        "RF-CONTROL-DEADBAND",
+        "RF-LOOP-COEFFICIENTS",
+        "RF-FEEDBACK-ROLES",
+        "RF-APPLY-WINDOW",
+        "RF-MOTION-PROFILE",
+        "RF-REMEDIATION-STEP"
       ],
       "relations": {
-        "partial": 20,
-        "no established correspondence in reviewed scope": 74,
-        "related": 1,
+        "partial": 21,
+        "no established correspondence in reviewed scope": 77,
+        "related": 3,
         "direct": 1
       }
     },
@@ -13220,13 +13725,20 @@
         "PADIM-SIGNAL-COMPENSATION",
         "OSUSR-NEXT-STATUS",
         "OSUSR-UPTIME",
-        "OSUSR-ARCHIVE-TIME"
+        "OSUSR-ARCHIVE-TIME",
+        "RF-REDUNDANCY",
+        "RF-LOCAL-ROLLUP",
+        "RF-THRESHOLD-HYSTERESIS",
+        "RF-LEAK",
+        "RF-FILTER-SERVICE",
+        "OSUSR-AMBIENT-IMPAIRMENT",
+        "RF-LAST-RESET-EVENT"
       ],
       "relations": {
-        "partial": 7,
-        "no established correspondence in reviewed scope": 47,
-        "related": 9,
-        "direct": 3
+        "partial": 8,
+        "no established correspondence in reviewed scope": 51,
+        "related": 10,
+        "direct": 4
       }
     },
     "ENV": {
@@ -13256,12 +13768,23 @@
         "OSUSR-WATER-SALINITY",
         "OSUSR-WATER-GRAVITY",
         "OSUSR-WATER-PRESSURE",
-        "OSUSR-WATER-SATURATION"
+        "OSUSR-WATER-SATURATION",
+        "RF-AVERAGE-COVERAGE",
+        "RF-EXTREMA",
+        "RF-ACCUMULATION",
+        "RF-ABS-HUMIDITY",
+        "RF-COOLANT-PAIR",
+        "RF-COOLANT-MIX",
+        "RF-AIRFLOW",
+        "RF-COLLECTION-FUNCTION",
+        "OSUSR-PRESSURE-REFERENCE",
+        "RF-SENSOR-READING-PRESENCE"
       ],
       "relations": {
-        "partial": 4,
-        "direct": 21,
-        "quantity unresolved": 1
+        "partial": 8,
+        "direct": 22,
+        "quantity unresolved": 1,
+        "related": 5
       }
     },
     "POWER": {
@@ -13278,11 +13801,22 @@
         "ISA-E-POWER-SOURCE",
         "SOSA-SO2J-POWER-SOURCE-ASSOCIATION",
         "SAREF-COMMODITY",
-        "OSUSR-POWER-WINDOW"
+        "OSUSR-POWER-WINDOW",
+        "RF-BATTERY-CAPACITY",
+        "RF-BATTERY-HEALTH",
+        "RF-CELL-VOLTAGE",
+        "RF-BATTERY-C-RATE",
+        "RF-BATTERY-E-RATE",
+        "RF-SUPPLY-EFFICIENCY",
+        "RF-BUDGET",
+        "RF-POWER-QUALITY",
+        "RF-SUPPLY-DOMAINS"
       ],
       "relations": {
-        "related": 12,
-        "direct": 1
+        "related": 17,
+        "direct": 1,
+        "partial": 2,
+        "no established correspondence in reviewed scope": 2
       }
     },
     "MEDIA": {
@@ -13346,12 +13880,14 @@
         "AAS-O2-RECORD-ADMIN",
         "AAS-O4-RECORD-HISTORY",
         "SOSA-SO2B-HEALTH-LOG",
-        "SOSA-SO2J-RESULT-WINDOW"
+        "SOSA-SO2J-RESULT-WINDOW",
+        "RF-REPORT-HISTORY",
+        "RF-LOG-LOSS"
       ],
       "relations": {
-        "partial": 10,
-        "no established correspondence in reviewed scope": 26,
-        "related": 2
+        "partial": 6,
+        "related": 7,
+        "no established correspondence in reviewed scope": 27
       }
     },
     "SPECIAL": {
@@ -13501,5 +14037,935 @@
       "OSUS-Q3"
     ],
     "dim_and_profile_adoption": "The 28 OSUS-R candidates remain pending separate owner disposition under Step 24."
+  },
+  "corrective_review_63": {
+    "baseline": "d423e3943b136a7317c401c22b1d79466a51d2a4",
+    "prior_counts": {
+      "baseline_rows": 493,
+      "new_rows": 28,
+      "explicit_rows": 521,
+      "relations": {
+        "partial": 122,
+        "related": 65,
+        "no established correspondence in reviewed scope": 292,
+        "direct": 32,
+        "quantity unresolved": 1,
+        "case hold": 9
+      },
+      "classifications": {
+        "common": 100,
+        "unfilled": 366,
+        "specialized": 54,
+        "unresolved": 1
+      }
+    },
+    "method": "Reused the SAREF/WoT two-way review. Reconciled every current row ID, evidence locator and saved cell. Reopened disputed native meanings and grouped claims, searched negative positions and native definitions, compared the two donors on later additions, and challenged new distinctions against existing rows. Unchanged individual decisions retain their original depth of source contact.",
+    "changed_previously_assessed": 16,
+    "relation_or_class_changed": 8,
+    "changes": {
+      "ISA-C-212": {
+        "cell": "N182",
+        "before": {
+          "display_row": 182,
+          "label": "Requested latest occurrence of an operating-state code",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "ObservationQuery.java#withSubType; ObservationQuery.java#withOrder"
+      },
+      "ISA-C-213": {
+        "cell": "N183",
+        "before": {
+          "display_row": 183,
+          "label": "Requested time-keyed operating-state history",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange"
+      },
+      "ISA-C-215": {
+        "cell": "N185",
+        "before": {
+          "display_row": 185,
+          "label": "Requested current values of declared ready properties",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "ObservationQuery.java#withOrder"
+      },
+      "ISA-C-216": {
+        "cell": "N186",
+        "before": {
+          "display_row": 186,
+          "label": "Requested archived-message query with reusable result identifier",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "ObservationQuery.java#withRange; ObservationQuery.java#withMaxObservations"
+      },
+      "ISA-Q-QUERY": {
+        "cell": "N203",
+        "before": {
+          "display_row": 203,
+          "label": "Requested message kinds and returned fields",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "ObservationQuery.java#withSubType"
+      },
+      "ISA-Q-MATCH": {
+        "cell": "N204",
+        "before": {
+          "display_row": 204,
+          "label": "Message-matching criteria",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "ObservationQuery.java#withAssetUuid; ObservationQuery.java#withTimeObservedRange"
+      },
+      "ISA-Q-NAVIGATION": {
+        "cell": "N205",
+        "before": {
+          "display_row": 205,
+          "label": "Field navigation and contextual filtering",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "ObservationQuery.java#withSubType"
+      },
+      "ISA-Q-CONTEXT": {
+        "cell": "N211",
+        "before": {
+          "display_row": 211,
+          "label": "Message-source and cached-component query context",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "ObservationQuery.java#withAssetUuid; ObservationQuery.java#withSystemId"
+      },
+      "SOSA-SO2B-HEALTH-LOG": {
+        "cell": "N399",
+        "before": {
+          "display_row": 399,
+          "label": "Candidate — Health log records and managed history",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "ObservationQuery.java#withSubType; ObservationQuery.java#withTimeObservedRange"
+      },
+      "SOSA-SO2J-RESULT-WINDOW": {
+        "cell": "N450",
+        "before": {
+          "display_row": 450,
+          "label": "Candidate — Log and fault collection retrieval window and ordering",
+          "group": "STORE",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange",
+          "reason": "Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Stored observations can be selected by asset, subtype or time basis, with result limits and ordering. This is observation retrieval. The full ISA message-query language, fault-log semantics and reusable result handles need separate evidence. [ObservationStore.java#queryByAssetUuid; ObservationQuery.java#withTimeObservedRange; ObservationQuery.java#withTimeCreatedRange]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "ObservationQuery.java#withRange; ObservationQuery.java#withOrder; ObservationQuery.java#withTimeCreatedRange"
+      },
+      "ISA-T-AUTHOR": {
+        "cell": "N229",
+        "before": {
+          "display_row": 229,
+          "label": "Message author or registration announcer",
+          "group": "ATTR",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "AssetImpl.java#setBaseObservationFields; Observation.xsd#systemId",
+          "reason": "Controller, managed asset and record identity can be assigned by the core. The observed time and referenced sensing element need independent attribution. This does not identify a human author or prove derivation."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Controller, managed asset and record identity can be assigned by the core. The observed time and referenced sensing element need independent attribution. This does not identify a human author or prove derivation. [AssetImpl.java#setBaseObservationFields; Observation.xsd#systemId]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Observation.xsd#systemId; AssetImpl.java#setBaseObservationFields"
+      },
+      "AAS-O3-EVENT-INITIATOR": {
+        "cell": "N368",
+        "before": {
+          "display_row": 368,
+          "label": "Candidate — Attributed initiator of event creation",
+          "group": "ATTR",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "AssetImpl.java#setBaseObservationFields; Observation.xsd#systemId",
+          "reason": "Controller, managed asset and record identity can be assigned by the core. The observed time and referenced sensing element need independent attribution. This does not identify a human author or prove derivation."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Controller, managed asset and record identity can be assigned by the core. The observed time and referenced sensing element need independent attribution. This does not identify a human author or prove derivation. [AssetImpl.java#setBaseObservationFields; Observation.xsd#systemId]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Observation.xsd#systemId; AssetImpl.java#setBaseObservationFields"
+      },
+      "OSUSR-SENSOR-SELECTOR": {
+        "cell": "N529",
+        "before": {
+          "display_row": 529,
+          "label": "Optional subordinate sensor identifier and sensor-specific capture support",
+          "group": "MED",
+          "relation": "direct",
+          "classification": "common",
+          "locator": "Observation.xsd#sensorId; Asset.java#captureData(String); AssetCapabilities.xsd#captureDataBySensor",
+          "reason": "Associate an optional asset-scoped sensor key with a record. Separately declare whether capture can select a sensor and whether the observation can carry the key."
+        },
+        "previous_display": "[COMMON CANDIDATE] DIRECT — Associate an optional asset-scoped sensor key with a record. Separately declare whether capture can select a sensor and whether the observation can carry the key. [Observation.xsd#sensorId; Asset.java#captureData(String); AssetCapabilities.xsd#captureDataBySensor]",
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "Observation.xsd#sensorId; AssetCapabilities.xsd#sensorIdAvailable; Bmp180Sensor.java#onCaptureData"
+      },
+      "RF-MANAGER-ENDPOINTS": {
+        "cell": "N555",
+        "before": null,
+        "previous_display": "RELATED PRIOR EVIDENCE — OSUS-R distinguishes a managed asset, core and plug-in. It does not thereby say which enclosure houses the controller or which other enclosures it manages. [Earlier master row 19]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "AssetProxy.java; Observation.xsd#assetLocation; Observation.xsd#systemId"
+      },
+      "RF-CHASSIS-ZONE": {
+        "cell": "N556",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-C-099 before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "AssetDirectoryService.java#getAssets; Observation.xsd#assetUuid"
+      },
+      "RF-SYSTEM-COMPOSITION": {
+        "cell": "N557",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-A-MEMBER-EXPOSURE before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "AssetProxy.java; AssetDirectoryService.java#getAssets"
+      },
+      "RF-SERVICEABILITY": {
+        "cell": "N558",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on S06-R007 before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "Asset.java#getActiveStatus; AssetDirectoryService.java#isAssetAvailable"
+      },
+      "RF-ASSEMBLY-PEDIGREE": {
+        "cell": "N559",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on S06-R001 before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "BaseCapabilities.xsd#BaseCapabilities; FactoryDescriptor.java#getProductType"
+      },
+      "RF-CABLE-ENDS": {
+        "cell": "N560",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2GJ-EXTERNAL-CONNECTOR-PROFILE before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "AssetProxy.java; Observation.xsd#assetUuid"
+      },
+      "RF-REDUNDANCY": {
+        "cell": "N561",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OPCDI-CONFIGURABLE-COMPOSITION before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "Status.xsd#componentStatuses; Status.xsd#summaryStatus"
+      },
+      "RF-LOCAL-ROLLUP": {
+        "cell": "N562",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2B-HEALTH-ASSESSMENT before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "Status.xsd#componentStatuses; Status.xsd#summaryStatus"
+      },
+      "RF-SENSOR-SUBJECT": {
+        "cell": "N563",
+        "before": null,
+        "previous_display": "RELATED PRIOR EVIDENCE — OSUS-R identifies an optional sensor within a managed asset. That selector alone does not identify the equipment served by an excerpt or its source resource. [Earlier master row 529]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "Observation.xsd#sensorId; Observation.xsd#assetUuid; Observation.xsd#systemId"
+      },
+      "RF-READING-BASIS": {
+        "cell": "N564",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-R-MEASUREMENT before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "Weather.xsd#temperature; Status.xsd#temperature"
+      },
+      "RF-READING-ORIGIN": {
+        "cell": "N565",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on PADIM-SIMULATION-VALUES before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Observation.xsd#relatedObservations; ObservationTypes.xsd#RelationshipTypeEnum"
+      },
+      "RF-AVERAGE-COVERAGE": {
+        "cell": "N566",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SAPIENT-R11-STATUS-INTERVAL before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "specialized"
+        ],
+        "source": "Weather.xsd#windAvg; Weather.xsd#timeWindowSeconds"
+      },
+      "RF-LIMITS": {
+        "cell": "N567",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-C-096 before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "AssetCapabilities.xsd#minRange; AssetCapabilities.xsd#maxRange; Status.xsd#ambientStatus"
+      },
+      "RF-EXTREMA": {
+        "cell": "N568",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-R-MEASUREMENT before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "specialized"
+        ],
+        "source": "Weather.xsd#windGust; Weather.xsd#timeWindowSeconds"
+      },
+      "RF-ACCUMULATION": {
+        "cell": "N569",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on PADIM-TOTALIZER-PULSE before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Weather.xsd; Observation.xsd#observedTimestamp"
+      },
+      "RF-THRESHOLD-HYSTERESIS": {
+        "cell": "N570",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-K-ABS-THRESHOLD before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "StatusTypes.xsd#OperatingStatus; Status.xsd#summaryStatus"
+      },
+      "RF-CONTROL-DEADBAND": {
+        "cell": "N571",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on PADIM-CONTROL-VALUE-ROLES before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "SetPointingLocationCommand.xsd; GetPointingLocationResponse.xsd"
+      },
+      "RF-LOOP-COEFFICIENTS": {
+        "cell": "N572",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on PADIM-DAMPING before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "SetPanTiltCommand.xsd; GetPanTiltResponse.xsd"
+      },
+      "RF-FEEDBACK-ROLES": {
+        "cell": "N573",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on PADIM-CONTROL-VALUE-ROLES before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SetPanTiltCommand.xsd; GetPanTiltResponse.xsd"
+      },
+      "RF-REPORT-HISTORY": {
+        "cell": "N574",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-Q-OPTIONS before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "StatusTypes.xsd#InternalArchiveStatus; ObservationStore.java"
+      },
+      "RF-TIME-ACCURACY": {
+        "cell": "N575",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-R-MEASUREMENT before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Observation.xsd#observedTimestamp; AssetCapabilities.xsd#observedTimestampAvailable"
+      },
+      "RF-METRIC-SAMPLE": {
+        "cell": "N576",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-R-NAMED-VALUE before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "Observation.xsd#assetUuid; Observation.xsd#sensorId; Weather.xsd#temperature"
+      },
+      "RF-BATTERY-CAPACITY": {
+        "cell": "N577",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-C-100 before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "Status.xsd#batteryChargeLevel; StatusTypes.xsd#BatteryChargeLevel"
+      },
+      "RF-BATTERY-HEALTH": {
+        "cell": "N578",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OPCDI-LIFETIME before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "StatusTypes.xsd#BatteryChargeLevel; Status.xsd#componentStatuses"
+      },
+      "RF-CELL-VOLTAGE": {
+        "cell": "N579",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-C-055 before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Status.xsd#batteryVoltage"
+      },
+      "RF-BATTERY-C-RATE": {
+        "cell": "N580",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-C-052 before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Power.xsd#current; StatusTypes.xsd#BatteryChargeLevel"
+      },
+      "RF-BATTERY-E-RATE": {
+        "cell": "N581",
+        "before": null,
+        "previous_display": "RELATED PRIOR EVIDENCE — OSUS-R distinguishes active/reactive electrical quantities. The earlier comparison does not supply the rated watt-hour denominator. [Earlier master row 534]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Power.xsd#activePower; StatusTypes.xsd#BatteryChargeLevel"
+      },
+      "RF-SUPPLY-EFFICIENCY": {
+        "cell": "N582",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2F-PSC-POWER-PORT-DESIGN before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "Power.xsd#activePower; Power.xsd#loadActivePower"
+      },
+      "RF-BUDGET": {
+        "cell": "N583",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2F-PIC-POWER-INPUT-DESIGN before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Status.xsd#powerConsumption; Power.xsd#activePower"
+      },
+      "RF-POWER-QUALITY": {
+        "cell": "N584",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OSUSR-POWER-WINDOW before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Power.xsd#activePower; Power.xsd#reactivePower; Power.xsd#voltage; Power.xsd#current"
+      },
+      "RF-ABS-HUMIDITY": {
+        "cell": "N585",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-C-125 before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Weather.xsd#relativeHumidity; Weather.xsd#dewPoint"
+      },
+      "RF-COOLANT-PAIR": {
+        "cell": "N586",
+        "before": null,
+        "previous_display": "RELATED PRIOR EVIDENCE — OSUS-R has a water-temperature quantity. That single quantity does not identify the two legs of a cooling circuit or the removed heat. [Earlier master row 546]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "WaterQuality.xsd#temperature; WaterQuality.xsd#waterFlowPressure"
+      },
+      "RF-COOLANT-MIX": {
+        "cell": "N587",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OSUSR-WATER-GRAVITY before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "WaterQuality.xsd#specificGravity; WaterQuality.xsd#salinity"
+      },
+      "RF-LEAK": {
+        "cell": "N588",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SAPIENT-F2-ALERT-LIFECYCLE before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "Status.xsd#ambientStatus; StatusTypes.xsd#AmbientTypeEnum"
+      },
+      "RF-AIRFLOW": {
+        "cell": "N589",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-C-130 before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Weather.xsd#windAvg; Weather.xsd#pressure"
+      },
+      "RF-APPLY-WINDOW": {
+        "cell": "N590",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OPCDI-OFFLINE-ONLINE before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "ConfigureProfileCommand.xsd; ConfigureProfileResponse.xsd"
+      },
+      "RF-LOG-LOSS": {
+        "cell": "N591",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2J-RESULT-WINDOW before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "ObservationStore.java; StatusTypes.xsd#InternalArchiveStatus"
+      },
+      "RF-DELIVERY-RECOVERY": {
+        "cell": "N592",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on WOT-EVENT-CONTRACT before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Asset.java#postResponseUpdate; Status.xsd#nextStatusDurationMs"
+      },
+      "RF-FILTER-SERVICE": {
+        "cell": "N593",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OPCDI-OPERATION-COUNTERS before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "WaterQuality.xsd#waterFlowPressure; Status.xsd#assetOnTimeMs"
+      },
+      "RF-CHASSIS-ENVELOPE": {
+        "cell": "N594",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2F-PIC-MECHANICAL-PROFILE before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "BaseCapabilities.xsd#BaseCapabilities; AssetCapabilities.xsd#minRange"
+      },
+      "RF-REPLACEMENT-PART": {
+        "cell": "N595",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OPCDI-PRODUCT-CODE before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "BaseCapabilities.xsd#BaseCapabilities; FactoryDescriptor.java#getProductType"
+      },
+      "RF-SENSOR-DIGITS": {
+        "cell": "N596",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on ISA-R-MEASUREMENT before assigning donor correspondence.",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SharedTypes.xsd; Weather.xsd#temperature"
+      },
+      "RF-COLLECTION-FUNCTION": {
+        "cell": "N597",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SAPIENT-R11-STATUS-INTERVAL before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "specialized"
+        ],
+        "source": "Weather.xsd#windAvg; Weather.xsd#windGust; Weather.xsd#timeWindowSeconds"
+      },
+      "RF-RESOURCE-SHARING": {
+        "cell": "N598",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on OPCDI-CONFIGURABLE-COMPOSITION before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "AssetDirectoryService.java#getAssets; AssetProxy.java"
+      },
+      "RF-MOTION-PROFILE": {
+        "cell": "N599",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2J-ANGULAR-VELOCITY before assigning donor correspondence.",
+        "after": [
+          "partial",
+          "specialized"
+        ],
+        "source": "AssetCapabilities.xsd#PanTilt; SetPanTiltCommand.xsd; GetPanTiltResponse.xsd"
+      },
+      "RF-REMEDIATION-STEP": {
+        "cell": "N600",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2J-FAULT-SUGGESTED-ACTION before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "MasterCommands.xsd; MasterResponses.xsd"
+      },
+      "RF-SUPPLY-DOMAINS": {
+        "cell": "N601",
+        "before": null,
+        "previous_display": "Unassessed on this new distinction. Compare the earlier evidence on SOSA-SO2J-POWER-SOURCE-ASSOCIATION before assigning donor correspondence.",
+        "after": [
+          "no established correspondence in reviewed scope",
+          "unfilled"
+        ],
+        "source": "Power.xsd#source; Power.xsd#loadActivePower"
+      },
+      "ISA-C-211": {
+        "cell": "N181",
+        "before": {
+          "display_row": 181,
+          "label": "Requested current component configuration message",
+          "group": "ID",
+          "relation": "related",
+          "classification": "unfilled",
+          "locator": "Asset.java#getConfig; AssetProxy.java#initialize",
+          "reason": "Managed configuration and plug-in initialization are visible. These do not establish a full deployment/configuration message or its security settings."
+        },
+        "previous_display": "RELATED — Managed configuration and plug-in initialization are visible. These do not establish a full deployment/configuration message or its security settings. [Asset.java#getConfig; AssetProxy.java#initialize]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "Asset.java#getConfig; AssetAttributes.java"
+      },
+      "ISA-A-PARTICIPATION": {
+        "cell": "N17",
+        "before": {
+          "display_row": 17,
+          "label": "Network participation role and responsibilities",
+          "group": "MED",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "Asset.java#Asset; AssetProxy.java#AssetProxy",
+          "reason": "Consumers use the core asset interface. A plug-in implements custom device behavior behind it. The source supplies a mediation role, without proving a particular link, service endpoint or installation."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Consumers use the core asset interface. A plug-in implements custom device behavior behind it. The source supplies a mediation role, without proving a particular link, service endpoint or installation. [Asset.java#Asset; AssetProxy.java#AssetProxy]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "AssetProxy.java; Asset.java"
+      },
+      "ISA-A-CIC-MEDIATION": {
+        "cell": "N217",
+        "before": {
+          "display_row": 217,
+          "label": "Composition interface task mediation role",
+          "group": "MED",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "Asset.java#captureData(String); Observation.xsd#sensorId",
+          "reason": "One managed asset can represent several sensors. A capture can address a sensor by an asset-scoped string. Physical attachment, global sensor identity and independent network taskability require separate evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — One managed asset can represent several sensors. A capture can address a sensor by an asset-scoped string. Physical attachment, global sensor identity and independent network taskability require separate evidence. [Asset.java#captureData(String); Observation.xsd#sensorId]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "AssetProxy.java; Asset.java#captureData"
+      },
+      "JOINT-SAMPLE-RECORD-TIMES": {
+        "cell": "N603",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "Observation.xsd#observedTimestamp; Observation.xsd#createdTimestamp; AssetImpl.java#setBaseObservationFields; AssetCapabilities.xsd#observedTimestampAvailable"
+      },
+      "OSUSR-PRESSURE-REFERENCE": {
+        "cell": "N604",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "direct",
+          "specialized"
+        ],
+        "source": "Weather.xsd#pressure; Weather.xsd#pressureAtSeaLevel; Bmp180Sensor.java#onCaptureData"
+      },
+      "OSUSR-AMBIENT-IMPAIRMENT": {
+        "cell": "N605",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "Status.xsd#ambientStatus; StatusTypes.xsd#AmbientStatus; StatusTypes.xsd#AmbientTypeEnum"
+      },
+      "RF-INVENTORY-OCCUPANCY": {
+        "cell": "N606",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "AssetDirectoryService.java#isAssetAvailable; Asset.java#getActiveStatus"
+      },
+      "RF-SENSOR-READING-PRESENCE": {
+        "cell": "N607",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "Weather.xsd#temperature; Weather.xsd#pressure"
+      },
+      "RF-LAST-RESET-EVENT": {
+        "cell": "N608",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "Status.xsd#assetOnTimeMs; Asset.java#getActiveStatus"
+      }
+    },
+    "joint_additions": [
+      {
+        "row_id": "JOINT-SAMPLE-RECORD-TIMES",
+        "display_row": 603,
+        "origin": "both",
+        "closest_existing_id": "ISA-T-EVENT-TIME",
+        "loss": "Occurrence of an event does not distinguish a delayed or missing acquisition timestamp from creation of its container.",
+        "client_use": "Show “measured” and “record created” separately when known.",
+        "source": [
+          "Observation.xsd#observedTimestamp; Observation.xsd#createdTimestamp; AssetImpl.java#setBaseObservationFields; AssetCapabilities.xsd#observedTimestampAvailable",
+          "RF-225"
+        ]
+      },
+      {
+        "row_id": "OSUSR-PRESSURE-REFERENCE",
+        "display_row": 604,
+        "origin": "OSUS-R",
+        "closest_existing_id": "ISA-C-127",
+        "loss": "Two pressures can use the same units at the same site and still have different reference elevations.",
+        "client_use": "Label station and sea-level pressure separately.",
+        "source": [
+          "Weather.xsd#pressure; Weather.xsd#pressureAtSeaLevel; Bmp180Sensor.java#onCaptureData",
+          "RF-172"
+        ]
+      },
+      {
+        "row_id": "OSUSR-AMBIENT-IMPAIRMENT",
+        "display_row": 605,
+        "origin": "OSUS-R",
+        "closest_existing_id": "SAREF-STATE-SUBJECT",
+        "loss": "A generic state does not distinguish a sensor-performance problem due to its surroundings from an ordinary environmental reading.",
+        "client_use": "Show a sensing impairment alongside its reported environmental cause.",
+        "source": [
+          "Status.xsd#ambientStatus; StatusTypes.xsd#AmbientStatus; StatusTypes.xsd#AmbientTypeEnum",
+          "RF-226"
+        ]
+      },
+      {
+        "row_id": "RF-INVENTORY-OCCUPANCY",
+        "display_row": 606,
+        "origin": "Redfish",
+        "closest_existing_id": "SOSA-SO2D-SLOT-IDENTIFIER",
+        "loss": "A slot label identifies a place. It cannot tell a client whether a part is installed there.",
+        "client_use": "Show an empty bay without adding an installed power supply to the inventory.",
+        "source": [
+          "AssetDirectoryService.java#isAssetAvailable; Asset.java#getActiveStatus",
+          "RF-227"
+        ]
+      },
+      {
+        "row_id": "RF-SENSOR-READING-PRESENCE",
+        "display_row": 607,
+        "origin": "Redfish",
+        "closest_existing_id": "RF-REPORT-HISTORY",
+        "loss": "Suppressing unchanged values in a report is different from omitting the sensor reading when the sensor itself is disabled.",
+        "client_use": "Avoid showing an unreported reading as zero or inferring that omission proves disablement.",
+        "source": [
+          "Weather.xsd#temperature; Weather.xsd#pressure",
+          "RF-228"
+        ]
+      },
+      {
+        "row_id": "RF-LAST-RESET-EVENT",
+        "display_row": 608,
+        "origin": "Redfish",
+        "closest_existing_id": "OSUSR-UPTIME",
+        "loss": "Elapsed power-on time cannot identify the reset cause or establish when an intervening reboot occurred.",
+        "client_use": "Show when the last restart occurred and its reported cause when available.",
+        "source": [
+          "Status.xsd#assetOnTimeMs; Asset.java#getActiveStatus",
+          "RF-229"
+        ]
+      }
+    ],
+    "owner_status": "Owner review of joint corrections pending. Earlier decisions and holds retained.",
+    "previously_missing_formal_decisions": 47,
+    "previously_unassessed_in_sheet": 43,
+    "previously_preliminary_in_sheet": 4,
+    "later_47_relations": {
+      "partial": 11,
+      "no established correspondence in reviewed scope": 17,
+      "related": 19
+    },
+    "native_sources_checked": 99,
+    "retained_example": "Observation parent/child/peer linkage fits the existing qualified-relationship row. It does not establish causation or fusion. The BMP180 plug-in demonstrates temperature and local pressure and rejects sensor-selected capture. This is source code and capability metadata, without deployment evidence."
   }
 }

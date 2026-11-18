@@ -2197,6 +2197,121 @@ def apply_joint_closeout(authored_path):
     verify_joint_closeout()
 
 
+def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_count, width,
+                            corrected_refs, keep_columns, verify_reasons):
+    grid = master['review_grid']
+    dispositions = ledgers[column]['row_dispositions']
+    need(len(grid) == grid_count and all(len(row) == width for row in grid), 'Donor grid dimensions')
+    need(len(dispositions) == len(master['rows']) == row_count, 'Donor information-row count')
+    need(set(dispositions) == {row['row_id'] for row in master['rows']}, 'Donor row ID coverage')
+    for name in JOINT_CSVS:
+        with (D / name).open(newline='', encoding='utf-8') as source:
+            need(list(csv.reader(source)) == grid, 'Donor CSV parity ' + name)
+    for name in JOINT_READABLES:
+        need(joint_readable_grid((D / name).read_text()) == grid, 'Donor readable parity ' + name)
+    data = (D / BOOK).read_bytes()
+    need(digest(data) == master['currentWorkbookSha256'] == master['workbookSnapshot']['sha256'], 'Donor workbook hash')
+    previous = subprocess.check_output(['git', 'show', baseline + ':' + str((D / BOOK).relative_to(ROOT))], cwd=ROOT)
+    with zipfile.ZipFile(io.BytesIO(data)) as saved, zipfile.ZipFile(io.BytesIO(previous)) as prior:
+        paths = pub.old.sheetpaths(saved)
+        part = paths['Master Crosswalk']
+        need(paths == pub.old.sheetpaths(prior) and len(paths) == 26, 'Donor sheet identities')
+        need(saved.namelist() == prior.namelist(), 'Donor package inventory')
+        need(all(saved.read(n) == prior.read(n) for n in saved.namelist() if n != part), 'Donor unaffected parts')
+        sheet = ET.fromstring(saved.read(part))
+        cells = {node.get('r'): node for node in sheet.iter(pub.q('c'))}
+        strings = joint_strings(saved)
+        styles = ET.fromstring(saved.read('xl/styles.xml'))
+        for i, row in enumerate(grid, 1):
+            for j, value in enumerate(row, 1):
+                ref = letter(j) + str(i)
+                actual = joint_value(cells[ref], strings) if ref in cells else ''
+                need(actual == value, 'Donor worksheet value ' + ref)
+        original = ET.fromstring(prior.read(part))
+        for old in original.iter(pub.q('c')):
+            addr = old.get('r')
+            col = addr[0]
+            if addr in corrected_refs:
+                continue
+            ref = addr if keep_columns else (chr(ord(col) + 1) if col >= letter(column + 1) else col) + addr[1:]
+            need(old.get('s') == cells[ref].get('s') and joint_value(old, strings) == joint_value(cells[ref], strings), 'Donor prior cell ' + addr)
+        for row in master['rows']:
+            idx = row['display_row']
+            need(row['display'] == grid[idx-1] and row['display'][column].strip(), 'Donor explicit populated row ' + str(idx))
+            for col, record in ledgers.items():
+                disposition = record['row_dispositions'][row['row_id']]
+                value = row['display'][col]
+                ref = letter(col + 1) + str(idx)
+                need(bool(value.strip()), 'Empty donor position ' + ref)
+                if verify_reasons:
+                    need(disposition['reason'] in value, 'Source ledger and cell meaning ' + ref)
+                target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unresolved': '#E9DEFA', 'unfilled': '#FFFFFF'}[disposition['classification']]
+                need(joint_fill(cells[ref], styles) == target, 'Donor classification fill ' + ref)
+        pane = sheet.find('.//' + pub.q('pane'))
+        need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
+
+
+def verify_joint_equipment_review():
+    from collections import Counter
+
+    master = load(MASTER)
+    baseline = 'd423e3943b136a7317c401c22b1d79466a51d2a4'
+    def previous(name):
+        path = (D / name).relative_to(ROOT)
+        return json.loads(subprocess.check_output(['git', 'show', baseline + ':' + str(path)], cwd=ROOT))
+
+    old_master = previous(MASTER)
+    rows = master['rows']
+    ids = {row['row_id'] for row in rows}
+    earlier = old_master['rows']
+    need(len(ids) == len(rows) == 574, 'Joint information rows')
+    need([x['row_id'] for x in rows[:568]] == [x['row_id'] for x in earlier], 'Prior row identity')
+    earlier_ids = {x['row_id'] for x in earlier}
+    additions = ids - earlier_ids
+    ledgers = {}
+    changed = set()
+    for col, name, grouping in [(13, 'OSUS_R_Source_Coverage.json', 'coverage_by_group'),
+                                (14, 'Redfish_Source_Coverage.json', 'native_group_results')]:
+        ledger = ledgers[col] = load(name)
+        old = previous(name)
+        audit = ledger['corrective_review_63']
+        decisions = ledger['row_dispositions']
+        need(ledger['holds'] == old['holds'] and ledger.get('owner_decision') == old.get('owner_decision'), 'Prior holds and decision')
+        need(audit['baseline'] == baseline and audit['prior_counts'] == old['coverage_counts'], 'Frozen prior counts')
+        need(set(decisions) == ids and ledger['coverage_counts']['explicit_rows'] == len(ids), 'Full current donor scope')
+        grouped = [rid for group in ledger[grouping].values() for rid in group['row_ids']]
+        need(set(grouped) == ids and len(grouped) == len(ids), 'Group coverage')
+        for prop in ('relation', 'classification'):
+            need(Counter(d[prop] for d in decisions.values()) == ledger['coverage_counts'][prop+'s'], 'Coverage totals')
+        need({x['row_id'] for x in audit['joint_additions']} == additions, 'Joint candidate identity')
+        for item in audit['joint_additions']:
+            need(item['closest_existing_id'] in earlier_ids and item['loss'] and item['client_use'], 'Distinct candidate')
+        for row in rows:
+            rid = row['row_id']
+            decision = decisions[rid]
+            change = audit['changes'].get(rid)
+            before = old['row_dispositions'].get(rid)
+            need(decision['display_row'] == row['display_row'] and decision['label'] == row['label'], 'Row linkage')
+            if change:
+                ref = letter(col + 1) + str(row['display_row'])
+                need(ref == change['cell'] and before == change['before'], 'Baseline classification ' + ref)
+                need(change['previous_display'] == (old_master['review_grid'][row['display_row']-1][col] if rid in earlier_ids else None), 'Prior visible cell ' + ref)
+                need(change['after'] == [decision['relation'],decision['classification']] and change['source'] == decision['locator'], 'New classification ' + ref)
+                changed.add(ref)
+            else:
+                need(decision == before, 'Retained decision ' + rid)
+            if col == 14:
+                ev = ledger['evidence'][decision['locator']]
+                need(len(ev['pointers']) == len(ev['release_by_pointer']) > 0, 'Source pointer count')
+                for ptr, release in zip(ev['pointers'],ev['release_by_pointer']):
+                    expected = '2025.3 (registered companion 92)' if ptr.startswith('BatteryMetrics.v1_1_0.json#') else '2025.2'
+                    need(release == expected and '#/definitions/' in ptr, 'Versioned source')
+            if rid in additions:
+                need(row['dim_adoption'] == 'OWNER_DECISION_PENDING' and all(row['display']), 'New row scope and adoption')
+    verify_saved_donor_grid(master, 13, ledgers, baseline, 574, 608, 21, changed, True, True)
+    print('PASS joint OSUS-R and Redfish review: 574 positions per donor, six additions, classifications, source records, 26-sheet package and four mirrors.')
+
+
 def verify_saref_core(wot=False, corrected=False, osusr=False, redfish=False):
     master = load(MASTER)
     ledger_name = 'WoT_1_1_Source_Coverage.json' if wot else 'SAREF_Core_Source_Coverage.json'
@@ -2246,16 +2361,6 @@ def verify_saref_core(wot=False, corrected=False, osusr=False, redfish=False):
                 value = decision[category]
                 actual[value] = actual.get(value, 0) + 1
             need(actual == counts[totals], 'Donor ledger totals ' + totals)
-    need(len(grid) == grid_count and all(len(row) == width for row in grid), 'Donor grid dimensions')
-    need(len(dispositions) == len(master['rows']) == row_count, 'SAREF information-row count')
-    need(set(dispositions) == {row['row_id'] for row in master['rows']}, 'SAREF row ID coverage')
-    for name in JOINT_CSVS:
-        with (D / name).open(newline='', encoding='utf-8') as source:
-            need(list(csv.reader(source)) == grid, 'SAREF CSV parity ' + name)
-    for name in JOINT_READABLES:
-        need(joint_readable_grid((D / name).read_text()) == grid, 'SAREF readable parity ' + name)
-    data = (D / BOOK).read_bytes()
-    need(digest(data) == master['currentWorkbookSha256'] == master['workbookSnapshot']['sha256'], 'SAREF workbook hash')
     baseline = '751f4bccdec751fe8db90fdcf701c1409f755027' if wot else '44e566e456bb77236b8b04ee7743c71ab8537d3b'
     if osusr:
         baseline = '4b9c7382a47f8f7446d89a27b535e8ddb16b4b45'
@@ -2272,45 +2377,8 @@ def verify_saref_core(wot=False, corrected=False, osusr=False, redfish=False):
                 ref = letter(col + 1) + str(next(r['display_row'] for r in master['rows'] if r['row_id'] == rid))
                 need(ref == change['cell'], 'Corrected donor change locator')
                 corrected_refs.add(ref)
-    previous = subprocess.check_output(['git', 'show', baseline + ':' + str((D / BOOK).relative_to(ROOT))], cwd=ROOT)
-    with zipfile.ZipFile(io.BytesIO(data)) as saved, zipfile.ZipFile(io.BytesIO(previous)) as prior:
-        paths = pub.old.sheetpaths(saved)
-        part = paths['Master Crosswalk']
-        need(paths == pub.old.sheetpaths(prior) and len(paths) == 26, 'SAREF sheet identities')
-        need(saved.namelist() == prior.namelist(), 'SAREF package inventory')
-        need(all(saved.read(n) == prior.read(n) for n in saved.namelist() if n != part), 'SAREF unaffected parts')
-        sheet = ET.fromstring(saved.read(part))
-        cells = {node.get('r'): node for node in sheet.iter(pub.q('c'))}
-        strings = joint_strings(saved)
-        styles = ET.fromstring(saved.read('xl/styles.xml'))
-        for i, row in enumerate(grid, 1):
-            for j, value in enumerate(row, 1):
-                ref = letter(j) + str(i)
-                actual = joint_value(cells[ref], strings) if ref in cells else ''
-                need(actual == value, 'SAREF worksheet value ' + ref)
-        original = ET.fromstring(prior.read(part))
-        for old in original.iter(pub.q('c')):
-            addr = old.get('r')
-            col = addr[0]
-            if addr in corrected_refs:
-                continue
-            ref = addr if corrected else (chr(ord(col) + 1) if col >= letter(column + 1) else col) + addr[1:]
-            need(old.get('s') == cells[ref].get('s') and joint_value(old, strings) == joint_value(cells[ref], strings), 'SAREF prior cell ' + addr)
-        for row in master['rows']:
-            idx = row['display_row']
-            disp = dispositions[row['row_id']]
-            need(row['display'] == grid[idx-1] and row['display'][column].strip(), 'SAREF explicit populated row ' + str(idx))
-            for col, record in ledgers.items():
-                disposition = record['row_dispositions'][row['row_id']]
-                value = row['display'][col]
-                ref = letter(col + 1) + str(idx)
-                need(bool(value.strip()), 'Empty donor position ' + ref)
-                if corrected or osusr or redfish:
-                    need(disposition['reason'] in value, 'Source ledger and cell meaning ' + ref)
-                target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unresolved': '#E9DEFA', 'unfilled': '#FFFFFF'}[disposition['classification']]
-                need(joint_fill(cells[ref], styles) == target, 'Donor classification fill ' + ref)
-        pane = sheet.find('.//' + pub.q('pane'))
-        need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'SAREF row-only freeze')
+    verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_count, width,
+                            corrected_refs, corrected, corrected or osusr or redfish)
     if redfish:
         print('PASS Redfish: all 568 decisions and 47 additions, two schema releases, saved values and fills, preserved workbook and both mirror pairs.')
         return
@@ -2327,6 +2395,8 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current=='OSUSR_REDFISH_63_SAVED_VERIFIED':
+        verify_joint_equipment_review();sys.exit(0)
     if current=='REDFISH_SAVED_VERIFIED':
         verify_saref_core(redfish=True);sys.exit(0)
     if current=='OSUSR_SAVED_VERIFIED':

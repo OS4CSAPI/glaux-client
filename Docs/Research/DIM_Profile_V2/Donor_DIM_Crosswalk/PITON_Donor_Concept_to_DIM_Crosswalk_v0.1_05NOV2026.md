@@ -1,39 +1,35 @@
-## Joint corrective review in progress
-
-The owner requested the same two-way reassessment used for SAREF Core and Web of Things, now for OSUS-R and Redfish. The [pre-change workbook and recovery record](https://github.com/OS4CSAPI/glaux-client/tree/d423e3943b136a7317c401c22b1d79466a51d2a4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk) remain the delivered baseline. OSUS-R has 521 formal dispositions against 568 information rows. On the 47 Redfish additions, 43 OSUS-R cells were pending and four contained preliminary comparisons. Source checks also distinguish historical observations from current properties, an empty bay from offline equipment, and station pressure from pressure corrected to sea level. Finish both donor ledgers, integrate justified corrections and candidates, verify the workbook and report for owner disposition. No additional owner gate during delivery.
-
 # Current Profile Rewrite checkpoint
 
-18 November 2026, America/New_York. Branch `research/dim-profile-v2`, [execution protocol](../AGENTS.md).
+18 November 2026. Branch `research/dim-profile-v2`. [Execution protocol](../AGENTS.md).
 
 ## Active scope and evidence
 
-Profile Rewrite 63. The owner said “Proceed” to the rank 4 [Redfish review](PLAN_Redfish_Source_First_Donor_Review.md) through verified delivery. The [source ledger](Redfish_Source_Coverage.json) identifies both editions, family dispositions, source pointers, 47 native candidates with nearest prior rows and the documentary example. Use `coverage_counts`, `new_rows`, `evidence`, `case`, `holds` or individual `row_dispositions` as needed. [Plain-English findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#redfish-equipment-management-and-telemetry). The [27-donor research order](Donor_Research_Priority_Order.md) remains available.
+The owner requested the same corrective review for OSUS-R and Redfish that was used for SAREF Core and W3C Web of Things. The published [pre-change master](https://github.com/OS4CSAPI/glaux-client/blob/d423e3943b136a7317c401c22b1d79466a51d2a4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) has 568 information rows. The [interim checkpoint](https://github.com/OS4CSAPI/glaux-client/commit/a27e460f9da62fd6e5b6e46a7a3667800ab157b2) records the OSUS-R coverage gap and source checks. The joint delivery adds six rows and assesses both donors on all 574 rows. [Plain-English findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#osus-r-and-redfish-corrective-review).
 
 ## Master and workbook
 
-[Editable Excel master](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). The comparison contains 568 information rows, 601 grid rows, 21 columns and 26 worksheets. Redfish has an explicit disposition in O on the 521 previous rows and 47 additions. Thirty-one additions are common candidates and 16 specialized. Final ordering from the least contributing donor at left toward the largest foundational contributor at right awaits comparative judgment.
+[Editable Excel master](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). The canonical JSON, both CSVs, both readable comparisons and workbook cover a 608-by-21 grid. OSUS-R remains in column N and Redfish in O. The earlier donor ledger stopped at 521 rows. Its 47 missing formal decisions now include 11 partial matches, 19 related findings and 17 bounded no-match findings. The team also revised 16 earlier OSUS-R assessments and 19 earlier Redfish assessments. The evidence for each change, predecessor text, paired decisions on all six additions and nearest prior row are in `corrective_review_63` in the [OSUS-R ledger](OSUS_R_Source_Coverage.json) and [Redfish ledger](Redfish_Source_Coverage.json). Original `new_rows` arrays preserve the historical 28 and 47 candidates. Six joint-review candidates are recorded separately.
 
 ## Verified checkpoint
 
-`REDFISH_SAVED_VERIFIED`. Workbook SHA-256 `606b5b88fe098c862c60dc6915251c3761b2509df56201ffb78d1ebaf6b1545f`. The saved grid was compared with canonical JSON, both CSVs and both readable mirrors. All new classification fills, earlier cell contents and styles, 26 sheet identities, unaffected package parts and row-only freeze were checked. Artifact Tool reopened the workbook and matched all 601 positions in O. Native Microsoft Excel was not exercised. [Workbook render](Workbook_Verification/REDFISH_O555.png).
-
-## Holds and owner decisions
-
-The owner accepted SAREF Core with SRF-Q1–Q3, corrected Web of Things with WOT-Q1–Q3 and OSUS-R with OSUS-Q1–Q3. Redfish awaits owner disposition. RF-Q1 retains selective semantic depth. RF-Q2 retains protocol, implementation and separate CIM scope. RF-Q3 retains installed-instance evidence. Current findings and earlier candidates await separate Step 24 adoption. Earlier donor and case holds, manual M00/M01, Steps 35–39 and named-version Step 40 retain their standing.
-
-## Interrupted work
-
-The pre-integration Redfish inventory was published at [66a1102d](https://github.com/OS4CSAPI/glaux-client/commit/66a1102d330d3998c6d2d0d8f1a5acb001e551ce). The completed comparison, ledger and workbook are included together in this delivery.
-
-## History
-
-[Exact inventory-stage checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/66a1102d330d3998c6d2d0d8f1a5acb001e551ce/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). [Browsable 521-row pre-Redfish master](https://github.com/OS4CSAPI/glaux-client/blob/13061377884b733a482b5f63cefbd4ecab11c6eb/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). The previous workbook delivery was 207a614f; OSUS-R acceptance and the Redfish plan were recorded in 13061377.
+`OSUSR_REDFISH_63_SAVED_VERIFIED`. Workbook SHA-256 `0beec73db8fb23a8d9ea00c80814aa51dbf1d25c36656b0cc09f76ab3f907b1a`.
 
 ## Verification and publication
 
-The saved fingerprint above identifies the workbook independently of the commit. The delivery procedure reads the published workbook back from the branch and verifies the GitHub checks.
+Saved values, source labels, classifications and fills were checked for both donors. Verification also checks the 26-sheet package and unchanged parts, old cells outside documented corrections, row-only freeze, both pairs of mirrors and the prior decision and holds. Artifact Tool reopened the workbook and matched all 608 positions in both N and O. [Rendered sample](Workbook_Verification/OSUSR_Redfish_63_Corrected.png). Native Microsoft Excel was not exercised. Publication includes readback and GitHub verification.
+
+## History
+
+[Prior recovery record](https://github.com/OS4CSAPI/glaux-client/blob/d423e3943b136a7317c401c22b1d79466a51d2a4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [Full interim recovery record](https://github.com/OS4CSAPI/glaux-client/blob/a27e460f9da62fd6e5b6e46a7a3667800ab157b2/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
+
+## Interrupted work
+
+The interim record preserves the initial discrepancy. The integrated correction supersedes it.
+
+## Holds and owner decisions
+
+SAREF Core and corrected Web of Things retain their earlier bounded acceptances. OSUS-R retains the earlier owner decision on its 521-row assessment and OSUS-Q1–Q3. Redfish retains RF-Q1–Q3. The joint corrections are ready for owner disposition. The evidence distinguishes schema declarations, implementation examples and installed-case records. Final ranking, Step 24 adoption, Steps 35–39, named-version Step 40 and manual M00/M01 retain their existing standing. The [research-priority order](Donor_Research_Priority_Order.md) is separate from eventual donor-column order.
 
 ## Next action and stop
 
-Stop for owner disposition on bounded-partial Redfish research with RF-Q1–Q3 retained. The next ranked research choice is RFC 8348, the YANG Data Model for Hardware Management. Research on that donor and final model adoption each require their own authorization.
+ Owner disposition on the corrected OSUS-R and Redfish assessments with their existing source and deployment limits. Stop here.

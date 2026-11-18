@@ -369,6 +369,7 @@
         ]
       },
       "matched_pointers": [
+        "ActionInfo.v1_4_2.json#/definitions/ActionInfo/properties/Parameters",
         "ActionInfo.v1_4_2.json#/definitions/Parameters/properties/AllowableValues",
         "ActionInfo.v1_4_2.json#/definitions/Parameters/properties/ArraySizeMaximum",
         "ActionInfo.v1_4_2.json#/definitions/Parameters/properties/DataType",
@@ -1615,9 +1616,7 @@
         "BatteryMetrics.v1_0_4.json#/definitions/BatteryMetrics/properties/InputVoltage",
         "BatteryMetrics.v1_0_4.json#/definitions/BatteryMetrics/properties/OutputCurrentAmps",
         "BatteryMetrics.v1_0_4.json#/definitions/BatteryMetrics/properties/StoredChargeAmpHours",
-        "BatteryMetrics.v1_0_4.json#/definitions/BatteryMetrics/properties/StoredEnergyWattHours",
-        "BatteryMetrics.v1_1_0.json#/definitions/BatteryMetrics/properties/CRate",
-        "BatteryMetrics.v1_1_0.json#/definitions/BatteryMetrics/properties/ERate"
+        "BatteryMetrics.v1_0_4.json#/definitions/BatteryMetrics/properties/StoredEnergyWattHours"
       ],
       "semantic_disposition": "Source pointers below compared in the row ledger. Other indexed members remain at inventory depth."
     },
@@ -1675,7 +1674,10 @@
         ]
       },
       "enums": {},
-      "matched_pointers": [],
+      "matched_pointers": [
+        "Bios.v1_2_3.json#/definitions/Bios/properties/AttributeRegistry",
+        "Bios.v1_2_3.json#/definitions/Bios/properties/Attributes"
+      ],
       "semantic_disposition": "Indexed as scoped or adjacent; no independently traced field credit in this pass. Selective depth retained under RF-Q1."
     },
     "BootOption": {
@@ -2066,7 +2068,9 @@
         "Certificate.v1_10_0.json#/definitions/Certificate/properties/Fingerprint",
         "Certificate.v1_10_0.json#/definitions/Certificate/properties/Issuer",
         "Certificate.v1_10_0.json#/definitions/Certificate/properties/Subject",
-        "Certificate.v1_10_0.json#/definitions/Certificate/properties/ValidNotAfter"
+        "Certificate.v1_10_0.json#/definitions/Certificate/properties/ValidNotAfter",
+        "Certificate.v1_10_0.json#/definitions/Rekey",
+        "Certificate.v1_10_0.json#/definitions/RekeyResponse/properties/CSRString"
       ],
       "semantic_disposition": "Source pointers below compared in the row ledger. Other indexed members remain at inventory depth."
     },
@@ -3421,6 +3425,10 @@
         ]
       },
       "matched_pointers": [
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/Actions",
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/AssetTag",
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/LastResetCause",
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/LastResetTime",
         "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/PowerOffDelaySeconds",
         "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/PowerRestorePolicy",
         "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/SystemType",
@@ -4068,6 +4076,7 @@
         ]
       },
       "matched_pointers": [
+        "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/Coolant",
         "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/FlowLitersPerMinute",
         "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/HeatRemovedkW",
         "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/ReturnPressurekPa",
@@ -7870,6 +7879,7 @@
       },
       "matched_pointers": [
         "Manager.v1_22_0.json#/definitions/Links/properties/ManagerForChassis",
+        "Manager.v1_22_0.json#/definitions/Links/properties/ManagerForServers",
         "Manager.v1_22_0.json#/definitions/Links/properties/ManagerInChassis",
         "Manager.v1_22_0.json#/definitions/Manager/properties/DateTimeLocalOffset",
         "Manager.v1_22_0.json#/definitions/Manager/properties/DateTimeSource",
@@ -7990,7 +8000,9 @@
           "CFB128_AES256"
         ]
       },
-      "matched_pointers": [],
+      "matched_pointers": [
+        "ManagerAccount.v1_14_0.json#/definitions/ManagerAccount/properties/RoleId"
+      ],
       "semantic_disposition": "Indexed as scoped or adjacent; no independently traced field credit in this pass. Selective depth retained under RF-Q1."
     },
     "ManagerAccountCollection": {
@@ -9443,6 +9455,7 @@
       "enums": {},
       "matched_pointers": [
         "MetricReport.v1_5_2.json#/definitions/MetricReport/properties/MetricValues",
+        "MetricReport.v1_5_2.json#/definitions/MetricReport/properties/Timestamp",
         "MetricReport.v1_5_2.json#/definitions/MetricValue/properties/MetricDefinition",
         "MetricReport.v1_5_2.json#/definitions/MetricValue/properties/MetricId",
         "MetricReport.v1_5_2.json#/definitions/MetricValue/properties/MetricProperty",
@@ -12467,7 +12480,9 @@
         ]
       },
       "enums": {},
-      "matched_pointers": [],
+      "matched_pointers": [
+        "PrivilegeRegistry.v1_1_5.json#/definitions/PrivilegeRegistry/properties/Mappings"
+      ],
       "semantic_disposition": "Indexed as scoped or adjacent; no independently traced field credit in this pass. Selective depth retained under RF-Q1."
     },
     "Privileges": {
@@ -13448,8 +13463,11 @@
         ]
       },
       "matched_pointers": [
+        "Resource.json#/definitions/Condition/properties/OriginOfCondition",
         "Resource.json#/definitions/Condition/properties/ResolutionSteps",
         "Resource.json#/definitions/Condition/properties/Severity",
+        "Resource.json#/definitions/Health",
+        "Resource.json#/definitions/State",
         "Resource.json#/definitions/Status/properties/Conditions",
         "Resource.json#/definitions/Status/properties/Health",
         "Resource.json#/definitions/Status/properties/HealthRollup",
@@ -14620,7 +14638,6 @@
         "ServiceRoot.v1_19_0.json#/definitions/ProtocolFeaturesSupported/properties/FilterQueryComparisonOperations",
         "ServiceRoot.v1_19_0.json#/definitions/ProtocolFeaturesSupported/properties/SelectQuery",
         "ServiceRoot.v1_19_0.json#/definitions/ServiceRoot/properties/EventService",
-        "ServiceRoot.v1_19_0.json#/definitions/ServiceRoot/properties/JsonSchemas",
         "ServiceRoot.v1_19_0.json#/definitions/ServiceRoot/properties/ProtocolFeaturesSupported",
         "ServiceRoot.v1_19_0.json#/definitions/ServiceRoot/properties/RedfishVersion",
         "ServiceRoot.v1_19_0.json#/definitions/ServiceRoot/properties/SessionService",
@@ -14688,7 +14705,9 @@
           "OutboundConnection"
         ]
       },
-      "matched_pointers": [],
+      "matched_pointers": [
+        "Session.v1_8_0.json#/definitions/Session/properties/Roles"
+      ],
       "semantic_disposition": "Indexed as scoped or adjacent; no independently traced field credit in this pass. Selective depth retained under RF-Q1."
     },
     "SessionCollection": {
@@ -17619,10 +17638,10 @@
       "display_row": 17,
       "label": "Network participation role and responsibilities",
       "group": "structure",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "RF-006",
-      "reason": "An interface identifies its network context and state. A management interface is not automatically the sensing participant or its application registration."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-223",
+      "reason": "Link state and interface enablement describe connectivity. They do not assign duties for opening and accepting application connections."
     },
     "ISA-A-NETWORK-CONTEXT": {
       "display_row": 18,
@@ -18069,10 +18088,10 @@
       "display_row": 68,
       "label": "Source-qualified event identity and reference",
       "group": "service",
-      "relation": "direct",
+      "relation": "partial",
       "classification": "common",
       "locator": "RF-161",
-      "reason": "A management event record can identify the event, its occurrence time and its originating resource."
+      "reason": "An event has a service-defined identifier and may identify its occurrence time and originating resource. That origin is not necessarily its author, and the schema does not require an ISA composite event key."
     },
     "ISA-T-EVENT-TIME": {
       "display_row": 69,
@@ -18188,8 +18207,8 @@
       "group": "configuration",
       "relation": "partial",
       "classification": "common",
-      "locator": "RF-023",
-      "reason": "A task can report asynchronous operation state, a monitor and messages. Returning a task or monitor depends on the operation; these fields alone do not supply every response contract."
+      "locator": "RF-209",
+      "reason": "The certificate rekey action declares a typed response containing a certificate signing request. This establishes declared output for that action. It supplies no universal ISA response optionality or range convention."
     },
     "ISA-K-CUSTOM-TYPE": {
       "display_row": 83,
@@ -18258,10 +18277,10 @@
       "display_row": 90,
       "label": "Relative-change publication threshold and reference basis",
       "group": "telemetry",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "RF-026",
-      "reason": "Conditions and thresholds can govern reporting. A hysteresis or crossing value is not automatically a relative change from the previously published value."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-210",
+      "reason": "Hysteresis governs when a triggered condition deactivates. It does not define the last measured, last published or uptime reference for a relative-change publication rule."
     },
     "ISA-K-THRESHOLDS": {
       "display_row": 91,
@@ -18935,8 +18954,8 @@
       "group": "configuration",
       "relation": "partial",
       "classification": "common",
-      "locator": "RF-038",
-      "reason": "Schemas and action information support discovery of declared resources and action parameters. Supported runtime messages can be a smaller set."
+      "locator": "RF-211",
+      "reason": "An instance can advertise actions, and action information can describe parameters. A schema catalog alone cannot identify the messages currently available on that component."
     },
     "ISA-C-223": {
       "display_row": 166,
@@ -19079,8 +19098,8 @@
       "group": "configuration",
       "relation": "partial",
       "classification": "common",
-      "locator": "RF-040",
-      "reason": "Container identity, configured mounts and resource links can describe hosted software; deployment settings must be tied to the intended runtime."
+      "locator": "RF-212",
+      "reason": "The BIOS resource exposes current attributes by name. A separate settings-resource link identifies where edits are submitted. This is an equipment-specific read of configuration, without an ISA configuration-message contract."
     },
     "ISA-C-212": {
       "display_row": 182,
@@ -19401,10 +19420,10 @@
       "display_row": 217,
       "label": "Composition interface task mediation role",
       "group": "structure",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "RF-010",
-      "reason": "Management responsibility and physical location have separate links. They do not establish a particular delegation or task-forwarding path."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-224",
+      "reason": "These links identify who manages equipment and where the manager is located. They do not describe a composition interface that forwards tasks to its members."
     },
     "ISA-K-CAPABILITY-STATE": {
       "display_row": 218,
@@ -19724,11 +19743,11 @@
     "ISA-C-081": {
       "display_row": 256,
       "label": "Changeable component display name",
-      "group": "structure",
+      "group": "sensing",
       "relation": "partial",
       "classification": "common",
-      "locator": "RF-031",
-      "reason": "Resource-specific asset tags and user labels can carry owner-assigned identification. The field’s write permissions and scope determine whether it functions as a changeable display name."
+      "locator": "RF-213",
+      "reason": "A configurable Sensor may carry a writable user label. This supports relabeling that sensor in the interface without promising that every component name can be changed."
     },
     "ISA-C-084": {
       "display_row": 257,
@@ -19985,11 +20004,11 @@
     "ISA-E-LOGIC-STATE": {
       "display_row": 287,
       "label": "Four-valued evaluation state",
-      "group": "service",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "RF-064",
-      "reason": "Operational state, individual health and aggregate health carry separate meanings. Lifecycle transitions, four-valued evaluation and specific fault taxonomies need additional evidence."
+      "group": "structure",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-214",
+      "reason": "Resource availability and health describe the equipment. Neither enumeration supplies a four-valued logical evaluation with contradiction and unevaluated outcomes."
     },
     "ISA-C-031": {
       "display_row": 289,
@@ -20174,11 +20193,11 @@
     "ISA-C-097": {
       "display_row": 310,
       "label": "Reported component receive data rate",
-      "group": "component",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "RF-071",
-      "reason": "Receive and transmit counters are available. A rate requires a measured interval, applicable counter semantics and rollover handling."
+      "group": "telemetry",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-215",
+      "reason": "The port supplies a cumulative byte counter. A client could derive throughput using two dated samples and counter-reset handling. The counter itself is not a reported traffic rate."
     },
     "ISA-C-098": {
       "display_row": 311,
@@ -20201,11 +20220,11 @@
     "ISA-C-114": {
       "display_row": 313,
       "label": "Reported component transmit data rate",
-      "group": "component",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "RF-071",
-      "reason": "Receive and transmit counters are available. A rate requires a measured interval, applicable counter semantics and rollover handling."
+      "group": "telemetry",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-216",
+      "reason": "The port supplies a cumulative byte counter. A client could derive throughput using two dated samples and counter-reset handling. The counter itself is not a reported traffic rate."
     },
     "ISA-C-115": {
       "display_row": 314,
@@ -20708,8 +20727,8 @@
       "group": "service",
       "relation": "partial",
       "classification": "common",
-      "locator": "RF-042",
-      "reason": "Roles assign access privileges. An installed authorization decision for an individual action or user needs account and service evidence."
+      "locator": "RF-217",
+      "reason": "The privilege registry associates operations on resource types with required privileges, and roles carry assigned privileges. These mechanisms do not define the full arbitrary attribute-based Boolean rule in this row."
     },
     "AAS-O6-AUDIT-RECORD": {
       "display_row": 379,
@@ -21417,10 +21436,10 @@
       "display_row": 463,
       "label": "Candidate — User-assigned asset identifier",
       "group": "structure",
-      "relation": "partial",
+      "relation": "direct",
       "classification": "common",
-      "locator": "RF-031",
-      "reason": "Resource-specific asset tags and user labels can carry owner-assigned identification. The field’s write permissions and scope determine whether it functions as a changeable display name."
+      "locator": "RF-219",
+      "reason": "A user can edit the chassis inventory tag independently of its serial number. A service can reflect the tag in the functional system view of the same chassis. Its resource supplies local inventory context."
     },
     "OPCDI-FUNCTIONAL-GROUP": {
       "display_row": 464,
@@ -21437,8 +21456,8 @@
       "group": "structure",
       "relation": "partial",
       "classification": "common",
-      "locator": "RF-101",
-      "reason": "Membership in an aggregate or sensor group is explicit. It does not prove that two members are representations of the same physical asset."
+      "locator": "RF-230",
+      "reason": "Redfish explicitly describes a chassis and the functional view of that same chassis. Writing the inventory tag in one view may update the other. A shared tag alone does not prove identity across unrelated resources."
     },
     "OPCDI-OPERATION-COUNTERS": {
       "display_row": 466,
@@ -21453,10 +21472,10 @@
       "display_row": 467,
       "label": "Candidate — Physical asset locating signal support and activity",
       "group": "structure",
-      "relation": "direct",
+      "relation": "partial",
       "classification": "common",
       "locator": "RF-103",
-      "reason": "The chassis records whether its locating indicator is active."
+      "reason": "A client can read or set an indicator used to locate this chassis. The property does not enumerate separate audible and visual signals or accept a requested duration."
     },
     "OPCDI-TARGET-MODE": {
       "display_row": 468,
@@ -21788,8 +21807,8 @@
       "group": "service",
       "relation": "partial",
       "classification": "common",
-      "locator": "RF-042",
-      "reason": "Roles assign access privileges. An installed authorization decision for an individual action or user needs account and service evidence."
+      "locator": "RF-218",
+      "reason": "A session can identify its roles, and a registry maps operations to required privileges. This supports session-specific interpretation. It is not a returned effective authorization decision for this object and operation."
     },
     "OPCDI-UPDATE-KEY": {
       "display_row": 506,
@@ -22011,10 +22030,10 @@
       "display_row": 533,
       "label": "Elapsed time since the current asset power-on",
       "group": "service",
-      "relation": "partial",
-      "classification": "common",
-      "locator": "RF-117",
-      "reason": "Uptime applies to the Redfish service root. A service restart and a physical power-on need not coincide."
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-220",
+      "reason": "Service-root uptime concerns the management service. The system last-reset timestamp concerns reboot. Neither alone supplies elapsed time since this physical asset was powered on."
     },
     "OSUSR-POWER-WINDOW": {
       "display_row": 534,
@@ -22128,10 +22147,10 @@
       "display_row": 546,
       "label": "Observed water temperature",
       "group": "thermal",
-      "relation": "related",
-      "classification": "unfilled",
-      "locator": "RF-119",
-      "reason": "Redfish supplies typed liquid, temperature, pressure and altitude quantities. The medium, context, speed versus volume flow, or altitude derivation required by this row is a separate claim."
+      "relation": "partial",
+      "classification": "specialized",
+      "locator": "RF-221",
+      "reason": "The connector reports coolant temperature and can identify the fluid type as Water. This is a water measurement when the coolant record establishes that identity. Other fluids and unspecified formulations do not qualify."
     },
     "OSUSR-WATER-CHLORINE": {
       "display_row": 547,
@@ -22173,10 +22192,10 @@
       "display_row": 551,
       "label": "Observed water flow pressure",
       "group": "thermal",
-      "relation": "related",
-      "classification": "unfilled",
-      "locator": "RF-119",
-      "reason": "Redfish supplies typed liquid, temperature, pressure and altitude quantities. The medium, context, speed versus volume flow, or altitude derivation required by this row is a separate claim."
+      "relation": "partial",
+      "classification": "specialized",
+      "locator": "RF-222",
+      "reason": "The connector reports coolant flow pressure and can identify the fluid type as Water. This is a water measurement when the coolant record establishes that identity. Other fluids and unspecified formulations do not qualify."
     },
     "OSUSR-WATER-SATURATION": {
       "display_row": 552,
@@ -22618,6 +22637,60 @@
       "classification": "common",
       "locator": "RF-192",
       "reason": "Represent electrical and cooling dependencies separately, including whether a containing chassis supplies or manages the function."
+    },
+    "JOINT-SAMPLE-RECORD-TIMES": {
+      "display_row": 603,
+      "label": "Measurement acquisition time and record creation time",
+      "group": "telemetry",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "RF-225",
+      "reason": "The sensor time is when data was acquired. A metric value can carry its own sample time while its report carries a generation time. Reading the resource later supplies a third, different time."
+    },
+    "OSUSR-PRESSURE-REFERENCE": {
+      "display_row": 604,
+      "label": "Atmospheric pressure at local elevation versus sea-level-corrected pressure",
+      "group": "sensing",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-172",
+      "reason": "The Sensor vocabulary includes a barometric reading and units. In these fields there is no explicit local-versus-sea-level correction basis."
+    },
+    "OSUSR-AMBIENT-IMPAIRMENT": {
+      "display_row": 605,
+      "label": "Ambient condition affecting sensor performance",
+      "group": "sensing",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "RF-226",
+      "reason": "A condition can refer to its originating resource, and operating limits may be adjusted. Those fields alone do not identify a specific ambient impairment of a sensor."
+    },
+    "RF-INVENTORY-OCCUPANCY": {
+      "display_row": 606,
+      "label": "Known equipment location with an absent or unavailable occupant",
+      "group": "structure",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "RF-227",
+      "reason": "Absent can represent an available location or an undetected device. UnavailableOffline means the resource is present and cannot be used. The DMTF Bay2 mockup explicitly identifies a power-supply bay and reports Absent."
+    },
+    "RF-SENSOR-READING-PRESENCE": {
+      "display_row": 607,
+      "label": "Disabled sensor, omitted reading, null reading and numeric zero",
+      "group": "sensing",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "RF-228",
+      "reason": "When Enabled is supported and false, the service must omit Reading. The Reading schema separately permits a number or null. A numeric zero is a value. An omitted reading alone does not establish the reason."
+    },
+    "RF-LAST-RESET-EVENT": {
+      "display_row": 608,
+      "label": "Last system reset time and reported cause",
+      "group": "service",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "RF-229",
+      "reason": "The system can report the time and cause of its last reset or reboot. A cause may be unknown, and equipment power-on time remains a separate quantity."
     }
   },
   "new_rows": [
@@ -25479,6 +25552,234 @@
         "2025.2",
         "2025.2"
       ]
+    },
+    "RF-209": {
+      "pointers": [
+        "Certificate.v1_10_0.json#/definitions/Rekey",
+        "Certificate.v1_10_0.json#/definitions/RekeyResponse/properties/CSRString"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-210": {
+      "pointers": [
+        "Triggers.v1_4_0.json#/definitions/Triggers/properties/HysteresisReading",
+        "Triggers.v1_4_0.json#/definitions/Triggers/properties/HysteresisDuration"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-211": {
+      "pointers": [
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/Actions",
+        "ActionInfo.v1_4_2.json#/definitions/ActionInfo/properties/Parameters"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-212": {
+      "pointers": [
+        "Bios.v1_2_3.json#/definitions/Bios/properties/Attributes",
+        "Bios.v1_2_3.json#/definitions/Bios/properties/AttributeRegistry",
+        "Settings.v1_4_0.json#/definitions/Settings/properties/SettingsObject"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-213": {
+      "pointers": [
+        "Sensor.v1_11_0.json#/definitions/Sensor/properties/UserLabel"
+      ],
+      "release_by_pointer": [
+        "2025.2"
+      ]
+    },
+    "RF-214": {
+      "pointers": [
+        "Resource.json#/definitions/State",
+        "Resource.json#/definitions/Health"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-215": {
+      "pointers": [
+        "PortMetrics.v1_7_0.json#/definitions/PortMetrics/properties/RXBytes"
+      ],
+      "release_by_pointer": [
+        "2025.2"
+      ]
+    },
+    "RF-216": {
+      "pointers": [
+        "PortMetrics.v1_7_0.json#/definitions/PortMetrics/properties/TXBytes"
+      ],
+      "release_by_pointer": [
+        "2025.2"
+      ]
+    },
+    "RF-217": {
+      "pointers": [
+        "PrivilegeRegistry.v1_1_5.json#/definitions/PrivilegeRegistry/properties/Mappings",
+        "Role.v1_3_3.json#/definitions/Role/properties/AssignedPrivileges"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-218": {
+      "pointers": [
+        "Session.v1_8_0.json#/definitions/Session/properties/Roles",
+        "ManagerAccount.v1_14_0.json#/definitions/ManagerAccount/properties/RoleId",
+        "Role.v1_3_3.json#/definitions/Role/properties/AssignedPrivileges",
+        "PrivilegeRegistry.v1_1_5.json#/definitions/PrivilegeRegistry/properties/Mappings"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2",
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-219": {
+      "pointers": [
+        "Chassis.v1_27_0.json#/definitions/Chassis/properties/AssetTag",
+        "Chassis.v1_27_0.json#/definitions/Chassis/properties/SerialNumber",
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/AssetTag"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-220": {
+      "pointers": [
+        "ManagerDiagnosticData.v1_2_3.json#/definitions/ManagerDiagnosticData/properties/ServiceRootUptimeSeconds",
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/LastResetTime"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-221": {
+      "pointers": [
+        "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/SupplyTemperatureCelsius",
+        "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/Coolant",
+        "CoolingLoop.v1_0_3.json#/definitions/Coolant/properties/CoolantType"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-222": {
+      "pointers": [
+        "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/SupplyPressurekPa",
+        "CoolantConnector.v1_2_0.json#/definitions/CoolantConnector/properties/Coolant",
+        "CoolingLoop.v1_0_3.json#/definitions/Coolant/properties/CoolantType"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-223": {
+      "pointers": [
+        "EthernetInterface.v1_12_4.json#/definitions/EthernetInterface/properties/LinkStatus",
+        "EthernetInterface.v1_12_4.json#/definitions/EthernetInterface/properties/InterfaceEnabled"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-224": {
+      "pointers": [
+        "Manager.v1_22_0.json#/definitions/Links/properties/ManagerForServers",
+        "Manager.v1_22_0.json#/definitions/Links/properties/ManagerInChassis"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-225": {
+      "pointers": [
+        "Sensor.v1_11_0.json#/definitions/Sensor/properties/ReadingTime",
+        "MetricReport.v1_5_2.json#/definitions/MetricValue/properties/Timestamp",
+        "MetricReport.v1_5_2.json#/definitions/MetricReport/properties/Timestamp"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-226": {
+      "pointers": [
+        "Resource.json#/definitions/Condition/properties/OriginOfCondition",
+        "Sensor.v1_11_0.json#/definitions/Sensor/properties/AdjustedMaxAllowableOperatingValue"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-227": {
+      "pointers": [
+        "Resource.json#/definitions/State",
+        "Resource.json#/definitions/Status/properties/State"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-228": {
+      "pointers": [
+        "Sensor.v1_11_0.json#/definitions/Sensor/properties/Enabled",
+        "Sensor.v1_11_0.json#/definitions/Sensor/properties/Reading"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-229": {
+      "pointers": [
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/LastResetTime",
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/LastResetCause"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
+    },
+    "RF-230": {
+      "pointers": [
+        "Chassis.v1_27_0.json#/definitions/Chassis/properties/AssetTag",
+        "ComputerSystem.v1_25_0.json#/definitions/ComputerSystem/properties/AssetTag"
+      ],
+      "release_by_pointer": [
+        "2025.2",
+        "2025.2"
+      ]
     }
   },
   "prior_donor_checks": {
@@ -25516,25 +25817,27 @@
   "coverage_counts": {
     "baseline_rows": 521,
     "new_rows": 47,
-    "explicit_rows": 568,
+    "explicit_rows": 574,
     "relations": {
-      "direct": 68,
-      "partial": 235,
-      "related": 83,
+      "direct": 71,
+      "partial": 231,
+      "related": 90,
       "no established correspondence in reviewed scope": 170,
       "case hold": 9,
       "unresolved source or reference basis": 3
     },
     "classifications": {
-      "common": 272,
-      "unfilled": 262,
-      "specialized": 31,
+      "common": 269,
+      "unfilled": 269,
+      "specialized": 33,
       "unresolved": 3
     },
     "candidate_classifications": {
       "common": 31,
       "specialized": 16
-    }
+    },
+    "joint_corrective_additions": 6,
+    "subsequent_other_donor_rows": 0
   },
   "classification_policy": "Direct and partial indicate degree of correspondence within the stated scope. Common and specialized fills indicate likely reusability. Related and scoped negatives are white. Unresolved quantity references are lavender. The nine case holds require installation evidence. A row count is not a ranking of foundational value.",
   "native_group_results": {
@@ -25561,7 +25864,6 @@
         "ISA-C-066",
         "ISA-C-075",
         "ISA-C-077",
-        "ISA-C-081",
         "ISA-C-084",
         "ISA-C-092",
         "ISA-C-110",
@@ -25577,6 +25879,7 @@
         "ISA-C-088",
         "ISA-C-089",
         "ISA-C-099",
+        "ISA-E-LOGIC-STATE",
         "ISA-C-111",
         "AAS-O2-ASPECT-GROUP",
         "AAS-O2-LOGICAL-RELATION",
@@ -25610,7 +25913,8 @@
         "RF-CHASSIS-ENVELOPE",
         "RF-REPLACEMENT-PART",
         "RF-RESOURCE-SHARING",
-        "RF-SUPPLY-DOMAINS"
+        "RF-SUPPLY-DOMAINS",
+        "RF-INVENTORY-OCCUPANCY"
       ],
       "candidate_ids": [
         "RF-MANAGER-ENDPOINTS",
@@ -25622,7 +25926,8 @@
         "RF-CHASSIS-ENVELOPE",
         "RF-REPLACEMENT-PART",
         "RF-RESOURCE-SHARING",
-        "RF-SUPPLY-DOMAINS"
+        "RF-SUPPLY-DOMAINS",
+        "RF-INVENTORY-OCCUPANCY"
       ]
     },
     "sensing": {
@@ -25724,6 +26029,7 @@
         "ISA-C-226",
         "ISA-T-STATUS",
         "ISA-C-068",
+        "ISA-C-081",
         "ISA-T-SYMBOL",
         "ISA-C-116",
         "ISA-C-036",
@@ -25802,7 +26108,10 @@
         "RF-LOOP-COEFFICIENTS",
         "RF-FEEDBACK-ROLES",
         "RF-SENSOR-DIGITS",
-        "RF-MOTION-PROFILE"
+        "RF-MOTION-PROFILE",
+        "OSUSR-PRESSURE-REFERENCE",
+        "OSUSR-AMBIENT-IMPAIRMENT",
+        "RF-SENSOR-READING-PRESENCE"
       ],
       "candidate_ids": [
         "RF-SENSOR-SUBJECT",
@@ -25817,7 +26126,8 @@
         "RF-LOOP-COEFFICIENTS",
         "RF-FEEDBACK-ROLES",
         "RF-SENSOR-DIGITS",
-        "RF-MOTION-PROFILE"
+        "RF-MOTION-PROFILE",
+        "RF-SENSOR-READING-PRESENCE"
       ]
     },
     "telemetry": {
@@ -25836,6 +26146,8 @@
         "ISA-R-CUSTOM",
         "ISA-C-078",
         "ISA-C-079",
+        "ISA-C-097",
+        "ISA-C-114",
         "AAS-O2-TEMPLATE-PROVENANCE",
         "AAS-O2-DATA-SPEC",
         "AAS-O3-QUALIFIED-CONTEXT",
@@ -25849,13 +26161,15 @@
         "RF-REPORT-HISTORY",
         "RF-TIME-ACCURACY",
         "RF-METRIC-SAMPLE",
-        "RF-COLLECTION-FUNCTION"
+        "RF-COLLECTION-FUNCTION",
+        "JOINT-SAMPLE-RECORD-TIMES"
       ],
       "candidate_ids": [
         "RF-REPORT-HISTORY",
         "RF-TIME-ACCURACY",
         "RF-METRIC-SAMPLE",
-        "RF-COLLECTION-FUNCTION"
+        "RF-COLLECTION-FUNCTION",
+        "JOINT-SAMPLE-RECORD-TIMES"
       ]
     },
     "power": {
@@ -26118,7 +26432,6 @@
         "ISA-C-109",
         "ISA-C-035",
         "ISA-C-082",
-        "ISA-E-LOGIC-STATE",
         "ISA-C-056",
         "ISA-C-057",
         "AAS-O2-RECORD-ID",
@@ -26154,13 +26467,15 @@
         "RF-LOCAL-ROLLUP",
         "RF-LOG-LOSS",
         "RF-DELIVERY-RECOVERY",
-        "RF-REMEDIATION-STEP"
+        "RF-REMEDIATION-STEP",
+        "RF-LAST-RESET-EVENT"
       ],
       "candidate_ids": [
         "RF-LOCAL-ROLLUP",
         "RF-LOG-LOSS",
         "RF-DELIVERY-RECOVERY",
-        "RF-REMEDIATION-STEP"
+        "RF-REMEDIATION-STEP",
+        "RF-LAST-RESET-EVENT"
       ]
     },
     "component": {
@@ -26172,9 +26487,7 @@
         "ISA-C-120",
         "ISA-C-067",
         "ISA-C-072",
-        "ISA-C-097",
         "ISA-C-098",
-        "ISA-C-114",
         "ISA-C-115",
         "ISA-C-064",
         "ISA-C-119",
@@ -26202,5 +26515,543 @@
       ]
     }
   },
-  "scope_decision": "Recommend bounded partial. All families have a documented route. Field matches and additions use member-level evidence. Inventory-only entries confer no match or absence conclusion. Retain RF-Q1 through RF-Q3."
+  "scope_decision": "Recommend bounded partial. All families have a documented route. Field matches and additions use member-level evidence. Inventory-only entries confer no match or absence conclusion. Retain RF-Q1 through RF-Q3.",
+  "corrective_review_63": {
+    "baseline": "d423e3943b136a7317c401c22b1d79466a51d2a4",
+    "prior_counts": {
+      "baseline_rows": 521,
+      "new_rows": 47,
+      "explicit_rows": 568,
+      "relations": {
+        "direct": 68,
+        "partial": 235,
+        "related": 83,
+        "no established correspondence in reviewed scope": 170,
+        "case hold": 9,
+        "unresolved source or reference basis": 3
+      },
+      "classifications": {
+        "common": 272,
+        "unfilled": 262,
+        "specialized": 31,
+        "unresolved": 3
+      },
+      "candidate_classifications": {
+        "common": 31,
+        "specialized": 16
+      }
+    },
+    "method": "Reused the SAREF/WoT two-way review. Reconciled every current row ID, evidence locator and saved cell. Reopened disputed native meanings and grouped claims, searched negative positions and native definitions, compared the two donors on later additions, and challenged new distinctions against existing rows. Unchanged individual decisions retain their original depth of source contact.",
+    "changed_previously_assessed": 19,
+    "relation_or_class_changed": 12,
+    "changes": {
+      "ISA-K-RESULT-DECL": {
+        "cell": "O82",
+        "before": {
+          "display_row": 82,
+          "label": "Declared command result",
+          "group": "configuration",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-023",
+          "reason": "A task can report asynchronous operation state, a monitor and messages. Returning a task or monitor depends on the operation; these fields alone do not supply every response contract."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — A task can report asynchronous operation state, a monitor and messages. Returning a task or monitor depends on the operation; these fields alone do not supply every response contract. [RF-023 · Task.v1_7_4/TaskMonitor]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-209"
+      },
+      "ISA-K-REL-THRESHOLD": {
+        "cell": "O90",
+        "before": {
+          "display_row": 90,
+          "label": "Relative-change publication threshold and reference basis",
+          "group": "telemetry",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-026",
+          "reason": "Conditions and thresholds can govern reporting. A hysteresis or crossing value is not automatically a relative change from the previously published value."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Conditions and thresholds can govern reporting. A hysteresis or crossing value is not automatically a relative change from the previously published value. [RF-026 · Triggers.v1_4_0/NumericThresholds]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-210"
+      },
+      "ISA-C-210": {
+        "cell": "O165",
+        "before": {
+          "display_row": 165,
+          "label": "Requested discovery of currently available component messages",
+          "group": "configuration",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-038",
+          "reason": "Schemas and action information support discovery of declared resources and action parameters. Supported runtime messages can be a smaller set."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Schemas and action information support discovery of declared resources and action parameters. Supported runtime messages can be a smaller set. [RF-038 · ActionInfo.v1_4_2/Name]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-211"
+      },
+      "ISA-C-211": {
+        "cell": "O181",
+        "before": {
+          "display_row": 181,
+          "label": "Requested current component configuration message",
+          "group": "configuration",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-040",
+          "reason": "Container identity, configured mounts and resource links can describe hosted software; deployment settings must be tied to the intended runtime."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Container identity, configured mounts and resource links can describe hosted software; deployment settings must be tied to the intended runtime. [RF-040 · Container.v1_0_1/ProgrammaticId]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-212"
+      },
+      "ISA-C-081": {
+        "cell": "O256",
+        "before": {
+          "display_row": 256,
+          "label": "Changeable component display name",
+          "group": "structure",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-031",
+          "reason": "Resource-specific asset tags and user labels can carry owner-assigned identification. The field’s write permissions and scope determine whether it functions as a changeable display name."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Resource-specific asset tags and user labels can carry owner-assigned identification. The field’s write permissions and scope determine whether it functions as a changeable display name. [RF-031 · Chassis.v1_27_0/AssetTag]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-213"
+      },
+      "ISA-E-LOGIC-STATE": {
+        "cell": "O287",
+        "before": {
+          "display_row": 287,
+          "label": "Four-valued evaluation state",
+          "group": "service",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-064",
+          "reason": "Operational state, individual health and aggregate health carry separate meanings. Lifecycle transitions, four-valued evaluation and specific fault taxonomies need additional evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Operational state, individual health and aggregate health carry separate meanings. Lifecycle transitions, four-valued evaluation and specific fault taxonomies need additional evidence. [RF-064 · Resource/State]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-214"
+      },
+      "ISA-C-097": {
+        "cell": "O310",
+        "before": {
+          "display_row": 310,
+          "label": "Reported component receive data rate",
+          "group": "component",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-071",
+          "reason": "Receive and transmit counters are available. A rate requires a measured interval, applicable counter semantics and rollover handling."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Receive and transmit counters are available. A rate requires a measured interval, applicable counter semantics and rollover handling. [RF-071 · PortMetrics.v1_7_0/RXBytes]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-215"
+      },
+      "ISA-C-114": {
+        "cell": "O313",
+        "before": {
+          "display_row": 313,
+          "label": "Reported component transmit data rate",
+          "group": "component",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-071",
+          "reason": "Receive and transmit counters are available. A rate requires a measured interval, applicable counter semantics and rollover handling."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Receive and transmit counters are available. A rate requires a measured interval, applicable counter semantics and rollover handling. [RF-071 · PortMetrics.v1_7_0/RXBytes]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-216"
+      },
+      "AAS-O6-ACCESS-RULE": {
+        "cell": "O378",
+        "before": {
+          "display_row": 378,
+          "label": "Candidate — Access-rule definition and protected information",
+          "group": "service",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-042",
+          "reason": "Roles assign access privileges. An installed authorization decision for an individual action or user needs account and service evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Roles assign access privileges. An installed authorization decision for an individual action or user needs account and service evidence. [RF-042 · Role.v1_3_3/AssignedPrivileges]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-217"
+      },
+      "PADIM-EFFECTIVE-USER-ACCESS": {
+        "cell": "O505",
+        "before": {
+          "display_row": 505,
+          "label": "Candidate — Current-user access and method-execution permission",
+          "group": "service",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-042",
+          "reason": "Roles assign access privileges. An installed authorization decision for an individual action or user needs account and service evidence."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Roles assign access privileges. An installed authorization decision for an individual action or user needs account and service evidence. [RF-042 · Role.v1_3_3/AssignedPrivileges]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-218"
+      },
+      "OPCDI-ASSET-TAG": {
+        "cell": "O463",
+        "before": {
+          "display_row": 463,
+          "label": "Candidate — User-assigned asset identifier",
+          "group": "structure",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-031",
+          "reason": "Resource-specific asset tags and user labels can carry owner-assigned identification. The field’s write permissions and scope determine whether it functions as a changeable display name."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Resource-specific asset tags and user labels can carry owner-assigned identification. The field’s write permissions and scope determine whether it functions as a changeable display name. [RF-031 · Chassis.v1_27_0/AssetTag]",
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "RF-219"
+      },
+      "OPCDI-LOCATION-INDICATION": {
+        "cell": "O467",
+        "before": {
+          "display_row": 467,
+          "label": "Candidate — Physical asset locating signal support and activity",
+          "group": "structure",
+          "relation": "direct",
+          "classification": "common",
+          "locator": "RF-103",
+          "reason": "The chassis records whether its locating indicator is active."
+        },
+        "previous_display": "[COMMON CANDIDATE] DIRECT — The chassis records whether its locating indicator is active. [RF-103 · Chassis.v1_27_0/LocationIndicatorActive]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-103"
+      },
+      "OSUSR-UPTIME": {
+        "cell": "O533",
+        "before": {
+          "display_row": 533,
+          "label": "Elapsed time since the current asset power-on",
+          "group": "service",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-117",
+          "reason": "Uptime applies to the Redfish service root. A service restart and a physical power-on need not coincide."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Uptime applies to the Redfish service root. A service restart and a physical power-on need not coincide. [RF-117 · ManagerDiagnosticData.v1_2_3/ServiceRootUptimeSeconds]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-220"
+      },
+      "OSUSR-WATER-TEMP": {
+        "cell": "O546",
+        "before": {
+          "display_row": 546,
+          "label": "Observed water temperature",
+          "group": "thermal",
+          "relation": "related",
+          "classification": "unfilled",
+          "locator": "RF-119",
+          "reason": "Redfish supplies typed liquid, temperature, pressure and altitude quantities. The medium, context, speed versus volume flow, or altitude derivation required by this row is a separate claim."
+        },
+        "previous_display": "RELATED — Redfish supplies typed liquid, temperature, pressure and altitude quantities. The medium, context, speed versus volume flow, or altitude derivation required by this row is a separate claim. [RF-119 · Sensor.v1_11_0/ReadingType]",
+        "after": [
+          "partial",
+          "specialized"
+        ],
+        "source": "RF-221"
+      },
+      "OSUSR-WATER-PRESSURE": {
+        "cell": "O551",
+        "before": {
+          "display_row": 551,
+          "label": "Observed water flow pressure",
+          "group": "thermal",
+          "relation": "related",
+          "classification": "unfilled",
+          "locator": "RF-119",
+          "reason": "Redfish supplies typed liquid, temperature, pressure and altitude quantities. The medium, context, speed versus volume flow, or altitude derivation required by this row is a separate claim."
+        },
+        "previous_display": "RELATED — Redfish supplies typed liquid, temperature, pressure and altitude quantities. The medium, context, speed versus volume flow, or altitude derivation required by this row is a separate claim. [RF-119 · Sensor.v1_11_0/ReadingType]",
+        "after": [
+          "partial",
+          "specialized"
+        ],
+        "source": "RF-222"
+      },
+      "ISA-A-PARTICIPATION": {
+        "cell": "O17",
+        "before": {
+          "display_row": 17,
+          "label": "Network participation role and responsibilities",
+          "group": "structure",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-006",
+          "reason": "An interface identifies its network context and state. A management interface is not automatically the sensing participant or its application registration."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — An interface identifies its network context and state. A management interface is not automatically the sensing participant or its application registration. [RF-006 · EthernetInterface.v1_12_4/HostName]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-223"
+      },
+      "ISA-A-CIC-MEDIATION": {
+        "cell": "O217",
+        "before": {
+          "display_row": 217,
+          "label": "Composition interface task mediation role",
+          "group": "structure",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-010",
+          "reason": "Management responsibility and physical location have separate links. They do not establish a particular delegation or task-forwarding path."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Management responsibility and physical location have separate links. They do not establish a particular delegation or task-forwarding path. [RF-010 · Manager.v1_22_0/ManagerForChassis]",
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-224"
+      },
+      "JOINT-SAMPLE-RECORD-TIMES": {
+        "cell": "O603",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "RF-225"
+      },
+      "OSUSR-PRESSURE-REFERENCE": {
+        "cell": "O604",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-172"
+      },
+      "OSUSR-AMBIENT-IMPAIRMENT": {
+        "cell": "O605",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "RF-226"
+      },
+      "RF-INVENTORY-OCCUPANCY": {
+        "cell": "O606",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "RF-227"
+      },
+      "RF-SENSOR-READING-PRESENCE": {
+        "cell": "O607",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "RF-228"
+      },
+      "RF-LAST-RESET-EVENT": {
+        "cell": "O608",
+        "before": null,
+        "previous_display": null,
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "RF-229"
+      },
+      "OPCDI-ASSET-VIEWS": {
+        "cell": "O465",
+        "before": {
+          "display_row": 465,
+          "label": "Candidate — Multiple information representations of the same asset",
+          "group": "structure",
+          "relation": "partial",
+          "classification": "common",
+          "locator": "RF-101",
+          "reason": "Membership in an aggregate or sensor group is explicit. It does not prove that two members are representations of the same physical asset."
+        },
+        "previous_display": "[COMMON CANDIDATE] PARTIAL — Membership in an aggregate or sensor group is explicit. It does not prove that two members are representations of the same physical asset. [RF-101 · Aggregate.v1_0_3/Elements]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-230"
+      },
+      "ISA-T-EVENT-ID": {
+        "cell": "O68",
+        "before": {
+          "display_row": 68,
+          "label": "Source-qualified event identity and reference",
+          "group": "service",
+          "relation": "direct",
+          "classification": "common",
+          "locator": "RF-161",
+          "reason": "A management event record can identify the event, its occurrence time and its originating resource."
+        },
+        "previous_display": "[COMMON CANDIDATE] DIRECT — A management event record can identify the event, its occurrence time and its originating resource. [RF-161 · Event.v1_11_1/EventId]",
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "RF-161"
+      }
+    },
+    "joint_additions": [
+      {
+        "row_id": "JOINT-SAMPLE-RECORD-TIMES",
+        "display_row": 603,
+        "origin": "both",
+        "closest_existing_id": "ISA-T-EVENT-TIME",
+        "loss": "Occurrence of an event does not distinguish a delayed or missing acquisition timestamp from creation of its container.",
+        "client_use": "Show “measured” and “record created” separately when known.",
+        "source": [
+          "Observation.xsd#observedTimestamp; Observation.xsd#createdTimestamp; AssetImpl.java#setBaseObservationFields; AssetCapabilities.xsd#observedTimestampAvailable",
+          "RF-225"
+        ]
+      },
+      {
+        "row_id": "OSUSR-PRESSURE-REFERENCE",
+        "display_row": 604,
+        "origin": "OSUS-R",
+        "closest_existing_id": "ISA-C-127",
+        "loss": "Two pressures can use the same units at the same site and still have different reference elevations.",
+        "client_use": "Label station and sea-level pressure separately.",
+        "source": [
+          "Weather.xsd#pressure; Weather.xsd#pressureAtSeaLevel; Bmp180Sensor.java#onCaptureData",
+          "RF-172"
+        ]
+      },
+      {
+        "row_id": "OSUSR-AMBIENT-IMPAIRMENT",
+        "display_row": 605,
+        "origin": "OSUS-R",
+        "closest_existing_id": "SAREF-STATE-SUBJECT",
+        "loss": "A generic state does not distinguish a sensor-performance problem due to its surroundings from an ordinary environmental reading.",
+        "client_use": "Show a sensing impairment alongside its reported environmental cause.",
+        "source": [
+          "Status.xsd#ambientStatus; StatusTypes.xsd#AmbientStatus; StatusTypes.xsd#AmbientTypeEnum",
+          "RF-226"
+        ]
+      },
+      {
+        "row_id": "RF-INVENTORY-OCCUPANCY",
+        "display_row": 606,
+        "origin": "Redfish",
+        "closest_existing_id": "SOSA-SO2D-SLOT-IDENTIFIER",
+        "loss": "A slot label identifies a place. It cannot tell a client whether a part is installed there.",
+        "client_use": "Show an empty bay without adding an installed power supply to the inventory.",
+        "source": [
+          "AssetDirectoryService.java#isAssetAvailable; Asset.java#getActiveStatus",
+          "RF-227"
+        ]
+      },
+      {
+        "row_id": "RF-SENSOR-READING-PRESENCE",
+        "display_row": 607,
+        "origin": "Redfish",
+        "closest_existing_id": "RF-REPORT-HISTORY",
+        "loss": "Suppressing unchanged values in a report is different from omitting the sensor reading when the sensor itself is disabled.",
+        "client_use": "Avoid showing an unreported reading as zero or inferring that omission proves disablement.",
+        "source": [
+          "Weather.xsd#temperature; Weather.xsd#pressure",
+          "RF-228"
+        ]
+      },
+      {
+        "row_id": "RF-LAST-RESET-EVENT",
+        "display_row": 608,
+        "origin": "Redfish",
+        "closest_existing_id": "OSUSR-UPTIME",
+        "loss": "Elapsed power-on time cannot identify the reset cause or establish when an intervening reboot occurred.",
+        "client_use": "Show when the last restart occurred and its reported cause when available.",
+        "source": [
+          "Status.xsd#assetOnTimeMs; Asset.java#getActiveStatus",
+          "RF-229"
+        ]
+      }
+    ],
+    "owner_status": "Owner review of joint corrections pending. Earlier decisions and holds retained.",
+    "inventoried_families": 273,
+    "synthetic_examples": {
+      "mockups/public-rackmount1/Chassis/1U/PowerSubsystem/PowerSupplies/Bay2/index.json": {
+        "git_blob": "50034aaf82fbbe927efd6dd8ac16b9fd0a818965",
+        "state": "Absent",
+        "resource_name": "Power Supply Bay 2",
+        "reading_present": false,
+        "standing": "DMTF synthetic example"
+      },
+      "mockups/public-rackmount1/Chassis/1U/Sensors/PS2InputPower/index.json": {
+        "git_blob": "b3d448ac6b45e26453197ffa40a99de0c59b7aca",
+        "state": "Absent",
+        "resource_name": "Power Supply #2 Input Power",
+        "reading_present": false,
+        "standing": "DMTF synthetic example"
+      },
+      "mockups/public-rackmount1/Systems/437XR1138R2/Processors/CPU2/index.json": {
+        "git_blob": "5afad01857f0caac2077af46c9fed08658c37130",
+        "state": "Absent",
+        "resource_name": "Processor",
+        "reading_present": false,
+        "standing": "DMTF synthetic example"
+      }
+    },
+    "retained_negative": "Searching the inventory for water-quality terms gave no field-level basis for pH, dissolved oxygen, salinity or conductivity. Generic coolant quality is insufficient. Supply temperature and pressure can, however, be attributed to water when the coolant type is supplied.",
+    "changed_prior_receiving_donor_rows": [
+      "OSUSR-UPTIME",
+      "OSUSR-WATER-TEMP",
+      "OSUSR-WATER-PRESSURE"
+    ]
+  }
 }
