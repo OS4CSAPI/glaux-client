@@ -4,7 +4,7 @@
 
 ## Active scope and evidence
 
-Profile Rewrite 63. The owner authorized the two-column correction and then replied “Proceed” to record acceptance of the corrected Web of Things 1.1 assessment. The [SAREF](SAREF_Core_Source_Coverage.json) and [Web of Things](WoT_1_1_Source_Coverage.json) ledgers record current decisions and affected cells under `correction_63`. [Plain-English findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#how-the-donor-order-affected-saref-and-web-of-things). The [WoT plan](PLAN_W3C_WoT_1_1_Source_First_Donor_Review.md) retains the source limits.
+Profile Rewrite 63. The owner directed reuse of the earlier ranking and preparation of the next donor plan. The [27 ranked choices](Donor_Research_Priority_Order.md) preserve the Profile Rewrite 61 recommendation order. Ranks 1 and 2 are accepted at bounded-partial depth. Rank 3 is the [OSUS-R source-first donor review](PLAN_OSUS_R_Source_First_Donor_Review.md). Its registered implementation source is artifact 34, pinned at d09088fbe56d4b64f0544d72e98c3cb70fa941f6, with companions 27 and 59. Planning confirmed the two source entry points. The donor-wide assessment and workbook integration await execution.
 
 ## Master and workbook
 
@@ -20,7 +20,7 @@ SAREF Core acceptance at fe598e0 and SRF-Q1–Q3 stand. On 18 November 2026 the 
 
 ## Interrupted work
 
-The corrected comparison and both ledgers were published at 6f8d318. The downloaded workbook matched the verified copy and both publication workflows passed.
+The corrected comparison and both ledgers were published at 6f8d318. The accepted decision was recorded at 32240618. OSUS-R has a research plan and no outstanding partial workbook delivery.
 
 ## History
 
@@ -28,8 +28,8 @@ The Web of Things inventory was checkpointed at 44428bc and the original assessm
 
 ## Verification and publication
 
-The pre-correction publication was 54fbc09. [Pre-correction master workbook](https://github.com/OS4CSAPI/glaux-client/blob/54fbc09aef66562c7558e32d4411fbf026f7c17f/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). [Pre-WoT workbook](https://github.com/OS4CSAPI/glaux-client/blob/751f4bccdec751fe8db90fdcf701c1409f755027/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). The accepted workbook is pinned to [the verified correction](https://github.com/OS4CSAPI/glaux-client/commit/6f8d318072e2c97e938949b911128b691ae43550). The subsequent acceptance updates decision records only.
+The pre-correction publication was 54fbc09. [Pre-correction master workbook](https://github.com/OS4CSAPI/glaux-client/blob/54fbc09aef66562c7558e32d4411fbf026f7c17f/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). [Pre-WoT workbook](https://github.com/OS4CSAPI/glaux-client/blob/751f4bccdec751fe8db90fdcf701c1409f755027/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). The accepted workbook is pinned to [the verified correction](https://github.com/OS4CSAPI/glaux-client/commit/6f8d318072e2c97e938949b911128b691ae43550). The owner acceptance is recorded at [32240618](https://github.com/OS4CSAPI/glaux-client/commit/32240618bad639aa71804855e380d6a47866e493).
 
 ## Next action and stop
 
-Owner selection of the next donor research priority. A further Proceed requests a read-only comparison and ranking of the remaining options for that decision. The seven Web of Things-origin rows remain pending separate Domain Information Model adoption decisions.
+One Proceed authorizes the bounded OSUS-R review through verified workbook delivery under the linked plan. Start at the pinned source inventory. Stop for owner disposition of the findings. The Step 24 adoption decision remains separately gated.

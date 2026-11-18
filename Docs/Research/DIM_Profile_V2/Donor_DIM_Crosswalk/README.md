@@ -4,6 +4,8 @@ Start with [the recovery/execution protocol](../AGENTS.md) and [the current PITO
 
 ## Working files
 
+- [Ranked donor research order](Donor_Research_Priority_Order.md) and [OSUS-R review plan](PLAN_OSUS_R_Source_First_Donor_Review.md)
+
 - [Same editable master Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx)
 - [Canonical structured master](Master_Donor_Concept_to_DIM_Crosswalk.json)
 - [Readable comparison](Master_Donor_Concept_to_DIM_Crosswalk.md) and [CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv)

@@ -10,6 +10,8 @@ The 182-artifact register is accountability, not 182 audited donors. Distinguish
 
 Owner checkpoints remain 08, 16, 24, 34 and 40. Step24 permits decisions on ready coherent portions with meaning, need, relevant alternatives and concrete examples; Steps35–39 reconcile concepts, diagrams and cases; Step40 approves a named version. Do not use donor votes, source counts or class-per-term accumulation as model decisions. No client/server/deployment or device commands are authorized here.
 
+The [ranked donor research order](Donor_Research_Priority_Order.md) selects among the source families in Steps 23–33. Step numbers below retain their original scope and owner checkpoints.
+
 ## Preserved sequence
 
 Earlier completed rows are retained for traceability and do not restart work. Detailed historical results are in the archive; status is intentionally not duplicated in this table.
@@ -39,7 +41,7 @@ Earlier completed rows are retained for traceability and do not restart work. De
 | 21 | **OPC UA Devices v1.05.0:** [Finite donor assessment](PLAN_OPC_UA_Devices_Source_First_Donor_Review.md) researched and saved:33 finding groups,22 additions,73 existing correspondences;454-row master. Twelve source limits retained. Published/readback verified at ce333128; both applicable checks passed. PITON owns current status. |
 | 22 | **OPC UA PA-DIM v1.02.0:** **separate** process-device model; [finite plan](PLAN_OPC_UA_PADIM_Source_First_Donor_Review.md) started under Profile Rewrite54 authorization. Pinned seven-file release and initial native findings; detailed review and comparison remain. Keep inherited Devices1.04.0 separate from the Devices1.05.0 donor assessment. |
 | 23 | **SAREF Core v4.1.1 and W3C WoT 1.1, bounded related source terms:** DeviceKind/Function/Service versus Thing Model/Thing Description, interactions, digital mediation. Mark distinct original issuers. [SAREF Core research plan](PLAN_SAREF_Core_v4_1_1_Source_First_Donor_Review.md) covers the SAREF assignment. Web of Things remains separate. |
-| 24 | **OSUS/OSUS-R and developed-donor checkpoint:** original Asset/AssetProxy implementation scope, mediator versus physical unit. Review developed families’ contributions and bring ready coherent DIM portions forward for explicit owner adoption decisions, using clear meaning, need, relevant alternatives and a concrete example. Unassessed artifacts are not verified; major architecture stays open to remaining donor challenges. |
+| 24 | **OSUS/OSUS-R and developed-donor checkpoint:** [bounded OSUS-R donor review](PLAN_OSUS_R_Source_First_Donor_Review.md), original Asset/AssetProxy implementation scope, mediator versus physical unit. Review developed families’ contributions and bring ready coherent DIM portions forward for explicit owner adoption decisions, using clear meaning, need, relevant alternatives and a concrete example. Unassessed artifacts are not verified; major architecture stays open to remaining donor challenges. |
 | 25 | **NIEM:** types, association, augmentation, model/exchange versus physical identity; do not convert packaging tools into sensor hardware classes. |
 | 26 | **MIP/JC3IEDM:** model/item, location, state, event and capability distinctions where original edition available. |
 | 27 | **Redfish/Common Information Model:** Chassis, ComputerSystem, Manager, Battery/Power and Sensor versus managed hardware/system; identify physical vs monitoring roles. |
