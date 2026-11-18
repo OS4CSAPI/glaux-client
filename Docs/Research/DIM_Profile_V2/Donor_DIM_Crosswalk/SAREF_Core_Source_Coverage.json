@@ -1,7 +1,7 @@
 {
   "edition": "ETSI SAREF Core v4.1.1",
   "authorization": "Profile Rewrite 61: Proceed following the published SAREF plan",
-  "status": "BOUNDED_PARTIAL_SOURCE_AND_CROSSWALK_RECONCILED",
+  "status": "PUBLISHED_VERIFIED_BOUNDED_PARTIAL_AWAITING_OWNER",
   "baseline": "44e566e456bb77236b8b04ee7743c71ab8537d3b",
   "archive": "archive/pre-saref-core-v4-1-1",
   "sources": {
@@ -17,7 +17,7 @@
   "specification": {
     "id": "ETSI TS 103 264 V4.1.1",
     "edition": "2025-03",
-    "contact": "Versioned Core definitions and machine-readable axioms examined. Formal PDF sampled, including tables 2–3, clause 6.3 and informative annexes A/B. No full page-by-page or diagram audit.",
+    "contact": "Text across 52 pages inventoried; selected rules and examples semantically read. See formal_source_inventory.",
     "url": "https://www.etsi.org/deliver/etsi_ts/103200_103299/103264/04.01.01_60/ts_103264v040101p.pdf"
   },
   "reference": "https://saref.etsi.org/core/v4.1.1/",
@@ -5008,10 +5008,12 @@
     "typed-value attribution": "A feature-specific quality has one owning feature through the functional isPropertyOfInterestOf. Functional means at most one distinct object for that property, not a universally required record.",
     "execution": "isExecutionOf can propagate through command kind and broader relationships. Retain instance and generic attribution separately.",
     "oneM2M": "TS 103 264 tables 2 and 3 assign equivalent classes and selected properties but give wider SAREF meanings to represents, consistsOf, hasInput and hasOutput. Clause 6.3 refers to TS 118 112 clause 7 for resource instantiation. No oneM2M runtime claim.",
-    "migration": "Informative Annex B distinguishes the room temperature from the device battery and the execution from its result. The serial-number predicate in the example belongs to an extension."
+    "migration": "Informative Annex B distinguishes the room temperature from the device battery and the execution from its result. The serial-number predicate in the example belongs to an extension.",
+    "ownership": "Clauses 5.6–5.10 specify exactly one owning feature for a property/state of interest, one device for a function of interest, one function for a command of interest, one offering device for a service and one service for an operation. Deduce existence/uniqueness in the model without assuming explicit named records. Device-to-command ownership is mediated by the function.",
+    "state versus property": "Clause 5.7 distinguishes the two modeling patterns without declaring them disjoint. Avoid forcing every physical quantity or condition into an exclusive pair of categories."
   },
   "hold_register": {
-    "SRF-Q1": "Formal text sampled rather than a page-by-page verification of every clause, table and figure. A missing specialized rule is reported only within the reviewed Core evidence.",
+    "SRF-Q1": "Formal text and inventory span all 52 pages. Visual inspection and independent entailment testing were selective. No exhaustive diagram equivalence or runtime claim.",
     "SRF-Q2": "TS 103 264 clause 6.3 cites TS 118 112 clause 7 without an edition in reference [2]. Release 3 V3.7.3 clause 7 and its resource/semantic-descriptor example were sampled. Which edition governs a particular deployment and its actual conformance remain open.",
     "SRF-Q3": "External vocabulary definitions, requirements and test suites were not independently audited. Example-local or imported terms are not counted as Core declarations."
   },
@@ -8959,7 +8961,8 @@
     "Serial number: an extension serial-number example gives Core no direct serial-number credit.",
     "Declared input or result: limited common credit on rows 81–82, as for the accepted Devices/PA-DIM review. No execution credit follows from a signature.",
     "Software, economic and hardware profiles: separate the priced commodity context from existing slot/hardware profile declarations.",
-    "Case row 25: Campbell air temperature and logger panel temperature require different feature subjects. Row 26 distinguishes ClimaVue sensing from CR1000X logging. No inferred service invocation or pricing for the installation."
+    "Case row 25: Campbell air temperature and logger panel temperature require different feature subjects. Row 26 distinguishes ClimaVue sensing from CR1000X logging. No inferred service invocation or pricing for the installation.",
+    "Existing rows 34 and 347 have qualified related evidence. The Annex B living-room temperature example illustrates ambient temperature for a feature external to the device, supporting limited reusable credit on row 34. The device-side example is battery level, not an internal temperature reading; row 347 retains explicit related-only status. Neither example supplies an outdoor or installed-unit measurement."
   ],
   "coverage_counts": {
     "baseline_rows": 478,
@@ -8985,7 +8988,7 @@
       "contact": "Parsed and expanded under each term. Selected implications interpreted in rule_findings; other expressions inventoried without a separate logical proof."
     },
     "formal_scope": {
-      "1–4": "Scope, terminology, background, design. Identified, selectively consulted.",
+      "1–4": "Scope, terminology, background, design and development provisions inventoried with targeted reading.",
       "5.1–5.14": "Core subject groups reviewed against versioned ontology reference and machine graph; formal PDF passages selectively checked. Spatial co-typing does not itself provide GPS readings. Composite quality/value membership differs from installed device membership.",
       "6": "Tables 2–3 and clause 6.3 examined. Separate inherited mapping authority.",
       "A–B": "History and migration entries sampled; examples are illustrative."
@@ -8997,6 +9000,60 @@
     "download_bytes": 511046,
     "package": "Only Master Crosswalk XML changed; 26 sheets and all prior cell values and styles retained.",
     "values": "9288 grid positions matched JSON, two CSVs, two readable tables and the saved workbook. Every SAREF information cell has an explicit outcome and matching style.",
-    "application": "LibreOffice headless opened and exported a scratch copy. All 9288 grid values and 26 sheets were recovered. Artifact Tool rendered L509 with complete wrapped text and blue fill. Native Microsoft Excel opening is unverified."
+    "application": "Microsoft Excel for the web opened the published workbook in Reading View with all 26 worksheets. The Master Crosswalk tab was selected without a repair prompt. LibreOffice independently recovered all grid values; Artifact Tool rendered L509 with complete wrapped text and the intended blue fill. The Excel desktop application was not exercised."
+  },
+  "formal_source_inventory": {
+    "edition": "ETSI TS 103 264 V4.1.1 (2025-03), 52 pages",
+    "scope": "Text retrieved across all 52 pages. Indexed the main clauses, three numbered tables, 22 figures and annexes. Targeted semantic reading included the development provisions, Core clause 5 subjects and ownership constraints, oneM2M mapping, change history and migration. Figure inventory records subjects, not an independent visual audit of every diagram.",
+    "clause_scopes": {
+      "1–3": "Scope, references, terms and abbreviations. Reference [2] names TS 118 112 without an edition.",
+      "4": "Purpose, historical context and design principles. Development governance and recommendations have different normative weight from equipment facts.",
+      "5.1": "Generic versus specific entities and references. Provisions 1 and 3 govern development and communication framework usage; provision 2 recommends appropriate reuse of reference patterns.",
+      "5.2–5.5": "Device kinds and devices; feature kinds and features; tasks; commodities. See SRF-01–03.",
+      "5.6–5.9": "Properties and states and their feature-specific forms; functions and commands and their device-specific contexts. See SRF-04–06.",
+      "5.10–5.11": "Services and operations; executions, observations and actuations. See SRF-07–08.",
+      "5.12–5.14": "Conditional pricing; optional spatial co-typing and geometry; composite qualities and values. See SRF-09 and SRF-04.",
+      "6.1–6.3": "Relationship to oneM2M, mapping tables and requirement to follow instantiation rules.",
+      "Annex A / Annex B": "Informative changes and informative legacy measurement migration. The latter uses two different features for two observations by one unit."
+    },
+    "tables": {
+      "1": "namespace prefixes",
+      "2": "class mappings between SAREF and oneM2M",
+      "3": "object property mappings and their direction"
+    },
+    "figure_subjects": {
+      "1": "asset interoperability",
+      "2": "Core and extensions",
+      "3": "Core overview",
+      "4": "generic entities",
+      "5": "specific entities",
+      "6": "devices",
+      "7": "features and kinds",
+      "8": "task categories",
+      "9": "commodity categories",
+      "10": "properties and values",
+      "11": "states and values",
+      "12": "functions",
+      "13": "commands",
+      "14": "services and operations",
+      "15": "procedure executions",
+      "16": "command and operation executions",
+      "17": "observation and actuation",
+      "18": "commodity price profiles",
+      "19": "composite property restrictions",
+      "20": "composite property-of-interest restrictions",
+      "21": "composite property-value restrictions",
+      "22": "oneM2M mapping"
+    }
+  },
+  "publication": {
+    "content_commit": "bd3ee09ea65e9941b256655df88e8217d959ce1b",
+    "verified_tree": "3b6c933ac81fd03600f2beaff687783fe4dd3915",
+    "full_tree_readback_matched": true,
+    "fresh_download_bytes": 511046,
+    "fresh_download_sha256": "457ca574011f42aa838a3d327e567c85f4575001161034c7bd772f4bd4c6b9fe",
+    "master_check": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950066",
+    "workbook_check": "https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950114",
+    "status": "both checks passed"
   }
 }

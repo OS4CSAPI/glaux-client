@@ -12,7 +12,7 @@ Profile Rewrite 61 owner Proceed authorized the [SAREF Core v4.1.1 assignment](P
 
 ## Verified checkpoint
 
-`SAREF_CORE_411_SAVED_VERIFIED`. The crosswalk verifier checks all 9,288 grid positions, original cell values and styles, all SAREF classifications and both sets of mirrors. The two-row freeze and 26 sheet identities are preserved. LibreOffice opened the file and exported a scratch copy with identical grid contents. The saved workbook rendered correctly at L509. Microsoft Excel application verification remains open.
+`SAREF_CORE_411_SAVED_VERIFIED`. The crosswalk verifier checks all 9,288 grid positions, original cell values and styles, all SAREF classifications and both sets of mirrors. The two-row freeze and 26 sheet identities are preserved. LibreOffice opened the file and exported a scratch copy with identical grid contents. The saved workbook rendered correctly at L509. Excel for the web opened the published file with all 26 worksheets and allowed selection of Master Crosswalk without a repair prompt.
 
 ## Holds and owner decisions
 
@@ -24,12 +24,12 @@ Bounded partial. Retain SRF-Q1–Q3 on formal text/figure depth, the deployment-
 
 ## Interrupted work
 
-Research and integration saved. If interrupted during publication, verify the live SAREF delivery and finish its publication readback before reporting acceptance readiness. No new source research is due under this assignment unless a specific recorded finding is disputed.
+Research, integration and publication verification are complete. No new source research is due under this assignment unless a specific recorded finding is disputed.
 
 ## Verification and publication
 
-Use the current verifier and recovery checker through the output guard. Confirm the branch tree, fresh workbook bytes and affected workflows before claiming verified publication.
+Content commit `bd3ee09` matched the verified local tree. A fresh download matched all 511,046 verified bytes. Both [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950066) and [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950114) passed. The ledger records the fingerprint, Excel test, and [saved cell render](Workbook_Verification/SAREF_Core_L509.png).
 
 ## Next action and stop
 
-After publication verification, stop for the owner’s decision on the bounded SAREF result and retained source limits. Web of Things requires separate direction.
+Stop for the owner’s decision on the bounded SAREF result and retained source limits. Web of Things requires separate direction.
