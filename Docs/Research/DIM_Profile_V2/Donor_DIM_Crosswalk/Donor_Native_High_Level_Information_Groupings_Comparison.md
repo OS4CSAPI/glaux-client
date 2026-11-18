@@ -1186,3 +1186,24 @@ SAREF contributes a vocabulary for equipment kinds, individual devices, function
 Five additions distinguish action behavior, the separate data exchanged during an event subscription, registration expiry, alternative response representations, and variable elements in a reusable model. For example, an expired directory listing can explain why a description disappeared from search. The equipment’s operating state is a separate question. Each addition and its nearest earlier row are identified in the [ledger](WoT_1_1_Source_Coverage.json).
 
 All 486 earlier information rows received an explicit assessment. With the five additions, 64 of 491 positions carry common-candidate credit. The other 427 contain an explicit explanation, including related evidence, case holds and areas where the selected sources establish no correspondence. These counts measure this review’s findings. See WOT-Q1 through Q3 for source depth, companion specifications and installation evidence. Recommend bounded partial acceptance with these limits and reserve adoption of the five candidates for the owner.
+
+### How the donor order affected SAREF and Web of Things
+
+The 18 November 2026 comparison used the 491-row workbook at commit `54fbc09` and the original publisher material listed in each donor ledger. At that point 298 rows carried ISA-origin identifiers. One family of camera commands alone divides brightness, contrast, focus, gain, iris and zoom into distinct requests. The large number of narrow questions helps explain why a general ontology or an interaction model can be foundational while matching comparatively few rows.
+
+SAREF Core gives the model a way to distinguish the unit, its kind, its capabilities, the service exposing a capability and the execution that took place. The review retained its eight candidate additions. The publisher’s meter example now appears alongside the request for one property at L184. Its scope is a current meter reading. It supplies no general named-property selector. Five previously pending SAREF positions on Web of Things rows now have source-bounded decisions. Four have no established correspondence. The fifth relates an operation output to the response question while leaving representation and error alternatives unspecified.
+
+Web of Things gives a client the description of an interaction and information it needs to attempt it. M388 now acknowledges a declaration of which profile the description and implementation follow. M393 gives partial credit for an advertised binding because the source row distinguishes more protocol layers. M392 distinguishes the event payload from the delivery guarantees a producer offers a subscriber. The two new candidates describe typed address parameters at request time and a directory notification that a description was created, updated or deleted. For a client these answer two practical questions: which values go into this request address, and when should a cached description be refreshed?
+
+| Current relationship | SAREF Core | Web of Things |
+|---|---:|---:|
+| Direct | 12 | 13 |
+| Partial | 26 | 53 |
+| Related | 23 | 15 |
+| No established correspondence within reviewed scope | 423 | 403 |
+| Case evidence held | 9 | 9 |
+| Total information rows | 493 | 493 |
+
+The plans preserved column order on insertion. For final ordering the owner places donors with the largest foundational contributions to the right and least contributing donors to the left. Document the reusable roles or relationships each donor supplies as well as the fields it defines. Source coverage remains bounded. SAREF acceptance stands, Web of Things awaits owner disposition, and adoption into the Domain Information Model remains a separate decision.
+
+[Current SAREF decisions](SAREF_Core_Source_Coverage.json) · [Current Web of Things decisions](WoT_1_1_Source_Coverage.json) · [Pre-correction workbook](https://github.com/OS4CSAPI/glaux-client/blob/54fbc09aef66562c7558e32d4411fbf026f7c17f/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx)

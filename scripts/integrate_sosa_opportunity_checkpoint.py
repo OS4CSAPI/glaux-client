@@ -2197,13 +2197,15 @@ def apply_joint_closeout(authored_path):
     verify_joint_closeout()
 
 
-def verify_saref_core(wot=False):
+def verify_saref_core(wot=False, corrected=False):
     master = load(MASTER)
     ledger = load('WoT_1_1_Source_Coverage.json' if wot else 'SAREF_Core_Source_Coverage.json')
     grid = master['review_grid']
     dispositions = ledger['row_dispositions']
-    need(len(grid) == (522 if wot else 516) and all(len(row) == (19 if wot else 18) for row in grid), 'SAREF grid dimensions')
-    need(len(dispositions) == len(master['rows']) == (491 if wot else 486), 'SAREF information-row count')
+    row_count = 493 if corrected else (491 if wot else 486)
+    grid_count = 524 if corrected else (522 if wot else 516)
+    need(len(grid) == grid_count and all(len(row) == (19 if wot else 18) for row in grid), 'SAREF grid dimensions')
+    need(len(dispositions) == len(master['rows']) == row_count, 'SAREF information-row count')
     need(set(dispositions) == {row['row_id'] for row in master['rows']}, 'SAREF row ID coverage')
     for name in JOINT_CSVS:
         with (D / name).open(newline='', encoding='utf-8') as source:
@@ -2213,6 +2215,17 @@ def verify_saref_core(wot=False):
     data = (D / BOOK).read_bytes()
     need(digest(data) == master['currentWorkbookSha256'] == master['workbookSnapshot']['sha256'], 'SAREF workbook hash')
     baseline = '751f4bccdec751fe8db90fdcf701c1409f755027' if wot else '44e566e456bb77236b8b04ee7743c71ab8537d3b'
+    ledgers = {12 if wot else 11: ledger}
+    corrected_refs = set()
+    if corrected:
+        baseline = '54fbc09aef66562c7558e32d4411fbf026f7c17f'
+        ledgers[11] = load('SAREF_Core_Source_Coverage.json')
+        for col, record in ledgers.items():
+            need(set(record['row_dispositions']) == set(dispositions), 'Corrected donor row IDs')
+            for rid, change in record['correction_63']['changes'].items():
+                ref = letter(col + 1) + str(next(r['display_row'] for r in master['rows'] if r['row_id'] == rid))
+                need(ref == change['cell'], 'Corrected donor change locator')
+                corrected_refs.add(ref)
     previous = subprocess.check_output(['git', 'show', baseline + ':' + str((D / BOOK).relative_to(ROOT))], cwd=ROOT)
     with zipfile.ZipFile(io.BytesIO(data)) as saved, zipfile.ZipFile(io.BytesIO(previous)) as prior:
         paths = pub.old.sheetpaths(saved)
@@ -2233,17 +2246,28 @@ def verify_saref_core(wot=False):
         for old in original.iter(pub.q('c')):
             addr = old.get('r')
             col = addr[0]
-            ref = (chr(ord(col) + 1) if col >= ('M' if wot else 'L') else col) + addr[1:]
+            if addr in corrected_refs:
+                continue
+            ref = addr if corrected else (chr(ord(col) + 1) if col >= ('M' if wot else 'L') else col) + addr[1:]
             need(old.get('s') == cells[ref].get('s') and joint_value(old, strings) == joint_value(cells[ref], strings), 'SAREF prior cell ' + addr)
         for row in master['rows']:
             idx = row['display_row']
             disp = dispositions[row['row_id']]
             need(row['display'] == grid[idx-1] and row['display'][12 if wot else 11].strip(), 'SAREF explicit populated row ' + str(idx))
-            cell = cells[('M' if wot else 'L') + str(idx)]
-            target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unfilled': '#FFFFFF'}[disp['classification']]
-            need(joint_fill(cell, styles) == target, 'SAREF fill ' + str(idx))
+            for col, record in ledgers.items():
+                disposition = record['row_dispositions'][row['row_id']]
+                value = row['display'][col]
+                ref = letter(col + 1) + str(idx)
+                need(bool(value.strip()), 'Empty donor position ' + ref)
+                if corrected:
+                    need(disposition['reason'] in value, 'Source ledger and cell meaning ' + ref)
+                target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unfilled': '#FFFFFF'}[disposition['classification']]
+                need(joint_fill(cells[ref], styles) == target, 'Donor classification fill ' + ref)
         pane = sheet.find('.//' + pub.q('pane'))
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'SAREF row-only freeze')
+    if corrected:
+        print('PASS corrected SAREF and WoT: 493 positions per donor, 26 sheets, both mirrors of each format, classifications and preserved cells.')
+        return
     print('PASS WoT: 491 explicit positions and saved workbook, mirrors, prior cells and styles verified.' if wot else 'PASS SAREF: 486 explicit positions, all 9,288 grid values, classifications, source row IDs, both sets of mirrors, original cells/styles, and 26-sheet package.')
 
 
@@ -2251,6 +2275,8 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current=='SAREF_WOT_63_SAVED_VERIFIED':
+        verify_saref_core(wot=True, corrected=True);sys.exit(0)
     if current=='WOT_11_SAVED_VERIFIED':
         verify_saref_core(wot=True);sys.exit(0)
     if current=='SAREF_CORE_411_SAVED_VERIFIED':

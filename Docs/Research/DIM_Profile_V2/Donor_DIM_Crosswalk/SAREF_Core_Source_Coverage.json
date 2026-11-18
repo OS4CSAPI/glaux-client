@@ -5221,10 +5221,11 @@
     "ISA-C-125": {
       "display_row": 31,
       "label": "Observed atmospheric relative humidity",
-      "relation": "no established correspondence in reviewed Core",
+      "relation": "related",
       "classification": "unfilled",
-      "finding": "SRF-08",
-      "reason": "Core can type a target, execution and result. This row requires a specific measured quantity, report field, provenance or domain event beyond those general roles."
+      "finding": "SRF-04",
+      "reason": "The publisher example illustrates humidity of air or gas. Relative humidity, its reference conditions and an atmospheric observation are additional distinctions.",
+      "source_locator": "SRF-04; publisher example properties#Humidity"
     },
     "ISA-C-126": {
       "display_row": 32,
@@ -5693,10 +5694,11 @@
     "ISA-K-THRESHOLDS": {
       "display_row": 91,
       "label": "Declared property publication triggers",
-      "relation": "no established correspondence in reviewed Core",
+      "relation": "related",
       "classification": "unfilled",
       "finding": "SRF-06",
-      "reason": "The function/command contract lacks this specific data-shape, publication, mode, or alert rule."
+      "reason": "The example describes notifications when conditions or thresholds are met. It leaves the property publication rule and its parameters to the implementation.",
+      "source_locator": "SRF-06; publisher example functions#EventFunction"
     },
     "S06-R016": {
       "display_row": 92,
@@ -5893,10 +5895,11 @@
     "ISA-C-177": {
       "display_row": 116,
       "label": "Requested component active state",
-      "relation": "no established correspondence in reviewed Core",
+      "relation": "related",
       "classification": "unfilled",
       "finding": "SRF-06",
-      "reason": "Core accepts identified commands, inputs and targets. It supplies no definition of this requested action, its protocol fields or its outcome."
+      "reason": "The example declares commands for activation and deactivation. The requested ISA activity state, message and actual execution need separate evidence.",
+      "source_locator": "SRF-06; publisher example functions#OnCommand and OffCommand"
     },
     "ISA-C-185": {
       "display_row": 117,
@@ -6437,10 +6440,11 @@
     "ISA-C-214": {
       "display_row": 184,
       "label": "Requested value of one named property",
-      "relation": "no established correspondence in reviewed Core",
+      "relation": "related",
       "classification": "unfilled",
       "finding": "SRF-06",
-      "reason": "Core accepts identified commands, inputs and targets. It supplies no definition of this requested action, its protocol fields or its outcome."
+      "reason": "The example requests a current meter value. It illustrates a narrower retrieval command and supplies neither the general named-property selection contract nor an issued request.",
+      "source_locator": "SRF-06; publisher example functions#GetCurrentMeterValueCommand"
     },
     "ISA-C-215": {
       "display_row": 185,
@@ -6688,7 +6692,8 @@
       "relation": "partial",
       "classification": "common",
       "finding": "SRF-06",
-      "reason": "hasMandatoryCommand and hasOptionalCommand distinguish obligations within a function. An optional command is not necessarily recommended."
+      "reason": "Core distinguishes mandatory and optional command membership. Its inheritance rule for mandatory commands supports a device-level inference. Optional membership alone gives no such guarantee or recommendation.",
+      "source_locator": "SRF-06; Core 5.9, hasMandatoryCommand and hasOptionalCommand"
     },
     "ISA-A-MEMBER-TASKABILITY": {
       "display_row": 216,
@@ -8780,11 +8785,12 @@
     },
     "PADIM-CONTROL-VALUE-ROLES": {
       "display_row": 500,
-      "label": "Control target and readback relationship",
-      "relation": "no established correspondence in reviewed Core",
+      "label": "Candidate — Control target and readback relationship",
+      "relation": "related",
       "classification": "unfilled",
-      "finding": "SRF-04",
-      "reason": "Core describes qualities and values. It does not define this process-instrument parameter, operation, or diagnostic."
+      "finding": "SRF-02",
+      "reason": "Core can distinguish a controlled target from an observed target. The pairing of a setpoint with its readback, actuator direction and signal representation requires additional evidence.",
+      "source_locator": "SRF-02; Core controls and observes"
     },
     "PADIM-TOTALIZER-PULSE": {
       "display_row": 501,
@@ -8896,7 +8902,8 @@
       "relation": "direct",
       "classification": "common",
       "finding": "SRF-07",
-      "reason": "Record which function a network service exposes and which command a particular service operation represents."
+      "reason": "A device offers a service representing a function. The service has operations representing commands. Core assigns a service to one offering device and an operation to one service. The declaration alone supplies no live address or execution.",
+      "source_locator": "SRF-07; Core 5.10, Service and Operation"
     },
     "SAREF-PRICE": {
       "display_row": 516,
@@ -8905,6 +8912,69 @@
       "classification": "specialized",
       "finding": "SRF-09",
       "reason": "Describe a price for device commodity use, its payment or earnings direction and applicable state, property-value or time conditions."
+    },
+    "WOT-ACTION-TRAITS": {
+      "relation": "no established correspondence in reviewed Core",
+      "classification": "unfilled",
+      "reason": "Core distinguishes a command from an execution. The reviewed definitions give no action-level declaration of side effects, repeat-call semantics or synchronous response.",
+      "display_row": 518,
+      "label": "Declared action safety, repeatability and completion behavior",
+      "finding": "SRF-06",
+      "source_locator": "SRF-06; Core 5.9–5.11"
+    },
+    "WOT-EVENT-CONTRACT": {
+      "relation": "no established correspondence in reviewed Core",
+      "classification": "unfilled",
+      "reason": "Operation inputs and outputs are generic. The reviewed Core distinguishes no separate subscription, notification, reply and cancellation payload schemas.",
+      "display_row": 519,
+      "label": "Event subscription, cancellation and response schemas",
+      "finding": "SRF-07",
+      "source_locator": "SRF-07; Core 5.10–5.11"
+    },
+    "WOT-REGISTRATION-EXPIRY": {
+      "relation": "no established correspondence in reviewed Core",
+      "classification": "unfilled",
+      "reason": "Execution times and a price profile’s applicable time concern different subjects. No directory registration lifetime was established.",
+      "display_row": 520,
+      "label": "Directory registration expiry and relative lifetime",
+      "finding": "SRF-08",
+      "source_locator": "SRF-08; Core 5.11–5.12"
+    },
+    "WOT-FORM-RESPONSES": {
+      "relation": "related",
+      "classification": "unfilled",
+      "reason": "An operation can have an output. Core supplies no response media-type selection or success/error alternatives for a network interaction.",
+      "display_row": 521,
+      "label": "Operation-specific expected and alternative response representations",
+      "finding": "SRF-07",
+      "source_locator": "SRF-07; Core 5.10, Operation and hasOutput"
+    },
+    "WOT-MODEL-INSTANTIATION": {
+      "relation": "no established correspondence in reviewed Core",
+      "classification": "unfilled",
+      "reason": "Kinds and optional commands describe equipment and capabilities. They supply no document-generation placeholders or paths for optional template elements.",
+      "display_row": 522,
+      "label": "Optional and substitutable elements of a reusable Thing Model",
+      "finding": "SRF-01",
+      "source_locator": "SRF-01; Core 5.2 and SRF-06, 5.9"
+    },
+    "WOT-REQUEST-URI-VARIABLES": {
+      "relation": "no established correspondence in reviewed Core",
+      "classification": "unfilled",
+      "reason": "Operations can have inputs. Core gives no URI template variable map, parameter constraints or address-expansion rule.",
+      "display_row": 523,
+      "label": "Typed address parameters for an interaction",
+      "finding": "SRF-07",
+      "source_locator": "SRF-07; Core 5.10"
+    },
+    "WOT-DIRECTORY-CHANGE-EVENT": {
+      "relation": "no established correspondence in reviewed Core",
+      "classification": "unfilled",
+      "reason": "Services and executions have equipment and operation subjects. No Core directory record change vocabulary was established.",
+      "display_row": 524,
+      "label": "Notification of a description record changing in a directory",
+      "finding": "SRF-07",
+      "source_locator": "SRF-07; Core 5.10–5.11"
     }
   },
   "new_rows": [
@@ -8967,12 +9037,13 @@
   "coverage_counts": {
     "baseline_rows": 478,
     "new_rows": 8,
-    "explicit_donor_positions": 486,
+    "explicit_donor_positions": 493,
     "classifications": {
       "common": 44,
-      "unfilled": 441,
+      "unfilled": 448,
       "specialized": 1
-    }
+    },
+    "later_WoT_rows": 7
   },
   "dependency_sample": {
     "edition": "ETSI TS 118 112 V3.7.3, clause 7 and Annex B",
@@ -9067,5 +9138,207 @@
       "SRF-Q3"
     ],
     "scope": "SAREF Core v4.1.1 donor assessment at its documented source depth. The eight proposed rows remain candidates for later model decisions."
+  },
+  "correction_63": {
+    "baseline_commit": "54fbc09aef66562c7558e32d4411fbf026f7c17f",
+    "authorization": "Profile Rewrite 63, Proceed, 18 November 2026",
+    "limits": [
+      "SRF-Q1",
+      "SRF-Q2",
+      "SRF-Q3"
+    ],
+    "changes": {
+      "ISA-C-125": {
+        "cell": "L31",
+        "before": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SRF-04; publisher example properties#Humidity"
+      },
+      "ISA-K-THRESHOLDS": {
+        "cell": "L91",
+        "before": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SRF-06; publisher example functions#EventFunction"
+      },
+      "ISA-C-177": {
+        "cell": "L116",
+        "before": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SRF-06; publisher example functions#OnCommand and OffCommand"
+      },
+      "ISA-C-214": {
+        "cell": "L184",
+        "before": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SRF-06; publisher example functions#GetCurrentMeterValueCommand"
+      },
+      "ISA-A-BASELINE-CAPABILITIES": {
+        "cell": "L215",
+        "before": [
+          "partial",
+          "common"
+        ],
+        "after": [
+          "partial",
+          "common"
+        ],
+        "source": "SRF-06; Core 5.9, hasMandatoryCommand and hasOptionalCommand"
+      },
+      "PADIM-CONTROL-VALUE-ROLES": {
+        "cell": "L500",
+        "before": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SRF-02; Core controls and observes"
+      },
+      "SAREF-EXPOSURE": {
+        "cell": "L515",
+        "before": [
+          "direct",
+          "common"
+        ],
+        "after": [
+          "direct",
+          "common"
+        ],
+        "source": "SRF-07; Core 5.10, Service and Operation"
+      },
+      "WOT-ACTION-TRAITS": {
+        "cell": "L518",
+        "before": null,
+        "after": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "source": "SRF-06; Core 5.9–5.11"
+      },
+      "WOT-EVENT-CONTRACT": {
+        "cell": "L519",
+        "before": null,
+        "after": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "source": "SRF-07; Core 5.10–5.11"
+      },
+      "WOT-REGISTRATION-EXPIRY": {
+        "cell": "L520",
+        "before": null,
+        "after": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "source": "SRF-08; Core 5.11–5.12"
+      },
+      "WOT-FORM-RESPONSES": {
+        "cell": "L521",
+        "before": null,
+        "after": [
+          "related",
+          "unfilled"
+        ],
+        "source": "SRF-07; Core 5.10, Operation and hasOutput"
+      },
+      "WOT-MODEL-INSTANTIATION": {
+        "cell": "L522",
+        "before": null,
+        "after": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "source": "SRF-01; Core 5.2 and SRF-06, 5.9"
+      },
+      "WOT-REQUEST-URI-VARIABLES": {
+        "cell": "L523",
+        "before": null,
+        "after": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "source": "SRF-07; Core 5.10"
+      },
+      "WOT-DIRECTORY-CHANGE-EVENT": {
+        "cell": "L524",
+        "before": null,
+        "after": [
+          "no established correspondence in reviewed Core",
+          "unfilled"
+        ],
+        "source": "SRF-07; Core 5.10–5.11"
+      }
+    },
+    "native_review": [
+      [
+        "Device, kind and composition",
+        "Retain the unit/kind inference on row 509 and subject-qualified physical composition on 13. A kind supplies no Thing Model placeholder rule (522)."
+      ],
+      [
+        "Roles, target, purpose and commodities",
+        "Retain purpose on 510 and role on 511. A control target and observed target do not establish paired signals (500)."
+      ],
+      [
+        "Properties, states and values",
+        "Rows 25, 27, 69, 512 and 513 distinguish feature, value and time roles. Illustrative humidity does not specify relative humidity (31)."
+      ],
+      [
+        "Functions, commands and services",
+        "Clarify mandatory inheritance (215) and service ownership/exposure (515). Apply the publisher-example rule to activation, current meter value and triggers (116, 184, 91)."
+      ],
+      [
+        "Execution and price",
+        "Retain execution on 202 and conditional pricing on 516. Neither supplies directory registration lifetime (520)."
+      ],
+      [
+        "Additional row decision",
+        "No new SAREF-origin row. Inheritance, ownership and timing refinements belong on the existing rows above. Assess SAREF against all seven WoT-origin candidates."
+      ]
+    ],
+    "example_rule": "Mark a publisher example explicitly. A shared subject or narrower example supports related evidence. Award a reusable candidate fill only when the evidence carries the row’s substantive distinction. Do not infer an installed observation, protocol or command outcome.",
+    "prior_coverage_counts": {
+      "baseline_rows": 478,
+      "new_rows": 8,
+      "explicit_donor_positions": 486,
+      "classifications": {
+        "common": 44,
+        "unfilled": 441,
+        "specialized": 1
+      }
+    },
+    "current_relation_counts": {
+      "direct": 12,
+      "related": 23,
+      "partial": 26,
+      "no established correspondence in reviewed Core": 423,
+      "case hold": 9
+    }
   }
 }
