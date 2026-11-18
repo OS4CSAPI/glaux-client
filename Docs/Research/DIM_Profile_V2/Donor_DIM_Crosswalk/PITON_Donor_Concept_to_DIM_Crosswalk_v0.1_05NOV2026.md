@@ -4,32 +4,32 @@
 
 ## Active scope and evidence
 
-Profile Rewrite 61 owner Proceed authorized the [SAREF Core v4.1.1 assignment](PLAN_SAREF_Core_v4_1_1_Source_First_Donor_Review.md). Inventory and initial findings were published at `590cdc9`. The [source ledger](SAREF_Core_Source_Coverage.json) contains nine native finding groups, all 99 named class/property declarations, attached anonymous expressions, 13 examples, per-row decisions, and eight additions. See the [plain-English comparison](Donor_Native_High_Level_Information_Groupings_Comparison.md#saref-core-v411--equipment-identity-capability-and-execution).
+WoT 1.1 research delivered for owner disposition. [Plan](PLAN_W3C_WoT_1_1_Source_First_Donor_Review.md), [section inventory and row decisions](WoT_1_1_Source_Coverage.json), [plain-English findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#w3c-web-of-things-11--what-a-consumer-can-learn-before-interacting).
 
 ## Master and workbook
 
-[Current editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx), 486 information rows, 516 grid rows, 18 columns and 26 sheets. Column L has 44 common and one specialized candidate, plus 441 explicit unfilled statuses. All earlier columns keep their order. The ledger verification record contains the workbook fingerprint and byte length.
+[Editable workbook](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). 491 information rows, 522 grid rows, 19 columns, 26 worksheets. Column M contains 64 common candidates and 427 explicit unfilled statuses. Five new candidate rows. The [pre-WoT workbook](https://github.com/OS4CSAPI/glaux-client/blob/751f4bccdec751fe8db90fdcf701c1409f755027/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) remains available.
 
 ## Verified checkpoint
 
-`SAREF_CORE_411_SAVED_VERIFIED`. The crosswalk verifier checks all 9,288 grid positions, original cell values and styles, all SAREF classifications and both sets of mirrors. The two-row freeze and 26 sheet identities are preserved. LibreOffice opened the file and exported a scratch copy with identical grid contents. The saved workbook rendered correctly at L509. Excel for the web opened the published file with all 26 worksheets and allowed selection of Master Crosswalk without a repair prompt.
+WOT_11_SAVED_VERIFIED. Both CSVs and both readable comparisons matched the grid. Workbook package checks verified grid contents, classification fills, old cells and styles, sheet identity and row-only freeze. [Saved workbook render](Workbook_Verification/WoT_M520.png). Artifact-tool reopened the workbook. Native Microsoft Excel was not tested for this revision.
 
 ## Holds and owner decisions
 
-Bounded partial. Retain SRF-Q1–Q3 on formal text/figure depth, the deployment-specific oneM2M dependency, and external terms or conformance evidence. Anonymous axioms are inventoried; logical interpretation was selective. The 441 explicit statuses include scoped noncorrespondence, related evidence and case holds. All earlier Devices/PA-DIM and other source and case holds remain in force. The owner accepted the prior Devices/PA-DIM bounded closeout at `d767976`. On 17 November 2026 in Profile Rewrite 61, the owner accepted the published SAREF assessment as bounded partial, retaining SRF-Q1 through SRF-Q3. The eight new rows remain candidates for later DIM adoption. Step 24, Steps 35–39 and named-version Step 40 remain gated.
-
-## History
-
-[Exact pre-SAREF checkpoint and workbook](https://github.com/OS4CSAPI/glaux-client/tree/archive/pre-saref-core-v4-1-1/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk). Manual M00/M01 versions retained.
+Recommend bounded partial. WOT-Q1 covers selective passage and schema depth, WOT-Q2 companion specifications and implementation evidence, WOT-Q3 installation and runtime claims. Previous owner decisions, SRF-Q1–Q3, all other source and case holds and manual M00/M01 checkpoints apply. Step 24, Steps 35–39 and named-version Step 40 remain gated.
 
 ## Interrupted work
 
-Research, integration and publication verification are complete. No new source research is due under this assignment unless a specific recorded finding is disputed.
+Source inventory checkpoint 44428bc. Delivery includes the workbook and mirrors together. Verify the publication commit and applicable checks on recovery.
 
 ## Verification and publication
 
-Content commit `bd3ee09` matched the verified local tree. A fresh download matched all 511,046 verified bytes. Both [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950066) and [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/44216950114) passed. The ledger records the fingerprint, Excel test, and [saved cell render](Workbook_Verification/SAREF_Core_L509.png).
+The source inventory was published at 44428bc. The delivery commit contains the verified master and workbook fingerprint.
+
+## History
+
+SAREF accepted at fe598e0. WoT plan published at 751f4bcc.
 
 ## Next action and stop
 
-WoT execution authorized. The [frozen section and artifact inventory](WoT_1_1_Source_Coverage.json) is saved against baseline 751f4bcc. Continue the two-way comparison and workbook delivery under the same authorization.
+Owner decision on accepting the bounded partial WoT 1.1 assessment with WOT-Q1–Q3. Five candidate additions await separate DIM adoption decisions.
