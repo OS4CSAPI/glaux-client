@@ -4,7 +4,7 @@ Updated 17 November 2026, America/New_York, Profile Rewrite 61, SAREF Core resea
 
 ## Active scope and evidence
 
-The owner requested a durable research plan for the recommended donor. [SAREF Core v4.1.1](PLAN_SAREF_Core_v4_1_1_Source_First_Donor_Review.md) is the planned first donor in Step 23. The request covers planning. The next Proceed authorizes one bounded assignment through publication and explanation. Source locators and planning counts are in the plan. Donor findings, ledger entries, and the workbook column await execution.
+Profile Rewrite 61 owner Proceed authorized the full [SAREF Core assignment](PLAN_SAREF_Core_v4_1_1_Source_First_Donor_Review.md). The [source ledger](SAREF_Core_Source_Coverage.json) records all 99 named Core class/property identifiers, six functional characteristics, nine initial native finding groups, and the 13 publisher example titles. Source assessment and workbook comparison are in progress.
 
 The owner accepted the completed three-step corrective assessment with its documented source limits. The earlier Proceed after `d4a40e4` authorized the final comparison under the [Devices and PA-DIM corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md). The finite joint comparison accounts for 478 current cells per donor (956 positions), four correction dispositions and five retention/count-scope dispositions. It adds no rows or definitions. The [comparison narrative](Donor_Native_High_Level_Information_Groupings_Comparison.md#devices-and-pa-dim-joint-corrective-closeout--17-november-2026) gives the complete plain-English explanation, rationale, source references and recommendation.
 
@@ -42,4 +42,4 @@ Current evidence checkpoint: `DEVICES_PADIM_JOINT_3_SAVED_VERIFIED`. Run `python
 
 ## Next action and stop
 
-Await one owner Proceed to execute the [complete SAREF Core assignment](PLAN_SAREF_Core_v4_1_1_Source_First_Donor_Review.md). Start with the finite source inventory and native assessment. Save the ledger and current recovery note at substantive milestones, then continue through comparison, workbook integration, verification, and plain-English delivery under that authorization. On interruption resume the first unfinished item. Stop for acceptance. Web of Things and subsequent steps require separate direction.
+Continue the authorized assessment at the source ledger’s remaining items. Preserve the archive branch `archive/pre-saref-core-v4-1-1`. The workbook is still at the accepted pre-integration baseline. Resume with anonymous rules, specification clauses and example reconciliation, then complete comparison, workbook verification and publication. Stop for owner acceptance after delivery.

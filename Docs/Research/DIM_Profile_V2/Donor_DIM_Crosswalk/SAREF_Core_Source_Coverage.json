@@ -1,0 +1,1491 @@
+{
+  "edition": "ETSI SAREF Core v4.1.1",
+  "authorization": "Profile Rewrite 61: Proceed following the published SAREF plan",
+  "status": "SOURCE_INVENTORY_AND_INITIAL_NATIVE_FINDINGS",
+  "baseline": "44e566e456bb77236b8b04ee7743c71ab8537d3b",
+  "archive": "archive/pre-saref-core-v4-1-1",
+  "sources": {
+    "rdf": {
+      "url": "https://saref.etsi.org/core/v4.1.1/saref.rdf",
+      "sha256": "7ab14eb5e879131f7bf8ad5cd7e1bad40a6f29a1b7b763ab8be74d72ab08ad75"
+    },
+    "ttl": {
+      "url": "https://saref.etsi.org/core/v4.1.1/saref.ttl",
+      "sha256": "28189acd8cfb49bf6b7e5709275a1162d943576f643b2cffdccfe20cc00ad701"
+    }
+  },
+  "specification": {
+    "id": "ETSI TS 103 264 V4.1.1",
+    "edition": "2025-03",
+    "contact": "Sampled, including Annex B and change history. Clause and dependency reconciliation pending."
+  },
+  "reference": "https://saref.etsi.org/core/v4.1.1/",
+  "terms": {
+    "Command": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Command",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasFeatureKind": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasFeatureKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/FeatureOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/FeatureKind"
+        ]
+      }
+    },
+    "hasMandatoryCommand": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasMandatoryCommand",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Function"
+        ],
+        "subPropertyOf": [
+          "https://saref.etsi.org/core/hasCommand"
+        ]
+      }
+    },
+    "hasOptionalCommand": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasOptionalCommand",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Function"
+        ],
+        "subPropertyOf": [
+          "https://saref.etsi.org/core/hasCommand"
+        ]
+      }
+    },
+    "profileHasPrice": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/profileHasPrice",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Profile"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/PropertyValue"
+        ]
+      }
+    },
+    "PropertyOfInterest": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/PropertyOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "FeatureKind": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/FeatureKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "isProducedBy": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isProducedBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/produces"
+        ],
+        "domain": [
+          "https://saref.etsi.org/core/Commodity"
+        ]
+      }
+    },
+    "hasPropertyValue": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasPropertyValue",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "https://saref.etsi.org/core/PropertyValue"
+        ]
+      }
+    },
+    "FeatureOfInterest": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/FeatureOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "Service": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Service",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "isConsumedBy": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isConsumedBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/consumes"
+        ],
+        "domain": [
+          "https://saref.etsi.org/core/Commodity"
+        ]
+      }
+    },
+    "Property": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Property",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasTimestamp": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasTimestamp",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "http://www.w3.org/2001/XMLSchema#dateTime"
+        ]
+      }
+    },
+    "isProfileOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isProfileOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Profile"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasProfile"
+        ]
+      }
+    },
+    "hasCommand": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasCommand",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isCommandOf"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Command"
+        ]
+      }
+    },
+    "consumes": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/consumes",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isConsumedBy"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Commodity"
+        ]
+      }
+    },
+    "isPropertyOfInterestOf": {
+      "types": [
+        "FunctionalProperty",
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isPropertyOfInterestOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/PropertyOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasPropertyOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/FeatureOfInterest"
+        ]
+      }
+    },
+    "DeviceKind": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/DeviceKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/FeatureKind"
+        ]
+      }
+    },
+    "produces": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/produces",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isProducedBy"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Commodity"
+        ]
+      }
+    },
+    "madeBy": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/madeBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/madeExecution"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/FeatureOfInterest"
+        ]
+      }
+    },
+    "FunctionOfInterest": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/FunctionOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "isValueOfProperty": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isValueOfProperty",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/PropertyValue"
+        ]
+      }
+    },
+    "accomplishes": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/accomplishes",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isAccomplishedBy"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Task"
+        ]
+      }
+    },
+    "UnitOfMeasure": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/UnitOfMeasure",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "Operation": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Operation",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasManufacturer": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasManufacturer",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasStateOfInterest": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasStateOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/FeatureOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isStateOfInterestOf"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/StateOfInterest"
+        ]
+      }
+    },
+    "observes": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/observes",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isObservedBy"
+        ],
+        "subPropertyOf": [
+          "https://saref.etsi.org/core/targets"
+        ]
+      }
+    },
+    "Profile": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Profile",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "CommandOfInterest": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/CommandOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "isMeasuredIn": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isMeasuredIn",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "https://saref.etsi.org/core/UnitOfMeasure"
+        ]
+      }
+    },
+    "Actuation": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Actuation",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ]
+      }
+    },
+    "hasOperation": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasOperation",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Service"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isOperationOf"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Operation"
+        ]
+      }
+    },
+    "Sensor": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Sensor",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/Device"
+        ]
+      }
+    },
+    "isStateOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isStateOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/State"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasState"
+        ]
+      }
+    },
+    "Actuator": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Actuator",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/Device"
+        ]
+      }
+    },
+    "isAccomplishedBy": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isAccomplishedBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Task"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/accomplishes"
+        ]
+      }
+    },
+    "isValueOfState": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isValueOfState",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/StateValue"
+        ]
+      }
+    },
+    "hasOutput": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasOutput",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "isExecutionOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isExecutionOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ]
+      }
+    },
+    "Commodity": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Commodity",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasIdentifier": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasIdentifier",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "seeAlso": [
+          "https://labs.etsi.org/rep/saref/saref-portal/-/issues/2"
+        ]
+      }
+    },
+    "hasProperty": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasProperty",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isPropertyOf"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Property"
+        ]
+      }
+    },
+    "hasFunctionKind": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasFunctionKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/FunctionOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Function"
+        ]
+      }
+    },
+    "Function": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Function",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "isStateOfInterestOf": {
+      "types": [
+        "FunctionalProperty",
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isStateOfInterestOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/StateOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasStateOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/FeatureOfInterest"
+        ]
+      }
+    },
+    "hasState": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasState",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "https://saref.etsi.org/core/State"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isStateOf"
+        ]
+      }
+    },
+    "whenState": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/whenState",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Profile"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/State"
+        ]
+      }
+    },
+    "consistsOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/consistsOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "Meter": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Meter",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/Device"
+        ]
+      }
+    },
+    "isPropertyOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isPropertyOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Property"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasProperty"
+        ]
+      }
+    },
+    "represents": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/represents",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "stores": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/stores",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isStoredBy"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Commodity"
+        ]
+      }
+    },
+    "State": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/State",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "isObservedBy": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isObservedBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/observes"
+        ],
+        "subPropertyOf": [
+          "https://saref.etsi.org/core/isTargetOf"
+        ]
+      }
+    },
+    "Device": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Device",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/FeatureOfInterest",
+          "https://saref.etsi.org/saref4syst/System"
+        ]
+      }
+    },
+    "hasCommandOfInterest": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasCommandOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/FunctionOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isCommandOfInterestOf"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/CommandOfInterest"
+        ]
+      }
+    },
+    "isTargetOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isTargetOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/targets"
+        ]
+      }
+    },
+    "hasStateKind": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasStateKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/StateOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/State"
+        ]
+      }
+    },
+    "isFunctionOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isFunctionOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Function"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasFunction"
+        ]
+      }
+    },
+    "isCommandOfInterestOf": {
+      "types": [
+        "FunctionalProperty",
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isCommandOfInterestOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/CommandOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasCommandOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/FunctionOfInterest"
+        ]
+      }
+    },
+    "hasInput": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasInput",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "Task": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Task",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "madeExecution": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/madeExecution",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/FeatureOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/madeBy"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ]
+      }
+    },
+    "PropertyValue": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/PropertyValue",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasFunctionOfInterest": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasFunctionOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Device"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isFunctionOfInterestOf"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/FunctionOfInterest"
+        ]
+      }
+    },
+    "targets": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/targets",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "Appliance": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Appliance",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/Device"
+        ]
+      }
+    },
+    "StateValue": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/StateValue",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasFunction": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasFunction",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "https://saref.etsi.org/core/Function"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isFunctionOf"
+        ]
+      }
+    },
+    "isFunctionOfInterestOf": {
+      "types": [
+        "FunctionalProperty",
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isFunctionOfInterestOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/FunctionOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasFunctionOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Device"
+        ]
+      }
+    },
+    "CommandExecution": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/CommandExecution",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ]
+      }
+    },
+    "hasPhenomenonTime": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasPhenomenonTime",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "http://www.w3.org/2006/time#TemporalEntity"
+        ]
+      }
+    },
+    "hasProfile": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasProfile",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "https://saref.etsi.org/core/Profile"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isProfileOf"
+        ]
+      }
+    },
+    "hasValue": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasValue",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "controls": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/controls",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/isControlledBy"
+        ],
+        "subPropertyOf": [
+          "https://saref.etsi.org/core/targets"
+        ]
+      }
+    },
+    "hasVersion": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasVersion",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "seeAlso": [
+          "https://labs.etsi.org/rep/saref/saref-core/-/issues/53"
+        ],
+        "range": [
+          "http://www.w3.org/2001/XMLSchema#string"
+        ]
+      }
+    },
+    "Observation": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/Observation",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ]
+      }
+    },
+    "isOfferedBy": {
+      "types": [
+        "ObjectProperty",
+        "FunctionalProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isOfferedBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Service"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/offers"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Device"
+        ]
+      }
+    },
+    "isCommandOf": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isCommandOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Command"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasCommand"
+        ]
+      }
+    },
+    "hasApplicableTime": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasApplicableTime",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasStateValue": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasStateValue",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "range": [
+          "https://saref.etsi.org/core/StateValue"
+        ]
+      }
+    },
+    "whenPropertyValue": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/whenPropertyValue",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Profile"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/PropertyValue"
+        ]
+      }
+    },
+    "isControlledBy": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isControlledBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/controls"
+        ],
+        "subPropertyOf": [
+          "https://saref.etsi.org/core/isTargetOf"
+        ]
+      }
+    },
+    "isOperationOf": {
+      "types": [
+        "FunctionalProperty",
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isOperationOf",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Operation"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/hasOperation"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Service"
+        ]
+      }
+    },
+    "hasDeviceKind": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasDeviceKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Device"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/DeviceKind"
+        ],
+        "subPropertyOf": [
+          "https://saref.etsi.org/core/hasFeatureKind"
+        ]
+      }
+    },
+    "StateOfInterest": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/StateOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "ProcedureExecution": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/ProcedureExecution",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasResultTime": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasResultTime",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ],
+        "range": [
+          "http://www.w3.org/2001/XMLSchema#dateTime"
+        ]
+      }
+    },
+    "hasPropertyOfInterest": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasPropertyOfInterest",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/FeatureOfInterest"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isPropertyOfInterestOf"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/PropertyOfInterest"
+        ]
+      }
+    },
+    "offers": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/offers",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/Device"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Service"
+        ],
+        "inverseOf": [
+          "https://saref.etsi.org/core/isOfferedBy"
+        ]
+      }
+    },
+    "isStoredBy": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/isStoredBy",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "inverseOf": [
+          "https://saref.etsi.org/core/stores"
+        ],
+        "domain": [
+          "https://saref.etsi.org/core/Commodity"
+        ]
+      }
+    },
+    "hasCommandKind": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasCommandKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/CommandOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Command"
+        ]
+      }
+    },
+    "OperationExecution": {
+      "types": [
+        "Class"
+      ],
+      "locator": "https://saref.etsi.org/core/OperationExecution",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "subClassOf": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ]
+      }
+    },
+    "hasRevisionNumber": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasRevisionNumber",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "seeAlso": [
+          "https://labs.etsi.org/rep/saref/saref-core/-/issues/53"
+        ],
+        "range": [
+          "http://www.w3.org/2001/XMLSchema#string"
+        ]
+      }
+    },
+    "hasModel": {
+      "types": [
+        "DatatypeProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasModel",
+      "source": "Core RDF/XML",
+      "named_axioms": {}
+    },
+    "hasPropertyKind": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasPropertyKind",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/PropertyOfInterest"
+        ],
+        "range": [
+          "https://saref.etsi.org/core/Property"
+        ]
+      }
+    },
+    "hasResult": {
+      "types": [
+        "ObjectProperty"
+      ],
+      "locator": "https://saref.etsi.org/core/hasResult",
+      "source": "Core RDF/XML",
+      "named_axioms": {
+        "domain": [
+          "https://saref.etsi.org/core/ProcedureExecution"
+        ]
+      }
+    }
+  },
+  "initial_native_findings": [
+    {
+      "id": "SRF-01",
+      "subject": "Equipment identity and composition",
+      "terms": [
+        "Device",
+        "DeviceKind",
+        "FeatureKind",
+        "FeatureOfInterest",
+        "hasDeviceKind",
+        "hasFeatureKind",
+        "hasIdentifier",
+        "hasManufacturer",
+        "hasModel",
+        "hasRevisionNumber",
+        "hasVersion",
+        "consistsOf"
+      ],
+      "finding": "A physical unit can be identified separately from its catalog kind. A generic identifier has no built-in persistence or serial-number guarantee. Composition requires identifying the subject, since the same predicate serves other composite entities."
+    },
+    {
+      "id": "SRF-02",
+      "subject": "Designed role, purpose and target",
+      "terms": [
+        "Sensor",
+        "Actuator",
+        "Meter",
+        "Appliance",
+        "Task",
+        "accomplishes",
+        "isAccomplishedBy",
+        "targets",
+        "isTargetOf",
+        "observes",
+        "isObservedBy",
+        "controls",
+        "isControlledBy"
+      ],
+      "finding": "A task expresses user purpose. A sensor observes, an actuator controls, and a meter adds computation or display. Capability alone supplies no record of execution."
+    },
+    {
+      "id": "SRF-03",
+      "subject": "Commodity flows",
+      "terms": [
+        "Commodity",
+        "consumes",
+        "isConsumedBy",
+        "produces",
+        "isProducedBy",
+        "stores",
+        "isStoredBy"
+      ],
+      "finding": "Consumption, production and storage relate equipment to a commodity with distinct directions. A stored commodity may differ from the one consumed."
+    },
+    {
+      "id": "SRF-04",
+      "subject": "Quality and its value",
+      "terms": [
+        "Property",
+        "PropertyOfInterest",
+        "PropertyValue",
+        "UnitOfMeasure",
+        "hasProperty",
+        "hasPropertyKind",
+        "hasPropertyOfInterest",
+        "hasPropertyValue",
+        "isPropertyOf",
+        "isPropertyOfInterestOf",
+        "isValueOfProperty",
+        "isMeasuredIn",
+        "hasValue"
+      ],
+      "finding": "A quality can be generic or particular to a feature. A value can exist independently of a recorded observation. Its literal and unit are optional."
+    },
+    {
+      "id": "SRF-05",
+      "subject": "Condition and its value",
+      "terms": [
+        "State",
+        "StateOfInterest",
+        "StateValue",
+        "hasState",
+        "hasStateKind",
+        "hasStateOfInterest",
+        "hasStateValue",
+        "isStateOf",
+        "isStateOfInterestOf",
+        "isValueOfState"
+      ],
+      "finding": "Distinguish a reusable condition, a condition tied to a particular feature, and a value describing that condition."
+    },
+    {
+      "id": "SRF-06",
+      "subject": "Capability and command contract",
+      "terms": [
+        "Function",
+        "FunctionOfInterest",
+        "Command",
+        "CommandOfInterest",
+        "hasFunction",
+        "hasFunctionKind",
+        "hasFunctionOfInterest",
+        "isFunctionOf",
+        "isFunctionOfInterestOf",
+        "hasCommand",
+        "hasCommandKind",
+        "hasCommandOfInterest",
+        "isCommandOf",
+        "isCommandOfInterestOf",
+        "hasMandatoryCommand",
+        "hasOptionalCommand"
+      ],
+      "finding": "A function groups commands. Required and optional membership conveys a support obligation at the function level. An individual device can have its own identifiable function and command."
+    },
+    {
+      "id": "SRF-07",
+      "subject": "Digital exposure",
+      "terms": [
+        "Service",
+        "Operation",
+        "offers",
+        "isOfferedBy",
+        "hasOperation",
+        "isOperationOf",
+        "represents"
+      ],
+      "finding": "A service exposes a function on a network. Its operation exposes a command. This permits tracing a digital interface back to the particular capability it represents."
+    },
+    {
+      "id": "SRF-08",
+      "subject": "Execution and time",
+      "terms": [
+        "ProcedureExecution",
+        "CommandExecution",
+        "OperationExecution",
+        "Observation",
+        "Actuation",
+        "isExecutionOf",
+        "madeBy",
+        "madeExecution",
+        "hasInput",
+        "hasOutput",
+        "hasResult",
+        "hasPhenomenonTime",
+        "hasResultTime",
+        "hasTimestamp"
+      ],
+      "finding": "Differentiate command-level execution from the network operation, and the performer from the feature targeted. Result time concerns completion. Phenomenon time concerns the phenomenon. Inputs and outputs alone do not establish an effect."
+    },
+    {
+      "id": "SRF-09",
+      "subject": "Conditional commodity price",
+      "terms": [
+        "Profile",
+        "hasProfile",
+        "isProfileOf",
+        "profileHasPrice",
+        "hasApplicableTime",
+        "whenPropertyValue",
+        "whenState"
+      ],
+      "finding": "A device commodity-price profile describes payment or earnings under a time, state or property-value condition. This is a specialized economic meaning distinct from an interoperability profile."
+    }
+  ],
+  "publisher_examples": {
+    "standing": "illustrative",
+    "contact": "index inspected; individual examples pending",
+    "names": [
+      "commodities",
+      "door switch",
+      "functions",
+      "HVAC",
+      "light switch",
+      "on/off switch",
+      "open/close switch",
+      "properties",
+      "services",
+      "smoke sensor",
+      "states",
+      "tasks",
+      "temperature sensor"
+    ]
+  },
+  "remaining": [
+    "Resolve blank-node restrictions, chains and inherited meanings against the substantive specification, mapping and examples.",
+    "Compare all 478 row IDs and account for every native finding.",
+    "Integrate, verify and publish the workbook, mirrors and narrative."
+  ]
+}
