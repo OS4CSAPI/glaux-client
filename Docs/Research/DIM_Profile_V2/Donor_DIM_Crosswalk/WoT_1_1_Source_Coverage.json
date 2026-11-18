@@ -1,0 +1,1837 @@
+{
+  "baseline": "751f4bcc",
+  "sources": {
+    "TD": {
+      "url": "https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/",
+      "sha256": "db4517d82699840edfcd331ab064b17de569e4f9568c18c3d27a40cb411cf856",
+      "sections": {
+        "abstract": {
+          "heading": "Abstract",
+          "contact": "indexed; not independently audited"
+        },
+        "sotd": {
+          "heading": "Status of This Document",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction": {
+          "heading": "1. Introduction",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-td": {
+          "heading": "1.1 Thing Description",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-tm": {
+          "heading": "1.2 Thing Model",
+          "contact": "indexed; not independently audited"
+        },
+        "conformance": {
+          "heading": "2. Conformance",
+          "contact": "indexed; not independently audited"
+        },
+        "terminology": {
+          "heading": "3. Terminology",
+          "contact": "indexed; not independently audited"
+        },
+        "namespaces": {
+          "heading": "4. Namespaces",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-vocabulary-definition": {
+          "heading": "5. TD Information Model",
+          "contact": "indexed; not independently audited"
+        },
+        "overview": {
+          "heading": "5.1 Overview",
+          "contact": "indexed; not independently audited"
+        },
+        "preliminary-definitions": {
+          "heading": "5.2 Preliminaries",
+          "contact": "indexed; not independently audited"
+        },
+        "class-definitions": {
+          "heading": "5.3 Class Definitions",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-core-vocabulary-definition": {
+          "heading": "5.3.1 Core Vocabulary Definitions",
+          "contact": "indexed; not independently audited"
+        },
+        "thing": {
+          "heading": "5.3.1.1 Thing",
+          "contact": "selected definitions and tables",
+          "members": [
+            "@context",
+            "@type",
+            "id",
+            "title",
+            "titles",
+            "description",
+            "descriptions",
+            "version",
+            "created",
+            "modified",
+            "support",
+            "base",
+            "properties",
+            "actions",
+            "events",
+            "links",
+            "forms",
+            "security",
+            "securityDefinitions",
+            "profile",
+            "schemaDefinitions",
+            "uriVariables"
+          ]
+        },
+        "interactionaffordance": {
+          "heading": "5.3.1.2 InteractionAffordance",
+          "contact": "selected definitions and tables",
+          "members": [
+            "@type",
+            "title",
+            "titles",
+            "description",
+            "descriptions",
+            "forms",
+            "uriVariables"
+          ]
+        },
+        "propertyaffordance": {
+          "heading": "5.3.1.3 PropertyAffordance",
+          "contact": "selected definitions and tables",
+          "members": [
+            "observable"
+          ]
+        },
+        "actionaffordance": {
+          "heading": "5.3.1.4 ActionAffordance",
+          "contact": "selected definitions and tables",
+          "members": [
+            "input",
+            "output",
+            "safe",
+            "idempotent",
+            "synchronous"
+          ]
+        },
+        "eventaffordance": {
+          "heading": "5.3.1.5 EventAffordance",
+          "contact": "selected definitions and tables",
+          "members": [
+            "subscription",
+            "data",
+            "dataResponse",
+            "cancellation"
+          ]
+        },
+        "versioninfo": {
+          "heading": "5.3.1.6 VersionInfo",
+          "contact": "selected definitions and tables",
+          "members": [
+            "instance",
+            "model"
+          ]
+        },
+        "multilanguage": {
+          "heading": "5.3.1.7 MultiLanguage",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "sec-data-schema-vocabulary-definition": {
+          "heading": "5.3.2 Data Schema Vocabulary Definitions",
+          "contact": "indexed; not independently audited"
+        },
+        "dataschema": {
+          "heading": "5.3.2.1 DataSchema",
+          "contact": "selected definitions and tables",
+          "members": [
+            "@type",
+            "title",
+            "titles",
+            "description",
+            "descriptions",
+            "const",
+            "default",
+            "unit",
+            "oneOf",
+            "enum",
+            "readOnly",
+            "writeOnly",
+            "format",
+            "type"
+          ]
+        },
+        "arrayschema": {
+          "heading": "5.3.2.2 ArraySchema",
+          "contact": "selected definitions and tables",
+          "members": [
+            "items",
+            "minItems",
+            "maxItems"
+          ]
+        },
+        "booleanschema": {
+          "heading": "5.3.2.3 BooleanSchema",
+          "contact": "indexed; not independently audited"
+        },
+        "numberschema": {
+          "heading": "5.3.2.4 NumberSchema",
+          "contact": "selected definitions and tables",
+          "members": [
+            "minimum",
+            "exclusiveMinimum",
+            "maximum",
+            "exclusiveMaximum",
+            "multipleOf"
+          ]
+        },
+        "integerschema": {
+          "heading": "5.3.2.5 IntegerSchema",
+          "contact": "selected definitions and tables",
+          "members": [
+            "minimum",
+            "exclusiveMinimum",
+            "maximum",
+            "exclusiveMaximum",
+            "multipleOf"
+          ]
+        },
+        "objectschema": {
+          "heading": "5.3.2.6 ObjectSchema",
+          "contact": "selected definitions and tables",
+          "members": [
+            "properties",
+            "required"
+          ]
+        },
+        "stringschema": {
+          "heading": "5.3.2.7 StringSchema",
+          "contact": "selected definitions and tables",
+          "members": [
+            "minLength",
+            "maxLength",
+            "pattern",
+            "contentEncoding",
+            "contentMediaType"
+          ]
+        },
+        "nullschema": {
+          "heading": "5.3.2.8 NullSchema",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-vocabulary-definition": {
+          "heading": "5.3.3 Security Vocabulary Definitions",
+          "contact": "indexed; not independently audited"
+        },
+        "securityscheme": {
+          "heading": "5.3.3.1 SecurityScheme",
+          "contact": "selected definitions and tables",
+          "members": [
+            "@type",
+            "description",
+            "descriptions",
+            "proxy",
+            "scheme"
+          ]
+        },
+        "nosecurityscheme": {
+          "heading": "5.3.3.2 NoSecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "autosecurityscheme": {
+          "heading": "5.3.3.3 AutoSecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "combosecurityscheme": {
+          "heading": "5.3.3.4 ComboSecurityScheme",
+          "contact": "selected definitions and tables",
+          "members": [
+            "oneOf",
+            "allOf"
+          ]
+        },
+        "basicsecurityscheme": {
+          "heading": "5.3.3.5 BasicSecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "digestsecurityscheme": {
+          "heading": "5.3.3.6 DigestSecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "apikeysecurityscheme": {
+          "heading": "5.3.3.7 APIKeySecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "bearersecurityscheme": {
+          "heading": "5.3.3.8 BearerSecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "psksecurityscheme": {
+          "heading": "5.3.3.9 PSKSecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "oauth2securityscheme": {
+          "heading": "5.3.3.10 OAuth2SecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-hypermedia-vocabulary-definition": {
+          "heading": "5.3.4 Hypermedia Controls Vocabulary Definitions",
+          "contact": "indexed; not independently audited"
+        },
+        "link": {
+          "heading": "5.3.4.1 Link",
+          "contact": "selected definitions and tables",
+          "members": [
+            "href",
+            "type",
+            "rel",
+            "anchor",
+            "sizes",
+            "hreflang",
+            "icon",
+            "service-doc",
+            "alternate",
+            "tm:extends",
+            "tm:submodel",
+            "manifest",
+            "proxy-to",
+            "collection",
+            "item",
+            "predecessor-version",
+            "controlledBy"
+          ]
+        },
+        "form": {
+          "heading": "5.3.4.2 Form",
+          "contact": "selected definitions and tables",
+          "members": [
+            "href",
+            "contentType",
+            "contentCoding",
+            "security",
+            "scopes",
+            "response",
+            "additionalResponses",
+            "subprotocol",
+            "op",
+            "readproperty",
+            "writeproperty",
+            "observeproperty",
+            "unobserveproperty",
+            "invokeaction",
+            "queryaction",
+            "cancelaction",
+            "subscribeevent",
+            "unsubscribeevent",
+            "readallproperties",
+            "writeallproperties",
+            "readmultipleproperties",
+            "writemultipleproperties",
+            "observeallproperties",
+            "unobserveallproperties",
+            "queryallactions",
+            "subscribeallevents",
+            "unsubscribeallevents"
+          ]
+        },
+        "sec-op-data-schema-mapping": {
+          "heading": "5.3.4.2.1 Mapping op Values to Data Schemas",
+          "contact": "selected definitions and tables",
+          "members": [
+            "readproperty",
+            "writeproperty",
+            "observeproperty",
+            "unobserveproperty",
+            "invokeaction",
+            "queryaction",
+            "cancelaction",
+            "subscribeevent",
+            "unsubscribeevent"
+          ]
+        },
+        "sec-response-usage": {
+          "heading": "5.3.4.2.2 Response-related Terms Usage",
+          "contact": "indexed; not independently audited"
+        },
+        "expectedresponse": {
+          "heading": "5.3.4.3 ExpectedResponse",
+          "contact": "selected definitions and tables",
+          "members": [
+            "contentType"
+          ]
+        },
+        "additionalexpectedresponse": {
+          "heading": "5.3.4.4 AdditionalExpectedResponse",
+          "contact": "selected definitions and tables",
+          "members": [
+            "success",
+            "contentType",
+            "schema"
+          ]
+        },
+        "sec-default-values": {
+          "heading": "5.4 Default Value Definitions",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-td-serialization": {
+          "heading": "6. TD Representation Format",
+          "contact": "indexed; not independently audited"
+        },
+        "td-basic-types-mapping": {
+          "heading": "6.1 Mapping to JSON Types",
+          "contact": "indexed; not independently audited"
+        },
+        "omitting-default-values": {
+          "heading": "6.2 Omitting Default Values",
+          "contact": "indexed; not independently audited"
+        },
+        "td-class-serialization": {
+          "heading": "6.3 Information Model Serialization",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-thing-as-a-whole-json": {
+          "heading": "6.3.1 Thing Root Object",
+          "contact": "indexed; not independently audited"
+        },
+        "titles-descriptions-serialization-json": {
+          "heading": "6.3.2 Human-Readable Metadata",
+          "contact": "indexed; not independently audited"
+        },
+        "version-serialization-json": {
+          "heading": "6.3.3 version",
+          "contact": "indexed; not independently audited"
+        },
+        "security-serialization-json": {
+          "heading": "6.3.4 securityDefinitions and security",
+          "contact": "indexed; not independently audited"
+        },
+        "security-multiple": {
+          "heading": "6.3.4.1 Multiple Security Definitions",
+          "contact": "indexed; not independently audited"
+        },
+        "security-security-forms": {
+          "heading": "6.3.4.2 security in Forms",
+          "contact": "indexed; not independently audited"
+        },
+        "security-comboSecurityScheme": {
+          "heading": "6.3.4.3 ComboSecurityScheme",
+          "contact": "indexed; not independently audited"
+        },
+        "security-oauth2": {
+          "heading": "6.3.4.4 OAuth 2.0 usage",
+          "contact": "indexed; not independently audited"
+        },
+        "security-apikey": {
+          "heading": "6.3.4.5 API key usage",
+          "contact": "indexed; not independently audited"
+        },
+        "property-serialization-json": {
+          "heading": "6.3.5 properties",
+          "contact": "indexed; not independently audited"
+        },
+        "action-serialization-json": {
+          "heading": "6.3.6 actions",
+          "contact": "indexed; not independently audited"
+        },
+        "event-serialization-json": {
+          "heading": "6.3.7 events",
+          "contact": "indexed; not independently audited"
+        },
+        "link-serialization-json": {
+          "heading": "6.3.8 links",
+          "contact": "indexed; not independently audited"
+        },
+        "form-serialization-json": {
+          "heading": "6.3.9 forms",
+          "contact": "indexed; not independently audited"
+        },
+        "form-uriVariables": {
+          "heading": "6.3.9.1 uriVariables",
+          "contact": "indexed; not independently audited"
+        },
+        "form-contentType": {
+          "heading": "6.3.9.2 contentType",
+          "contact": "indexed; not independently audited"
+        },
+        "form-response": {
+          "heading": "6.3.9.3 response",
+          "contact": "indexed; not independently audited"
+        },
+        "form-additionalResponses": {
+          "heading": "6.3.9.4 additionalResponses",
+          "contact": "indexed; not independently audited"
+        },
+        "form-contentMediaType-contentEncoding": {
+          "heading": "6.3.9.5 contentMediaType and contentEncoding",
+          "contact": "indexed; not independently audited"
+        },
+        "form-top-level": {
+          "heading": "6.3.9.6 Top level forms",
+          "contact": "indexed; not independently audited"
+        },
+        "data-schema-serialization-json": {
+          "heading": "6.3.10 Data Schemas",
+          "contact": "indexed; not independently audited"
+        },
+        "identification-serialization-json": {
+          "heading": "6.4 Identification",
+          "contact": "indexed; not independently audited"
+        },
+        "validation-serialization-json": {
+          "heading": "6.5 Validation",
+          "contact": "indexed; not independently audited"
+        },
+        "minimal-validation-serialization-json": {
+          "heading": "6.5.1 Minimal Validation",
+          "contact": "indexed; not independently audited"
+        },
+        "basic-validation-serialization-json": {
+          "heading": "6.5.2 Basic Validation",
+          "contact": "indexed; not independently audited"
+        },
+        "full-validation-serialization-json": {
+          "heading": "6.5.3 Full Validation",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-context-extensions": {
+          "heading": "7. TD Context Extensions",
+          "contact": "indexed; not independently audited"
+        },
+        "semantic-annotations": {
+          "heading": "7.1 Semantic Annotations",
+          "contact": "indexed; not independently audited"
+        },
+        "semantic-annotations-example-version-units": {
+          "heading": "7.1.1 Example I: Additional Basic Metadata",
+          "contact": "indexed; not independently audited"
+        },
+        "semantic-annotations-example-state": {
+          "heading": "7.1.2 Example II: State Annotations",
+          "contact": "indexed; not independently audited"
+        },
+        "semantic-annotations-example-geoloc": {
+          "heading": "7.1.3 Example III: Geolocation Annotations",
+          "contact": "indexed; not independently audited"
+        },
+        "adding-protocol-bindings": {
+          "heading": "7.2 Adding Protocol Bindings",
+          "contact": "indexed; not independently audited"
+        },
+        "adding-security-schemes": {
+          "heading": "7.3 Adding Security Schemes",
+          "contact": "indexed; not independently audited"
+        },
+        "behavior": {
+          "heading": "8. Behavioral Assertions",
+          "contact": "indexed; not independently audited"
+        },
+        "behavior-security": {
+          "heading": "8.1 Security Configurations",
+          "contact": "indexed; not independently audited"
+        },
+        "behavior-data": {
+          "heading": "8.2 Data Schemas",
+          "contact": "indexed; not independently audited"
+        },
+        "protocol-bindings": {
+          "heading": "8.3 Protocol Bindings",
+          "contact": "indexed; not independently audited"
+        },
+        "http-binding-assertions": {
+          "heading": "8.3.1 Protocol Binding based on HTTP",
+          "contact": "indexed; not independently audited"
+        },
+        "other-protocol-bindings": {
+          "heading": "8.3.2 Other Protocol Bindings",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-model": {
+          "heading": "9. Thing Model",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-model-concept": {
+          "heading": "9.1 Basic Concept",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-model-declaration": {
+          "heading": "9.2 Thing Model Declaration",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "thing-model-tools": {
+          "heading": "9.3 Modeling Tools",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-model-versioning": {
+          "heading": "9.3.1 Versioning",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-model-extension-import": {
+          "heading": "9.3.2 Extension and Import",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "thing-model-composition": {
+          "heading": "9.3.3 Composition",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "thing-model-td-optional": {
+          "heading": "9.3.4 tm:optional",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "thing-model-td-placeholder": {
+          "heading": "9.3.5 Placeholder",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "thing-model-td-generation": {
+          "heading": "9.4 Derivation of Thing Description Instances",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-model-td-generation-examples": {
+          "heading": "9.5 Examples",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration": {
+          "heading": "10. Security Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-TD-tampering": {
+          "heading": "10.1 TD Interception and Tampering",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-context-tampering": {
+          "heading": "10.2 Context Interception and Tampering",
+          "contact": "indexed; not independently audited"
+        },
+        "security-consideration-access-duration": {
+          "heading": "10.3 Limited Duration Accesses",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-vulnerability-auditing": {
+          "heading": "10.4 Vulnerability Auditing",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-script-injection": {
+          "heading": "10.5 Script Injection",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-execution": {
+          "heading": "10.6 JSON Parsing",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-jsonld-expansion": {
+          "heading": "10.7 JSON-LD Expansion",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration": {
+          "heading": "11. Privacy Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-context": {
+          "heading": "11.1 Context Fetching",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-id": {
+          "heading": "11.2 Immutable Identifiers",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-fingerprint": {
+          "heading": "11.3 Fingerprinting",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-id-metadata": {
+          "heading": "11.4 ID Metadata",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-global-id-risk": {
+          "heading": "11.5 Globally Unique Identifiers",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-inferencing": {
+          "heading": "11.6 Inferencing of Personally Identifiable Information",
+          "contact": "indexed; not independently audited"
+        },
+        "iana-section": {
+          "heading": "12. IANA Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "media-type-section": {
+          "heading": "12.1 application/td+json Media Type Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "media-type-section-tm": {
+          "heading": "12.2 application/tm+json Media Type Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "content-format-section": {
+          "heading": "12.3 CoAP Content-Format Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "wot-thing-description": {
+          "heading": "12.3.1 WoT Thing Description",
+          "contact": "indexed; not independently audited"
+        },
+        "wot-thing-model": {
+          "heading": "12.3.2 WoT Thing Model",
+          "contact": "indexed; not independently audited"
+        },
+        "example-serialization": {
+          "heading": "A. Example Thing Description Instances",
+          "contact": "indexed; not independently audited"
+        },
+        "myLampThing-example-serialization": {
+          "heading": "A.1 MyLampThing Example with CoAP Protocol Binding",
+          "contact": "indexed; not independently audited"
+        },
+        "myLightSensor-example-serialization": {
+          "heading": "A.2 MyIlluminanceSensor Example with MQTT Protocol Binding",
+          "contact": "indexed; not independently audited"
+        },
+        "webhook-example-serialization": {
+          "heading": "A.3 Webhook Event Example",
+          "contact": "indexed; not independently audited"
+        },
+        "json-schema-for-validation": {
+          "heading": "B. JSON Schema for TD Instance Validation",
+          "contact": "indexed; not independently audited"
+        },
+        "contentType-usage": {
+          "heading": "C. contentType usage in Thing Descriptions",
+          "contact": "indexed; not independently audited"
+        },
+        "json-ld-ctx-usage": {
+          "heading": "D. JSON-LD Context Usage",
+          "contact": "indexed; not independently audited"
+        },
+        "changes": {
+          "heading": "E. Recent Specification Changes",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-the-proposed-recommendation-11-july-2023": {
+          "heading": "E.1 Changes from the Proposed Recommendation 11 July 2023",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-the-candidate-recommendation-19-january-2023": {
+          "heading": "E.2 Changes from the Candidate Recommendation 19 January 2023",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-fourth-public-working-draft-3-august-2022": {
+          "heading": "E.3 Changes from Fourth Public Working Draft 3 August 2022",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-third-public-working-draft-11-march-2022": {
+          "heading": "E.4 Changes from Third Public Working Draft 11 March 2022",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-second-public-working-draft-7-june-2021": {
+          "heading": "E.5 Changes from Second Public Working Draft 7 June 2021",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-first-public-working-draft-24-november-2020": {
+          "heading": "E.6 Changes from First Public Working Draft 24 November 2020",
+          "contact": "indexed; not independently audited"
+        },
+        "acknowledgements": {
+          "heading": "F. Acknowledgements",
+          "contact": "indexed; not independently audited"
+        },
+        "references": {
+          "heading": "G. References",
+          "contact": "indexed; not independently audited"
+        },
+        "normative-references": {
+          "heading": "G.1 Normative references",
+          "contact": "indexed; not independently audited"
+        },
+        "informative-references": {
+          "heading": "G.2 Informative references",
+          "contact": "indexed; not independently audited"
+        }
+      },
+      "example_count": 70,
+      "figure_ids": [
+        "td-core-model",
+        "td-data-schema-model",
+        "td-security-model",
+        "hypermedia-model",
+        "thing-model-td",
+        "thing-model-overwriting"
+      ]
+    },
+    "AR": {
+      "url": "https://www.w3.org/TR/2023/REC-wot-architecture11-20231205/",
+      "sha256": "82aa73cba33f5098db0cde716bc66622bc3db25d531c4fd894b5eacfea34deb1",
+      "sections": {
+        "abstract": {
+          "heading": "Abstract",
+          "contact": "indexed; not independently audited"
+        },
+        "sotd": {
+          "heading": "Status of This Document",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction": {
+          "heading": "1. Introduction",
+          "contact": "indexed; not independently audited"
+        },
+        "conformance": {
+          "heading": "2. Conformance",
+          "contact": "indexed; not independently audited"
+        },
+        "terminology": {
+          "heading": "3. Terminology",
+          "contact": "indexed; not independently audited"
+        },
+        "device-categories": {
+          "heading": "3.1 Device Categories",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-application-domains": {
+          "heading": "4. Application Domains",
+          "contact": "indexed; not independently audited"
+        },
+        "consumer-use-cases": {
+          "heading": "4.1 Consumer",
+          "contact": "indexed; not independently audited"
+        },
+        "industrial-iot-usecases": {
+          "heading": "4.2 Industrial",
+          "contact": "indexed; not independently audited"
+        },
+        "example-smart-factory": {
+          "heading": "4.2.1 Example: Smart Factory",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-transportationlogistics": {
+          "heading": "4.3 Transportation & Logistics",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-utilities": {
+          "heading": "4.4 Utilities",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-oilandgas": {
+          "heading": "4.5 Oil and Gas",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-insurance": {
+          "heading": "4.6 Insurance",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-engineering-and-construction": {
+          "heading": "4.7 Engineering and Construction",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-agriculture": {
+          "heading": "4.8 Agriculture",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-healthcare": {
+          "heading": "4.9 Healthcare",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-environmentmonitoring": {
+          "heading": "4.10 Environment Monitoring",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-smart-cities": {
+          "heading": "4.11 Smart Cities",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-smart-buildings": {
+          "heading": "4.12 Smart Buildings",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-connected-car": {
+          "heading": "4.13 Connected Car",
+          "contact": "indexed; not independently audited"
+        },
+        "connected-car-example": {
+          "heading": "4.13.1 Connected Car Example",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-common-deployment-patterns": {
+          "heading": "5. Common Deployment Patterns",
+          "contact": "indexed; not independently audited"
+        },
+        "telemetry": {
+          "heading": "5.1 Telemetry",
+          "contact": "indexed; not independently audited"
+        },
+        "device-controllers": {
+          "heading": "5.2 Device Controllers",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-to-thing": {
+          "heading": "5.3 Thing-to-Thing",
+          "contact": "indexed; not independently audited"
+        },
+        "remote-access": {
+          "heading": "5.4 Remote Access",
+          "contact": "indexed; not independently audited"
+        },
+        "smart-home-gateways": {
+          "heading": "5.5 Smart Home Gateways",
+          "contact": "indexed; not independently audited"
+        },
+        "edge-devices": {
+          "heading": "5.6 Edge Devices",
+          "contact": "indexed; not independently audited"
+        },
+        "digital-twins": {
+          "heading": "5.7 Digital Twins",
+          "contact": "indexed; not independently audited"
+        },
+        "cloud-connected-devices": {
+          "heading": "5.7.1 Cloud Connected Devices",
+          "contact": "indexed; not independently audited"
+        },
+        "orchestration": {
+          "heading": "5.7.2 Orchestration",
+          "contact": "indexed; not independently audited"
+        },
+        "legacy-devices": {
+          "heading": "5.7.3 Legacy Devices",
+          "contact": "indexed; not independently audited"
+        },
+        "multi-cloud": {
+          "heading": "5.8 Multi-Cloud",
+          "contact": "indexed; not independently audited"
+        },
+        "virtual-thing": {
+          "heading": "5.9 Virtual Things",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-cross-domain-collaboration": {
+          "heading": "5.10 Cross-domain Collaboration",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-system-integration": {
+          "heading": "5.11 System Integration",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-wot-architecture": {
+          "heading": "6. Abstract WoT System Architecture",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-architecture-overview": {
+          "heading": "6.1 Fundamental Concepts",
+          "contact": "indexed; not independently audited"
+        },
+        "metadata": {
+          "heading": "6.1.1 Metadata",
+          "contact": "indexed; not independently audited"
+        },
+        "metadata-thing-descriptions": {
+          "heading": "6.1.1.1 Thing Descriptions",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "metadata-thing-models": {
+          "heading": "6.1.1.2 Thing Models",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "links": {
+          "heading": "6.1.2 Links",
+          "contact": "indexed; not independently audited"
+        },
+        "intermediaries": {
+          "heading": "6.1.3 Intermediaries",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "sec-affordances": {
+          "heading": "6.2 Affordances",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-web-thing": {
+          "heading": "6.3 Web Thing",
+          "contact": "indexed; not independently audited"
+        },
+        "lifecycle": {
+          "heading": "6.4 Lifecycle",
+          "contact": "indexed; not independently audited"
+        },
+        "simple-system-lifecycle": {
+          "heading": "6.4.1 Simple System Lifecycle",
+          "contact": "indexed; not independently audited"
+        },
+        "system-lifecycle-no-directory": {
+          "heading": "6.4.2 System Lifecycle with Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "thing-lifecycle": {
+          "heading": "6.4.3 Thing Lifecycle",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-interaction-model": {
+          "heading": "6.5 Interaction Model",
+          "contact": "indexed; not independently audited"
+        },
+        "properties": {
+          "heading": "6.5.1 Properties",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "actions": {
+          "heading": "6.5.2 Actions",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "events": {
+          "heading": "6.5.3 Events",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "sec-hypermedia-controls": {
+          "heading": "6.6 Hypermedia Controls",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-hypermedia-links": {
+          "heading": "6.6.1 Links",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-hypermedia-forms": {
+          "heading": "6.6.2 Forms",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-protocol-bindings": {
+          "heading": "6.7 Protocol Bindings",
+          "contact": "indexed; not independently audited"
+        },
+        "hypermedia-driven": {
+          "heading": "6.7.1 Hypermedia-driven",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-arch-URIs": {
+          "heading": "6.7.2 URIs",
+          "contact": "indexed; not independently audited"
+        },
+        "media-types": {
+          "heading": "6.8 Media Types",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-i18n": {
+          "heading": "6.9 Internationalization",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-wot-servient-architecture-high-level": {
+          "heading": "6.10 WoT System Components and their Interconnectivity",
+          "contact": "indexed; not independently audited"
+        },
+        "direct-communication": {
+          "heading": "6.10.1 Direct Communication",
+          "contact": "indexed; not independently audited"
+        },
+        "indirect-communication": {
+          "heading": "6.10.2 Indirect Communication",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-building-blocks": {
+          "heading": "7. WoT Building Blocks",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-thing-description": {
+          "heading": "7.1 WoT Thing Description",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-thing-model": {
+          "heading": "7.2 Thing Model",
+          "contact": "indexed; not independently audited"
+        },
+        "wot-profiles": {
+          "heading": "7.3 Profiles",
+          "contact": "indexed; not independently audited"
+        },
+        "profiling-methodology": {
+          "heading": "7.3.1 Profiling Methodology",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-discovery": {
+          "heading": "7.4 WoT Discovery",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-discovery-introductions": {
+          "heading": "7.4.1 Introduction Mechanisms",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-discovery-exploration": {
+          "heading": "7.4.2 Exploration Mechanisms",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-binding-templates": {
+          "heading": "7.5 WoT Binding Templates",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-scripting-api": {
+          "heading": "7.6 WoT Scripting API",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-guidelines": {
+          "heading": "7.7 WoT Security and Privacy Guidelines",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-servient-implementation": {
+          "heading": "8. Abstract Servient Architecture",
+          "contact": "indexed; not independently audited"
+        },
+        "behavior-implementation": {
+          "heading": "8.1 Behavior Implementation",
+          "contact": "indexed; not independently audited"
+        },
+        "wot-runtime": {
+          "heading": "8.2 WoT Runtime",
+          "contact": "indexed; not independently audited"
+        },
+        "wot-scripting-api": {
+          "heading": "8.3 WoT Scripting API",
+          "contact": "indexed; not independently audited"
+        },
+        "expose-consumed-thing": {
+          "heading": "8.4 Exposed Thing and Consumed Thing Abstractions",
+          "contact": "indexed; not independently audited"
+        },
+        "private-security-data": {
+          "heading": "8.5 Private Security Data",
+          "contact": "indexed; not independently audited"
+        },
+        "protocol-stack-implementation": {
+          "heading": "8.6 Protocol Stack Implementation",
+          "contact": "indexed; not independently audited"
+        },
+        "system-api": {
+          "heading": "8.7 System API",
+          "contact": "indexed; not independently audited"
+        },
+        "alt-servient-impl": {
+          "heading": "8.8 Alternative Servient and WoT Implementations",
+          "contact": "indexed; not independently audited"
+        },
+        "native-impl": {
+          "heading": "8.8.1 Native WoT API",
+          "contact": "indexed; not independently audited"
+        },
+        "existing-impl": {
+          "heading": "8.8.2 Thing Description for Existing Devices",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-scenario": {
+          "heading": "9. Example WoT Deployments",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-client-server-roles": {
+          "heading": "9.1 Thing and Consumer Roles",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-topologies-deployment-scenarios": {
+          "heading": "9.2 Topology of WoT Systems and Deployment Scenarios",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-app-dev": {
+          "heading": "9.2.1 Consumer and Thing on the Same Network",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-intermediaries": {
+          "heading": "9.2.2 Consumer and Thing Connected via Intermediaries",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-app-proxy-dev": {
+          "heading": "9.2.2.1 Intermediary Acting as a Proxy",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-digital-twin": {
+          "heading": "9.2.2.2 Intermediary Acting as a Digital Twin",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-cloud": {
+          "heading": "9.2.3 Devices in a Local Network Controlled from a Cloud Service",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-discovery-with-directory": {
+          "heading": "9.2.4 Discovery Using a Thing Description Directory",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-service-to-service": {
+          "heading": "9.2.5 Service-to-Service Connections Across Multiple Domains",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-service-to-service-synchronized": {
+          "heading": "9.2.5.1 Connection Through Thing Description Directory Synchronization",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-deployment-service-sync-proxy": {
+          "heading": "9.2.5.2 Connection Through Proxy Synchronization",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-considerations": {
+          "heading": "10. Security Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-td-risks": {
+          "heading": "10.1 WoT Thing Description Risks",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-td-private": {
+          "heading": "10.1.1 Thing Description Private Security Data Risk",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-td-cm": {
+          "heading": "10.1.2 Thing Description Communication Metadata Risk",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-scripting-risks": {
+          "heading": "10.2 WoT Scripting API Risks",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-cross-script": {
+          "heading": "10.2.1 Cross-Script Security Risk",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-device-direct-access": {
+          "heading": "10.2.2 Physical Device Direct Access Risk",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-runtime-risks": {
+          "heading": "10.3 WoT Runtime Risks",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-update-provisioning": {
+          "heading": "10.3.1 Provisioning and Update Security Risk",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-credentials-storage": {
+          "heading": "10.3.2 Security Credentials Storage Risk",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-trusted-environment-risks": {
+          "heading": "10.4 Trusted Environment Risks",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-security-consideration-secure-transport": {
+          "heading": "10.5 Secure Transport",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-considerations": {
+          "heading": "11. Privacy Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-td-risks": {
+          "heading": "11.1 WoT Thing Description Risks",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-privacy-consideration-td-pii": {
+          "heading": "11.1.1 Thing Description Personally Identifiable Information Risk",
+          "contact": "indexed; not independently audited"
+        },
+        "arch-privacy-consideration-access-controls": {
+          "heading": "11.2 Access to Personally Identifiable Information",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-accessibility-considerations": {
+          "heading": "12. Accessibility Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-accessibility-considerations-greenfield": {
+          "heading": "12.1 Greenfield WoT Systems",
+          "contact": "indexed; not independently audited"
+        },
+        "sec-accessibility-considerations-brownfield": {
+          "heading": "12.2 Brownfield WoT Systems",
+          "contact": "indexed; not independently audited"
+        },
+        "changes": {
+          "heading": "A. Recent Specification Changes",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-11-july-2023-proposed-recommendation": {
+          "heading": "A.1 Changes from 11 July 2023 Proposed Recommendation",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-19-january-2023-candidate-recommendation": {
+          "heading": "A.2 Changes from 19 January 2023 Candidate Recommendation",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-the-wd-published-september-7-2022": {
+          "heading": "A.3 Changes from the WD published September 7, 2022",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-in-wd-published-september-7-2022-from-the-fpwd-version": {
+          "heading": "A.4 Changes in WD published September 7, 2022 from the FPWD version",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-in-the-fpwd-from-the-1-0-version-of-wot-architecture": {
+          "heading": "A.5 Changes in the FPWD from the 1.0 version of [wot-architecture]",
+          "contact": "indexed; not independently audited"
+        },
+        "acknowledgements": {
+          "heading": "B. Acknowledgments",
+          "contact": "indexed; not independently audited"
+        },
+        "references": {
+          "heading": "C. References",
+          "contact": "indexed; not independently audited"
+        },
+        "normative-references": {
+          "heading": "C.1 Normative references",
+          "contact": "indexed; not independently audited"
+        },
+        "informative-references": {
+          "heading": "C.2 Informative references",
+          "contact": "indexed; not independently audited"
+        }
+      },
+      "example_count": 0,
+      "figure_ids": [
+        "smart-home",
+        "smart-factory",
+        "connected-car",
+        "smart-home-device",
+        "smart-home-t2t",
+        "smart-home-multi",
+        "smart-home-gateway",
+        "edge-device",
+        "digital-twin",
+        "digital-twin-multiple-devices",
+        "smart-home-cloud1",
+        "smart-home-cloud2",
+        "cross-domain",
+        "system-integration",
+        "consumer-thing",
+        "thing-model",
+        "linked-things",
+        "intermediary",
+        "architecture-abstract",
+        "arch-webthing",
+        "fig-simple-system-lifecycle",
+        "lifecycle-2",
+        "fig-device-lifecycle",
+        "servient-thing-exposedThing",
+        "servient-consumer-consumedThing",
+        "servient-intermediary",
+        "high-level-application-device",
+        "high-level-application-intermediary-device-new",
+        "arch-building-blocks",
+        "WoT-Profiles",
+        "fig-binding-templates",
+        "architecture-implementation",
+        "architecture-implementation-native",
+        "architecture-implementation-existing",
+        "simple-conf-application-device",
+        "simple-conf-application-intermediary-device",
+        "deployment-cloud-device",
+        "deployment-cloud-directory",
+        "deployment-service-sync-directory",
+        "deployment-service-sync-intermediary"
+      ]
+    },
+    "DS": {
+      "url": "https://www.w3.org/TR/2023/REC-wot-discovery-20231205/",
+      "sha256": "ce7a7aca5c931cac6d346c38f84a7eb5c5a371a53bcfd93e18ec554056a22937",
+      "sections": {
+        "abstract": {
+          "heading": "Abstract",
+          "contact": "indexed; not independently audited"
+        },
+        "sotd": {
+          "heading": "Status of This Document",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction": {
+          "heading": "1. Introduction",
+          "contact": "indexed; not independently audited"
+        },
+        "conformance": {
+          "heading": "2. Conformance",
+          "contact": "indexed; not independently audited"
+        },
+        "terminology": {
+          "heading": "3. Terminology",
+          "contact": "indexed; not independently audited"
+        },
+        "architecture": {
+          "heading": "4. Architecture",
+          "contact": "indexed; not independently audited"
+        },
+        "discoverer-process": {
+          "heading": "5. Discoverer Process",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-mech": {
+          "heading": "6. Introduction Mechanisms",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-direct": {
+          "heading": "6.1 Direct",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-well-known": {
+          "heading": "6.2 Well-Known URIs",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-dns-sd-sec": {
+          "heading": "6.3 DNS-Based Service Discovery",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-core-rd-sec": {
+          "heading": "6.4 CoRE Link Format and CoRE Resource Directory",
+          "contact": "indexed; not independently audited"
+        },
+        "introduction-did-sec": {
+          "heading": "6.5 DID Documents",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-mech": {
+          "heading": "7. Exploration Mechanisms",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-overview": {
+          "heading": "7.1 Overview",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-ontology": {
+          "heading": "7.1.1 Ontology",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-td-type-thingdirectory": {
+          "heading": "7.1.1.1 ThingDirectory",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-td-type-thinglink": {
+          "heading": "7.1.1.2 ThingLink",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "exploration-secboot": {
+          "heading": "7.1.2 Security Bootstrapping",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-server": {
+          "heading": "7.2 Thing Description Server",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory": {
+          "heading": "7.3 Thing Description Directory",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-info": {
+          "heading": "7.3.1 Information Model",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-registration-info": {
+          "heading": "7.3.1.1 Registration Information",
+          "contact": "selected definitions and tables",
+          "members": [
+            "created",
+            "modified",
+            "expires",
+            "ttl",
+            "retrieved"
+          ]
+        },
+        "exploration-directory-registration-expiry": {
+          "heading": "7.3.1.2 Registration Expiry",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "exploration-directory-anonymous-td": {
+          "heading": "7.3.1.3 Anonymous TD Identifiers",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "exploration-directory-api": {
+          "heading": "7.3.2 Directory Service API",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-things": {
+          "heading": "7.3.2.1 Things API",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-things-creation": {
+          "heading": "7.3.2.1.1 Creation",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-things-retrieval": {
+          "heading": "7.3.2.1.2 Retrieval",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-things-update": {
+          "heading": "7.3.2.1.3 Update",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-things-deletion": {
+          "heading": "7.3.2.1.4 Deletion",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-things-listing": {
+          "heading": "7.3.2.1.5 Listing",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-things-validation": {
+          "heading": "7.3.2.1.6 Validation",
+          "contact": "indexed; not independently audited"
+        },
+        "exploration-directory-api-notification": {
+          "heading": "7.3.2.2 Events API",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "exploration-directory-api-search": {
+          "heading": "7.3.2.3 Search API",
+          "contact": "selected definitions and tables",
+          "members": []
+        },
+        "jsonpath-semantic": {
+          "heading": "7.3.2.3.1 Syntactic search: JSONPath",
+          "contact": "indexed; not independently audited"
+        },
+        "xpath-semantic": {
+          "heading": "7.3.2.3.2 Syntactic search: XPath",
+          "contact": "indexed; not independently audited"
+        },
+        "search-semantic": {
+          "heading": "7.3.2.3.3 Semantic search: SPARQL",
+          "contact": "indexed; not independently audited"
+        },
+        "directory-api-spec": {
+          "heading": "7.3.2.4 API Specification (Thing Model)",
+          "contact": "indexed; not independently audited"
+        },
+        "security-considerations": {
+          "heading": "8. Security Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "security-consideration-dos": {
+          "heading": "8.1 Denial of Service",
+          "contact": "indexed; not independently audited"
+        },
+        "security-consideration-amp-ddos": {
+          "heading": "8.2 Amplification and Distributed Denial of Service",
+          "contact": "indexed; not independently audited"
+        },
+        "security-consideration-lan-self-discovery": {
+          "heading": "8.3 Self-Discovery on LANs",
+          "contact": "indexed; not independently audited"
+        },
+        "privacy-considerations": {
+          "heading": "9. Privacy Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "privacy-consideration-location-tracking": {
+          "heading": "9.1 Location Tracking and Profiling",
+          "contact": "indexed; not independently audited"
+        },
+        "privacy-consideration-query-tracking": {
+          "heading": "9.2 Query Tracking",
+          "contact": "indexed; not independently audited"
+        },
+        "performance-considerations": {
+          "heading": "10. Performance Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "perf-incremental-transfer": {
+          "heading": "10.1 Incremental Transfer",
+          "contact": "indexed; not independently audited"
+        },
+        "iana-considerations": {
+          "heading": "11. IANA Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "well-known-uri-suffix": {
+          "heading": "11.1 Well-Known URI Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "service-name": {
+          "heading": "11.2 Service Name Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "core-resource-type": {
+          "heading": "11.3 CoRE Resource Types Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "other-name-considerations": {
+          "heading": "12. Other Name Registration Considerations",
+          "contact": "indexed; not independently audited"
+        },
+        "did-service-name": {
+          "heading": "12.1 DID Service Name Registration",
+          "contact": "indexed; not independently audited"
+        },
+        "tdd-extensions-jsonschema": {
+          "heading": "A. JSON Schema for WoT Discovery TD-extensions",
+          "contact": "indexed; not independently audited"
+        },
+        "changes": {
+          "heading": "B. Recent Specification Changes",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-11-july-2023-proposed-recommendation": {
+          "heading": "B.1 Changes from 11 July 2023 Proposed Recommendation",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-19-january-2023-candidate-recommendation": {
+          "heading": "B.2 Changes from 19 January 2023 Candidate Recommendation",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-10-august-2022-working-draft": {
+          "heading": "B.3 Changes from 10 August 2022 Working Draft",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-2-june-2021-working-draft": {
+          "heading": "B.4 Changes from 2 June 2021 Working Draft",
+          "contact": "indexed; not independently audited"
+        },
+        "changes-from-24-november-2020-first-public-working-draft": {
+          "heading": "B.5 Changes from 24 November 2020 First Public Working Draft",
+          "contact": "indexed; not independently audited"
+        },
+        "acknowledgements": {
+          "heading": "C. Acknowledgments",
+          "contact": "indexed; not independently audited"
+        },
+        "references": {
+          "heading": "D. References",
+          "contact": "indexed; not independently audited"
+        },
+        "normative-references": {
+          "heading": "D.1 Normative references",
+          "contact": "indexed; not independently audited"
+        },
+        "informative-references": {
+          "heading": "D.2 Informative references",
+          "contact": "indexed; not independently audited"
+        }
+      },
+      "example_count": 13,
+      "figure_ids": [
+        "discovery-overview",
+        "sequence-dnssd-thing",
+        "sequence-dnssd-directory",
+        "exploration-class-diagram",
+        "discovery-class-diagram-ontology"
+      ]
+    }
+  },
+  "schemata": {
+    "td": {
+      "url": "https://www.w3.org/2022/wot/td/v1.1",
+      "sha256": "9298ddacce1d023e584dcd4b0e639baa228fb9fa8743dcad6d9c9c29db6ca069",
+      "keys": [
+        "td",
+        "jsonschema",
+        "wotsec",
+        "hctl",
+        "rdfs",
+        "xsd",
+        "dct",
+        "htv",
+        "tm",
+        "@vocab",
+        "license",
+        "id",
+        "properties",
+        "actions",
+        "events",
+        "security",
+        "schema",
+        "securityDefinitions",
+        "hasInstanceConfiguration",
+        "schemaDefinitions",
+        "Thing",
+        "EventAffordance",
+        "name",
+        "profile",
+        "created",
+        "modified",
+        "observable",
+        "VersionInfo",
+        "PropertyAffordance",
+        "forms",
+        "version",
+        "links",
+        "uriVariables",
+        "safe",
+        "idempotent",
+        "synchronous",
+        "instance",
+        "model",
+        "InteractionAffordance",
+        "ActionAffordance",
+        "input",
+        "output",
+        "subscription",
+        "data",
+        "dataResponse",
+        "cancellation",
+        "description",
+        "descriptions",
+        "title",
+        "titles",
+        "support",
+        "base",
+        "@version"
+      ],
+      "root_members": []
+    },
+    "td-schema": {
+      "url": "https://www.w3.org/2022/wot/td-schema/v1.1",
+      "sha256": "fd44f319f94c6f16f66978860ef2f9f4e0e9fd7fc5835a2f3840b9cf2002e0f1",
+      "keys": [
+        "anyUri",
+        "description",
+        "descriptions",
+        "title",
+        "titles",
+        "security",
+        "scopes",
+        "subprotocol",
+        "thing-context-td-uri-v1",
+        "thing-context-td-uri-v1.1",
+        "thing-context-td-uri-temp",
+        "thing-context",
+        "bcp47_string",
+        "type_declaration",
+        "dataSchema-type",
+        "dataSchema",
+        "additionalResponsesDefinition",
+        "multipleOfDefinition",
+        "expectedResponse",
+        "form_element_base",
+        "form_element_property",
+        "form_element_action",
+        "form_element_event",
+        "form_element_root",
+        "form",
+        "property_element",
+        "action_element",
+        "event_element",
+        "base_link_element",
+        "link_element",
+        "icon_link_element",
+        "additionalSecurityScheme",
+        "noSecurityScheme",
+        "autoSecurityScheme",
+        "comboSecurityScheme",
+        "basicSecurityScheme",
+        "digestSecurityScheme",
+        "apiKeySecurityScheme",
+        "bearerSecurityScheme",
+        "pskSecurityScheme",
+        "oAuth2SecurityScheme",
+        "securityScheme"
+      ],
+      "root_members": [
+        "id",
+        "title",
+        "titles",
+        "properties",
+        "actions",
+        "events",
+        "description",
+        "descriptions",
+        "version",
+        "links",
+        "forms",
+        "base",
+        "securityDefinitions",
+        "schemaDefinitions",
+        "support",
+        "created",
+        "modified",
+        "profile",
+        "security",
+        "uriVariables",
+        "@type",
+        "@context"
+      ]
+    },
+    "tm-schema": {
+      "url": "https://www.w3.org/2022/wot/tm-schema/v1.1",
+      "sha256": "6912708a0fa9966b51ae75f91951cf48a202d873023b8cba1b53ba4af51e92d3",
+      "keys": [
+        "anyUri",
+        "description",
+        "descriptions",
+        "title",
+        "titles",
+        "security",
+        "scopes",
+        "subprotocol",
+        "thing-context-td-uri-v1",
+        "thing-context-td-uri-v1.1",
+        "thing-context-td-uri-temp",
+        "thing-context",
+        "bcp47_string",
+        "type_declaration",
+        "dataSchema-type",
+        "dataSchema",
+        "additionalResponsesDefinition",
+        "multipleOfDefinition",
+        "expectedResponse",
+        "form_element_base",
+        "form_element_property",
+        "form_element_action",
+        "form_element_event",
+        "form_element_root",
+        "form",
+        "property_element",
+        "action_element",
+        "event_element",
+        "base_link_element",
+        "link_element",
+        "icon_link_element",
+        "additionalSecurityScheme",
+        "noSecurityScheme",
+        "autoSecurityScheme",
+        "comboSecurityScheme",
+        "basicSecurityScheme",
+        "digestSecurityScheme",
+        "apiKeySecurityScheme",
+        "bearerSecurityScheme",
+        "pskSecurityScheme",
+        "oAuth2SecurityScheme",
+        "securityScheme",
+        "tm_type_declaration",
+        "placeholder-pattern",
+        "tm_optional",
+        "tm_ref"
+      ],
+      "root_members": [
+        "id",
+        "title",
+        "titles",
+        "properties",
+        "actions",
+        "events",
+        "description",
+        "descriptions",
+        "version",
+        "links",
+        "forms",
+        "base",
+        "securityDefinitions",
+        "schemaDefinitions",
+        "support",
+        "created",
+        "modified",
+        "profile",
+        "security",
+        "uriVariables",
+        "@type",
+        "@context",
+        "tm:optional"
+      ]
+    }
+  },
+  "row_dispositions": {},
+  "holds": {
+    "WOT-Q1": "All section IDs inventoried. Selected definitions, member tables, source examples and companion artifacts compared. Figures, individual assertions, errata effects and every schema constraint were not independently interpreted. No comprehensive negative claim.",
+    "WOT-Q2": "Profiles, Scripting API and Binding Templates are architectural building blocks. Profile obligations, runtime APIs, protocol-specific extensions and implementation reports require separate evidence before credit.",
+    "WOT-Q3": "Installation behavior, actual permission, connectivity, calibration and execution need case or runtime evidence."
+  }
+}
