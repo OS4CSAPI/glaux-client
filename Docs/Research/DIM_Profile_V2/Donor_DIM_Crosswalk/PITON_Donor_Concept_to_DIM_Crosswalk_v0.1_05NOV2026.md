@@ -4,7 +4,7 @@
 
 ## Active scope and evidence
 
-Profile Rewrite 63. The owner directed reuse of the earlier ranking and preparation of the next donor plan. The [27 ranked choices](Donor_Research_Priority_Order.md) preserve the Profile Rewrite 61 recommendation order. Ranks 1 and 2 are accepted at bounded-partial depth. Rank 3 is the [OSUS-R source-first donor review](PLAN_OSUS_R_Source_First_Donor_Review.md). Its registered implementation source is artifact 34, pinned at d09088fbe56d4b64f0544d72e98c3cb70fa941f6, with companions 27 and 59. Planning confirmed the two source entry points. The donor-wide assessment and workbook integration await execution.
+Profile Rewrite 63. The owner directed reuse of the earlier ranking and preparation of the next donor plan. The [27 ranked choices](Donor_Research_Priority_Order.md) preserve the Profile Rewrite 61 recommendation order. Ranks 1 and 2 are accepted at bounded-partial depth. Rank 3 is the [OSUS-R source-first donor review](PLAN_OSUS_R_Source_First_Donor_Review.md). Its registered implementation source is artifact 34, pinned at d09088fbe56d4b64f0544d72e98c3cb70fa941f6, with companions 27 and 59. Planning confirmed the two source entry points. The owner authorized execution in Profile Rewrite 63. The [source inventory and native findings](OSUS_R_Source_Coverage.json) freeze the edition, groups, companion contact and holds before workbook integration.
 
 ## Master and workbook
 
@@ -32,4 +32,4 @@ The pre-correction publication was 54fbc09. [Pre-correction master workbook](htt
 
 ## Next action and stop
 
-One Proceed authorizes the bounded OSUS-R review through verified workbook delivery under the linked plan. Start at the pinned source inventory. Stop for owner disposition of the findings. The Step 24 adoption decision remains separately gated.
+Execution is authorized. Resume the OSUS-R source-to-row comparison and deliver the verified workbook under the existing plan. The current published workbook is the 493-row baseline until integration is published. Stop for owner disposition after delivery.
