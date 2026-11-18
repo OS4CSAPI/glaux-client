@@ -2197,10 +2197,62 @@ def apply_joint_closeout(authored_path):
     verify_joint_closeout()
 
 
+def verify_saref_core():
+    master = load(MASTER)
+    ledger = load('SAREF_Core_Source_Coverage.json')
+    grid = master['review_grid']
+    dispositions = ledger['row_dispositions']
+    need(len(grid) == 516 and all(len(row) == 18 for row in grid), 'SAREF grid dimensions')
+    need(len(dispositions) == len(master['rows']) == 486, 'SAREF information-row count')
+    need(set(dispositions) == {row['row_id'] for row in master['rows']}, 'SAREF row ID coverage')
+    for name in JOINT_CSVS:
+        with (D / name).open(newline='', encoding='utf-8') as source:
+            need(list(csv.reader(source)) == grid, 'SAREF CSV parity ' + name)
+    for name in JOINT_READABLES:
+        need(joint_readable_grid((D / name).read_text()) == grid, 'SAREF readable parity ' + name)
+    data = (D / BOOK).read_bytes()
+    need(digest(data) == master['currentWorkbookSha256'] == master['workbookSnapshot']['sha256'], 'SAREF workbook hash')
+    baseline = '44e566e456bb77236b8b04ee7743c71ab8537d3b'
+    previous = subprocess.check_output(['git', 'show', baseline + ':' + str((D / BOOK).relative_to(ROOT))], cwd=ROOT)
+    with zipfile.ZipFile(io.BytesIO(data)) as saved, zipfile.ZipFile(io.BytesIO(previous)) as prior:
+        paths = pub.old.sheetpaths(saved)
+        part = paths['Master Crosswalk']
+        need(paths == pub.old.sheetpaths(prior) and len(paths) == 26, 'SAREF sheet identities')
+        need(saved.namelist() == prior.namelist(), 'SAREF package inventory')
+        need(all(saved.read(n) == prior.read(n) for n in saved.namelist() if n != part), 'SAREF unaffected parts')
+        sheet = ET.fromstring(saved.read(part))
+        cells = {node.get('r'): node for node in sheet.iter(pub.q('c'))}
+        strings = joint_strings(saved)
+        styles = ET.fromstring(saved.read('xl/styles.xml'))
+        for i, row in enumerate(grid, 1):
+            for j, value in enumerate(row, 1):
+                ref = letter(j) + str(i)
+                actual = joint_value(cells[ref], strings) if ref in cells else ''
+                need(actual == value, 'SAREF worksheet value ' + ref)
+        original = ET.fromstring(prior.read(part))
+        for old in original.iter(pub.q('c')):
+            addr = old.get('r')
+            col = addr[0]
+            ref = (chr(ord(col) + 1) if col >= 'L' else col) + addr[1:]
+            need(old.get('s') == cells[ref].get('s') and joint_value(old, strings) == joint_value(cells[ref], strings), 'SAREF prior cell ' + addr)
+        for row in master['rows']:
+            idx = row['display_row']
+            disp = dispositions[row['row_id']]
+            need(row['display'] == grid[idx-1] and row['display'][11].strip(), 'SAREF explicit populated row ' + str(idx))
+            cell = cells['L' + str(idx)]
+            target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unfilled': '#FFFFFF'}[disp['classification']]
+            need(joint_fill(cell, styles) == target, 'SAREF fill ' + str(idx))
+        pane = sheet.find('.//' + pub.q('pane'))
+        need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'SAREF row-only freeze')
+    print('PASS SAREF: 486 explicit positions, all 9,288 grid values, classifications, source row IDs, both sets of mirrors, original cells/styles, and 26-sheet package.')
+
+
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current=='SAREF_CORE_411_SAVED_VERIFIED':
+        verify_saref_core();sys.exit(0)
     if current==JOINT_CP:
         verify_joint_closeout();sys.exit(0)
     if current=='PADIM_CORRECTIVE_2_SAVED_VERIFIED':

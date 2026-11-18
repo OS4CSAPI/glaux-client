@@ -1,5 +1,27 @@
 # Donor contributions and corrective assessments — 17 November 2026
 
+## SAREF Core v4.1.1 — equipment identity, capability and execution
+
+The Smart Applications REFerence ontology (SAREF) contributed eight candidate information needs. Seven are common candidates and one is specialized. Of the 478 existing rows, 37 received common-candidate credit. The other 441 contain explicit, qualified outcomes, including related evidence too weak to credit and existing case holds. The new column has 486 populated information cells. The full dispositions and each addition’s nearest alternatives are in the [source ledger](SAREF_Core_Source_Coverage.json).
+
+| Candidate | What a user could learn |
+|---|---|
+| Individual equipment and device kind | Whether a function is attributed to this unit through a catalog kind. The inference alone establishes neither installation of a network endpoint nor a successful invocation. |
+| Equipment design purpose | What the equipment was designed to help its user accomplish, independently of its current task queue. |
+| Commodity role | What a device consumes, produces, or stores and which role applies. A current or voltage reading answers a different question. |
+| Composite quality or value | Which qualities or values make up an aggregate without implying a physical assembly. |
+| Feature-specific condition | Which particular feature a condition describes, what general state kind applies, and how its value is expressed. |
+| Device-specific command | Which individual device command realizes a generic command kind. |
+| Network exposure | Which function a service exposes and which command a network operation represents. |
+| Conditional commodity price | The price associated with using a commodity, its payment direction and the conditions or period under which it applies. Specialized candidate. |
+
+The Campbell case already distinguishes outdoor air temperature from logger panel temperature and assigns sensing to the ClimaVue and logging to the CR1000X. SAREF provides a way to keep the quality attached to the correct feature and the observation attached to its performer. A Details view could preserve those roles even if both fields were presented as temperature. That case supplies no evidence that an operation was invoked or that a commodity price applies.
+
+The review also retained earlier rows for manufacturer, model, observing role, control interfaces, units and timing. For example, a result timestamp belongs to procedure completion, while phenomenon time describes the phenomenon. The observation row can preserve both. A serial number in the publisher’s migration example uses an extension predicate, so Core received no direct serial-number credit.
+
+**Coverage and decision.** The review inventories all 99 named Core class/property declarations and their attached anonymous rules and accounts for 13 examples. Formal PDF coverage, logical proofs and dependency coverage have documented limits. This is a bounded partial assessment awaiting owner disposition. Candidate rows are evidence for future model decisions. [ETSI Core reference](https://saref.etsi.org/core/v4.1.1/) · [ETSI TS 103 264 V4.1.1](https://www.etsi.org/deliver/etsi_ts/103200_103299/103264/04.01.01_60/ts_103264v040101p.pdf)
+
+
 ## Devices and PA-DIM joint corrective closeout — 17 November 2026
 
 ### Result and scope
