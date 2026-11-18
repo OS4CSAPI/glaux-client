@@ -2197,37 +2197,55 @@ def apply_joint_closeout(authored_path):
     verify_joint_closeout()
 
 
-def verify_saref_core(wot=False, corrected=False, osusr=False):
+def verify_saref_core(wot=False, corrected=False, osusr=False, redfish=False):
     master = load(MASTER)
     ledger_name = 'WoT_1_1_Source_Coverage.json' if wot else 'SAREF_Core_Source_Coverage.json'
-    ledger = load('OSUS_R_Source_Coverage.json' if osusr else ledger_name)
+    if osusr:
+        ledger_name = 'OSUS_R_Source_Coverage.json'
+    if redfish:
+        ledger_name = 'Redfish_Source_Coverage.json'
+    ledger = load(ledger_name)
     column = 13 if osusr else (12 if wot else 11)
     width = 20 if osusr else (19 if wot else 18)
     grid = master['review_grid']
     dispositions = ledger['row_dispositions']
     row_count = 493 if corrected else (491 if wot else 486)
     grid_count = 524 if corrected else (522 if wot else 516)
-    if osusr:
+    if osusr or redfish:
         row_count, grid_count = 521, 553
+        prior_count, addition_count = 493, 28
+        group_key = 'coverage_by_group'
+        if redfish:
+            row_count, grid_count = 568, 601
+            prior_count, addition_count = 521, 47
+            column, width = 14, 21
+            group_key = 'native_group_results'
+            need(len(ledger['families']) == 273, 'Redfish family inventory')
+            for decision in dispositions.values():
+                record = ledger['evidence'][decision['locator']]
+                need(len(record['pointers']) == len(record['release_by_pointer']) > 0, 'Redfish versioned pointers')
+                for pointer, release in zip(record['pointers'], record['release_by_pointer']):
+                    expected = '2025.3 (registered companion 92)' if pointer.startswith('BatteryMetrics.v1_1_0.json#') else '2025.2'
+                    need(release == expected and '#/definitions/' in pointer, 'Redfish edition or source pointer')
         counts = ledger['coverage_counts']
         candidates = {record['row_id']: record for record in ledger['new_rows']}
-        prior_ids = {row['row_id'] for row in master['rows'][:493]}
-        need(len(prior_ids) == counts['baseline_rows'] == 493, 'OSUS-R prior rows')
-        need(len(candidates) == counts['new_rows'] == 28, 'OSUS-R new candidates')
-        need(set(candidates) == {row['row_id'] for row in master['rows'][493:]}, 'OSUS-R candidate identity')
-        for row in master['rows'][493:]:
+        prior_ids = {row['row_id'] for row in master['rows'][:prior_count]}
+        need(len(prior_ids) == counts['baseline_rows'] == prior_count, 'Donor prior rows')
+        need(len(candidates) == counts['new_rows'] == addition_count, 'Donor new candidates')
+        need(set(candidates) == {row['row_id'] for row in master['rows'][prior_count:]}, 'Donor candidate identity')
+        for row in master['rows'][prior_count:]:
             record = candidates[row['row_id']]
-            need(record['closest_existing_id'] in prior_ids and bool(record['loss'].strip()), 'OSUS-R distinction from existing rows')
-            need(all(str(cell).strip() for cell in row['display']), 'OSUS-R explicit prior positions on additions')
-            need(row['dim_adoption'] == 'OWNER_DECISION_PENDING', 'OSUS-R adoption requires an owner decision')
-        groups = [rid for group in ledger['coverage_by_group'].values() for rid in group['row_ids']]
-        need(set(groups) == set(dispositions) and len(groups) == row_count, 'OSUS-R native groups account for rows')
+            need(record['closest_existing_id'] in prior_ids and bool(record['loss'].strip()), 'Donor distinction from existing rows')
+            need(all(str(cell).strip() for cell in row['display']), 'Donor explicit prior positions on additions')
+            need(row['dim_adoption'] == 'OWNER_DECISION_PENDING', 'Donor adoption requires an owner decision')
+        groups = [rid for group in ledger[group_key].values() for rid in group['row_ids']]
+        need(set(groups) == set(dispositions) and len(groups) == row_count, 'Donor native groups account for rows')
         for category, totals in [('classification', 'classifications'), ('relation', 'relations')]:
             actual = {}
             for decision in dispositions.values():
                 value = decision[category]
                 actual[value] = actual.get(value, 0) + 1
-            need(actual == counts[totals], 'OSUS-R ledger totals ' + totals)
+            need(actual == counts[totals], 'Donor ledger totals ' + totals)
     need(len(grid) == grid_count and all(len(row) == width for row in grid), 'Donor grid dimensions')
     need(len(dispositions) == len(master['rows']) == row_count, 'SAREF information-row count')
     need(set(dispositions) == {row['row_id'] for row in master['rows']}, 'SAREF row ID coverage')
@@ -2241,6 +2259,8 @@ def verify_saref_core(wot=False, corrected=False, osusr=False):
     baseline = '751f4bccdec751fe8db90fdcf701c1409f755027' if wot else '44e566e456bb77236b8b04ee7743c71ab8537d3b'
     if osusr:
         baseline = '4b9c7382a47f8f7446d89a27b535e8ddb16b4b45'
+    if redfish:
+        baseline = '13061377884b733a482b5f63cefbd4ecab11c6eb'
     ledgers = {column: ledger}
     corrected_refs = set()
     if corrected:
@@ -2285,12 +2305,15 @@ def verify_saref_core(wot=False, corrected=False, osusr=False):
                 value = row['display'][col]
                 ref = letter(col + 1) + str(idx)
                 need(bool(value.strip()), 'Empty donor position ' + ref)
-                if corrected or osusr:
+                if corrected or osusr or redfish:
                     need(disposition['reason'] in value, 'Source ledger and cell meaning ' + ref)
                 target = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unresolved': '#E9DEFA', 'unfilled': '#FFFFFF'}[disposition['classification']]
                 need(joint_fill(cells[ref], styles) == target, 'Donor classification fill ' + ref)
         pane = sheet.find('.//' + pub.q('pane'))
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'SAREF row-only freeze')
+    if redfish:
+        print('PASS Redfish: all 568 decisions and 47 additions, two schema releases, saved values and fills, preserved workbook and both mirror pairs.')
+        return
     if osusr:
         print('PASS OSUS-R: 521 explicit decisions, including 28 candidates, all workbook values, fills, earlier cells, both pairs of mirrors and 26-sheet package.')
         return
@@ -2304,6 +2327,8 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current=='REDFISH_SAVED_VERIFIED':
+        verify_saref_core(redfish=True);sys.exit(0)
     if current=='OSUSR_SAVED_VERIFIED':
         verify_saref_core(osusr=True);sys.exit(0)
     if current=='SAREF_WOT_63_SAVED_VERIFIED':

@@ -6,7 +6,7 @@ Start with [the recovery/execution protocol](../AGENTS.md) and [the current PITO
 
 - [Ranked donor research order](Donor_Research_Priority_Order.md) and [OSUS-R review plan](PLAN_OSUS_R_Source_First_Donor_Review.md), [source coverage](OSUS_R_Source_Coverage.json) and [findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#osus-r-asset-interfaces-and-capabilities)
 
-- [Redfish review plan and checked sources](PLAN_Redfish_Source_First_Donor_Review.md)
+- [Redfish review plan](PLAN_Redfish_Source_First_Donor_Review.md), [source coverage](Redfish_Source_Coverage.json) and [findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#redfish-equipment-management-and-telemetry)
 - [Same editable master Excel](Master_Donor_Concept_to_DIM_Crosswalk.xlsx)
 - [Canonical structured master](Master_Donor_Concept_to_DIM_Crosswalk.json)
 - [Readable comparison](Master_Donor_Concept_to_DIM_Crosswalk.md) and [CSV](Master_Donor_Concept_to_DIM_Crosswalk.csv)
