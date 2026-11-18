@@ -4,7 +4,7 @@
 
 ## Active scope and evidence
 
-Profile Rewrite 63. The owner authorized the rank 3 OSUS-R review through delivery. The [27 ranked choices](Donor_Research_Priority_Order.md) preserve the earlier research order. The [review plan](PLAN_OSUS_R_Source_First_Donor_Review.md) and [source ledger](OSUS_R_Source_Coverage.json) identify artifact 34 at `d09088fbe56d4b64f0544d72e98c3cb70fa941f6`, its 13 native groups, 99 inventoried files, original passage limits, and companion artifacts 27 and 59. Use ledger keys `coverage_counts`, `new_rows`, `qualified_comparisons`, `holds` and individual `row_dispositions` as needed. [Plain-English findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#osus-r-asset-interfaces-and-capabilities).
+Profile Rewrite 63. The owner replied “accept and proceed” after delivery of rank 3 OSUS-R at [207a614f](https://github.com/OS4CSAPI/glaux-client/commit/207a614ff8ac49fce955cda5ad99c3d6b0641055). The [OSUS-R ledger](OSUS_R_Source_Coverage.json) records the decision under `owner_decision`. Rank 4 is Redfish in the existing [27-choice research order](Donor_Research_Priority_Order.md). The [Redfish plan and checked originals](PLAN_Redfish_Source_First_Donor_Review.md) identify the guide, seven 2025.2 schema files and a separately verified 2025.3 battery-metrics companion. The first unfinished research item is the native family inventory.
 
 ## Master and workbook
 
@@ -16,20 +16,20 @@ Profile Rewrite 63. The owner authorized the rank 3 OSUS-R review through delive
 
 ## Holds and owner decisions
 
-SAREF Core acceptance at fe598e0 with SRF-Q1–Q3 and corrected Web of Things acceptance at 32240618 with WOT-Q1–Q3 stand. For OSUS-R, Q1 records selective schema and implementation depth, Q2 records companion and other plug-in limits, and Q3 records missing installation and runtime evidence. OSUS-R owner acceptance is pending. The 28 candidates await separate Step 24 adoption. Earlier donor and case holds, manual versions M00/M01, Steps 35–39 and named-version Step 40 retain their standing.
+SAREF Core acceptance at fe598e0 with SRF-Q1–Q3 and corrected Web of Things acceptance at 32240618 with WOT-Q1–Q3 stand. For OSUS-R, Q1 records selective schema and implementation depth, Q2 records companion and other plug-in limits, and Q3 records missing installation and runtime evidence. On 18 November 2026 the owner accepted the OSUS-R assessment as bounded partial with all three holds retained. The 28 candidates await separate Step 24 adoption. Earlier donor and case holds, manual versions M00/M01, Steps 35–39 and named-version Step 40 retain their standing.
 
 ## Interrupted work
 
-The OSUS-R source inventory was published at [7efc70f2](https://github.com/OS4CSAPI/glaux-client/commit/7efc70f2174475b940fa73a41fce4b24740fab83). The reviewed workbook and both pairs of mirrors are included together in this delivery.
+The completed OSUS-R delivery was read back from GitHub. Redfish preparation has reached the recorded source and edition checks. The Redfish comparison grid and workbook integration are pending execution.
 
 ## History
 
-[Exact prior checkpoint before workbook integration](https://github.com/OS4CSAPI/glaux-client/blob/7efc70f2174475b940fa73a41fce4b24740fab83/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). [Preserved 493-row workbook before OSUS-R](https://github.com/OS4CSAPI/glaux-client/blob/4b9c7382a47f8f7446d89a27b535e8ddb16b4b45/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). SAREF and Web of Things corrections were published at 6f8d318 and the subsequent owner decision at 32240618.
+[Exact checkpoint at the verified OSUS-R delivery](https://github.com/OS4CSAPI/glaux-client/blob/207a614ff8ac49fce955cda5ad99c3d6b0641055/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). [Earlier 493-row workbook](https://github.com/OS4CSAPI/glaux-client/blob/4b9c7382a47f8f7446d89a27b535e8ddb16b4b45/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx). SAREF and Web of Things corrections were published at 6f8d318 and the subsequent owner decision at 32240618.
 
 ## Verification and publication
 
-Compare the branch copy of the workbook with the SHA-256 above and check the branch workflow for this delivery. The workbook's SHA-256 identifies its content independently of the commit that contains this checkpoint.
+The direct GitHub download at [207a614f](https://github.com/OS4CSAPI/glaux-client/commit/207a614ff8ac49fce955cda5ad99c3d6b0641055) matched the workbook SHA-256 above. The [workbook check](https://github.com/OS4CSAPI/glaux-client/actions/runs/44319812840) and [crosswalk check](https://github.com/OS4CSAPI/glaux-client/actions/runs/44319812886) succeeded. The owner decision and Redfish planning use that same workbook.
 
 ## Next action and stop
 
-Stop for owner disposition on the bounded-partial OSUS-R research with Q1–Q3 retained. Redfish is rank 4 and requires its own authorization. The final donor contribution order and Step 24 adoption remain separate decisions.
+Proceed with the [Redfish source-first review](PLAN_Redfish_Source_First_Donor_Review.md) through verified workbook delivery under one authorization, then stop for the owner’s Redfish disposition. The final donor contribution order and Step 24 adoption await separate decisions.
