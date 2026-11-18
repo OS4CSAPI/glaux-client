@@ -1204,6 +1204,6 @@ Web of Things gives a client the description of an interaction and information i
 | Case evidence held | 9 | 9 |
 | Total information rows | 493 | 493 |
 
-The plans preserved column order on insertion. For final ordering the owner places donors with the largest foundational contributions to the right and least contributing donors to the left. Document the reusable roles or relationships each donor supplies as well as the fields it defines. Source coverage remains bounded. SAREF acceptance stands, Web of Things awaits owner disposition, and adoption into the Domain Information Model remains a separate decision.
+The plans preserved column order on insertion. For final ordering the owner places donors with the largest foundational contributions to the right and least contributing donors to the left. Document the reusable roles or relationships each donor supplies as well as the fields it defines. Source coverage remains bounded. On 18 November 2026 the owner accepted the corrected Web of Things 1.1 assessment as bounded partial with WOT-Q1 through WOT-Q3 retained. SAREF Core’s earlier acceptance stands. The seven Web of Things-origin rows remain candidates for a later Domain Information Model decision.
 
 [Current SAREF decisions](SAREF_Core_Source_Coverage.json) · [Current Web of Things decisions](WoT_1_1_Source_Coverage.json) · [Pre-correction workbook](https://github.com/OS4CSAPI/glaux-client/blob/54fbc09aef66562c7558e32d4411fbf026f7c17f/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx)
