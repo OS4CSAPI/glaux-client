@@ -4,7 +4,7 @@
 
 ## Active scope and evidence
 
-Profile Rewrite 63. The owner replied “accept and proceed” after delivery of rank 3 OSUS-R at [207a614f](https://github.com/OS4CSAPI/glaux-client/commit/207a614ff8ac49fce955cda5ad99c3d6b0641055). The [OSUS-R ledger](OSUS_R_Source_Coverage.json) records the decision under `owner_decision`. Rank 4 is Redfish in the existing [27-choice research order](Donor_Research_Priority_Order.md). The [Redfish plan and checked originals](PLAN_Redfish_Source_First_Donor_Review.md) identify the guide, seven 2025.2 schema files and a separately verified 2025.3 battery-metrics companion. The first unfinished research item is the native family inventory.
+Profile Rewrite 63. The owner replied “accept and proceed” after delivery of rank 3 OSUS-R at [207a614f](https://github.com/OS4CSAPI/glaux-client/commit/207a614ff8ac49fce955cda5ad99c3d6b0641055). The [OSUS-R ledger](OSUS_R_Source_Coverage.json) records the decision under `owner_decision`. Rank 4 is Redfish in the existing [27-choice research order](Donor_Research_Priority_Order.md). The [Redfish plan and checked originals](PLAN_Redfish_Source_First_Donor_Review.md) identify the guide, seven 2025.2 schema files and a separately verified 2025.3 battery-metrics companion. The owner authorized the full bounded review. The [Redfish source inventory](Redfish_Source_Coverage.json) records the two editions, native groups, family routes and the publisher example before workbook integration.
 
 ## Master and workbook
 
@@ -20,7 +20,7 @@ SAREF Core acceptance at fe598e0 with SRF-Q1–Q3 and corrected Web of Things ac
 
 ## Interrupted work
 
-The completed OSUS-R delivery was read back from GitHub. Redfish preparation has reached the recorded source and edition checks. The Redfish comparison grid and workbook integration are pending execution.
+The completed OSUS-R delivery was read back from GitHub. The source inventory and three linked example records are checkpointed. The Redfish comparison grid and workbook integration are pending execution.
 
 ## History
 
@@ -32,4 +32,4 @@ The direct GitHub download at [207a614f](https://github.com/OS4CSAPI/glaux-clien
 
 ## Next action and stop
 
-Proceed with the [Redfish source-first review](PLAN_Redfish_Source_First_Donor_Review.md) through verified workbook delivery under one authorization, then stop for the owner’s Redfish disposition. The final donor contribution order and Step 24 adoption await separate decisions.
+Resume the authorized [Redfish review](PLAN_Redfish_Source_First_Donor_Review.md) at the source-to-row comparison. Deliver the verified workbook and stop for the owner’s Redfish disposition. The final donor contribution order and Step 24 adoption await separate decisions.
