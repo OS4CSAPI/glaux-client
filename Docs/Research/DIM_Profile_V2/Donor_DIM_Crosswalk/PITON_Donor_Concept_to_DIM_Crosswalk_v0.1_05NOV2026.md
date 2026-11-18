@@ -1,8 +1,10 @@
 # Current Profile Rewrite checkpoint
 
-Updated 17 November 2026, America/New_York, Profile Rewrite 61, owner acceptance of the joint corrective assessment. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`. Verify live HEAD; follow [AGENTS.md](../AGENTS.md).
+Updated 17 November 2026, America/New_York, Profile Rewrite 61, SAREF Core research plan prepared for approval. Repository `OS4CSAPI/glaux-client`, branch `research/dim-profile-v2`. Verify live HEAD; follow [AGENTS.md](../AGENTS.md).
 
 ## Active scope and evidence
+
+The owner requested a durable research plan for the recommended donor. [SAREF Core v4.1.1](PLAN_SAREF_Core_v4_1_1_Source_First_Donor_Review.md) is the planned first donor in Step 23. The request covers planning. The next Proceed authorizes one bounded assignment through publication and explanation. Source locators and planning counts are in the plan. Donor findings, ledger entries, and the workbook column await execution.
 
 The owner accepted the completed three-step corrective assessment with its documented source limits. The earlier Proceed after `d4a40e4` authorized the final comparison under the [Devices and PA-DIM corrective plan](PLAN_OPC_UA_Devices_PADIM_Corrective_Assessment_17NOV2026.md). The finite joint comparison accounts for 478 current cells per donor (956 positions), four correction dispositions and five retention/count-scope dispositions. It adds no rows or definitions. The [comparison narrative](Donor_Native_High_Level_Information_Groupings_Comparison.md#devices-and-pa-dim-joint-corrective-closeout--17-november-2026) gives the complete plain-English explanation, rationale, source references and recommendation.
 
@@ -26,6 +28,8 @@ PA-DIM 1.02.0 declares Devices 1.04.0; the independent Devices donor is 1.05.0. 
 
 ## History
 
+The [accepted pre-SAREF checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/d76797698b7cde5b84ad53f906b77b86b410b932/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) preserves the owner decision and workbook baseline for this plan.
+
 The exact [pre-joint checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/d4a40e4c58fe355f4b14d80b807522341e5e8065/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) preserves Step 2's publication receipt and the chat-length investigation. `d4a40e4` is the joint baseline; its workbook hash is `d3882d2f0db02ea829e07f59c849b785184dbed211635258c31165479f282dce`. Step 1 changed 39 cells and added one row; Step 2 changed 29 cells, clarified two definitions and added one row. These per-step counts are not a distinct-cell total.
 
 ## Interrupted work
@@ -38,4 +42,4 @@ Current evidence checkpoint: `DEVICES_PADIM_JOINT_3_SAVED_VERIFIED`. Run `python
 
 ## Next action and stop
 
-In Profile Rewrite 61 on 17 November 2026, the owner replied “Proceed” to the explicit action of recording acceptance of the published joint corrective result with its retained source limits. The master and both donor ledgers record the decision under `joint_corrective_closeout.owner_decision`. This closes the three-step plan. The next action is for the owner to choose the next donor. Further donor research and DIM/Profile authoring await separate direction.
+Await one owner Proceed to execute the [complete SAREF Core assignment](PLAN_SAREF_Core_v4_1_1_Source_First_Donor_Review.md). Start with the finite source inventory and native assessment. Save the ledger and current recovery note at substantive milestones, then continue through comparison, workbook integration, verification, and plain-English delivery under that authorization. On interruption resume the first unfinished item. Stop for acceptance. Web of Things and subsequent steps require separate direction.
