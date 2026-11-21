@@ -16,7 +16,7 @@ Profile Rewrite 64. The owner replied “Proceed” after recovery identified on
 
 ## Verification and publication
 
-The existing master verification command checks the original row IDs and shifted cells, the 135 declaration dispositions, every saved grid value, RFC fills, 128 earlier-donor comparisons and their fills, all four mirrors, the workbook hash, row-only freeze, sheet structure and preservation of unrelated workbook parts. Publication completion requires matching branch file readback and downloaded workbook digest. The workflow result is available on the delivery commit.
+The existing master verification command checks the original row IDs and shifted cells, the 135 declaration dispositions, every saved grid value, RFC fills, 128 earlier-donor comparisons and their fills, all four mirrors, the workbook hash, row-only freeze, sheet structure and preservation of unrelated workbook parts. The [published delivery](https://github.com/OS4CSAPI/glaux-client/commit/6a1e2d847eed468d6a769563766b450d8b0c25ea) matched the local Git tree. A separate raw GitHub workbook download matched the SHA-256 above byte for byte. The publication entry point now recognizes this checkpoint for both apply and verify.
 
 ## Holds and owner decisions
 

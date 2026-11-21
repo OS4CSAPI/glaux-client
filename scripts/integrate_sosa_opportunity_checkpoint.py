@@ -2448,6 +2448,9 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current == 'RFC8348_COMPARISON_64':
+        verify_rfc8348(load(MASTER))
+        sys.exit(0)
     if current=='OSUSR_REDFISH_63_SAVED_VERIFIED':
         verify_joint_equipment_review();sys.exit(0)
     if current=='REDFISH_SAVED_VERIFIED':
