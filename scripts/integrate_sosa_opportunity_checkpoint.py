@@ -2198,7 +2198,7 @@ def apply_joint_closeout(authored_path):
 
 
 def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_count, width,
-                            corrected_refs, keep_columns, verify_reasons):
+                            corrected_refs, keep_columns, verify_reasons, summary_edits=None):
     grid = master['review_grid']
     dispositions = ledgers[column]['row_dispositions']
     need(len(grid) == grid_count and all(len(row) == width for row in grid), 'Donor grid dimensions')
@@ -2217,7 +2217,23 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
         part = paths['Master Crosswalk']
         need(paths == pub.old.sheetpaths(prior) and len(paths) == 26, 'Donor sheet identities')
         need(saved.namelist() == prior.namelist(), 'Donor package inventory')
-        need(all(saved.read(n) == prior.read(n) for n in saved.namelist() if n != part), 'Donor unaffected parts')
+        changed_parts = {part}
+        if summary_edits:
+            summary_part = paths['Summary']
+            changed_parts.add(summary_part)
+            summary = ET.fromstring(saved.read(summary_part))
+            old_summary = ET.fromstring(prior.read(summary_part))
+            for ref, expected in summary_edits.items():
+                selector = ".//" + pub.q('c') + "[@r='" + ref + "']"
+                cell = summary.find(selector)
+                old_cell = old_summary.find(selector)
+                need(joint_value(cell, joint_strings(saved)) == expected, 'Summary value ' + ref)
+                need(cell.get('s') == old_cell.get('s'), 'Summary style ' + ref)
+                cell.clear()
+                old_cell.clear()
+            need(ET.tostring(summary) == ET.tostring(old_summary), 'Preserved summary content')
+        need(all(saved.read(n) == prior.read(n) for n in saved.namelist() if n not in changed_parts),
+             'Donor unaffected parts')
         sheet = ET.fromstring(saved.read(part))
         cells = {node.get('r'): node for node in sheet.iter(pub.q('c'))}
         strings = joint_strings(saved)
@@ -2249,6 +2265,43 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
                 need(joint_fill(cells[ref], styles) == target, 'Donor classification fill ' + ref)
         pane = sheet.find('.//' + pub.q('pane'))
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
+
+
+def verify_rfc8348(master):
+    evidence = load('RFC_8348_Source_Coverage.json')
+    baseline = '2e6a548549549551146f33d8b0511163b9b37ef4'
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(master, 15, {15: evidence}, baseline, 582, 617, 22,
+                            set(), False, True, {
+        'A1': 'Current comparison · RFC 8348 · 21 November 2026',
+        'B1': '582 information rows, 22 columns, 26 worksheets. RFC 8348 is column P. Eight new candidates appear in rows 610–617. Owner assessment pending.',
+        'A17': 'Historical PA-DIM corrective scope',
+        'A28': 'Historical workbook validation',
+    })
+    old = json.loads(subprocess.check_output(
+        ['git', 'show', baseline + ':' + str((D / MASTER).relative_to(ROOT))], cwd=ROOT))
+    need([r['row_id'] for r in old['rows']] == [r['row_id'] for r in master['rows'][:574]],
+         'Prior RFC comparison row identities')
+    prior_keys = {c['key'] for c in old['columns'][4:20]}
+    need(set(evidence['new_rows']) == set(evidence['prior_donor_checks']) ==
+         {r['row_id'] for r in master['rows'][574:]}, 'RFC additions and prior comparison keys')
+    with zipfile.ZipFile(D / BOOK) as saved:
+        styles = ET.fromstring(saved.read('xl/styles.xml'))
+        sheet = ET.fromstring(saved.read(pub.old.sheetpaths(saved)['Master Crosswalk']))
+        cells = {c.get('r'): c for c in sheet.iter(pub.q('c'))}
+        for row in master['rows'][574:]:
+            checks = evidence['prior_donor_checks'][row['row_id']]
+            need(set(checks) == prior_keys, 'Prior donor completeness')
+            for col, definition in enumerate(master['columns']):
+                if definition['key'] in prior_keys:
+                    decision = checks[definition['key']]
+                    ref = letter(col + 1) + str(row['display_row'])
+                    color = '#D9EAF8' if decision['classification'] == 'common' else '#FFFFFF'
+                    need(decision['reason'] in row['display'][col] and joint_fill(cells[ref], styles) == color,
+                         'Prior donor comparison and classification ' + ref)
+    items = [item for module in evidence['modules'].values() for item in module['declared_items']]
+    need(len(items) == 135 and all(i['comparison_disposition'] for i in items), 'RFC declaration coverage')
+    print('PASS RFC 8348: 582 explicit decisions, 128 previous-donor comparisons, workbook values, fills, mirrors and package integrity.')
 
 
 def verify_joint_equipment_review():

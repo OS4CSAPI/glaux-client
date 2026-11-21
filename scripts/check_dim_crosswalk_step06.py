@@ -4994,10 +4994,14 @@ def main() -> None:
     verify_recovery()
     if "--recovery-only" in sys.argv[1:]:
         return
+    doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
+    if doc.get('currentEvidenceCheckpoint') == 'RFC8348_COMPARISON_64' and len(sys.argv) == 1:
+        from integrate_sosa_opportunity_checkpoint import verify_rfc8348
+        verify_rfc8348(doc)
+        return
     verify_sosa_so1()
     if "--sosa-so1-only" in sys.argv[1:]:
         return
-    doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
     if doc.get('currentEvidenceCheckpoint') in ('SOSA_SO2A_SAVED_VERIFIED','SOSA_SO2B_SAVED_VERIFIED','SOSA_SO2C_SAVED_VERIFIED','SOSA_SO2D_SAVED_VERIFIED','SOSA_SO2E_SAVED_VERIFIED'):
         verify_sosa_opportunities(doc,'SO-'+doc['currentEvidenceCheckpoint'].split('_')[1][2:])
         return

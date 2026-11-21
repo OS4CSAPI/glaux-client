@@ -1,35 +1,35 @@
 # Current Profile Rewrite checkpoint
 
-18 November 2026. Branch `research/dim-profile-v2`. [Execution protocol](../AGENTS.md).
+21 November 2026. Branch `research/dim-profile-v2`. [Execution protocol](../AGENTS.md).
 
 ## Active scope and evidence
 
-The owner replied “accept and proceed” to the joint OSUS-R and Redfish findings in Profile Rewrite 63. Both corrected assessments are accepted as bounded partial. Their [source-backed findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#osus-r-and-redfish-corrective-review) and the 574-row evidence remain available. The [published research-priority order](Donor_Research_Priority_Order.md) identifies RFC 8348 as rank 5. The [plan](PLAN_RFC_8348_Source_First_Donor_Review.md) and [primary source inventory](RFC_8348_Source_Coverage.json) are ready. All three embedded module blocks have been indexed. The component-detection rule and the standing of the legacy appendix were checked. Row-level RFC comparison is pending.
+Profile Rewrite 64. The owner replied “Proceed” after recovery identified one RFC 8348 comparison through publication and download verification. The assessment awaits the owner's decision. [Plan](PLAN_RFC_8348_Source_First_Donor_Review.md) · [Results](Donor_Native_High_Level_Information_Groupings_Comparison.md#rfc-8348-hardware-management) · [Source ledger](RFC_8348_Source_Coverage.json).
 
 ## Verified checkpoint
 
-`OSUSR_REDFISH_63_SAVED_VERIFIED`. The accepted assessment is [2188f110](https://github.com/OS4CSAPI/glaux-client/commit/2188f1102ed8662b6da225a2ab983b099ead39d6). The owner decisions are in `corrective_review_63.owner_decision` in the [OSUS-R ledger](OSUS_R_Source_Coverage.json) and [Redfish ledger](Redfish_Source_Coverage.json). The original OSUS-R acceptance remains in its earlier ledger entry.
+`RFC8348_COMPARISON_64`. The [baseline](https://github.com/OS4CSAPI/glaux-client/blob/2e6a548549549551146f33d8b0511163b9b37ef4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) records acceptance of the corrected OSUS-R and Redfish assessments and the RFC intake. The RFC ledger retains the dated original fingerprint, disposition of 135 declarations in three module blocks, 582 row decisions, nearest-row tests on eight additions, 128 prior-donor checks and three holds. The eight additions concern configured component matching, server refresh, numeric decoding, usage capacity, standby readiness, state timestamps, inventory changes and management-table indexes.
 
 ## Master and workbook
 
-[Editable master](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). There are 574 information rows, 608 displayed rows, 21 columns and 26 worksheets. The SHA-256 of the accepted workbook is `0beec73db8fb23a8d9ea00c80814aa51dbf1d25c36656b0cc09f76ab3f907b1a`. OSUS-R and Redfish each have 574 decisions. The six additions occupy rows 603–608. The current RFC intake has no donor column.
+[Editable master](Master_Donor_Concept_to_DIM_Crosswalk.xlsx). Column P contains 582 explicit RFC decisions. Rows 610–617 are new. The grid has 617 displayed rows, 22 columns and 26 worksheets. SHA-256 `3afd835b449d10f529d526e314d89a63cf73802288c75a4923f040ece766533c`. Both CSV mirrors and both readable comparisons match the saved grid. The [pre-RFC workbook](https://github.com/OS4CSAPI/glaux-client/blob/2e6a548549549551146f33d8b0511163b9b37ef4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx) remains available.
 
 ## Verification and publication
 
-The prior delivery verified both reviewed columns, saved classifications, sheet structure, all four mirrors and the published workbook. Its GitHub download matched the local workbook byte for byte. This acceptance updates the evidence records and current routing. Publication verifies that the workbook retains the accepted fingerprint and that the new decision, source inventory and plan can be recovered from the branch.
+The existing master verification command checks the original row IDs and shifted cells, the 135 declaration dispositions, every saved grid value, RFC fills, 128 earlier-donor comparisons and their fills, all four mirrors, the workbook hash, row-only freeze, sheet structure and preservation of unrelated workbook parts. Publication completion requires matching branch file readback and downloaded workbook digest. The workflow result is available on the delivery commit.
 
 ## Holds and owner decisions
 
-Both corrected assessments retain their respective OSUS-Q1–Q3 and RF-Q1–Q3 source and case limits. SAREF Core and Web of Things retain their earlier acceptances. Final ranking, Step 24 model adoption, Steps 35–39, named-version Step 40 and manual M00/M01 retain their prior standing.
+RFC8348-Q1 covers installation and runtime evidence. Q2 covers vendor identities and later registry changes. Q3 records differing enum spellings in prose and declarations. There are nine case holds in the RFC column and 53 earlier-donor source holds on new rows. Scoped negatives refer to compared evidence. OSUS-Q1–Q3, RF-Q1–Q3 and prior owner acceptances stand. Final ranking, Step 24 adoption, Steps 35–39, named-version Step 40 and manual M00/M01 retain their standing.
 
 ## Interrupted work
 
-The RFC source intake is complete. Its substantive field comparison and workbook integration are the remaining work.
+The eight additions and cross-donor checks are integrated.
 
 ## History
 
-[Exact pre-acceptance checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/2188f1102ed8662b6da225a2ab983b099ead39d6/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) · [Corrective findings and sources](Donor_Native_High_Level_Information_Groupings_Comparison.md#osus-r-and-redfish-corrective-review).
+The prior source-only checkpoint remains available through the [baseline](https://github.com/OS4CSAPI/glaux-client/blob/2e6a548549549551146f33d8b0511163b9b37ef4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
 
 ## Next action and stop
 
-One **Proceed** authorizes the RFC 8348 comparison from the indexed original through publication and download verification. Stop after that delivery for the owner’s assessment decision.
+Owner assessment of the bounded RFC 8348 comparison. Recommend acceptance with the recorded source and case limits. No subsequent donor has been authorized by the Profile Rewrite 64 Proceed.
