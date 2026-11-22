@@ -2267,6 +2267,58 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
 
 
+def verify_n4242(master):
+    """Verify the N42 donor grid against the accepted RFC workbook and intake."""
+    evidence = load('N42_42_Source_Coverage.json')
+    baseline = '6559543df589574aab212df612ebc5d3edae89ad'
+    path = str((D / MASTER).relative_to(ROOT))
+    old = json.loads(subprocess.check_output(['git', 'show', baseline + ':' + path], cwd=ROOT))
+    n_prior = len(old['rows'])
+    new_ids = [r['row_id'] for r in master['rows'][n_prior:]]
+    need([r['row_id'] for r in old['rows']] == [r['row_id'] for r in master['rows'][:n_prior]],
+         'Preserved prior row IDs')
+    need(set(new_ids) == set(evidence['new_rows']) == set(evidence['prior_donor_checks']),
+         'N42 additions and previous donor records')
+    schema = evidence['artifacts'][0]['named_global_declarations']
+    groups = evidence['native_review']['native_groups']
+    reported = [declaration for group in groups.values() for declaration in group['declarations']]
+    need(sorted(reported) == sorted(item['kind'] + ':' + item['name'] for item in schema),
+         'N42 frozen schema declarations accounted for once')
+    index = 16
+    need(master['columns'][index]['key'] == 'N4242' and
+         old['columns'] == master['columns'][:index] + master['columns'][index + 1:],
+         'Preserved column order')
+    info_count = n_prior + len(new_ids)
+    grid_count = len(old['review_grid']) + len(new_ids) + bool(new_ids)
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(master, index, {index: evidence}, baseline,
+                            info_count, grid_count, len(old['columns']) + 1,
+                            set(), False, True, evidence['verification']['summary_cells'])
+    colors = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unresolved': '#E9DEFA', 'unfilled': '#FFFFFF'}
+    prior_keys = {c['key'] for c in old['columns'][4:-1]}
+    with zipfile.ZipFile(D / BOOK) as saved:
+        sheet = ET.fromstring(saved.read(pub.old.sheetpaths(saved)['Master Crosswalk']))
+        styles = ET.fromstring(saved.read('xl/styles.xml'))
+        cells = {c.get('r'): c for c in sheet.iter(pub.q('c'))}
+        for row in master['rows'][n_prior:]:
+            comparisons = evidence['prior_donor_checks'][row['row_id']]
+            need(set(comparisons) == prior_keys, 'N42 prior donor completeness ' + row['row_id'])
+            for col, spec in enumerate(master['columns']):
+                if spec['key'] in prior_keys:
+                    decision = comparisons[spec['key']]
+                    ref = letter(col + 1) + str(row['display_row'])
+                    need(decision['reason'] and decision['reason'] in row['display'][col] and
+                         decision['locator'] in row['display'][col] and
+                         joint_fill(cells[ref], styles) == colors[decision['classification']],
+                         'N42 earlier donor source, reason and class ' + ref)
+    counts = evidence['coverage_counts']
+    need(counts['baseline_rows'] == n_prior and counts['explicit_rows'] == info_count and
+         counts['new_rows'] == len(new_ids) and counts['prior_donor_cells'] == len(new_ids) * len(prior_keys),
+         'N42 coverage summary')
+    print(f'PASS N42.42: {info_count} explicit decisions, {counts["prior_donor_cells"]} earlier-donor checks, '
+          'both pairs of mirrors, saved cells, classification fills and workbook structure.')
+
+
 def verify_rfc8348(master):
     evidence = load('RFC_8348_Source_Coverage.json')
     baseline = '2e6a548549549551146f33d8b0511163b9b37ef4'
@@ -2448,6 +2500,9 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current == 'N4242_COMPARISON_64':
+        verify_n4242(load(MASTER))
+        sys.exit(0)
     if current == 'RFC8348_COMPARISON_64':
         verify_rfc8348(load(MASTER))
         sys.exit(0)

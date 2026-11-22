@@ -10,7 +10,6 @@
   "edition_index": "https://www.nist.gov/pml/radiation-physics/ansiieee-n4242-2020-version",
   "standard_catalog": "https://webstore.ansi.org/standards/ieee/ieeeansin42422020",
   "publisher_record": "https://standards.ieee.org/ieee/N42.42/9361/",
-  "standard_text_contact": "Catalog and IEEE GET access route located. Full normative text not examined at intake.",
   "artifacts": [
     {
       "label": "XML Schema file",
@@ -1418,17 +1417,928 @@
       "contact": "Downloaded and parsed for intake. Substantive comparison pending."
     }
   ],
-  "phase": "In progress. First pass on all 582 existing information rows saved. Native reconciliation, proposed additions, earlier-donor checks and workbook delivery pending.",
+  "phase": "Source-first comparison delivered for owner assessment.",
   "initial_source_observation": {
     "locator": "2020 edition XSD, RadMeasurementType/RealTimeDuration and SpectrumType/LiveTimeDuration, @radDetectorInformationReference, @energyCalibrationReference",
     "meaning": "The measurement carries elapsed real time. The spectrum carries live time and references identifying its detector and energy calibration. Preserve these subjects when testing overlap."
   },
-  "source_limits": [
+  "native_review": {
+    "standard_text_contact": {
+      "edition": "ANSI N42.42-2020",
+      "publisher_doi": "https://doi.org/10.1109/IEEESTD.2020.9264644",
+      "publisher_document": "https://ieeexplore.ieee.org/document/9264644/",
+      "publisher_get_route": "IEEE GET advertised by NIST and ANSI; Xplore showed automated access challenge, stamp PDF route returned HTTP 418.",
+      "sample": "https://img.antpedia.com/standard/files/pdfs_ora/20230616-ieee/IEEE/N/ANSI%20N42.42-2020.pdf",
+      "sample_contact": "3 pages of front matter inspected; ISBN 978-1-5044-6897-8. No operative clauses retrieved. Any prose-only obligation or instrument-class applicability remains held.",
+      "primary_scope": "https://www.nist.gov/programs-projects/documentary-standards-ansiieee-n4242-standard"
+    },
+    "native_groups": {
+      "exchange": {
+        "finding": "The document gathers descriptions, measurements, calibrations and analytical results under a radiation instrument output. Resource IDs for references are document-scoped. Optional and required ID bases and the document UUID have different purposes.",
+        "comparison_test": "Keep an exchange identifier distinct from a physical serial number or persistent web identity.",
+        "declarations": [
+          "complexType:OptIdComplexObjectType",
+          "complexType:RadInstrumentDataType",
+          "complexType:ReqIdComplexObjectType",
+          "element:RadInstrumentData",
+          "element:RadInstrumentDataCreatorName",
+          "element:Remark"
+        ],
+        "selected_local_reference_standing": {
+          "RadInstrumentDataType": {}
+        }
+      },
+      "equipment": {
+        "finding": "An instrument has manufacturer, identifier, model, class and component versions. Its detector descriptions have radiation category, physical detector kind, description and size or volume. A quality-control entry pairs inspection time with calibration standing.",
+        "comparison_test": "Which device, which detector, and when was calibration standing inspected?",
+        "declarations": [
+          "complexType:RadDetectorInformationType",
+          "simpleType:RadDetectorCategoryCodeSimpleType",
+          "simpleType:RadDetectorKindCodeSimpleType",
+          "simpleType:RadInstrumentClassCodeSimpleType",
+          "complexType:RadInstrumentInformationType",
+          "complexType:RadInstrumentQualityControlType",
+          "complexType:RadInstrumentVersionType",
+          "element:InCalibrationIndicator",
+          "element:InspectionDateTime",
+          "element:RadDetectorCategoryCode",
+          "element:RadDetectorDepthValue",
+          "element:RadDetectorDescription",
+          "element:RadDetectorDiameterValue",
+          "element:RadDetectorInformation",
+          "element:RadDetectorKindCode",
+          "element:RadDetectorLengthValue",
+          "element:RadDetectorName",
+          "element:RadDetectorVolumeValue",
+          "element:RadDetectorWidthValue",
+          "element:RadInstrumentClassCode",
+          "element:RadInstrumentComponentName",
+          "element:RadInstrumentComponentVersion",
+          "element:RadInstrumentDescription",
+          "element:RadInstrumentIdentifier",
+          "element:RadInstrumentInformation",
+          "element:RadInstrumentManufacturerName",
+          "element:RadInstrumentModelName",
+          "element:RadInstrumentQualityControl",
+          "element:RadInstrumentVersion"
+        ]
+      },
+      "item": {
+        "finding": "The inspected item has its own description, measurement geometry, characteristics and optional amount with units and uncertainty.",
+        "comparison_test": "Keep identity, geometry and location of the inspected subject separate from those of the detector.",
+        "declarations": [
+          "complexType:RadItemInformationType",
+          "complexType:RadItemQuantityType",
+          "element:RadItemDescription",
+          "element:RadItemInformation",
+          "element:RadItemMeasurementGeometryDescription",
+          "element:RadItemQuantity",
+          "element:RadItemQuantityUncertaintyValue",
+          "element:RadItemQuantityUnits",
+          "element:RadItemQuantityValue"
+        ]
+      },
+      "characteristics": {
+        "finding": "Additional characteristics can be grouped. A characteristic carries its name, value, unit and data class with optional value time and out-of-limits indication.",
+        "comparison_test": "Store a typed, unit-qualified value and the subject to which it applies.",
+        "declarations": [
+          "complexType:CharacteristicGroupType",
+          "complexType:CharacteristicsType",
+          "complexType:CharacteristicType",
+          "simpleType:ValueDataClassCodeSimpleType",
+          "element:Characteristic",
+          "element:CharacteristicGroup",
+          "element:CharacteristicGroupName",
+          "element:CharacteristicName",
+          "element:CharacteristicValue",
+          "element:CharacteristicValueDataClassCode",
+          "element:CharacteristicValueUnits",
+          "element:RadDetectorCharacteristics",
+          "element:RadInstrumentCharacteristics",
+          "element:RadItemCharacteristics"
+        ]
+      },
+      "state": {
+        "finding": "Instrument, detector and item states reference their respective descriptions. A measurement can carry all three. Instrument state may contain mode, faults and movement. Detector fault or state must be attributed to that detector.",
+        "comparison_test": "Separate technical state from observations and qualify faults by affected equipment.",
+        "declarations": [
+          "simpleType:FaultSeverityCodeSimpleType",
+          "complexType:FaultType",
+          "complexType:RadDetectorStateType",
+          "simpleType:RadInstrumentModeCodeSimpleType",
+          "complexType:RadInstrumentStateType",
+          "complexType:RadItemStateType",
+          "element:Fault",
+          "element:FaultCodeValue",
+          "element:FaultDescription",
+          "element:FaultSeverityCode",
+          "element:RadDetectorState",
+          "element:RadInstrumentModeCode",
+          "element:RadInstrumentModeDescription",
+          "element:RadInstrumentState",
+          "element:RadItemState"
+        ],
+        "selected_local_reference_standing": {
+          "RadDetectorStateType": {
+            "radDetectorInformationReference": "required"
+          },
+          "RadItemStateType": {
+            "radItemInformationReference": "required"
+          },
+          "RadInstrumentStateType": {
+            "radInstrumentInformationReference": "required"
+          }
+        }
+      },
+      "location": {
+        "finding": "Position, orientation and speed may describe instrument, detector or inspected item. A position may use a geographic point, description or relative representation with origin. Geographic-point accuracy, elevation offset and datum have distinct subjects.",
+        "comparison_test": "Show whose position and which origin/axis apply; avoid treating shielding or a source estimate as instrument placement.",
+        "declarations": [
+          "simpleType:Angle180SimpleType",
+          "complexType:Angle180Type",
+          "simpleType:Angle90SimpleType",
+          "complexType:Angle90Type",
+          "complexType:DistanceType",
+          "complexType:GeographicPointType",
+          "complexType:OrientationType",
+          "complexType:OriginType",
+          "complexType:RelativeLocationType",
+          "complexType:SourcePositionType",
+          "complexType:SpeedType",
+          "complexType:StateVectorType",
+          "element:DistanceValue",
+          "element:ElevationAccuracyValue",
+          "element:ElevationOffsetAccuracyValue",
+          "element:ElevationOffsetValue",
+          "element:ElevationValue",
+          "element:GeographicPoint",
+          "element:GeoPointAccuracyValue",
+          "element:LatitudeValue",
+          "element:LocationDescription",
+          "element:LongitudeValue",
+          "element:AzimuthValue",
+          "element:InclinationValue",
+          "element:RelativeLocationAzimuthValue",
+          "element:RelativeLocationInclinationValue",
+          "element:Orientation",
+          "element:Origin",
+          "element:OriginDescription",
+          "element:RelativeLocation",
+          "element:RollValue",
+          "element:SourcePosition",
+          "element:SpeedValue",
+          "element:StateVector"
+        ]
+      },
+      "acquisition": {
+        "finding": "A common acquisition period has a class, start and real duration. It may refer to inspected items and more than one measurement group. Occupancy refers to the measured item during that interval.",
+        "comparison_test": "Distinguish foreground, background, calibration and intrinsic activity; use occupancy only for its stated field of view and acquisition.",
+        "declarations": [
+          "simpleType:MeasurementClassCodeSimpleType",
+          "complexType:RadMeasurementGroupType",
+          "complexType:RadMeasurementType",
+          "element:MeasurementClassCode",
+          "element:OccupancyIndicator",
+          "element:RadMeasurement",
+          "element:RadMeasurementGroupDescription",
+          "element:RadMeasurementGroup",
+          "element:RealTimeDuration",
+          "element:StartDateTime"
+        ],
+        "selected_local_reference_standing": {
+          "RadMeasurementType": {
+            "radMeasurementGroupReferences": "optional",
+            "radItemInformationReferences": "optional"
+          }
+        }
+      },
+      "spectrum": {
+        "finding": "A spectrum has counts by channel, detector live duration and an energy calibration reference. Different compression choices can represent the same channel sequence. Detector live duration describes sensitivity during acquisition and may be shorter than elapsed time.",
+        "comparison_test": "Preserve raw counts, channel indexing, detector association and calibrations before showing calibrated spectrum or comparison.",
+        "declarations": [
+          "complexType:ChannelDataType",
+          "simpleType:CompressionCodeSimpleType",
+          "complexType:SpectrumType",
+          "element:ChannelData",
+          "element:LiveTimeDuration",
+          "element:Spectrum"
+        ],
+        "selected_local_reference_standing": {
+          "SpectrumType": {
+            "energyCalibrationReference": "required",
+            "intrinsicSingleEscapePeakEfficiencyCalibrationReference": "optional",
+            "FWHMCalibrationReference": "optional",
+            "intrinsicDoubleEscapePeakEfficiencyCalibrationReference": "optional",
+            "intrinsicFullEnergyPeakEfficiencyCalibrationReference": "optional",
+            "fullEnergyPeakEfficiencyCalibrationReference": "optional",
+            "radDetectorInformationReference": "optional",
+            "radRawSpectrumReferences": "optional"
+          }
+        }
+      },
+      "calibration": {
+        "finding": "A channel-energy mapping can use coefficients or bin boundaries. Energy/deviation pairs can correct the mapping. Resolution and efficiency curves are separately keyed to energies, may carry uncertainty, and are distinct from the calibration date. Energy windows pair limits.",
+        "comparison_test": "Keep a curve’s purpose and ordered values. Distinguish single/double escape and full-energy efficiencies, resolution, and total efficiency.",
+        "declarations": [
+          "complexType:EfficiencyCalibrationType",
+          "complexType:EnergiesKeVType",
+          "complexType:EnergyCalibrationType",
+          "complexType:EnergyDeviationsKeVType",
+          "complexType:EnergyWindowsType",
+          "complexType:FWHMCalibrationType",
+          "complexType:FWHMKeVType",
+          "complexType:FWHMUncertaintiesKeVType",
+          "element:CalibrationDateTime",
+          "element:CoefficientValues",
+          "element:EfficiencyUncertaintyValues",
+          "element:EfficiencyValues",
+          "element:EnergyBoundaryValues",
+          "element:EnergyCalibration",
+          "element:EnergyDeviationValues",
+          "element:EnergyValues",
+          "element:EnergyWindows",
+          "element:FullEnergyPeakEfficiencyCalibration",
+          "element:FWHMCalibration",
+          "element:FWHMUncertaintyValues",
+          "element:FWHMValues",
+          "element:IntrinsicDoubleEscapePeakEfficiencyCalibration",
+          "element:IntrinsicFullEnergyPeakEfficiencyCalibration",
+          "element:IntrinsicSingleEscapePeakEfficiencyCalibration",
+          "element:TotalEfficiencyCalibration",
+          "element:WindowEndEnergyValues",
+          "element:WindowStartEnergyValues"
+        ],
+        "selected_local_reference_standing": {
+          "EnergyCalibrationType": {}
+        }
+      },
+      "count_dose_exposure": {
+        "finding": "Counts acquired over a live interval differ from totals since reset. Energy windows may partition counts. Dose-rate fields use microsieverts per hour, and exposure-rate fields use milliroentgens per hour. The corresponding totals have different units from their rates.",
+        "comparison_test": "Preserve quantity kind, units, duration, accumulation basis, detector and window scope; do not infer dose from an uncalibrated count.",
+        "declarations": [
+          "complexType:CountRateCPSType",
+          "complexType:DoseRateType",
+          "complexType:DoseRateuSvhType",
+          "complexType:ExposureRatemRhType",
+          "complexType:ExposureRateType",
+          "complexType:GrossCountsType",
+          "complexType:TotalDoseType",
+          "complexType:TotalDoseuSvType",
+          "complexType:TotalExposuremRType",
+          "complexType:TotalExposureType",
+          "element:CountData",
+          "element:DoseRate",
+          "element:DoseRateLevelDescription",
+          "element:DoseRateValue",
+          "element:ExposureRate",
+          "element:ExposureRateLevelDescription",
+          "element:ExposureRateValue",
+          "element:GrossCounts",
+          "element:TotalCountData",
+          "element:TotalDose",
+          "element:TotalDoseValue",
+          "element:TotalExposure",
+          "element:TotalExposureValue"
+        ],
+        "selected_local_reference_standing": {
+          "GrossCountsType": {
+            "radRawGrossCountsReferences": "optional",
+            "energyWindowsReference": "optional",
+            "radDetectorInformationReference": "required"
+          }
+        }
+      },
+      "derived": {
+        "finding": "Derived measurement-like data have an analysis origin. Result objects may reference raw objects of the corresponding kind. The input links and origin provide information beyond the form of the numeric output.",
+        "comparison_test": "Identify derivation and raw contributors separately from instrument and detector IDs.",
+        "declarations": [
+          "complexType:DerivedDataType",
+          "element:DerivedData"
+        ],
+        "selected_local_reference_standing": {
+          "DerivedDataType": {}
+        }
+      },
+      "analysis": {
+        "finding": "An analysis can refer separately to measurements, measurement groups and derived data. The result can carry algorithm identity, settings, version, processing time, state, confidence, faults and specific result families.",
+        "comparison_test": "Show which inputs an analysis consumed and identify its algorithm/configuration at the time.",
+        "declarations": [
+          "complexType:AnalysisAlgorithmSettingType",
+          "complexType:AnalysisAlgorithmVersionType",
+          "simpleType:AnalysisResultStatusCodeSimpleType",
+          "complexType:AnalysisResultsType",
+          "element:AnalysisAlgorithmComponentName",
+          "element:AnalysisAlgorithmComponentVersion",
+          "element:AnalysisAlgorithmCreatorName",
+          "element:AnalysisAlgorithmDescription",
+          "element:AnalysisAlgorithmSetting",
+          "element:AnalysisAlgorithmSettingName",
+          "element:AnalysisAlgorithmSettingUnits",
+          "element:AnalysisAlgorithmSettingValue",
+          "element:AnalysisAlgorithmName",
+          "element:AnalysisAlgorithmVersion",
+          "element:AnalysisComputationDuration",
+          "element:AnalysisConfidenceValue",
+          "element:AnalysisResultDescription",
+          "element:AnalysisResults",
+          "element:AnalysisResultStatusCode",
+          "element:AnalysisStartDateTime"
+        ],
+        "selected_local_reference_standing": {
+          "AnalysisResultsType": {
+            "radMeasurementGroupReferences": "optional",
+            "derivedDataReferences": "optional",
+            "radMeasurementReferences": "optional"
+          }
+        }
+      },
+      "nuclide_peaks": {
+        "finding": "The nuclide identification indicator, confidence representations, activity estimate, uncertainty and minimum detectable activity answer different questions. Geometry, shielding and position qualify the source. Peak evidence can identify expected/measured energy, peak width, net area and uncertainty.",
+        "comparison_test": "Separate a nuclide identification claim from peak evidence, an uncertain activity estimate and a sensitivity limit.",
+        "declarations": [
+          "complexType:ArealDensityType",
+          "complexType:NuclideActivityType",
+          "complexType:NuclideActivityUncertaintyType",
+          "complexType:NuclideAnalysisResultsType",
+          "complexType:NuclideMDAType",
+          "complexType:NuclideType",
+          "simpleType:SourceGeometryCodeSimpleType",
+          "complexType:SpectrumPeakAnalysisResultsType",
+          "complexType:SpectrumPeakEnergyKeVType",
+          "complexType:SpectrumPeakType",
+          "element:Nuclide",
+          "element:NuclideActivityUncertaintyValue",
+          "element:NuclideActivityValue",
+          "element:NuclideAnalysisReducedChiSquareValue",
+          "element:NuclideAnalysisResults",
+          "element:NuclideCategoryDescription",
+          "element:NuclideIDConfidenceDescription",
+          "element:NuclideIDConfidenceUncertaintyValue",
+          "element:NuclideIDConfidenceValue",
+          "element:NuclideIdentificationConfidence",
+          "element:NuclideIdentifiedIndicator",
+          "element:NuclideMinimumDetectableActivityValue",
+          "element:NuclideName",
+          "element:NuclideShieldingArealDensityValue",
+          "element:NuclideShieldingAtomicNumber",
+          "element:NuclideSourceGeometryCode",
+          "element:SpectrumPeak",
+          "element:SpectrumPeakAnalysisResults",
+          "element:SpectrumPeakNetAreaUncertaintyValue",
+          "element:SpectrumPeakNetAreaValue",
+          "element:SpectrumPeakEnergyValue",
+          "element:SpectrumPeakExpectedEnergyValue",
+          "element:SpectrumPeakFWHMValue"
+        ]
+      },
+      "result_statistics": {
+        "finding": "Analysis summaries carry quantity-specific averages, uncertainties, minima, maxima, background estimates, totals and possible source position.",
+        "comparison_test": "Keep background distinct from an ordinary minimum and qualify all statistics by the result family.",
+        "declarations": [
+          "complexType:DoseAnalysisResultsType",
+          "complexType:ExposureAnalysisResultsType",
+          "complexType:GrossCountAnalysisResultsType",
+          "element:AverageCountRateUncertaintyValue",
+          "element:AverageCountRateValue",
+          "element:AverageDoseRateUncertaintyValue",
+          "element:AverageDoseRateValue",
+          "element:AverageExposureRateUncertaintyValue",
+          "element:AverageExposureRateValue",
+          "element:BackgroundCountRateUncertaintyValue",
+          "element:BackgroundCountRateValue",
+          "element:BackgroundDoseRateUncertaintyValue",
+          "element:BackgroundDoseRateValue",
+          "element:BackgroundExposureRateUncertaintyValue",
+          "element:BackgroundExposureRateValue",
+          "element:DoseAnalysisResults",
+          "element:ExposureAnalysisResults",
+          "element:GrossCountAnalysisResults",
+          "element:MaximumCountRateValue",
+          "element:MaximumDoseRateValue",
+          "element:MaximumExposureRateValue",
+          "element:MinimumCountRateValue",
+          "element:MinimumDoseRateValue",
+          "element:MinimumExposureRateValue",
+          "element:TotalCountsValue"
+        ]
+      },
+      "alarms": {
+        "finding": "An alarm references affected detectors and can identify triggering window indices and reported audible or visual indication. An equipment Fault has different semantics.",
+        "comparison_test": "Retain alarm subject and condition; a measurement group or analytical alarm does not imply a device fault.",
+        "declarations": [
+          "simpleType:RadAlarmCategoryCodeSimpleType",
+          "complexType:RadAlarmType",
+          "element:AlarmAudibleIndicator",
+          "element:RadAlarm",
+          "element:RadAlarmCategoryCode",
+          "element:RadAlarmDateTime",
+          "element:RadAlarmDescription",
+          "element:RadAlarmEnergyWindowIndices",
+          "element:RadAlarmLightColor"
+        ],
+        "selected_local_reference_standing": {
+          "RadAlarmType": {
+            "radDetectorInformationReferences": "required"
+          }
+        }
+      },
+      "media": {
+        "finding": "Embedded content or a file reference can describe an inspected item. Capture duration, device identity, sequence, perspective, media kind and image dimensions are independently meaningful.",
+        "comparison_test": "Associate media with the inspected items and capture device without assigning everything to the main radiation detector.",
+        "declarations": [
+          "simpleType:ImagePerspectiveCodeSimpleType",
+          "complexType:MultimediaDataType",
+          "simpleType:MultimediaDeviceCategoryCodeSimpleType",
+          "complexType:PixelType",
+          "element:BinaryBase64Object",
+          "element:BinaryHexObject",
+          "element:BinaryUTF8Object",
+          "element:EncodingMIMEKind",
+          "element:ImageHeightValue",
+          "element:ImagePerspectiveCode",
+          "element:ImageWidthValue",
+          "element:MultimediaCaptureDuration",
+          "element:MultimediaCaptureStartDateTime",
+          "element:MultimediaData",
+          "element:MultimediaDataDescription",
+          "element:MultimediaDataMIMEKind",
+          "element:MultimediaDeviceCategoryCode",
+          "element:MultimediaDeviceIdentifier",
+          "element:MultimediaFileSizeValue",
+          "element:MultimediaFileURI"
+        ]
+      },
+      "encoding": {
+        "finding": "Numeric and list types constrain lexical representation, ranges and fixed units. The same scalar or list can serve different semantic roles through its owning field.",
+        "comparison_test": "Carry units, type and range through interpretation; primitive types in isolation provide no equipment concept.",
+        "declarations": [
+          "simpleType:DoubleListSimpleType",
+          "simpleType:NonBlankStringSimpleType",
+          "simpleType:NonNegativeDoubleListSimpleType",
+          "simpleType:NonNegativeDoubleSimpleType",
+          "simpleType:PercentSimpleType",
+          "simpleType:PositiveDoubleListSimpleType",
+          "simpleType:PositiveDoubleSimpleType",
+          "simpleType:PositiveIntegerListSimpleType",
+          "complexType:PositiveLengthCMType",
+          "complexType:PositiveVolumeCCType",
+          "simpleType:StringListSimpleType",
+          "simpleType:ZeroToOneDoubleSimpleType"
+        ]
+      },
+      "extensions": {
+        "finding": "The main schema supplies extension substitution points. The illustrative add-in qualifies its fields in a different namespace.",
+        "comparison_test": "Keep the extension definition, owner and applicability with the field; do not give an example the standing of a required base field.",
+        "declarations": [
+          "element:AnalysisResultsExtension",
+          "element:DerivedDataExtension",
+          "element:DoseAnalysisResultsExtension",
+          "element:ExposureAnalysisResultsExtension",
+          "element:FaultExtension",
+          "element:GrossCountAnalysisResultsExtension",
+          "element:MultimediaDataExtension",
+          "element:NuclideExtension",
+          "element:NuclideAnalysisResultsExtension",
+          "element:RadAlarmExtension",
+          "element:RadDetectorInformationExtension",
+          "element:RadDetectorStateExtension",
+          "element:RadInstrumentDataExtension",
+          "element:RadInstrumentInformationExtension",
+          "element:RadInstrumentStateExtension",
+          "element:RadItemInformationExtension",
+          "element:RadItemStateExtension",
+          "element:RadMeasurementExtension",
+          "element:SpectrumExtension",
+          "element:SpectrumPeakExtension",
+          "element:SpectrumPeakAnalysisResultsExtension"
+        ]
+      }
+    },
+    "schema_contact": {
+      "publication": "https://www.nist.gov/pml/radiation-physics/ansiieee-n4242-2020-version",
+      "edition_note": "Edition selected by publisher page and pinned file hash. The 2011 target namespace is shared across these 2020-package examples.",
+      "global_declaration_counts": {
+        "complexType": 69,
+        "simpleType": 25,
+        "element": 221
+      },
+      "accounting": "Global declaration membership is exhaustive in the pinned XSD. Group summaries synthesize related subjects; they do not imply each declaration is a new row. The original XSD defines all local names, types, occurrences, choices and references. Marked local constraints were checked for claims that depend on cardinality.",
+      "extension": "Both add-in declarations are illustrative RadMeasurementExtension substitutions. XSD validation bound the add-in author-local import URI to the fingerprinted main schema in memory."
+    },
+    "schematron": {
+      "published_rule_families": {
+        "reusable rule templates": [
+          "AbstractAttributeFutureDateCheck",
+          "AbstractAttributeElementCheck",
+          "AbstractAttributeParentCheck",
+          "AbstractElementReferenceCardinalityCheck",
+          "AbstractFutureDateCheck",
+          "AbstractOrderedElementCheck",
+          "AbstractNonDecreasingElementCheck",
+          "AbstractOtherDescriptionCheck",
+          "AbstractPairedElementOrderCheck",
+          "AbstractReferencesTypeMatch",
+          "AbstractReferenceTypeMatch",
+          "AbstractSiblingListMatchCheck"
+        ],
+        "time and date checks": [
+          "AnalysisStartDateCheck",
+          "CalibrationDateCheck",
+          "InspectionDateCheck",
+          "N42DocDateCheck",
+          "RadAlarmDateCheck",
+          "StartDateCheck"
+        ],
+        "spectral encoding, ordering, calibration, count and window list alignment": [
+          "CompressionCheck",
+          "CountDataValuesCheck",
+          "EBoundariesChannelsCheck",
+          "EfficiencyUncertaintyMatch",
+          "EnergyBoundaryIncreasingValuesCheck",
+          "EnergyFWHMMatch",
+          "EnergyEfficiencyMatch",
+          "EnergyIncreasingListValuesCheck",
+          "WindowStartEndCheck",
+          "WindowStartEndMatch",
+          "WindowStartIncreasingListValuesCheck"
+        ],
+        "reference target kind, origin and provenance": [
+          "EnergyCalibrationReferenceTypeMatch",
+          "FWHMCalibrationReferenceTypeMatch",
+          "IDoubleEscapePECalibrationReferenceTypeMatch",
+          "IFullEnergyPECalibrationReferenceTypeMatch",
+          "ISingleEscapePECalibrationReferenceTypeMatch",
+          "OriginReferenceCircularReferenceCheck",
+          "OriginReferenceDescriptionCheck",
+          "OriginReferenceTypeMatch",
+          "RadDetectorInformationReferencesTypeMatch",
+          "RadDetectorInformationReferenceTypeMatch",
+          "RadItemInformationReferencesTypeMatch",
+          "RadMeasurementGroupReferencesTypeMatch",
+          "RadMeasurementReferencesTypeMatch"
+        ],
+        "description of other-coded values": [
+          "RadAlarmCategoryCheck",
+          "RadDetectorCategoryCheck",
+          "RadDetectorKindCheck"
+        ],
+        "per-measurement child and detector cardinality": [
+          "RadMeasurementUniqueDetectorCheck-DoseRate",
+          "RadMeasurementUniqueDetectorCheck-ExposureRate",
+          "RadMeasurementUniqueDetectorCheck-GrossCounts",
+          "RadMeasurementUniqueDetectorCheck-Spectrum",
+          "RadMeasurementUniqueDetectorCheck-TotalDose",
+          "RadMeasurementUniqueDetectorCheck-TotalExposure"
+        ],
+        "raw reference target kind and allowed parent": [
+          "RadRawDoseRateReferencesCheck",
+          "RadRawDoseRateReferencesTypeMatch",
+          "RadRawExposureRateReferencesCheck",
+          "RadRawExposureRateReferencesTypeMatch",
+          "RadRawGrossCountsReferencesCheck",
+          "RadRawGrossCountsReferencesTypeMatch",
+          "RadRawSpectrumReferencesCheck",
+          "RadRawSpectrumReferencesTypeMatch",
+          "RadRawTotalDoseReferencesCheck",
+          "RadRawTotalDoseReferencesTypeMatch",
+          "RadRawTotalExposureReferencesCheck",
+          "RadRawTotalExposureReferencesTypeMatch"
+        ]
+      },
+      "binding": "xslt2",
+      "execution": "Compiled the original NIST ISO Schematron using SchXslt 1.10.1 pipeline-for-svrl.xsl with SaxonC-HE 13.1. Evaluated its XPath against all 11 XSD-validated examples. For ID-dependent evaluation, an in-memory-equivalent working copy used an internal DTD declaring each existing id as XML ID for the elements carrying it. Instance elements, attributes and values were preserved. Ordinary untyped Saxon input discards XSD ID typing and produces spurious id() failures. All 11 ID-aware examples returned zero failed assertions. This validates examples against the tested files only.",
+      "compiler": "https://repo.maven.apache.org/maven2/name/dmaus/schxslt/schxslt/1.10.1/schxslt-1.10.1.jar",
+      "pattern_count": 63
+    },
+    "examples": [
+      {
+        "file": "Annex-B-n42-2020.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 2,
+            "failed_patterns": {
+              "EnergyCalibrationReferenceTypeMatch": 1,
+              "RadDetectorInformationReferenceTypeMatch": 1
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 1,
+          "EnergyCalibration": 1,
+          "RadMeasurement": 1
+        }
+      },
+      {
+        "file": "Annex-E-n42-2020.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 79,
+            "failed_patterns": {
+              "EnergyCalibrationReferenceTypeMatch": 15,
+              "FWHMCalibrationReferenceTypeMatch": 15,
+              "IFullEnergyPECalibrationReferenceTypeMatch": 15,
+              "OriginReferenceTypeMatch": 4,
+              "RadDetectorInformationReferencesTypeMatch": 1,
+              "RadDetectorInformationReferenceTypeMatch": 28,
+              "RadRawSpectrumReferencesTypeMatch": 1
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 4,
+          "RadItemInformation": 1,
+          "EnergyCalibration": 1,
+          "FWHMCalibration": 1,
+          "IntrinsicFullEnergyPeakEfficiencyCalibration": 1,
+          "RadMeasurement": 7,
+          "DerivedData": 1,
+          "RadMeasurementGroup": 1,
+          "AnalysisResults": 1
+        }
+      },
+      {
+        "file": "Annex_B_alternate_energy_calibration_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 2,
+            "failed_patterns": {
+              "EnergyCalibrationReferenceTypeMatch": 1,
+              "RadDetectorInformationReferenceTypeMatch": 1
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 1,
+          "EnergyCalibration": 1,
+          "RadMeasurement": 1
+        }
+      },
+      {
+        "file": "Annex_C_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 13,
+            "failed_patterns": {
+              "EnergyCalibrationReferenceTypeMatch": 2,
+              "FWHMCalibrationReferenceTypeMatch": 2,
+              "RadDetectorInformationReferenceTypeMatch": 6,
+              "RadMeasurementGroupReferencesTypeMatch": 3
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentDataCreatorName": 1,
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 2,
+          "EnergyCalibration": 1,
+          "FWHMCalibration": 1,
+          "FullEnergyPeakEfficiencyCalibration": 1,
+          "RadMeasurement": 2,
+          "RadMeasurementGroup": 1,
+          "AnalysisResults": 1
+        }
+      },
+      {
+        "file": "Annex_D_alarmed_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 80,
+            "failed_patterns": {
+              "CountDataValuesCheck": 28,
+              "RadDetectorInformationReferencesTypeMatch": 2,
+              "RadDetectorInformationReferenceTypeMatch": 42,
+              "RadMeasurementGroupReferencesTypeMatch": 8
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 6,
+          "RadItemInformation": 1,
+          "EnergyWindows": 1,
+          "RadMeasurementGroup": 1,
+          "RadMeasurement": 7,
+          "AnalysisResults": 1
+        }
+      },
+      {
+        "file": "Annex_D_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 78,
+            "failed_patterns": {
+              "CountDataValuesCheck": 28,
+              "RadDetectorInformationReferenceTypeMatch": 42,
+              "RadMeasurementGroupReferencesTypeMatch": 8
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 6,
+          "RadItemInformation": 1,
+          "EnergyWindows": 1,
+          "RadMeasurementGroup": 1,
+          "RadMeasurement": 7,
+          "AnalysisResults": 1
+        }
+      },
+      {
+        "file": "Annex_F_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 3,
+            "failed_patterns": {
+              "RadDetectorInformationReferenceTypeMatch": 3
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "Remark": 1,
+          "RadInstrumentDataCreatorName": 1,
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 1,
+          "RadMeasurement": 3
+        }
+      },
+      {
+        "file": "Annex_G_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 10,
+            "failed_patterns": {
+              "EnergyCalibrationReferenceTypeMatch": 2,
+              "FWHMCalibrationReferenceTypeMatch": 2,
+              "RadDetectorInformationReferenceTypeMatch": 4,
+              "RadMeasurementReferencesTypeMatch": 2
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 2,
+          "EnergyCalibration": 1,
+          "FWHMCalibration": 1,
+          "RadMeasurement": 2,
+          "AnalysisResults": 2
+        }
+      },
+      {
+        "file": "Annex_H_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 2,
+            "failed_patterns": {
+              "RadDetectorInformationReferenceTypeMatch": 2
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 1,
+          "RadMeasurement": 2
+        }
+      },
+      {
+        "file": "Annex_I_n42.xml",
+        "xsd": "valid against primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 12,
+            "failed_patterns": {
+              "EnergyCalibrationReferenceTypeMatch": 2,
+              "RadDetectorInformationReferenceTypeMatch": 8,
+              "RadMeasurementReferencesTypeMatch": 2
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 2,
+          "EnergyCalibration": 1,
+          "RadMeasurement": 2,
+          "AnalysisResults": 2
+        }
+      },
+      {
+        "file": "Annex_L_n42.xml",
+        "xsd": "valid with add-in and pinned primary schema",
+        "schematron": [
+          {
+            "mode": "untyped",
+            "failed_assertions": 2,
+            "failed_patterns": {
+              "RadDetectorInformationReferenceTypeMatch": 2
+            }
+          },
+          {
+            "mode": "id_typed",
+            "failed_assertions": 0,
+            "failed_patterns": {}
+          }
+        ],
+        "top_level_subject_counts": {
+          "RadInstrumentInformation": 1,
+          "RadDetectorInformation": 1,
+          "RadMeasurement": 2
+        }
+      }
+    ]
+  },
+  "review_baseline_commit": "6559543df589574aab212df612ebc5d3edae89ad",
+  "source_limits_at_intake": [
     "Full normative prose pending. Record access, edition and clause locators during comparison.",
     "Published examples use the 2011 namespace. Use publication provenance and file fingerprint to identify the edition.",
     "The example add-in imports n42.xsd via an author-local file URI. Resolve against the pinned primary schema if validating the example; record that binding.",
     "Parsing inventories the files. Schema validity, rule applicability and device conformance require separate evidence."
   ],
+  "standard_text_contact_at_intake": "Catalog and IEEE GET access route located. Full normative text not examined at intake.",
+  "standard_text_contact": {
+    "edition": "ANSI N42.42-2020",
+    "publisher_doi": "https://doi.org/10.1109/IEEESTD.2020.9264644",
+    "publisher_document": "https://ieeexplore.ieee.org/document/9264644/",
+    "publisher_get_route": "IEEE GET advertised by NIST and ANSI; Xplore showed automated access challenge, stamp PDF route returned HTTP 418.",
+    "sample": "https://img.antpedia.com/standard/files/pdfs_ora/20230616-ieee/IEEE/N/ANSI%20N42.42-2020.pdf",
+    "sample_contact": "3 pages of front matter inspected; ISBN 978-1-5044-6897-8. No operative clauses retrieved. Any prose-only obligation or instrument-class applicability remains held.",
+    "primary_scope": "https://www.nist.gov/programs-projects/documentary-standards-ansiieee-n4242-standard"
+  },
+  "source_limits": {
+    "N42-Q1": "Operative clauses from the full 2020 text were unavailable. Class-specific obligations or interpretations requiring prose remain unresolved.",
+    "N42-Q3": "Schematron and extension validations are limited to the pinned files, tested examples, and execution bindings recorded in native_review. Keep fixture discrepancies explicit.",
+    "N42-Q2": "Published examples do not verify a particular deployed instrument, observed case or runtime conformance."
+  },
   "row_dispositions": {
     "S06-R001": {
       "display_row": 4,
@@ -6085,6 +6995,2419 @@
       "reason": "The reported inventory and measurement-time state contain no native representation for Hardware inventory index shared with an Entity MIB entry.",
       "display_row": 617,
       "label": "Hardware inventory index shared with an Entity MIB entry"
+    },
+    "N4242-DETECTOR": {
+      "label": "Radiation detected, detector kind and detector dimensions",
+      "display_row": 619,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Keep the radiation category separate from the detector technology and the dimensions or volume of the detector to which they refer.",
+      "locator": "NIST 2020 edition XSD, RadDetectorInformationType (RadDetectorCategoryCode, RadDetectorKindCode and size fields); Annex C"
+    },
+    "N4242-MEAS-CLASS": {
+      "label": "Measurement purpose and item occupancy during collection",
+      "display_row": 620,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Identify foreground, environmental background, calibration-source or intrinsic-activity acquisition, or unspecified class. Record any reported presence of an item in the field of view for that measurement.",
+      "locator": "NIST 2020 edition XSD, RadMeasurementType/MeasurementClassCode, OccupancyIndicator; MeasurementClassCodeSimpleType; Annex D examples"
+    },
+    "N4242-ITEM": {
+      "label": "Measured item quantity and its measurement geometry",
+      "display_row": 621,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Identify the measured item and any amount, associated units and one-sigma uncertainty. Preserve the description of the item shape, placement, orientation and attenuators used for this acquisition.",
+      "locator": "NIST 2020 edition XSD, RadItemInformationType/RadItemQuantity and RadItemMeasurementGeometryDescription; RadMeasurementType/@radItemInformationReferences"
+    },
+    "N4242-LIVE": {
+      "label": "Elapsed acquisition duration and detector live duration",
+      "display_row": 622,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Record elapsed clock time for the measurement and the time a contributing detection assembly was sensitive during its spectrum or gross-count acquisition. Compare live times only in the associated detector and acquisition context.",
+      "locator": "NIST 2020 edition XSD, RadMeasurementType/RealTimeDuration; SpectrumType/LiveTimeDuration; GrossCountsType/LiveTimeDuration; Annex B"
+    },
+    "N4242-CHANNELS": {
+      "label": "Detector-specific spectral counts by channel",
+      "display_row": 623,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Keep the ordered channel-count sequence for a spectrum, its channel encoding/compression and the link to the contributing detector. Decode counted zeros when the declared encoding calls for it.",
+      "locator": "NIST 2020 edition XSD, SpectrumType/@radDetectorInformationReference and ChannelData; ChannelDataType/@compressionCode; Annex B"
+    },
+    "N4242-ENERGY": {
+      "label": "Channel-to-energy mapping and energy calibration corrections",
+      "display_row": 624,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Preserve the referenced channel-energy calibration, including its polynomial coefficients or ordered energy boundaries and any applicable paired predicted-energy and deviation values for correcting the scale.",
+      "locator": "NIST 2020 edition XSD, EnergyCalibrationType; CoefficientValues, EnergyBoundaryValues, EnergyValues, EnergyDeviationValues; SpectrumType/@energyCalibrationReference; both Annex B examples"
+    },
+    "N4242-RESOLUTION": {
+      "label": "Energy-dependent spectral resolution calibration",
+      "display_row": 625,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Keep the pairs of energy and peak full width at half maximum, any matched one-sigma width uncertainties, and any link from a spectrum to this calibration.",
+      "locator": "NIST 2020 edition XSD, FWHMCalibrationType; SpectrumType/@FWHMCalibrationReference; Schematron EnergyFWHMMatch; Annex C"
+    },
+    "N4242-EFFICIENCY": {
+      "label": "Energy-dependent detector efficiency and its reference basis",
+      "display_row": 626,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Record the efficiency curve, matching energies, optional uncertainty and its stated basis. Distinguish total efficiency, full-energy peak efficiency and intrinsic full-energy or escape-peak efficiencies; preserve spectrum-to-calibration references when supplied.",
+      "locator": "NIST 2020 edition XSD, EfficiencyCalibrationType; TotalEfficiencyCalibration, FullEnergyPeakEfficiencyCalibration, IntrinsicFullEnergyPeakEfficiencyCalibration, IntrinsicSingleEscapePeakEfficiencyCalibration, IntrinsicDoubleEscapePeakEfficiencyCalibration; SpectrumType; Annexes C/E"
+    },
+    "N4242-WINDOWS": {
+      "label": "Gross counts for specified energy windows and counts since reset",
+      "display_row": 627,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Associate whole-range or window-specific counts with the detector and any window definition. Distinguish counts accumulated during this measurement from totals since reset. Preserve the pairing of ordered lower and upper window energies.",
+      "locator": "NIST 2020 edition XSD, GrossCountsType/CountData, TotalCountData, @energyWindowsReference; EnergyWindowsType; Schematron WindowStartEndMatch, WindowStartEndCheck; Annex D"
+    },
+    "N4242-QC": {
+      "label": "Inspection time and reported calibration fitness for service",
+      "display_row": 628,
+      "relation": "direct",
+      "classification": "common",
+      "reason": "Record when the radiation instrument was inspected and whether that inspection reported it properly calibrated and fit for service.",
+      "locator": "NIST 2020 edition XSD, RadInstrumentQualityControlType/InspectionDateTime and InCalibrationIndicator"
+    },
+    "N4242-LINEAGE": {
+      "label": "Measurement grouping and links from derived results to raw readings",
+      "display_row": 629,
+      "relation": "direct",
+      "classification": "common",
+      "reason": "Preserve membership of identified measurement groups, type-matched references from a derived value to its contributing raw spectra, counts, dose or exposure readings, and links from an analysis to source measurements, groups or derived data.",
+      "locator": "NIST 2020 edition XSD, RadMeasurementType/@radMeasurementGroupReferences, RadMeasurementGroupType, DerivedDataType, SpectrumType/@radRawSpectrumReferences, AnalysisResultsType source references; Annex E"
+    },
+    "N4242-ALGORITHM": {
+      "label": "Analysis execution, algorithm settings and reported status",
+      "display_row": 630,
+      "relation": "direct",
+      "classification": "common",
+      "reason": "Associate an analysis with its start, computation duration, named algorithm and creator, versioned algorithm components, settings with values and units, and the reported analysis status or confidence where supplied.",
+      "locator": "NIST 2020 edition XSD, AnalysisResultsType; AnalysisAlgorithmSettingType; AnalysisAlgorithmVersionType; Annex C"
+    },
+    "N4242-NUCLIDE": {
+      "label": "Nuclide identification, activity and detection limit",
+      "display_row": 631,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Keep each named nuclide and its identification indicator distinct from confidence expressed as a description or percentage, any one-sigma uncertainty in that percentage, estimated activity at measurement time, one-sigma activity uncertainty, and that nuclide’s minimum detectable activity. Preserve any fit statistic at the analysis-result level.",
+      "locator": "NIST 2020 edition XSD, NuclideType; NuclideIdentificationConfidence substitution group; NuclideAnalysisResultsType/NuclideAnalysisReducedChiSquareValue; Annex C"
+    },
+    "N4242-SOURCE": {
+      "label": "Estimated nuclide source geometry, shielding and position",
+      "display_row": 632,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Associate the nuclide with assessed source geometry, estimated shielding effective atomic number and areal density, and a source position when reported. Preserve whether position is geographic, descriptive or relative to a stated origin.",
+      "locator": "NIST 2020 edition XSD, NuclideType/NuclideSourceGeometryCode, NuclideShieldingAtomicNumber, NuclideShieldingArealDensityValue, SourcePosition; SourcePositionType; RelativeLocationType"
+    },
+    "N4242-PEAK": {
+      "label": "Spectral peak energy, width and continuum-subtracted area",
+      "display_row": 633,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Report each peak’s measured energy, optional expected energy, full width at half maximum, net counts after continuum subtraction, and any net-area uncertainty.",
+      "locator": "NIST 2020 edition XSD, SpectrumPeakAnalysisResultsType/SpectrumPeak; SpectrumPeakType; Annex C"
+    },
+    "N4242-RATES": {
+      "label": "Dose, exposure and count rates with distinct accumulation bases",
+      "display_row": 634,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Distinguish ambient dose equivalent, exposure and event counts, their rate versus accumulated forms, and detector measurements since reset versus analysis totals over selected inputs. Retain background and summary statistics with the quantity they qualify.",
+      "locator": "NIST 2020 edition XSD, DoseRateType, ExposureRateType, TotalDose, TotalExposure, DoseAnalysisResultsType, ExposureAnalysisResultsType, GrossCountAnalysisResultsType; Annex D"
+    },
+    "N4242-ALARM": {
+      "label": "Radiation alarm detector attribution, energy windows and annunciation",
+      "display_row": 635,
+      "relation": "direct",
+      "classification": "specialized",
+      "reason": "Identify the alarm category, contributing detector references and any energy-window indices that triggered the alarm. Keep audible indication and light color alongside the reported alarm.",
+      "locator": "NIST 2020 edition XSD, RadAlarmType/@radDetectorInformationReferences, RadAlarmEnergyWindowIndices, AlarmAudibleIndicator, RadAlarmLightColor; Annex D alarm example"
+    },
+    "N4242-CHAR": {
+      "label": "Individual characteristic and group out-of-limits indications",
+      "display_row": 636,
+      "relation": "direct",
+      "classification": "common",
+      "reason": "Keep optional per-characteristic time and out-of-limits indication with its named, typed value and units. Separately record any out-of-limits indication on a named group of characteristics.",
+      "locator": "NIST 2020 edition XSD, CharacteristicType/@valueDateTime, @valueOutOfLimits; CharacteristicGroupType/@groupOutOfLimits; RadDetectorCharacteristics, RadItemCharacteristics, RadInstrumentCharacteristics; Annex L"
+    },
+    "N4242-MEDIA": {
+      "label": "Acquisition context linking measured items and multimedia",
+      "display_row": 637,
+      "relation": "direct",
+      "classification": "common",
+      "reason": "Record the link from a measured item to supporting multimedia, its capture device identity and category, perspective, capture interval and sequence, and the location or encoding of the content.",
+      "locator": "NIST 2020 edition XSD, MultimediaDataType/@radItemInformationReferences, @sequenceNumber, MultimediaDeviceIdentifier, ImagePerspectiveCode, MultimediaCaptureStartDateTime and MultimediaCaptureDuration"
+    }
+  },
+  "prior_donor_checks": {
+    "N4242-DETECTOR": {
+      "ISA": {
+        "relation": "related",
+        "locator": "ISA-OBS-154/-155; ISA-DMS-148/-154/-155",
+        "reason": "The observation can classify detected radiation; these fields do not identify a detector technology or its physical dimensions.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "related",
+        "locator": "BSI Flex 335 v2 §6.2.5; §§6.4 and 7, registration and detection classes",
+        "reason": "The registered Node and classified detection refer to different subjects; the reviewed fields do not assign radiation category, technology and geometry to an individual detector.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "partial",
+        "locator": "Observation.xsd#sensorId; AssetCapabilities.xsd#sensorIdAvailable; CbrneTriggerTypes.xsd#CbrneModalityEnum",
+        "reason": "A subordinate sensor can be identified. The inspected CBRNE trigger modalities include fluorescence, scattering and Other. They do not describe detector geometry or a gamma/neutron detector technology.",
+        "classification": "common"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 hardware inventory and module interfaces, master rows 410 and 431",
+        "reason": "Hardware module types and installation slots do not classify a radiation detector by incident radiation, detector medium and sensitive dimensions.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "related",
+        "locator": "AAS Part 1 AssetInformation, Submodel; master rows 356–360, 382",
+        "reason": "An asset can have identified information aspects and classification. The reviewed metamodel does not define separate radiation category, technology and detector volume.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "IEEE-H02/H07, public TransducerChannel TEDS §6.5 table 19",
+        "reason": "Channel type and physical units describe channel function. They do not identify detector material, radiation category and physical volume."
+      },
+      "OPC": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "DI 1.05 §§4.5,4.6; DI-N002/004/025",
+        "reason": "Device, manufacturer and modular component metadata describe equipment; radiation type and detector crystal geometry require a domain model."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F033/040, temperature sensing configuration and device classification",
+        "reason": "PA-DIM can distinguish a device class and sensing technology for process instruments. The reviewed standard does not specify radiation type and sensitive crystal size."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "Sensor.v1_11_0/ReadingType, PhysicalContext; RF-087; Chassis dimensions at prior row 594",
+        "reason": "Reading type and position describe the sensor's context. Enclosure dimensions are a different subject from the active detector volume and material."
+      },
+      "RFC8348": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "§7.1 class, sensor-data/value-type; §7.2 sensor",
+        "reason": "Hardware class and quantity type describe a sensor but do not identify radiation category, detector material or active dimensions."
+      },
+      "SAREF": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "SAREF Core 4.1.1, DeviceKind, Device, Property; baseline SAREF-DEVICE-KIND, RF-CHASSIS-ENVELOPE, OSUSR-SENSOR-SELECTOR",
+        "reason": "A device can have a defined kind and its own properties. Radiation category, detector technology and dimensions require specialized terms."
+      },
+      "WoT": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, Thing Model and @type; baseline SAREF-DEVICE-KIND, RF-CHASSIS-ENVELOPE, OSUSR-SENSOR-SELECTOR",
+        "reason": "A reusable model or external semantic type can classify a Thing. Core TD defines no radiation detector technology or geometry."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:Sensor, ssn:hasSubSystem; baseline SAREF-DEVICE-KIND, RF-CHASSIS-ENVELOPE, OSUSR-SENSOR-SELECTOR",
+        "reason": "The sensor and its physical-system context can be identified. The 2017 vocabulary supplies no native radiation category or detector dimensional model."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observer, observedProperty; baseline SAREF-DEVICE-KIND, RF-CHASSIS-ENVELOPE, OSUSR-SENSOR-SELECTOR",
+        "reason": "The observer and the quantity observed are distinct. Sensor material, radiation sensitivity and detector geometry need additional information."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 §8.2, Category and Quantity",
+        "reason": "Data components can encode a detector category or length after their subjects have been supplied. They do not define detector technology versus detected radiation.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "partial",
+        "locator": "OGC 23-000 PhysicalComponent; AbstractProcess classification and characteristics",
+        "reason": "A detector can be described individually with classifications and physical characteristics. The radiation category and technology vocabulary requires domain terms.",
+        "classification": "common"
+      },
+      "CSAPI": {
+        "relation": "partial",
+        "locator": "OGC 23-001/23-002 Part 1, System and subsystems; Part 2 §9.2",
+        "reason": "A detector can be identified as a subsystem with an associated data stream. A radiation detector’s kind and dimensions require an equipment description.",
+        "classification": "common"
+      }
+    },
+    "N4242-MEAS-CLASS": {
+      "ISA": {
+        "relation": "related",
+        "locator": "ISA Event.type; ISA-OBS-155",
+        "reason": "An event category and a radiation reading do not specify the purpose of the acquisition or presence of the measured item during it.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "related",
+        "locator": "BSI Flex 335 v2 DetectionReport and §6.2.5.16–22",
+        "reason": "Detected items and a declared field of regard do not classify an acquisition as foreground, background or intrinsic activity, or record occupancy for a measurement.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "related",
+        "locator": "Observation.xsd#modalities; Observation.xsd#sensorId; Asset.java#captureData",
+        "reason": "A capture can identify its modality and sensor. The reviewed elements do not assign the radiation measurement class or report item occupancy.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 calibration service, master rows 16 and 417",
+        "reason": "A calibration activity can be distinguished from normal operation. This does not assign a radiation acquisition its foreground, background or intrinsic class, or report occupancy.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "related",
+        "locator": "AAS Part 1 Qualifier; AAS native row 369",
+        "reason": "Qualifiers can describe value context when semantics are supplied. The compared source does not define the foreground/background acquisition vocabulary or measurement occupancy.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H07, sampling mode and sampled data; Step14 public-evidence audit",
+        "reason": "Channel acquisition modes are documented. The available worked forms do not settle radiation-specific acquisition role or item presence."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI-N008; DI 1.05 Blocks and modes",
+        "reason": "An operating mode describes a device block rather than the purpose of a specific acquisition with item occupancy."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F015; OPC 30081 §§7.1.3,7.26",
+        "reason": "Intended-use classification belongs to a calibration record. It does not establish foreground/background acquisition or whether an item occupied the detector view."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "Sensor.v1_11_0/CalibrationTime, ReadingTime",
+        "reason": "A sensor records calibration and measurement time but does not thereby classify a reading as foreground, calibration-source or background with occupancy."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-data, state",
+        "reason": "The latest hardware sensor reading lacks a radiation acquisition purpose or a measured item's occupancy."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, Observation, FeatureOfInterest; baseline S06-R015, ISA-C-117, PADIM-CALIBRATION-RECORD",
+        "reason": "An observation can concern a given subject. Core does not classify background or intrinsic-activity acquisitions or establish item occupancy."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, InteractionAffordance, DataSchema; baseline S06-R015, ISA-C-117, PADIM-CALIBRATION-RECORD",
+        "reason": "Interaction metadata does not classify an acquisition or report physical occupancy."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:Observation, sosa:hasFeatureOfInterest; baseline S06-R015, ISA-C-117, PADIM-CALIBRATION-RECORD",
+        "reason": "The observation may identify an item. Its presence in view and the acquisition purpose remain additional facts."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, AbstractObservationCharacteristics.parameter, Observation.featureOfInterest; baseline S06-R015, ISA-C-117, PADIM-CALIBRATION-RECORD",
+        "reason": "An acquisition-specific named parameter and subject can contextualize an observation. The approved model supplies no enumerated radiation measurement classes or occupancy rule."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 §8.2, Category and Boolean",
+        "reason": "A controlled code and a Boolean can carry class and occupancy. Their radiation measurement meanings come from an external vocabulary.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 AbstractProcess configuration and modes",
+        "reason": "A process description may carry configured operating modes. Measurement purpose and item presence for the actual acquisition are distinct evidence.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §9, Observation and DataStream",
+        "reason": "The service associates an observation with a data stream and result. Acquisition class and measured-item occupancy require additional terms or result fields.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-ITEM": {
+      "ISA": {
+        "relation": "related",
+        "locator": "ISA-DMS-377 and ISA-DMS-390; coordinate and error forms in row 72",
+        "reason": "The value structures can qualify uncertainties. They do not tie the quantity, attenuators and preparation geometry to a particular measured item.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "related",
+        "locator": "BSI §5.2 Tables 7–10 and TrackObjectInfo, SAP02-N08/-N09",
+        "reason": "Position and object values with optional error concern a reported detection. They do not identify item measurement geometry or intervening attenuators.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "related",
+        "locator": "Detection and Measurement metadata in OSUS_R_Source_Coverage.json, accepted rows 38, 42, 72",
+        "reason": "Reported location and uncertainty do not establish the quantity, shielding or presentation geometry of an item measured by a radiation detector.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "scope negative",
+        "locator": "C239 sensor architecture and signal data, accepted rows 72, 438 and 443",
+        "reason": "Sensor aperture fit, signal confidence and waveform metadata describe hardware or signals. They do not specify geometry or quantity of a measured item.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "related",
+        "locator": "AAS Part 1 Property, RelationshipElement and Qualifier; rows 360–361, 369",
+        "reason": "A property or relationship can describe an item when supplied with semantics. The reviewed metamodel does not define an amount and attenuation geometry for a measured item.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H02/H11, unit and geographic location TEDS",
+        "reason": "Channel units and transducer position leave the item's quantity uncertainty, placement and attenuators unverified."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI-N002/009/010, component and topology roles",
+        "reason": "The inventory represents equipment and network topology. The measured item's quantity, uncertainty and placement are outside the reviewed model."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F030, measurand, matrix and chemical identity",
+        "reason": "A process sample or matrix describes what is measured. The geometry, attenuating materials and one-sigma quantity uncertainty for an item require separate fields."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "Sensor.v1_11_0/RelatedItem; RF-187, sensor accuracy",
+        "reason": "A reading can identify related equipment and express accuracy. The item's orientation and intervening attenuation at acquisition are unestablished."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 parent, parent-rel-pos, sensor-data",
+        "reason": "Containment and sibling position locate hardware in inventory. They do not describe a measured item or its attenuating material."
+      },
+      "SAREF": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "SAREF Core 4.1.1, FeatureOfInterest, PropertyValue; baseline ISA-C-122, ISA-R-MEASUREMENT, ISA-C-038, RF-SENSOR-SUBJECT",
+        "reason": "The item can carry an observed amount and unit. Core does not define one-sigma uncertainty or presentation geometry and attenuation for a radiation measurement."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema; baseline ISA-C-122, ISA-R-MEASUREMENT, ISA-C-038, RF-SENSOR-SUBJECT",
+        "reason": "A typed interaction payload does not identify the measured item, its material quantity or the geometry of the exposure."
+      },
+      "SOSA": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:hasFeatureOfInterest, sosa:observedProperty, sosa:hasResult; baseline ISA-C-122, ISA-R-MEASUREMENT, ISA-C-038, RF-SENSOR-SUBJECT",
+        "reason": "The observation links its subject, property and result. Material presentation, shielding and standard uncertainty require further semantics."
+      },
+      "OMS": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.featureOfInterest, observedProperty, resultQuality, parameter; baseline ISA-C-122, ISA-R-MEASUREMENT, ISA-C-038, RF-SENSOR-SUBJECT",
+        "reason": "An observation identifies its item and quantity, can qualify result quality and carry event-specific parameters. This does not define the shape, attenuation or uncertainty convention."
+      },
+      "SWE": {
+        "relation": "partial",
+        "locator": "OGC 24-014 §8.2, Quantity, reference frame and quality; §8.3, Vector",
+        "reason": "Quantity and units support an item amount, and referenced coordinates can express position. Item-to-measurement geometry and the stated uncertainty convention need domain context.",
+        "classification": "common"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 PhysicalComponent and Position",
+        "reason": "Process/component position can be related to a reference frame. An item under measurement, its quantity and its geometry relative to attenuation material are different subjects.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "partial",
+        "locator": "OGC 23-001/23-002 Part 2 §9, Observation featureOfInterest; Part 1, SamplingFeature",
+        "reason": "An observation can identify the feature being observed. Quantity and measurement-specific item geometry, including attenuators, need their own description.",
+        "classification": "common"
+      }
+    },
+    "N4242-LIVE": {
+      "ISA": {
+        "relation": "scope negative",
+        "locator": "ISA-OBS-154/-155; ISA Event.time, rows 61 and 69",
+        "reason": "The radiation report and occurrence instant establish no paired measurement real time and per-detector live time.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "scope negative",
+        "locator": "BSI Flex 335 v2 DetectionReport; SAP04-N15; SAP11",
+        "reason": "The report can describe pulse duration. It supplies no independent detector live duration paired with a measurement elapsed time.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "related",
+        "locator": "Observation.xsd#observedTimestamp and #createdTimestamp; Channel.xsd#ChannelMetadata",
+        "reason": "Timestamps and recorded-channel sample counts do not state how long a detector remained sensitive during a measurement interval.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "scope negative",
+        "locator": "C239 signal data and calibration interactions, accepted rows 417 and 443",
+        "reason": "Sample rate and calibration state do not specify detector-sensitive time versus elapsed acquisition duration.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "IEEE-H05, TransducerChannel TEDS §6.5 table 19, SPeriod/UpdateT",
+        "reason": "Sampling and update intervals do not give the detector-sensitive duration accumulated within a particular acquisition."
+      },
+      "OPC": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "DI-N006, operation counters",
+        "reason": "Cumulative powered or active hours describe equipment lifetime; they do not establish detector live time over a measurement interval."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F026, sample event times; PA-F014, signal damping time",
+        "reason": "Sample-event timing and filter response measure different intervals from detector live time relative to elapsed collection time."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "Sensor.v1_11_0/AveragingInterval and SensingInterval",
+        "reason": "Sampling cadence and averaging windows cannot tell how long a nuclear detector was sensitive during one acquisition."
+      },
+      "RFC8348": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-data/value-timestamp and value-update-rate",
+        "reason": "Server read time and refresh cadence do not establish detector live time during acquisition."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, hasPhenomenonTime; baseline JOINT-SAMPLE-RECORD-TIMES, RF-COLLECTION-FUNCTION, OPCDI-OPERATION-COUNTERS",
+        "reason": "A result can apply over an interval. The interval alone does not distinguish elapsed acquisition time from detector-sensitive time."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema; baseline JOINT-SAMPLE-RECORD-TIMES, RF-COLLECTION-FUNCTION, OPCDI-OPERATION-COUNTERS",
+        "reason": "The core interaction schema supplies no paired real-time and live-time quantities."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:phenomenonTime, sosa:resultTime; baseline JOINT-SAMPLE-RECORD-TIMES, RF-COLLECTION-FUNCTION, OPCDI-OPERATION-COUNTERS",
+        "reason": "These temporal roles do not identify the duration the detection assembly remained receptive."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.phenomenonTime and resultTime; baseline JOINT-SAMPLE-RECORD-TIMES, RF-COLLECTION-FUNCTION, OPCDI-OPERATION-COUNTERS",
+        "reason": "Time of applicability can be an interval; detector live duration needs a separate quantity."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 §8.2, Time and Quantity",
+        "reason": "The component definition and unit can distinguish two duration fields. The donor supplies no detector dead-time or live-time rule.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "scope negative",
+        "locator": "OGC 23-000 AbstractProcess inputs, outputs, parameters",
+        "reason": "The process interface can name two durations, but does not prescribe the elapsed versus sensitive-time relationship for a detector acquisition.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "partial",
+        "locator": "OGC 23-001/23-002 Part 2 §9, Observation phenomenonTime",
+        "reason": "Phenomenon time can describe the observation interval. It does not establish the live duration of a detector contributing to that observation.",
+        "classification": "common"
+      }
+    },
+    "N4242-CHANNELS": {
+      "ISA": {
+        "relation": "related",
+        "locator": "ISA-OBS-154, ISA-OBS-155",
+        "reason": "An optional channel reference in a classified result does not convey a detector-attributed sequence of spectral channel counts or its encoding.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "related",
+        "locator": "BSI Flex 335 v2, detected signal; SAP04-N15, master row 460",
+        "reason": "Detected-signal amplitude, frequency span and pulse duration describe a signal. They do not establish the specified radiation spectroscopy field or calibration.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "partial",
+        "locator": "Channel.xsd#ChannelMetadata and #sampleOfInterest; Observation.xsd#sensorId",
+        "reason": "A stored channel can supply an identifier, sample count, data type and frequency. Its generic sampled data does not define spectral-bin counts or counted-zero compression.",
+        "classification": "common"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 electromagnetic wave and digital samples, master rows 442–443",
+        "reason": "Waveform sampling rate and resolution describe digitization. A sampled waveform cannot be interpreted as counts in radiation energy channels without separate evidence.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "IEEE-H01/H07, TransducerChannel TEDS §6.5 table 19",
+        "reason": "A transducer channel and its data-set definition concern channel access and sample structure. An energy-bin sequence with zero-run encoding needs separate evidence."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI-N001/003, device integration and FunctionalGroups",
+        "reason": "The base device interface and parameter grouping define no ordered energy-bin count encoding."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F011/026, measuring point and chromatographic signal",
+        "reason": "A signal tag identifies a process measurement point. A chromatographic signal does not establish counts in indexed radiation-spectrum bins."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "Sensor.v1_11_0/Reading; RF-015; RF-140 metric definition",
+        "reason": "A sensor or a metric property identifies the supplying source, but does not prescribe ordered spectrum counts and zero-run encoding."
+      },
+      "RFC8348": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-data/value, sensor-value-type and sensor-value",
+        "reason": "The RFC defines how a scalar reading is interpreted. Its sensor value is not a compressed vector of spectral channel counts."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, Observation, PropertyValue; baseline S06-R011, S06-R012, SOSA-SO2J-DIGITIZATION, RF-SENSOR-SUBJECT, RFC8348-ENCODING",
+        "reason": "Core can attach a result to a device. It does not prescribe channel-ordered counts or zero-run decoding."
+      },
+      "WoT": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, ArraySchema, items; baseline S06-R011, S06-R012, SOSA-SO2J-DIGITIZATION, RF-SENSOR-SUBJECT, RFC8348-ENCODING",
+        "reason": "An array can describe ordered values. Radiation channel identity, detector attribution and zero-run compression need external semantics."
+      },
+      "SOSA": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:madeBySensor, sosa:hasResult; baseline S06-R011, S06-R012, SOSA-SO2J-DIGITIZATION, RF-SENSOR-SUBJECT, RFC8348-ENCODING",
+        "reason": "A result of an observation can be traced to its sensor. The 2017 vocabulary supplies no spectral channel ordering or encoding."
+      },
+      "OMS": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.observer, Observation.result; baseline S06-R011, S06-R012, SOSA-SO2J-DIGITIZATION, RF-SENSOR-SUBJECT, RFC8348-ENCODING",
+        "reason": "The observer and result can be associated. OMS leaves encoding of channel counts and counted zeros to the result model."
+      },
+      "SWE": {
+        "relation": "partial",
+        "locator": "OGC 24-014 DataArray, elementType and elementCount; Array Semantics",
+        "reason": "An ordered array of counts can carry spectral samples and its dimension can be labelled spectral. Detector identity and N42 counted-zero decoding need additional semantics.",
+        "classification": "common"
+      },
+      "SensorML": {
+        "relation": "partial",
+        "locator": "OGC 23-000 PhysicalComponent and AbstractProcess outputs",
+        "reason": "A detector process can identify the component and describe its structured output with a SWE data component. The N42 spectral counts and compression are domain rules.",
+        "classification": "common"
+      },
+      "CSAPI": {
+        "relation": "partial",
+        "locator": "OGC 23-001/23-002 Part 2 §9, DataStream schema and Observation result",
+        "reason": "A system-associated data stream supplies a result schema. A profile can describe channel counts there; ordering, count compression and calibration must come from the result definition.",
+        "classification": "common"
+      }
+    },
+    "N4242-ENERGY": {
+      "ISA": {
+        "relation": "scope negative",
+        "locator": "ISA-OBS-154/-155 and reviewed measurement error types, row 72",
+        "reason": "The compared radiation observations define material classifications and measured quantities. Their reviewed fields do not specify this spectral calibration relationship.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "scope negative",
+        "locator": "BSI Flex 335 v2, detected signal; SAP04-N15, master row 460",
+        "reason": "Detected-signal amplitude, frequency span and pulse duration describe a signal. They do not establish the specified radiation spectroscopy field or calibration.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "scope negative",
+        "locator": "Channel.xsd#ChannelMetadata; CbrneTrigger.xsd#CbrneTriggerEntry, pinned OSUS-R d09088fb",
+        "reason": "The reviewed channel description and CBRNE trigger values have no energy-indexed calibration curve for this distinction.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 calibration service and interactions, master rows 16 and 417",
+        "reason": "C239 supplies calibration activity and result context. The reviewed interfaces do not specify this radiation energy-dependent curve or link it to a spectrum.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "IEEE-H03; IML Optional TEDS, Calibration TEDS §6.5.2.5, https://iml.ubi.pt/playground/docs/ieee1451/teds/optional-teds/",
+        "reason": "The worked Calibration TEDS describes coefficients converting sensor output to engineering units. It does not define spectrum boundaries or paired energy-deviation corrections."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI 1.05 §4.3, prior DI calibration comparison at row 487",
+        "reason": "A host can expose parameters; the base device model does not define energy calibration coefficients or channel boundaries."
+      },
+      "PADIM": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "PA-F016/019, OPC 30081 §§7.23,7.52,7.1.7",
+        "reason": "Calibration can tie point inputs and readouts or range-specific response factors together. The compared process calibrations do not define channel-to-energy conversion."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "Sensor.v1_11_0/CalibrationOffset, CalibrationTime; RF-090",
+        "reason": "Offset and time can qualify a reading. They do not map individual energy channels using coefficients or boundaries."
+      },
+      "RFC8348": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-value-scale and sensor-value-precision",
+        "reason": "Scaling of a reported managed value differs from calibration of channel position against photon energy."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, PropertyValue, ProcedureExecution; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-SIGNAL-COMPENSATION, SOSA-SO2J-DIGITIZATION",
+        "reason": "Values and their units can describe calibration results. Core supplies no rule for mapping channel to energy and correcting predicted energy."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema, PropertyAffordance; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-SIGNAL-COMPENSATION, SOSA-SO2J-DIGITIZATION",
+        "reason": "Declaring an accessible property or array does not define mapping channel to energy and correcting predicted energy."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:Procedure, ssn-system:SystemCapability; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-SIGNAL-COMPENSATION, SOSA-SO2J-DIGITIZATION",
+        "reason": "A procedure and performance properties can be identified. The reviewed model supplies no radiation calibration semantics for mapping channel to energy and correcting predicted energy."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.procedure, resultQuality; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-SIGNAL-COMPENSATION, SOSA-SO2J-DIGITIZATION",
+        "reason": "Procedure and result-quality context can be recorded. The radiation calibration relationship for mapping channel to energy and correcting predicted energy requires a separate model."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 DataArray and DataRecord",
+        "reason": "An ordered numeric array can carry energy boundaries, coefficients or deviations. The generic array does not determine which mapping to apply.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "partial",
+        "locator": "OGC 23-000 Core concepts, detector calibration-curve example and process parameters",
+        "reason": "A detector process can expose a calibration curve as a parameter governing its output. The N42 channel boundary/coefficients choice and deviation correction are more specific.",
+        "classification": "common"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §9, DataStream schema",
+        "reason": "Result schema identifies the structure expected in an observation. It does not select an energy-calibration equation or a boundary list for a spectrum.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-RESOLUTION": {
+      "ISA": {
+        "relation": "scope negative",
+        "locator": "ISA-OBS-154/-155 and reviewed measurement error types, row 72",
+        "reason": "The compared radiation observations define material classifications and measured quantities. Their reviewed fields do not specify this spectral calibration relationship.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "scope negative",
+        "locator": "BSI Flex 335 v2, detected signal; SAP04-N15, master row 460",
+        "reason": "Detected-signal amplitude, frequency span and pulse duration describe a signal. They do not establish the specified radiation spectroscopy field or calibration.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "scope negative",
+        "locator": "Channel.xsd#ChannelMetadata; CbrneTrigger.xsd#CbrneTriggerEntry, pinned OSUS-R d09088fb",
+        "reason": "The reviewed channel description and CBRNE trigger values have no energy-indexed calibration curve for this distinction.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 calibration service and interactions, master rows 16 and 417",
+        "reason": "C239 supplies calibration activity and result context. The reviewed interfaces do not specify this radiation energy-dependent curve or link it to a spectrum.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H03/H04; IML Optional TEDS, Calibration and Frequency Response",
+        "reason": "Calibration constants and response information are public technical leads. An energy-dependent peak-width calibration with uncertainties is unverified."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI 1.05 §4.3, prior DI comparison at row 488",
+        "reason": "Generic device parameters do not prescribe an energy-dependent peak width and its uncertainty."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F016/026, calibration points and chromatographic peak width",
+        "reason": "Peak-width observations and calibration points occur in process analysis. They do not define an energy-to-resolution calibration curve."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "Sensor.v1_11_0/Precision and CalibrationTime; RF-187/090",
+        "reason": "Reported significant digits and calibration time are distinct from a peak-width versus energy calibration."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-value-precision",
+        "reason": "Decimal precision carries no energy-dependent detector resolution or uncertainty curve."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, PropertyValue, ProcedureExecution; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, RF-SENSOR-DIGITS",
+        "reason": "Values and their units can describe calibration results. Core supplies no rule for pairing energy, peak width and one-sigma width uncertainty."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema, PropertyAffordance; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, RF-SENSOR-DIGITS",
+        "reason": "Declaring an accessible property or array does not define pairing energy, peak width and one-sigma width uncertainty."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:Procedure, ssn-system:SystemCapability; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, RF-SENSOR-DIGITS",
+        "reason": "A procedure and performance properties can be identified. The reviewed model supplies no radiation calibration semantics for pairing energy, peak width and one-sigma width uncertainty."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.procedure, resultQuality; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, RF-SENSOR-DIGITS",
+        "reason": "Procedure and result-quality context can be recorded. The radiation calibration relationship for pairing energy, peak width and one-sigma width uncertainty requires a separate model."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 DataArray and DataRecord",
+        "reason": "A repeated energy and width record can encode the curve. Its peak-width interpretation and associated uncertainty convention require external definitions.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 Core concepts, detector calibration-curve example",
+        "reason": "A calibration curve is supported as a process parameter. The specific relation between energy and peak width with uncertainty is additional.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "scope negative",
+        "locator": "OGC 23-001/23-002 Part 2 §9, DataStream and Observation",
+        "reason": "The observed property or schema can describe a result, but the data stream contract does not supply a peak-resolution calibration curve.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-EFFICIENCY": {
+      "ISA": {
+        "relation": "scope negative",
+        "locator": "ISA-OBS-154/-155 and reviewed measurement error types, row 72",
+        "reason": "The compared radiation observations define material classifications and measured quantities. Their reviewed fields do not specify this spectral calibration relationship.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "scope negative",
+        "locator": "BSI Flex 335 v2, detected signal; SAP04-N15, master row 460",
+        "reason": "Detected-signal amplitude, frequency span and pulse duration describe a signal. They do not establish the specified radiation spectroscopy field or calibration.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "scope negative",
+        "locator": "Channel.xsd#ChannelMetadata; CbrneTrigger.xsd#CbrneTriggerEntry, pinned OSUS-R d09088fb",
+        "reason": "The reviewed channel description and CBRNE trigger values have no energy-indexed calibration curve for this distinction.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 calibration service and interactions, master rows 16 and 417",
+        "reason": "C239 supplies calibration activity and result context. The reviewed interfaces do not specify this radiation energy-dependent curve or link it to a spectrum.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H03; IML Optional TEDS, Calibration and Transfer Function",
+        "reason": "Channel transfer or calibration functions do not establish the photon or peak denominator of any efficiency curve in the reviewed public evidence."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI 1.05 §4.3; DI-N001",
+        "reason": "No photon efficiency reference basis or per-energy curve is defined by the base device interface examined."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F016/019, range-specific chromatograph response and calibration points",
+        "reason": "A response factor or paired calibration point depends on a process quantity, not the total, full-energy or escape-peak radiation reference basis."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PowerSupply efficiency at percent load, prior row 582; Sensor.v1_11_0/CalibrationTime",
+        "reason": "Energy conversion efficiency at load is a different physical quantity from photon detection efficiency versus energy."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-data/value-type, value-scale",
+        "reason": "Unit type and scale do not define detector efficiency or the denominator used for a photon response curve."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, PropertyValue, ProcedureExecution; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-CALIBRATION-RANGES, RF-READING-BASIS",
+        "reason": "Values and their units can describe calibration results. Core supplies no rule for distinguishing detector-efficiency denominators and escape-peak calibration curves."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema, PropertyAffordance; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-CALIBRATION-RANGES, RF-READING-BASIS",
+        "reason": "Declaring an accessible property or array does not define distinguishing detector-efficiency denominators and escape-peak calibration curves."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:Procedure, ssn-system:SystemCapability; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-CALIBRATION-RANGES, RF-READING-BASIS",
+        "reason": "A procedure and performance properties can be identified. The reviewed model supplies no radiation calibration semantics for distinguishing detector-efficiency denominators and escape-peak calibration curves."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.procedure, resultQuality; baseline PADIM-CALIBRATION-POINTS, PADIM-CALIBRATION-CHARACTERISTICS, PADIM-CALIBRATION-RANGES, RF-READING-BASIS",
+        "reason": "Procedure and result-quality context can be recorded. The radiation calibration relationship for distinguishing detector-efficiency denominators and escape-peak calibration curves requires a separate model."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 DataArray and Quantity",
+        "reason": "An array of energy and efficiency values can carry a calibration. The denominator and photon/peak selection require domain definitions.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 Core concepts, detector calibration-curve example",
+        "reason": "A detector process can have calibrated parameters; the choice of pulse or peak contribution and the incident or emitted photon basis are domain-specific.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "scope negative",
+        "locator": "OGC 23-001/23-002 Part 2 §9, DataStream and Observation",
+        "reason": "A data stream may carry an efficiency estimate. Neither the photon basis of that estimate nor the calibration curve follows from the API resource type.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-WINDOWS": {
+      "ISA": {
+        "relation": "scope negative",
+        "locator": "ISA-OBS-154/-155",
+        "reason": "The compared radiation reports do not bind a vector of gross counts to indexed energy windows.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "scope negative",
+        "locator": "BSI Flex 335 v2, detected signal; SAP04-N15, master row 460",
+        "reason": "Detected-signal amplitude, frequency span and pulse duration describe a signal. They do not establish the specified radiation spectroscopy field or calibration.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "related",
+        "locator": "CbrneTrigger.xsd#CbrneTriggerEntry/counts; CbrneTriggerTypes.xsd#CbrneModality",
+        "reason": "An entry may report trigger counts per time. It does not bind each count to the corresponding start and end energies of a window.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "scope negative",
+        "locator": "C239 signal measurement and digitization scope, master rows 442–445",
+        "reason": "Frequency bands, digital samples and noise bandwidth do not identify gross counts per radiation energy window.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H04/H07, TransducerChannel TEDS §6.5 table 19",
+        "reason": "Channel operating ranges and sampled data sets cannot verify energy-window paired bounds, per-window counts and reset basis."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI-N006/026, operation exposure and lifetime counters",
+        "reason": "Device lifetime counters define neither detector energy windows nor reset-qualified radiation count totals."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F031, totalizer pulse quantity and width",
+        "reason": "The pulse totalizer has quantity and scaling context; it does not divide radiation counts into energy intervals or give their reset basis."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "Sensor.v1_11_0/LifetimeReading; RF-134",
+        "reason": "A cumulative sensor quantity and its accumulation context are meaningful separately from an instant value. No ordered spectral window-count mapping is established."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-data/value, value-timestamp",
+        "reason": "Most recent sensor data lack energy-window boundaries, per-window counts and reset totals."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, Observation, PropertyValue; baseline ISA-C-155, RF-ACCUMULATION, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "An observed count can be a property value. Core provides neither paired energy-window boundaries nor a since-reset basis."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema; baseline ISA-C-155, RF-ACCUMULATION, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "Interaction payload structure does not establish detector energy windows or the origin of a count total."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:hasResult, sosa:phenomenonTime; baseline ISA-C-155, RF-ACCUMULATION, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "A count result can have temporal context. Window definition and time since reset are not supplied by these terms."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.result, parameter; baseline ISA-C-155, RF-ACCUMULATION, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "A count result and its contextual parameters can be associated. Specific energy bounds and reset versus interval totals need additional semantics."
+      },
+      "SWE": {
+        "relation": "partial",
+        "locator": "OGC 24-014 §8.2, QuantityRange and Count; DataArray",
+        "reason": "A bounded quantity interval paired with a count supports the representation of a window and its count. Window attribution, live-time and reset basis require additional semantics.",
+        "classification": "common"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 AbstractProcess outputs and parameters",
+        "reason": "Process outputs may use a window definition supplied as a parameter. The model does not specify radiation energy windows or detector counts since reset.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §9, Observation result and schema",
+        "reason": "A result may contain counts and ranges according to its schema. Whole-range, energy-window and since-reset meanings must be supplied separately.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-QC": {
+      "ISA": {
+        "relation": "related",
+        "locator": "ISA DMS built-in-test result, master row 345",
+        "reason": "A diagnostic test result is not a dated inspection of whether the instrument is in calibration.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "scope negative",
+        "locator": "BSI Flex 335 v2 StatusReport and Registration; accepted row 196",
+        "reason": "The reviewed system and sensor statuses do not state that an instrument was inspected and was or was not in calibration on that date.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "related",
+        "locator": "Asset.java#getLastStatus; Status.xsd#Status; selected BMP180 capability",
+        "reason": "A status or built-in test outcome does not establish a dated inspection and its in-calibration determination.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "partial",
+        "locator": "C239 host calibration interactions, Calibrating and CalibrationResultType; master row 417",
+        "reason": "The sensor can report calibration activity and its latest result. Activity or successful calibration alone does not establish a dated inspection with a continuing in-calibration determination.",
+        "classification": "common"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "IEEE-H03/H09, Calibration TEDS and transducer service self-test",
+        "reason": "Calibration data and a self-test operation alone do not assert a dated inspection declaring continued fitness for service."
+      },
+      "OPC": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "DI-N005 and DI 1.05 §§4.12,4.5.4",
+        "reason": "A health condition can indicate maintenance need. That condition does not record a calibration inspection or its fitness determination."
+      },
+      "PADIM": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "PA-F015/024, dated calibration and calculation of time to next calibration",
+        "reason": "A signal can record its last calibration and time remaining. These fields alone do not attest fitness for service at a specified instrument inspection."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "Sensor.v1_11_0/CalibrationTime; Resource/Status; RF-090",
+        "reason": "Last calibration time and present health can be reported. An instrument inspection decision attesting calibration fitness requires more evidence."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 state/oper-state, sensor-data/oper-status",
+        "reason": "A sensor's availability or reported operational capability does not document the time or result of a calibration inspection."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, State, ProcedureExecution; baseline SOSA-SO2E-CALIBRATION-STATUS, PADIM-CALIBRATION-RECORD, PADIM-PARAMETER-CHANGE-TIME",
+        "reason": "An equipment state or inspection execution can be described. No specific calibrated/in-service indicator is defined."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, PropertyAffordance; baseline SOSA-SO2E-CALIBRATION-STATUS, PADIM-CALIBRATION-RECORD, PADIM-PARAMETER-CHANGE-TIME",
+        "reason": "A readable property alone supplies no inspection or calibrated-for-service semantics."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:Procedure, sosa:resultTime; baseline SOSA-SO2E-CALIBRATION-STATUS, PADIM-CALIBRATION-RECORD, PADIM-PARAMETER-CHANGE-TIME",
+        "reason": "A procedure and its result time can be represented. They do not certify an instrument is currently fit for service."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.procedure, resultQuality; baseline SOSA-SO2E-CALIBRATION-STATUS, PADIM-CALIBRATION-RECORD, PADIM-PARAMETER-CHANGE-TIME",
+        "reason": "Procedure and observation quality describe an observation. They do not establish equipment calibration-serviceability from an inspection."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 §8.2, Time and Boolean",
+        "reason": "A timestamp and Boolean can represent an inspection statement when their meaning has been supplied. There is no general instrument inspection outcome implied by those types.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "partial",
+        "locator": "OGC 23-000 §8.2.8, history",
+        "reason": "Dated calibration and maintenance events can be recorded for a process. A dated inspection’s explicit fitness-for-service Boolean is additional.",
+        "classification": "common"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §12, SystemEvent",
+        "reason": "A system event can record temporal context for an inspection. Its existence alone does not establish successful calibration or fitness for service.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-LINEAGE": {
+      "ISA": {
+        "relation": "partial",
+        "locator": "ISA Event Reference and Message Reference, ISA-DMS-275/-306; rows 68, 221, 230",
+        "reason": "Messages can identify prior events and their creators. A reference alone does not identify a type-matched raw reading used to produce a particular derived value.",
+        "classification": "common"
+      },
+      "SAPIENT": {
+        "relation": "partial",
+        "locator": "BSI §5.5 and §6.4.2.19 Table 77; associated_detection.proto; SAP04",
+        "reason": "Contributor and associated detections can link a reported result to contributing observations. They do not define typed raw-spectrum, dose, exposure or count references.",
+        "classification": "common"
+      },
+      "OSUSR": {
+        "relation": "partial",
+        "locator": "Observation.xsd#ObservationRef; ObservationTypes.xsd#RelationshipTypeEnum",
+        "reason": "An observation can identify another by UUID as parent, child or peer. The reference can preserve a record link, but alone does not assert a particular raw-to-derived computation.",
+        "classification": "common"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 §4.2 data and information products; accepted row 390",
+        "reason": "Distinguishes raw or minimally processed products from processed information. The processing-stage distinction does not identify each raw measurement actually used.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "related",
+        "locator": "AAS Part 1 RelationshipElement, AnnotatedRelationshipElement and shell derivedFrom; row 361",
+        "reason": "A semantically identified relationship can reference its endpoints, and shell derivation is modeled. Neither alone establishes derivation between the actual detector values in a measurement.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H01/H07, Meta TEDS and transducer channel data set",
+        "reason": "Channel groups and sampled values do not establish input-record references for derived measurements in the bounded public audit."
+      },
+      "OPC": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "DI-N003, FunctionalGroup",
+        "reason": "Parameter grouping organizes device information. Group membership is distinct from links between a derived reading and its raw input records."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F011/013, signal containers and reported/actual/simulated signal",
+        "reason": "Signal variants preserve source role. Raw measurement identifiers grouped as inputs to a particular analysis are distinct."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "MetricDefinition.v1_3_5/CalculationParameters; RF-048",
+        "reason": "A calculated metric identifies input metric properties. It does not necessarily identify individual raw records used by a particular analysis."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 component/parent, contains-child, sensor-data/value",
+        "reason": "Physical containment and the latest scalar sample do not form a measurement derivation graph."
+      },
+      "SAREF": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "SAREF Core 4.1.1, ProcedureExecution, hasInput, hasOutput; baseline S06-R022, SAPIENT-F2-DETECTION-LINEAGE, ISA-R-MESSAGE-REFERENCE, SOSA-SO2A-PRODUCT-PROCESSING, OPCDI-FUNCTIONAL-GROUP",
+        "reason": "Inputs and outputs of an execution can link source and derived data. Core does not define spectrum references or N42 measurement-group roles."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, InteractionAffordance; baseline S06-R022, SAPIENT-F2-DETECTION-LINEAGE, ISA-R-MESSAGE-REFERENCE, SOSA-SO2A-PRODUCT-PROCESSING, OPCDI-FUNCTIONAL-GROUP",
+        "reason": "A TD describes interactions and schemas. The reviewed exchange model does not assert execution-specific lineage between raw and derived data."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:usedProcedure, sosa:hasResult; baseline S06-R022, SAPIENT-F2-DETECTION-LINEAGE, ISA-R-MESSAGE-REFERENCE, SOSA-SO2A-PRODUCT-PROCESSING, OPCDI-FUNCTIONAL-GROUP",
+        "reason": "An output and its producing procedure can be identified. These links alone do not identify the exact raw spectra used as inputs."
+      },
+      "OMS": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.relatedObservation, ObservationCollection; baseline S06-R022, SAPIENT-F2-DETECTION-LINEAGE, ISA-R-MESSAGE-REFERENCE, SOSA-SO2A-PRODUCT-PROCESSING, OPCDI-FUNCTIONAL-GROUP",
+        "reason": "Related observations and collections supply links among records. Source role, input membership and exact spectrum-to-spectrum derivation require explicit qualification."
+      },
+      "SWE": {
+        "relation": "scope negative",
+        "locator": "OGC 24-014 DataRecord and DataArray",
+        "reason": "Component grouping and array membership concern a data structure. They do not specify derivation from identified raw reading records.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "partial",
+        "locator": "OGC 23-000 AggregateProcess components and connections; SimpleProcess",
+        "reason": "Process connections document how inputs contribute to outputs. These describe the processing path; N42 also links a particular result to identified input records.",
+        "classification": "common"
+      },
+      "CSAPI": {
+        "relation": "partial",
+        "locator": "OGC 23-001/23-002 Part 2 §9.10, Observation collections; §9, DataStream",
+        "reason": "Observation collections can group the records. Explicit references to raw inputs of a particular derived result are a separate claim.",
+        "classification": "common"
+      }
+    },
+    "N4242-ALGORITHM": {
+      "ISA": {
+        "relation": "related",
+        "locator": "ISA DMS §3.2 Method and Software Version, rows 49 and 260",
+        "reason": "An event-generation method or component software revision lacks the settings, computation time and outcome of a particular analysis execution.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "related",
+        "locator": "BSI Flex 335 v2 registration Table 32 and detection classification Tables 69–77",
+        "reason": "Node software version and reported detection confidence have different subjects from algorithm component versions, per-execution settings and analysis status.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "related",
+        "locator": "Asset.java#captureData; Observation.xsd#modalities; OSUS-R master rows 16, 260",
+        "reason": "Capture modality and version metadata do not establish the reported configuration and status of an algorithm execution over identified inputs.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 §4.2 and §§14.1–14.2; accepted rows 195, 260, 390",
+        "reason": "Processing-stage designation, runtime deployment and software version do not specify a particular analysis execution with its inputs, settings and confidence.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "related",
+        "locator": "AAS Parts 1–2, AAS07 operation APIs; rows 196 and 374",
+        "reason": "Operation state or value retrieval concerns a service call. It does not associate the reported analysis settings, timing and confidence with its contributing measurement data.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H08/H10, service access and service reply",
+        "reason": "A service reply records success or error. Inspection did not establish named algorithm execution, settings and confidence of its result."
+      },
+      "OPC": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "DI-N014/017, software identity and versions",
+        "reason": "Installed or available software versions identify software for a device. They do not describe the algorithm execution represented by a reported analysis."
+      },
+      "PADIM": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "PA-F022/026 and §§7.1.22–7.1.23; measuring methods and sample analysis",
+        "reason": "Method identification, sample-event timing and signal-fit diagnostics describe aspects of analysis. They do not assemble a versioned algorithm execution with all settings and confidence."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "Sensor.v1_11_0/Implementation; MetricDefinition.v1_3_5/CalculationParameters",
+        "reason": "A calculated sensor or metric can declare its calculation and inputs. A versioned algorithm execution and its reported confidence are unestablished."
+      },
+      "RFC8348": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "§7.1 component/software-rev",
+        "reason": "Installed component software revision is distinct from the version, settings, result status and execution time of an analysis."
+      },
+      "SAREF": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "SAREF Core 4.1.1, ProcedureExecution, hasInput, hasOutput; baseline S06-R010, ISA-T-EVENT-TIME, ISA-C-108, AAS-O3-QUALIFIED-CONTEXT, SOSA-SO2A-PRODUCT-PROCESSING",
+        "reason": "A procedure execution can identify inputs and outputs. The algorithm component versions, creator, setting units and execution outcome need additional terms."
+      },
+      "WoT": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, ActionAffordance.input and output; baseline S06-R010, ISA-T-EVENT-TIME, ISA-C-108, AAS-O3-QUALIFIED-CONTEXT, SOSA-SO2A-PRODUCT-PROCESSING",
+        "reason": "Action inputs and outputs describe an interface. They do not prove an actual algorithm version or execution settings."
+      },
+      "SOSA": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:usedProcedure, sosa:hasResult, sosa:resultTime; baseline S06-R010, ISA-T-EVENT-TIME, ISA-C-108, AAS-O3-QUALIFIED-CONTEXT, SOSA-SO2A-PRODUCT-PROCESSING",
+        "reason": "A particular act links its procedure and result. The algorithm version, parameters, run duration and confidence require additional description."
+      },
+      "OMS": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.procedure, AbstractObservationCharacteristics.parameter and resultQuality; baseline S06-R010, ISA-T-EVENT-TIME, ISA-C-108, AAS-O3-QUALIFIED-CONTEXT, SOSA-SO2A-PRODUCT-PROCESSING",
+        "reason": "The procedure, event-specific parameters and quality contextualize a result. They do not define a component-version manifest or algorithm-specific confidence."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 DataRecord and Quantity",
+        "reason": "Named fields and units can represent algorithm settings. Neither specifies the executing algorithm, version or run-result linkage.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "partial",
+        "locator": "OGC 23-000 SimpleProcess method; AbstractProcess parameters and configuration",
+        "reason": "A process method, parameters and restricted settings describe the algorithm. A particular execution’s duration, overall status and analysis confidence require occurrence-level evidence.",
+        "classification": "common"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 1, Procedure; Part 2 §9, Observation",
+        "reason": "A procedure can describe the method associated with an observation. The cited associations alone do not establish settings, version or status of an individual algorithm run.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-NUCLIDE": {
+      "ISA": {
+        "relation": "partial",
+        "locator": "ISA DMS 6.0r12 §3.2; ISA-OBS-154/-155",
+        "reason": "The core radiation report can name isotope and activity. The detailed result can report classification confidence. The reviewed definitions do not distinguish nuclide-specific minimum detectable activity or a fit statistic.",
+        "classification": "common"
+      },
+      "SAPIENT": {
+        "relation": "related",
+        "locator": "BSI Flex 335 v2 §§6.4, 7 Tables 69–77, 96–97",
+        "reason": "A classified detection can carry confidence. The reviewed target vocabulary does not establish isotope activity or a nuclide-specific minimum detectable activity.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "scope negative",
+        "locator": "CbrneTrigger.xsd#CbrneTriggerEntry; CbrneTriggerTypes.xsd#CbrneModalityEnum",
+        "reason": "The original trigger schema carries modality, optional counts or scaled signal level, and alarm. Its defined entries do not identify a nuclide, its estimated activity or its minimum detectable activity.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "2022 DSDM SignalDetection and SignalCharacterization/ConfidenceMeasurement; accepted row 72",
+        "reason": "A confidence value qualifies a signal conclusion. It does not provide a named nuclide, activity estimate or minimum detectable activity.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H02/H07, TransducerChannel TEDS",
+        "reason": "Generic measured quantities and channel data do not resolve isotope-specific identification confidence, activity or detection limits."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI-N001/002; DI 1.05 device/component model",
+        "reason": "No nuclide identification, isotope activity or detection limit is specified in the reviewed device information model."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F022/030, signal-fit diagnostics and analyte identity",
+        "reason": "A chemical analyte's identity and technique-specific fit diagnostics are related only. Isotope activity, identification decision and minimum detectable activity are different assertions."
+      },
+      "Redfish": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "RF-015, RF-187; Sensor.v1_11_0/Reading, Precision",
+        "reason": "Generic sensor values and uncertainty qualifiers do not define isotope identity, confidence or minimum detectable activity."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-data and sensor-status",
+        "reason": "The scoped hardware measurements do not identify nuclides, inferred activity, confidence or detection limits."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, Property, PropertyValue; baseline ISA-C-154, ISA-C-155, SAPIENT-F2-TARGET-CLAIMS, ISA-R-MEASUREMENT",
+        "reason": "The quantity and unit can be named. Core does not specify identification confidence, nuclide activity and minimum detectable activity."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema; baseline ISA-C-154, ISA-C-155, SAPIENT-F2-TARGET-CLAIMS, ISA-R-MEASUREMENT",
+        "reason": "A numeric result schema does not establish identification confidence, nuclide activity and minimum detectable activity."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:observedProperty, sosa:hasResult; baseline ISA-C-154, ISA-C-155, SAPIENT-F2-TARGET-CLAIMS, ISA-R-MEASUREMENT",
+        "reason": "The result is linked to an observed property. The radiation-specific distinctions for identification confidence, nuclide activity and minimum detectable activity require further terms."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.observedProperty, result, resultQuality; baseline ISA-C-154, ISA-C-155, SAPIENT-F2-TARGET-CLAIMS, ISA-R-MEASUREMENT",
+        "reason": "Property and quality can qualify a measurement. The compared model supplies no native rules for identification confidence, nuclide activity and minimum detectable activity."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 §8.2, Category, Quantity and quality",
+        "reason": "Category and qualified quantity can carry results with domain definitions. They do not establish nuclide identification confidence, activity detection limit or fit statistic.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "scope negative",
+        "locator": "OGC 23-000 AbstractProcess outputs",
+        "reason": "An output may be given domain-defined result fields, but the process model does not assign semantics to nuclide detection thresholds or identification fit.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §9, Observation result and schema",
+        "reason": "A typed observation can carry an identification result. The nuclide confidence, minimum detectable activity and goodness-of-fit meanings require a domain definition.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-SOURCE": {
+      "ISA": {
+        "relation": "partial",
+        "locator": "ISA DMS §3.2 Position, Bearing, Distance, Radiation Reading; ISA-OBS-155",
+        "reason": "ISA can report entity position and isotope in event content. The reviewed fields do not express separate shielding areal density and effective atomic number for a reported nuclide.",
+        "classification": "common"
+      },
+      "SAPIENT": {
+        "relation": "partial",
+        "locator": "BSI §5.2 Tables 7–10, DetectionReport; SAP02-N09 and SAP04-N09/-N10",
+        "reason": "Absolute location or range and bearing can locate a reported detection. A nuclide identity and its effective shielding atomic number and density are distinct.",
+        "classification": "common"
+      },
+      "OSUSR": {
+        "relation": "partial",
+        "locator": "OSUS-R Observation detection metadata, accepted rows 38 and 42; CbrneTrigger.xsd",
+        "reason": "A position or range can locate a reported detection. The trigger schema does not identify the shielding and geometry estimated for an individual nuclide.",
+        "classification": "common"
+      },
+      "OpenGroupSOSA": {
+        "relation": "scope negative",
+        "locator": "C239 hardware and signal characteristics; accepted rows 438–445",
+        "reason": "Aperture geometry and electromagnetic signal context describe the sensor or signal, not an estimate of the radioactive source shape, shielding and position.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "IEEE-H11, Optional Geographic Location TEDS",
+        "reason": "Transducer geographic location and a radiation analysis's estimated nuclide location or shielding describe different subjects."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI-N009/031, network topology and physical locating signal",
+        "reason": "Device topology or locating a physical unit supplies no estimate of an external source's geometry, shielding or position."
+      },
+      "PADIM": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "PA-F030, measurand/matrix/chemical identity",
+        "reason": "The chemical measurement model evaluated does not specify an estimated nuclide source position, geometry and shielding."
+      },
+      "Redfish": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "RF-087; Resource/Location",
+        "reason": "The location of managed equipment does not specify shielding or the estimated geometry and position of a detected external source."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 parent and parent-rel-pos",
+        "reason": "Inventory placement of a component does not convey the position and shielding of an inferred radiation source."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, FeatureOfInterest, PropertyValue; baseline ISA-C-122, ISA-C-133, ISA-C-151, ISA-C-038, ISA-C-154",
+        "reason": "A source can be a feature with properties, but the geometry and inferred shielding materials are domain vocabulary."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema; baseline ISA-C-122, ISA-C-133, ISA-C-151, ISA-C-038, ISA-C-154",
+        "reason": "A TD data schema does not establish inferred source geometry, shielding or location origin."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:FeatureOfInterest, sosa:hasResult; baseline ISA-C-122, ISA-C-133, ISA-C-151, ISA-C-038, ISA-C-154",
+        "reason": "An inferred source can be a subject, but the geometry, attenuation estimates and reference origin require other vocabulary."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.featureOfInterest, parameter; baseline ISA-C-122, ISA-C-133, ISA-C-151, ISA-C-038, ISA-C-154",
+        "reason": "A source feature and contextual observations can be identified. This does not define effective atomic number, areal density or the position semantics."
+      },
+      "SWE": {
+        "relation": "partial",
+        "locator": "OGC 24-014 Vector, referenceFrame and localFrame",
+        "reason": "Coordinates can be tied to a reference frame. Estimated nuclide location, attribution and reported shielding properties need domain semantics.",
+        "classification": "common"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 PhysicalComponent position and local reference frames",
+        "reason": "Physical component positions and frames can describe equipment. A source position inferred by radiation analysis is a different assertion.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "partial",
+        "locator": "OGC 23-001/23-002 Part 1, SamplingFeature; Part 2 §9, Observation featureOfInterest",
+        "reason": "A feature identity and associated geometry can give spatial context. Neither establishes estimated nuclide-source geometry or inferred shielding.",
+        "classification": "common"
+      }
+    },
+    "N4242-PEAK": {
+      "ISA": {
+        "relation": "scope negative",
+        "locator": "ISA-OBS-154/-155",
+        "reason": "The reviewed radiation results do not specify a measured-versus-expected spectral peak, width and net counts after continuum subtraction.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "related",
+        "locator": "BSI Flex 335 v2, detected signal; SAP04-N15, master row 460",
+        "reason": "Detected-signal amplitude, frequency span and pulse duration describe a signal. They do not establish the specified radiation spectroscopy field or calibration.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "scope negative",
+        "locator": "Channel.xsd#ChannelMetadata; CbrneTrigger.xsd#CbrneTriggerEntry",
+        "reason": "A sampled channel and modality-specific trigger signal do not specify a fitted peak width, expected energy or continuum-subtracted count.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 wave digitization and signal-to-noise context; accepted rows 443 and 445",
+        "reason": "Digitized-wave resolution and signal-to-noise are related signal measurements. Neither defines a fitted radiation peak, its expected energy and its net area.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H04/H07, channel operating error, sampling and data set",
+        "reason": "An analyzed peak's energy, width, net integrated area and continuum correction were not established from the public channel forms."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI 1.05 §4.3, prior DI comparison at row 498",
+        "reason": "The model supplies no fitted radiation peak, energy width or continuum-subtracted area."
+      },
+      "PADIM": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "PA-F026; OPC 30081 §§7.1.12,7.1.27",
+        "reason": "Chromatographic peaks have widths and areas associated with signal and sample. Their axes and manufacturer-defined area units do not establish spectral peak energy or continuum subtraction."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "RF-187 and Sensor.v1_11_0 peak-reading fields, prior row 568",
+        "reason": "A recorded extreme is a sensor statistic. A fitted energy peak also has a width and a net integrated area."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-value-type and sensor-value",
+        "reason": "Generic scalar types define no spectrum-peak energy, width or integrated net counts."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, Property, PropertyValue; baseline RF-EXTREMA, SAPIENT-R11-DETECTED-SIGNAL, PADIM-CHROMATOGRAM, ISA-R-MEASUREMENT",
+        "reason": "The quantity and unit can be named. Core does not specify fitted peak energy, full width and net counts after continuum subtraction."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema; baseline RF-EXTREMA, SAPIENT-R11-DETECTED-SIGNAL, PADIM-CHROMATOGRAM, ISA-R-MEASUREMENT",
+        "reason": "A numeric result schema does not establish fitted peak energy, full width and net counts after continuum subtraction."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:observedProperty, sosa:hasResult; baseline RF-EXTREMA, SAPIENT-R11-DETECTED-SIGNAL, PADIM-CHROMATOGRAM, ISA-R-MEASUREMENT",
+        "reason": "The result is linked to an observed property. The radiation-specific distinctions for fitted peak energy, full width and net counts after continuum subtraction require further terms."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.observedProperty, result, resultQuality; baseline RF-EXTREMA, SAPIENT-R11-DETECTED-SIGNAL, PADIM-CHROMATOGRAM, ISA-R-MEASUREMENT",
+        "reason": "Property and quality can qualify a measurement. The compared model supplies no native rules for fitted peak energy, full width and net counts after continuum subtraction."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 DataRecord, Quantity and quality",
+        "reason": "A record can carry multiple scalar estimates and quality. Their meaning as measured/expected peak energy, width and continuum-subtracted counts is external.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "scope negative",
+        "locator": "OGC 23-000 AbstractProcess outputs",
+        "reason": "A process output may carry a defined result structure. The observed, expected and continuum-subtracted peak measures are not defined by the process model.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "scope negative",
+        "locator": "OGC 23-001/23-002 Part 2 §9, DataStream schema",
+        "reason": "An externally supplied result schema can describe peaks; the generic datastream defines none of these specific peak estimates.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-RATES": {
+      "ISA": {
+        "relation": "partial",
+        "locator": "ISA-OBS-155, Radiation Reading",
+        "reason": "ISA reports isotope activity and can report absorbed dose or dose rate. N42 ambient dose equivalent and exposure are separate quantities. Lifetime-since-reset and selected-analysis intervals cannot be inferred from ISA absorbed dose.",
+        "classification": "common"
+      },
+      "SAPIENT": {
+        "relation": "scope negative",
+        "locator": "BSI DetectionReport TrackObjectInfo, SAP02-N08 and SAP04",
+        "reason": "A track quantity and its error do not define ambient dose equivalent versus exposure, or the accumulation basis for either.",
+        "classification": "unfilled"
+      },
+      "OSUSR": {
+        "relation": "partial",
+        "locator": "CbrneTrigger.xsd#CbrneTriggerEntry/counts; core shared CountsPerTime",
+        "reason": "The original trigger can report counts per time for a modality. Count rate does not encode ambient dose equivalent, exposure, accumulated quantity or the applicable reset time.",
+        "classification": "common"
+      },
+      "OpenGroupSOSA": {
+        "relation": "scope negative",
+        "locator": "C239 data products and signal measurement; rows 390, 442–445",
+        "reason": "The reviewed product and signal field definitions do not differentiate dose equivalent, exposure and gross count rates or their accumulation bases.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "IEEE-H02/H07, physical units, sampling and data set",
+        "reason": "Channel units alone do not establish the radiation quantity or whether accumulation spans a reset or selected analysis inputs."
+      },
+      "OPC": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "DI-N006/026, counter scope",
+        "reason": "Device lifetime metrics supply no distinction between dose, exposure and count rates or a selected radiation analysis interval."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-F031/036, pulse quantity and normalized process measurements",
+        "reason": "Totalizer and process quantities require unit and reference context; radiation dose, exposure and reset-qualified count totals are unestablished."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "RF-134 and RF-188; Sensor/LifetimeReading, MetricReportDefinition/CollectionFunction",
+        "reason": "Cumulative readings and selectable aggregation functions can preserve the accumulation basis. Dose and exposure distinctions require radiation-specific quantity definitions."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 sensor-value-type and value-timestamp",
+        "reason": "The published type vocabulary does not distinguish ambient dose equivalent, exposure, count rate or reset-qualified totals."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, Property, PropertyValue; baseline ISA-C-154, ISA-C-155, ISA-R-MEASUREMENT, RF-ACCUMULATION, RF-COLLECTION-FUNCTION",
+        "reason": "The quantity and unit can be named. Core does not specify dose equivalent versus exposure, counts, their rates and reset-scoped totals."
+      },
+      "WoT": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, DataSchema; baseline ISA-C-154, ISA-C-155, ISA-R-MEASUREMENT, RF-ACCUMULATION, RF-COLLECTION-FUNCTION",
+        "reason": "A numeric result schema does not establish dose equivalent versus exposure, counts, their rates and reset-scoped totals."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:observedProperty, sosa:hasResult; baseline ISA-C-154, ISA-C-155, ISA-R-MEASUREMENT, RF-ACCUMULATION, RF-COLLECTION-FUNCTION",
+        "reason": "The result is linked to an observed property. The radiation-specific distinctions for dose equivalent versus exposure, counts, their rates and reset-scoped totals require further terms."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.observedProperty, result, resultQuality; baseline ISA-C-154, ISA-C-155, ISA-R-MEASUREMENT, RF-ACCUMULATION, RF-COLLECTION-FUNCTION",
+        "reason": "Property and quality can qualify a measurement. The compared model supplies no native rules for dose equivalent versus exposure, counts, their rates and reset-scoped totals."
+      },
+      "SWE": {
+        "relation": "partial",
+        "locator": "OGC 24-014 §8.2, Quantity and Count; definition and uom",
+        "reason": "A property definition and unit can preserve separate dose and exposure roles, and Count is distinct from a physical quantity. The reset and analysis-input accumulation bases need separate definitions.",
+        "classification": "common"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 AbstractProcess outputs",
+        "reason": "Outputs may distinguish several measured quantities with SWE definitions and units. The dose, exposure and count accumulation periods remain domain-defined.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §9, DataStream observed properties, result schema and phenomenonTime",
+        "reason": "The stream can identify the measured property and time range. It does not determine whether a result accumulates since reset or across an analysis input set.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-ALARM": {
+      "ISA": {
+        "relation": "related",
+        "locator": "ISA-DMS-155; ISA Event.type and Detector Properties, rows 70–71",
+        "reason": "A harmful indication and detector-context properties have different semantics from an issued radiation alarm with triggering window indices and audible or visual annunciation.",
+        "classification": "unfilled"
+      },
+      "SAPIENT": {
+        "relation": "partial",
+        "locator": "BSI §6.3.3 and §§6.6.1–13 Tables 88–94, Alert and AlertAck",
+        "reason": "An alert can convey reporting source and condition and can have an acknowledgment. Radiation energy-window attribution and physical annunciator states are not established.",
+        "classification": "common"
+      },
+      "OSUSR": {
+        "relation": "partial",
+        "locator": "CbrneTrigger.xsd#CbrneTriggerEntry/alarm and modality; Observation.xsd#sensorId",
+        "reason": "A modality-specific CBRNE trigger entry reports an alarm state, and an observation may identify a subordinate sensor. Triggering spectral windows, lamp color and audibility need separate evidence.",
+        "classification": "common"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 §6 health/fault reporting; master rows 395, 397 and 452",
+        "reason": "Health faults and management notifications do not identify which radiation detector and energy window triggered a local annunciator.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "scope negative",
+        "locator": "AAS original coverage ledger, assessed Part 1 property/submodel and AAS08 selected templates; rows 360–361, 369",
+        "reason": "The assessed AAS evidence provides typed properties, groups and qualified relationships. A domain template or external semantic definition would be needed to establish this radiation-specific meaning.",
+        "classification": "unfilled"
+      },
+      "IEEE": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "IEEE-H08/H10, network notification and service status",
+        "reason": "Notification/service-status fields are related to signaling but do not identify alarmed spectral windows and equipment annunciators."
+      },
+      "OPC": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "DI 1.05 §§4.12,4.5.4, DI-N005",
+        "reason": "Diagnostic alarms attach to equipment and distinguish health conditions. Detector-energy attribution and audible/visual radiation annunciation require separate semantics."
+      },
+      "PADIM": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "PA-DIM 1.02 dependency on DI 1.04 DeviceHealthAlarms, nodes 15051/15053/15143",
+        "reason": "Inherited health alarms distinguish device conditions and the affected equipment. They do not identify a triggering energy-window index or radiation annunciator."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "Event.v1_11_1/OriginOfCondition; RF-019; Sensor thresholds RF-135",
+        "reason": "An event can identify its originating resource and its threshold criterion. Radiation-energy windows and the instrument's sound or light on that alarm need additional evidence."
+      },
+      "RFC8348": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "§7.1 component/state/alarm-state; hardware-state-oper-enabled and disabled",
+        "reason": "Reported alarm state is specific to a named hardware component. Neither a spectral window index nor annunciator behavior is defined."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, State, Observation; baseline SAPIENT-F2-ALERT-LIFECYCLE, RF-THRESHOLD-HYSTERESIS, ISA-C-111",
+        "reason": "An alarm state or triggering observation can be described through general terms. Core does not define contributing energy windows or annunciator presentation."
+      },
+      "WoT": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, EventAffordance, EventAffordance.data; baseline SAPIENT-F2-ALERT-LIFECYCLE, RF-THRESHOLD-HYSTERESIS, ISA-C-111",
+        "reason": "An event may carry structured notification data. The detector links, energy-window indices and light/sound indications require domain content."
+      },
+      "SOSA": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:Observation, ssn:detects; baseline SAPIENT-F2-ALERT-LIFECYCLE, RF-THRESHOLD-HYSTERESIS, ISA-C-111",
+        "reason": "Observing or detecting a stimulus does not define an alarm result with trigger-window and annunciator fields."
+      },
+      "OMS": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.result; baseline SAPIENT-F2-ALERT-LIFECYCLE, RF-THRESHOLD-HYSTERESIS, ISA-C-111",
+        "reason": "An observation result does not itself specify an alarm category, contributing detectors, triggering windows or annunciator state."
+      },
+      "SWE": {
+        "relation": "scope negative",
+        "locator": "OGC 24-014 §8.2, Category/Count; DataArray",
+        "reason": "Enumerations and indices alone do not establish which detector raised a radiation alarm or which window caused it.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 History and process outputs",
+        "reason": "A process can record an event or describe an alarm output. That does not assign causal detector/window references or describe an annunciator.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §12, SystemEvent",
+        "reason": "A system event can represent an alarm when typed appropriately. Its generic form does not establish energy-window indices, contributing detectors or visual/acoustic indicators.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-CHAR": {
+      "ISA": {
+        "relation": "partial",
+        "locator": "ISA Status.properties; ISA-DMS-316/-318/-329, rows 89, 91, 196",
+        "reason": "ISA reports named property values and can declare publication thresholds. A threshold definition is separate from a reported out-of-limits flag on the value or a group.",
+        "classification": "common"
+      },
+      "SAPIENT": {
+        "relation": "partial",
+        "locator": "BSI Flex 335 v2 StatusReport and named status values; SAP11, master row 196",
+        "reason": "Named status values support reporting a condition. Per-characteristic time and out-of-limits flags on both an individual value and a group remain distinct.",
+        "classification": "common"
+      },
+      "OSUSR": {
+        "relation": "related",
+        "locator": "Status.xsd#Status; Asset.java#getLastStatus; CbrneTrigger.xsd#CbrneTriggerEntry/alarm",
+        "reason": "A summary or component reading can report a condition. An alarm on a trigger entry is not an out-of-limits flag on an arbitrary named group and its members.",
+        "classification": "unfilled"
+      },
+      "OpenGroupSOSA": {
+        "relation": "related",
+        "locator": "C239 §6 and §14; accepted rows 196 and 395",
+        "reason": "Health, state, mode and configuration can be reported. A single characteristic or characteristic group out-of-limits assertion is not established by those status fields.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "partial",
+        "locator": "AAS Part 1 Property, SubmodelElementCollection and Qualifier; AAS02, AAS03, AAS native rows 360 and 369",
+        "reason": "A named group can collect typed properties and a qualifier can annotate an element. N42’s specifically defined individual and group out-of-limits flags require additional domain semantics.",
+        "classification": "common"
+      },
+      "IEEE": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "IEEE-H02/H04, TransducerChannel TEDS §6.5 table 19",
+        "reason": "The channel declares physical units and defined operating limits. A declared limit does not assert a timed out-of-limits result at individual and group levels."
+      },
+      "OPC": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "DI-N003/005, FunctionalGroup and diagnostic conditions",
+        "reason": "Groups organize device parameters and diagnostic conditions report abnormal health. These do not define the out-of-limits flag for a characteristic or its group."
+      },
+      "PADIM": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "PA-F011/012, identified signal and component condition; PA-DIM FunctionalGroups",
+        "reason": "Process signal values belong to identified equipment and condition/functional groups. A group exception and a member's timed out-of-limits indication have distinct meanings."
+      },
+      "Redfish": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "Sensor.v1_11_0/ReadingTime, Thresholds; Resource/Status and HealthRollup",
+        "reason": "A sensor can have a timed reading and threshold conditions. Roll-up health has different aggregation rules from an explicit characteristic-group out-of-limits flag."
+      },
+      "RFC8348": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "§7.1 sensor-data/value, value-timestamp, value-type, units-display; state/alarm-state",
+        "reason": "An identified sensor reports its typed and time-qualified value. Component alarms are distinct from a boolean qualification on a named group of characteristics."
+      },
+      "SAREF": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "SAREF Core 4.1.1, PropertyValue, compound values, hasPropertyValue; baseline ISA-T-STATUS, OPCDI-FUNCTIONAL-GROUP, SAREF-VALUE-COMPOSITION, RF-THRESHOLD-HYSTERESIS",
+        "reason": "A feature can have individual or compound values and their constituents. Per-value and group out-of-limits flags with their distinct scopes require additional meaning."
+      },
+      "WoT": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, ObjectSchema, DataSchema minimum/maximum; baseline ISA-T-STATUS, OPCDI-FUNCTIONAL-GROUP, SAREF-VALUE-COMPOSITION, RF-THRESHOLD-HYSTERESIS",
+        "reason": "A schema can group properties and set constraints. Those declarations do not report a measured exception for a particular constituent or group."
+      },
+      "SOSA": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:observedProperty, sosa:hasResult; baseline ISA-T-STATUS, OPCDI-FUNCTIONAL-GROUP, SAREF-VALUE-COMPOSITION, RF-THRESHOLD-HYSTERESIS",
+        "reason": "The observed property and result can be linked; group-level out-of-limits indications are not specified."
+      },
+      "OMS": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "OGC 20-082r4 OMS 3.0, AbstractObservationCharacteristics.resultQuality; baseline ISA-T-STATUS, OPCDI-FUNCTIONAL-GROUP, SAREF-VALUE-COMPOSITION, RF-THRESHOLD-HYSTERESIS",
+        "reason": "Quality information can qualify a result. The reviewed model does not distinguish out-of-limits flags for characteristic groups versus their individual members."
+      },
+      "SWE": {
+        "relation": "partial",
+        "locator": "OGC 24-014 DataRecord and simple-component quality",
+        "reason": "Characteristic values can have definitions, units and quality and can be grouped. A group out-of-limits assessment with independent meaning needs an explicit additional field.",
+        "classification": "common"
+      },
+      "SensorML": {
+        "relation": "partial",
+        "locator": "OGC 23-000 AbstractProcess characteristics, CharacteristicList",
+        "reason": "Subject-associated characteristics can be grouped for a process. Per-value acquisition time and independent exception status for the characteristic group are additional.",
+        "classification": "common"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 1 System; Part 2 §9, DataStream result schema",
+        "reason": "Descriptions and result schemas can expose properties. No common rule establishes an independent group exception flag.",
+        "classification": "unfilled"
+      }
+    },
+    "N4242-MEDIA": {
+      "ISA": {
+        "relation": "partial",
+        "locator": "ISA DMS §3.2 Media, master row 48; Event.time, row 69",
+        "reason": "An event can include media. Its event timestamp alone does not identify the capture interval, recording device or measurement-specific item references.",
+        "classification": "common"
+      },
+      "SAPIENT": {
+        "relation": "partial",
+        "locator": "BSI DetectionReport.associated_file, AssociatedFile; SAP02-N11 and SAP04-N14",
+        "reason": "Media URLs can be linked to a detection. Their existence alone does not identify the capture device, interval, sequence or view of a measured item.",
+        "classification": "common"
+      },
+      "OSUSR": {
+        "relation": "partial",
+        "locator": "Observation.xsd#digitalMedia; Image.xsd#ImageMetadata; Video.xsd#VideoMetadata; Observation.xsd#observedTimestamp",
+        "reason": "The recording or image and its metadata can accompany an observation with an acquisition time. A selected region, recording device and separately referenced measured item remain distinct.",
+        "classification": "common"
+      },
+      "OpenGroupSOSA": {
+        "relation": "scope negative",
+        "locator": "C239 §4.2 and §15; accepted rows 24 and 390",
+        "reason": "The reviewed data-product and transport definitions do not link captured media, perspective and capture-device metadata to a particular measured item.",
+        "classification": "unfilled"
+      },
+      "AAS32": {
+        "relation": "partial",
+        "locator": "AAS Part 1 File and Blob; Part 5 package file relationship; native row 363",
+        "reason": "A supporting file can have a location and type or embedded content. A file attached to an asset record does not establish which measured item it shows, its perspective or capture interval.",
+        "classification": "common"
+      },
+      "IEEE": {
+        "relation": "source hold",
+        "classification": "unfilled",
+        "locator": "Step14_IEEE1451_2024_Public_Technical_Evidence_Audit.json, limits on public TEDS and service evidence",
+        "reason": "The reviewed technical forms do not establish a timed multimedia capture linked to the measured item, camera perspective and sequence."
+      },
+      "OPC": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "DI 1.05 §§4.4.3,4.5.6,8.7.3, DI-N007",
+        "reason": "Device support images and documents identify product resources. They do not establish acquisition-time imagery of a measured item."
+      },
+      "PADIM": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "PA-DIM dependency on DI 1.04, optional DeviceManual; comparison at row 363",
+        "reason": "A linked device manual is equipment support information. It is not evidence of item-specific multimedia capture."
+      },
+      "Redfish": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "Assembly.v1_5_1/BinaryDataURI; RF-078",
+        "reason": "The URI identifies supporting binary data for an assembly. It does not encode a measured item's camera perspective, capture interval and sequence."
+      },
+      "RFC8348": {
+        "relation": "scope negative",
+        "classification": "unfilled",
+        "locator": "§7.1 component/uri",
+        "reason": "A component identification URI supplies no capture sequence, perspective, identified item or acquisition-time media workflow."
+      },
+      "SAREF": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "SAREF Core 4.1.1, FeatureOfInterest, ProcedureExecution; baseline ISA-C-146, OSUSR-MEDIA-REGION, AAS-O2-SUPPORTING-CONTENT, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "The observed item and producing device can be identified. Core supplies no multimedia perspective, sequence and recording context."
+      },
+      "WoT": {
+        "relation": "related",
+        "classification": "unfilled",
+        "locator": "W3C Thing Description 1.1, Link, contentType; baseline ISA-C-146, OSUSR-MEDIA-REGION, AAS-O2-SUPPORTING-CONTENT, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "A typed resource link can identify media. The core link does not establish its subject, recording device or acquisition interval."
+      },
+      "SOSA": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "W3C SOSA/SSN Recommendation 2017, sosa:hasFeatureOfInterest, sosa:madeBySensor, sosa:phenomenonTime; baseline ISA-C-146, OSUSR-MEDIA-REGION, AAS-O2-SUPPORTING-CONTENT, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "An observation can identify the subject, sensor and time. Media encoding, sequence, view and recording device roles require further semantics."
+      },
+      "OMS": {
+        "relation": "partial",
+        "classification": "common",
+        "locator": "OGC 20-082r4 OMS 3.0, Observation.featureOfInterest, observer, phenomenonTime, result; baseline ISA-C-146, OSUSR-MEDIA-REGION, AAS-O2-SUPPORTING-CONTENT, JOINT-SAMPLE-RECORD-TIMES",
+        "reason": "Subject, observer and time can accompany a result. Capture perspective, sequence, content encoding and file identity are outside these associations."
+      },
+      "SWE": {
+        "relation": "related",
+        "locator": "OGC 24-014 BinaryEncoding and DataRecord",
+        "reason": "An encoding describes representation of values. It does not by itself identify the capture device, linked measured item and perspective.",
+        "classification": "unfilled"
+      },
+      "SensorML": {
+        "relation": "related",
+        "locator": "OGC 23-000 AbstractProcess documentation",
+        "reason": "Supporting documents can be associated with a described process. This does not establish a particular capture interval, device, perspective or measured-item relationship.",
+        "classification": "unfilled"
+      },
+      "CSAPI": {
+        "relation": "related",
+        "locator": "OGC 23-001/23-002 Part 2 §9, Observation featureOfInterest and result schema",
+        "reason": "Feature attribution and result schema are available. The native API associations alone do not establish provenance of the recorded media, viewing perspective and capture interval.",
+        "classification": "unfilled"
+      }
+    }
+  },
+  "new_rows": {
+    "N4242-DETECTOR": {
+      "label": "Radiation detected, detector kind and detector dimensions",
+      "definition": "Keep the radiation category separate from the detector technology and the dimensions or volume of the detector to which they refer.",
+      "reason": "A sensor kind or enclosure dimension alone cannot distinguish what radiation an instrument detects from the technology and geometry of each detector.",
+      "locator": "NIST 2020 edition XSD, RadDetectorInformationType (RadDetectorCategoryCode, RadDetectorKindCode and size fields); Annex C",
+      "nearest_rows": [
+        "SAREF-DEVICE-KIND",
+        "RF-CHASSIS-ENVELOPE",
+        "OSUSR-SENSOR-SELECTOR"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-MEAS-CLASS": {
+      "label": "Measurement purpose and item occupancy during collection",
+      "definition": "Identify foreground, environmental background, calibration-source or intrinsic-activity acquisition, or unspecified class. Record any reported presence of an item in the field of view for that measurement.",
+      "reason": "The result alone cannot distinguish a background acquisition from measurement of an item. A declared field of view also cannot show whether the item was present.",
+      "locator": "NIST 2020 edition XSD, RadMeasurementType/MeasurementClassCode, OccupancyIndicator; MeasurementClassCodeSimpleType; Annex D examples",
+      "nearest_rows": [
+        "S06-R015",
+        "ISA-C-117",
+        "PADIM-CALIBRATION-RECORD"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-ITEM": {
+      "label": "Measured item quantity and its measurement geometry",
+      "definition": "Identify the measured item and any amount, associated units and one-sigma uncertainty. Preserve the description of the item shape, placement, orientation and attenuators used for this acquisition.",
+      "reason": "A geographic shape or instrument mounting position cannot recover how the item was presented to the detector or how much item material was measured.",
+      "locator": "NIST 2020 edition XSD, RadItemInformationType/RadItemQuantity and RadItemMeasurementGeometryDescription; RadMeasurementType/@radItemInformationReferences",
+      "nearest_rows": [
+        "ISA-C-122",
+        "ISA-R-MEASUREMENT",
+        "ISA-C-038",
+        "RF-SENSOR-SUBJECT"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-LIVE": {
+      "label": "Elapsed acquisition duration and detector live duration",
+      "definition": "Record elapsed clock time for the measurement and the time a contributing detection assembly was sensitive during its spectrum or gross-count acquisition. Compare live times only in the associated detector and acquisition context.",
+      "reason": "Report times, uptime and averaging windows cannot show how long a particular detector could register counts during the measurement.",
+      "locator": "NIST 2020 edition XSD, RadMeasurementType/RealTimeDuration; SpectrumType/LiveTimeDuration; GrossCountsType/LiveTimeDuration; Annex B",
+      "nearest_rows": [
+        "JOINT-SAMPLE-RECORD-TIMES",
+        "RF-COLLECTION-FUNCTION",
+        "OPCDI-OPERATION-COUNTERS"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-CHANNELS": {
+      "label": "Detector-specific spectral counts by channel",
+      "definition": "Keep the ordered channel-count sequence for a spectrum, its channel encoding/compression and the link to the contributing detector. Decode counted zeros when the declared encoding calls for it.",
+      "reason": "A reported field or digitized waveform has no intrinsic radiation channel ordering, zero-run convention or per-detector spectrum attribution.",
+      "locator": "NIST 2020 edition XSD, SpectrumType/@radDetectorInformationReference and ChannelData; ChannelDataType/@compressionCode; Annex B",
+      "nearest_rows": [
+        "S06-R011",
+        "S06-R012",
+        "SOSA-SO2J-DIGITIZATION",
+        "RF-SENSOR-SUBJECT",
+        "RFC8348-ENCODING"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-ENERGY": {
+      "label": "Channel-to-energy mapping and energy calibration corrections",
+      "definition": "Preserve the referenced channel-energy calibration, including its polynomial coefficients or ordered energy boundaries and any applicable paired predicted-energy and deviation values for correcting the scale.",
+      "reason": "A set of calibration points does not say how to assign the energy bounds of an individual spectrum channel or apply a correction to the predicted energy.",
+      "locator": "NIST 2020 edition XSD, EnergyCalibrationType; CoefficientValues, EnergyBoundaryValues, EnergyValues, EnergyDeviationValues; SpectrumType/@energyCalibrationReference; both Annex B examples",
+      "nearest_rows": [
+        "PADIM-CALIBRATION-POINTS",
+        "PADIM-CALIBRATION-CHARACTERISTICS",
+        "PADIM-SIGNAL-COMPENSATION",
+        "SOSA-SO2J-DIGITIZATION"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-RESOLUTION": {
+      "label": "Energy-dependent spectral resolution calibration",
+      "definition": "Keep the pairs of energy and peak full width at half maximum, any matched one-sigma width uncertainties, and any link from a spectrum to this calibration.",
+      "reason": "A sensor resolution or generic uncertainty alone provides no peak-width curve with which to interpret a peak at a particular energy.",
+      "locator": "NIST 2020 edition XSD, FWHMCalibrationType; SpectrumType/@FWHMCalibrationReference; Schematron EnergyFWHMMatch; Annex C",
+      "nearest_rows": [
+        "PADIM-CALIBRATION-POINTS",
+        "PADIM-CALIBRATION-CHARACTERISTICS",
+        "RF-SENSOR-DIGITS"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-EFFICIENCY": {
+      "label": "Energy-dependent detector efficiency and its reference basis",
+      "definition": "Record the efficiency curve, matching energies, optional uncertainty and its stated basis. Distinguish total efficiency, full-energy peak efficiency and intrinsic full-energy or escape-peak efficiencies; preserve spectrum-to-calibration references when supplied.",
+      "reason": "Numerically similar calibration factors can qualify different photons or peaks and different denominators. A generic calibration point does not preserve this basis.",
+      "locator": "NIST 2020 edition XSD, EfficiencyCalibrationType; TotalEfficiencyCalibration, FullEnergyPeakEfficiencyCalibration, IntrinsicFullEnergyPeakEfficiencyCalibration, IntrinsicSingleEscapePeakEfficiencyCalibration, IntrinsicDoubleEscapePeakEfficiencyCalibration; SpectrumType; Annexes C/E",
+      "nearest_rows": [
+        "PADIM-CALIBRATION-POINTS",
+        "PADIM-CALIBRATION-CHARACTERISTICS",
+        "PADIM-CALIBRATION-RANGES",
+        "RF-READING-BASIS"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-WINDOWS": {
+      "label": "Gross counts for specified energy windows and counts since reset",
+      "definition": "Associate whole-range or window-specific counts with the detector and any window definition. Distinguish counts accumulated during this measurement from totals since reset. Preserve the pairing of ordered lower and upper window energies.",
+      "reason": "A standalone count or running total is ambiguous without the energy interval over which photons were counted and the time or reset basis.",
+      "locator": "NIST 2020 edition XSD, GrossCountsType/CountData, TotalCountData, @energyWindowsReference; EnergyWindowsType; Schematron WindowStartEndMatch, WindowStartEndCheck; Annex D",
+      "nearest_rows": [
+        "ISA-C-155",
+        "RF-ACCUMULATION",
+        "JOINT-SAMPLE-RECORD-TIMES"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-QC": {
+      "label": "Inspection time and reported calibration fitness for service",
+      "definition": "Record when the radiation instrument was inspected and whether that inspection reported it properly calibrated and fit for service.",
+      "reason": "An in-progress calibration, last calibration result or calibration date does not establish the dated fitness-for-service assessment.",
+      "locator": "NIST 2020 edition XSD, RadInstrumentQualityControlType/InspectionDateTime and InCalibrationIndicator",
+      "nearest_rows": [
+        "SOSA-SO2E-CALIBRATION-STATUS",
+        "PADIM-CALIBRATION-RECORD",
+        "PADIM-PARAMETER-CHANGE-TIME"
+      ],
+      "classification": "common"
+    },
+    "N4242-LINEAGE": {
+      "label": "Measurement grouping and links from derived results to raw readings",
+      "definition": "Preserve membership of identified measurement groups, type-matched references from a derived value to its contributing raw spectra, counts, dose or exposure readings, and links from an analysis to source measurements, groups or derived data.",
+      "reason": "A processing-stage label or copied-event relationship cannot identify exactly which raw readings produced the displayed derived result and which records entered analysis.",
+      "locator": "NIST 2020 edition XSD, RadMeasurementType/@radMeasurementGroupReferences, RadMeasurementGroupType, DerivedDataType, SpectrumType/@radRawSpectrumReferences, AnalysisResultsType source references; Annex E",
+      "nearest_rows": [
+        "S06-R022",
+        "SAPIENT-F2-DETECTION-LINEAGE",
+        "ISA-R-MESSAGE-REFERENCE",
+        "SOSA-SO2A-PRODUCT-PROCESSING",
+        "OPCDI-FUNCTIONAL-GROUP"
+      ],
+      "classification": "common"
+    },
+    "N4242-ALGORITHM": {
+      "label": "Analysis execution, algorithm settings and reported status",
+      "definition": "Associate an analysis with its start, computation duration, named algorithm and creator, versioned algorithm components, settings with values and units, and the reported analysis status or confidence where supplied.",
+      "reason": "A reusable procedure or software revision alone cannot reproduce the configuration actually reported for a result or place its execution status and confidence in context.",
+      "locator": "NIST 2020 edition XSD, AnalysisResultsType; AnalysisAlgorithmSettingType; AnalysisAlgorithmVersionType; Annex C",
+      "nearest_rows": [
+        "S06-R010",
+        "ISA-T-EVENT-TIME",
+        "ISA-C-108",
+        "AAS-O3-QUALIFIED-CONTEXT",
+        "SOSA-SO2A-PRODUCT-PROCESSING"
+      ],
+      "classification": "common"
+    },
+    "N4242-NUCLIDE": {
+      "label": "Nuclide identification, activity and detection limit",
+      "definition": "Keep each named nuclide and its identification indicator distinct from confidence expressed as a description or percentage, any one-sigma uncertainty in that percentage, estimated activity at measurement time, one-sigma activity uncertainty, and that nuclide’s minimum detectable activity. Preserve any fit statistic at the analysis-result level.",
+      "reason": "A radiation reading, reported isotope or confidence alone cannot tell the reader whether a nuclide was identified, its estimated activity versus detection limit, or the fit of the analysis as a whole.",
+      "locator": "NIST 2020 edition XSD, NuclideType; NuclideIdentificationConfidence substitution group; NuclideAnalysisResultsType/NuclideAnalysisReducedChiSquareValue; Annex C",
+      "nearest_rows": [
+        "ISA-C-154",
+        "ISA-C-155",
+        "SAPIENT-F2-TARGET-CLAIMS",
+        "ISA-R-MEASUREMENT"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-SOURCE": {
+      "label": "Estimated nuclide source geometry, shielding and position",
+      "definition": "Associate the nuclide with assessed source geometry, estimated shielding effective atomic number and areal density, and a source position when reported. Preserve whether position is geographic, descriptive or relative to a stated origin.",
+      "reason": "A detector coordinate, target bearing or generic event shape does not identify the source-specific geometry and shielding estimates used to explain a radiation result.",
+      "locator": "NIST 2020 edition XSD, NuclideType/NuclideSourceGeometryCode, NuclideShieldingAtomicNumber, NuclideShieldingArealDensityValue, SourcePosition; SourcePositionType; RelativeLocationType",
+      "nearest_rows": [
+        "ISA-C-122",
+        "ISA-C-133",
+        "ISA-C-151",
+        "ISA-C-038",
+        "ISA-C-154"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-PEAK": {
+      "label": "Spectral peak energy, width and continuum-subtracted area",
+      "definition": "Report each peak’s measured energy, optional expected energy, full width at half maximum, net counts after continuum subtraction, and any net-area uncertainty.",
+      "reason": "A recorded maximum or signal frequency is insufficient to distinguish a fitted peak’s location, width and net count from the underlying spectrum and calibration curve.",
+      "locator": "NIST 2020 edition XSD, SpectrumPeakAnalysisResultsType/SpectrumPeak; SpectrumPeakType; Annex C",
+      "nearest_rows": [
+        "RF-EXTREMA",
+        "SAPIENT-R11-DETECTED-SIGNAL",
+        "PADIM-CHROMATOGRAM",
+        "ISA-R-MEASUREMENT"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-RATES": {
+      "label": "Dose, exposure and count rates with distinct accumulation bases",
+      "definition": "Distinguish ambient dose equivalent, exposure and event counts, their rate versus accumulated forms, and detector measurements since reset versus analysis totals over selected inputs. Retain background and summary statistics with the quantity they qualify.",
+      "reason": "The prior radiation reading includes absorbed dose. Absorbed dose, ambient dose equivalent and exposure have different physical meanings; the same-looking total can also span a different interval.",
+      "locator": "NIST 2020 edition XSD, DoseRateType, ExposureRateType, TotalDose, TotalExposure, DoseAnalysisResultsType, ExposureAnalysisResultsType, GrossCountAnalysisResultsType; Annex D",
+      "nearest_rows": [
+        "ISA-C-154",
+        "ISA-C-155",
+        "ISA-R-MEASUREMENT",
+        "RF-ACCUMULATION",
+        "RF-COLLECTION-FUNCTION"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-ALARM": {
+      "label": "Radiation alarm detector attribution, energy windows and annunciation",
+      "definition": "Identify the alarm category, contributing detector references and any energy-window indices that triggered the alarm. Keep audible indication and light color alongside the reported alarm.",
+      "reason": "A general alert lifecycle cannot explain which detector and energy range triggered a radiation alarm or how the instrument signalled it.",
+      "locator": "NIST 2020 edition XSD, RadAlarmType/@radDetectorInformationReferences, RadAlarmEnergyWindowIndices, AlarmAudibleIndicator, RadAlarmLightColor; Annex D alarm example",
+      "nearest_rows": [
+        "SAPIENT-F2-ALERT-LIFECYCLE",
+        "RF-THRESHOLD-HYSTERESIS",
+        "ISA-C-111"
+      ],
+      "classification": "specialized"
+    },
+    "N4242-CHAR": {
+      "label": "Individual characteristic and group out-of-limits indications",
+      "definition": "Keep optional per-characteristic time and out-of-limits indication with its named, typed value and units. Separately record any out-of-limits indication on a named group of characteristics.",
+      "reason": "A grouped value or threshold does not say whether an exception applies to one characteristic or to the group and which item, instrument or detector it describes.",
+      "locator": "NIST 2020 edition XSD, CharacteristicType/@valueDateTime, @valueOutOfLimits; CharacteristicGroupType/@groupOutOfLimits; RadDetectorCharacteristics, RadItemCharacteristics, RadInstrumentCharacteristics; Annex L",
+      "nearest_rows": [
+        "ISA-T-STATUS",
+        "OPCDI-FUNCTIONAL-GROUP",
+        "SAREF-VALUE-COMPOSITION",
+        "RF-THRESHOLD-HYSTERESIS"
+      ],
+      "classification": "common"
+    },
+    "N4242-MEDIA": {
+      "label": "Acquisition context linking measured items and multimedia",
+      "definition": "Record the link from a measured item to supporting multimedia, its capture device identity and category, perspective, capture interval and sequence, and the location or encoding of the content.",
+      "reason": "A media attachment to an observation or a selected frame cannot by itself identify the recorded item, capture device, view and acquisition interval of the supporting evidence.",
+      "locator": "NIST 2020 edition XSD, MultimediaDataType/@radItemInformationReferences, @sequenceNumber, MultimediaDeviceIdentifier, ImagePerspectiveCode, MultimediaCaptureStartDateTime and MultimediaCaptureDuration",
+      "nearest_rows": [
+        "ISA-C-146",
+        "OSUSR-MEDIA-REGION",
+        "AAS-O2-SUPPORTING-CONTENT",
+        "JOINT-SAMPLE-RECORD-TIMES"
+      ],
+      "classification": "common"
+    }
+  },
+  "coverage_counts": {
+    "baseline_rows": 582,
+    "new_rows": 19,
+    "explicit_rows": 601,
+    "prior_donor_cells": 323,
+    "relations": {
+      "direct": 35,
+      "partial": 86,
+      "scope negative": 399,
+      "related": 72,
+      "case hold": 9
+    },
+    "classifications": {
+      "common": 97,
+      "unfilled": 480,
+      "specialized": 24
+    },
+    "prior_donor_relations": {
+      "related": 153,
+      "partial": 74,
+      "source hold": 11,
+      "scope negative": 85
+    }
+  },
+  "verification": {
+    "baseline_commit": "6559543df589574aab212df612ebc5d3edae89ad",
+    "workbook_sha256": "c1c0528a9fd99547691eb46768e1c393613d1008f4cb40c41748598361030bae",
+    "sheets": 26,
+    "grid_rows": 637,
+    "columns": 23,
+    "column_index": 16,
+    "summary_cells": {
+      "A1": "Current comparison · N42.42 · 22 November 2026",
+      "B1": "601 information rows, 23 columns, 26 worksheets. N42.42 is column Q. 19 new candidates appear in rows 619–637. Owner assessment pending."
     }
   }
 }
