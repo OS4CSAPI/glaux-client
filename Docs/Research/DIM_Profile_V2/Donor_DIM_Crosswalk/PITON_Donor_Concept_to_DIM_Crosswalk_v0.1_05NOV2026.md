@@ -4,7 +4,7 @@
 
 ## Active scope and evidence
 
-Profile Rewrite 64. On 22 November the owner replied “ok, proceed with both” to accepting RFC 8348 as bounded partial and beginning IEEE/ANSI N42.42-2020 intake. The RFC [decision](RFC_8348_Source_Coverage.json) records the reviewed scope and holds. The rank-six [comparison plan](PLAN_N42_42_Source_First_Donor_Review.md) and [source inventory](N42_42_Source_Coverage.json) are ready. The NIST edition package yielded 14 parsed files, including 315 named global declarations in the main schema. Full normative prose and row-level comparisons are pending.
+Profile Rewrite 64. On 22 November the owner replied “ok, proceed with both” to accepting RFC 8348 as bounded partial and beginning IEEE/ANSI N42.42-2020 intake. The RFC [decision](RFC_8348_Source_Coverage.json) records the reviewed scope and holds. The rank-six [comparison plan](PLAN_N42_42_Source_First_Donor_Review.md) and [source inventory](N42_42_Source_Coverage.json) are ready. The NIST edition package yielded 14 parsed files, including 315 named global declarations in the main schema. The owner authorized the comparison with “Proceed.” The first pass on the 582 existing rows is saved in the N42.42 ledger.
 
 ## Verified checkpoint
 
@@ -24,7 +24,7 @@ RFC8348-Q1 covers installation and runtime evidence. Q2 covers vendor identities
 
 ## Interrupted work
 
-RFC 8348 is accepted. N42.42 intake is complete. Its row assessment and workbook integration are pending. The workbook Summary records the historical RFC delivery status.
+RFC 8348 is accepted. The current N42.42 ledger saves the first pass on all 582 existing row IDs. No N42.42 column is published at this checkpoint. The authorized step still includes native-source reconciliation, justified additions, all earlier-donor decisions, integration and verified delivery. The workbook Summary records the historical RFC delivery status.
 
 ## History
 
@@ -32,4 +32,4 @@ The [pre-acceptance checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/3f
 
 ## Next action and stop
 
-One **Proceed** authorizes the N42.42 comparison against the 582-row master through publication and download verification. Stop after delivery for the owner’s assessment.
+Resume the authorized N42.42 comparison from the saved existing-row decisions. Finish the new-row comparisons and native evidence, integrate the editable workbook and mirrors, verify the publication and stop for the owner’s assessment.
