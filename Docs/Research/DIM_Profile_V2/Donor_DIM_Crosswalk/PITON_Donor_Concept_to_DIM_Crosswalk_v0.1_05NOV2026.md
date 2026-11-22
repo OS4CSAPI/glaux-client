@@ -1,10 +1,10 @@
 # Current Profile Rewrite checkpoint
 
-21 November 2026. Branch `research/dim-profile-v2`. [Execution protocol](../AGENTS.md).
+22 November 2026. Branch `research/dim-profile-v2`. [Execution protocol](../AGENTS.md).
 
 ## Active scope and evidence
 
-Profile Rewrite 64. The owner replied “Proceed” after recovery identified one RFC 8348 comparison through publication and download verification. The assessment awaits the owner's decision. [Plan](PLAN_RFC_8348_Source_First_Donor_Review.md) · [Results](Donor_Native_High_Level_Information_Groupings_Comparison.md#rfc-8348-hardware-management) · [Source ledger](RFC_8348_Source_Coverage.json).
+Profile Rewrite 64. On 22 November the owner replied “ok, proceed with both” to accepting RFC 8348 as bounded partial and beginning IEEE/ANSI N42.42-2020 intake. The RFC [decision](RFC_8348_Source_Coverage.json) records the reviewed scope and holds. The rank-six [comparison plan](PLAN_N42_42_Source_First_Donor_Review.md) and [source inventory](N42_42_Source_Coverage.json) are ready. The NIST edition package yielded 14 parsed files, including 315 named global declarations in the main schema. Full normative prose and row-level comparisons are pending.
 
 ## Verified checkpoint
 
@@ -24,12 +24,12 @@ RFC8348-Q1 covers installation and runtime evidence. Q2 covers vendor identities
 
 ## Interrupted work
 
-The eight additions and cross-donor checks are integrated.
+RFC 8348 is accepted. N42.42 intake is complete. Its row assessment and workbook integration are pending. The workbook Summary records the historical RFC delivery status.
 
 ## History
 
-The prior source-only checkpoint remains available through the [baseline](https://github.com/OS4CSAPI/glaux-client/blob/2e6a548549549551146f33d8b0511163b9b37ef4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
+The [pre-acceptance checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/3fa153b74df0092c87cfc4db86bc73a056dc0460/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md) preserves the exact prior routing. The prior source-only checkpoint remains available through the [baseline](https://github.com/OS4CSAPI/glaux-client/blob/2e6a548549549551146f33d8b0511163b9b37ef4/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
 
 ## Next action and stop
 
-Owner assessment of the bounded RFC 8348 comparison. Recommend acceptance with the recorded source and case limits. No subsequent donor has been authorized by the Profile Rewrite 64 Proceed.
+One **Proceed** authorizes the N42.42 comparison against the 582-row master through publication and download verification. Stop after delivery for the owner’s assessment.

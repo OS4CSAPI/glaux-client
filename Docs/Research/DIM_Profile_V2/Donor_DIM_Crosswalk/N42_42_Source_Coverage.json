@@ -1,0 +1,1432 @@
+{
+  "edition": "IEEE/ANSI N42.42-2020",
+  "source_register_id": 163,
+  "roster_key": "IEEE-N4242-2020",
+  "research_priority": 6,
+  "baseline_commit": "3fa153b74df0092c87cfc4db86bc73a056dc0460",
+  "information_rows": 582,
+  "intake_date": "2026-11-22",
+  "nist_project": "https://www.nist.gov/programs-projects/documentary-standards-ansiieee-n4242-standard",
+  "edition_index": "https://www.nist.gov/pml/radiation-physics/ansiieee-n4242-2020-version",
+  "standard_catalog": "https://webstore.ansi.org/standards/ieee/ieeeansin42422020",
+  "publisher_record": "https://standards.ieee.org/ieee/N42.42/9361/",
+  "standard_text_contact": "Catalog and IEEE GET access route located. Full normative text not examined at intake.",
+  "artifacts": [
+    {
+      "label": "XML Schema file",
+      "file": "https://www.nist.gov/system/files/documents/2025/12/05/n42.xsd",
+      "landing": "https://www.nist.gov/document/ansiieee-n4242-2020-version-xml-schema-file",
+      "sha256": "ed460d9780345ca832ab776794e72eb8ce7b2fed289d811f0d5e2edf764a6f4e",
+      "root": "{http://www.w3.org/2001/XMLSchema}schema",
+      "namespace": "http://physics.nist.gov/N42/2011/N42",
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending.",
+      "named_global_declarations": [
+        {
+          "kind": "complexType",
+          "name": "AnalysisAlgorithmSettingType"
+        },
+        {
+          "kind": "complexType",
+          "name": "AnalysisAlgorithmVersionType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "AnalysisResultStatusCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "AnalysisResultsType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "Angle180SimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "Angle180Type"
+        },
+        {
+          "kind": "simpleType",
+          "name": "Angle90SimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "Angle90Type"
+        },
+        {
+          "kind": "complexType",
+          "name": "ArealDensityType"
+        },
+        {
+          "kind": "complexType",
+          "name": "ChannelDataType"
+        },
+        {
+          "kind": "complexType",
+          "name": "CharacteristicGroupType"
+        },
+        {
+          "kind": "complexType",
+          "name": "CharacteristicsType"
+        },
+        {
+          "kind": "complexType",
+          "name": "CharacteristicType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "CompressionCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "CountRateCPSType"
+        },
+        {
+          "kind": "complexType",
+          "name": "DerivedDataType"
+        },
+        {
+          "kind": "complexType",
+          "name": "DistanceType"
+        },
+        {
+          "kind": "complexType",
+          "name": "DoseAnalysisResultsType"
+        },
+        {
+          "kind": "complexType",
+          "name": "DoseRateType"
+        },
+        {
+          "kind": "complexType",
+          "name": "DoseRateuSvhType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "DoubleListSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "EfficiencyCalibrationType"
+        },
+        {
+          "kind": "complexType",
+          "name": "EnergiesKeVType"
+        },
+        {
+          "kind": "complexType",
+          "name": "EnergyCalibrationType"
+        },
+        {
+          "kind": "complexType",
+          "name": "EnergyDeviationsKeVType"
+        },
+        {
+          "kind": "complexType",
+          "name": "EnergyWindowsType"
+        },
+        {
+          "kind": "complexType",
+          "name": "ExposureAnalysisResultsType"
+        },
+        {
+          "kind": "complexType",
+          "name": "ExposureRatemRhType"
+        },
+        {
+          "kind": "complexType",
+          "name": "ExposureRateType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "FaultSeverityCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "FaultType"
+        },
+        {
+          "kind": "complexType",
+          "name": "FWHMCalibrationType"
+        },
+        {
+          "kind": "complexType",
+          "name": "FWHMKeVType"
+        },
+        {
+          "kind": "complexType",
+          "name": "FWHMUncertaintiesKeVType"
+        },
+        {
+          "kind": "complexType",
+          "name": "GeographicPointType"
+        },
+        {
+          "kind": "complexType",
+          "name": "GrossCountAnalysisResultsType"
+        },
+        {
+          "kind": "complexType",
+          "name": "GrossCountsType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "ImagePerspectiveCodeSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "MeasurementClassCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "MultimediaDataType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "MultimediaDeviceCategoryCodeSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "NonBlankStringSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "NonNegativeDoubleListSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "NonNegativeDoubleSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "NuclideActivityType"
+        },
+        {
+          "kind": "complexType",
+          "name": "NuclideActivityUncertaintyType"
+        },
+        {
+          "kind": "complexType",
+          "name": "NuclideAnalysisResultsType"
+        },
+        {
+          "kind": "complexType",
+          "name": "NuclideMDAType"
+        },
+        {
+          "kind": "complexType",
+          "name": "NuclideType"
+        },
+        {
+          "kind": "complexType",
+          "name": "OptIdComplexObjectType"
+        },
+        {
+          "kind": "complexType",
+          "name": "OrientationType"
+        },
+        {
+          "kind": "complexType",
+          "name": "OriginType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "PercentSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "PixelType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "PositiveDoubleListSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "PositiveDoubleSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "PositiveIntegerListSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "PositiveLengthCMType"
+        },
+        {
+          "kind": "complexType",
+          "name": "PositiveVolumeCCType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "RadAlarmCategoryCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadAlarmType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadDetectorInformationType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadDetectorStateType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "RadDetectorCategoryCodeSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "RadDetectorKindCodeSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "RadInstrumentClassCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadInstrumentDataType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadInstrumentInformationType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "RadInstrumentModeCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadInstrumentQualityControlType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadInstrumentStateType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadInstrumentVersionType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadItemInformationType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadItemQuantityType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadItemStateType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadMeasurementGroupType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RadMeasurementType"
+        },
+        {
+          "kind": "complexType",
+          "name": "RelativeLocationType"
+        },
+        {
+          "kind": "complexType",
+          "name": "ReqIdComplexObjectType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "SourceGeometryCodeSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "SourcePositionType"
+        },
+        {
+          "kind": "complexType",
+          "name": "SpectrumPeakAnalysisResultsType"
+        },
+        {
+          "kind": "complexType",
+          "name": "SpectrumPeakEnergyKeVType"
+        },
+        {
+          "kind": "complexType",
+          "name": "SpectrumPeakType"
+        },
+        {
+          "kind": "complexType",
+          "name": "SpectrumType"
+        },
+        {
+          "kind": "complexType",
+          "name": "SpeedType"
+        },
+        {
+          "kind": "complexType",
+          "name": "StateVectorType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "StringListSimpleType"
+        },
+        {
+          "kind": "complexType",
+          "name": "TotalDoseType"
+        },
+        {
+          "kind": "complexType",
+          "name": "TotalDoseuSvType"
+        },
+        {
+          "kind": "complexType",
+          "name": "TotalExposuremRType"
+        },
+        {
+          "kind": "complexType",
+          "name": "TotalExposureType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "ValueDataClassCodeSimpleType"
+        },
+        {
+          "kind": "simpleType",
+          "name": "ZeroToOneDoubleSimpleType"
+        },
+        {
+          "kind": "element",
+          "name": "AlarmAudibleIndicator"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmComponentName"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmComponentVersion"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmCreatorName"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmDescription"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmSetting"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmSettingName"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmSettingUnits"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmSettingValue"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmName"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisAlgorithmVersion"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisComputationDuration"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisConfidenceValue"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisResultDescription"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisResults"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisResultsExtension"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisResultStatusCode"
+        },
+        {
+          "kind": "element",
+          "name": "AnalysisStartDateTime"
+        },
+        {
+          "kind": "element",
+          "name": "AverageCountRateUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "AverageCountRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "AverageDoseRateUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "AverageDoseRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "AverageExposureRateUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "AverageExposureRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "BackgroundCountRateUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "BackgroundCountRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "BackgroundDoseRateUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "BackgroundDoseRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "BackgroundExposureRateUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "BackgroundExposureRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "BinaryBase64Object"
+        },
+        {
+          "kind": "element",
+          "name": "BinaryHexObject"
+        },
+        {
+          "kind": "element",
+          "name": "BinaryUTF8Object"
+        },
+        {
+          "kind": "element",
+          "name": "CalibrationDateTime"
+        },
+        {
+          "kind": "element",
+          "name": "ChannelData"
+        },
+        {
+          "kind": "element",
+          "name": "Characteristic"
+        },
+        {
+          "kind": "element",
+          "name": "CharacteristicGroup"
+        },
+        {
+          "kind": "element",
+          "name": "CharacteristicGroupName"
+        },
+        {
+          "kind": "element",
+          "name": "CharacteristicName"
+        },
+        {
+          "kind": "element",
+          "name": "CharacteristicValue"
+        },
+        {
+          "kind": "element",
+          "name": "CharacteristicValueDataClassCode"
+        },
+        {
+          "kind": "element",
+          "name": "CharacteristicValueUnits"
+        },
+        {
+          "kind": "element",
+          "name": "CoefficientValues"
+        },
+        {
+          "kind": "element",
+          "name": "CountData"
+        },
+        {
+          "kind": "element",
+          "name": "DerivedData"
+        },
+        {
+          "kind": "element",
+          "name": "DerivedDataExtension"
+        },
+        {
+          "kind": "element",
+          "name": "DistanceValue"
+        },
+        {
+          "kind": "element",
+          "name": "DoseAnalysisResults"
+        },
+        {
+          "kind": "element",
+          "name": "DoseAnalysisResultsExtension"
+        },
+        {
+          "kind": "element",
+          "name": "DoseRate"
+        },
+        {
+          "kind": "element",
+          "name": "DoseRateLevelDescription"
+        },
+        {
+          "kind": "element",
+          "name": "DoseRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "EfficiencyUncertaintyValues"
+        },
+        {
+          "kind": "element",
+          "name": "EfficiencyValues"
+        },
+        {
+          "kind": "element",
+          "name": "ElevationAccuracyValue"
+        },
+        {
+          "kind": "element",
+          "name": "ElevationOffsetAccuracyValue"
+        },
+        {
+          "kind": "element",
+          "name": "ElevationOffsetValue"
+        },
+        {
+          "kind": "element",
+          "name": "ElevationValue"
+        },
+        {
+          "kind": "element",
+          "name": "EncodingMIMEKind"
+        },
+        {
+          "kind": "element",
+          "name": "EnergyBoundaryValues"
+        },
+        {
+          "kind": "element",
+          "name": "EnergyCalibration"
+        },
+        {
+          "kind": "element",
+          "name": "EnergyDeviationValues"
+        },
+        {
+          "kind": "element",
+          "name": "EnergyValues"
+        },
+        {
+          "kind": "element",
+          "name": "EnergyWindows"
+        },
+        {
+          "kind": "element",
+          "name": "ExposureAnalysisResults"
+        },
+        {
+          "kind": "element",
+          "name": "ExposureAnalysisResultsExtension"
+        },
+        {
+          "kind": "element",
+          "name": "ExposureRate"
+        },
+        {
+          "kind": "element",
+          "name": "ExposureRateLevelDescription"
+        },
+        {
+          "kind": "element",
+          "name": "ExposureRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "Fault"
+        },
+        {
+          "kind": "element",
+          "name": "FaultCodeValue"
+        },
+        {
+          "kind": "element",
+          "name": "FaultDescription"
+        },
+        {
+          "kind": "element",
+          "name": "FaultExtension"
+        },
+        {
+          "kind": "element",
+          "name": "FaultSeverityCode"
+        },
+        {
+          "kind": "element",
+          "name": "FullEnergyPeakEfficiencyCalibration"
+        },
+        {
+          "kind": "element",
+          "name": "FWHMCalibration"
+        },
+        {
+          "kind": "element",
+          "name": "FWHMUncertaintyValues"
+        },
+        {
+          "kind": "element",
+          "name": "FWHMValues"
+        },
+        {
+          "kind": "element",
+          "name": "GeographicPoint"
+        },
+        {
+          "kind": "element",
+          "name": "GeoPointAccuracyValue"
+        },
+        {
+          "kind": "element",
+          "name": "GrossCountAnalysisResults"
+        },
+        {
+          "kind": "element",
+          "name": "GrossCountAnalysisResultsExtension"
+        },
+        {
+          "kind": "element",
+          "name": "GrossCounts"
+        },
+        {
+          "kind": "element",
+          "name": "ImageHeightValue"
+        },
+        {
+          "kind": "element",
+          "name": "ImagePerspectiveCode"
+        },
+        {
+          "kind": "element",
+          "name": "ImageWidthValue"
+        },
+        {
+          "kind": "element",
+          "name": "InCalibrationIndicator"
+        },
+        {
+          "kind": "element",
+          "name": "InspectionDateTime"
+        },
+        {
+          "kind": "element",
+          "name": "IntrinsicDoubleEscapePeakEfficiencyCalibration"
+        },
+        {
+          "kind": "element",
+          "name": "IntrinsicFullEnergyPeakEfficiencyCalibration"
+        },
+        {
+          "kind": "element",
+          "name": "IntrinsicSingleEscapePeakEfficiencyCalibration"
+        },
+        {
+          "kind": "element",
+          "name": "LatitudeValue"
+        },
+        {
+          "kind": "element",
+          "name": "LiveTimeDuration"
+        },
+        {
+          "kind": "element",
+          "name": "LocationDescription"
+        },
+        {
+          "kind": "element",
+          "name": "LongitudeValue"
+        },
+        {
+          "kind": "element",
+          "name": "MaximumCountRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "MaximumDoseRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "MaximumExposureRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "MeasurementClassCode"
+        },
+        {
+          "kind": "element",
+          "name": "MinimumCountRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "MinimumDoseRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "MinimumExposureRateValue"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaCaptureDuration"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaCaptureStartDateTime"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaData"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaDataDescription"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaDataExtension"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaDataMIMEKind"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaDeviceCategoryCode"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaDeviceIdentifier"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaFileSizeValue"
+        },
+        {
+          "kind": "element",
+          "name": "MultimediaFileURI"
+        },
+        {
+          "kind": "element",
+          "name": "AzimuthValue"
+        },
+        {
+          "kind": "element",
+          "name": "InclinationValue"
+        },
+        {
+          "kind": "element",
+          "name": "RelativeLocationAzimuthValue"
+        },
+        {
+          "kind": "element",
+          "name": "RelativeLocationInclinationValue"
+        },
+        {
+          "kind": "element",
+          "name": "Nuclide"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideExtension"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideActivityUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideActivityValue"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideAnalysisReducedChiSquareValue"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideAnalysisResults"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideAnalysisResultsExtension"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideCategoryDescription"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideIDConfidenceDescription"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideIDConfidenceUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideIDConfidenceValue"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideIdentificationConfidence"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideIdentifiedIndicator"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideMinimumDetectableActivityValue"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideName"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideShieldingArealDensityValue"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideShieldingAtomicNumber"
+        },
+        {
+          "kind": "element",
+          "name": "NuclideSourceGeometryCode"
+        },
+        {
+          "kind": "element",
+          "name": "OccupancyIndicator"
+        },
+        {
+          "kind": "element",
+          "name": "Orientation"
+        },
+        {
+          "kind": "element",
+          "name": "Origin"
+        },
+        {
+          "kind": "element",
+          "name": "OriginDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadAlarm"
+        },
+        {
+          "kind": "element",
+          "name": "RadAlarmExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadAlarmCategoryCode"
+        },
+        {
+          "kind": "element",
+          "name": "RadAlarmDateTime"
+        },
+        {
+          "kind": "element",
+          "name": "RadAlarmDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadAlarmEnergyWindowIndices"
+        },
+        {
+          "kind": "element",
+          "name": "RadAlarmLightColor"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorCharacteristics"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorCategoryCode"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorDepthValue"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorDiameterValue"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorInformation"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorInformationExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorKindCode"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorLengthValue"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorName"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorState"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorStateExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorVolumeValue"
+        },
+        {
+          "kind": "element",
+          "name": "RadDetectorWidthValue"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentCharacteristics"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentClassCode"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentComponentName"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentComponentVersion"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentData"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentDataExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentDataCreatorName"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentIdentifier"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentInformation"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentInformationExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentManufacturerName"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentModeCode"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentModeDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentModelName"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentQualityControl"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentState"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentStateExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadInstrumentVersion"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemCharacteristics"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemInformation"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemInformationExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemMeasurementGeometryDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemQuantity"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemQuantityUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemQuantityUnits"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemQuantityValue"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemState"
+        },
+        {
+          "kind": "element",
+          "name": "RadItemStateExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadMeasurement"
+        },
+        {
+          "kind": "element",
+          "name": "RadMeasurementExtension"
+        },
+        {
+          "kind": "element",
+          "name": "RadMeasurementGroupDescription"
+        },
+        {
+          "kind": "element",
+          "name": "RadMeasurementGroup"
+        },
+        {
+          "kind": "element",
+          "name": "RealTimeDuration"
+        },
+        {
+          "kind": "element",
+          "name": "RelativeLocation"
+        },
+        {
+          "kind": "element",
+          "name": "Remark"
+        },
+        {
+          "kind": "element",
+          "name": "RollValue"
+        },
+        {
+          "kind": "element",
+          "name": "SourcePosition"
+        },
+        {
+          "kind": "element",
+          "name": "Spectrum"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumExtension"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeak"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakAnalysisResults"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakExtension"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakNetAreaUncertaintyValue"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakNetAreaValue"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakAnalysisResultsExtension"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakEnergyValue"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakExpectedEnergyValue"
+        },
+        {
+          "kind": "element",
+          "name": "SpectrumPeakFWHMValue"
+        },
+        {
+          "kind": "element",
+          "name": "SpeedValue"
+        },
+        {
+          "kind": "element",
+          "name": "StartDateTime"
+        },
+        {
+          "kind": "element",
+          "name": "StateVector"
+        },
+        {
+          "kind": "element",
+          "name": "TotalCountData"
+        },
+        {
+          "kind": "element",
+          "name": "TotalCountsValue"
+        },
+        {
+          "kind": "element",
+          "name": "TotalDose"
+        },
+        {
+          "kind": "element",
+          "name": "TotalDoseValue"
+        },
+        {
+          "kind": "element",
+          "name": "TotalEfficiencyCalibration"
+        },
+        {
+          "kind": "element",
+          "name": "TotalExposure"
+        },
+        {
+          "kind": "element",
+          "name": "TotalExposureValue"
+        },
+        {
+          "kind": "element",
+          "name": "WindowEndEnergyValues"
+        },
+        {
+          "kind": "element",
+          "name": "WindowStartEnergyValues"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "label": "Simple Spectrometer",
+      "file": "https://www.nist.gov/system/files/documents/2020/09/30/Annex-B-n42-2020.xml",
+      "landing": "https://www.nist.gov/document/annex-b-n42-2020xml",
+      "sha256": "1f28b2293094604ff914a58668d6563be7e35d19f34eac1e6300fc58df3c083d",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Simple Spectrometer with alternative energy calibration",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_B_alternate_energy_calibration_n42.xml",
+      "landing": "https://www.nist.gov/document/annexbalternateenergycalibrationn42xml",
+      "sha256": "b1e558a78f6de335581e3f80d563952f4b0db7703ca4c94eeab55ef57e706dc6",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Radionuclide Identifier",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_C_n42.xml",
+      "landing": "https://www.nist.gov/document/annexcn42xml",
+      "sha256": "a270e2f7d983092c22f07d2e5284a926a79e03219417a79bedc196aa577202a8",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Radiation Portal Monitor with alarm condition",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_D_alarmed_n42.xml",
+      "landing": "https://www.nist.gov/document/annexdalarmedn42xml",
+      "sha256": "35b53bce1da1b091f5bac9317ab24fad497a06124389b81b7b3e2db5970f3374",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Radiation Portal Monitor without alarm condition",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_D_n42.xml",
+      "landing": "https://www.nist.gov/document/annexdn42xml",
+      "sha256": "a38044ee3a1fe7e86dffb4b0632a82600eb3051d86e0e6d6342bbe3797176f12",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Spectroscopic Radiation Portal Monitor",
+      "file": "https://www.nist.gov/system/files/documents/2020/09/30/Annex-E-n42-2020.xml",
+      "landing": "https://www.nist.gov/document/annex-e-n42-2020xml",
+      "sha256": "bb9681f6b594e1bf12fae9dab612a2b49d752e4131653b984ad70aded25732b7",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Personal Radiation Detector",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_F_n42.xml",
+      "landing": "https://www.nist.gov/document/annexfn42xml",
+      "sha256": "48617d1b19e114912406dde2af20b54c3cf0e9e524ae2fc162c939923a4edd58",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Mobile Instruments",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_G_n42.xml",
+      "landing": "https://www.nist.gov/document/annexgn42xml",
+      "sha256": "8cf8ae04f599e216b0e08f2d618589bd91413c859a350d7040a1f4ebdf8501f3",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Neutron Handheld Instrument",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_H_n42.xml",
+      "landing": "https://www.nist.gov/document/annexhn42xml",
+      "sha256": "2852e6198f9be98b0257e4c31057c5424741d9caa9d5480de6d489f57f83789e",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Spectroscopic Personal Radiation Detector",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_I_n42.xml",
+      "landing": "https://www.nist.gov/document/annexin42xml",
+      "sha256": "ba4355d4f901dd0620b581f79b11662221d3c25132715d74f4900a3df04cf773",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Example of an Extension of the N42.42 Standard",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/Annex_L_n42.xml",
+      "landing": "https://www.nist.gov/document/annexln42xml",
+      "sha256": "19c51221fcfe1a74203f2fe92e1eecb9c9364e1991bcb00d491deba1728c91a7",
+      "root": "{http://physics.nist.gov/N42/2011/N42}RadInstrumentData",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    },
+    {
+      "label": "Add-in schema file",
+      "file": "https://www.nist.gov/system/files/documents/2020/09/30/N42SchemaAddin-2020.xsd",
+      "landing": "https://www.nist.gov/document/n42schemaaddin-2020xsd",
+      "sha256": "14d77b47a454dba3576d9061de4bf9c4e6838be29496fb780a99ceb80d2f5135",
+      "root": "{http://www.w3.org/2001/XMLSchema}schema",
+      "namespace": "http://www.handheldsrus.com/downloads/N42SchemaAddin",
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending.",
+      "named_global_declarations": [
+        {
+          "kind": "element",
+          "name": "HumidityValue"
+        },
+        {
+          "kind": "element",
+          "name": "TemperatureValue"
+        }
+      ],
+      "dependencies": [
+        {
+          "namespace": "http://physics.nist.gov/N42/2011/N42",
+          "schemaLocation": "file:///d:/Data%20Files/ANSI%20N42%2042/V2/Schema/n42.xsd"
+        }
+      ]
+    },
+    {
+      "label": "ISO Schematron schema",
+      "file": "https://www.nist.gov/system/files/documents/pml/div682/grp04/n42.sch",
+      "landing": "https://www.nist.gov/document/n42sch-0",
+      "sha256": "7462e822df8375d709f5da0d087b21d3c84cb67de214a3d02a0092cfd1eb5546",
+      "root": "{http://purl.oclc.org/dsdl/schematron}schema",
+      "namespace": null,
+      "contact": "Downloaded and parsed for intake. Substantive comparison pending."
+    }
+  ],
+  "phase": "Source intake complete; substantive comparison pending.",
+  "initial_source_observation": {
+    "locator": "2020 edition XSD, RadMeasurementType/RealTimeDuration and SpectrumType/LiveTimeDuration, @radDetectorInformationReference, @energyCalibrationReference",
+    "meaning": "The measurement carries elapsed real time. The spectrum carries live time and references identifying its detector and energy calibration. Preserve these subjects when testing overlap."
+  },
+  "source_limits": [
+    "Full normative prose pending. Record access, edition and clause locators during comparison.",
+    "Published examples use the 2011 namespace. Use publication provenance and file fingerprint to identify the edition.",
+    "The example add-in imports n42.xsd via an author-local file URI. Resolve against the pinned primary schema if validating the example; record that binding.",
+    "Parsing inventories the files. Schema validity, rule applicability and device conformance require separate evidence."
+  ]
+}
