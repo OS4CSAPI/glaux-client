@@ -16,7 +16,7 @@ Profile Rewrite 64. After accepting RFC 8348 as bounded partial and authorizing 
 
 ## Verification and publication
 
-The verifier checks saved values and classifications, prior rows, earlier donors, workbook structure, row-only freeze and mirrors. Verify the branch tree, workbook download and GitHub checks for the delivery commit on recovery if pending. Source-level file validation and repository checks have different purposes.
+The verifier checks saved values and classifications, prior rows, earlier donors, workbook structure, row-only freeze and mirrors. The [published delivery](https://github.com/OS4CSAPI/glaux-client/commit/dbdbe3370dab92d208ff26d14ef230ce6d6f09f4) matched the verified tree. Its GitHub workbook download matched the local file byte for byte. Both [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/45046973306) and [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/45046973405) passed. Source-level file validation and repository checks have different purposes.
 
 ## Holds and owner decisions
 
