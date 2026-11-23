@@ -16,7 +16,7 @@ Both original 614-row columns were reassessed. I-ADOPT has 93 revised existing d
 
 ## Verification and publication
 
-Run `python -B scripts/check_dim_crosswalk_step06.py` for the paired source/row and receiving-donor decisions, classification colors, workbook package, preserved cells and four text mirrors. Publication additionally requires live branch/tree readback, independent Excel download and action verification. Check the remote commit containing this checkpoint for those results.
+Run `python -B scripts/check_dim_crosswalk_step06.py` for the paired source/row and receiving-donor decisions, classification colors, workbook package, preserved cells and four text mirrors. The [workbook delivery](https://github.com/OS4CSAPI/glaux-client/commit/4a977173305f4b7d856bac11b801d79537e72560) was read back on the live branch. An independent download matched SHA-256 `d0d24b2df3e25182e97fcf383a80715fdfc74494485101430d3d94a533c951a2` and passed package integrity checks. The [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/45234676194) and [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/45234675929) runs both passed. All 16,500 grid values matched the four text mirrors. A spreadsheet reader reopened the workbook and rendered sample ranges. Desktop Microsoft Excel was not run.
 
 ## Holds and owner decisions
 
