@@ -16,11 +16,11 @@ The owner authorized the [I-ADOPT comparison](PLAN_I_ADOPT_Source_First_Donor_Re
 
 ## Verification and publication
 
-Master and publisher checks cover row decisions, prior cells, fills, mirrors, workbook structure and SHA-256. Confirm the delivery commit and independently downloaded workbook.
+Master and publisher checks cover row decisions, prior cells, fills, mirrors, workbook structure and SHA-256. Both GitHub checks passed on delivery commit 8ab99d68. The independently downloaded workbook matched byte for byte.
 
 ## Holds and owner decisions
 
-IADOPT-Q1–Q3 and two earlier-donor source holds are documented. The nine case holds remain. Prior donor acceptances and adoption gates retain their recorded scope.
+The owner accepted I-ADOPT 1.1.0 as bounded partial. IADOPT-Q1–Q3 and two earlier-donor source holds are documented. The nine case holds remain. Prior donor acceptances and adoption gates retain their recorded scope.
 
 ## Interrupted work
 
@@ -32,4 +32,4 @@ The preliminary checkpoint was superseded by the integrated comparison.
 
 ## Next action and stop
 
-Owner assessment of I-ADOPT 1.1.0 with documented limits. A Proceed at this point records acceptance as bounded partial. The next donor is rank eight, MIMOSA Common Conceptual Object Model.
+One Proceed authorizes source intake and a bounded comparison plan for the rank-eight MIMOSA Common Conceptual Object Model against the 610-row master.
