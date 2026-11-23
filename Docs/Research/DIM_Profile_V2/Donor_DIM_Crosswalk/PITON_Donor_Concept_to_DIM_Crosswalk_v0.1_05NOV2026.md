@@ -30,6 +30,10 @@ The preliminary checkpoint was superseded by the integrated comparison.
 
 [Provisional comparison and prior accepted workbook](https://github.com/OS4CSAPI/glaux-client/commit/29a12d12c5ca68c26c6d9687ba1aa77532dff275).
 
+## MIMOSA intake
+
+Rank eight intake is complete. The [source inventory](CCOM_Source_Coverage.json) pins the registered 4.1.0-RC1 model, schemas and reference data. See the [comparison plan](PLAN_CCOM_Source_First_Donor_Review.md). The 610-row master is the baseline.
+
 ## Next action and stop
 
-One Proceed authorizes source intake and a bounded comparison plan for the rank-eight MIMOSA Common Conceptual Object Model against the 610-row master.
+One Proceed authorizes the MIMOSA CCOM comparison through publication and independent workbook download verification. Stop for owner assessment.
