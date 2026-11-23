@@ -25,3 +25,9 @@ Baseline dc97640. This records the first row adjudications against the [pinned p
 - Check the draft SOSA-PROV property chain in its documented direction. A qualified execution association with a procedure can imply usedProcedure. A usedProcedure statement alone does not supply a particular association or identify its responsible agent.
 
 This checkpoint covers 12 original row IDs. Complete the remaining row dispositions, check candidate overlaps against the existing donors and integrate the verified set into the canonical workbook and mirrors.
+
+## Expanded comparison
+
+The [row ledger](PROV_Row_Review.csv) now indexes all 620 stable identifiers and contains 40 source-located adjudications. The expansion covers activity, plan, agency, time, digital representation and input/output examples across the other donors. The pending rows have explicit review stages. The nine unresolved case rows retain their holds.
+
+The strongest remaining candidate is a named **provenance bundle with its own attribution and generation history** (PROV-DM §5.4). Rows 220, 230 and 375 concern a claim, a source message and a package of records respectively. Review each donor's native coverage of the bundle distinction before adding a row. Qualified derivation also needs an overlap decision against rows 221, 629 and 630, specifically whether the current rows preserve the particular usage and generation events for a derivation.
