@@ -4,6 +4,8 @@
 
 ## Active scope and evidence
 
+Owner requested the RFC 8348 and N42.42 joint corrective review using the previous OSUS-R and Redfish method. This is the current authorized work.
+
 Profile Rewrite 64. After accepting RFC 8348 as bounded partial and authorizing N42.42 intake, the owner replied “Proceed” to one bounded comparison through verified delivery. The [plan](PLAN_N42_42_Source_First_Donor_Review.md), [source ledger](N42_42_Source_Coverage.json) and [findings](Donor_Native_High_Level_Information_Groupings_Comparison.md#n4242-radiation-instrument-data) record the scope and results.
 
 ## Verified checkpoint
@@ -24,7 +26,7 @@ N42-Q1 covers operative normative text and class-specific requirements. N42-Q2 c
 
 ## Interrupted work
 
-The N42.42 source and comparison records are integrated. The assessment awaits the owner's decision.
+The N42 ledger's corrective_review_64_in_progress records reconsideration of the 19 earlier additions. Nine definition revisions and two new distinctions are proposed. Original workbook at the prior HEAD remains canonical until integrated publication. The first baseline check found 601 populated cells in each column, with 19 RFC decisions recorded only in the newer donor's ledger. Review continues on both donors and all warranted changes.
 
 ## History
 
@@ -32,4 +34,4 @@ The N42.42 source and comparison records are integrated. The assessment awaits t
 
 ## Next action and stop
 
-Owner assessment of IEEE/ANSI N42.42-2020. Recommend accepting the bounded partial comparison with its recorded holds. No subsequent donor is authorized.
+Resume the authorized joint reassessment. Confirm both columns, additions and earlier-donor checks, verify workbook and mirror publication, then stop for the owner’s assessment of both corrected comparisons.

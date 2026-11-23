@@ -9409,5 +9409,121 @@
       "A1": "Current comparison · N42.42 · 22 November 2026",
       "B1": "601 information rows, 23 columns, 26 worksheets. N42.42 is column Q. 19 new candidates appear in rows 619–637. Owner assessment pending."
     }
+  },
+  "corrective_review_64_in_progress": {
+    "baseline": "65be224dc1068827e99f6e94eeaa80c2b0120b4c",
+    "scope": "Owner requested the previous joint reassessment method for both RFC 8348 and N42.42.",
+    "native_review": {
+      "normative_text": {
+        "doi": "https://doi.org/10.1109/IEEESTD.2020.9264644",
+        "result": "NIST and ANSI describe IEEE GET access. Publisher standards record route returned generic home page. Direct Xplore record and DOI routes returned HTTP 202 with empty bodies, while the search service exposed a JavaScript verification page. IEEE GET, stamp, stampPDF and PDF delivery routes returned HTTP 418 without a PDF. Full 2020 operative text unverified. The three-page prior sample cannot support instrument-class MUST claims."
+      },
+      "implementation": "Descriptions and reference use may impose conditions stronger than XSD structural cardinality. Attribute presence must be reported at the layer that asserts it. Prior example validators need not be rerun on unchanged inputs.",
+      "new_source_checks": {
+        "xsd": "ed460d9780345ca832ab776794e72eb8ce7b2fed289d811f0d5e2edf764a6f4e",
+        "schematron": "7462e822df8375d709f5da0d087b21d3c84cb67de214a3d02a0092cfd1eb5546"
+      },
+      "new_proposals": [
+        {
+          "id": "ELEVATION",
+          "subject": "Ellipsoid elevation versus vertical offset to ground, with quantity-specific accuracy",
+          "locator": "GeographicPointType; ElevationValue, ElevationOffsetValue, GeoPointAccuracyValue, ElevationAccuracyValue, ElevationOffsetAccuracyValue",
+          "nearest_rows": [
+            275,
+            72,
+            540
+          ],
+          "loss": "A single position or positional error number cannot specify both reference surfaces, distinguish horizontal point uncertainty from vertical uncertainty, or associate independent accuracy with the ground offset. Only horizontal GeoPointAccuracyValue explicitly says 1-sigma."
+        },
+        {
+          "id": "FAULT-IMPACT",
+          "subject": "Fault subject, severity, operational impact and reliability of its output",
+          "locator": "FaultType; FaultSeverityCodeSimpleType; RadInstrumentStateType/Fault, RadDetectorStateType/Fault, AnalysisResultsType/Fault",
+          "nearest_rows": [
+            395,
+            335,
+            97,
+            452
+          ],
+          "loss": "Device health, fault remediation and output-quality rows each omit the binding of a source-specific fault to a particular operation and the usability of its data. Fatal terminates operation, Error disrupts operation; both say its data are untrustworthy. Warning permits possible data degradation. The severity semantics do not establish a measured uncertainty."
+        }
+      ],
+      "definition_changes": {
+        "N4242-MEAS-CLASS": {
+          "definition": "Preserve the acquisition class and any item occupancy reported during that measurement. Foreground retains environmental background and instrument intrinsic activity; background retains intrinsic activity. Calibration and intrinsic-activity acquisitions have different purposes. Missing occupancy is unknown; false records no item detected in view.",
+          "locator": "NIST 2020 XSD MeasurementClassCodeSimpleType, OccupancyIndicator, RadMeasurementType",
+          "rationale": "The class changes what subtraction the data represent. An omitted optional occupancy indicator differs from an explicit false."
+        },
+        "N4242-LIVE": {
+          "definition": "Preserve positive elapsed clock duration for the measurement and nonnegative sensitive duration for the contributing detection assembly. Detector live time excludes event-processing dead time and cannot exceed elapsed real time. Associate each duration with its spectrum or gross counts and the correct measurement.",
+          "locator": "NIST 2020 XSD RealTimeDuration, LiveTimeDuration, SpectrumType and GrossCountsType",
+          "rationale": "The source defines bounds and how dead time affects live time. Reporting timestamps or device uptime cannot substitute."
+        },
+        "N4242-CHANNELS": {
+          "definition": "Retain channel order, the represented counts and the spectrum’s energy-calibration reference. Keep the contributing detector reference when supplied. Missing compressionCode means uncompressed. Under CountedZeroes, a zero and the following number together encode that many zero-valued channels.",
+          "locator": "NIST 2020 XSD ChannelDataType/@compressionCode, SpectrumType/@radDetectorInformationReference and @energyCalibrationReference; Schematron RadMeasurementUniqueDetectorCheck-Spectrum",
+          "rationale": "The prior wording implies the spectrum detector link is always supplied. XSD makes it optional and the calibration link required; the Schematron imposes a separate sibling-reference check."
+        },
+        "N4242-ENERGY": {
+          "definition": "Associate each spectrum with its energy calibration. Coefficient representation uses three ordered terms (offset, gain, quadratic), with zero quadratic term for a linear calibration. Boundary representation supplies an increasing list of channel-start energies plus the final upper edge. Apply any paired predicted-energy/deviation correction to the coefficient result.",
+          "locator": "NIST 2020 XSD CoefficientValues, EnergyBoundaryValues, EnergyDeviationValues; Schematron EnergyBoundaryValues length check",
+          "rationale": "A channel uses two bounding edges, and treating a linear calibration as a two-value list loses the declared representation."
+        },
+        "N4242-EFFICIENCY": {
+          "definition": "Preserve ordered energy and efficiency pairs, their optional 1-sigma absolute uncertainties, and the calibration basis. Total and full-energy peak efficiencies use photons emitted; intrinsic full-energy and escape-peak efficiencies use photons incident on the detector. Preserve the applicable calibrated-peak references from spectra.",
+          "locator": "NIST 2020 XSD EfficiencyCalibrationType; TotalEfficiencyCalibration; FullEnergyPeakEfficiencyCalibration; IntrinsicFullEnergyPeakEfficiencyCalibration; IntrinsicSingleEscapePeakEfficiencyCalibration; IntrinsicDoubleEscapePeakEfficiencyCalibration; SpectrumType",
+          "rationale": "The denominator changes the physical meaning. SpectrumType defines peak-efficiency reference attributes but has no total-efficiency reference attribute."
+        },
+        "N4242-LINEAGE": {
+          "definition": "Preserve measurement-group membership, references from derived values to their contributing raw spectra, gross counts, dose or exposure values of the same kind, and analysis links to measurements, groups or derived data. The raw-source reference is required for the corresponding value inside DerivedData and prohibited outside it, according to the XSD annotations.",
+          "locator": "NIST 2020 XSD SpectrumType, GrossCountsType, DoseRateType, ExposureRateType, TotalDoseType, TotalExposureType; /DerivedData, AnalysisResultsType",
+          "rationale": "Conditional attribution is stronger than a generic optional provenance link. Attribute use in the XSD alone does not enforce this context rule."
+        },
+        "N4242-PEAK": {
+          "definition": "Report measured peak energy and, when supplied, expected peak energy, full width at half maximum, continuum-subtracted net counts, and absolute 1-sigma uncertainty of the net counts. Preserve the source recommendation against further adjustments such as environmental-background subtraction.",
+          "locator": "NIST 2020 XSD SpectrumPeakType; SpectrumPeakNetAreaValue, SpectrumPeakNetAreaUncertaintyValue",
+          "rationale": "Only measured energy is required by SpectrumPeakType. The prior wording could imply width and net area were mandatory and did not preserve the subtraction convention."
+        },
+        "N4242-CHAR": {
+          "definition": "Associate each supplemental characteristic with its name, reported value and any recorded sampling time or limit indication. Keep its units and declared data class with that value. A group can exceed a high or low control limit because of one member or a combination of members. Preserve the separately reported group indication.",
+          "locator": "NIST 2020 XSD CharacteristicType/@valueDateTime and @valueOutOfLimits; CharacteristicGroupType/@groupOutOfLimits",
+          "rationale": "Group status cannot be reconstructed by OR-ing individual flags: the source also permits the combination of members to exceed a limit."
+        },
+        "N4242-MEDIA": {
+          "definition": "When supplied, retain the measured-item reference and the media capture device, view, capture time and duration, content location or encoding. Record sequenceNumber as the increasing processing order of multiple multimedia records, independently of when they were captured.",
+          "locator": "NIST 2020 XSD MultimediaDataType/@sequenceNumber, @radItemInformationReferences, MultimediaCaptureStartDateTime, MultimediaCaptureDuration",
+          "rationale": "Sequence specifies processing order; it is not evidence of chronological capture order."
+        }
+      },
+      "candidate_disposition": {
+        "N4242-DETECTOR": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-MEAS-CLASS": "Revise as specified in definition_changes.",
+        "N4242-ITEM": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-LIVE": "Revise as specified in definition_changes.",
+        "N4242-CHANNELS": "Revise as specified in definition_changes.",
+        "N4242-ENERGY": "Revise as specified in definition_changes.",
+        "N4242-RESOLUTION": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-EFFICIENCY": "Revise as specified in definition_changes.",
+        "N4242-WINDOWS": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-QC": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-LINEAGE": "Revise as specified in definition_changes.",
+        "N4242-ALGORITHM": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-NUCLIDE": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-SOURCE": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-PEAK": "Revise as specified in definition_changes.",
+        "N4242-RATES": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-ALARM": "Retain candidate after comparison to declared subject and nearest rows.",
+        "N4242-CHAR": "Revise as specified in definition_changes.",
+        "N4242-MEDIA": "Revise as specified in definition_changes."
+      },
+      "near_duplicate_tests": {
+        "MEAS-CLASS vs LINEAGE": "Acquisition classification controls permitted background subtraction; linkage to source records is an independent fact.",
+        "LIVE vs WINDOWS vs RATES": "Sensitive duration versus elapsed time, energy range and count-accumulation basis, and rate-specific physical quantity and analysis statistics answer distinct questions.",
+        "ENERGY vs RESOLUTION vs EFFICIENCY": "X-axis mapping from a channel to energy, dispersion of a measured peak, and probability relative to an incident or emitted photon population are distinct calibration functions.",
+        "DETECTOR vs SOURCE vs ITEM": "Instrument sensing technology and its dimensions, assessed source properties, and how the item was physically presented each refer to a different subject.",
+        "Fault vs out-of-limits vs radiation alarm": "A diagnostic severity qualifies reliability, a characteristic limit indication qualifies a value/group, and an alarm documents detection/annunciation."
+      }
+    },
+    "status": "Prior 19 N42 candidates checked against originals; nine definition changes and two new candidates proposed. Row reconciliation, cross-donor comparisons, integration and published download verification pending."
   }
 }
