@@ -16,7 +16,7 @@ Profile Rewrite 64. Following N42.42 delivery, the owner explicitly requested a 
 
 ## Verification and publication
 
-The verification checks cover stable IDs, old and revised cells, evidence and colors, mirrors, package structure and row-only freeze. Final publication requires branch readback, independent workbook download and GitHub checks.
+The verification checks cover stable IDs, old and revised cells, evidence and colors, mirrors, package structure and row-only freeze. The [delivery commit](https://github.com/OS4CSAPI/glaux-client/commit/8f97de4bd0f89d7a4604cc7408d5a36a0a3d1563) matched the local tree. The downloaded workbook matched the stated SHA-256 byte for byte. Both [master verification](https://github.com/OS4CSAPI/glaux-client/actions/runs/45114123073) and [workbook publication](https://github.com/OS4CSAPI/glaux-client/actions/runs/45114123007) passed.
 
 ## Holds and owner decisions
 
