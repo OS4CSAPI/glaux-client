@@ -32,4 +32,6 @@ The source-ledger, workbook and mirror changes form one delivery.
 
 ## Next action and stop
 
-Owner assessment of both corrected comparisons. A single Proceed records acceptance of both as bounded partial, with holds retained. Research on the World Wide Web Consortium Provenance Data Model, ranked ninth, requires its own authorization.
+The owner accepted both corrected assessments as bounded partial on 23 November 2026. The two source ledgers record the decision and retain the source and case holds.
+
+The next Proceed begins source-first intake for the World Wide Web Consortium Provenance Data Model (PROV-DM), rank 9 in the [published research order](Donor_Research_Priority_Order.md). Pin the original sources and define the comparison scope against the 620-row master. Stop before column integration.
