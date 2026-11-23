@@ -5099,7 +5099,7 @@
   },
   "status": "Working comparison pending semantic review of candidate additions and delivery.",
   "native_findings": {
-    "Variable": "Exactly one qualified Property and ObjectOfInterest in OWL; open-world cardinality is not a record-validation contract.",
+    "Variable": "Two separate owl:equivalentClass restrictions assert exactly one qualifying Entity via hasObjectOfInterest and exactly one qualifying Property via hasProperty. Each restriction also supports classification in the reverse direction. These are open-world axioms, so missing explicit triples are not validation failures.",
     "Matrix": "Specialization of context object.",
     "Constraint": "Can constrain an Entity, Property or StatisticalModifier.",
     "System": "Entity combination with symmetric parts or asymmetric numerator/denominator and source/target roles.",

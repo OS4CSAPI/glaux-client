@@ -32,8 +32,8 @@ The comparison and workbook integration are complete. The [interim checkpoint](h
 
 ## I-ADOPT intake
 
-Rank seven intake is complete. I-ADOPT 1.1.0 is pinned through the [source inventory](I_ADOPT_Source_Coverage.json). The [bounded comparison plan](PLAN_I_ADOPT_Source_First_Donor_Review.md) uses the accepted 608-row master. No I-ADOPT row assessment has been delivered.
+Rank seven intake is complete. I-ADOPT 1.1.0 is pinned through the [source inventory](I_ADOPT_Source_Coverage.json). The [bounded comparison plan](PLAN_I_ADOPT_Source_First_Donor_Review.md) uses the accepted 608-row master. The owner said “Proceed.” The ledger contains preliminary dispositions on all 608 existing row IDs. Scoped negatives generated from the ontology boundary require subject-level review, along with testing candidate additions against the earlier donors. The accepted workbook is the canonical download.
 
 ## Next action and stop
 
-One Proceed authorizes the I-ADOPT comparison through publication and download verification. Stop for the owner's assessment.
+Resume the already authorized I-ADOPT comparison. Confirm existing dispositions, assess proposed additions against their closest rows and earlier donors, and verify the published workbook and mirrors. Stop for the owner’s assessment.
