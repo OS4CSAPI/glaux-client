@@ -1392,3 +1392,27 @@ The 4.1.0 release candidate distinguishes the physical serialized Asset, the des
 | 653 | Actual events and their supporting measurements, proposed explanations and hypothetical failure modes |
 
 The 76 comparisons on these additions use the evidence already recorded for the nearest rows. Six were partial matches, 12 related findings, 35 scoped negatives and 23 source holds. The comparison reconciled the 262 named core declarations by family and indexed message roots and dependencies. Release-specific differences beyond the publisher notes, external message dependencies, reference-data interpretation and deployed conformance have documented limits. [Evidence ledger](CCOM_Source_Coverage.json)
+
+## Reassessment of I-ADOPT and MIMOSA CCOM
+
+The owner requested the two-way review previously applied to RFC 8348 and N42.42. Each donor was checked against all 614 published information rows. The review also examined what each source can express that the existing rows could not distinguish. The six additional candidates bring the workbook to 620 information rows. [Pre-review workbook](https://github.com/OS4CSAPI/glaux-client/blob/2f39e2071f705a9012f24425bc4699e440c3250b/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx)
+
+| Existing donor column | Cells revised | Relationship changed | Candidate fill changed | Example |
+|---|---:|---:|---:|---|
+| R · I-ADOPT 1.1.0 | 93 | 63 | 30 | Row 347 now credits the distinction between device temperature and ambient air. Row 583 withdraws credit for power-budget allocation. |
+| S · MIMOSA CCOM 4.1.0-RC1 | 208 | 148 | 94 | Row 463 now credits an asset's user-assigned tag. Row 570 credits threshold hysteresis and delay. Row 574 withdraws credit for a report-retention policy. |
+
+The three counts overlap. A revised cell can change its source citation, its explanation, its relationship to the row, its fill or several of these. On the six rows first introduced by these donors, all 114 comparisons with the other 19 donors now have source-qualified decisions. Each of the six new rows has another 19 comparisons. Thirty-eight of these 228 comparisons still carry source holds.
+
+| Excel row | Origin | What the client can distinguish |
+|---:|---|---|
+| 655 | I-ADOPT | In one variable definition, identify the substance being measured, the matrix containing it and another contextual entity. In the published oyster example, the analyte, the flesh and the oyster play different roles. |
+| 656 | I-ADOPT | Determine whether exchanging the participants preserves a quantity's meaning. A flow has distinct source and sink roles. |
+| 657 | CCOM | Track a dated change of asset ownership independently of a physical move. Preserve the parties and the information actually supplied. |
+| 658 | CCOM | Interpret an asset or functional location's criticality against its own scale. Current health and alarm severity answer different questions. |
+| 659 | CCOM | Place numeric measurement samples in a populated rectangle using the full grid dimensions and the declared traversal order. |
+| 660 | CCOM | Read an estimate of remaining life together with its assessment date, reported error and confidence. |
+
+The I-ADOPT review traced all 26 released ontology terms and compared them with the Research Data Alliance's earlier recommendations. The recommendations illustrate an analyte in oyster flesh. In 1.1.0, a constraint can target an entity, a property or a statistical modifier. The released matrix relationship has no formal maximum cardinality. [Released ontology](https://i-adopt.github.io/ontology/index-en.html) · [Working group recommendations](https://doi.org/10.15497/RDA00071) · [Before-and-after evidence](I_ADOPT_Source_Coverage.json)
+
+The MIMOSA review used the release-candidate schema, selected query messages, typed reference-data entries and the installation/removal scenario. All four new subjects also have support in the final 4.0.0 schema. Specific edition differences and the remaining limits are recorded in the ledger. The nine case-specific rows per donor still require instance evidence. Both corrected assessments and the separate decision on candidate adoption await the owner. [Release candidate](https://www.mimosa.org/specifications/ccom-4-1-0-rc1/) · [Final 4.0.0 release](https://www.mimosa.org/specifications/ccom-4-0-0/) · [Before-and-after evidence](CCOM_Source_Coverage.json)

@@ -2198,7 +2198,7 @@ def apply_joint_closeout(authored_path):
 
 
 def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_count, width,
-                            corrected_refs, keep_columns, verify_reasons, summary_edits=None):
+                            corrected_refs, keep_columns, verify_reasons, summary_edits=None, worksheet_edits=None):
     grid = master['review_grid']
     dispositions = ledgers[column]['row_dispositions']
     need(len(grid) == grid_count and all(len(row) == width for row in grid), 'Donor grid dimensions')
@@ -2218,20 +2218,24 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
         need(paths == pub.old.sheetpaths(prior) and len(paths) == 26, 'Donor sheet identities')
         need(saved.namelist() == prior.namelist(), 'Donor package inventory')
         changed_parts = {part}
-        if summary_edits:
-            summary_part = paths['Summary']
-            changed_parts.add(summary_part)
-            summary = ET.fromstring(saved.read(summary_part))
-            old_summary = ET.fromstring(prior.read(summary_part))
-            for ref, expected in summary_edits.items():
+        panel_edits = worksheet_edits if worksheet_edits is not None else {'Summary': summary_edits or {}}
+        for name, edits in panel_edits.items():
+            if not edits:
+                continue
+            panel_part = paths[name]
+            changed_parts.add(panel_part)
+            panel = ET.fromstring(saved.read(panel_part))
+            old_panel = ET.fromstring(prior.read(panel_part))
+            for ref, expected in edits.items():
                 selector = ".//" + pub.q('c') + "[@r='" + ref + "']"
-                cell = summary.find(selector)
-                old_cell = old_summary.find(selector)
-                need(joint_value(cell, joint_strings(saved)) == expected, 'Summary value ' + ref)
-                need(cell.get('s') == old_cell.get('s'), 'Summary style ' + ref)
+                cell = panel.find(selector)
+                old_cell = old_panel.find(selector)
+                need(cell is not None and old_cell is not None, name + ' existing cell ' + ref)
+                need(joint_value(cell, joint_strings(saved)) == expected, name + ' value ' + ref)
+                need(cell.get('s') == old_cell.get('s'), name + ' style ' + ref)
                 cell.clear()
                 old_cell.clear()
-            need(ET.tostring(summary) == ET.tostring(old_summary), 'Preserved summary content')
+            need(ET.tostring(panel) == ET.tostring(old_panel), 'Preserved content of ' + name)
         need(all(saved.read(n) == prior.read(n) for n in saved.namelist() if n not in changed_parts),
              'Donor unaffected parts')
         sheet = ET.fromstring(saved.read(part))
@@ -2329,6 +2333,130 @@ def verify_iadopt(master):
                     need(check['reason'] in row['display'][i] and joint_fill(cells[ref], styles) == target,
                          'I-ADOPT earlier-donor comparison ' + ref)
     print('PASS I-ADOPT: 610 explicit decisions, 36 earlier-donor checks, fills and four mirrors.')
+
+
+def verify_joint_iadopt_ccom(master):
+    """Reconcile both donor ledgers, all receiving comparisons and the original workbook."""
+    from collections import Counter
+
+    baseline = '2f39e2071f705a9012f24425bc4699e440c3250b'
+    def prior(file):
+        path = str((D / file).relative_to(ROOT))
+        return json.loads(subprocess.check_output(['git', 'show', baseline + ':' + path], cwd=ROOT))
+
+    keys = ('relation', 'classification', 'reason', 'locator')
+    def decision(record):
+        return tuple(record[key] for key in keys)
+
+    def check_change(change, before, after, where):
+        need(decision(change['previous']) == decision(before), 'Baseline decision ' + where)
+        need(decision(change['revised']) == decision(after), 'Revised decision ' + where)
+
+    cols = {column['key']: index for index, column in enumerate(master['columns'])}
+    donor_keys = {column['key'] for column in master['columns'][4:-1]}
+    names = {'IADOPT': 'I_ADOPT_Source_Coverage.json', 'CCOM': 'CCOM_Source_Coverage.json'}
+    ledgers = {key: load(name) for key, name in names.items()}
+    former = {key: prior(name) for key, name in names.items()}
+    old_master = prior(MASTER)
+    old_rows = {row['row_id']: row for row in old_master['rows']}
+    rows = {row['row_id']: row for row in master['rows']}
+    added = rows.keys() - old_rows.keys()
+    need(len(rows) == len(master['rows']) and list(rows)[:len(old_rows)] == list(old_rows),
+         'Original information-row order and unique IDs')
+    need(master['columns'] == old_master['columns'] and master['counts']['informationRows'] == len(rows),
+         'Preserved columns and updated information-row count')
+    for rid, old_row in old_rows.items():
+        need(rows[rid]['display_row'] == old_row['display_row'], 'Stable original address ' + rid)
+
+    expected = {}
+    corrected_refs = set()
+    new_origins = set()
+    for key, ledger in ledgers.items():
+        pos = cols[key]
+        report = ledger['corrective_review_64']
+        current = ledger['row_dispositions']
+        earlier = dict(former[key]['row_dispositions'])
+        # The pre-review I-ADOPT ledger ends before the four CCOM additions.
+        if key == 'IADOPT':
+            earlier.update({rid: checks[key] for rid, checks in former['CCOM']['prior_donor_checks'].items()})
+        need(earlier.keys() == old_rows.keys() and current.keys() == rows.keys(), key + ' all source decisions')
+        need(report['baseline_commit'] == baseline and set(report['joint_additions']) == added,
+             key + ' baseline and additions')
+        need(dict(Counter(rec['relation'] for rec in current.values())) == ledger['coverage_counts'],
+             key + ' relation counts')
+        changed = {rid for rid in old_rows if decision(earlier[rid]) != decision(current[rid])}
+        need(set(report['changed_existing_rows']) == changed, key + ' complete baseline change record')
+        for rid in changed:
+            ref = letter(pos + 1) + str(rows[rid]['display_row'])
+            check_change(report['changed_existing_rows'][rid], earlier[rid], current[rid], ref)
+            corrected_refs.add(ref)
+        for rid, record in current.items():
+            need(record['display_row'] == rows[rid]['display_row'] and record['label'] == rows[rid]['label'],
+                 'Source decision and worksheet subject ' + key + ' ' + rid)
+            expected[rid, key] = record
+        for rid, change in report['definition_changes'].items():
+            for field in ('label', 'definition'):
+                need(old_rows[rid][field] == change['previous'][field] and rows[rid][field] == change['revised'][field],
+                     'Candidate revision ' + rid + ' ' + field)
+            need(rows[rid]['definition'] in rows[rid]['display'][-1], 'Candidate definition in grid ' + rid)
+            corrected_refs.add(letter(len(cols)) + str(rows[rid]['display_row']))
+        old_checks = former[key]['prior_donor_checks']
+        need(set(ledger['prior_donor_checks']) == set(ledger['new_rows']), key + ' complete originating row checks')
+        for rid, checks in ledger['prior_donor_checks'].items():
+            need(set(checks) == donor_keys - {key}, 'All other donors on ' + rid)
+            if rid in added:
+                source = ledger['new_rows'][rid]
+                need(source['definition'] == rows[rid]['definition'] and source['label'] == rows[rid]['label'],
+                     'New row and originating definition ' + rid)
+                need(rows[rid]['dim_adoption'] == 'OWNER_DECISION_PENDING', 'Candidate disposition ' + rid)
+                need(rid not in new_origins, 'Unique new originating donor ' + rid)
+                new_origins.add(rid)
+            else:
+                recorded = report['receiving_cell_changes'].get(rid, {})
+                actual = set()
+                for donor, record in checks.items():
+                    # The CCOM comparison of the two I-ADOPT rows initially existed only in column S.
+                    before = old_checks[rid].get(donor)
+                    if before is None:
+                        before = former[donor]['row_dispositions'][rid]
+                    if decision(before) != decision(record):
+                        actual.add(donor)
+                        ref = letter(cols[donor] + 1) + str(rows[rid]['display_row'])
+                        check_change(recorded[donor], before, record, ref)
+                        corrected_refs.add(ref)
+                need(set(recorded) == actual, 'Complete receiving change record ' + rid)
+            for donor, record in checks.items():
+                if donor in ledgers:
+                    need(decision(record) == decision(ledgers[donor]['row_dispositions'][rid]),
+                         'Receiving and donor ledgers agree ' + rid + ' ' + donor)
+                expected[rid, donor] = record
+    need(new_origins == added, 'All additions have an accountable originating donor')
+    colors = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unresolved': '#E9DEFA', 'unfilled': '#FFFFFF'}
+    with zipfile.ZipFile(D / BOOK) as saved:
+        sheet = ET.fromstring(saved.read(pub.old.sheetpaths(saved)['Master Crosswalk']))
+        styles = ET.fromstring(saved.read('xl/styles.xml'))
+        cells = {cell.get('r'): cell for cell in sheet.iter(pub.q('c'))}
+        for (rid, donor), record in expected.items():
+            row = rows[rid]
+            pos = cols[donor]
+            ref = letter(pos + 1) + str(row['display_row'])
+            value = row['display'][pos]
+            need(bool(record['reason'].strip()) and bool(record['locator'].strip()) and record['reason'] in value
+                 and record['locator'] in value and record['relation'].upper() in value.split(' — ', 1)[0],
+                 'Saved source, meaning and relation ' + ref)
+            need(joint_fill(cells[ref], styles) == colors[record['classification']], 'Classification ' + ref)
+    reports = [e['corrective_review_64']['verification'] for e in ledgers.values()]
+    panels = reports[0]['worksheet_edits']
+    need(reports[1]['worksheet_edits'] == panels and set(panels) == {'Summary', 'Legend', 'Validation'},
+         'Reviewed workbook annotations')
+    for summary in reports:
+        need(summary['workbook_sha256'] == master['currentWorkbookSha256'], 'Ledger workbook hash')
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(master, cols['IADOPT'], {cols[k]: v for k, v in ledgers.items()}, baseline,
+                            len(rows), len(master['review_grid']), len(cols), corrected_refs, True, True,
+                            worksheet_edits=panels)
+    print(f'PASS paired I-ADOPT/CCOM review: {len(rows)} explicit decisions per donor, {len(added)} additions, '
+          'before/after audit trail, receiving comparisons, workbook text and fills, four mirrors and preserved cells.')
 
 
 def verify_joint_rfc_n42(master):
@@ -2634,6 +2762,9 @@ def verify_saref_core(wot=False, corrected=False, osusr=False, redfish=False):
 if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
+    if current == 'IADOPT_CCOM_CORRECTIVE_64':
+        verify_joint_iadopt_ccom(load(MASTER))
+        sys.exit(0)
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
     if current == 'CCOM_COMPARISON_64':
         verify_ccom(load(MASTER))
