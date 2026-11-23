@@ -2271,6 +2271,19 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
 
 
+def verify_prov_partial(master):
+    evidence = load('PROV_Source_Coverage.json')
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(
+        master, 19, {19: evidence}, '6f28b75d587bd7c06e1510d4b588a76b7d6e3108',
+        620, 660, 26, set(), False, True, {
+            'A1': 'W3C PROV comparison in progress',
+            'B1': '620 information rows, 26 columns and 26 worksheets. PROV is column T. 40 adjudications, 9 case holds and 571 pending rows.',
+        },
+    )
+    print('PASS partial PROV workbook: explicit statuses, mirrors, fills and prior cells.')
+
+
 def verify_ccom(master):
     evidence = load('CCOM_Source_Coverage.json')
     verify_workbook_structure(D / BOOK)
