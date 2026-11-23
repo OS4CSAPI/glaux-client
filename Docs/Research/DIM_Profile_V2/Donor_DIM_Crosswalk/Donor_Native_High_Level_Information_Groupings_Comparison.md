@@ -1378,3 +1378,17 @@ I-ADOPT 1.1.0 distinguishes the property, its object of interest, a matrix or ot
 - Row 648 records precisely what a constraint qualifies. The constraint can target an entity, the property or a statistical modifier. The latter matters when reading a qualifier on a mean.
 
 The comparison reconciles the 608 earlier subjects and accounts for 26 named declarations. The ledger records 36 comparisons on the new rows, comprising 13 partial matches, 21 related findings and two source holds. The evidence for those comparisons is bounded by the cited baseline findings. [Evidence ledger](I_ADOPT_Source_Coverage.json)
+
+
+## MIMOSA CCOM asset lifecycle
+
+The 4.1.0 release candidate distinguishes the physical serialized Asset, the designed functional Segment and the physical or virtual MeasurementLocation. The core schema permits an AssetSegmentEvent to carry both Asset and Segment. Scenario 11 shows how an installation or removal exchange supplies the asset, location and event time. This use-case guidance has different standing from the core XML cardinalities. Row 496 already identifies a measurement point separately from the device or access address, so the comparison records the MeasurementLocation evidence there. [Publisher release](https://www.mimosa.org/specifications/ccom-4-1-0-rc1/) · [Scenario 11](https://www.mimosa.org/open-industrial-interoperability-ecosystem-oiie/oiie-use-cases/oiie-scenario-11-publish-asset-removalinstallation-events-from-mms-to-om/)
+
+| Row | Contribution |
+|---:|---|
+| 650 | History of installation and removal of a serialized asset at a functional location |
+| 651 | Current product model and dated model-assignment history |
+| 652 | Maintenance requests, orders and steps with a distinct record of completed work |
+| 653 | Actual events and their supporting measurements, proposed explanations and hypothetical failure modes |
+
+The 76 comparisons on these additions use the evidence already recorded for the nearest rows. Six were partial matches, 12 related findings, 35 scoped negatives and 23 source holds. The comparison reconciled the 262 named core declarations by family and indexed message roots and dependencies. Release-specific differences beyond the publisher notes, external message dependencies, reference-data interpretation and deployed conformance have documented limits. [Evidence ledger](CCOM_Source_Coverage.json)

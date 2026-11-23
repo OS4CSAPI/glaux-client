@@ -2267,6 +2267,38 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
 
 
+def verify_ccom(master):
+    evidence = load('CCOM_Source_Coverage.json')
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(
+        master, 18, {18: evidence}, '9afc2f9dc1e45a24dc8e4894e90286f961b5f57e',
+        614, 653, 25, set(), False, True, {
+            'A1': 'MIMOSA CCOM 4.1.0-RC1 comparison',
+            'B1': '614 information rows, 25 columns and 26 worksheets. CCOM is column S. Four new candidates appear in rows 650–653. Owner assessment pending.',
+        },
+    )
+    keys = {c['key'] for c in master['columns'][4:-1]} - {'CCOM'}
+    need(len(evidence['native_schema']) == 262, 'CCOM named declarations')
+    need(set(evidence['new_rows']) == set(evidence['prior_donor_checks']), 'CCOM additions')
+    rows = {row['row_id']: row for row in master['rows']}
+    with zipfile.ZipFile(D / BOOK) as book:
+        paths = pub.old.sheetpaths(book)
+        sheet = ET.fromstring(book.read(paths['Master Crosswalk']))
+        styles = ET.fromstring(book.read('xl/styles.xml'))
+        cells = {cell.get('r'): cell for cell in sheet.iter(pub.q('c'))}
+        for rid, checks in evidence['prior_donor_checks'].items():
+            need(set(checks) == keys, 'CCOM earlier-donor coverage')
+            row = rows[rid]
+            for i, column in enumerate(master['columns']):
+                if column['key'] in checks:
+                    check = checks[column['key']]
+                    ref = letter(i + 1) + str(row['display_row'])
+                    target = '#D9EAF8' if check['classification'] == 'common' else '#FFFFFF'
+                    need(check['reason'] in row['display'][i] and joint_fill(cells[ref], styles) == target,
+                         'CCOM earlier-donor comparison ' + ref)
+    print('PASS CCOM: 614 explicit decisions, 76 earlier-donor checks, fills and four mirrors.')
+
+
 def verify_iadopt(master):
     evidence = load('I_ADOPT_Source_Coverage.json')
     verify_workbook_structure(D / BOOK)
@@ -2603,6 +2635,9 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current == 'CCOM_COMPARISON_64':
+        verify_ccom(load(MASTER))
+        sys.exit(0)
     if current == 'IADOPT_COMPARISON_64':
         verify_iadopt(load(MASTER))
         sys.exit(0)
