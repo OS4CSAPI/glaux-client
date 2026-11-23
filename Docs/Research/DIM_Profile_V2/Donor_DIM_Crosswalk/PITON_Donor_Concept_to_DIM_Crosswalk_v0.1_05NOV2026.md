@@ -34,4 +34,6 @@ The source-ledger, workbook and mirror changes form one delivery.
 
 The owner accepted both corrected assessments as bounded partial on 23 November 2026. The two source ledgers record the decision and retain the source and case holds.
 
-The next Proceed begins source-first intake for the World Wide Web Consortium Provenance Data Model (PROV-DM), rank 9 in the [published research order](Donor_Research_Priority_Order.md). Pin the original sources and define the comparison scope against the 620-row master. Stop before column integration.
+Rank 9 source intake is complete. The [provenance donor plan](PLAN_PROV_Source_First_Donor_Review.md) pins PROV-DM, PROV-O and the two SOSA/SSN editions. The 620-row master at f652056 remains the comparison baseline.
+
+The next Proceed authorizes the source-to-row provenance comparison, review of distinct candidate contributions, and verified integration of supported findings. Stop for owner assessment.
