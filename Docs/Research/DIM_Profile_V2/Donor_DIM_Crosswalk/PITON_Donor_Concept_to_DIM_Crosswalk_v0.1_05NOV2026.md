@@ -1,6 +1,6 @@
 # Current Profile Rewrite checkpoint
 
-22 November 2026, owner local date. Branch `research/dim-profile-v2`. [Execution protocol](../AGENTS.md).
+23 November 2026. Branch `research/dim-profile-v2`. [Execution protocol](../AGENTS.md).
 
 ## Active scope and evidence
 
@@ -20,7 +20,7 @@ The verification checks cover stable IDs, old and revised cells, evidence and co
 
 ## Holds and owner decisions
 
-The owner's previous RFC bounded partial acceptance applies to [the baseline](https://github.com/OS4CSAPI/glaux-client/blob/65be224dc1068827e99f6e94eeaa80c2b0120b4c/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). The corrected RFC and N42 assessments both await owner disposition. Preserve RFC8348-Q1–Q3 and N42-Q1–Q3. N42-Q1 covers unretrieved operative prose, N42-Q2 installed case evidence, and N42-Q3 extension, validation and illustrative standing. Project case holds remain. Earlier OSUS-R, Redfish, SAREF and WoT decisions stand. Final ranking, Step 24 adoption, Steps 35–39, named-version Step 40 and manual M00/M01 retain their standing.
+The owner's previous RFC bounded partial acceptance applies to [the baseline](https://github.com/OS4CSAPI/glaux-client/blob/65be224dc1068827e99f6e94eeaa80c2b0120b4c/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md). The owner accepted both corrected assessments as bounded partial on 23 November. See the owner_decision under corrective_review_64 in both ledgers. Preserve RFC8348-Q1–Q3 and N42-Q1–Q3. N42-Q1 covers unretrieved operative prose, N42-Q2 installed case evidence, and N42-Q3 extension, validation and illustrative standing. Project case holds remain. Earlier OSUS-R, Redfish, SAREF and WoT decisions stand. Final ranking, Step 24 adoption, Steps 35–39, named-version Step 40 and manual M00/M01 retain their standing.
 
 ## Interrupted work
 
@@ -32,4 +32,4 @@ The comparison and workbook integration are complete. The [interim checkpoint](h
 
 ## Next action and stop
 
-Owner assessment of both revised columns. Recommend accepting both as bounded partial with their recorded source and case holds. No subsequent donor is authorized.
+The next donor in the published research order is rank 7, I-ADOPT. One Proceed authorizes source intake and a bounded comparison scope.
