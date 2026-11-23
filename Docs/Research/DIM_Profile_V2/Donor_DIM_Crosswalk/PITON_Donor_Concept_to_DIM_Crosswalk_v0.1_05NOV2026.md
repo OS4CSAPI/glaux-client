@@ -34,6 +34,10 @@ The preliminary checkpoint was superseded by the integrated comparison.
 
 Rank eight intake is complete. The [source inventory](CCOM_Source_Coverage.json) pins the registered 4.1.0-RC1 model, schemas and reference data. See the [comparison plan](PLAN_CCOM_Source_First_Donor_Review.md). The 610-row master is the baseline.
 
+## CCOM comparison in progress
+
+The owner authorized the comparison with “Proceed.” The [ledger](CCOM_Source_Coverage.json) records the named core declarations, message schema imports and entry points, 94 preliminary comparisons and five candidate tests. This is a research checkpoint. The 610-row workbook remains the approved baseline. Source coverage, remaining comparisons and candidate dispositions are pending.
+
 ## Next action and stop
 
-One Proceed authorizes the MIMOSA CCOM comparison through publication and independent workbook download verification. Stop for owner assessment.
+Resume the authorized CCOM comparison. Review the remaining 516 existing rows, reconcile native coverage, verify candidates against the closest rows and all 19 earlier donors, and publish the verified workbook and mirrors. Stop for owner assessment.

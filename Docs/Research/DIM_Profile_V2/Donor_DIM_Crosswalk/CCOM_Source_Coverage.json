@@ -1216,5 +1216,5605 @@
       "url": "https://www.mimosa.org/open-industrial-interoperability-ecosystem-oiie/oiie-use-cases/oiie-scenario-11-publish-asset-removalinstallation-events-from-mms-to-om/",
       "standing": "Scenario guidance, useful for checking functional location, actual event and serialized asset relationships"
     }
-  }
+  },
+  "native_schema": {
+    "CCOMData": {
+      "kind": "element",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "BinaryData": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "BinaryObject": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "BLOBDataType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Coordinate": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "Measure": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "MultiParameter": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "Percentage": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "cct:NumericType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Probability": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "cct:NumericType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "StandardDataType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "UTCDateTime": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "cct:DateTimeType",
+        "xs:nonNegativeInteger"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "UUID": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "cct:IDType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "URI": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "xs:anyURI"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "ValueContent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "ValueClass": {
+      "kind": "simpleType",
+      "abstract": false,
+      "base": [
+        "xs:string"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "XML": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "xs:anyType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Property": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Attribute": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Property"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertyType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertyType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "BaseType": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "CCOMClass": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EffectiveStatus": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "EffectiveStatusType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Entity": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [],
+      "members": [],
+      "documentation_present": true
+    },
+    "Enumeration": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EnumerationItem": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Equivalency": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "InfoSource": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "InfoSourceType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "MultiParameterType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Nameable": {
+      "kind": "group",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "UnitOfMeasure": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "UOMQuantity": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertyDefinition": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeDefinition": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertyDefinition"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertyGroup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeGroup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertyGroup"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertyGroupDefinition": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity",
+        "xs:string"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeGroupDefinition": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertyGroupDefinition"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertySet": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AttributeSet": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertySet"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertySetDefinition": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AttributeSetDefinition": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertySetDefinition"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertySetType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeSetType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertySetType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertySetDefinitionForType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeSetDefinitionForType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertySetDefinitionForType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertySetDefinitionForModel": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeSetDefinitionForModel": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertySetDefinitionForModel"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PropertySetForEntity": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AttributeSetForEntity": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "PropertySetForEntity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Asset": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AssetComponent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AssetType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Criticality": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [],
+      "members": [],
+      "documentation_present": false
+    },
+    "CriticalityScaleType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Organization": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Agent"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrganizationType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "AgentType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Manufacturer": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Agent"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Model": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "ModelRevision": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "ModelVariant": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "PurchaseConditionType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "ReadinessType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Segment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SegmentComponent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SegmentType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Site": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Segment"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SiteType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "SegmentType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AssetModelEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "ActualEvent"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AssetOwnerEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "ActualEvent"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AssetSegmentEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "ActualEvent"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AssetTypeForSegmentType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "LifecycleStatusType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "LifecycleStatusKind": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "LifecycleStatusHistory": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "LifecycleStatusKindForType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "LogisticResource": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "LogisticResourceComponent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "LogisticResourceType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MaterialItem": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "LogisticResource"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MaterialMasterItem": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "LogisticResource"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "MaterialItemOnSegment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "ModelForMaterialMasterItem": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Agent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AgentRole": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AgentRoleType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AgentType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AgentRoleWithAgent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AgentRoleWithAsset": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AgentRoleWithSegment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "CalculationType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "MeasurementLocationAssociation": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MeasurementLocation": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity",
+        "xs:string"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MeasurementLocationType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "MeasurementSource": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Asset"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MeasurementSourceType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "AssetType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Transducer": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Asset"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TransducerType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "AssetType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TransducerAxisDirectionType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AssetMesh": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Network"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "BreakdownStructure": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "SegmentNetwork"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "BreakdownStructureTemplate": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "TypeNetwork"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "BreakdownStructureType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "MeshType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Network": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "NetworkHierarchy": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SegmentMesh": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "SegmentNetwork"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SegmentNetwork": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Network"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Taxonomy": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "TypeNetwork"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TaxonomySet": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TypeNetwork": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Network"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "NetworkForAgentRoleType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "NetworkForAsset": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "NetworkForModel": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "NetworkForSegment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AssetConnection": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "ConnectionType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SegmentConnection": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TypeConnection": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Function": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "FunctionAffectedByEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EngineeringStudy": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "EngineeringStudyType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EngineeringStudyEntry": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EngineeringStudyEntryType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EngineeringStudyEntryForAsset": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "EngineeringStudyEntryForAssetType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "EngineeringStudyEntryForModel": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "EngineeringStudyEntryForSegment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "EngineeringStudyEntryForSegmentType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "OrderedEntityItem": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "OrderedItem"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrderedItem": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrderedList": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "OrderedListHierarchy": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrderedListType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrderedLogisticResourceItem": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "OrderedItem"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrderedMeasLocationWithUOMItem": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "OrderedItem"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "OrderedListForAsset": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrderedListForModel": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OrderedListForSegment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AverageSynchType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AverageType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AverageWeightType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "CPBSetup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "SignalProcessSetup"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "FFTSetup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "SignalProcessSetup"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "OrderedMeasLocationWithUOMItemSignalProcessSetup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PostScalingType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SignalProcessBlock": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SignalProcessBlockType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SignalProcessBlockInStream": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SignalProcessSetup": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SignalProcessStream": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SignalProcessStreamType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SourceDetectorType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TimeWaveformSetup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "SignalProcessSetup"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "VectorSetup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "SignalProcessSetup"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "WindowType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Algorithm": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AlgorithmProcessType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OSACBMDataType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "OSACBMFunctionBlockType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Port": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PortIO": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity",
+        "xs:string"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "MeasurementLocationRegion": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Region"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Region": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity",
+        "xs:string"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "RegionType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "RegionValidDuringEventType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SeverityLevelType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TestComponentRegion": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Region"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TestComponentTypeRegion": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "MeasurementLocationRegion"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "VectorRegion": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "MeasurementLocationRegion"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "CPBMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "DataQualityType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "FFTMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MeasurementGrid": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MeasurementAssociation": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Measurement": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "OffsetArrayMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SingleDataMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TimeWaveformMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "VectorMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Sample": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SampleHierarchy": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Test": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TestComponent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Measurement"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TestComponentType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TestGroupComponent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TestGroup": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TestType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "GridTriggeredRegion": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "HighlightType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "MeasurementLocationTriggeredRegion": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "TimestampedEvent"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TriggeredRegionMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "TriggeredRegionTestComponent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "ActualEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "TimestampedEvent"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "AgentRoleWithEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "ChangePatternType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Event": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EventLink": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "EventType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "TimestampedEvent": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Event"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Evidence": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "HypotheticalEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Event"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "ProposedEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "TimestampedEvent"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "ProposedEventForHypotheticalEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SubstantiatedByMeasurement": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "GeoPosition": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "GPSDatumType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "GPSElevationType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "GPSLocation": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "GPSPrecisionType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AmbiguitySet": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AmbiguitySetType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "HypotheticalEventAmbiguitySet": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "AmbiguitySet"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "HypotheticalEventLogicalConnector": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "LogicalConnector"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "LogicalConnector": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "LogicalConnectorType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "ProposedEventAmbiguitySet": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "AmbiguitySet"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "ProposedEventLogicalConnector": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "LogicalConnector"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AgentRoleWithAssessment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Assessment": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Audit": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Assessment"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "HealthAssessment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Assessment"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "HealthLevelType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "RemainingLifeAssessment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Assessment"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Recommendation": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "RecommendationFromEvent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "RecommendationFromHealthAssessment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "AgentRoleWithWork": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Cycle": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "PriorityLevelType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SolutionPackage": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Work"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "SolutionPackageHierarchy": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SolutionPackageStep": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Work"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "SolutionPackageType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Work": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "WorkManagementType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "WorkTaskType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "Request": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "RequestType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "RequestChild": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "RequestForInformation": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Request"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "RequestForWork": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Request"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "ActiveWork": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "CalendaredWork"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "CalendaredWork": {
+      "kind": "complexType",
+      "abstract": true,
+      "base": [
+        "Work"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "RecommendationWorkRequest": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "RecommendationWorkStep": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "WorkStatus": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Assessment"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "WorkStatusType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "BaseType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "WorkOrder": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "ActiveWork"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "WorkOrderHierarchy": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "WorkRequest": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "ActiveWork"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "WorkStep": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "CalendaredWork"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "CompletedWork": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "CalendaredWork"
+      ],
+      "members": [],
+      "documentation_present": true
+    },
+    "Document": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "InfoSource"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "DocumentForAsset": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "DocumentForModel": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "DocumentForSegment": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "DocumentType": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "InfoSourceType"
+      ],
+      "members": [],
+      "documentation_present": false
+    },
+    "EntityContent": {
+      "kind": "complexType",
+      "abstract": false,
+      "base": [
+        "Entity"
+      ],
+      "members": [],
+      "documentation_present": true
+    }
+  },
+  "message_schemas": {
+    "BOD/Messages/CCOMElements.xsd": {
+      "includes_imports": [
+        {
+          "kind": "include",
+          "schemaLocation": "../../XSD/CCOM.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ActiveWork",
+        "ActualEvent",
+        "Agent",
+        "AgentRole",
+        "AgentRoleType",
+        "AgentRoleWithAgent",
+        "AgentRoleWithAssessment",
+        "AgentRoleWithAsset",
+        "AgentRoleWithEvent",
+        "AgentRoleWithSegment",
+        "AgentRoleWithWork",
+        "AgentType",
+        "Algorithm",
+        "AlgorithmProcessType",
+        "AmbiguitySet",
+        "AmbiguitySetType",
+        "Assessment",
+        "Asset",
+        "AssetComponent",
+        "AssetConnection",
+        "AssetMesh",
+        "AssetModelEvent",
+        "AssetOwnerEvent",
+        "AssetSegmentEvent",
+        "AssetType",
+        "AssetTypeForSegmentType",
+        "Attribute",
+        "AttributeDefinition",
+        "AttributeGroup",
+        "AttributeGroupDefinition",
+        "AttributeSet",
+        "AttributeSetDefinition",
+        "AttributeSetDefinitionForModel",
+        "AttributeSetDefinitionForType",
+        "AttributeSetForEntity",
+        "AttributeSetType",
+        "AttributeType",
+        "Audit",
+        "AverageSynchType",
+        "AverageType",
+        "AverageWeightType",
+        "BaseType",
+        "BLOBDataType",
+        "BreakdownStructure",
+        "BreakdownStructureTemplate",
+        "BreakdownStructureType",
+        "CalculationType",
+        "CalendaredWork",
+        "CCOMClass",
+        "ChangePatternType",
+        "CompletedWork",
+        "ConnectionType",
+        "CPBMeasurement",
+        "CPBSetup",
+        "CriticalityScaleType",
+        "Cycle",
+        "DataQualityType",
+        "Document",
+        "DocumentForAsset",
+        "DocumentForModel",
+        "DocumentForSegment",
+        "DocumentType",
+        "EffectiveStatus",
+        "EffectiveStatusType",
+        "EngineeringStudy",
+        "EngineeringStudyEntry",
+        "EngineeringStudyEntryForAsset",
+        "EngineeringStudyEntryForAssetType",
+        "EngineeringStudyEntryForModel",
+        "EngineeringStudyEntryForSegment",
+        "EngineeringStudyEntryForSegmentType",
+        "EngineeringStudyEntryType",
+        "EngineeringStudyType",
+        "EntityContent",
+        "Enumeration",
+        "EnumerationItem",
+        "Equivalency",
+        "Event",
+        "EventLink",
+        "EventType",
+        "Evidence",
+        "FFTMeasurement",
+        "FFTSetup",
+        "Function",
+        "FunctionAffectedByEvent",
+        "GeoPosition",
+        "GPSDatumType",
+        "GPSElevationType",
+        "GPSLocation",
+        "GPSPrecisionType",
+        "GridTriggeredRegion",
+        "HealthAssessment",
+        "HealthLevelType",
+        "HighlightType",
+        "HypotheticalEvent",
+        "HypotheticalEventAmbiguitySet",
+        "HypotheticalEventLogicalConnector",
+        "InfoSource",
+        "InfoSourceType",
+        "LifecycleStatusHistory",
+        "LifecycleStatusType",
+        "LifecycleStatusKind",
+        "LifecycleStatusKindForType",
+        "LogicalConnector",
+        "LogicalConnectorType",
+        "LogisticResource",
+        "LogisticResourceComponent",
+        "LogisticResourceType",
+        "Manufacturer",
+        "MaterialItem",
+        "MaterialItemOnSegment",
+        "MaterialMasterItem",
+        "Measurement",
+        "MeasurementAssociation",
+        "MeasurementGrid",
+        "MeasurementLocation",
+        "MeasurementLocationAssociation",
+        "MeasurementLocationRegion",
+        "MeasurementLocationTriggeredRegion",
+        "MeasurementLocationType",
+        "MeasurementSource",
+        "MeasurementSourceType",
+        "MeshType",
+        "Model",
+        "ModelForMaterialMasterItem",
+        "ModelRevision",
+        "ModelVariant",
+        "MultiParameterType",
+        "Network",
+        "NetworkForAgentRoleType",
+        "NetworkForAsset",
+        "NetworkForModel",
+        "NetworkForSegment",
+        "NetworkHierarchy",
+        "OffsetArrayMeasurement",
+        "OrderedEntityItem",
+        "OrderedItem",
+        "OrderedList",
+        "OrderedListForAsset",
+        "OrderedListForModel",
+        "OrderedListForSegment",
+        "OrderedListHierarchy",
+        "OrderedListType",
+        "OrderedLogisticResourceItem",
+        "OrderedMeasLocationWithUOMItem",
+        "OrderedMeasLocationWithUOMItemSignalProcessSetup",
+        "Organization",
+        "OrganizationType",
+        "OSACBMDataType",
+        "OSACBMFunctionBlockType",
+        "Port",
+        "PortIO",
+        "PostScalingType",
+        "PriorityLevelType",
+        "Property",
+        "PropertyDefinition",
+        "PropertyGroup",
+        "PropertyGroupDefinition",
+        "PropertySet",
+        "PropertySetDefinition",
+        "PropertySetDefinitionForModel",
+        "PropertySetDefinitionForType",
+        "PropertySetForEntity",
+        "PropertySetType",
+        "PropertyType",
+        "ProposedEvent",
+        "ProposedEventAmbiguitySet",
+        "ProposedEventForHypotheticalEvent",
+        "ProposedEventLogicalConnector",
+        "PurchaseConditionType",
+        "ReadinessType",
+        "Recommendation",
+        "RecommendationFromEvent",
+        "RecommendationFromHealthAssessment",
+        "RecommendationWorkRequest",
+        "RecommendationWorkStep",
+        "Region",
+        "RegionType",
+        "RegionValidDuringEventType",
+        "RemainingLifeAssessment",
+        "Request",
+        "RequestChild",
+        "RequestForInformation",
+        "RequestForWork",
+        "RequestType",
+        "Sample",
+        "SampleHierarchy",
+        "Segment",
+        "SegmentComponent",
+        "SegmentConnection",
+        "SegmentMesh",
+        "SegmentNetwork",
+        "SegmentType",
+        "SeverityLevelType",
+        "SignalProcessBlock",
+        "SignalProcessBlockInStream",
+        "SignalProcessBlockType",
+        "SignalProcessSetup",
+        "SignalProcessStream",
+        "SignalProcessStreamType",
+        "SingleDataMeasurement",
+        "Site",
+        "SiteType",
+        "SolutionPackage",
+        "SolutionPackageHierarchy",
+        "SolutionPackageStep",
+        "SolutionPackageType",
+        "SourceDetectorType",
+        "StandardDataType",
+        "SubstantiatedByMeasurement",
+        "Taxonomy",
+        "TaxonomySet",
+        "Test",
+        "TestComponent",
+        "TestComponentRegion",
+        "TestComponentType",
+        "TestComponentTypeRegion",
+        "TestGroup",
+        "TestGroupComponent",
+        "TestType",
+        "TimestampedEvent",
+        "TimeWaveformMeasurement",
+        "TimeWaveformSetup",
+        "Transducer",
+        "TransducerAxisDirectionType",
+        "TransducerType",
+        "TriggeredRegionMeasurement",
+        "TriggeredRegionTestComponent",
+        "TypeConnection",
+        "TypeNetwork",
+        "UnitOfMeasure",
+        "UOMQuantity",
+        "VectorMeasurement",
+        "VectorRegion",
+        "VectorSetup",
+        "WindowType",
+        "Work",
+        "WorkManagementType",
+        "WorkOrder",
+        "WorkOrderHierarchy",
+        "WorkRequest",
+        "WorkStatus",
+        "WorkStatusType",
+        "WorkStep",
+        "WorkTaskType"
+      ]
+    },
+    "BOD/Messages/CCOMQuery.xsd": {
+      "includes_imports": [
+        {
+          "kind": "include",
+          "schemaLocation": "../../XSD/CCOM.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../XSD/CoreComponentType_2p0.xsd"
+        }
+      ],
+      "declared_roots": []
+    },
+    "BOD/Messages/CCOMResponse.xsd": {
+      "includes_imports": [
+        {
+          "kind": "include",
+          "schemaLocation": "../../XSD/CCOM.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../XSD/CoreComponentType_2p0.xsd"
+        }
+      ],
+      "declared_roots": []
+    },
+    "BOD/Messages/Configuration/AcknowledgeAssetModelRequests.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.mimosa.org/ccom4-isdd",
+          "schemaLocation": "../../../ISDD/isdd.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "AcknowledgeAssetModelRequests"
+      ]
+    },
+    "BOD/Messages/Configuration/AcknowledgeSegmentModelRequests.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.mimosa.org/ccom4-isdd",
+          "schemaLocation": "../../../ISDD/isdd.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "AcknowledgeSegmentModelRequests"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAgents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAgents"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAssetDatasheets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAssetDatasheets"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAssetMeshConnections.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAssetMeshConnections"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAssetMeshes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAssetMeshes"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAssetModelEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAssetModelEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAssetOwnerEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAssetOwnerEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAssets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAssets"
+      ]
+    },
+    "BOD/Messages/Configuration/GetAssetSegmentEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetAssetSegmentEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/GetBreakdownStructureConnections.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetBreakdownStructureConnections"
+      ]
+    },
+    "BOD/Messages/Configuration/GetBreakdownStructures.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetBreakdownStructures"
+      ]
+    },
+    "BOD/Messages/Configuration/GetInfoSources.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetInfoSources"
+      ]
+    },
+    "BOD/Messages/Configuration/GetManufacturers.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetManufacturers"
+      ]
+    },
+    "BOD/Messages/Configuration/GetModelChildRevisions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetModelChildRevisions"
+      ]
+    },
+    "BOD/Messages/Configuration/GetModelChildVariants.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetModelChildVariants"
+      ]
+    },
+    "BOD/Messages/Configuration/GetModelDatasheetDefinitions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetModelDatasheetDefinitions"
+      ]
+    },
+    "BOD/Messages/Configuration/GetModelParentRevisions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetModelParentRevisions"
+      ]
+    },
+    "BOD/Messages/Configuration/GetModelParentVariants.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetModelParentVariants"
+      ]
+    },
+    "BOD/Messages/Configuration/GetModels.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetModels"
+      ]
+    },
+    "BOD/Messages/Configuration/GetOrderedLists.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetOrderedLists"
+      ]
+    },
+    "BOD/Messages/Configuration/GetOrganizations.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetOrganizations"
+      ]
+    },
+    "BOD/Messages/Configuration/GetSegmentMeshConnections.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetSegmentMeshConnections"
+      ]
+    },
+    "BOD/Messages/Configuration/GetSegmentMeshes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetSegmentMeshes"
+      ]
+    },
+    "BOD/Messages/Configuration/GetSegments.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetSegments"
+      ]
+    },
+    "BOD/Messages/Configuration/GetSites.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetSites"
+      ]
+    },
+    "BOD/Messages/Configuration/ProcessAssetModelRequests.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.mimosa.org/ccom4-isdd",
+          "schemaLocation": "../../../ISDD/isdd.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ProcessAssetModelRequests"
+      ]
+    },
+    "BOD/Messages/Configuration/ProcessSegmentModelRequests.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.mimosa.org/ccom4-isdd",
+          "schemaLocation": "../../../ISDD/isdd.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ProcessSegmentModelRequests"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowAgents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowAgents"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowAssetMeshes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowAssetMeshes"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowAssetModelEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowAssetModelEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowAssetOwnerEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowAssetOwnerEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowAssets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowAssets"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowAssetSegmentEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowAssetSegmentEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowBreakdownStructures.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowBreakdownStructures"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowDatasheetsDefinitions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowDatasheetsDefinitions"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowInfoSources.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowInfoSources"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowOrderedLists.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowOrderedLists"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowOrganizations.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowOrganizations"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowSegmentMeshes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowSegmentMeshes"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowSegments.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowSegments"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowSites.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowSites"
+      ]
+    },
+    "BOD/Messages/Configuration/ShowStandardDatasheets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.mimosa.org/ccom4-isdd",
+          "schemaLocation": "../../../ISDD/isdd.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowStandardDatasheets"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAgents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAgents"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAssetMeshConnections.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAssetMeshConnections"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAssetMeshes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAssetMeshes"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAssetModelEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAssetModelEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAssetOwnerEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAssetOwnerEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAssets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAssets"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAssetSegmentEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAssetSegmentEvents"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAttributeSetDefinitions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAttributeSetDefinitions"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncAttributeSets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncAttributeSets"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncBreakdownStructureConnections.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncBreakdownStructureConnections"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncBreakdownStructures.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncBreakdownStructures"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncEngineeringDiagrams.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncEngineeringDiagrams"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncEngineeringDiagrams-old.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncEngineeringDiagrams"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncInfoSources.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncInfoSources"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncLogisticResources.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncLogisticResources"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncManufacturers.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncManufacturers"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncModels.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncModels"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncOrderedLists.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncOrderedLists"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncOrganizations.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncOrganizations"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncPropertySetDefinitions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncPropertySetDefinitions"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncPropertySets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncPropertySets"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncSegmentMeshConnections.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncSegmentMeshConnections"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncSegmentMeshes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncSegmentMeshes"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncSegments.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncSegments"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncSites.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncSites"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncTaxonomies.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncTaxonomies"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncTaxonomyConnections.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncTaxonomyConnections"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncTaxonomySets.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncTaxonomySets"
+      ]
+    },
+    "BOD/Messages/Configuration/SyncTypes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncTypes"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/GetActualEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetActualEvents"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/GetMeasurementLocationTriggeredRegions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetMeasurementLocationTriggeredRegions"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/GetMeasurements.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetMeasurements"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/ShowActualEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowActualEvents"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/ShowMeasurementLocationTriggeredRegions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowMeasurementLocationTriggeredRegions"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/ShowMeasurements.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowMeasurements"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/SyncActualEvents.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncActualEvents"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/SyncMeasurementLocationTriggeredRegions.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncMeasurementLocationTriggeredRegions"
+      ]
+    },
+    "BOD/Messages/Operation and Condition/SyncMeasurements.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncMeasurements"
+      ]
+    },
+    "BOD/Messages/Work/AcknowledgeRequestsForWork.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "AcknowledgeRequestsForWork"
+      ]
+    },
+    "BOD/Messages/Work/GetCompletedWork.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetCompletedWork"
+      ]
+    },
+    "BOD/Messages/Work/GetWorkOrders.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetWorkOrders"
+      ]
+    },
+    "BOD/Messages/Work/GetWorkRequests.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetWorkRequests"
+      ]
+    },
+    "BOD/Messages/Work/GetWorkStatuses.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "GetWorkStatuses"
+      ]
+    },
+    "BOD/Messages/Work/ProcessRequestsForWork.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMQuery.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ProcessRequestsForWork"
+      ]
+    },
+    "BOD/Messages/Work/ShowCompletedWork.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowCompletedWork"
+      ]
+    },
+    "BOD/Messages/Work/ShowWorkOrders.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowWorkOrders"
+      ]
+    },
+    "BOD/Messages/Work/ShowWorkRequests.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowWorkRequests"
+      ]
+    },
+    "BOD/Messages/Work/ShowWorkStatuses.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "import",
+          "namespace": "urn:un:unece:uncefact:documentation:standard:CoreComponentType:2",
+          "schemaLocation": "../../../XSD/CoreComponentType_2p0.xsd"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ShowWorkStatuses"
+      ]
+    },
+    "BOD/Messages/Work/SyncCompletedWork.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncCompletedWork"
+      ]
+    },
+    "BOD/Messages/Work/SyncWorkOrders.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncWorkOrders"
+      ]
+    },
+    "BOD/Messages/Work/SyncWorkRequests.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncWorkRequests"
+      ]
+    },
+    "BOD/Messages/Work/SyncWorkStatus.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "schemaLocation": "../../OAGIS/Meta.xsd",
+          "namespace": "http://www.openapplications.org/oagis/9"
+        },
+        {
+          "kind": "include",
+          "schemaLocation": "../CCOMElements.xsd"
+        }
+      ],
+      "declared_roots": [
+        "SyncWorkStatus"
+      ]
+    },
+    "BOD/OAGIS/BOD.xsd": {
+      "includes_imports": [
+        {
+          "kind": "include",
+          "schemaLocation": "Meta.xsd"
+        }
+      ],
+      "declared_roots": [
+        "BOD"
+      ]
+    },
+    "BOD/OAGIS/CodeList_CurrencyCode_ISO_7_04.xsd": {
+      "includes_imports": [],
+      "declared_roots": []
+    },
+    "BOD/OAGIS/CodeList_LanguageCode_ISO_7_04.xsd": {
+      "includes_imports": [],
+      "declared_roots": []
+    },
+    "BOD/OAGIS/CodeList_MIMEMediaTypeCode_IANA_7_04.xsd": {
+      "includes_imports": [],
+      "declared_roots": []
+    },
+    "BOD/OAGIS/CodeList_UnitCode_UNECE_7_04.xsd": {
+      "includes_imports": [],
+      "declared_roots": []
+    },
+    "BOD/OAGIS/CodeLists.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/currencycode/54217:2001",
+          "schemaLocation": "CodeList_CurrencyCode_ISO_7_04.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/languagecode/5639:1988",
+          "schemaLocation": "CodeList_LanguageCode_ISO_7_04.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/IANAMIMEMediaTypes:2003",
+          "schemaLocation": "CodeList_MIMEMediaTypeCode_IANA_7_04.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/unitcode/66411:2001",
+          "schemaLocation": "CodeList_UnitCode_UNECE_7_04.xsd"
+        }
+      ],
+      "declared_roots": []
+    },
+    "BOD/OAGIS/ConfirmBOD.xsd": {
+      "includes_imports": [
+        {
+          "kind": "include",
+          "schemaLocation": "BOD.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ConfirmBOD"
+      ]
+    },
+    "BOD/OAGIS/Fields.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/unqualifieddatatypes/1.1",
+          "schemaLocation": "UnqualifiedDataTypes.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/qualifieddatatypes/1.1",
+          "schemaLocation": "QualifiedDataTypes.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/codelists",
+          "schemaLocation": "CodeLists.xsd"
+        }
+      ],
+      "declared_roots": [
+        "Code",
+        "FromStateCode",
+        "ReasonCode",
+        "ToStateCode",
+        "Type",
+        "ChangeDateTime",
+        "EffectiveDateTime",
+        "AuthorizationID",
+        "ID",
+        "Description",
+        "Reason",
+        "Note",
+        "UserArea"
+      ]
+    },
+    "BOD/OAGIS/Meta.xsd": {
+      "includes_imports": [
+        {
+          "kind": "include",
+          "schemaLocation": "Fields.xsd"
+        }
+      ],
+      "declared_roots": [
+        "ApplicationArea",
+        "OriginalApplicationArea",
+        "Sender",
+        "Receiver",
+        "Signature",
+        "CreationDateTime",
+        "BODID",
+        "LogicalID",
+        "ComponentID",
+        "TaskID",
+        "ReferenceID",
+        "ConfirmationCode",
+        "NounSuccessMessage",
+        "BODSuccessMessage",
+        "NounFailureMessage",
+        "BODFailureMessage",
+        "PartialBODFailureMessage",
+        "ErrorProcessMessage",
+        "WarningProcessMessage",
+        "ActionExpression",
+        "ActionCriteria",
+        "Expression",
+        "ResponseCriteria",
+        "ResponseExpression",
+        "Acknowledge",
+        "Cancel",
+        "Change",
+        "Confirm",
+        "Get",
+        "Load",
+        "Notify",
+        "Post",
+        "Process",
+        "Respond",
+        "Show",
+        "Sync",
+        "Update",
+        "ChangeStatus",
+        "StateChange",
+        "ProcessMessage"
+      ]
+    },
+    "BOD/OAGIS/QualifiedDataTypes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/unqualifieddatatypes/1.1",
+          "schemaLocation": "UnqualifiedDataTypes.xsd"
+        },
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/codelists",
+          "schemaLocation": "CodeLists.xsd"
+        }
+      ],
+      "declared_roots": []
+    },
+    "BOD/OAGIS/UnqualifiedDataTypes.xsd": {
+      "includes_imports": [
+        {
+          "kind": "import",
+          "namespace": "http://www.openapplications.org/oagis/9/codelists",
+          "schemaLocation": "CodeLists.xsd"
+        }
+      ],
+      "declared_roots": []
+    }
+  },
+  "native_groups": {
+    "Foundation and units": [
+      "CCOMData",
+      "BinaryData",
+      "BinaryObject",
+      "BLOBDataType",
+      "Coordinate",
+      "Measure",
+      "MultiParameter",
+      "Percentage",
+      "Probability",
+      "StandardDataType",
+      "UTCDateTime",
+      "UUID",
+      "URI",
+      "ValueContent",
+      "ValueClass",
+      "XML",
+      "Property",
+      "Attribute",
+      "PropertyType",
+      "AttributeType",
+      "BaseType",
+      "CCOMClass",
+      "EffectiveStatus",
+      "EffectiveStatusType",
+      "Entity",
+      "Enumeration",
+      "EnumerationItem",
+      "Equivalency",
+      "InfoSource",
+      "InfoSourceType",
+      "MultiParameterType",
+      "Nameable",
+      "UnitOfMeasure",
+      "UOMQuantity"
+    ],
+    "Property templates and entity property sets": [
+      "PropertyDefinition",
+      "AttributeDefinition",
+      "PropertyGroup",
+      "AttributeGroup",
+      "PropertyGroupDefinition",
+      "AttributeGroupDefinition",
+      "PropertySet",
+      "AttributeSet",
+      "PropertySetDefinition",
+      "AttributeSetDefinition",
+      "PropertySetType",
+      "AttributeSetType",
+      "PropertySetDefinitionForType",
+      "AttributeSetDefinitionForType",
+      "PropertySetDefinitionForModel",
+      "AttributeSetDefinitionForModel",
+      "PropertySetForEntity",
+      "AttributeSetForEntity"
+    ],
+    "Asset, model, segment and lifecycle": [
+      "Asset",
+      "AssetComponent",
+      "AssetType",
+      "Criticality",
+      "CriticalityScaleType",
+      "Organization",
+      "OrganizationType",
+      "Manufacturer",
+      "Model",
+      "ModelRevision",
+      "ModelVariant",
+      "PurchaseConditionType",
+      "ReadinessType",
+      "Segment",
+      "SegmentComponent",
+      "SegmentType",
+      "Site",
+      "SiteType",
+      "AssetModelEvent",
+      "AssetOwnerEvent",
+      "AssetSegmentEvent",
+      "AssetTypeForSegmentType",
+      "LifecycleStatusType",
+      "LifecycleStatusKind",
+      "LifecycleStatusHistory",
+      "LifecycleStatusKindForType"
+    ],
+    "Logistics, materials and agent roles": [
+      "LogisticResource",
+      "LogisticResourceComponent",
+      "LogisticResourceType",
+      "MaterialItem",
+      "MaterialMasterItem",
+      "MaterialItemOnSegment",
+      "ModelForMaterialMasterItem",
+      "Agent",
+      "AgentRole",
+      "AgentRoleType",
+      "AgentType",
+      "AgentRoleWithAgent",
+      "AgentRoleWithAsset",
+      "AgentRoleWithSegment"
+    ],
+    "Measurement locations and transducers": [
+      "CalculationType",
+      "MeasurementLocationAssociation",
+      "MeasurementLocation",
+      "MeasurementLocationType",
+      "MeasurementSource",
+      "MeasurementSourceType",
+      "Transducer",
+      "TransducerType",
+      "TransducerAxisDirectionType"
+    ],
+    "Meshes, networks, design relationships and functions": [
+      "AssetMesh",
+      "BreakdownStructure",
+      "BreakdownStructureTemplate",
+      "BreakdownStructureType",
+      "MeshType",
+      "Network",
+      "NetworkHierarchy",
+      "SegmentMesh",
+      "SegmentNetwork",
+      "Taxonomy",
+      "TaxonomySet",
+      "TypeNetwork",
+      "NetworkForAgentRoleType",
+      "NetworkForAsset",
+      "NetworkForModel",
+      "NetworkForSegment",
+      "AssetConnection",
+      "ConnectionType",
+      "SegmentConnection",
+      "TypeConnection",
+      "Function",
+      "FunctionAffectedByEvent"
+    ],
+    "Engineering studies and ordered resources": [
+      "EngineeringStudy",
+      "EngineeringStudyType",
+      "EngineeringStudyEntry",
+      "EngineeringStudyEntryType",
+      "EngineeringStudyEntryForAsset",
+      "EngineeringStudyEntryForAssetType",
+      "EngineeringStudyEntryForModel",
+      "EngineeringStudyEntryForSegment",
+      "EngineeringStudyEntryForSegmentType",
+      "OrderedEntityItem",
+      "OrderedItem",
+      "OrderedList",
+      "OrderedListHierarchy",
+      "OrderedListType",
+      "OrderedLogisticResourceItem",
+      "OrderedMeasLocationWithUOMItem",
+      "OrderedListForAsset",
+      "OrderedListForModel",
+      "OrderedListForSegment"
+    ],
+    "Signal processing, algorithms and test setup": [
+      "AverageSynchType",
+      "AverageType",
+      "AverageWeightType",
+      "CPBSetup",
+      "FFTSetup",
+      "OrderedMeasLocationWithUOMItemSignalProcessSetup",
+      "PostScalingType",
+      "SignalProcessBlock",
+      "SignalProcessBlockType",
+      "SignalProcessBlockInStream",
+      "SignalProcessSetup",
+      "SignalProcessStream",
+      "SignalProcessStreamType",
+      "SourceDetectorType",
+      "TimeWaveformSetup",
+      "VectorSetup",
+      "WindowType",
+      "Algorithm",
+      "AlgorithmProcessType",
+      "OSACBMDataType",
+      "OSACBMFunctionBlockType",
+      "Port",
+      "PortIO",
+      "MeasurementLocationRegion",
+      "Region",
+      "RegionType",
+      "RegionValidDuringEventType",
+      "SeverityLevelType",
+      "TestComponentRegion",
+      "TestComponentTypeRegion",
+      "VectorRegion"
+    ],
+    "Measurements, samples, tests and triggered regions": [
+      "CPBMeasurement",
+      "DataQualityType",
+      "FFTMeasurement",
+      "MeasurementGrid",
+      "MeasurementAssociation",
+      "Measurement",
+      "OffsetArrayMeasurement",
+      "SingleDataMeasurement",
+      "TimeWaveformMeasurement",
+      "VectorMeasurement",
+      "Sample",
+      "SampleHierarchy",
+      "Test",
+      "TestComponent",
+      "TestComponentType",
+      "TestGroupComponent",
+      "TestGroup",
+      "TestType",
+      "GridTriggeredRegion",
+      "HighlightType",
+      "MeasurementLocationTriggeredRegion",
+      "TriggeredRegionMeasurement",
+      "TriggeredRegionTestComponent"
+    ],
+    "Event kinds, evidence, event timing and positions": [
+      "ActualEvent",
+      "AgentRoleWithEvent",
+      "ChangePatternType",
+      "Event",
+      "EventLink",
+      "EventType",
+      "TimestampedEvent",
+      "Evidence",
+      "HypotheticalEvent",
+      "ProposedEvent",
+      "ProposedEventForHypotheticalEvent",
+      "SubstantiatedByMeasurement",
+      "GeoPosition",
+      "GPSDatumType",
+      "GPSElevationType",
+      "GPSLocation",
+      "GPSPrecisionType"
+    ],
+    "Ambiguity, assessment and recommendations": [
+      "AmbiguitySet",
+      "AmbiguitySetType",
+      "HypotheticalEventAmbiguitySet",
+      "HypotheticalEventLogicalConnector",
+      "LogicalConnector",
+      "LogicalConnectorType",
+      "ProposedEventAmbiguitySet",
+      "ProposedEventLogicalConnector",
+      "AgentRoleWithAssessment",
+      "Assessment",
+      "Audit",
+      "HealthAssessment",
+      "HealthLevelType",
+      "RemainingLifeAssessment",
+      "Recommendation",
+      "RecommendationFromEvent",
+      "RecommendationFromHealthAssessment"
+    ],
+    "Work, requests and work orders": [
+      "AgentRoleWithWork",
+      "Cycle",
+      "PriorityLevelType",
+      "SolutionPackage",
+      "SolutionPackageHierarchy",
+      "SolutionPackageStep",
+      "SolutionPackageType",
+      "Work",
+      "WorkManagementType",
+      "WorkTaskType",
+      "Request",
+      "RequestType",
+      "RequestChild",
+      "RequestForInformation",
+      "RequestForWork",
+      "ActiveWork",
+      "CalendaredWork",
+      "RecommendationWorkRequest",
+      "RecommendationWorkStep",
+      "WorkStatus",
+      "WorkStatusType",
+      "WorkOrder",
+      "WorkOrderHierarchy",
+      "WorkRequest",
+      "WorkStep",
+      "CompletedWork"
+    ],
+    "Document associations": [
+      "Document",
+      "DocumentForAsset",
+      "DocumentForModel",
+      "DocumentForSegment",
+      "DocumentType",
+      "EntityContent"
+    ]
+  },
+  "source_findings": {
+    "asset-installation": "AssetSegmentEvent extends ActualEvent. Asset and Segment are each structurally optional. The publisher’s Scenario 11 requires the asset, location and event time for that use case. Do not generalize the scenario’s required content to every core-schema instance.",
+    "measurement-location": "MeasurementLocation can identify a physical or virtual position on an asset or segment; it can identify a collection source address and transducer orientation. MeasurementSource is a collector or monitoring system. The three roles can differ.",
+    "model-variant": "ModelVariant uses parent and child models to represent a hierarchy of configurable variants. ModelRevision is a separate schema type. AssetModelEvent records past associations; current Model is a direct Asset link.",
+    "work": "WorkOrder collects requests and steps. Request, calendared work, active work and completed work are distinct representations. CompletedWork identifies actual work and can record used or removed resources.",
+    "causality": "ActualEvent may be substantiated by Measurement, optionally with ByAgent. ProposedEvent and HypotheticalEvent separately represent an explanatory hypothesis and a possible failure mode represented in an engineering study.",
+    "reliability": "RemainingLifeAssessment carries Estimate, Error and Confidence. LifecycleStatusHistory identifies the entity, required status type and optional status start date."
+  },
+  "row_dispositions": {
+    "S06-R001": {
+      "display_row": 4,
+      "label": "Manufacturer name",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset, Manufacturer",
+      "reason": "Asset optionally identifies the manufacturer. Manufacturer inherits identifying names through its organization hierarchy."
+    },
+    "S06-R002": {
+      "display_row": 5,
+      "label": "Product model designation",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset, Model",
+      "reason": "The optional Model association distinguishes equipment product designation from the serialized instance."
+    },
+    "S06-R003": {
+      "display_row": 6,
+      "label": "Individual hardware serial number",
+      "relation": "direct",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset",
+      "reason": "SerialNumber is optional on a tangible instantiated Asset."
+    },
+    "S06-R004": {
+      "display_row": 7,
+      "label": "Persistent System identifier",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Entity, Asset",
+      "reason": "Entity UUID identifies an exchanged entity. The asset identity and identifiers from other authorities need separate corroboration."
+    },
+    "S06-R005": {
+      "display_row": 10,
+      "label": "Described sensing System / arrangement",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset, AssetComponent, Segment, SegmentComponent",
+      "reason": "Physical asset composition and as-designed segment composition are distinct. Placement and exposure of component data require separate relationships."
+    },
+    "S06-R007": {
+      "display_row": 13,
+      "label": "Physical constituent",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset, AssetComponent, Segment, SegmentComponent",
+      "reason": "Physical asset composition and as-designed segment composition are distinct. Placement and exposure of component data require separate relationships."
+    },
+    "S06-R009": {
+      "display_row": 15,
+      "label": "Hosting platform / station context",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Asset, Segment, AssetSegmentEvent",
+      "reason": "An asset can be associated with an as-designed functional location over time. A current mount, empty-slot flag and RFC-style matching rule are additional claims."
+    },
+    "S06-R010": {
+      "display_row": 16,
+      "label": "Observing procedure / method",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Measurement, MeasurementLocation, MeasurementSource",
+      "reason": "Measurement and its location describe aspects of data acquisition. A location may relate to the equipment described and to a distinct source. Observation procedure and report semantics need a separate match."
+    },
+    "ISA-A-MEMBER-EXPOSURE": {
+      "display_row": 20,
+      "label": "Composition member exposure and source attribution",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset, AssetComponent, Segment, SegmentComponent",
+      "reason": "Physical asset composition and as-designed segment composition are distinct. Placement and exposure of component data require separate relationships."
+    },
+    "S06-R011": {
+      "display_row": 23,
+      "label": "Addressed transducer channel",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation",
+      "reason": "A physical or virtual point can have source address, value class, units and local direction. A physical sensor channel or control point may only partially overlap."
+    },
+    "S06-R013": {
+      "display_row": 25,
+      "label": "Observed / observable property",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, PropertyDefinition, UnitOfMeasure, UOMQuantity",
+      "reason": "A measurement location or property definition can identify a named value class, units or typed property. This is distinct from a decomposition of an observed property or an interface declaration."
+    },
+    "S06-R014": {
+      "display_row": 26,
+      "label": "Observer / observing System",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Measurement, MeasurementLocation, MeasurementSource",
+      "reason": "Measurement and its location describe aspects of data acquisition. A location may relate to the equipment described and to a distinct source. Observation procedure and report semantics need a separate match."
+    },
+    "S06-R015": {
+      "display_row": 27,
+      "label": "Performed Observation",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Measurement, MeasurementLocation, MeasurementSource",
+      "reason": "Measurement and its location describe aspects of data acquisition. A location may relate to the equipment described and to a distinct source. Observation procedure and report semantics need a separate match."
+    },
+    "ISA-C-140": {
+      "display_row": 45,
+      "label": "Human-readable observation comment",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Nameable",
+      "reason": "The model supports named entities and associated descriptions. An observation-specific comment or multilingual labels need a more concrete binding."
+    },
+    "ISA-C-132": {
+      "display_row": 62,
+      "label": "Inferred past observation statements",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · ProposedEvent, HypotheticalEvent",
+      "reason": "Diagnostics or prognostics may identify explanatory events and hypotheses. A prediction of an observation, quantified sensor performance or identity confidence requires different evidence."
+    },
+    "ISA-C-143": {
+      "display_row": 63,
+      "label": "Forecast observation statements",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · ProposedEvent, HypotheticalEvent",
+      "reason": "Diagnostics or prognostics may identify explanatory events and hypotheses. A prediction of an observation, quantified sensor performance or identity confidence requires different evidence."
+    },
+    "ISA-T-EVENT-ID": {
+      "display_row": 68,
+      "label": "Source-qualified event identity and reference",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · TimestampedEvent, ActualEvent",
+      "reason": "Event identity and temporal subject derive from the entity and timestamped-event structure. Start or end can denote an endpoint or a point event."
+    },
+    "ISA-T-EVENT-TIME": {
+      "display_row": 69,
+      "label": "Event occurrence time",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · TimestampedEvent, ActualEvent",
+      "reason": "Event identity and temporal subject derive from the entity and timestamped-event structure. Start or end can denote an endpoint or a point event."
+    },
+    "SAPIENT-F2-PERFORMANCE": {
+      "display_row": 77,
+      "label": "Candidate — Declared detection performance and geometric error",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · ProposedEvent, HypotheticalEvent",
+      "reason": "Diagnostics or prognostics may identify explanatory events and hypotheses. A prediction of an observation, quantified sensor performance or identity confidence requires different evidence."
+    },
+    "ISA-K-PROPERTY-DECL": {
+      "display_row": 78,
+      "label": "Declared property definition",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, PropertyDefinition, UnitOfMeasure, UOMQuantity",
+      "reason": "A measurement location or property definition can identify a named value class, units or typed property. This is distinct from a decomposition of an observed property or an interface declaration."
+    },
+    "ISA-K-OBSERVABLE-DECL": {
+      "display_row": 79,
+      "label": "Declared observable definition",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, PropertyDefinition, UnitOfMeasure, UOMQuantity",
+      "reason": "A measurement location or property definition can identify a named value class, units or typed property. This is distinct from a decomposition of an observed property or an interface declaration."
+    },
+    "SAPIENT-F2-ALERT-LIFECYCLE": {
+      "display_row": 97,
+      "label": "Candidate — Alert identity, condition, status and acknowledgment lifecycle",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · ActualEvent, HealthAssessment, EventType, SeverityLevelType",
+      "reason": "An actual event or health assessment can convey condition and support a severity concept. A particular acknowledgment lifecycle or reliability of the produced data requires separate evidence."
+    },
+    "ISA-T-STATUS": {
+      "display_row": 196,
+      "label": "Component property-value report",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Measurement, MeasurementLocation, MeasurementSource",
+      "reason": "Measurement and its location describe aspects of data acquisition. A location may relate to the equipment described and to a distinct source. Observation procedure and report semantics need a separate match."
+    },
+    "CASE-H02": {
+      "display_row": 242,
+      "label": "REVIEW HOLD — site / mounting",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Asset, Segment, AssetSegmentEvent",
+      "reason": "An asset can be associated with an as-designed functional location over time. A current mount, empty-slot flag and RFC-style matching rule are additional claims."
+    },
+    "ISA-C-075": {
+      "display_row": 254,
+      "label": "Maintenance point of contact",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AgentRole, AgentRoleWithAsset, Organization, Manufacturer",
+      "reason": "A named agent can be linked through a role to an asset. Domain-specific role, responsibilities and contact details require evidence from the relevant role and entity records."
+    },
+    "ISA-C-077": {
+      "display_row": 255,
+      "label": "Manufacturer point of contact",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AgentRole, AgentRoleWithAsset, Organization, Manufacturer",
+      "reason": "A named agent can be linked through a role to an asset. Domain-specific role, responsibilities and contact details require evidence from the relevant role and entity records."
+    },
+    "ISA-C-084": {
+      "display_row": 257,
+      "label": "Component owner contact information",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AgentRole, AgentRoleWithAsset, Organization, Manufacturer",
+      "reason": "A named agent can be linked through a role to an asset. Domain-specific role, responsibilities and contact details require evidence from the relevant role and entity records."
+    },
+    "ISA-C-092": {
+      "display_row": 259,
+      "label": "Component program-of-record contact information",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AgentRole, AgentRoleWithAsset, Organization, Manufacturer",
+      "reason": "A named agent can be linked through a role to an asset. Domain-specific role, responsibilities and contact details require evidence from the relevant role and entity records."
+    },
+    "ISA-C-110": {
+      "display_row": 262,
+      "label": "Non-maintenance support contact information",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AgentRole, AgentRoleWithAsset, Organization, Manufacturer",
+      "reason": "A named agent can be linked through a role to an asset. Domain-specific role, responsibilities and contact details require evidence from the relevant role and entity records."
+    },
+    "ISA-R-COMPONENT-CONTACT": {
+      "display_row": 266,
+      "label": "Nominated component/contact identity record",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AgentRole, AgentRoleWithAsset, Organization, Manufacturer",
+      "reason": "A named agent can be linked through a role to an asset. Domain-specific role, responsibilities and contact details require evidence from the relevant role and entity records."
+    },
+    "ISA-C-099": {
+      "display_row": 277,
+      "label": "Reported physical parent/child attachment relationships",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset, AssetComponent, Segment, SegmentComponent",
+      "reason": "Physical asset composition and as-designed segment composition are distinct. Placement and exposure of component data require separate relationships."
+    },
+    "ISA-C-082": {
+      "display_row": 286,
+      "label": "Reported component operating condition",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · ActualEvent, HealthAssessment, EventType, SeverityLevelType",
+      "reason": "An actual event or health assessment can convey condition and support a severity concept. A particular acknowledgment lifecycle or reliability of the produced data requires separate evidence."
+    },
+    "AAS-O2-RECORD-ADMIN": {
+      "display_row": 357,
+      "label": "Candidate — Digital-record administration and business revision",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · PropertySetDefinition, PropertySetForEntity, PropertySetDefinitionForModel",
+      "reason": "A property set can be constrained or associated with its model and entity. Business revision and qualifier semantics require separate evidence."
+    },
+    "AAS-O2-TEMPLATE-PROVENANCE": {
+      "display_row": 358,
+      "label": "Candidate — Template that guided creation of a digital record",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · PropertySetDefinition, PropertySetForEntity, PropertySetDefinitionForModel",
+      "reason": "A property set can be constrained or associated with its model and entity. Business revision and qualifier semantics require separate evidence."
+    },
+    "AAS-O2-DATA-SPEC": {
+      "display_row": 359,
+      "label": "Candidate — Applied supplementary data-specification templates",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · PropertySetDefinition, PropertySetForEntity, PropertySetDefinitionForModel",
+      "reason": "A property set can be constrained or associated with its model and entity. Business revision and qualifier semantics require separate evidence."
+    },
+    "AAS-O2-ELEMENT-LABEL": {
+      "display_row": 362,
+      "label": "Candidate — Multilingual display label and description of an information element",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Nameable",
+      "reason": "The model supports named entities and associated descriptions. An observation-specific comment or multilingual labels need a more concrete binding."
+    },
+    "AAS-O2-SUPPORTING-CONTENT": {
+      "display_row": 363,
+      "label": "Candidate — Supporting file locator or embedded file content",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Document, DocumentForAsset, DocumentForModel, EntityContent",
+      "reason": "Associated documents or entity payload can accompany relevant assets and models. Media capture time and subject roles need their own bindings."
+    },
+    "AAS-O3-QUALIFIED-CONTEXT": {
+      "display_row": 369,
+      "label": "Candidate — Value, concept and template qualification",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · PropertySetDefinition, PropertySetForEntity, PropertySetDefinitionForModel",
+      "reason": "A property set can be constrained or associated with its model and entity. Business revision and qualifier semantics require separate evidence."
+    },
+    "AAS-O6-UNIT-CONTEXT": {
+      "display_row": 377,
+      "label": "Candidate — Unit definition and quantity context",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, PropertyDefinition, UnitOfMeasure, UOMQuantity",
+      "reason": "A measurement location or property definition can identify a named value class, units or typed property. This is distinct from a decomposition of an observed property or an interface declaration."
+    },
+    "AAS-O6-PRODUCT-CLASS": {
+      "display_row": 382,
+      "label": "Candidate — Product classification and classification-system context",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AssetType, Asset, Model, ModelVariant",
+      "reason": "Asset, asset type and manufacturer model are distinct subjects. Customized variants have parent-child roles. Dimensions, part numbers and replacement compatibility are additional claims."
+    },
+    "AAS-O6-CAPABILITY-CONDITION": {
+      "display_row": 383,
+      "label": "Candidate — Capability property conditions and applicability",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AssetTypeForSegmentType",
+      "reason": "The schema expresses type-level suitability for segment types. A permissible type and the actual installed occupant describe different layers."
+    },
+    "AAS-O6-CAPABILITY-DEPENDENCY": {
+      "display_row": 384,
+      "label": "Candidate — Capability dependencies and temporal applicability",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Recommendation, WorkOrder, WorkStep, SolutionPackage",
+      "reason": "A recommendation can lead to work requests or steps. Orders and package steps preserve ordering and subject context. Policy-controlled execution or retries require separate evidence."
+    },
+    "SOSA-SO2B-HEALTH-ASSESSMENT": {
+      "display_row": 395,
+      "label": "Candidate — Reported health assessment and associated faults",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · ActualEvent, HealthAssessment, EventType, SeverityLevelType",
+      "reason": "An actual event or health assessment can convey condition and support a severity concept. A particular acknowledgment lifecycle or reliability of the produced data requires separate evidence."
+    },
+    "SOSA-SO2D-SLOT-IDENTIFIER": {
+      "display_row": 410,
+      "label": "Candidate — Container-scoped physical slot identifier",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Asset, Segment, AssetSegmentEvent",
+      "reason": "An asset can be associated with an as-designed functional location over time. A current mount, empty-slot flag and RFC-style matching rule are additional claims."
+    },
+    "SOSA-SO2E-TASK-RECORD": {
+      "display_row": 413,
+      "label": "Candidate — Identified task, lifecycle and task priority",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Recommendation, WorkOrder, WorkStep, SolutionPackage",
+      "reason": "A recommendation can lead to work requests or steps. Orders and package steps preserve ordering and subject context. Policy-controlled execution or retries require separate evidence."
+    },
+    "SOSA-SO2E-CALIBRATION-STATUS": {
+      "display_row": 417,
+      "label": "Candidate — Calibration activity state and latest reported result",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · ActualEvent, MeasurementLocation, Measurement",
+      "reason": "Events and measurements can represent calibration activities in a domain profile. The core elements do not guarantee the required calibration terms or inspection result semantics."
+    },
+    "SOSA-SO2I-POWER-CYCLE-RECOVERY": {
+      "display_row": 439,
+      "label": "Candidate — Declared recovery behavior after a power cycle",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · LifecycleStatusHistory, ActualEvent",
+      "reason": "Lifecycle states and dated operational events can be represented. Cause, protocol semantics, recording duty and accompanying authorization are separate claims."
+    },
+    "SOSA-SO2J-FAULT-SUGGESTED-ACTION": {
+      "display_row": 452,
+      "label": "Candidate — Fault associated suggested corrective action",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Recommendation, WorkOrder, WorkStep, SolutionPackage",
+      "reason": "A recommendation can lead to work requests or steps. Orders and package steps preserve ordering and subject context. Policy-controlled execution or retries require separate evidence."
+    },
+    "OPCDI-ASSET-TAG": {
+      "display_row": 463,
+      "label": "Candidate — User-assigned asset identifier",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Entity, Asset",
+      "reason": "An exchanged entity identifier and serialized asset identifier can coexist. Assignment authority, custom asset tag or a stable alias must be shown separately."
+    },
+    "OPCDI-FUNCTIONAL-GROUP": {
+      "display_row": 464,
+      "label": "Candidate — Purpose-based information group and shared membership",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · PropertySetForEntity, OrderedList",
+      "reason": "A set or ordered list can group items. This does not establish applicability roles for observable concepts."
+    },
+    "OPCDI-SOLUTION-ASSIGNMENT": {
+      "display_row": 480,
+      "label": "Candidate — Solution subpackage deployment targets and installation order",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Recommendation, WorkOrder, WorkStep, SolutionPackage",
+      "reason": "A recommendation can lead to work requests or steps. Orders and package steps preserve ordering and subject context. Policy-controlled execution or retries require separate evidence."
+    },
+    "OPCDI-CONFIGURABLE-COMPOSITION": {
+      "display_row": 481,
+      "label": "Candidate — Allowed component types versus configured composition",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AssetTypeForSegmentType",
+      "reason": "The schema expresses type-level suitability for segment types. A permissible type and the actual installed occupant describe different layers."
+    },
+    "OPCDI-LIFETIME": {
+      "display_row": 482,
+      "label": "Candidate — Lifetime consumption or remaining capacity and warning levels",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · RemainingLifeAssessment",
+      "reason": "Remaining service life is an assessment with optional estimate, error and confidence. Physical consumption and warning thresholds require separate evidence."
+    },
+    "PADIM-CALIBRATION-RECORD": {
+      "display_row": 486,
+      "label": "Candidate — Signal calibration timestamp and purpose",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · ActualEvent, MeasurementLocation, Measurement",
+      "reason": "Events and measurements can represent calibration activities in a domain profile. The core elements do not guarantee the required calibration terms or inspection result semantics."
+    },
+    "PADIM-CALIBRATION-CHARACTERISTICS": {
+      "display_row": 488,
+      "label": "Candidate — Technique-specific calibration characteristics and conditions",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · ActualEvent, MeasurementLocation, Measurement",
+      "reason": "Events and measurements can represent calibration activities in a domain profile. The core elements do not guarantee the required calibration terms or inspection result semantics."
+    },
+    "PADIM-DICTIONARY-SEMANTICS": {
+      "display_row": 493,
+      "label": "Candidate — Dictionary-qualified property meaning and enumerated values",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, PropertyDefinition, UnitOfMeasure, UOMQuantity",
+      "reason": "A measurement location or property definition can identify a named value class, units or typed property. This is distinct from a decomposition of an observed property or an interface declaration."
+    },
+    "PADIM-SIGNAL-POINT-ID": {
+      "display_row": 496,
+      "label": "Candidate — Measurement or control point identifier",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation",
+      "reason": "A physical or virtual point can have source address, value class, units and local direction. A physical sensor channel or control point may only partially overlap."
+    },
+    "SAREF-DEVICE-KIND": {
+      "display_row": 509,
+      "label": "Individual equipment and its device kind",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AssetType, Asset, Model, ModelVariant",
+      "reason": "Asset, asset type and manufacturer model are distinct subjects. Customized variants have parent-child roles. Dimensions, part numbers and replacement compatibility are additional claims."
+    },
+    "OSUSR-SPATIAL-AUTHORITY": {
+      "display_row": 527,
+      "label": "Authority for recorded asset or sensor position and orientation",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · GeoPosition, GPSLocation, GPSPrecisionType",
+      "reason": "Geospatial position can include GPS information and precision classification. The exact elevation or attribution interpretation must be checked separately."
+    },
+    "OSUSR-ACTIVE-LIFECYCLE": {
+      "display_row": 531,
+      "label": "Managed asset activation transitions and failure state",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · LifecycleStatusHistory, ActualEvent",
+      "reason": "Lifecycle states and dated operational events can be represented. Cause, protocol semantics, recording duty and accompanying authorization are separate claims."
+    },
+    "RF-MANAGER-ENDPOINTS": {
+      "display_row": 555,
+      "label": "Management responsibility versus physical controller location",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Asset, Segment, AssetSegmentEvent",
+      "reason": "An asset can be associated with an as-designed functional location over time. A current mount, empty-slot flag and RFC-style matching rule are additional claims."
+    },
+    "RF-CHASSIS-ZONE": {
+      "display_row": 556,
+      "label": "Physical enclosure versus logical chassis zone",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Asset, Segment, AssetSegmentEvent",
+      "reason": "An asset can be associated with an as-designed functional location over time. A current mount, empty-slot flag and RFC-style matching rule are additional claims."
+    },
+    "RF-SERVICEABILITY": {
+      "display_row": 558,
+      "label": "Independent replacement and removal while operating",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · AssetSegmentEvent, AssetModelEvent, ModelRevision",
+      "reason": "Installation/removal and model assignment history can be recorded. This does not by itself establish hot-swap capability or an engineering change identifier."
+    },
+    "RF-ASSEMBLY-PEDIGREE": {
+      "display_row": 559,
+      "label": "Assembly production, vendor and engineering change level",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · AssetSegmentEvent, AssetModelEvent, ModelRevision",
+      "reason": "Installation/removal and model assignment history can be recorded. This does not by itself establish hot-swap capability or an engineering change identifier."
+    },
+    "RF-SENSOR-SUBJECT": {
+      "display_row": 563,
+      "label": "Sensor resource, source of an excerpt and equipment the reading describes",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Measurement, MeasurementLocation, MeasurementSource",
+      "reason": "Measurement and its location describe aspects of data acquisition. A location may relate to the equipment described and to a distinct source. Observation procedure and report semantics need a separate match."
+    },
+    "RF-LIMITS": {
+      "display_row": 567,
+      "label": "Sensor measurement range, equipment operating limits and environmental derating",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "RF-EXTREMA": {
+      "display_row": 568,
+      "label": "Recorded minima, peaks and their timestamps",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "RF-REPORT-HISTORY": {
+      "display_row": 574,
+      "label": "Metric report replacement, append limit, wrap and suppression of repeated values",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "RF-TIME-ACCURACY": {
+      "display_row": 575,
+      "label": "Accuracy of a metric timestamp separately from value accuracy and precision",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "RF-METRIC-SAMPLE": {
+      "display_row": 576,
+      "label": "Metric sample linked to its resource property and metric definition",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Measurement, MeasurementLocation, MeasurementSource",
+      "reason": "Measurement and its location describe aspects of data acquisition. A location may relate to the equipment described and to a distinct source. Observation procedure and report semantics need a separate match."
+    },
+    "RF-CHASSIS-ENVELOPE": {
+      "display_row": 594,
+      "label": "Manufacturer-declared chassis dimensions and mass",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AssetType, Asset, Model, ModelVariant",
+      "reason": "Asset, asset type and manufacturer model are distinct subjects. Customized variants have parent-child roles. Dimensions, part numbers and replacement compatibility are additional claims."
+    },
+    "RF-REPLACEMENT-PART": {
+      "display_row": 595,
+      "label": "Replacement part number versus installed assembly part number",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · AssetType, Asset, Model, ModelVariant",
+      "reason": "Asset, asset type and manufacturer model are distinct subjects. Customized variants have parent-child roles. Dimensions, part numbers and replacement compatibility are additional claims."
+    },
+    "RF-SENSOR-DIGITS": {
+      "display_row": 596,
+      "label": "Significant digits versus percent and absolute accuracy of a reading",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "RF-COLLECTION-FUNCTION": {
+      "display_row": 597,
+      "label": "Metric aggregation function, time scope and collection duration",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "RF-REMEDIATION-STEP": {
+      "display_row": 600,
+      "label": "Ordered corrective step with identified target and retry policy",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Recommendation, WorkOrder, WorkStep, SolutionPackage",
+      "reason": "A recommendation can lead to work requests or steps. Orders and package steps preserve ordering and subject context. Policy-controlled execution or retries require separate evidence."
+    },
+    "RF-INVENTORY-OCCUPANCY": {
+      "display_row": 606,
+      "label": "Known equipment location with an absent or unavailable occupant",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Asset, Segment, AssetSegmentEvent",
+      "reason": "An asset can be associated with an as-designed functional location over time. A current mount, empty-slot flag and RFC-style matching rule are additional claims."
+    },
+    "RF-LAST-RESET-EVENT": {
+      "display_row": 608,
+      "label": "Last system reset time and reported cause",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · LifecycleStatusHistory, ActualEvent",
+      "reason": "Lifecycle states and dated operational events can be represented. Cause, protocol semantics, recording duty and accompanying authorization are separate claims."
+    },
+    "RFC8348-MATCH": {
+      "display_row": 610,
+      "label": "Matching detected equipment to its intended configuration",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Asset, Segment, AssetSegmentEvent",
+      "reason": "An asset can be associated with an as-designed functional location over time. A current mount, empty-slot flag and RFC-style matching rule are additional claims."
+    },
+    "RFC8348-REFRESH": {
+      "display_row": 611,
+      "label": "Server acquisition time and refresh interval of a sensor value",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "RFC8348-STATE-TIME": {
+      "display_row": 615,
+      "label": "Last component state change and initialization or insertion fallback",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · LifecycleStatusHistory, ActualEvent",
+      "reason": "Lifecycle states and dated operational events can be represented. Cause, protocol semantics, recording duty and accompanying authorization are separate claims."
+    },
+    "RFC8348-INVENTORY": {
+      "display_row": 616,
+      "label": "Operational component inventory change time and notification",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · LifecycleStatusHistory, ActualEvent",
+      "reason": "Lifecycle states and dated operational events can be represented. Cause, protocol semantics, recording duty and accompanying authorization are separate claims."
+    },
+    "N4242-LIVE": {
+      "display_row": 622,
+      "label": "Elapsed acquisition duration and detector live duration",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · MeasurementLocation, Measurement, CalculationType, DataQualityType",
+      "reason": "Measurement locations can provide processing context, update interval, collection duration or unit. Specific run times, quality statistics and encoding rules need separate evidence."
+    },
+    "N4242-QC": {
+      "display_row": 628,
+      "label": "Inspection time and reported calibration fitness for service",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · ActualEvent, MeasurementLocation, Measurement",
+      "reason": "Events and measurements can represent calibration activities in a domain profile. The core elements do not guarantee the required calibration terms or inspection result semantics."
+    },
+    "N4242-LINEAGE": {
+      "display_row": 629,
+      "label": "Measurement grouping and links from derived results to raw readings",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · MeasurementAssociation, SubstantiatedByMeasurement, Algorithm",
+      "reason": "Related measurements and events can be linked, and algorithms have their own model. This does not establish causal raw-data lineage or the component of an observable variable a constraint qualifies."
+    },
+    "N4242-ALGORITHM": {
+      "display_row": 630,
+      "label": "Analysis execution, algorithm settings and reported status",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · MeasurementAssociation, SubstantiatedByMeasurement, Algorithm",
+      "reason": "Related measurements and events can be linked, and algorithms have their own model. This does not establish causal raw-data lineage or the component of an observable variable a constraint qualifies."
+    },
+    "N4242-MEDIA": {
+      "display_row": 637,
+      "label": "Acquisition context linking measured items and multimedia",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Document, DocumentForAsset, DocumentForModel, EntityContent",
+      "reason": "Associated documents or entity payload can accompany relevant assets and models. Media capture time and subject roles need their own bindings."
+    },
+    "RFC8348-ADMIN-OPER": {
+      "display_row": 639,
+      "label": "Administrative permission to use a component and its observed operability",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · LifecycleStatusHistory, ActualEvent",
+      "reason": "Lifecycle states and dated operational events can be represented. Cause, protocol semantics, recording duty and accompanying authorization are separate claims."
+    },
+    "RFC8348-ALARM-SET": {
+      "display_row": 640,
+      "label": "Concurrent local alarm severities and repair status",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · LifecycleStatusHistory, ActualEvent",
+      "reason": "Lifecycle states and dated operational events can be represented. Cause, protocol semantics, recording duty and accompanying authorization are separate claims."
+    },
+    "RFC8348-MGMT-ALIAS": {
+      "display_row": 641,
+      "label": "Nonvolatile management alias and authority for assigning it",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · Entity, Asset",
+      "reason": "An exchanged entity identifier and serialized asset identifier can coexist. Assignment authority, custom asset tag or a stable alias must be shown separately."
+    },
+    "RFC8348-ENTRY-SCOPE": {
+      "display_row": 643,
+      "label": "Physical scope of an equipment inventory entry",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · Asset, AssetComponent, Segment, SegmentComponent",
+      "reason": "Physical asset composition and as-designed segment composition are distinct. Placement and exposure of component data require separate relationships."
+    },
+    "N4242-ELEVATION-REFERENCE": {
+      "display_row": 644,
+      "label": "Ellipsoid elevation, surface offset and their separate accuracy estimates",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · GeoPosition, GPSLocation, GPSPrecisionType",
+      "reason": "Geospatial position can include GPS information and precision classification. The exact elevation or attribution interpretation must be checked separately."
+    },
+    "N4242-FAULT-OUTPUT": {
+      "display_row": 645,
+      "label": "Reported fault impact on operation and trust in its output",
+      "relation": "partial",
+      "classification": "common",
+      "locator": "XSD/CCOM.xsd · ActualEvent, HealthAssessment, EventType, SeverityLevelType",
+      "reason": "An actual event or health assessment can convey condition and support a severity concept. A particular acknowledgment lifecycle or reliability of the produced data requires separate evidence."
+    },
+    "IADOPT-SET-SCOPE": {
+      "display_row": 647,
+      "label": "Applicable concepts for a set of observable variables",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · PropertySetForEntity, OrderedList",
+      "reason": "A set or ordered list can group items. This does not establish applicability roles for observable concepts."
+    },
+    "IADOPT-CONSTRAINT-TARGET": {
+      "display_row": 648,
+      "label": "What a constraint qualifies in an observable variable",
+      "relation": "related",
+      "classification": "unfilled",
+      "locator": "XSD/CCOM.xsd · MeasurementAssociation, SubstantiatedByMeasurement, Algorithm",
+      "reason": "Related measurements and events can be linked, and algorithms have their own model. This does not establish causal raw-data lineage or the component of an observable variable a constraint qualifies."
+    }
+  },
+  "candidate_tests": [
+    {
+      "candidate": "Time-qualified assignment of an identified asset to a functional location",
+      "closest_rows": [
+        410,
+        558,
+        606,
+        610
+      ],
+      "source": "XSD/CCOM.xsd: AssetSegmentEvent, ActualEvent, TimestampedEvent; OIIE Scenario 11",
+      "reason": "The existing rows distinguish slots, current occupancy, replaceability and matching. An installation or removal history can record the same equipment in successive places even when it is no longer present at the original location."
+    },
+    {
+      "candidate": "Measurement location is independently identifiable from asset, functional location and collector",
+      "closest_rows": [
+        23,
+        496,
+        529,
+        563
+      ],
+      "source": "XSD/CCOM.xsd: MeasurementLocation, MeasurementSource, MeasurementLocationAssociation",
+      "reason": "The model can identify a physical or virtual point where measurements are taken, independently of the source reporting them. Test against the existing measurement-point identifier row before adding."
+    },
+    {
+      "candidate": "Current product model and dated model-assignment history",
+      "closest_rows": [
+        5,
+        462,
+        559,
+        610
+      ],
+      "source": "XSD/CCOM.xsd: Asset.Model, AssetModelEvent, TimestampedEvent, ModelVariant, ModelRevision",
+      "reason": "The current model and model assignment history are differently modeled. A revision or variant hierarchy alone supplies no chronology for assigned models."
+    },
+    {
+      "candidate": "Maintenance request through completed work and equipment-event linkage",
+      "closest_rows": [
+        241,
+        413,
+        452,
+        480,
+        600
+      ],
+      "source": "XSD/CCOM.xsd: Request, WorkOrder, WorkStep, CompletedWork, TimestampedEvent",
+      "reason": "A recommended action or ordered step does not prove execution. The model can link performed work and related asset events, independently of work planning."
+    },
+    {
+      "candidate": "Evidence for actual event and competing explanations",
+      "closest_rows": [
+        62,
+        63,
+        72,
+        97,
+        395,
+        645
+      ],
+      "source": "XSD/CCOM.xsd: ActualEvent, SubstantiatedByMeasurement, ProposedEvent, HypotheticalEvent, AmbiguitySet",
+      "reason": "An event can carry a measurement as supporting evidence. A diagnostic proposal or hypothetical failure mode has different standing from the actual logged occurrence."
+    }
+  ],
+  "assessment_status": "Preliminary source and existing-row checkpoint. Unlisted row IDs and candidate tests have not reached a disposition. Do not treat absent decisions as negatives."
 }
