@@ -2267,6 +2267,77 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
 
 
+def verify_joint_rfc_n42(master):
+    """Check corrected comparisons against the published pre-review snapshot."""
+    from collections import Counter
+
+    base = '65be224dc1068827e99f6e94eeaa80c2b0120b4c'
+    old = json.loads(subprocess.check_output(
+        ['git', 'show', base + ':' + str((D / MASTER).relative_to(ROOT))], cwd=ROOT))
+    ledgers = {15: load('RFC_8348_Source_Coverage.json'), 16: load('N42_42_Source_Coverage.json')}
+    original_ids = [row['row_id'] for row in old['rows']]
+    rows = {row['row_id']: row for row in master['rows']}
+    need(list(rows)[:len(original_ids)] == original_ids and master['columns'] == old['columns'],
+         'Original row IDs and column order')
+    new_ids = set(rows) - set(original_ids)
+    cols = {spec['key']: col for col, spec in enumerate(master['columns'])}
+    compare_keys = ('relation', 'classification', 'reason', 'locator')
+    exact = lambda a, b: all(a[k] == b[k] for k in compare_keys)
+    colors = {'common': '#D9EAF8', 'specialized': '#F9E6B8', 'unresolved': '#E9DEFA', 'unfilled': '#FFFFFF'}
+    previous_cells = set()
+    reviewed_receivers = {}
+    for col, evidence in ledgers.items():
+        report = evidence['corrective_review_64']
+        need(set(evidence['row_dispositions']) == set(rows), 'Reviewed donor row coverage')
+        need(set(report['joint_additions']) == new_ids and report['baseline_commit'] == base,
+             'New rows and previous version')
+        relations = Counter(v['relation'] for v in evidence['row_dispositions'].values())
+        need(dict(relations) == evidence['coverage_counts']['relations'], 'Donor relation totals')
+        for rid, decision in report['changed_existing_rows'].items():
+            previous_cells.add(letter(col + 1) + str(rows[rid]['display_row']))
+            need(exact(decision['revised'], evidence['row_dispositions'][rid]), 'Corrected meaning ' + rid)
+        for rid, revised in report['definition_changes'].items():
+            row = rows[rid]
+            previous_cells.add(letter(len(cols)) + str(row['display_row']))
+            need(row['label'] == revised['revised']['label'] and row['definition'] == revised['revised']['definition']
+                 and row['definition'] in row['display'][-1], 'Corrected candidate definition ' + rid)
+        for rid, corrections in report.get('receiving_cell_changes', {}).items():
+            for target, change in corrections.items():
+                pos = cols[target]
+                ref = letter(pos + 1) + str(rows[rid]['display_row'])
+                previous_cells.add(ref)
+                decision = evidence['prior_donor_checks'][rid][target]
+                need(exact(change['revised'], decision), 'Corrected earlier comparison ' + ref)
+                reviewed_receivers[rid, pos] = decision
+        for rid in new_ids.intersection(evidence['new_rows']):
+            comparisons = evidence['prior_donor_checks'][rid]
+            need(set(comparisons) == {spec['key'] for j, spec in enumerate(master['columns'][4:-1], 4) if j != col},
+                 'New row prior donor accountability ' + rid)
+            for target, decision in comparisons.items():
+                reviewed_receivers[rid, cols[target]] = decision
+        for rid, checks in evidence['prior_donor_checks'].items():
+            for target, decision in checks.items():
+                if cols[target] in ledgers:
+                    counterpart = ledgers[cols[target]]['row_dispositions'][rid]
+                    need(exact(counterpart, decision), 'Cross-ledger donor parity ' + rid + ' ' + target)
+    with zipfile.ZipFile(D / BOOK) as saved:
+        sheet = ET.fromstring(saved.read(pub.old.sheetpaths(saved)['Master Crosswalk']))
+        style = ET.fromstring(saved.read('xl/styles.xml'))
+        cells = {c.get('r'): c for c in sheet.iter(pub.q('c'))}
+        for (rid, pos), decision in reviewed_receivers.items():
+            row = rows[rid]
+            ref = letter(pos + 1) + str(row['display_row'])
+            need(decision['reason'] in row['display'][pos] and decision['locator'] in row['display'][pos]
+                 and joint_fill(cells[ref], style) == colors[decision['classification']],
+                 'Receiving donor content and class ' + ref)
+    grid_size = len(old['review_grid']) + len(new_ids) + bool(new_ids)
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(master, 15, ledgers, base, len(rows), grid_size, len(cols), previous_cells,
+                            True, True, ledgers[15]['corrective_review_64']['verification']['summary_cells'])
+    print(f'PASS joint corrective review: {len(rows)} explicit decisions per donor, {len(new_ids)} additions, '
+          'prior row IDs and unaffected cells, cross-ledger parity, fills, mirrors and workbook structure.')
+
+
 def verify_n4242(master):
     """Verify the N42 donor grid against the accepted RFC workbook and intake."""
     evidence = load('N42_42_Source_Coverage.json')
@@ -2500,6 +2571,9 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current == 'RFC8348_N4242_CORRECTIVE_64':
+        verify_joint_rfc_n42(load(MASTER))
+        sys.exit(0)
     if current == 'N4242_COMPARISON_64':
         verify_n4242(load(MASTER))
         sys.exit(0)

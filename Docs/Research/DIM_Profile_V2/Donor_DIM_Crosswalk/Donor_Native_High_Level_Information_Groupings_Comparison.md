@@ -1333,3 +1333,38 @@ Two comparisons illustrate why the qualifications matter. ISA can report absorbe
 ### Source limits and assessment
 
 The native review groups 315 named schema declarations into 18 families and records the Schematron patterns, extension schema and eleven published examples. All eleven examples passed the applicable schema and ID-aware Schematron checks. Annex L needed its extension schema, resolved against the published primary schema. These tests concern example documents. The publisher’s full-text route presented an access challenge. The three-page sample verified front matter only. Requirements found only in operative prose, including additional obligations by instrument class, remain open. Recommend bounded partial acceptance for the documented corpus. [Publisher record](https://doi.org/10.1109/IEEESTD.2020.9264644) · [Source evidence](N42_42_Source_Coverage.json)
+
+## RFC 8348 and N42.42 corrective review
+
+The owner requested the same reassessment used for OSUS-R and Redfish. We used their recorded two-way method. We reconciled each workbook decision with its ledger and row subject, reopened disputed groups in the primary sources, tested both positive and negative decisions, and challenged candidate additions against their closest existing rows. Unchanged entries retain their previously documented depth of source contact. [OSUS-R and Redfish method](#osus-r-and-redfish-corrective-review)
+
+The pre-review workbook already contained 601 nonblank decisions in each column. The RFC ledger held 582. Its other 19 decisions were recorded under N42.42's receiving-donor checks and already appeared in Excel. The corrected RFC ledger now includes those decisions under the same stable row IDs. This restores traceability without counting the 19 a second time.
+
+| Existing baseline of 601 rows per donor | Decisions revised¹ | Changed correspondence | Changed cell classification | Originating candidate definitions revised |
+|---|---:|---:|---:|---:|
+| RFC 8348 | 135 | 47 | 32 | 2 |
+| N42.42 | 59 | 35 | 30 | 9 |
+
+
+¹ Counts compare the prior and corrected relation, classification, reason and source locator. A decision can change both correspondence and classification. Definition edits concern the candidate described at the right of the master table.
+
+### What changed for the Details view
+
+- **Permission to use equipment and ability to operate.** RFC 8348 distinguishes an administrative restriction from a component’s actual operational condition. A client can show both. The administrative setting alone cannot establish that an activation command was issued or completed. [RFC 8348 §7.1](https://www.rfc-editor.org/rfc/rfc8348#section-7.1)
+- **How a detected component gets its configured name.** The main RFC model uses class, parent and relative position when matching intended configuration. The deprecated state-only module in the non-normative appendix adds a manufacturer check. A client should preserve which model supplied the name. [RFC 8348 §7.1 and Appendix A](https://www.rfc-editor.org/rfc/rfc8348)
+- **Meaning of a foreground measurement.** The N42 schema specifies that foreground data retain environmental background and the instrument’s intrinsic activity. The acquisition class therefore constrains how a client interprets the numbers. The corrected spectrum description also distinguishes its energy-calibration reference from the detector reference, with reference conditions recorded at their applicable evidence level. [NIST edition package, primary schema and Schematron](https://www.nist.gov/pml/radiation-physics/ansiieee-n4242-2020-version)
+- **Receiving-donor corrections.** Redfish sensor accuracy applies to the sensor reading. Its calibration timestamp records calibration, and its lifetime reading survives the metrics reset. Giving these fields credit for specimen-quantity uncertainty, a dated inspection result or a since-reset detector count overstated the overlap. An IEEE 1451 limits declaration also supplies different information from a reported characteristic or group limit violation. Four earlier RFC comparison holds were resolved by evidence from IEEE 1451 and OGC API – Connected Systems. [Prior workbook](https://github.com/OS4CSAPI/glaux-client/blob/65be224dc1068827e99f6e94eeaa80c2b0120b4c/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/Master_Donor_Concept_to_DIM_Crosswalk.xlsx)
+
+### New rows and their nearest alternatives
+
+| Workbook row | Candidate |
+|---:|---|
+| 639 | Administrative permission to use a component and its observed operability |
+| 640 | Concurrent local alarm severities and repair status |
+| 641 | Nonvolatile management alias and authority for assigning it |
+| 642 | Server ability to acquire a sensor value and suspected sensor failure |
+| 643 | Physical scope of an equipment inventory entry |
+| 644 | Ellipsoid elevation, surface offset and their separate accuracy estimates |
+| 645 | Reported fault impact on operation and trust in its output |
+
+The two updated ledgers document each new row's source basis and earlier-donor comparisons. The workbook contains 608 explicit information rows per reviewed column and 7 additions from this reassessment. The previous RFC acceptance remains recorded at its original scope. Both revised comparisons await the owner’s decision. N42 operative clauses unavailable through the publisher route remain a source hold. Document validation and example values do not establish behavior of a particular deployed instrument. [RFC evidence](RFC_8348_Source_Coverage.json) · [N42.42 evidence](N42_42_Source_Coverage.json)
