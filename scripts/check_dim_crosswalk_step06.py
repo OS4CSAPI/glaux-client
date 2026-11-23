@@ -4995,6 +4995,10 @@ def main() -> None:
     if "--recovery-only" in sys.argv[1:]:
         return
     doc = json.loads((BASE / (NAME + ".json")).read_text(encoding="utf-8"))
+    if doc.get('currentEvidenceCheckpoint') == 'IADOPT_COMPARISON_64' and len(sys.argv) == 1:
+        from integrate_sosa_opportunity_checkpoint import verify_iadopt
+        verify_iadopt(doc)
+        return
     if doc.get('currentEvidenceCheckpoint') == 'RFC8348_N4242_CORRECTIVE_64' and len(sys.argv) == 1:
         from integrate_sosa_opportunity_checkpoint import verify_joint_rfc_n42
         verify_joint_rfc_n42(doc)

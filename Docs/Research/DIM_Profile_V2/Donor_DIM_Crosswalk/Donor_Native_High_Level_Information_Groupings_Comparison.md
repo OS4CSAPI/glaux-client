@@ -1368,3 +1368,13 @@ The pre-review workbook already contained 601 nonblank decisions in each column.
 | 645 | Reported fault impact on operation and trust in its output |
 
 The two updated ledgers document each new row's source basis and earlier-donor comparisons. The workbook contains 608 explicit information rows per reviewed column and 7 additions from this reassessment. The previous RFC acceptance remains recorded at its original scope. Both revised comparisons await the owner’s decision. N42 operative clauses unavailable through the publisher route remain a source hold. Document validation and example values do not establish behavior of a particular deployed instrument. [RFC evidence](RFC_8348_Source_Coverage.json) · [N42.42 evidence](N42_42_Source_Coverage.json)
+
+
+## I-ADOPT observable-variable semantics
+
+I-ADOPT 1.1.0 distinguishes the property, its object of interest, a matrix or other context, and qualifiers. A matrix is a specific context role. Statistical modifiers describe an applied statistical measure. They do not establish an averaging interval or runtime implementation. The system classes describe combinations of entities that can have interchangeable or distinct roles in a variable. The reviewed axioms establish meaning in an ontology and do not validate fields in an exchange document. [Ontology specification](https://i-adopt.github.io/ontology/index-en.html)
+
+- Row 647 records which concepts apply to a variable set and the role of each concept. This can support discovery without attributing the entire set to an individual variable.
+- Row 648 records precisely what a constraint qualifies. The constraint can target an entity, the property or a statistical modifier. The latter matters when reading a qualifier on a mean.
+
+The comparison reconciles the 608 earlier subjects and accounts for 26 named declarations. The ledger records 36 comparisons on the new rows, comprising 13 partial matches, 21 related findings and two source holds. The evidence for those comparisons is bounded by the cited baseline findings. [Evidence ledger](I_ADOPT_Source_Coverage.json)

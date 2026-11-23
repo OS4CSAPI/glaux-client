@@ -2267,6 +2267,38 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
 
 
+def verify_iadopt(master):
+    evidence = load('I_ADOPT_Source_Coverage.json')
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(
+        master, 17, {17: evidence}, '29a12d12c5ca68c26c6d9687ba1aa77532dff275',
+        610, 648, 24, set(), False, True, {
+            'A1': 'I-ADOPT 1.1.0 comparison',
+            'B1': '610 information rows, 24 columns and 26 worksheets. I-ADOPT in column R. New candidates in rows 647–648. Owner assessment pending.',
+        },
+    )
+    keys = {c['key'] for c in master['columns'][4:-1]} - {'IADOPT'}
+    need(len(evidence['named_declarations']) == 26, 'I-ADOPT named declarations')
+    need(set(evidence['new_rows']) == set(evidence['prior_donor_checks']), 'I-ADOPT additions')
+    rows = {row['row_id']: row for row in master['rows']}
+    with zipfile.ZipFile(D / BOOK) as book:
+        paths = pub.old.sheetpaths(book)
+        sheet = ET.fromstring(book.read(paths['Master Crosswalk']))
+        styles = ET.fromstring(book.read('xl/styles.xml'))
+        cells = {cell.get('r'): cell for cell in sheet.iter(pub.q('c'))}
+        for rid, checks in evidence['prior_donor_checks'].items():
+            need(set(checks) == keys, 'I-ADOPT earlier-donor coverage')
+            row = rows[rid]
+            for i, column in enumerate(master['columns']):
+                if column['key'] in checks:
+                    check = checks[column['key']]
+                    ref = letter(i + 1) + str(row['display_row'])
+                    target = '#D9EAF8' if check['classification'] == 'common' else '#FFFFFF'
+                    need(check['reason'] in row['display'][i] and joint_fill(cells[ref], styles) == target,
+                         'I-ADOPT earlier-donor comparison ' + ref)
+    print('PASS I-ADOPT: 610 explicit decisions, 36 earlier-donor checks, fills and four mirrors.')
+
+
 def verify_joint_rfc_n42(master):
     """Check corrected comparisons against the published pre-review snapshot."""
     from collections import Counter
@@ -2571,6 +2603,9 @@ if __name__=='__main__':
     need(len(sys.argv)==2 and sys.argv[1] in ('--apply','--verify'),'use --apply or --verify')
     current=load(MASTER)['currentEvidenceCheckpoint']
     if sys.argv[1]=='--verify':verify_workbook_structure(D/BOOK)
+    if current == 'IADOPT_COMPARISON_64':
+        verify_iadopt(load(MASTER))
+        sys.exit(0)
     if current == 'RFC8348_N4242_CORRECTIVE_64':
         verify_joint_rfc_n42(load(MASTER))
         sys.exit(0)
