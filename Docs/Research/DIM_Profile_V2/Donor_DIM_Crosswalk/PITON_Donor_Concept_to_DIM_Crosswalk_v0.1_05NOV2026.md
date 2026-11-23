@@ -30,6 +30,10 @@ The comparison and workbook integration are complete. The [interim checkpoint](h
 
 [Exact previous checkpoint](https://github.com/OS4CSAPI/glaux-client/blob/65be224dc1068827e99f6e94eeaa80c2b0120b4c/Docs/Research/DIM_Profile_V2/Donor_DIM_Crosswalk/PITON_Donor_Concept_to_DIM_Crosswalk_v0.1_05NOV2026.md).
 
+## I-ADOPT intake
+
+Rank seven intake is complete. I-ADOPT 1.1.0 is pinned through the [source inventory](I_ADOPT_Source_Coverage.json). The [bounded comparison plan](PLAN_I_ADOPT_Source_First_Donor_Review.md) uses the accepted 608-row master. No I-ADOPT row assessment has been delivered.
+
 ## Next action and stop
 
-The next donor in the published research order is rank 7, I-ADOPT. One Proceed authorizes source intake and a bounded comparison scope.
+One Proceed authorizes the I-ADOPT comparison through publication and download verification. Stop for the owner's assessment.
