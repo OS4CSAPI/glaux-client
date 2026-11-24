@@ -2274,6 +2274,26 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
 def verify_prov_partial(master):
     evidence = load('PROV_Source_Coverage.json')
     verify_workbook_structure(D / BOOK)
+    if master['currentEvidenceCheckpoint'] == 'PROV_COMPARISON_64':
+        verify_saved_donor_grid(
+            master, 19, {19: evidence}, '356e749b7d03fb7d74d7831a3d9e30c190b99895',
+            621, 662, 26, {f'T{i}' for i in range(3, 661)}, True, True, {
+                'A1': 'W3C PROV comparison for owner assessment',
+                'B1': '621 information rows, 26 columns and 26 worksheets. PROV is column T. 612 adjudications and 9 case holds, including one new bundle candidate in row 662.',
+            },
+        )
+        with (D / 'PROV_Row_Review.csv').open(newline='', encoding='utf-8') as source:
+            reviewed = list(csv.DictReader(source))
+        for row in reviewed:
+            rec = evidence['row_dispositions'][row['Stable ID']]
+            need((rec['status'], rec['reason'], rec['locator']) ==
+                 (row['Review stage'], row['Finding'], row['Locator']), 'PROV ledger parity')
+        need(len(reviewed) == 621 and len({row['Stable ID'] for row in reviewed}) == 621
+             and sum(row['Review stage'] == 'Adjudicated' for row in reviewed) == 612
+             and sum(row['Review stage'] == 'Unresolved case hold' for row in reviewed) == 9,
+             'PROV review final counts')
+        print('PASS PROV comparison: 612 adjudications, nine case holds, workbook and mirror parity.')
+        return
     verify_saved_donor_grid(
         master, 19, {19: evidence}, '6f28b75d587bd7c06e1510d4b588a76b7d6e3108',
         620, 660, 26, set(), False, True, {

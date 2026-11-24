@@ -70,3 +70,7 @@ Proposed optional row wording: **Named provenance assertion set and its own orig
 The [assessments awaiting integration](PROV_Row_Assessments_Pending_Integration.csv) record 165 additional decisions by stable row ID. Related rows share a source-based rationale where they ask for the same kind of information. This pass distinguishes domain fields from the history of the entities that carry those fields. It also identifies partial correspondence for processing and substitution, verification, and timed equipment activities.
 
 The working total is 205 assessed rows, nine existing case holds and 406 rows awaiting assessment. The published workbook still reflects the earlier 40 assessments. Integrate the saved decisions together with the remaining assessments and the proposed bundle candidate.
+
+## Integration for owner assessment
+
+The 406 outstanding assessments and the previously saved 165 decisions are now integrated. Related rows share a source rationale where their information needs match. The master contains 621 information rows with 612 adjudications and nine legacy case holds. The bundle candidate is in worksheet row 662. It remains optional and awaits owner assessment. Peer cells for the new row point to the individual donor comparisons above.
