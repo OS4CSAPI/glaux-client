@@ -64,3 +64,9 @@ The table records the cross-check of existing crosswalk evidence. A hold means t
 | OGC API – Connected Systems | Related, row 629. Observation collections can group records. The scoped comparison does not establish a group of provenance assertions with separate attribution. |
 
 Proposed optional row wording: **Named provenance assertion set and its own origin**. Preserve the identity, attribution and generation history of a named set of provenance assertions independently of the entities that set describes. Publish it with the finished provenance column, retaining unresolved donor comparisons as holds.
+
+## 24 November assessment pass
+
+The [assessments awaiting integration](PROV_Row_Assessments_Pending_Integration.csv) record 165 additional decisions by stable row ID. Related rows share a source-based rationale where they ask for the same kind of information. This pass distinguishes domain fields from the history of the entities that carry those fields. It also identifies partial correspondence for processing and substitution, verification, and timed equipment activities.
+
+The working total is 205 assessed rows, nine existing case holds and 406 rows awaiting assessment. The published workbook still reflects the earlier 40 assessments. Integrate the saved decisions together with the remaining assessments and the proposed bundle candidate.
