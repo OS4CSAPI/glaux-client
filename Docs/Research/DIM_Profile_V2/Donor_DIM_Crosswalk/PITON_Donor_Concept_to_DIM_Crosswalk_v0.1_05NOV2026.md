@@ -36,4 +36,6 @@ The owner accepted both corrected assessments as bounded partial on 23 November 
 
 Rank 9 source intake is complete. The [provenance donor plan](PLAN_PROV_Source_First_Donor_Review.md) pins PROV-DM, PROV-O and the two SOSA/SSN editions. The 620-row master at f652056 remains the comparison baseline.
 
-The [comparison checkpoint](PROV_Donor_Comparison_Checkpoint.md) records the integrated provenance comparison. Column T contains 612 adjudications and nine inherited case holds. The optional bundle candidate is on worksheet row 662. Next action is owner assessment of the completed column and candidate.
+The [comparison checkpoint](PROV_Donor_Comparison_Checkpoint.md) records the integrated provenance comparison. Column T contains 612 adjudications and nine inherited case holds. The optional bundle candidate is on worksheet row 662. The owner accepted this review on 24 November 2026, retained the nine case holds and kept row 662 as an optional candidate for later model and profile decisions.
+
+Next action: rank 10, Lightweight Machine to Machine (LwM2M) 1.2.2 source intake.
