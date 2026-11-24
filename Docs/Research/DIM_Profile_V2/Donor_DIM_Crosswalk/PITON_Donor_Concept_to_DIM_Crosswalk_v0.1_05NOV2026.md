@@ -36,4 +36,4 @@ The owner accepted both corrected assessments as bounded partial on 23 November 
 
 Rank 9 source intake is complete. The [provenance donor plan](PLAN_PROV_Source_First_Donor_Review.md) pins PROV-DM, PROV-O and the two SOSA/SSN editions. The 620-row master at f652056 remains the comparison baseline.
 
-The [comparison checkpoint](PROV_Donor_Comparison_Checkpoint.md) records 40 adjudicated rows, including the N42.42 and MIMOSA starting cases. Column T of the master workbook now includes the 40 adjudications, nine case holds and 571 explicitly pending assessments. Complete the pending dispositions and candidate review under the authorized scope.
+The [comparison checkpoint](PROV_Donor_Comparison_Checkpoint.md) records 40 adjudicated rows, including the N42.42 and MIMOSA starting cases. Column T of the master workbook now includes the 40 adjudications, nine case holds and 571 explicitly pending assessments. The comparison now recommends one distinct bundle candidate, with donor evidence limits recorded. Complete the 571 pending dispositions and integrate the candidate with the finished provenance column.
