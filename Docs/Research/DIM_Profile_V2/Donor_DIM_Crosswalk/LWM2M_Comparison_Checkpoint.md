@@ -25,4 +25,31 @@ The [review plan](PLAN_LWM2M_Source_First_Donor_Review.md) pins the 621-row base
 
 The Core Discover operation returns resource links and applicable attributes scoped to the requesting server. It does not return the resource value as a Read does. Test whether the master already captures the distinction between a declared resource in the object definition, an instantiated path returned in discovery, and a value readable by the requesting server. Compare against rows 505 and 529 and the existing device and Thing affordance findings before adding any row.
 
-Eight initial dispositions are recorded. The other 613 rows, candidate overlaps and workbook integration are pending.
+Eight initial dispositions are recorded. Additional dispositions and the first candidate comparison follow below.
+
+## Management operations and reporting
+
+| Worksheet row | Finding | Source |
+|---|---|---|
+| 81 | Partial. Execute arguments can carry operation-specific inputs. An executable resource does not establish a general reusable parameter schema. | Core §6.3, Execute |
+| 88 | Partial. Object definitions declare resource operations. Access control and the runtime operation determine whether a particular server can write. | Core §§6.3, 8.2 |
+| 89 | Partial. Greater Than and Less Than thresholds can control notifications. They are notification attributes, with applicability rules for the target resource. | Core §§6.3.4, 7.3 |
+| 90 | Related. Step is a threshold for change in the resource value. It does not establish a percentage change or a relative reference basis. | Core §7.3 |
+| 91 | Partial. Notification attributes express periods and qualifying value changes. An actual notification also depends on an observation and its runtime conditions. | Core §§6.4, 7.3 |
+| 95 | Partial. Execute initiates an action on an executable resource. A management request in the master may also include domain-specific intent or parameters. | Core §6.3, Execute |
+| 96 | Partial. An operation response reports its outcome at the protocol boundary. Object-specific state and result fields supply separate evidence of asynchronous work. | Core §6.3 and Firmware Update object 5, resources 3 and 5 |
+| 165 | Related. Discover enumerates management resources and attributes at the targeted path. That enumeration concerns resources rather than the set of component messages. | Core §6.3.2 |
+| 184 | Direct for the operation distinction. Read at a resource path requests the current value subject to applicable access and operation rules. | Core §§6.3, 8.2 |
+| 187 | Partial. Observe establishes notifications for targeted data. Observe-Composite addresses multiple targets. This does not establish the semantics of arbitrary future-message subscriptions. | Core §6.4 |
+| 192 | Partial. Cancel Observation ends the specified observation. The master’s general subscription row may cover other subscription types. | Core §6.4 |
+| 209 | Partial. An observation targets management paths. Attributes govern notification behavior. This does not define a general query language or transferable subscription identifier. | Core §§6.4, 7.3 |
+| 210 | Related. The Observe response and subsequent notifications are separate protocol events. No general initial-cache selection follows from this distinction. | Core §6.4 |
+| 520 | Partial. Registration lifetime and refresh govern a server's registration of a client. Applicability to a general directory or Thing Description requires a separate mapping. | Core §6.2 |
+| 574 | Related. Server object resource 6 and the observation rules qualify storing notifications while offline or disabled. They do not establish metric-report wrap or append behavior. | Server object 1 resource 6, Core §6.4 |
+| 592 | Related. Server object notification storage and periodic reporting concern individual servers and observations. They do not establish the specified backup destinations or retry policy. | Server object 1 resources 2, 3 and 6, Core §§6.4, 7.3 |
+
+## Candidate disposition against the closest rows
+
+Recommend retaining **Declared resource, discovered instance and operation-specific access** as a provisional row. Row 165 concerns message discovery. Row 371 concerns finding a digital record and endpoint. Row 505 concerns a caller's permission. Row 529 concerns a subordinate sensor key and capture capability. A client needs all three facts about the same path: its definition declares available operations, discovery identifies what an endpoint exposes to the caller, and an attempted Read can separately establish a value or a failure. A path missing from one server's discovery does not prove that the equipment never implements it. Peer-donor comparisons remain open.
+
+The ledger now contains 24 initial dispositions. The other 597 baseline rows, remaining peer comparisons and workbook integration are pending.

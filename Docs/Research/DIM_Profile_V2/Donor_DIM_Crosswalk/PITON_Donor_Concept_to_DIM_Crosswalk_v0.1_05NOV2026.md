@@ -40,4 +40,4 @@ The [comparison checkpoint](PROV_Donor_Comparison_Checkpoint.md) records the int
 
 Rank 10 source intake is recorded in the [LwM2M review plan](PLAN_LWM2M_Source_First_Donor_Review.md). The next Proceed authorizes the row comparison, candidate checks and verified workbook integration.
 
-The [LwM2M comparison checkpoint](LWM2M_Comparison_Checkpoint.md) records five object definitions and eight initial dispositions. Continue the remaining 613 rows and candidate comparisons before workbook integration.
+The [LwM2M comparison checkpoint](LWM2M_Comparison_Checkpoint.md) records five object definitions, 24 dispositions and a provisional discovery candidate. Continue the remaining 597 baseline rows and peer comparisons before workbook integration.
