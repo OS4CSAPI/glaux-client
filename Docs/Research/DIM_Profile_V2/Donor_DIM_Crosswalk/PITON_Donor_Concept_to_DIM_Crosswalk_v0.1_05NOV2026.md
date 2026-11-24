@@ -38,4 +38,4 @@ Rank 9 source intake is complete. The [provenance donor plan](PLAN_PROV_Source_F
 
 The [comparison checkpoint](PROV_Donor_Comparison_Checkpoint.md) records the integrated provenance comparison. Column T contains 612 adjudications and nine inherited case holds. The optional bundle candidate is on worksheet row 662. The owner accepted this review on 24 November 2026, retained the nine case holds and kept row 662 as an optional candidate for later model and profile decisions.
 
-Next action: rank 10, Lightweight Machine to Machine (LwM2M) 1.2.2 source intake.
+Rank 10 source intake is recorded in the [LwM2M review plan](PLAN_LWM2M_Source_First_Donor_Review.md). The next Proceed authorizes the row comparison, candidate checks and verified workbook integration.
