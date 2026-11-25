@@ -53,3 +53,25 @@ Eight initial dispositions are recorded. Additional dispositions and the first c
 Recommend retaining **Declared resource, discovered instance and operation-specific access** as a provisional row. Row 165 concerns message discovery. Row 371 concerns finding a digital record and endpoint. Row 505 concerns a caller's permission. Row 529 concerns a subordinate sensor key and capture capability. A client needs all three facts about the same path: its definition declares available operations, discovery identifies what an endpoint exposes to the caller, and an attempted Read can separately establish a value or a failure. A path missing from one server's discovery does not prove that the equipment never implements it. Peer-donor comparisons remain open.
 
 The ledger now contains 24 initial dispositions. The other 597 baseline rows, remaining peer comparisons and workbook integration are pending.
+
+## Peer evidence for the discovery candidate
+
+The existing crosswalk supports retaining this candidate. The closest overlap is OPC UA. Its address-space and session attributes cover much of the distinction, so represent this as a cross-donor information need rather than an LwM2M-specific feature. Here, a hold means the workbook evidence reviewed for this comparison does not settle the mapping.
+
+| Peer | Existing evidence and disposition |
+|---|---|
+| OPC UA Devices | Substantial overlap. Rows 88, 371 and 505 cover general access, address-space discovery and session-level permissions. A successful read still supplies separate runtime evidence. |
+| OPC UA PA-DIM | Partial. Rows 88 and 505 cover inherited access attributes and caller-specific permissions. The reviewed evidence does not settle discovery for a particular instance. |
+| AAS | Partial. Rows 371 and 522 cover discovery of records or endpoints and template context. Caller-specific successful read requires additional evidence. |
+| W3C Web of Things | Partial. Rows 88, 184, 371, 505 and 522 distinguish templates, descriptions and advertised read forms. An advertised operation alone does not establish permission or a successful read. |
+| Redfish | Partial. Rows 88, 165, 184 and 371 distinguish schema access restrictions, instance affordances and resource retrieval. Caller-specific success remains runtime evidence. |
+| ISA | Partial. Rows 88, 165 and 184 distinguish declared mutability, discovery of messages and named-property reads. Message discovery differs from discoverability of the exact resource path. |
+| OSUS-R | Partial. Rows 371 and 529 distinguish directory lookup, subordinate identity and supported capture. These features do not establish a generic caller-specific read of an individual management resource. |
+| RFC 8348 | Partial. Rows 88 and 184 distinguish configuration from state and permit retrieval at a hardware data path. Caller-specific discovery requires evidence from outside the hardware module. |
+| SAREF Core | Related. Rows 184 and 371 cover meter-value retrieval and service exposure. Evidence for the three-way distinction remains open. |
+| I-ADOPT | Scope distinction. Rows 88 and 505 concern management behavior. I-ADOPT describes variable meaning and applicability. |
+| MIMOSA CCOM | Related. Rows 184, 371 and 522 cover record selection, source location and templates. These supply components of a representation without establishing the candidate as a whole. |
+| W3C PROV | Related. Provenance can distinguish an operation and evidence of its result. Management discovery and read permissions require domain semantics. |
+| IEEE 1451, SAPIENT, The Open Group SOSA, ANSI N42.42, W3C SOSA/SSN, Observations Measurements and Samples, SWE Common, SensorML, OGC API – Connected Systems | Evidence hold for each peer. The nearest crosswalk entries did not establish a complete same-subject discovery and caller-specific read comparison. |
+
+Candidate wording: **Declared resource, discovered instance and caller-specific read outcome**. Preserve these three facts for an individually identified management path. Keep the read outcome explicit where a caller attempts the read. Advance this candidate with the workbook after the remaining baseline assessments.
