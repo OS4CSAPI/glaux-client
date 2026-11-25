@@ -143,3 +143,7 @@ This adds 28 dispositions. The total is 72 of 621 baseline rows, with 549 still 
 ## Partial workbook integration
 
 Column U incorporates the 72 recorded assessments and explicitly marks the other 549 baseline rows as evidence holds. The discovery candidate is now on worksheet row 664. This delivery does not close the outstanding row reviews.
+
+## Device and location resource follow-up
+
+Applied 43 row dispositions from Device 1.3, Connectivity Monitoring 1.3 and Location 1.0 in the pinned registry. These are bounded to the three object definitions. Individual findings and locators are recorded in the [source coverage ledger](LWM2M_Source_Coverage.json). Column U now includes 115 baseline assessments, 506 evidence holds and the provisional candidate.
