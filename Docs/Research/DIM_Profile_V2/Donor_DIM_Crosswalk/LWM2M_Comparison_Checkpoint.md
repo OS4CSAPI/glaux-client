@@ -104,3 +104,38 @@ Object and resource numbers below refer to the pinned [OMA XML registry](https:/
 | 608 | Related. Device 3/4 initiates a reboot and 3/11 can expose errors. These resources do not supply the last reset time and attributable cause as a pair. |
 
 This adds 20 baseline dispositions, for 44 recorded assessments. The other 577 baseline rows and workbook integration remain pending.
+
+## Registration, addressing and exchange behavior
+
+| Worksheet row | Finding | Source |
+|---|---|---|
+| 7 | Partial. The client endpoint name identifies the registration subject. Equipment persistence and equivalence between registrations need separate evidence. | Core §§6.2, 7.1 |
+| 11 | Partial. A server has a registration for the named client. Registration is scoped to that server and does not prove current reachability. | Core §6.2 |
+| 13 | Related. An Object Instance is an instance of a logical management object. Its path does not identify a physical constituent merely by having a parent segment. | Core §§7.1–7.2 |
+| 20 | Related. Registration advertises supported object or instance links and Discover exposes management resources. Neither operation is a general account of physical composition or source attribution. | Core §§6.2, 6.3.2, 7 |
+| 21 | Partial. Register, Update and Deregister track a client’s participation per server. Network attachment and physical connectivity are separate facts. | Core §6.2 |
+| 23 | Related. Object, Object Instance, Resource and Resource Instance identifiers can address a value. A management path does not in itself identify a transducer channel. | Core §7.1 |
+| 24 | Partial. Resource definitions describe fields and types while Read returns current values. The protocol does not give every reported field an observation-specific meaning. | Core §§6.3, 7 |
+| 76 | Partial. Registration and discovery describe supported object instances and resources within the protocol. A general catalogue of component capabilities requires another abstraction. | Core §§6.2, 6.3.2 |
+| 78 | Partial. Resource definitions identify data types, operations and instance constraints. Domain-specific property semantics depend on the applicable definition. | Core §7 and pinned registry |
+| 80 | Partial. Execute addresses a resource declared executable. Applicability and input semantics follow the individual object definition. | Core §§6.3, 7 |
+| 85 | Partial. Core defines resource data types. Complex types in donor-specific payloads require their own definitions. | Core §7 |
+| 86 | Partial. Single and multiple constraints apply to objects and resources. These do not establish arbitrary nested collection bounds. | Core §7 and pinned registry |
+| 180 | Scope negative. The reviewed Core operations do not define creation of a ZIP archive of a historical query result. | Core §6 |
+| 185 | Partial. Read-Composite accepts several selected paths. A donor-specific readiness rule for including properties is separate from path selection. | Core §§6.3, 7.5.6 |
+| 186 | Related. Composite retrieval selects multiple paths. It does not by itself issue an archive query or create a reusable result identifier. | Core §§6.3, 7.5.6 |
+| 188 | Partial. Register has server-side acceptance and protocol results. Registration acceptance is distinct from authorization for later management operations on individual object instances. | Core §§6.2, 8.2 |
+| 194 | Partial. Registration inventory and the Device object expose supported resources and device information. They do not provide the master’s readiness semantics. | Core §6.2 and Device object 3 |
+| 198 | Related. Management requests and responses are paired through the selected protocol binding. This is separate from a portable identifier for the command and its result. | Core §6.3 and Transport binding companion |
+| 203 | Related. Composite retrieval selects paths to resource values. It does not define arbitrary selection by management message kind. | Core §§6.3, 7.5.6 |
+| 204 | Scope negative. Addressing and notification conditions do not supply a generic message-matching query language. | Core §§6.3–6.4, 7.3 |
+| 205 | Related. Path segments navigate object instances and resources. Other field traversal and filtering require separate evidence. | Core §§6.3, 7.1 |
+| 223 | Related. Protocol binding can correlate a request and response. LwM2M address identifiers identify resources, rather than generic messages in a conversation. | Core §7.1 and Transport binding companion |
+| 225 | Related. Registration lifetime limits registration validity. It does not establish general message-data expiry. | Core §6.2 |
+| 231 | Partial. SenML composite responses can carry path names and typed values. A general named-value payload need not use those management paths. | Core §7.5.6 |
+| 237 | Partial. Version and supported representation information are scoped to the protocol and its resources. Other message contract negotiation requires another mapping. | Core §§6.2, 7.5 |
+| 464 | Related. Object instances collect resources. Composite operations can target multiple paths without creating a persistent purpose-based group. | Core §§6.3, 7 |
+| 521 | Partial. A selected operation and binding can return distinct success or error results. Operation-specific representations and domain failure reasons need their own evidence. | Core §6 and Transport binding companion |
+| 523 | Partial. Model identifiers provide typed address segments for object and resource levels. They do not define a generic URI template parameter model. | Core §7.1 |
+
+This adds 28 dispositions. The total is 72 of 621 baseline rows, with 549 still pending. The workbook and peer candidate remain pending integration.
