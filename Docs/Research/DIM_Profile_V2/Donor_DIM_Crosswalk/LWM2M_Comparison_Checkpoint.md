@@ -75,3 +75,32 @@ The existing crosswalk supports retaining this candidate. The closest overlap is
 | IEEE 1451, SAPIENT, The Open Group SOSA, ANSI N42.42, W3C SOSA/SSN, Observations Measurements and Samples, SWE Common, SensorML, OGC API – Connected Systems | Evidence hold for each peer. The nearest crosswalk entries did not establish a complete same-subject discovery and caller-specific read comparison. |
 
 Candidate wording: **Declared resource, discovered instance and caller-specific read outcome**. Preserve these three facts for an individually identified management path. Keep the read outcome explicit where a caller attempts the read. Advance this candidate with the workbook after the remaining baseline assessments.
+
+## Device telemetry and management resources
+
+Object and resource numbers below refer to the pinned [OMA XML registry](https://github.com/OpenMobileAlliance/lwm2m-registry/tree/a763bb5414099844fadf0797b2c8223d169d0c7e). Reassessing row 260 with Device resource 19 confirms additional coverage for a software version, while the partial disposition remains appropriate for broader inventories.
+
+| Worksheet row | Finding |
+|---|---|
+| 239 | Partial. Device 3/13–15 describes current time, UTC offset and timezone. These fields do not establish time synchronization or timing accuracy. |
+| 252 | Direct for the field. Device 3/18 carries a hardware version. Support for the resource depends on implementation. |
+| 261 | Related. Server 1/25 advertises supported server protocol versions. This is distinct from the ISA specification version reported by a component. |
+| 289 | Related. Device 3/8 reports power-source current but does not identify it as consumed AC current. |
+| 293 | Related. Device 3/8 reports source current without establishing the consumed DC measurement basis. |
+| 299 | Partial. Device 3/9 reports a battery-level percentage. It does not identify absolute remaining energy or define all power-source reserve measurements. |
+| 301 | Partial. Device 3/6 enumerates available power sources. The native enumeration should be compared with the master’s classification before aligning individual categories. |
+| 307 | Related. Connectivity Monitoring 4/0–1 identifies the current and available network bearers. Those fields do not report a generic per-interface administrative and operational state. |
+| 308 | Partial. Server 1/3 supplies a default maximum notification period. That period concerns observations for the server rather than an ISA Status message as such. |
+| 309 | Partial. Server 1/2 supplies a default minimum notification period. Its scope and attribute overrides differ from a component-wide Status period. |
+| 311 | Partial. Connectivity Monitoring 4/2 reports radio signal strength. Its bearer-specific rules do not cover every received signal measurement. |
+| 345 | Related. Device 3/11 reports device error codes. An error code does not establish the execution and outcome of the latest built-in test. |
+| 445 | Partial. Connectivity Monitoring 4/11 reports signal-to-noise ratio. The resource does not establish the referenced signal bandwidth required by this row. |
+| 462 | Partial. Device 3/18 and 3/19 distinguish hardware and software version. Neither establishes a single combined revision identifier. |
+| 472 | Partial. Device 3/3 and Firmware Update 5/7 distinguish running firmware and the firmware package version where reported. They do not establish a fallback-image version. |
+| 478 | Related. Firmware Update 5/8 and 5/9 identify supported transfer protocols and delivery methods. They do not establish image compatibility with specific equipment or software versions. |
+| 499 | Partial. Device 3/10 and 3/21 describe free and total memory available for data storage in the device. Preserve the native units and scope before comparing a particular storage partition. |
+| 509 | Partial. Device 3/17 can report Device Type. Identity of a managed endpoint and its device type are distinct, and the object supplies no general cross-donor type hierarchy. |
+| 532 | Related. Server 1/1–3 describes registration lifetime and default notification periods. These values alone do not identify the next expected status-report deadline. |
+| 608 | Related. Device 3/4 initiates a reboot and 3/11 can expose errors. These resources do not supply the last reset time and attributable cause as a pair. |
+
+This adds 20 baseline dispositions, for 44 recorded assessments. The other 577 baseline rows and workbook integration remain pending.
