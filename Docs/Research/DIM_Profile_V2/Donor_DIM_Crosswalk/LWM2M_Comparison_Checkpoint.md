@@ -139,3 +139,7 @@ This adds 20 baseline dispositions, for 44 recorded assessments. The other 577 b
 | 523 | Partial. Model identifiers provide typed address segments for object and resource levels. They do not define a generic URI template parameter model. | Core §7.1 |
 
 This adds 28 dispositions. The total is 72 of 621 baseline rows, with 549 still pending. The workbook and peer candidate remain pending integration.
+
+## Partial workbook integration
+
+Column U incorporates the 72 recorded assessments and explicitly marks the other 549 baseline rows as evidence holds. The discovery candidate is now on worksheet row 664. This delivery does not close the outstanding row reviews.

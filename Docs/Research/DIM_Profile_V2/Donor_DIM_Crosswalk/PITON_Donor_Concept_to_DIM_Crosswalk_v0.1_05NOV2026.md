@@ -41,3 +41,5 @@ The [comparison checkpoint](PROV_Donor_Comparison_Checkpoint.md) records the int
 Rank 10 source intake is recorded in the [LwM2M review plan](PLAN_LWM2M_Source_First_Donor_Review.md). The next Proceed authorizes the row comparison, candidate checks and verified workbook integration.
 
 The [LwM2M comparison checkpoint](LWM2M_Comparison_Checkpoint.md) records five object definitions, 72 dispositions and a provisional discovery candidate. Peer comparisons for the discovery candidate are recorded, including holds. Continue the remaining 549 baseline assessments and integrate the candidate with the finished column.
+
+LwM2M partial workbook integration is complete. Column U contains 72 assessments and 549 explicit evidence holds. Row 664 carries the provisional discovery candidate. Continue the 549 held rows under the approved scope.

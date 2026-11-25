@@ -2253,7 +2253,7 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
             col = addr[0]
             if addr in corrected_refs:
                 continue
-            ref = addr if keep_columns else (chr(ord(col) + 1) if col >= letter(column + 1) else col) + addr[1:]
+            ref = addr if keep_columns else (letter(ord(col) - ord("A") + 2) if col >= letter(column + 1) else col) + addr[1:]
             need(old.get('s') == cells[ref].get('s') and joint_value(old, strings) == joint_value(cells[ref], strings), 'Donor prior cell ' + addr)
         for row in master['rows']:
             idx = row['display_row']
@@ -2269,6 +2269,19 @@ def verify_saved_donor_grid(master, column, ledgers, baseline, row_count, grid_c
                 need(joint_fill(cells[ref], styles) == target, 'Donor classification fill ' + ref)
         pane = sheet.find('.//' + pub.q('pane'))
         need(pane.get('ySplit') == '2' and pane.get('xSplit', '0') == '0', 'Donor row-only freeze')
+
+
+def verify_lwm2m_partial(master):
+    evidence = load('LWM2M_Source_Coverage.json')
+    verify_workbook_structure(D / BOOK)
+    verify_saved_donor_grid(
+        master, 20, {20: evidence}, 'ec55fa3b8aca8277e026af3c12afd25401a6220c',
+        622, 664, 27, set(), False, True, {
+            'A1': 'OMA LwM2M 1.2.2 bounded comparison',
+            'B1': '622 information rows, 27 columns and 26 worksheets. Column U contains 72 assessments, 549 evidence holds and one provisional candidate.',
+        },
+    )
+    print('PASS LwM2M partial workbook, mirrors, fills, and preserved cells.')
 
 
 def verify_prov_partial(master):
