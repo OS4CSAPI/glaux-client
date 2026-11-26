@@ -42,6 +42,4 @@ Rank 10 source intake is recorded in the [LwM2M review plan](PLAN_LWM2M_Source_F
 
 The [LwM2M comparison checkpoint](LWM2M_Comparison_Checkpoint.md) records five object definitions, 72 dispositions and a provisional discovery candidate. Peer comparisons for the discovery candidate are recorded, including holds. Continue the remaining 549 baseline assessments and integrate the candidate with the finished column.
 
-LwM2M partial workbook integration includes 115 baseline assessments and 506 explicit evidence holds. Row 664 carries the provisional discovery candidate. Continue the 506 held rows under the approved scope.
-
-The [command and exchange assessments](LWM2M_Command_And_Exchange_Assessments.csv) resolve 93 more holds for the reviewed Core and object scope. Integrate them in column U. A further 413 baseline rows still require review.
+Column U includes 208 baseline assessments, 413 evidence holds and the provisional discovery candidate at row 664. Continue review of the 413 held baseline rows.

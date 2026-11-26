@@ -150,4 +150,4 @@ Applied 43 row dispositions from Device 1.3, Connectivity Monitoring 1.3 and Loc
 
 ## Command and exchange comparison
 
-The [command and exchange assessments](LWM2M_Command_And_Exchange_Assessments.csv) record 93 additional baseline dispositions. The comparison distinguishes a generic operation from a resource definition that supplies the intended device behavior. These are scoped findings. Other registry objects and vendor extensions may require separate evidence. The new decisions await workbook integration. The working total is 208 assessed baseline rows, with 413 still held.
+The [command and exchange assessments](LWM2M_Command_And_Exchange_Assessments.csv) record 93 additional baseline dispositions. The comparison distinguishes a generic operation from a resource definition that supplies the intended device behavior. These are scoped findings. Other registry objects and vendor extensions may require separate evidence. The 93 decisions are integrated in column U. The working total is 208 assessed baseline rows, with 413 still held.
