@@ -147,3 +147,7 @@ Column U incorporates the 72 recorded assessments and explicitly marks the other
 ## Device and location resource follow-up
 
 Applied 43 row dispositions from Device 1.3, Connectivity Monitoring 1.3 and Location 1.0 in the pinned registry. These are bounded to the three object definitions. Individual findings and locators are recorded in the [source coverage ledger](LWM2M_Source_Coverage.json). Column U now includes 115 baseline assessments, 506 evidence holds and the provisional candidate.
+
+## Command and exchange comparison
+
+The [command and exchange assessments](LWM2M_Command_And_Exchange_Assessments.csv) record 93 additional baseline dispositions. The comparison distinguishes a generic operation from a resource definition that supplies the intended device behavior. These are scoped findings. Other registry objects and vendor extensions may require separate evidence. The new decisions await workbook integration. The working total is 208 assessed baseline rows, with 413 still held.
