@@ -177,4 +177,4 @@ The following findings use object version 1.1 of the indicated definitions in th
 | 578 | Related. Energy 3331 provides an energy reading. That reading does not establish battery health or a discharge-cycle count. |
 | 604 | Partial. Barometer 3315 can report a pressure reading. Its value and units do not distinguish local-elevation pressure from a sea-level correction. |
 
-Eighteen additional baseline dispositions are saved here for integration. The working total is 226 assessed baseline rows, with 395 remaining.
+Eighteen additional baseline dispositions are integrated into column U. The working total is 226 assessed baseline rows, with 395 remaining.
