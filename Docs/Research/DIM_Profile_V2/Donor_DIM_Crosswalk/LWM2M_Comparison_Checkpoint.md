@@ -151,3 +151,30 @@ Applied 43 row dispositions from Device 1.3, Connectivity Monitoring 1.3 and Loc
 ## Command and exchange comparison
 
 The [command and exchange assessments](LWM2M_Command_And_Exchange_Assessments.csv) record 93 additional baseline dispositions. The comparison distinguishes a generic operation from a resource definition that supplies the intended device behavior. These are scoped findings. Other registry objects and vendor extensions may require separate evidence. The 93 decisions are integrated in column U. The working total is 208 assessed baseline rows, with 413 still held.
+
+## Pinned sensor-object assessment
+
+The following findings use object version 1.1 of the indicated definitions in the pinned OMA registry. A named reading matches the measured quantity only within the indicated subject and unit. A generic resource or application type cannot establish who or what was measured.
+
+| Worksheet row | Disposition and evidence |
+|---|---|
+| 25 | Partial. Generic Sensor 3300/5700–5701 can report a value and units. A typed object or additional semantic context is needed to identify the observable. |
+| 31 | Partial. Humidity 3304/5700–5701 represents relative humidity. The measured air volume and atmospheric observation context require additional evidence. |
+| 33 | Partial. Barometer 3315/5700–5701 provides barometric pressure. Confirm location and correction basis separately. |
+| 34 | Partial. Temperature 3303/5700–5701 provides temperature and units. Ambient-air scope is an instance-level assertion. |
+| 39 | Partial. Distance 3330/5700–5701 reports distance. It does not establish the observer and observed entity endpoints. |
+| 347 | Partial. Temperature 3303/5700 represents a temperature reading. Placement inside the named device requires instance evidence. |
+| 446 | Partial. Accelerometer 3313/5702–5704 reports X, Y and Z. Platform or external reference frame and subject association require additional evidence. |
+| 541 | Partial. Acidity 3326/5700 supplies a pH reading. Water as the measured medium requires instance evidence. |
+| 542 | Related. Concentration 3325/5700–5701 gives concentration and units. The analyte and liquid medium must be established. |
+| 543 | Partial. Conductivity 3327/5700–5701 covers conductivity and units. Water as the medium requires separate evidence. |
+| 547 | Related. Concentration 3325/5700–5701 does not establish chlorine species or the sample medium. |
+| 548 | Related. Concentration 3325/5700–5701 does not establish a total dissolved solids measurement or its calculation method. |
+| 549 | Related. Conductivity 3327 and Concentration 3325 give possible input or reporting quantities. They do not specify a salinity scale or a conversion. |
+| 551 | Partial. Pressure 3323/5700–5701 provides a pressure reading. The object does not identify the water circuit or measurement location. |
+| 567 | Partial. Generic Sensor 3300/5603–5604 gives the range of values the sensor can measure. Equipment operating limits and environmental derating require separate evidence. |
+| 568 | Partial. Generic Sensor 3300/5601–5602 reports observed extrema. These resources alone do not associate each extreme with its own timestamp. |
+| 578 | Related. Energy 3331 provides an energy reading. That reading does not establish battery health or a discharge-cycle count. |
+| 604 | Partial. Barometer 3315 can report a pressure reading. Its value and units do not distinguish local-elevation pressure from a sea-level correction. |
+
+Eighteen additional baseline dispositions are saved here for integration. The working total is 226 assessed baseline rows, with 395 remaining.
