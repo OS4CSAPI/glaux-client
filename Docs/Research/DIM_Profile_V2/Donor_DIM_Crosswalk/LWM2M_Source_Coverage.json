@@ -2266,9 +2266,9 @@
       "status": "Evidence hold"
     },
     "OPCDI-LIFETIME": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Cumulative energy and battery level represent different quantities. Neither establishes estimated component lifetime consumption and remaining design life. [Energy 3331/5700, Device 3/9]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "PADIM-SIMULATION-VALUES": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2281,19 +2281,19 @@
       "status": "Evidence hold"
     },
     "PADIM-CALIBRATION-RECORD": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Current Calibration reports a calibration value. A separately reported sensor timestamp does not identify calibration time and purpose. [Voltage 3316/5821, 3316/5518]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "PADIM-CALIBRATION-POINTS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Current Calibration does not describe a series of known calibration inputs paired with the corresponding measured outputs. [Pressure 3323/5821]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "PADIM-CALIBRATION-CHARACTERISTICS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. A calibration value does not establish the technique, environmental conditions or reference instrument. [Current 3317/5821]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "PADIM-CALIBRATION-RANGES": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2316,9 +2316,9 @@
       "status": "Evidence hold"
     },
     "PADIM-DICTIONARY-SEMANTICS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Object and Resource identifiers identify the native definition. Unit fields and the native enumerations need a separate mapping before treating them as dictionary-qualified properties. [Generic Sensor 3300/5701, 3300/5751 and Device 3/20]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "PADIM-DISPLAY-LANGUAGE": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2331,9 +2331,9 @@
       "status": "Assessed"
     },
     "PADIM-SIGNAL-POINT-ID": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. An Object Instance and Resource path identifies a management value. Physical sensing or control-point identity requires a mapping beyond the path. [Generic Sensor 3300/5700]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "PADIM-ANALYTICAL-QUALITY": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2356,9 +2356,9 @@
       "status": "Evidence hold"
     },
     "PADIM-TOTALIZER-PULSE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Water Meter provides cumulative pulse value and pulse ratio. These fields do not establish individual pulse width. [Water Meter 3424/4, 3424/6]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "PADIM-TEMPERATURE-CONFIGURATION": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2396,9 +2396,9 @@
       "status": "Assessed"
     },
     "SAREF-PURPOSE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Application Type can describe an application of a sensor and Sensor Type can qualify the type. Neither proves the original equipment design purpose. [Generic Sensor 3300/5750–5751]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "SAREF-COMMODITY": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2491,9 +2491,9 @@
       "status": "Assessed"
     },
     "OSUSR-ACTIVE-LIFECYCLE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Software Activation State and Operational State distinguish software states and operational failure. These states do not establish a physical asset's activation lifecycle. [Software Management 9/12, 9/21]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "OSUSR-NEXT-STATUS": {
       "reason": "Related. Server 1/1–3 describes registration lifetime and default notification periods. These values alone do not identify the next expected status-report deadline.",
@@ -2566,9 +2566,9 @@
       "status": "Evidence hold"
     },
     "OSUSR-WATER-TEMP": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. A Temperature object supplies a reading and units. The instance must establish water as the measured medium. [Temperature 3303/5700–5701]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "OSUSR-WATER-CHLORINE": {
       "reason": "Related. Concentration 3325/5700–5701 does not establish chlorine species or the sample medium.",
@@ -2716,9 +2716,9 @@
       "status": "Assessed"
     },
     "RF-BATTERY-CAPACITY": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Battery Level expresses a relative level. Voltage and current describe source electrical measurements. The object does not provide all three capacities and energy quantities as separate fields. [Device 3/7–9]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "RF-BATTERY-HEALTH": {
       "reason": "Related. Energy 3331 provides an energy reading. That reading does not establish battery health or a discharge-cycle count.",
@@ -2771,9 +2771,9 @@
       "status": "Evidence hold"
     },
     "RF-LEAK": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Water Meter represents suspected and detected leaks independently. Response severity and delay need separate evidence. [Water Meter 3424/9–10]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "RF-AIRFLOW": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2811,9 +2811,9 @@
       "status": "Evidence hold"
     },
     "RF-SENSOR-DIGITS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Measurement Quality Indicator and Level carry quality metadata. They do not explicitly encode significant digits and percent versus absolute accuracy. [Generic Sensor 3300/6042, 3300/6049]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "RF-COLLECTION-FUNCTION": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2896,9 +2896,9 @@
       "status": "Evidence hold"
     },
     "RFC8348-STATE-TIME": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Firmware Update exposes its last state change time. This applies to the update state machine and does not establish a hardware initialization or insertion fallback. [Firmware Update 5/12]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "RFC8348-INVENTORY": {
       "reason": "Partial. Registration Update can advertise changes in object instances. It supplies neither a general hardware inventory event nor a timestamp of the physical change. [Core §6.2]",

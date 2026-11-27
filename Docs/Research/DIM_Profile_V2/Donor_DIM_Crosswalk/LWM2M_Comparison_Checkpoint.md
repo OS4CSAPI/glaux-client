@@ -247,4 +247,4 @@ These dispositions use the pinned OMA registry. The objects cited below are vers
 | 596 | Related. Measurement Quality Indicator and Level carry quality metadata. They do not explicitly encode significant digits and percent versus absolute accuracy. | Generic Sensor 3300/6042, 3300/6049 |
 | 615 | Related. Firmware Update exposes its last state change time. This applies to the update state machine and does not establish a hardware initialization or insertion fallback. | Firmware Update 5/12 |
 
-Fourteen additional dispositions are saved for integration. The working total is 271 assessed baseline rows, with 350 still requiring review. Column U reflects 257 assessments.
+The fourteen dispositions are integrated into column U. The workbook contains 271 assessed baseline rows and 350 evidence holds.

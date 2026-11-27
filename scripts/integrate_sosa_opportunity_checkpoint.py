@@ -2278,7 +2278,7 @@ def verify_lwm2m_partial(master):
         master, 20, {20: evidence}, 'ec55fa3b8aca8277e026af3c12afd25401a6220c',
         622, 664, 27, set(), False, True, {
             'A1': 'OMA LwM2M 1.2.2 bounded comparison',
-            'B1': '622 information rows, 27 columns and 26 worksheets. Column U contains 257 assessments, 364 evidence holds and one provisional candidate.',
+            'B1': '622 information rows, 27 columns and 26 worksheets. Column U contains 271 assessments, 350 evidence holds and one provisional candidate.',
         },
     )
     print('PASS LwM2M partial workbook, mirrors, fills, and preserved cells.')
