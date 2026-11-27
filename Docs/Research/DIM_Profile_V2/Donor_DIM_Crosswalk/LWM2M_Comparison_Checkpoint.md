@@ -248,3 +248,7 @@ These dispositions use the pinned OMA registry. The objects cited below are vers
 | 615 | Related. Firmware Update exposes its last state change time. This applies to the update state machine and does not establish a hardware initialization or insertion fallback. | Firmware Update 5/12 |
 
 The fourteen dispositions are integrated into column U. The workbook contains 271 assessed baseline rows and 350 evidence holds.
+
+## Observation and radiation comparison
+
+The [assessment ledger](LWM2M_Observation_And_Radiation_Assessments.csv) records 35 additional dispositions. The sources distinguish the managed endpoint and its resource values. A separately observed target, radiation spectrum and calibration evidence need domain semantics. Findings are limited to the pinned Core and reviewed objects. The working total is 306 assessed baseline rows, with 315 requiring review. Column U reflects 271 assessments pending integration of this pass.
