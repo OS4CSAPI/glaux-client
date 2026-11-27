@@ -101,14 +101,14 @@
       "status": "Assessed"
     },
     "S06-R014": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Endpoint and management path identify the reporting source. A typed sensor value and timestamp give a reading, while an observation procedure and feature of interest need separate modeling. [Core §§6.2, 7.1, 7.5.6; Generic Sensor 3300/5700, 5518]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "S06-R015": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Endpoint and management path identify the reporting source. A typed sensor value and timestamp give a reading, while an observation procedure and feature of interest need separate modeling. [Core §§6.2, 7.1, 7.5.6; Generic Sensor 3300/5700, 5518]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "SAPIENT-F2-TARGET-CLAIMS": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -181,14 +181,14 @@
       "status": "Evidence hold"
     },
     "ISA-C-151": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Location can describe position and motion of the managed client. These fields do not identify a separately observed target or tie its position to an observation. [Location 6/0–5]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "ISA-C-159": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Location can describe position and motion of the managed client. These fields do not identify a separately observed target or tie its position to an observation. [Location 6/0–5]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "ISA-C-131": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -316,9 +316,9 @@
       "status": "Evidence hold"
     },
     "ISA-T-EVENT-TIME": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. An object timestamp or encoded measurement time can identify when a sample was taken. The occurrence time of a different real-world event needs explicit semantics. [Generic Sensor 3300/5518; Core §7.5.6]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "ISA-T-EVENT-REASON": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -331,9 +331,9 @@
       "status": "Evidence hold"
     },
     "ISA-R-MEASUREMENT": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Sensor Value and Measurement Quality Indicator or Level can carry a reading and quality metadata. Their definitions do not establish quantified uncertainty or its confidence basis. [Generic Sensor 3300/5700, 6042, 6049]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "ISA-R-VIDEO-DETECTION": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -361,9 +361,9 @@
       "status": "Assessed"
     },
     "ISA-K-OBSERVABLE-DECL": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. An object or resource definition identifies native data type, multiplicity and supported operations. Observable meaning, procedure and observed subject require domain context. [Core §7; Generic Sensor 3300/5750–5751]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "ISA-K-COMMAND-DECL": {
       "reason": "Partial. Execute addresses a resource declared executable. Applicability and input semantics follow the individual object definition. [Core §§6.3, 7]",
@@ -376,19 +376,19 @@
       "status": "Assessed"
     },
     "ISA-K-RESULT-DECL": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. An Execute response and an object-specific reported result represent distinct outcomes. A reusable declaration of the command’s return fields requires separate evidence. [Core §6.3.5; Firmware Update 5/5]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "ISA-K-CUSTOM-TYPE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. The object definition can declare resources, data types and constraints. SenML encodes records from those resources. Neither provides the full general custom-schema construct described by this row. [Core §§7, 7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "ISA-K-FIELD-DECL": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. The object definition can declare resources, data types and constraints. SenML encodes records from those resources. Neither provides the full general custom-schema construct described by this row. [Core §§7, 7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "ISA-K-TYPE-CHOICE": {
       "reason": "Partial. Core defines resource data types. Complex types in donor-specific payloads require their own definitions. [Core §7]",
@@ -401,9 +401,9 @@
       "status": "Assessed"
     },
     "ISA-K-VALUE-RANGE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. The object definition can declare resources, data types and constraints. SenML encodes records from those resources. Neither provides the full general custom-schema construct described by this row. [Core §§7, 7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "ISA-K-MUTABILITY": {
       "reason": "Partial. Object definitions declare resource operations. Access control and the runtime operation determine whether a particular server can write. [Core §§6.3, 8.2]",
@@ -2911,99 +2911,99 @@
       "status": "Evidence hold"
     },
     "N4242-DETECTOR": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Client location, generic sensor readings and timestamps do not establish radiation detector geometry, item context, live time or related media. This finding is limited to the reviewed objects. [Location 6; Generic Sensor 3300; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-MEAS-CLASS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Client location, generic sensor readings and timestamps do not establish radiation detector geometry, item context, live time or related media. This finding is limited to the reviewed objects. [Location 6; Generic Sensor 3300; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-ITEM": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Client location, generic sensor readings and timestamps do not establish radiation detector geometry, item context, live time or related media. This finding is limited to the reviewed objects. [Location 6; Generic Sensor 3300; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-LIVE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Client location, generic sensor readings and timestamps do not establish radiation detector geometry, item context, live time or related media. This finding is limited to the reviewed objects. [Location 6; Generic Sensor 3300; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-CHANNELS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-ENERGY": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-RESOLUTION": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-EFFICIENCY": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-WINDOWS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-QC": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Calibration values, sensor timestamps and composite records can carry individual values and selected paths. They do not establish calibration fitness, reproducible analysis settings or lineage from derived results to raw readings. [Pressure 3323/5821; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-LINEAGE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Calibration values, sensor timestamps and composite records can carry individual values and selected paths. They do not establish calibration fitness, reproducible analysis settings or lineage from derived results to raw readings. [Pressure 3323/5821; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-ALGORITHM": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Calibration values, sensor timestamps and composite records can carry individual values and selected paths. They do not establish calibration fitness, reproducible analysis settings or lineage from derived results to raw readings. [Pressure 3323/5821; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-NUCLIDE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-SOURCE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Client location, generic sensor readings and timestamps do not establish radiation detector geometry, item context, live time or related media. This finding is limited to the reviewed objects. [Location 6; Generic Sensor 3300; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-PEAK": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-RATES": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Generic typed readings do not supply the radiation spectrum, energy calibration, efficiency, nuclide analysis or instrument accumulation semantics requested here. Dedicated object definitions would need separate evidence. [Generic Sensor 3300/5700–5701; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-ALARM": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Device error codes, resource notification thresholds and measurement quality concern distinct native signals. The reviewed sources do not establish radiation alarm attribution, group alarm semantics or severity-dependent output validity. [Device 3/11; Core §7.3; Generic Sensor 3300/6042, 6049]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-CHAR": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Device error codes, resource notification thresholds and measurement quality concern distinct native signals. The reviewed sources do not establish radiation alarm attribution, group alarm semantics or severity-dependent output validity. [Device 3/11; Core §7.3; Generic Sensor 3300/6042, 6049]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-MEDIA": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "No match within reviewed scope. Client location, generic sensor readings and timestamps do not establish radiation detector geometry, item context, live time or related media. This finding is limited to the reviewed objects. [Location 6; Generic Sensor 3300; Core §7.5.6]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "RFC8348-ADMIN-OPER": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -3011,19 +3011,19 @@
       "status": "Evidence hold"
     },
     "RFC8348-ALARM-SET": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Device error codes, resource notification thresholds and measurement quality concern distinct native signals. The reviewed sources do not establish radiation alarm attribution, group alarm semantics or severity-dependent output validity. [Device 3/11; Core §7.3; Generic Sensor 3300/6042, 6049]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "RFC8348-MGMT-ALIAS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Endpoint and resource-path identifiers address management entities. Their scope does not establish a writable nonvolatile hardware alias and its assignment authority. [Core §§6.2, 7.1]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "RFC8348-READ-STATUS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Read outcomes and device error codes can supply evidence about retrieval and some reported faults. Failure to retrieve does not by itself diagnose sensor failure. [Core §6.3; Device 3/11]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "RFC8348-ENTRY-SCOPE": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -3031,14 +3031,14 @@
       "status": "Evidence hold"
     },
     "N4242-ELEVATION-REFERENCE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Location can supply altitude and radius. The reviewed fields do not provide independent accuracy statements for ellipsoid elevation and surface offset. [Location 6/2–3]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "N4242-FAULT-OUTPUT": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Device error codes, resource notification thresholds and measurement quality concern distinct native signals. The reviewed sources do not establish radiation alarm attribution, group alarm semantics or severity-dependent output validity. [Device 3/11; Core §7.3; Generic Sensor 3300/6042, 6049]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "IADOPT-SET-SCOPE": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
