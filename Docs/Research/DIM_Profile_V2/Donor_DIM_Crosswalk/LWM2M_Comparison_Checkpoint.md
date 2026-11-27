@@ -225,3 +225,26 @@ These decisions use the pinned registry's Firmware Update object 5 version 1.2 a
 | 590 | Partial. Maximum Defer Period bounds deferral of firmware update. A general maintenance calendar or permitted settings schedule requires separate evidence. | Firmware Update 5/13 |
 
 The thirteen dispositions are integrated into column U. The workbook now contains 257 assessed baseline rows and 364 evidence holds.
+
+## Calibration, metering and device-state evidence
+
+These dispositions use the pinned OMA registry. The objects cited below are version 1.1, except Device 3 version 1.3 and Firmware Update 5 version 1.2.
+
+| Worksheet row | Finding | Source |
+|---|---|---|
+| 482 | Related. Cumulative energy and battery level represent different quantities. Neither establishes estimated component lifetime consumption and remaining design life. | Energy 3331/5700, Device 3/9 |
+| 486 | Related. Current Calibration reports a calibration value. A separately reported sensor timestamp does not identify calibration time and purpose. | Voltage 3316/5821, 3316/5518 |
+| 487 | Related. Current Calibration does not describe a series of known calibration inputs paired with the corresponding measured outputs. | Pressure 3323/5821 |
+| 488 | Related. A calibration value does not establish the technique, environmental conditions or reference instrument. | Current 3317/5821 |
+| 493 | Partial. Object and Resource identifiers identify the native definition. Unit fields and the native enumerations need a separate mapping before treating them as dictionary-qualified properties. | Generic Sensor 3300/5701, 3300/5751 and Device 3/20 |
+| 496 | Related. An Object Instance and Resource path identifies a management value. Physical sensing or control-point identity requires a mapping beyond the path. | Generic Sensor 3300/5700 |
+| 501 | Partial. Water Meter provides cumulative pulse value and pulse ratio. These fields do not establish individual pulse width. | Water Meter 3424/4, 3424/6 |
+| 510 | Related. Application Type can describe an application of a sensor and Sensor Type can qualify the type. Neither proves the original equipment design purpose. | Generic Sensor 3300/5750–5751 |
+| 531 | Related. Software Activation State and Operational State distinguish software states and operational failure. These states do not establish a physical asset's activation lifecycle. | Software Management 9/12, 9/21 |
+| 546 | Partial. A Temperature object supplies a reading and units. The instance must establish water as the measured medium. | Temperature 3303/5700–5701 |
+| 577 | Partial. Battery Level expresses a relative level. Voltage and current describe source electrical measurements. The object does not provide all three capacities and energy quantities as separate fields. | Device 3/7–9 |
+| 588 | Partial. Water Meter represents suspected and detected leaks independently. Response severity and delay need separate evidence. | Water Meter 3424/9–10 |
+| 596 | Related. Measurement Quality Indicator and Level carry quality metadata. They do not explicitly encode significant digits and percent versus absolute accuracy. | Generic Sensor 3300/6042, 3300/6049 |
+| 615 | Related. Firmware Update exposes its last state change time. This applies to the update state machine and does not establish a hardware initialization or insertion fallback. | Firmware Update 5/12 |
+
+Fourteen additional dispositions are saved for integration. The working total is 271 assessed baseline rows, with 350 still requiring review. Column U reflects 257 assessments.
