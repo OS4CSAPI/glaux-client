@@ -203,3 +203,25 @@ Eighteen additional baseline dispositions are integrated into column U. The work
 | 616 | Partial. Registration Update can advertise changes in object instances. It supplies neither a general hardware inventory event nor a timestamp of the physical change. | Core §6.2 |
 
 The eighteen dispositions are integrated into column U. The workbook now contains 244 assessed baseline rows and 377 evidence holds.
+
+## Software package and operational lifecycle
+
+These decisions use the pinned registry's Firmware Update object 5 version 1.2 and Software Management object 9 version 1.1. In object 9, installation, activation and operational state have separate resources.
+
+| Worksheet row | Finding | Source |
+|---|---|---|
+| 195 | Partial. Package Settings can link to application-specific configuration, and Start and Stop control operation. A portable hosted runtime deployment descriptor requires other evidence. | Software Management 9/13, 9/19–21 |
+| 401 | Partial. A package or package URI addresses an installable artifact. Software Component Link identifies components installed in scope of the package. A physical target-component association needs separate evidence. | Firmware Update 5/0–1 and Software Management 9/2–3, 9/17 |
+| 405 | Partial. Package name and version identify software. Installation, activation and operation have distinct states. The addressed client gives management context. Independent host relationships need other evidence. | Software Management 9/0–1, 9/7, 9/12, 9/21 |
+| 469 | Related. A Package Settings link supplies an application-defined settings object. It does not specify paired offline plan and online applied configuration representations. | Software Management 9/13 |
+| 470 | Related. Package Settings supplies a link and Update Result supplies a package-level result. Neither establishes per-parameter synchronization outcomes. | Software Management 9/9, 9/13 |
+| 473 | Partial. Checkpoint can link to update conditions or dependencies, and Update Supported Objects can trigger advertisement of changed objects. Additional side effects require instance evidence. | Software Management 9/5, 9/8 |
+| 474 | Related. Uninstall supports preparation for an update. Package Settings supports configuration modification. These fields do not specify which settings survive or are restored. | Software Management 9/6, 9/13 |
+| 476 | Related. Installation and update results distinguish reported states and outcomes. Post-update connectivity confirmation and rollback remain separate evidence questions. | Firmware Update 5/3, 5/5 and Software Management 9/7, 9/9 |
+| 477 | Partial. Checkpoint can refer to a target-system dependency. Package components can be linked. A reusable updater-to-target compatibility hierarchy is not defined by these links. | Software Management 9/5, 9/17 |
+| 479 | Scope negative for the two reviewed objects. Package and result fields do not define signature provenance, signing authority or approval records. | Pinned objects 5 and 9 |
+| 480 | Partial. Software Component Link represents components installed in scope of a software package. This link alone does not convey target-specific installation order. | Software Management 9/17–18 |
+| 506 | Scope negative for the two reviewed objects. These update resources do not define a per-update unlocking key or its lifecycle. | Pinned objects 5 and 9 |
+| 590 | Partial. Maximum Defer Period bounds deferral of firmware update. A general maintenance calendar or permitted settings schedule requires separate evidence. | Firmware Update 5/13 |
+
+Thirteen additional baseline dispositions are saved for integration. The working total is 257 assessed baseline rows, with 364 still requiring review. Column U reflects 244 baseline assessments.
