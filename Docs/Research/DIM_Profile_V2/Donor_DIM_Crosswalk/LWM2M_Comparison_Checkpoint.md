@@ -202,4 +202,4 @@ Eighteen additional baseline dispositions are integrated into column U. The work
 | 612 | Partial. The object declares its type, and representations such as SenML encode typed values. Reserved-value interpretation comes from the resource definition or associated domain contract. | Core §7 and RFC 8428 §4 |
 | 616 | Partial. Registration Update can advertise changes in object instances. It supplies neither a general hardware inventory event nor a timestamp of the physical change. | Core §6.2 |
 
-Eighteen added baseline dispositions are saved for integration. The working total is 244 assessed baseline rows, with 377 still requiring review. Column U still reflects 226 baseline assessments.
+The eighteen dispositions are integrated into column U. The workbook now contains 244 assessed baseline rows and 377 evidence holds.
