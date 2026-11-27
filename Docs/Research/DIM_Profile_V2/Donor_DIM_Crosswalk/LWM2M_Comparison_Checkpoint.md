@@ -224,4 +224,4 @@ These decisions use the pinned registry's Firmware Update object 5 version 1.2 a
 | 506 | Scope negative for the two reviewed objects. These update resources do not define a per-update unlocking key or its lifecycle. | Pinned objects 5 and 9 |
 | 590 | Partial. Maximum Defer Period bounds deferral of firmware update. A general maintenance calendar or permitted settings schedule requires separate evidence. | Firmware Update 5/13 |
 
-Thirteen additional baseline dispositions are saved for integration. The working total is 257 assessed baseline rows, with 364 still requiring review. Column U reflects 244 baseline assessments.
+The thirteen dispositions are integrated into column U. The workbook now contains 257 assessed baseline rows and 364 evidence holds.

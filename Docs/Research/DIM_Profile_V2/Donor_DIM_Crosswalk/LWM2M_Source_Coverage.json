@@ -941,9 +941,9 @@
       "status": "Assessed"
     },
     "SOSA-F2-RTE-CONFIG": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Package Settings can link to application-specific configuration, and Start and Stop control operation. A portable hosted runtime deployment descriptor requires other evidence. [Software Management 9/13, 9/19–21]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "ISA-T-STATUS": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -1876,9 +1876,9 @@
       "status": "Evidence hold"
     },
     "SOSA-SO2B-FIRMWARE-PACKAGE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. A package or package URI addresses an installable artifact. Software Component Link identifies components installed in scope of the package. A physical target-component association needs separate evidence. [Firmware Update 5/0–1 and Software Management 9/2–3, 9/17]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "SOSA-SO2B-RESOURCE-RESERVATION": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -1891,9 +1891,9 @@
       "status": "Evidence hold"
     },
     "SOSA-SO2C-APPLICATION-LIFECYCLE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Package name and version identify software. Installation, activation and operation have distinct states. The addressed client gives management context. Independent host relationships need other evidence. [Software Management 9/0–1, 9/7, 9/12, 9/21]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "SOSA-SO2C-SECURITY-LOG": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2201,14 +2201,14 @@
       "status": "Evidence hold"
     },
     "OPCDI-OFFLINE-ONLINE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. A Package Settings link supplies an application-defined settings object. It does not specify paired offline plan and online applied configuration representations. [Software Management 9/13]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "OPCDI-PARAMETER-TRANSFER": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Package Settings supplies a link and Update Result supplies a package-level result. Neither establishes per-parameter synchronization outcomes. [Software Management 9/9, 9/13]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "OPCDI-LOCK-STATE": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2221,14 +2221,14 @@
       "status": "Assessed"
     },
     "OPCDI-UPDATE-BEHAVIOR": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Checkpoint can link to update conditions or dependencies, and Update Supported Objects can trigger advertisement of changed objects. Additional side effects require instance evidence. [Software Management 9/5, 9/8]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "OPCDI-UPDATE-BACKUP": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Uninstall supports preparation for an update. Package Settings supports configuration modification. These fields do not specify which settings survive or are restored. [Software Management 9/6, 9/13]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "OPCDI-UPDATE-LIFECYCLE": {
       "reason": "Partial. Firmware Update resources 2, 3 and 5 distinguish the update operation, state and result. Proof that the new image is active depends on observed reporting and device-specific evidence.",
@@ -2236,14 +2236,14 @@
       "status": "Assessed"
     },
     "OPCDI-UPDATE-CONFIRMATION": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Related. Installation and update results distinguish reported states and outcomes. Post-update connectivity confirmation and rollback remain separate evidence questions. [Firmware Update 5/3, 5/5 and Software Management 9/7, 9/9]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "OPCDI-UPDATE-RELATIONS": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Checkpoint can refer to a target-system dependency. Package components can be linked. A reusable updater-to-target compatibility hierarchy is not defined by these links. [Software Management 9/5, 9/17]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "OPCDI-PACKAGE-COMPATIBILITY": {
       "reason": "Related. Firmware Update 5/8 and 5/9 identify supported transfer protocols and delivery methods. They do not establish image compatibility with specific equipment or software versions.",
@@ -2251,14 +2251,14 @@
       "status": "Assessed"
     },
     "OPCDI-PACKAGE-SIGNATURE": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Scope negative for the two reviewed objects. Package and result fields do not define signature provenance, signing authority or approval records. [Pinned objects 5 and 9]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "OPCDI-SOLUTION-ASSIGNMENT": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Software Component Link represents components installed in scope of a software package. This link alone does not convey target-specific installation order. [Software Management 9/17–18]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "OPCDI-CONFIGURABLE-COMPOSITION": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2381,9 +2381,9 @@
       "status": "Assessed"
     },
     "OPCDI-UPDATE-KEY": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Scope negative for the two reviewed objects. These update resources do not define a per-update unlocking key or its lifecycle. [Pinned objects 5 and 9]",
+      "classification": "unfilled",
+      "status": "Assessed"
     },
     "PADIM-SIGNAL-COMPENSATION": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
@@ -2781,9 +2781,9 @@
       "status": "Evidence hold"
     },
     "RF-APPLY-WINDOW": {
-      "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",
-      "classification": "unresolved",
-      "status": "Evidence hold"
+      "reason": "Partial. Maximum Defer Period bounds deferral of firmware update. A general maintenance calendar or permitted settings schedule requires separate evidence. [Firmware Update 5/13]",
+      "classification": "common",
+      "status": "Assessed"
     },
     "RF-LOG-LOSS": {
       "reason": "EVIDENCE HOLD — row-specific LwM2M review pending.",

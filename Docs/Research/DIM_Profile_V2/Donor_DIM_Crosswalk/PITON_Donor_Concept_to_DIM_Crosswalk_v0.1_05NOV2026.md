@@ -42,4 +42,4 @@ Rank 10 source intake is recorded in the [LwM2M review plan](PLAN_LWM2M_Source_F
 
 The [LwM2M comparison checkpoint](LWM2M_Comparison_Checkpoint.md) records five object definitions, 72 dispositions and a provisional discovery candidate. Peer comparisons for the discovery candidate are recorded, including holds. Continue the remaining 549 baseline assessments and integrate the candidate with the finished column.
 
-Column U includes 244 baseline assessments, 377 evidence holds and the provisional discovery candidate at row 664. The software lifecycle comparison records 13 more dispositions. Integrate them in column U and continue review of the remaining 364 baseline rows.
+Column U includes 257 baseline assessments, 364 evidence holds and the provisional discovery candidate at row 664. Continue review of the 364 held baseline rows.
