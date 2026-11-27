@@ -252,3 +252,7 @@ The fourteen dispositions are integrated into column U. The workbook contains 27
 ## Observation and radiation comparison
 
 The [assessment ledger](LWM2M_Observation_And_Radiation_Assessments.csv) records 35 additional dispositions. The sources distinguish the managed endpoint and its resource values. A separately observed target, radiation spectrum and calibration evidence need domain semantics. Findings are limited to the pinned Core and reviewed objects. The working total is 306 assessed baseline rows, with 315 requiring review. Column U now includes all 306 assessments, with 315 evidence holds.
+
+## Description and device management comparison
+
+The [assessment ledger](LWM2M_Description_And_Management_Assessments.csv) records 42 decisions against the pinned Core, Transport and reviewed objects. LwM2M identifies managed values and governs access and reporting. Additional domain definitions are needed for physical card interfaces and business revision history. The working total is 348 baseline assessments, with 273 rows still requiring review. Column U reflects 306 assessments pending integration of this pass.
