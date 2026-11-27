@@ -178,3 +178,28 @@ The following findings use object version 1.1 of the indicated definitions in th
 | 604 | Partial. Barometer 3315 can report a pressure reading. Its value and units do not distinguish local-elevation pressure from a sea-level correction. |
 
 Eighteen additional baseline dispositions are integrated into column U. The working total is 226 assessed baseline rows, with 395 remaining.
+
+## Notification, timing and measurement exchange
+
+| Worksheet row | Finding | Source |
+|---|---|---|
+| 512 | Related. A composite operation can gather separate resource values. It does not assert that those values are constituents of one quality or quantity. | Core §§6.3, 7.5.6 |
+| 514 | Partial. The resource definition determines whether Execute is supported. An addressed resource supplies the instance target, while a shared definition supplies the operation kind. This is not a portable command identity. | Core §§6.3.5, 7 |
+| 518 | Related. The declared operation tells a caller what operation class is available. Successful execution and safety or retry characteristics need operation-specific evidence. | Core §§6.3.5, 7 |
+| 519 | Partial. Observe and Cancel Observation have separate operation contracts. These do not define a general event-subscription schema for arbitrary payloads. | Core §6.4 |
+| 522 | Partial. Object definitions describe instance multiplicity and mandatory or optional resources. They do not define Thing Model substitution behavior. | Core §7 and Device object 3 |
+| 524 | Related. Registration Update can notify a server of changes to its client's advertised object inventory. It does not implement a general description-directory notification. | Core §6.2 |
+| 530 | Partial. Notify can deliver an observation update after an observation is established without a new Read request. A notification is not necessarily a device response to a management command. | Core §6.4 |
+| 563 | Partial. A management path identifies the resource instance and a typed object identifies the kind of value. Source excerpt lineage and the identity of separate equipment being measured require additional evidence. | Core §7 and Generic Sensor 3300 |
+| 566 | Related. Evaluation periods delimit when reporting criteria are evaluated. Neither evaluation periods nor notification periods establish an averaging window or complete sample coverage. | Core §7.3 |
+| 569 | Partial. SenML supports an integrated sum and time values. The start of the accumulation interval still needs explicit interpretation and supporting evidence. | Core §7.5.6 and RFC 8428 §§4.3–4.4 |
+| 570 | Partial. Notification attributes can specify greater-than or less-than crossings and a step. These do not define a combined dwell-time and return-hysteresis rule. | Core §7.3 |
+| 575 | Related. SenML represents a time associated with a record and the encoding distinguishes numeric data. The fields do not declare clock error and value accuracy as separate quality measures. | Core §7.5.6 and RFC 8428 §4.3 |
+| 576 | Partial. A SenML entry can identify the resource associated with a value. Its object definition supplies the native field meaning. A separate metric-definition identity requires additional evidence. | Core §§7.1, 7.5.6 |
+| 603 | Partial. A measurement record can carry a time value. That value does not separately establish when the server created or persisted the record. | Core §7.5.6 and RFC 8428 §4.3 |
+| 607 | Related. Core operations distinguish errors from resource payloads, and numeric zero is a typed value. The full disabled, omitted and null combination requires application-specific evidence. | Core §§6.3, 7.5 |
+| 611 | Partial. Evaluation and reporting periods control when the client evaluates criteria or reports. A SenML time does not establish a separate server acquisition time or refresh contract. | Core §§7.3, 7.5.6 |
+| 612 | Partial. The object declares its type, and representations such as SenML encode typed values. Reserved-value interpretation comes from the resource definition or associated domain contract. | Core §7 and RFC 8428 §4 |
+| 616 | Partial. Registration Update can advertise changes in object instances. It supplies neither a general hardware inventory event nor a timestamp of the physical change. | Core §6.2 |
+
+Eighteen added baseline dispositions are saved for integration. The working total is 244 assessed baseline rows, with 377 still requiring review. Column U still reflects 226 baseline assessments.
