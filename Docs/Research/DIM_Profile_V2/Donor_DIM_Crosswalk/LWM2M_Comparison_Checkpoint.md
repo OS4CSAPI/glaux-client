@@ -256,3 +256,7 @@ The [assessment ledger](LWM2M_Observation_And_Radiation_Assessments.csv) records
 ## Description and device management comparison
 
 The [assessment ledger](LWM2M_Description_And_Management_Assessments.csv) records 42 decisions against the pinned Core, Transport and reviewed objects. LwM2M identifies managed values and governs access and reporting. Additional domain definitions are needed for physical card interfaces and business revision history. The working total is 348 baseline assessments, with 273 rows still requiring review. All 42 decisions are integrated into column U.
+
+## Event, command context and semantic comparison
+
+The [assessment ledger](LWM2M_Event_And_Semantics_Assessments.csv) records 71 additional dispositions. These findings address the Core, Transport and specific objects cited for each row. They distinguish device-management values from target observations, event histories and provenance assertions. The working total is 419, with 202 baseline rows still requiring review. Column U reflects 348 assessments pending integration of this pass.
